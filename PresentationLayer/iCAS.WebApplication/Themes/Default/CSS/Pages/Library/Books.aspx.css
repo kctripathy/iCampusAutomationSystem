@@ -1,0 +1,62 @@
+﻿.BookCountSpan
+{
+    color: #ca0606;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 11pt;
+}
+
+#BooksGridUL
+{
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+}
+
+    #BooksGridUL li
+    {
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 0;
+    }
+
+.GridView
+{
+     
+}
+
+    .GridView td
+    {
+         
+        padding: 7px 0px 0px 2px;    
+    }
+
+.GridAlternatRowStyle
+{
+    background-color: lightcyan;
+}
+
+.GridRowStyle
+{
+    background-color: lightgreen;
+}
+
+#WebBody #PageContent_LeftColumn
+{
+    background: url(../Images/LIBRARY-LEFT-COL.JPG) left 0px top 0px no-repeat;
+    background-size: cover;
+    height: 1817px;
+    margin: 0;
+    padding: 0;
+}
+
+#ContentPlaceHolderMicroERP_gview_Books > tbody > tr 
+{
+    border:solid 1px skyblue;
+    overflow:hidden;
+    height: 10px;
+}

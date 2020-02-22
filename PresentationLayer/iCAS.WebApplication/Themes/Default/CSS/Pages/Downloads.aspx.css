@@ -1,0 +1,74 @@
+﻿ul.downloadableUL
+{
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+    border: solid 1px white;
+    font-weight: normal;
+    font-family: Lato, sans-serif;
+    font-size: 9pt;
+}
+
+    ul.downloadableUL li
+    {
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 0px;
+        width: 50%;
+    }
+
+        ul.downloadableUL li.PageSubtitle
+        {
+            display: block;
+            float: left;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            font-weight: 400;
+            color: navy;
+            font-weight:bold;
+        }
+
+
+    /*ul.downloadableUL > li:nth-child(even)
+    {
+        width: 50%;
+        border-left: solid 1px navy;
+        padding-left: 10px;
+    }*/
+
+    ul.downloadableUL li a
+    {
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 0;
+        width: 11%;
+    }
+
+        ul.downloadableUL li a:hover
+        {
+            display: block;
+            float: left;
+            margin: 0;
+            padding: 0;
+            width: 11%;
+            background-color: indigo;
+        }
+
+
+        .RowImageClass
+        {
+            border: none;      
+            display:block;
+            float:right;
+            margin: 0;
+            padding:0px 10px;
+            width: auto;
+            height: 17px;
+
+        }

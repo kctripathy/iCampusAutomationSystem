@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{33040DDB-A6C8-4E33-A803-C6B17283B751}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Micro.BusinessLayer</RootNamespace>
+    <AssemblyName>Micro.BusinessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Administration\BankBranchManagement.cs" />
+    <Compile Include="Administration\BankManagement.cs" />
+    <Compile Include="Administration\CalendarManagement.cs" />
+    <Compile Include="Administration\ChangePasswordManagement.cs" />
+    <Compile Include="Administration\CollegeManagement.cs" />
+    <Compile Include="Administration\CommonKeyManagement.cs" />
+    <Compile Include="Administration\CountryManagement.cs" />
+    <Compile Include="Administration\CurrencyManagement.cs" />
+    <Compile Include="Administration\DistrictManagement.cs" />
+    <Compile Include="Administration\CompanyManagement.cs" />
+    <Compile Include="Administration\GuestManagement.cs" />
+    <Compile Include="Administration\MicroFormManagement.cs" />
+    <Compile Include="Administration\MicroMenuManagement.cs" />
+    <Compile Include="Administration\MicroModuleManagement.cs" />
+    <Compile Include="Administration\OfficeGroupManagement.cs" />
+    <Compile Include="Administration\OfficeManagement.cs" />
+    <Compile Include="Administration\MicroReportManagement.cs" />
+    <Compile Include="Administration\MicroSettingManagement.cs" />
+    <Compile Include="Administration\OfficeTypeManagement.cs" />
+    <Compile Include="Administration\ResetPasswordManagement.cs" />
+    <Compile Include="Administration\RolePermissionManagement.cs" />
+    <Compile Include="Administration\RolesManagement.cs" />
+    <Compile Include="Administration\StateManagement.cs" />
+    <Compile Include="Administration\TransactionPasswordManagement.cs" />
+    <Compile Include="Administration\UserCompanyAccessManagement.cs" />
+    <Compile Include="Administration\UserManagement.cs" />
+    <Compile Include="Administration\UserOfficeAccessManagement.cs" />
+    <Compile Include="Administration\UserProfileGuestManagement.cs" />
+    <Compile Include="Administration\USerProxyManagement.cs" />
+    <Compile Include="Administration\UserSettingsManagement.cs" />
+    <Compile Include="Administration\WebFormManagement.cs" />
+    <Compile Include="Administration\WebMenuManagement.cs" />
+    <Compile Include="Administration\YearAcademicManagement.cs" />
+    <Compile Include="CustomerRelation\AccountsRevivalManagement.cs" />
+    <Compile Include="CustomerRelation\AccountsSellingManagement.cs" />
+    <Compile Include="CustomerRelation\BranchAbstractManagement.cs" />
+    <Compile Include="CustomerRelation\BrokerageFeeStructureManagement.cs" />
+    <Compile Include="CustomerRelation\BrokerageFeeStructureOfficeWiseManagement.cs" />
+    <Compile Include="CustomerRelation\ChangeFieldChainManagement.cs" />
+    <Compile Include="CustomerRelation\ChangeIntroducerManagement.cs" />
+    <Compile Include="CustomerRelation\ChangeNomineeManagement.cs" />
+    <Compile Include="CustomerRelation\ChangePolicyTypeManagement.cs" />
+    <Compile Include="CustomerRelation\CRMPolicyManagement.cs" />
+    <Compile Include="CustomerRelation\CrmPremiumManagement.cs" />
+    <Compile Include="CustomerRelation\CRMScrollManagement.cs" />
+    <Compile Include="CustomerRelation\CrmSettingManagement.cs" />
+    <Compile Include="CustomerRelation\CustomerAccountManagement.cs" />
+    <Compile Include="CustomerRelation\CustomerAccountReceiptManagement.cs" />
+    <Compile Include="CustomerRelation\CustomerLoanManagement.cs" />
+    <Compile Include="CustomerRelation\CustomerLoanReceiptManagement.cs" />
+    <Compile Include="CustomerRelation\CustomerManagement.cs" />
+    <Compile Include="CustomerRelation\CustomerProfileManagement.cs" />
+    <Compile Include="CustomerRelation\DCAccountManagement.cs" />
+    <Compile Include="CustomerRelation\DCCollectorManagement.cs" />
+    <Compile Include="CustomerRelation\DCDeviceAllotmentManagement.cs" />
+    <Compile Include="CustomerRelation\DCDeviceManagement.cs" />
+    <Compile Include="CustomerRelation\DCReceiptsmanagement.cs" />
+    <Compile Include="CustomerRelation\DUMMYManagement.cs" />
+    <Compile Include="CustomerRelation\FieldForceChainManagement.cs" />
+    <Compile Include="CustomerRelation\FieldForceManagement.cs" />
+    <Compile Include="CustomerRelation\FieldForceProfileManagement.cs" />
+    <Compile Include="CustomerRelation\FieldForcePromotionManagement.cs" />
+    <Compile Include="CustomerRelation\FieldForceRankManagement.cs" />
+    <Compile Include="CustomerRelation\GuarantorLoanApplicationManagement.cs" />
+    <Compile Include="CustomerRelation\GuarantorLoanApprovalManagement.cs" />
+    <Compile Include="CustomerRelation\GuarantorLoanManagement.cs" />
+    <Compile Include="CustomerRelation\GuarantorLoanRecoveryManagement.cs" />
+    <Compile Include="CustomerRelation\LoanEMIManagement.cs" />
+    <Compile Include="CustomerRelation\MediclaimApplicationManagement.cs" />
+    <Compile Include="CustomerRelation\MediclaimApprovalManagement.cs" />
+    <Compile Include="CustomerRelation\MISPaymentManagement.cs" />
+    <Compile Include="CustomerRelation\OfficewiseManagement.cs" />
+    <Compile Include="CustomerRelation\OneTimeCertificateManagement.cs" />
+    <Compile Include="CustomerRelation\PassbookManagement.cs" />
+    <Compile Include="CustomerRelation\PassbookPrintManagement.cs" />
+    <Compile Include="CustomerRelation\PaymentsBrokerageManagement.cs" />
+    <Compile Include="CustomerRelation\PaymentsLICMoneybackManagement.cs" />
+    <Compile Include="CustomerRelation\PaymentsMaturityManagement.cs" />
+    <Compile Include="CustomerRelation\PaymentsMediclaimManagement.cs" />
+    <Compile Include="CustomerRelation\PaymentsPreMaturityManagement.cs" />
+    <Compile Include="CustomerRelation\PolicySurrenderManagement.cs" />
+    <Compile Include="CustomerRelation\PolicyTypeOfficeWiseManagement.cs" />
+    <Compile Include="CustomerRelation\PreMaturityApplicationManagement.cs" />
+    <Compile Include="CustomerRelation\PreMaturityApprovalManagement.cs" />
+    <Compile Include="CustomerRelation\RebateManagement.cs" />
+    <Compile Include="CustomerRelation\RebatesOfficeWiseManagement.cs" />
+    <Compile Include="CustomerRelation\UserProfileFieldForceManagement.cs" />
+    <Compile Include="CustomerRelation\UserProfileFieldForceProfileManagement.cs" />
+    <Compile Include="ICAS\ADMIN\FeedbackMasterManagement.cs" />
+    <Compile Include="ICAS\ADMIN\GuestManagement.cs" />
+    <Compile Include="ICAS\ADMIN\RolesManagement.cs" />
+    <Compile Include="ICAS\ADMIN\UserManagement.cs" />
+    <Compile Include="ICAS\ALUMNI\AluminiManagement.cs" />
+    <Compile Include="ICAS\ESTBLMT\EstablishmentManagement.cs" />
+    <Compile Include="ICAS\EXAM\ClassManagement.cs" />
+    <Compile Include="ICAS\EXAM\ExamResultManagement.cs" />
+    <Compile Include="ICAS\EXAM\ExamManagement.cs" />
+    <Compile Include="ICAS\EXAM\ExamMarkManagement.cs" />
+    <Compile Include="ICAS\EXAM\ExamScheduleManagement.cs" />
+    <Compile Include="ICAS\FINANCE\AccountBalanceManagement.cs" />
+    <Compile Include="ICAS\FINANCE\AccountGroupManagement.cs" />
+    <Compile Include="ICAS\FINANCE\AccountHeadManagement.cs" />
+    <Compile Include="ICAS\FINANCE\AccountingYearManagement.cs" />
+    <Compile Include="ICAS\FINANCE\AccountLedgerManagement.cs" />
+    <Compile Include="ICAS\FINANCE\AccountMasterManagement.cs" />
+    <Compile Include="ICAS\FINANCE\AccountNameManagement.cs" />
+    <Compile Include="ICAS\FINANCE\AccountsTransactionManagement.cs" />
+    <Compile Include="ICAS\FINANCE\AccountTransactionManagement.cs" />
+    <Compile Include="ICAS\FINANCE\DefaultFeeManagement.cs" />
+    <Compile Include="ICAS\LIBRARY\LibraryManagement.cs" />
+    <Compile Include="ICAS\STAFFS\AttendanceManagement.cs" />
+    <Compile Include="ICAS\STAFFS\PolicyApplicationManagement.cs" />
+    <Compile Include="ICAS\STAFFS\EmployeePayrollManagement.cs" />
+    <Compile Include="ICAS\STAFFS\PayrollComponentManagement.cs" />
+    <Compile Include="ICAS\STAFFS\LoanApplicationManagement.cs" />
+    <Compile Include="ICAS\STAFFS\LoanTypeManagement.cs" />
+    <Compile Include="ICAS\STAFFS\StaffPayrollManagement.cs" />
+    <Compile Include="ICAS\STAFFS\CourseManagement.cs" />
+    <Compile Include="ICAS\STAFFS\DepartmentManagement.cs" />
+    <Compile Include="ICAS\STAFFS\DepartmentOfficewiseManagement.cs" />
+    <Compile Include="ICAS\STAFFS\DesignationManagement.cs" />
+    <Compile Include="ICAS\STAFFS\DesignationOfficewiseManagement.cs" />
+    <Compile Include="ICAS\STAFFS\LeaveApplicationManagement.cs" />
+    <Compile Include="ICAS\STAFFS\LeaveBalanceManagement.cs" />
+    <Compile Include="ICAS\STAFFS\LeaveTypeManagement.cs" />
+    <Compile Include="ICAS\STAFFS\StaffMasterManagement.cs" />
+    <Compile Include="ICAS\STUDENT\StudentAttendanceReportManagement.cs" />
+    <Compile Include="ICAS\STUDENT\StudentSectionManagement.cs" />
+    <Compile Include="ICAS\STUDENT\StudentAttendanceManagement.cs" />
+    <Compile Include="ICAS\STUDENT\SubjectTypeManagement.cs" />
+    <Compile Include="ICAS\STUDENT\QualClassManagement.cs" />
+    <Compile Include="ICAS\STUDENT\QualManagement.cs" />
+    <Compile Include="ICAS\STUDENT\StreamManagement.cs" />
+    <Compile Include="ICAS\STUDENT\StudentManagement.cs" />
+    <Compile Include="ICAS\STUDENT\StudentPreQualManagement.cs" />
+    <Compile Include="ICAS\STUDENT\StudentSubjectManagement.cs" />
+    <Compile Include="ICAS\STUDENT\SubjectManagement.cs" />
+    <Compile Include="ICAS\STUDENT\SubjectPaperManagement.cs" />
+    <Compile Include="InventoryControl\AssetManagement.cs" />
+    <Compile Include="InventoryControl\ItemDetailManagement.cs" />
+    <Compile Include="InventoryControl\ItemsManagement.cs" />
+    <Compile Include="ChartManagement.cs" />
+    <Compile Include="FinancialAccounts\AccountGroupManagement.cs" />
+    <Compile Include="FinancialAccounts\AccountHeadManagement.cs" />
+    <Compile Include="FinancialAccounts\AccountingYearManagement.cs" />
+    <Compile Include="FinancialAccounts\AccountLedgerManagement.cs" />
+    <Compile Include="FinancialAccounts\AccountNameManagement.cs" />
+    <Compile Include="FinancialAccounts\AccountRemittanceManagement.cs" />
+    <Compile Include="FinancialAccounts\AccountTransactionManagement.cs" />
+    <Compile Include="FinancialAccounts\MonthEndManagement.cs" />
+    <Compile Include="FinancialAccounts\VoucherManagement.cs" />
+    <Compile Include="HumanResource\AttendanceAmendmentManagement.cs" />
+    <Compile Include="HumanResource\AttendanceApplicationManagement.cs" />
+    <Compile Include="HumanResource\AttendanceManagement.cs" />
+    <Compile Include="HumanResource\BioMetricDeviceManagement.cs" />
+    <Compile Include="HumanResource\DepartmentManagement.cs" />
+    <Compile Include="HumanResource\DepartmentOfficewiseManagement.cs" />
+    <Compile Include="HumanResource\DesignationManagement.cs" />
+    <Compile Include="HumanResource\DesignationOfficewiseManagement.cs" />
+    <Compile Include="HumanResource\EmployeeManagement.cs" />
+    <Compile Include="HumanResource\EmployeeProfileManagement.cs" />
+    <Compile Include="HumanResource\EmployeeServiceDetailsManagement.cs" />
+    <Compile Include="HumanResource\HolidayManagement.cs" />
+    <Compile Include="HumanResource\HolidayOfficewiseManagement.cs" />
+    <Compile Include="HumanResource\LeaveApplicationManagement.cs" />
+    <Compile Include="HumanResource\LeaveBalanceManagement.cs" />
+    <Compile Include="HumanResource\LeaveTypeManagement.cs" />
+    <Compile Include="HumanResource\LeaveTypeOfficewiseManagement.cs" />
+    <Compile Include="HumanResource\LeaveTypeSettingsManagement.cs" />
+    <Compile Include="HumanResource\OfficeTimingManagement.cs" />
+    <Compile Include="HumanResource\PayCategoryManagement.cs" />
+    <Compile Include="HumanResource\PayComponentManagement.cs" />
+    <Compile Include="HumanResource\PayGradeManagement.cs" />
+    <Compile Include="HumanResource\ShiftManagement.cs" />
+    <Compile Include="HumanResource\ShiftOfficewiseManagement.cs" />
+    <Compile Include="HumanResource\ShiftScheduleManagement.cs" />
+    <Compile Include="HumanResource\ShiftTimingsManagement.cs" />
+    <Compile Include="HumanResource\TourApplicationManagement.cs" />
+    <Compile Include="HumanResource\UserProfileEmployeeManagement.cs" />
+    <Compile Include="HumanResource\UserProfileEmployeeProfileManagement.cs" />
+    <Compile Include="LoginManagement.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XMLManagement.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Commons\Micro.Common\iCAS.Commons.csproj">
+      <Project>{F565A960-EC2A-4B06-9A73-008FF9D03FC5}</Project>
+      <Name>iCAS.Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Commons\Micro.Objects\iCAS.Objects.csproj">
+      <Project>{AEA9D061-DDF8-4EA7-9A9D-23BFE1130D11}</Project>
+      <Name>iCAS.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micro.IntegrationLayer\My.IntegrationLayer.csproj">
+      <Project>{6B51E9FB-80B2-4BF6-AB06-4451B217E40A}</Project>
+      <Name>My.IntegrationLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="ICAS\SAHITYA\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

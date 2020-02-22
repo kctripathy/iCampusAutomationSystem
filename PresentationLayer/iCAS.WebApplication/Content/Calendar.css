@@ -1,0 +1,320 @@
+﻿.MicroCalendar .ajax__calendar_container
+{
+	background-color: #f2f2f2;
+	border: solid 1px #A3C0E8; /*     font-family:sans-serif,arial,helvetica,clean;     font-size:12px;     */
+	font-family: sans-serif, Verdana,Trebuchet MS;
+	font-size: 8pt;
+	cursor: default;
+	width: 205px;
+	text-align: center;
+	padding: 0px;
+}
+
+.MicroCalendar .ajax__calendar_body
+{
+	height: 139px;
+	width: 205px;
+	position: relative;
+	overflow: hidden;
+}
+
+.MicroCalendar .ajax__calendar_header
+{
+	height: 15px;
+	margin: 5px 0 0;
+	width: 100%;
+	border-bottom: solid 1px #A3C0E8;
+	background-image: url('/Themes/Default/Images/gvHeaderBackground.gif');
+	background-position: top;
+	background-repeat: repeat-x;
+	background-color: #E2F0FF;
+}
+
+
+.MicroCalendar .ajax__calendar_days, .MicroCalendar .ajax__calendar_months, .MicroCalendar .ajax__calendar_years
+{
+	top: 0px;
+	left: 0px;
+	height: 139px;
+	width: 195px;
+	padding: 5px;
+	position: absolute;
+	text-align: center;
+}
+
+
+
+.MicroCalendar .ajax__calendar_days table
+{
+	border-spacing: 0;
+	border-collapse: collapse;
+	font: 100% sans-serif;
+	text-align: center;
+}
+
+.MicroCalendar .ajax__calendar_prev
+{
+	margin-top: 2px;
+	margin-left: 2px;
+	height: 15px;
+	width: 25px;
+	cursor: pointer;
+	float: left;
+	background: url(/Themes/Default/Images/Calendar/PreviousMonth.gif) 0px 0px no-repeat;
+}
+
+.MicroCalendar .ajax__calendar_next
+{
+	margin-top: 2px;
+	margin-right: 2px;
+	height: 15px;
+	width: 12px;
+	cursor: pointer;
+	float: right;
+	background: url(/Themes/Default/Images/Calendar/NextMonth.gif) 0px 0px no-repeat;
+}
+
+.MicroCalendar .ajax__calendar_title
+{
+	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
+}
+
+
+
+.MicroCalendar .ajax__calendar_dayname
+{
+	padding-left: 3px;
+	padding-right: 3px;
+	margin-bottom: 5px;
+	margin-left: 2px;
+	margin-right: 2px;
+	text-align: center;
+	font-weight: bold;
+	border-bottom: solid 1px #A3C0E8; /* font-weight:400;     font-size:9pt;     font-weight: bold;     color:#000;     border-bottom:solid 1px #A3C0E8; */
+}
+
+.MicroCalendar .ajax__calendar_today
+{
+	background-color: #E2F0FF;
+	border: solid 1px #A3C0E8;
+	font-weight: normal;
+	color: #000080;
+	text-align: center;
+	padding: 3px 8px 0px 0px;
+	font-weight: bold;
+}
+
+.MicroCalendar .ajax__calendar_footer
+{
+	font-weight: normal;
+}
+
+
+/**************************/
+
+.MyCalendar
+{
+	background-color: #F5F5F5;
+	border: solid 1px #A3C0E8; 
+	font-family: sans-serif, Verdana,Trebuchet MS;
+	font-size: 8pt;
+	cursor: default;
+	width: 100%;
+	text-align: center;
+	padding: 0px;
+	
+}
+
+.MyCalendar table
+{
+
+}
+
+.MyCalendar td
+{
+	padding: 2px;
+	border: solid 1px #ccc;
+}
+
+.MyCalendar td a
+{
+	text-decoration: none;
+}
+
+.DayStyle,
+.DayHeaderStyle,
+.NextPrevStyle,
+.OtherMonthDayStyle,
+.SelectedDayStyle,
+.SelectorStyle,
+.TitleStyle,
+.TodayDayStyle,
+.WeekendDayStyle
+{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	
+}
+
+.MyCalendar td.TodayDayStyle
+{
+	background-color: #FFFFFF;
+	
+}
+
+.TodayDayStyle a
+{
+	font-size: 105%;
+	text-decoration: underline;
+}
+
+.OtherMonthDayStyle
+{
+	color: #778899;
+}
+
+.OtherMonthDayStyle a
+{
+	text-decoration: none;
+	font-style: italic;
+	background-image: none;
+	font-size: 90%;
+	color: #DCDCDC;
+}
+
+.DayHeaderStyle
+{
+	border: solid 1px #ddd;
+	font-weight: normal;
+}
+
+html body form#formMicro div#TheContainer div#WebContent div#WebBody div#PageContent_LeftColumn table#UC_LeftColumn1_calendar_Default.MyCalendar tbody tr td table.TitleStyle
+{
+	
+	text-transform: uppercase;
+	 
+}
+.DayStyle
+{
+	color: Red;
+}
+
+ul#HolidaysOfMonth
+{
+	list-style-type: none;
+	
+}
+
+ul#HolidaysOfMonth li.Head
+{
+	display: block;
+	float: left;
+	width: 94%;
+	background-color: #CCCCCC;
+	padding: 2px 0px;
+	margin-top: 10px;
+	padding: 5px;
+	
+}
+
+
+ul#HolidaysOfMonth li.Day
+{
+	display: block;
+	float: left;
+	width: 20%;
+	border-left: solid 1px #CCCCCC;
+	border-right: solid 1px #CCCCCC;
+	border-bottom: solid 1px #CCCCCC;
+	padding: 3px;
+}
+
+ul#HolidaysOfMonth li.Desc
+{
+	display: block;
+	float: left;
+	width: 72%;
+	border-right: solid 1px #CCCCCC;
+	border-bottom: solid 1px #CCCCCC;
+	padding: 3px 2px 3px 3px;
+}
+
+ 
+
+
+ul#EmployeeOfMonth
+{
+	list-style-type: none;
+	margin:5px  0px;
+	padding: 0px;
+	width: 99%;
+	padding: 5x;
+	
+}
+ul#EmployeeOfMonth li.Head
+{
+	display: block;
+	float: left;
+	width: 96%;
+	background-color: #cccccc;
+	margin-top: 10px;
+	padding: 5px;
+}
+
+ul#EmployeeOfMonth li.EmpDetails
+{
+	display: block;
+	float: left;
+	width: 96%;
+	padding: 0px 4px;
+	
+	/*
+	background-color: #EEEEEE;
+	margin-top: 0px;
+	padding: 5px 4px;
+	border-left: solid 1px #CCCCCC;
+	border-right: solid 1px #CCCCCC;
+	border-bottom: solid 1px #CCCCCC;
+*/
+}
+ul#EmployeeOfMonth li#Body
+{
+	display: block;
+	float: left;
+	width: 100%;
+	border: solid 1px #cccccc;
+}
+
+
+ul#EmployeeOfMonth li.EmpDetails ul li.FLabel 
+{
+	display: block;
+	float: left;
+	width: 25%;
+	border-left: solid 1px #CCCCCC;
+	border-right: solid 1px #CCCCCC;
+	border-bottom: solid 1px #CCCCCC;
+	padding: 3px;
+}
+
+ul#EmployeeOfMonth li.EmpDetails ul li.FValue 
+{
+	display: block;
+	float: left;
+	width: 67%;
+	border-right: solid 1px #CCCCCC;
+	border-bottom: solid 1px #CCCCCC;
+	padding: 3px 2px 3px 3px;
+}
+
+ul#EmployeeOfMonth li.EmpDetails ul li.FLabelFull
+{
+	display: block;
+	float: left;
+	width: 98%;
+	padding: 3px 3px 3px 3px;
+	text-align: left;
+}

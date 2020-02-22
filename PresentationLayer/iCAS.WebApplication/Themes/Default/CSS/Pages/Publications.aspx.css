@@ -1,0 +1,156 @@
+﻿
+
+/*  Define the background color for all the ODD background rows  */
+.GridView div > table > tbody > tr:nth-child(odd)
+{
+    background-color: floralwhite;
+}
+/*  Define the background color for all the EVEN background rows  */
+.GridView div > table > tbody > tr:nth-child(even)
+{
+    background-color: ghostwhite;
+}
+
+.GridView div > table > tbody > tr:nth-child(even)
+{
+    background-color: ghostwhite;
+}
+
+.GridView
+{
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+    .GridView div
+    {
+        display: block;
+        width: 101%;
+        margin: 0 0 0 -26px;
+        padding: 0;
+    }
+
+div.OptionsStyle > table
+{
+    width: 100%;
+    border: solid 1px red;
+}
+
+    div.OptionsStyle > table > tbody > tr
+    {
+        border: 2px solid #A3C0E8;
+        background-color: #A3C0E8;
+    }
+
+        div.OptionsStyle > table > tbody > tr > td
+        {
+            /*background-image: url(../Images/gvHeaderBackground.gif);*/
+            color: navy;
+            display: block;
+            float: left;
+            width: 11%;
+            min-height: 50px;
+            border-left: 1px solid #A3C0E8;
+            background-image: url(../Images/H1PageTitleBg.gif);
+            background-position: top;
+            background-repeat: repeat-x;
+            background-color: #E2F0FF;
+            padding: 0px 5px;
+            text-align: center;
+        }
+
+            div.OptionsStyle > table > tbody > tr > td input
+            {
+                display: block;
+                float: left;
+                width: 100%;
+                text-align: center;
+            }
+
+            div.OptionsStyle > table > tbody > tr > td label
+            {
+                font-weight: normal;
+                font-family: Lato, sans-serif;
+                font-size: 10pt;
+                text-align: center;
+                font-weight: normal;
+                word-wrap: break-word;
+                margin-top: 5px;
+            }
+
+
+.HeaderStyle
+{
+    background-image: url(../Images/gvHeaderBackground.gif);
+    background-color: #E2F0FF;
+    padding: 5px 0px;
+    height: 20px;
+    width: 100%;
+}
+
+    .HeaderStyle th
+    {
+        padding-left: 4px;
+        text-align: left;
+        border: solid 1px #A3C0E8;
+        color: Navy;
+    }
+
+.GridView table
+{
+    clear: left;
+    margin-top: 3px;
+    border: Solid 1px #A3C0E8;
+    width: 100%;
+}
+
+
+    .GridView table td
+    {
+        padding: 4px 0px 2px 4px;
+        color: Navy;
+        border: dotted 1px #E2F0FF;
+        border-bottom: Solid 1px #A3C0E8;
+        border-right: Solid 1px #A3C0E8;
+        height: auto;
+    }
+
+.ViewLinkItem input
+{
+    margin-left: 5px;
+    width: 20px;
+}
+
+#DialogBoxUL > li
+{
+    display: block;
+    float: left;
+}
+
+    #DialogBoxUL > li:nth-child(odd)
+    {
+        border-bottom: solid 1px skyblue;
+        width: 99%;
+        margin-bottom: 2px;
+        padding: 2px 0px;
+    }
+
+    #DialogBoxUL > li:nth-child(even)
+    {
+        background-color: lightblue;
+        width: 98%;
+        margin-bottom: 2px;
+        padding: 2px 0px;
+    }
+
+/*
+                        .GridView table td.EditLinkItem,
+                        .GridView table td.DeleteLinkItem,
+                        .GridView table td.ViewLinkItem {
+                            background-color: #F4F9FF;
+                            width: 20px;
+                            padding: 0px;
+                            margin: 0px;
+                        }*/

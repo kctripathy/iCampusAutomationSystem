@@ -1,0 +1,90 @@
+﻿/* 	-----------------------------------
+	CSS common for pages in all pages
+	----------------------------------*/
+
+
+.FormPageCounter
+{
+	color: Red;
+	display: block;
+	float: left;
+	font-size: inherit;
+	left: 85px;
+	text-align: center;
+	top: 195px;
+	width: 100%;
+}
+
+
+
+.MicroPagerStyle
+{
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	background-color: #E2F0FF;
+	background-image: url("/Themes/Default/Images/gvHeaderBackground.gif");
+}
+
+
+.MicroPagerStyle table
+{
+	width: 50px;
+	margin: 0px auto;
+	border-style: none;
+	background-color: #E2F0FF;
+	background-image: url("/Themes/Default/Images/gvHeaderBackground.gif");
+}
+
+
+
+.GridView table td.GridViewNumericItem
+{
+	text-align: right;
+	padding-right: 4px;
+}
+
+
+
+tr.MicroPagerStyle td table
+{
+	border-style: none;
+}
+
+
+tr.MicroPagerStyle td table tbody tr td
+{
+	background-image: url("/Themes/Default/Images/gvHeaderBackground.gif");
+	padding: 3px 5px 3px 7px;
+	border: solid 1px #ccc;
+}
+
+tr.MicroPagerStyle td table tbody tr td:hover
+{
+	background-image: none;
+	background-color: #0000CD;
+	background-image: url(/Themes/Default/Images/mainbk.png);
+	color: #fff;
+	border: solid 1px #ccc;
+	padding: 3px 5px 3px 7px;
+}
+
+tr.MicroPagerStyle td table tbody tr td:hover a
+{
+	color: #fff;
+}
+
+tr.MicroPagerStyle td table tbody tr td span
+{
+	/* 	background-color: #0000FF; 	color: #ffffff; */
+	color: #0000ff;
+	font-size: large;
+	font-weight: bolder;
+	padding: 2px 5px;
+}
+
+tr.MicroPagerStyle td table tbody tr td span:hover
+{
+	font-weight: bolder;
+	color: #fff;
+}

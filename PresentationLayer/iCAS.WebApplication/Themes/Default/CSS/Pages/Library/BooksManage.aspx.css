@@ -1,0 +1,206 @@
+﻿.UpdateProgressBooks
+{
+    display: block;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    margin: 0;
+    padding: 0;
+    background-color: red;
+    border: solid 2px red;
+}
+
+
+.AccessionNoStyle
+{
+    border: solid 1px #ccc;
+    color: red;
+    font-weight: bold;
+    font-size: 13pt;
+    width: 40%;
+    background-color: transparent;
+}
+
+.BookCountSpan
+{
+    border-top: solid 4px cyan;
+    border-bottom: solid 4px red;
+    background-color: mintcream;
+    margin-top: 5px;
+    padding: 5px 0px 0px 0px;
+    color: navy;
+    font-weight: bold;
+    font-size: 11pt;
+}
+
+.AccesionDateStyle
+{
+    background-color: #E2F0FF;
+}
+
+.ErrorTitle
+{
+    color: red;
+    font-weight: bold;
+    font-size: 13pt;
+    font-family: Lato,sans-serif;
+}
+
+.RequiredField
+{
+    color: red;
+}
+
+.innercontent
+{
+    overflow-x: hidden;
+}
+
+#ContentPlaceHolder1_LibraryBookUL
+{
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 10px 0 0 0px;
+    padding: 0;
+    list-style-type: none;
+    overflow-x: hidden;
+    z-index: 999999999;
+}
+
+    #ContentPlaceHolder1_LibraryBookUL li
+    {
+        display: block;
+        float: left;
+        width: 50%;
+        margin: 0;
+        padding: 0;
+    }
+
+        #ContentPlaceHolder1_LibraryBookUL li.PageSubTitle
+        {
+            width: 100%;
+            background-color: lightyellow;
+        }
+
+#ContentPlaceHolderMicroERP_LibraryBookUL > li > ul
+{
+    width: 100%;
+    /*background-color: red;*/
+    display: block;
+    float: left;
+}
+
+    #ContentPlaceHolderMicroERP_LibraryBookUL > li > ul li
+    {
+        width: 80%;
+        display: block;
+        float: left;
+        /*background-color: lightgray;*/
+    }
+
+
+
+#ContentPlaceHolder1_LibraryBookUL li:nth-child(even)
+{
+    background-color: lightgoldenrodyellow;
+}
+
+#ContentPlaceHolder1_LibraryBookUL li:nth-child(odd)
+{
+    background-color: white;
+}
+
+
+
+#NewMasterRecordUL
+{
+    width: 100%;
+    display: block;
+    float: left;
+    list-style-type: none;
+    margin: 10px 0px;
+    border: double 3px navy;
+    background-color: #E2F0FF;
+}
+
+    #NewMasterRecordUL li
+    {
+        width: 96%;
+        display: block;
+        float: left;
+        padding: 2%;
+    }
+
+.BookTypeClass
+{
+    /*border: solid 1px red;*/
+    width: 50%;
+}
+
+table.BookTypeClass > tbody > tr > td
+{
+    /*background-color: lightcyan;*/
+    padding: 0px 10px;
+}
+
+.SegmentClass
+{
+    /*border: solid 1px green;*/
+    background-color: lightcyan;
+}
+
+.UpdateProgressUL
+{
+    border: solid 1px red;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ul#BookUploadUL
+{
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+    ul#BookUploadUL li
+    {
+        display: block;
+        float: left;
+        width: 48%;
+    }
+
+.FileUploadClass
+{
+    background-color: lightcyan;
+    width: 100%;
+}
+
+
+
+#UpdateProgressBooks
+{
+    top: 0;
+    left: 0;
+    display: block;
+    float: none;
+    position: fixed;
+    color: white;
+    text-align: center;
+    background-color: red;
+    width: 100%;
+}
+
+#UpdateProgressUL
+{
+    display: block;
+    float: left;
+    width: 100%;
+    border: solid 2px yellow;
+}

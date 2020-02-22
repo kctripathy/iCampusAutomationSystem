@@ -1,0 +1,577 @@
+﻿@media only screen and (max-device-width: 480px)
+{
+    #Div_Student, #Div_Staff
+    {
+        display: none;
+    }
+}
+
+#WebZones #Div_Student,
+#WebZones #Div_Estb {
+	display: none;
+	float: left;
+	width: 25%;
+	height: 150px;
+	margin: 1px;
+	padding: 2px;
+	border: solid 1px #666;
+	background-color: #fff;
+	-webkit-border-radius: 2px;
+	box-shadow: 1.5px 1.5px 3px #000000;
+}
+
+
+#WebZones #Div_Staff,
+#WebZones #Div_Alumni {
+	display: block;
+	float: left;
+	width: 25%;
+	height: 150px;
+	margin: 1px;
+	padding: 2px;
+	border: solid 1px #666;
+	background-color: #fff;
+	-webkit-border-radius: 2px;
+	box-shadow: 1.5px 1.5px 3px #000000;
+}
+
+#WebZones #Div_Alumni {
+	background-color: red;
+}
+
+#WebZones #Div_Estb {
+	display: block;
+	float: left;
+	width: 480px;
+	height: 150px;
+	margin: 1px;
+	padding: 0px 10px;
+	border: solid 1px #666;
+	background-color: #fff;
+	overflow: auto;
+}
+
+	#WebZones #Div_Student a, #WebZones #Div_Estb a, #WebZones #Div_Staff a, #WebZones #Div_Alumni a {
+		text-decoration: none;
+		color: #003366;
+		margin: 1px 0px;
+		font-family: inherit;
+		font-size: 0.9em;
+	}
+
+		#WebZones #Div_Student a:hover, #WebZones #Div_Estb a:hover,
+		#WebZones #Div_Staff a:hover,
+		#WebZones #Div_Alumni a:hover {
+			text-decoration: underline;
+			color: red;
+			font-size: 0.9em;
+			margin: 2px 0px;
+			font-family: inherit;
+		}
+
+		#WebZones #Div_Student a:visited {
+			color: #003366;
+		}
+
+#WebZones #Div_Staff a {
+	text-decoration: none;
+	color: #003399;
+	font-size: 10pt;
+	margin: 8px 0px;
+	font-family: inherit;
+    padding: 4px 0px;
+}
+
+	#WebZones #Div_Staff a:hover {
+		text-decoration: none;
+		color: red;
+		font-size: 0.9em;
+		margin: 4px 0px;
+		font-family: inherit;
+	}
+
+
+
+#WebZones #Div_Estb {
+	margin: 0px 2px;
+	border: none;
+	border: solid 1px #468847;
+	background: url(../Images/TSDC-Estb-Zone.PnG) right 0 top 0 repeat-x; /**/
+}
+
+
+
+#WebZones #Div_Staff {
+	margin: 0px 2px;
+	border: none;
+	border: solid 1px #CC9999;
+	/*background: #fff url(../Images/TSDC-Student-Zone.PnG) LEFT top no-repeat;*/
+}
+
+	#WebZones #Div_Staff #StaffZone {
+		width: 100%;
+	}
+
+
+
+#WebZones #Div_Alumni {
+	border: none;
+	margin: 0px;
+	border: solid 1px #6699CC;
+	background: url(../Images/TSDC-Student-Zone.PnG) LEFT top no-repeat;
+}
+
+#WebBodyICAS #RightSide #RightSide_Login {
+	display: block;
+	float: left;
+	width: 190px;
+	height: 294px;
+	padding: 2px;
+	margin: 2px 2px 4px 0px;
+	border: solid 1px #ccc;
+	/*background-color: Red;*/
+	background: url("/Themes/Common/Images/TSDC-Alumni-Zone.png") repeat-y scroll left top #FFFFFF;
+}
+
+#WebBodyICAS #RightSide #RightSide_LibraryZone {
+	display: none;
+	float: left;
+	width: 188px;
+	height: 81px;
+	margin: 2px 2px 4px 0px;
+	padding: 1px 0px 4px 1px;
+	border: solid 1px #ccc;
+	overflow: hidden;
+}
+
+
+
+
+
+/**************** zones ************/
+#EstblmntZone a {
+	width: 100%;
+}
+
+.WebpartTitle {
+	display: block;
+	float: left;
+	font-weight: bolder;
+	height: 20px;
+	width: 100%;
+	margin-bottom: 4px;
+	padding: 4px 0px 0px 4px;
+}
+
+.WebpartTitleEstblmntZone {
+	display: block;
+	float: left;
+	font-weight: bold;
+	height: 12px;
+	width: 100%;
+	margin-bottom: 2px;
+	padding: 1px;
+}
+
+.WebpartSubTitle {
+	display: block;
+	float: left;
+	height: 13px;
+	width: 98%;
+	margin-top: 4px;
+	margin-bottom: 2px;
+	padding-left: 2%;
+}
+
+
+.UCSubTitle {
+	display: block;
+	float: left;
+	height: 13px;
+	width: 98%;
+	font-style: italic;
+}
+
+.UCBodyReadMore {
+	display: block;
+	float: left;
+	height: 13px;
+	width: 98%;
+	font-style: italic;
+	text-align: right;
+	font-size: 90%;
+}
+
+.AlumniZoneLink {
+	display: block;
+	float: left;
+	height: 13px;
+	width: 47%;
+	margin: 8px 2px;
+	padding: 4px 0px;
+	border-bottom: solid 1px #ccc;
+}
+
+.LibraryZoneLink {
+	display: block;
+	float: left;
+	height: 13px;
+	width: 35%;
+	margin-left: 4%;
+	padding: 1px 1px;
+}
+
+
+.StaffZoneLink {
+	display: block;
+	float: left;
+	min-height: 10px;
+	width: 50%;
+	margin: 4px 0;
+	padding: 0;
+	text-align: center;
+}
+
+.StaffZoneLink100 {
+    display: block;
+    float: left;
+    width: 94%;
+    margin: 3px 0;
+    padding: 3px 0px;
+    text-align: center;
+	/*display: block;
+	float: left;
+	min-height: 10px;
+	width: 46%;
+	margin: 2px 0;
+	padding: 0;
+	text-align: center;*/
+}
+
+
+.StudentZoneLinkWelcome {
+	display: block;
+	float: left;
+	height: 13px;
+	width: 90%;
+	margin-left: 10%;
+	margin-top: -5px;
+	margin-bottom: 4px;
+	padding: 2px 1px;
+	border-bottom: dotted 1px #ccc;
+	text-align: right;
+}
+
+
+#ctrl_StudentZone_ulctrl_AskLoginStudent,
+.AskLoginStudent {
+	/*background: url("/Themes/Common/Images/icas-left.jpg") no-repeat scroll left -11px top #FFFFFF;
+    background-position: bottom -10px;*/
+	color: #003399;
+	width: 180px;
+	height: 150px;
+	display: block;
+	float: left;
+	/*font-family: Bookman Old Style;
+    font-size: 120%;
+    background-color: Yellow;*/
+}
+
+
+#WebZones #Div_Student {
+	margin: 0px 2px 0px 4px;
+	/* border: none;
+    background: url(../Images/TSDC-Student-Zone.PnG) LEFT 20px top no-repeat;*/
+	overflow: hidden;
+}
+
+#WebpartTitleStudent {
+	margin: -7px 0px 0px -7px;
+	padding: 0;
+	height: 25px;
+	width: 100%;
+	background: url(../Images/ZONE-TITLE-students.png) left -4px top 7px no-repeat;
+	background-size: 100%;
+}
+
+.StudentZoneLink {
+	display: block;
+	float: left;
+	width: 100%;
+	margin: 0px;
+	padding: 2px 1px;
+	text-align: justify;
+	background-color: transparent;
+}
+
+#WebZones #Div_Student a {
+	text-decoration: none;
+	color: blue;
+	font-size: 1em;
+	margin: 4px 0px;
+	font-family: inherit;
+	text-align: justify;
+	padding-left: 15px;
+}
+
+	#WebZones #Div_Student a:hover {
+		text-decoration: underline;
+		color: red;
+		font-size: 0.9em;
+		margin: 4px 0px;
+		font-family: inherit;
+	}
+
+#WebpartTitleStaff {
+	margin: -7px 0px 0px -7px;
+	padding: 0;
+	height: 25px;
+	width: 100%;
+	background: url(../Images/ZONE-TITLE-staff.png) left 64px top 7px no-repeat;
+	background-size: 90%;
+}
+
+
+
+
+
+.WebpartTitle {
+	display: block;
+	float: left;
+	font-weight: bolder;
+	height: 20px;
+	width: 98%;
+	margin-bottom: 8px;
+	padding: 4px;
+}
+
+
+
+
+
+
+#WebpartTitleAlumni {
+	margin: -7px 0px 0px -7px;
+	padding: 0;
+	height: 25px;
+	width: 100%;
+	background: url(../Images/ZONE-TITLE-alumni.png) left top no-repeat;
+}
+
+#WebpartTitleEstb {
+	padding: 0;
+	height: 150px;
+	width: 100%;
+	background: url(../Images/ZONE-TITLE-estb.png) left top no-repeat;
+	overflow: auto;
+}
+
+	#WebpartTitleEstb ul {
+		margin: 0px 0px 0px 0px;
+		padding: 20px 0px 0px 4px;
+		list-style-type: none;
+		border: none;
+		width: 98%;
+		border: solid 1px #DCDCDC;
+		min-height: 200px;
+	}
+
+
+		#WebpartTitleEstb ul li {
+			margin: 0px;
+			padding: 0px 2px;
+			display: block;
+			float: left;
+			width: 98%;
+			border-bottom: dotted 1px #003399;
+		}
+
+
+
+
+
+.UCTitleEstb {
+	display: block;
+	float: left;
+	width: 99%;
+	margin-top: 2px;
+	font-weight: bold;
+	padding: 1px 0px;
+	border-bottom: dotted 1px #c0c0c0;
+}
+
+	.UCTitleEstb label {
+		margin: 0px 0px 0px 4px;
+		font-weight: bold;
+		padding: 0px 16px 0px 0px;
+	}
+
+
+#WebSearchButtonId,
+#WebFacebookButtonId {
+	display: block;
+	float: right;
+	margin: 2px 5px 0px 0px;
+}
+
+
+.WebSearchButton {
+	height: 24px;
+	width: 24px;
+	background-image: url('/images/Search.gif');
+	cursor: pointer;
+	/*cursor: hand;*/
+	padding: 2px;
+}
+
+.WebButtonFacebook {
+	height: 24px;
+	width: 24px;
+	border: solid 1px white;
+	cursor: pointer;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+
+.Estb-Search-Button {
+	height: 24px;
+	width: 24px;
+	background-image: url('/images/Search.gif');
+	cursor: pointer;
+	/*cursor: hand;*/
+	padding: 2px;
+}
+
+.ui-button {
+	height: 24px;
+	width: 24px;
+	/*background-image: url('/images/Search.gif');*/
+	background-image: url('/images/zoom.ico');
+	cursor: pointer;
+	padding: 2px;
+}
+
+
+
+
+
+#DivInformation {
+	border-top: 3px double #CCCCCC;
+	display: block;
+	float: left;
+	min-height: 187px;
+	margin: 2px 3px;
+	padding: 4px 4px 0;
+	width: 981px;
+}
+
+	#DivInformation #ULInformation {
+		display: block;
+		float: left;
+		width: 59%;
+		height: 235px;
+		border-right: 3px double #CCCCCC;
+		margin-right: 6px;
+	}
+
+	#DivInformation #UL_PrincipalMessage {
+		display: block;
+		float: left;
+		width: 39%;
+		min-height: 187px;
+	}
+
+.PrincipalMessageTitle {
+	font-weight: bold;
+	color: #000;
+	border-bottom: dotted 1px #ccc;
+	/*font-family: Trebuchet MS, Sans-Serif;
+	font-weight: bold;
+	font-size: 110%;
+	padding: 2px;
+	font-family: Consolas, "Courier New", Courier, monospace,Rockwell,;
+	font-size: 1.2em;*/
+	margin-top: 5px;
+}
+
+.PrincipalMessageBody {
+	text-align: justify;
+	padding: 0px;
+	margin: 2px 0px 10px 0px;
+	font-size: 1em;
+	font-family: Lato,Verdana, Helvetica, Sans-Serif;
+	line-height: 14px;
+	color: #000;
+}
+
+#PhotoPrincipal {
+	display: block;
+	float: right;
+	width: 100px;
+	height: 100px;
+	margin: 18px;
+	border: 2px solid #666666;
+	background: url(../Images/PRINCIPAL-PASSPHOTO2.jpg) no-repeat LEFT top;
+	background-color: #C0C0C0;
+	background-size: 100% 100%;
+}
+
+
+/*******Library **************/
+#AlumniZone,
+#WebSocialNetworks,
+#LibraryZone {
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 50%;
+	background-color: #fff;
+	-webkit-border-radius: 0px;
+	box-shadow: 1.5px 1.5px 3px #000000;
+	/*height: 150px;
+	margin: 0px 0px 0px -15px;
+	padding: 10px;
+	border: solid 1px #ccc;
+	background-color: #fff;
+	-webkit-border-radius: 0px;
+	box-shadow: 1.5px 1.5px 3px #000000;*/
+}
+
+#AlumniZone {
+	margin-left: 15px;
+    margin-right: -10px;
+    padding: 10px;
+    margin-top: 6px;
+    min-height: 110px;
+    width: 24%;
+}
+
+#LibraryZone {
+	margin-left: 0px;
+    width: 75%;
+    margin: 7px 0px;
+	min-height: 100px;
+}
+
+
+
+
+/*#WebSocialNetworks ul {
+	width: 100%;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+	#WebSocialNetworks ul li {
+		width: 50px;
+		height: 50px;
+		margin: 0px;
+		padding: 10px;
+		display: block;
+		float: left;
+		text-align: center;
+		background-color: #FFFFFF;
+	}*/

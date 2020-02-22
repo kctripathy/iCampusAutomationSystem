@@ -1,0 +1,100 @@
+﻿/***** UpdateProgress **********************************/
+#UpdateProgress
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #0E3264;
+	opacity: 0.800000011920928955078125;
+	z-index: 99997;
+}
+
+
+.UpdateProgressArea
+{
+	margin: 200px auto;
+	background: url(../Images/UpdateProgress/PleaseWait_BigSize.gif) center top 50px no-repeat #fff;
+	width: 300px;
+	height: 230px;
+	border: #ccc solid 2px;
+	z-index: 99998;
+	text-align: center;
+	font-weight: bold;
+}
+.UpdateProgressAreaText
+{
+	border: #C6BFBF solid 1px;
+	background-color: #ff0000;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 3px;
+	display: block;
+	float: left;
+	left: 40%;
+	position: inherit;
+	top: 70%;
+}
+
+/*******************************************/
+div#UpdateProgressLogin
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #808080;
+	opacity: 0.800000011920928955078125;
+	z-index: 99997;
+}
+
+
+div.UpdateProgressAreaLogin
+{
+	margin: 200px auto;
+	/*background: url(../Images/UpdateProgress/PleaseWait_BigSize.gif) center top no-repeat #fff;*/
+    background: url(/Images/lightbox-ico-loading.gif) center top 24px no-repeat #fff;
+
+	width: 100px;
+	height: 100px;
+	border: #003366 double 3px;
+	z-index: 99998;
+	text-align: center;
+	font-weight: bold;
+    text-align: center center;
+    vertical-align: middle;
+    color: #ff0000;
+}
+
+span.UpdateProgressAreaTextLogin
+{
+	border: #C6BFBF solid 1px;
+	background-color: #ff0000;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 3px;
+	display: block;
+	float: left;
+	
+	position: inherit;
+	margin-top: 80px;
+    width: 92%;
+    /*left: 40%;*/
+}
+
+
+ul#UpdateProgressLibraryControl
+{
+	background-color: red;
+	width: 100%;
+	display:block;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	height: 50px;
+	color: white;
+	font-size: 1.1em;
+
+}

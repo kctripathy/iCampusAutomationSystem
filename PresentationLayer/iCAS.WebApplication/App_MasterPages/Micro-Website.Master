@@ -1,0 +1,98 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Micro-Website.master.cs" Inherits="Micro.WebApplication.App_MasterPages.Micro_Website" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server" enableviewstate="false">
+	<title>Welcome to the website of Micro Group of Companies :</title>
+	<link rel="stylesheet" type="text/css" href="/Themes/Common/CSS/Website.css" />
+	<link rel="stylesheet" type="text/css" href="/Themes/Common/CSS/MicroGroup.css" />
+	<script type="text/javascript" src="/Themes/Common/Javascript/CommonJavaScripts.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+
+
+	<%--	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+			<script type="text/javascript" src="/Themes/Common/Javascript/slides.min.jquery.js"></script>--%>	
+			<%--
+	<script>
+		$(function () {
+			$('#slides').slides({
+				preload: true,
+				preloadImage: '/Themes/Common/Images/SlideShow/loading.gif',
+				play: 5000,
+				pause: 2500,
+				hoverPause: true,
+				animationStart: function (current) {
+					$('.caption').animate({
+						bottom: -35
+					}, 100);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationStart on slide: ', current);
+					};
+				},
+				animationComplete: function (current) {
+					$('.caption').animate({
+						bottom: 0
+					}, 200);
+					if (window.console && console.log) {
+						// example return of current slide number
+						console.log('animationComplete on slide: ', current);
+					};
+				},
+				slidesLoaded: function () {
+					$('.caption').animate({
+						bottom: 0
+					}, 200);
+				}
+			});
+		});
+	</script>--%>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+
+	<script>
+		$(function () {
+
+			$("#slideshow > div:gt(0)").hide();
+
+			setInterval(function () {
+				$('#slideshow > div:first')
+			    .fadeOut(1000)
+			    .next()
+			    .fadeIn(1000)
+			    .end()
+			    .appendTo('#slideshow');
+			}, 3000);
+
+		});
+	</script>
+
+</head>
+<body>
+	<form id="formMicroERP" runat="server">
+	<asp:ScriptManager ID="ScriptManagerMicroWebsite" runat="server" EnablePartialRendering="true" ScriptMode="Debug" AsyncPostBackTimeout="900" />
+	<div style="width: 100%; margin: 0px; padding: 0px; top: 0px; left: 0px;">
+		<div id="WebContentHomePage">
+			<div id="WebHeaderHomePage">
+				<ul>
+					<li id="LogoHomePage"></li>
+					<li id="MiddleHeadHomePage"></li>
+					<li id="ImportantInfoHomePage"></li>
+				</ul>
+			</div>
+			<div id="WebBodyHomePage">
+				<div id="HomePageContentHomePage">
+					<asp:ContentPlaceHolder ID="ContentPlaceHolderMicroERP" runat="server">
+					</asp:ContentPlaceHolder>
+				</div>
+			</div>
+		</div>
+		<div id="WebFooterHomePage">
+			<asp:Literal runat="server" ID="lit_FooterMessage" Text="Copyright © 2012 Micro Group. All rights reserved. &nbsp;&nbsp;&nbsp;  | &nbsp;&nbsp;&nbsp;  Best visible in 1024x768 resolution  &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;  " />
+			<asp:Label runat="server" ID="lbl_Version" Text="  APPS (WEB) v1.1 &nbsp;&nbsp;&nbsp;  |   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |" />
+		</div>
+	</div>
+	</form>
+</body>
+</html>

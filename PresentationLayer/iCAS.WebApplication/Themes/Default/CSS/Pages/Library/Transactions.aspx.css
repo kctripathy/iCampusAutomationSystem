@@ -1,0 +1,48 @@
+﻿
+#TranPageHead, #TranPageBody
+{
+    display: block;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    background-color: lightcyan;
+    border-bottom: solid 1px #C4ECF9;
+}
+
+    #TranPageHead li, #TranPageBody li
+    {
+        display: block;
+        float: left;
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+    }
+
+        #TranPageHead li.FiftyFifty
+        {
+            width: 50%;
+        }
+
+            #TranPageHead li.FiftyFifty:nth-child(1)
+            {
+                border-right: solid 2px white;
+            }
+
+            #TranPageHead li.FiftyFifty table
+            {
+                width: 100%;
+                margin: 5px 0px 0px 10px;
+                border-bottom: solid 3px cyan;
+            }
+
+h1.PageSubTitle
+{
+    color: navy;
+    background-color: #fff;
+    border-bottom: 1px solid #CCC;
+    font-family: Lato, serif;
+    font-size: 12pt;
+    text-align:center;
+    text-transform:uppercase;
+}

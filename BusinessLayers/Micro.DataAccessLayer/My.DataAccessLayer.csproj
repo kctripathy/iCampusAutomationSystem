@@ -1,0 +1,271 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{02302AD1-EF96-4008-A79D-81E50ADE6B22}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Micro.DataAccessLayer</RootNamespace>
+    <AssemblyName>Micro.DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Micro.Security">
+      <HintPath>..\..\..\Kishor_JobWorks\ICAS_TSDC\ICAS_TSDC\LTPL-iCAS\Micro.PresentationLayer\Micro.WebApplication\Micro.WebApplication\bin\Micro.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractData_OleDb.cs" />
+    <Compile Include="AbstractData_SQLClient.cs" />
+    <Compile Include="Administration\BankBranchDataAccess.cs" />
+    <Compile Include="Administration\BankDataAccess.cs" />
+    <Compile Include="Administration\CalendarDataAccess.cs" />
+    <Compile Include="Administration\ChangePasswordDataAccess.cs" />
+    <Compile Include="Administration\CollegeDataAccess.cs" />
+    <Compile Include="Administration\CommonKeyDataAccess.cs" />
+    <Compile Include="Administration\CountryDataAccess.cs" />
+    <Compile Include="Administration\CurrencyDataAccess.cs" />
+    <Compile Include="Administration\DistrictDataAccess.cs" />
+    <Compile Include="Administration\CompanyDataAccess.cs" />
+    <Compile Include="Administration\GuestDataAccess.cs" />
+    <Compile Include="Administration\MicroFormDataAccess.cs" />
+    <Compile Include="Administration\MicroMenuDataAccess.cs" />
+    <Compile Include="Administration\MicroModuleDataAccess.cs" />
+    <Compile Include="Administration\OfficeDataAccess.cs" />
+    <Compile Include="Administration\MicroReportDataAccess.cs" />
+    <Compile Include="Administration\MicroSettingDataAccess.cs" />
+    <Compile Include="Administration\OfficeGroupDataAccess.cs" />
+    <Compile Include="Administration\OfficeTypesDataAccess.cs" />
+    <Compile Include="Administration\ResetPasswordDataAccess.cs" />
+    <Compile Include="Administration\RoleDataAccess.cs" />
+    <Compile Include="Administration\RolePermissionDataAccess.cs" />
+    <Compile Include="Administration\TransactionPasswordDataAccess.cs" />
+    <Compile Include="Administration\UserCompanyAccessDataAccess.cs" />
+    <Compile Include="Administration\UserDataAccess.cs" />
+    <Compile Include="Administration\UserOfficeAccessDataAccess.cs" />
+    <Compile Include="Administration\UserProfileGuestDataAccess.cs" />
+    <Compile Include="Administration\USerProxyDataAccess.cs" />
+    <Compile Include="Administration\UserSettingDataAccess.cs" />
+    <Compile Include="Administration\WebFormDataAccess.cs" />
+    <Compile Include="Administration\WebMenuDataAccess.cs" />
+    <Compile Include="Administration\YearAcademicDataAccess.cs" />
+    <Compile Include="CustomerRelation\DUMMYDataAccess.cs" />
+    <Compile Include="ICAS\ADMIN\FeedbackMasterDataAccess.cs" />
+    <Compile Include="ICAS\ADMIN\GuestDataAccess.cs" />
+    <Compile Include="ICAS\ADMIN\RoleDataAccess.cs" />
+    <Compile Include="ICAS\ADMIN\UserDataAccess.cs" />
+    <Compile Include="ICAS\ALUMNI\AluminiDataAccess.cs" />
+    <Compile Include="ICAS\ESTBLMT\EstablishmentDataAccess.cs" />
+    <Compile Include="ICAS\EXAM\ExamResultDataAccess.cs" />
+    <Compile Include="ICAS\EXAM\ExamMarkDataAccess.cs" />
+    <Compile Include="ICAS\EXAM\ExamDataAccess.cs" />
+    <Compile Include="ICAS\EXAM\ExamScheduleDataAccess.cs" />
+    <Compile Include="ICAS\FINANCE\AccountBalanceDataAccess.cs" />
+    <Compile Include="ICAS\FINANCE\AccountGroupDataAccess.cs" />
+    <Compile Include="ICAS\FINANCE\AccountHeadDataAccess.cs" />
+    <Compile Include="ICAS\FINANCE\AccountingYearDataAccess.cs" />
+    <Compile Include="ICAS\FINANCE\AccountLedgerDataAccess.cs" />
+    <Compile Include="ICAS\FINANCE\AccountMasterDataAccess.cs" />
+    <Compile Include="ICAS\FINANCE\AccountNameDataAccess.cs" />
+    <Compile Include="ICAS\FINANCE\AccountsTransactionsDataAccess.cs" />
+    <Compile Include="ICAS\FINANCE\AccountTransactionDataAccess.cs" />
+    <Compile Include="ICAS\FINANCE\DefaultFeeDataAccess.cs" />
+    <Compile Include="ICAS\FINANCE\VoucherDataAccess.cs" />
+    <Compile Include="ICAS\LIBRARY\BooksDataAccess.cs" />
+    <Compile Include="ICAS\LIBRARY\LibraryDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\AttendanceDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\StaffLICDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\EmployeePayrollDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\LoanApplicationDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\LoanTypeDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\PayrollComponentDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\StaffPayrollDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\CourseDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\DepartmentDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\DepartmentOfficewiseDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\DesignationDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\DesignationOfficewiseDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\LeaveApplicationDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\LeaveBalanceDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\LeaveTypeDataAccess.cs" />
+    <Compile Include="ICAS\STAFFS\StaffMasterDataAccess.cs" />
+    <Compile Include="ICAS\STUDENT\ClassDataAccess.cs" />
+    <Compile Include="ICAS\STUDENT\StudentAttendanceReportDataAccess.cs" />
+    <Compile Include="ICAS\STUDENT\StudentSectionDataAccess.cs" />
+    <Compile Include="ICAS\STUDENT\StudentAttendanceDataAccess.cs" />
+    <Compile Include="ICAS\STUDENT\SubjectTypeDataAccess.cs" />
+    <Compile Include="ICAS\STUDENT\QualClassDataAccess.cs" />
+    <Compile Include="ICAS\STUDENT\StudentPreQualsDataAccess.cs" />
+    <Compile Include="ICAS\STUDENT\StudentSubjectDataAccess.cs" />
+    <Compile Include="ICAS\STUDENT\QualsDataAccess.cs" />
+    <Compile Include="ICAS\STUDENT\StreamDataAccess.cs" />
+    <Compile Include="ICAS\STUDENT\StudentDataAccess.cs" />
+    <Compile Include="ICAS\STUDENT\SubjectDataAccess.cs" />
+    <Compile Include="ICAS\STUDENT\SubjectPaperDataAccess.cs" />
+    <Compile Include="InventoryControl\AssetDataAccess.cs" />
+    <Compile Include="InventoryControl\ItemDetailDataAccess.cs" />
+    <Compile Include="InventoryControl\ItemsDataAccess.cs" />
+    <Compile Include="ChartManagementData.cs" />
+    <Compile Include="CustomerRelation\AccountsRevivalDataAccess.cs" />
+    <Compile Include="CustomerRelation\AccountsSellingDataAccess.cs" />
+    <Compile Include="CustomerRelation\BranchAbstractDataAccess.cs" />
+    <Compile Include="CustomerRelation\BrokerageFeeStructureDataAccess.cs" />
+    <Compile Include="CustomerRelation\BrokerageFeeStructureOfficeWiseDataAccess.cs" />
+    <Compile Include="CustomerRelation\ChangeFieldChainDataAccess.cs" />
+    <Compile Include="CustomerRelation\ChangeIntroducerDataAccess.cs" />
+    <Compile Include="CustomerRelation\ChangeNomineeDataAccess.cs" />
+    <Compile Include="CustomerRelation\ChangePolicyTypeDataAccess.cs" />
+    <Compile Include="CustomerRelation\CRMPolicyDataAccess.cs" />
+    <Compile Include="CustomerRelation\CrmPremiumDataAccess.cs" />
+    <Compile Include="CustomerRelation\CRMScrollDataAccess.cs" />
+    <Compile Include="CustomerRelation\CrmSettingDataAccess.cs" />
+    <Compile Include="CustomerRelation\CustomerAccountDataAccess.cs" />
+    <Compile Include="CustomerRelation\CustomerAccountReceiptDataAccess.cs" />
+    <Compile Include="CustomerRelation\CustomerDataAccess.cs" />
+    <Compile Include="CustomerRelation\CustomerLoanDataAccess.cs" />
+    <Compile Include="CustomerRelation\CustomerLoanReceiptDataAccess.cs" />
+    <Compile Include="CustomerRelation\CustomerProfileDataAccess.cs" />
+    <Compile Include="CustomerRelation\DCAccountDataAccess.cs" />
+    <Compile Include="CustomerRelation\DCCollectorDataAccess.cs" />
+    <Compile Include="CustomerRelation\DCDeviceAllotmentDataAccess.cs" />
+    <Compile Include="CustomerRelation\DCDeviceDataAccess.cs" />
+    <Compile Include="CustomerRelation\DCReceiptDataAccess.cs" />
+    <Compile Include="CustomerRelation\FieldForceChainDataAccess.cs" />
+    <Compile Include="CustomerRelation\FieldForceDataAccess.cs" />
+    <Compile Include="CustomerRelation\FieldForceProfileDataAccess.cs" />
+    <Compile Include="CustomerRelation\FieldForcePromotionDataAccess.cs" />
+    <Compile Include="CustomerRelation\FieldForceRankDataAccess.cs" />
+    <Compile Include="CustomerRelation\GuarantorLoanApplicationDataAccess.cs" />
+    <Compile Include="CustomerRelation\GuarantorLoanApprovalDataAccess.cs" />
+    <Compile Include="CustomerRelation\GuarantorLoanDataAccess.cs" />
+    <Compile Include="CustomerRelation\GuarantorLoanRecoveryDataAccess.cs" />
+    <Compile Include="CustomerRelation\LoanEMIDataAccess.cs" />
+    <Compile Include="CustomerRelation\MediclaimApplicationDataAccess.cs" />
+    <Compile Include="CustomerRelation\MediclaimApprovalDataAccess.cs" />
+    <Compile Include="CustomerRelation\OfficewiseDataAccess.cs" />
+    <Compile Include="CustomerRelation\OneTimeCertificateDataAccess.cs" />
+    <Compile Include="CustomerRelation\PassbookDataAccess.cs" />
+    <Compile Include="CustomerRelation\PassbookPrintDataAccess.cs" />
+    <Compile Include="CustomerRelation\PaymentsBrokerageDataAccess.cs" />
+    <Compile Include="CustomerRelation\PaymentsLICMoneybackDataAccess.cs" />
+    <Compile Include="CustomerRelation\PaymentsMaturityDataAccess.cs" />
+    <Compile Include="CustomerRelation\PaymentsMediclaimDataAccess.cs" />
+    <Compile Include="CustomerRelation\MISPaymentDataAccess.cs" />
+    <Compile Include="CustomerRelation\PaymentsPreMaturityDataAccess.cs" />
+    <Compile Include="CustomerRelation\PolicySurrenderDataAccess.cs" />
+    <Compile Include="CustomerRelation\PolicyTypeOfficeWiseDataAccess.cs" />
+    <Compile Include="CustomerRelation\PreMaturityApplicationDataAccess.cs" />
+    <Compile Include="CustomerRelation\PreMaturityApprovalDataAccess.cs" />
+    <Compile Include="CustomerRelation\RebateDataAccess.cs" />
+    <Compile Include="CustomerRelation\RebatesOfficeWiseDataAccess.cs" />
+    <Compile Include="CustomerRelation\UserProfileFieldForceDataAccess.cs" />
+    <Compile Include="CustomerRelation\UserProfileFieldForceProfileDataAccess.cs" />
+    <Compile Include="FinancialAccounts\AccountNameDataAccess.cs" />
+    <Compile Include="FinancialAccounts\AccountGroupDataAccess.cs" />
+    <Compile Include="FinancialAccounts\AccountHeadDataAccess.cs" />
+    <Compile Include="FinancialAccounts\AccountingYearDataAccess.cs" />
+    <Compile Include="FinancialAccounts\AccountLedgerDataAccess.cs" />
+    <Compile Include="FinancialAccounts\AccountRemittanceDataAccess.cs" />
+    <Compile Include="FinancialAccounts\AccountTransactionDataAccess.cs" />
+    <Compile Include="FinancialAccounts\MonthEndDataAccess.cs" />
+    <Compile Include="FinancialAccounts\VoucherDataAccess.cs" />
+    <Compile Include="HumanResource\AttendanceAmendmentDataAccess.cs" />
+    <Compile Include="HumanResource\AttendanceApplicationDataAccess.cs" />
+    <Compile Include="HumanResource\AttendanceDataAccess.cs" />
+    <Compile Include="HumanResource\BioMetricDeviceDataAccess.cs" />
+    <Compile Include="HumanResource\DepartmentDataAccess.cs" />
+    <Compile Include="HumanResource\DepartmentOfficewiseDataAccess.cs" />
+    <Compile Include="HumanResource\DesignationDataAccess.cs" />
+    <Compile Include="HumanResource\DesignationOfficewiseDataAccess.cs" />
+    <Compile Include="HumanResource\EmployeeDataAccess.cs" />
+    <Compile Include="HumanResource\EmployeeProfileDataAccess.cs" />
+    <Compile Include="HumanResource\EmployeeServiceDetailsDataAccess.cs" />
+    <Compile Include="HumanResource\HolidayDataAccess.cs" />
+    <Compile Include="HumanResource\HolidayOfficewiseDataAccess.cs" />
+    <Compile Include="HumanResource\LeaveApplicationDataAccess.cs" />
+    <Compile Include="HumanResource\LeaveBalanceDataAccess.cs" />
+    <Compile Include="HumanResource\LeaveTypeDataAccess.cs" />
+    <Compile Include="HumanResource\LeaveTypeOfficewiseDataAccess.cs" />
+    <Compile Include="HumanResource\LeaveTypeSettingDataAccess.cs" />
+    <Compile Include="HumanResource\OfficeTimingDataAccess.cs" />
+    <Compile Include="HumanResource\PayCategoryDataAccess.cs" />
+    <Compile Include="HumanResource\PayComponentDataAccess.cs" />
+    <Compile Include="HumanResource\PayGradeDataAccess.cs" />
+    <Compile Include="HumanResource\ShiftDataAccess.cs" />
+    <Compile Include="HumanResource\ShiftOfficewiseDataAccess.cs" />
+    <Compile Include="HumanResource\ShiftScheduleDataAccess.cs" />
+    <Compile Include="HumanResource\ShiftTimingsDataAccess.cs" />
+    <Compile Include="HumanResource\TourApplicationDataAccess.cs" />
+    <Compile Include="HumanResource\UserProfileEmployeeDataAccess.cs" />
+    <Compile Include="HumanResource\UserProfileEmployeeProfileDataAccess.cs" />
+    <Compile Include="LoginManagementData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Administration\StateDataAccess.cs" />
+    <Compile Include="XMLDataAccess.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Commons\Micro.Common\iCAS.Commons.csproj">
+      <Project>{F565A960-EC2A-4B06-9A73-008FF9D03FC5}</Project>
+      <Name>iCAS.Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Commons\Micro.Objects\iCAS.Objects.csproj">
+      <Project>{AEA9D061-DDF8-4EA7-9A9D-23BFE1130D11}</Project>
+      <Name>iCAS.Objects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ICAS\SAHITYA\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Micro.Security.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

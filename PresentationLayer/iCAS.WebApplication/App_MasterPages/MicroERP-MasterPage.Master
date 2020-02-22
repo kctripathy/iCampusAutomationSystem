@@ -1,0 +1,121 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MicroERP-MasterPage.master.cs" Inherits="Micro.WebApplication.App_MasterPages.MicroERP_MasterPage" %>
+
+<%@ Register Src="../App_UserControls/User/UC_UserLoggedOn.ascx" TagName="UC_UserLoggedOn" TagPrefix="ltpl" %>
+<%@ Register Src="../App_UserControls/Menu/WebUserControlMenu.ascx" TagName="WebUserControlMenu" TagPrefix="uc1" %>
+<%--<%@ Register Src="../App_UserControls/UC_LeftColumn.ascx" TagName="UC_LeftColumn" TagPrefix="ltpl" %>--%>
+<%--<%@ Register Src="../App_UserControls/Menu/UC_CustomisedMenu.ascx" TagName="UC_CustomisedMenu" TagPrefix="ltpl" %>--%>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
+<%@ Register Assembly="Micro.Commons" Namespace="Micro.Commons" TagPrefix="IAControl" %>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server" enableviewstate="false">
+    <title>TSD Collge - BD Pur / Tentulia Sasan Debasthan College, BIJAYA DHANURJAYA PUR (SASAN), GANJAM, ODISHA, 761120</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="ROBOTS" content="INDEX, FOLLOW" />
+    <meta name="description" content="TSD Collge, Best Academic College of Odisha, Tentulia Sasan Debasthan College or TSD College or TSDC , B.D.Pur (Sasan) / BIJAYA DHANURJAYA PUR (SASAN), JAGANNATH PRASAD BLOCK, DIST: GANJAM, STATE: ODISHA (INDIA) PIN - 761120 " />
+    <meta name="keywords" content="TSD Collge, Best Academic College of Odisha, undergraduate, graduate, +2, +3, Science, Arts, Commerce, degree colleges, Established 1981, Kishor Tripathy" />
+    <meta name="author" content="Kishor Tripathy, Kanhu Charana Panda, Balabhadra Kar, Deepak Biswal, Pranatosh Roy, Debashish, Sudhir Pattnaik & Team" />
+    <meta name="google-site-verification" content="RQ7kdiFMBg72jvntlec0f0pFHwPyaLw3XI5ZOlOxeNE" />
+
+    <link href="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Content/bootstrap.min.css"%>" rel="stylesheet" />
+    <link href="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Content/font-awesome.min.css"%>" rel="stylesheet" />
+    <link href="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"css/menu.css"%>" rel="stylesheet" />
+    <style type="text/css" media="screen">
+        <!--
+        @import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Themes/" + this.Page.Theme + @"/CSS/Pages/" + Micro.Commons.Helpers.GetFullPathPageName(this.Page) + ".css"%>';
+        @import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Themes/Common/CSS/MainStyleICAS.css"%>';
+        @import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Themes/" + this.Page.Theme + @"/CSS/CommonStyles.css"%>';
+        /*@import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Themes/" + this.Page.Theme + @"/CSS/Common_" +  Micro.Commons.Helpers.GetCompanyAlias() + ".css"%>';*/
+        -->
+    </style>
+    <script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Scripts/modernizr-2.6.2.js"%>"></script>
+    <script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Scripts/respond.js"%>"></script>
+    <script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Scripts/jquery-3.1.1.js"%>"></script>
+    <script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Scripts/bootstrap.js"%>"></script>
+
+    <script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Themes/Common/Javascript/CommonJavaScripts.js"%>"></script>
+    <style type="text/css">
+        #TreeView1 {
+            margin: 0;
+            padding: 0;
+            display: block;
+            float: left;
+            width: 100%;
+            font-family: Verdana, Trebuchet MS;
+            font-size: 10pt;
+            background-color: lightgoldenrodyellow;
+            padding: 1%;
+            overflow: auto;
+        }
+           
+        .TreeViewStyle
+        {
+            border-top: solid 1px #66CCFF;
+        }
+
+        .TreeViewStyle > table > tbody > tr > td > a
+        {
+            color: navy;
+            text-decoration: underline;
+        }
+
+        .TreeViewStyle > div > div > table > tbody > tr > td > a
+        {
+            color: green;
+        }
+
+        .TreeViewStyle > div > table > tbody > tr > td > a
+        {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <form id="formMicro" runat="server">
+
+        <uc1:WebUserControlMenu ID="WebUserControlMenu1" runat="server" />
+
+        <asp:ScriptManager ID="ScriptManagerMicro" runat="server" />
+
+        <div id="TheContainerICAS" class="container body-content">
+            <div id="WebContent">
+                <div id="WebHeader">
+                    .<ltpl:UC_UserLoggedOn ID="ctrl_LoggedOnUser" runat="server" />
+                </div>
+                <div id="WebBody">
+                    <div id="PageContent_LeftColumn">
+                        <div id="divUserLogin" runat="server" style="border-bottom: solid 1px #ccc; min-height: 125px;display:none;">
+                            
+                        </div>
+                        <asp:Literal runat="server" ID="lit_MenuItems" Visible="false" />
+
+
+                        <asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" Visible="true" CssClass="TreeViewStyle" />
+                    </div>
+                    <div id="PageContent_RightColumn">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolderMicroERP" runat="server"></asp:ContentPlaceHolder>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12" id="WebFooterAdmin">
+                <asp:Label runat="server" ID="lbl_Version" Text=" © 2006-2016 TSD College | MicroERP (WEB) vX.Y &nbsp;&nbsp;&nbsp;  |   &nbsp;&nbsp;&nbsp;" />
+                <asp:Label runat="server" ID="lbl_Database" Text="." CssClass="DatabaseInfoText" />
+            </div>
+        </div>
+
+        <IAControl:DialogBox ID="dialog_Message" runat="server" Title="Message:" BackgroundCssClass="modalBackground"
+            Style="display: none" CssClass="modalPopup" EnableViewState="true">
+            <ItemTemplate>
+                <ul>
+                    <li>
+                        <asp:Literal ID="lit_TheDialogMessage" runat="server" Text="" />
+                    </li>
+                </ul>
+            </ItemTemplate>
+        </IAControl:DialogBox>
+    </form>
+</body>
+</html>

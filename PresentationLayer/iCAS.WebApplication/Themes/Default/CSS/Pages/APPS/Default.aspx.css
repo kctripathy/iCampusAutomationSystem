@@ -1,0 +1,256 @@
+﻿
+
+
+/*************************/
+/*  CSS for default page */
+/*************************/
+div#Div1,
+div#Div2,
+div#Div3,
+div#Div4,
+div#Div5,
+div#Div6,
+div#Div7,
+div#Div8
+{
+	display: block;
+	float: left;
+	width: 47%;
+	margin: 5px;
+	height: 215px;
+	width: 365px;
+	border: solid 1px #ccc;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bolder;
+}
+
+/*
+
+div#Div1:hover,
+div#Div2:hover,
+div#Div3:hover,
+div#Div4:hover,
+div#Div5:hover,
+div#Div6:hover,
+div#Div7:hover,
+div#Div8:hover
+{
+	display: block;
+	float: left;
+	width: 47%;
+	margin: 10px;
+	height: 195px;
+	border: solid 1px #ccc;
+	background-color: #4b6c9e;
+	text-align: center;
+	vertical-align: middle;
+	background-image: url(../Images/bg_TopMenuBar.gif);
+	background-repeat: repeat-x;
+	background-position: top;
+	color: #fff;
+	font-weight: bolder;
+}
+*/
+
+div#DefaultHeader,
+div#DefaultFooter
+{
+	display: block;
+	float: left;
+	width: 97%;
+	margin: 5px 10px;
+	padding: 8px 0px 0px 0px;
+	height: 45px;
+/*
+ border: solid 1px #ccc;
+ background-color: Aqua;
+*/
+	text-align: center;
+	vertical-align: middle;
+	font-size: 125%;
+	color: #4b6c9e;
+	
+/*
+background-image: url('../../../Images/gvHeaderBackground.gif');
+background-position: top;
+background-repeat: repeat-x;
+background-color: #E2F0FF;
+font-weight: bold;
+border: Solid 1px #A3C0E8;
+*/
+	
+}
+
+
+div#Div1 ul#DefaultSection,
+div#Div2 ul#QuoteOfDay,
+div#Div3 ul#News,
+div#Div4 ul#Announcements
+{
+	margin: 2px;
+	padding: 0px;
+	border: solid 1px #ccc;
+	/*background-color:#FFFFFF;*/
+	height: inherit;
+	width: 100%;
+}
+
+div#Div4 ul#Announcements li,
+div#Div1 ul#DefaultSection li
+{
+	margin: 0px;
+	padding: 4px 0px;
+	display: block;
+	float: left;
+}
+
+div#Div1 ul#DefaultSection li.FormLabel
+{
+	width: 83%;
+	text-align: right;
+	font-weight: normal;
+	padding: 2px 0px;
+	
+}
+
+div#Div1 ul#DefaultSection li.FormValue
+{
+	width: 15%;
+	text-align: left;
+	padding-left: 2%;
+	padding: 2px 0px;
+	
+}
+
+div#Div1 ul#DefaultSection li.PageSubTitle,
+div#Div2 ul#QuoteOfDay li.PageSubTitle,
+div#Div3 ul#News li.PageSubTitle,
+div#Div4 ul#Announcements li.PageSubTitle
+{
+	width: 96%;
+	text-align: left;
+	background-color: #ddd;
+	background-image: none;
+	margin: 0px 4px 0px 1px;
+	font-size: 100%;
+	text-transform: capitalize;
+}
+
+
+/************/
+div#ProductWiseSalesChart
+{
+	width: 400px;
+	height: auto;
+	border: solid 1px red;
+}
+ul.ChartDisplay
+{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+ul.ChartDisplay li
+{
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+ul.ChartDisplay li.Heading
+{
+	display: block;
+	float: left;
+	width: 100%;
+	font-weight: bold;
+	height: 30px;
+	margin-top: 20px;
+}
+
+.ChartHeading
+{
+	margin: 0px 10%;
+	display: block;
+	float: left;
+	color: #008080;
+	height: 10px;
+	width: 80%;
+	padding: 5px 5px 5px 5px;
+	
+}
+
+.BtnLogin
+{
+	margin-top: 8px;
+	border: none;
+	/*background: url('../../../Images/btn_Login.png') no-repeat left top;*/
+	width: 66px;
+	cursor: 'hand';
+}
+
+/************************/
+
+div#ChartArea
+{
+	width: 730px;
+	height: 400px;
+}
+
+
+div#ChartArea ul
+{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+
+div#ChartArea ul li.DisplayChart
+{
+	margin: 0px 0px 0px 10px;
+	padding: 0px;
+	display: block;
+	float: left;
+	width: 86%;
+}
+
+div#ChartArea ul li.DisplayGrid
+{
+	margin: 50px 0px 0px 0px;
+	padding: 0px;
+	display: block;
+	float: left;
+	width: 10%;
+	text-align: center;
+}
+
+.MaturityAmount
+{
+	text-align: right;
+	padding-right: 3px;
+}
+
+
+div#ChartArea ul li.DisplayChart img
+{
+	border: solid 1px #ffffff;
+}
+
+
+div#PageContent_RightColumn ul#MicroChart
+{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+
+div#PageContent_RightColumn ul#MicroChart li
+{
+	display: block;
+	float: left;
+	text-align: center;
+	width: 100%;
+	font-weight: bold;
+}

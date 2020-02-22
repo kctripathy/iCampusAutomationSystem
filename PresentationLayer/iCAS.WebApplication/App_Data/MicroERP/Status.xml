@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<TOPSTATUS>
+	<STATUS>
+		<CODE>PRO</CODE>
+		<NAME>Processing</NAME>
+		<ORDER>2</ORDER>
+	</STATUS>
+	<STATUS>
+		<CODE>ACT</CODE>
+		<NAME>Active</NAME>
+		<ORDER>3</ORDER>
+	</STATUS>
+	<STATUS>
+		<CODE>PEN</CODE>
+		<NAME>Pending</NAME>
+		<ORDER>1</ORDER>
+	</STATUS>
+	<STATUS>
+		<CODE>SUS</CODE>
+		<NAME>Suspended</NAME>
+		<ORDER>4</ORDER>
+	</STATUS>
+	<STATUS>
+		<CODE>REJ</CODE>
+		<NAME>Rejected</NAME>
+		<ORDER>5</ORDER>
+	</STATUS>
+	<STATUS>
+		<CODE>NO</CODE>
+		<NAME>Yes</NAME>
+		<ORDER>5</ORDER>
+	</STATUS>
+	<STATUS>
+		<CODE>YES</CODE>
+		<NAME>No</NAME>
+		<ORDER>5</ORDER>
+	</STATUS>
+</TOPSTATUS>

@@ -1,0 +1,26 @@
+﻿ul.FeeSet
+{
+    display: block;
+    float: left;
+    width: 100%;
+    /*border: solid 1px blue;*/
+    margin: 0;
+    padding: 0;
+}
+
+#WebBody #PageContent_RightColumn ul.FeeSet li.FormLabel
+{
+    display: block;
+    float: left;
+    width: 40%;
+    text-align: right;
+    padding-right: 1%;
+     /*background-color: green;*/
+}
+#WebBody #PageContent_RightColumn ul.FeeSet li.FormValue
+{
+    display: block;
+    float: left;
+    width: 58%;
+    /*background-color: red;*/
+}

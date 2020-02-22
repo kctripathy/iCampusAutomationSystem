@@ -1,0 +1,85 @@
+﻿ul#CommonKeys
+{
+	margin: 5px;
+	padding: 5px;
+	list-style-type: none;
+	height: 30px;
+}
+
+ul#CommonKeys li
+{
+	display: block;
+	float: left;
+	width: 24%;
+}
+
+.SettingKeyColumn
+{
+	width: 30%;
+}
+
+.SettingValueColumn
+{
+	width: 68%;
+	background-color: #eee;
+	padding-right: 10px;
+}
+
+.SettingValueColumn td
+{
+	background-color: #fff; 
+}
+
+.SettingValueColumn div
+{
+	width: 99%;
+	margin-bottom: 2px;
+}
+
+ul#CommonKeys li#Label
+{
+	width: 28%;
+	text-align: right;
+}
+ul#CommonKeys li#KeyType
+{
+	width: 38%;
+}
+ul#CommonKeys li#KeyValue
+{
+	width: 30%;
+}
+ul#CommonKeys li#KeyCommand
+{
+	width: 4%;
+}
+
+ul#CommonKeys li#KeyType select
+{
+	width: 98%;
+}
+
+ul#CommonKeys li#KeyValue input
+{
+	width: 98%;
+}
+
+.ItemStyleCssClass
+{
+	padding: 2px;
+	width: auto;
+}
+
+.EditLinkItemTab
+{
+	width: 20px;
+}
+.DeleteLinkItemTab
+{
+	width: 20px;
+}
+
+html body form#formMicro div div#WebContent div#WebBody div#PageContent_RightColumn div#ContentPlaceHolderMicroERP_updatePanelUserCommonKeys div div#ContentPlaceHolderMicroERP_tab_UserSettings.ajax__tab_xp div#ContentPlaceHolderMicroERP_tab_UserSettings_body.ajax__tab_body div#ContentPlaceHolderMicroERP_tab_UserSettings_tabPanel_1.ajax__tab_panel div table#ContentPlaceHolderMicroERP_gview_CommonKeys tbody tr td.SettingValueColumn div table#ContentPlaceHolderMicroERP_gview_CommonKeys_gview_CommonKeyValues_0 tbody tr td.ItemStyle
+{
+	width: 100%;
+}

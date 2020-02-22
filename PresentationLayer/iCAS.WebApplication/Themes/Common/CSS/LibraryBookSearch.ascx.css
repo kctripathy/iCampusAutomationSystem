@@ -1,0 +1,101 @@
+﻿ul#UpdateProgressEstablishment
+{
+	border: solid 1px red;
+	position:absolute;
+	margin:0;
+	padding: 10px;
+	top:0;
+	left: 0;
+	height: 20px;
+	width:100%;
+	background-color: lightcyan;
+}
+
+#LibraryBookSearchUL
+{
+	display: block;
+	float: left;
+	list-style-type: none;
+	width: 99%;
+	margin: 0px 0px 0px 12px;
+	padding: 0;
+}
+
+	#LibraryBookSearchUL li
+	{
+		display: block;
+		float: left;
+		width: 100%;
+		margin: 0px;
+	}
+
+.GridViewBookSearch
+{
+	width: 100%;
+	background-color: white;
+}
+
+#ctrl_LibraryBookSearch_gview_Books > tbody > tr > th
+{
+	font-weight: bold;
+	background-color: lightcyan;
+	font-size: 1em;
+	padding: 0 0 0 5px;
+}
+
+.Author
+{
+	font-size: 0.9em;
+	padding-left: 4px;
+}
+
+
+.AccessionNo, .IsBookIssued
+{
+	text-align: center;
+}
+
+.GridViewBookSearchAlternatRowStyle
+{
+	background-color: aliceblue;
+}
+
+.GridViewBookSearchRowStyle
+{
+	background-color: whitesmoke;
+}
+
+#ctrl_LibraryBookSearch_txt_SearchText,
+.WatermarkCss
+{
+	color: rgb(88, 84, 84);
+	padding: 4px;
+}
+
+.RequiredField
+{
+	color: red;
+}
+
+.TitleClass
+{
+	padding-left: 4px;
+}
+
+	.TitleClass a
+	{
+		text-decoration: none;
+		color: #003399;
+		font-size: 0.8em;
+		margin: 4px 0px;
+		padding: 4px 0px;
+	}
+
+		.TitleClass a:hover
+		{
+			text-decoration: none;
+			color: rgb(255, 0, 0);
+			font-size: 0.8em;
+			margin: 4px 0px;
+			padding: 4px 0px;
+		}

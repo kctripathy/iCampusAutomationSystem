@@ -1,0 +1,22 @@
+﻿#ContentPlaceHolderMicroERP_updatepanel_StudentAttendance ul#Button
+{
+	display: block;
+	float: left;
+	width: 100%;
+}
+#ContentPlaceHolderMicroERP_updatepanel_StudentAttendance ul
+{
+	display: block;
+	float: left;
+	width: 100%;
+	overflow: hidden;
+}
+#WebBody #PageContent_RightColumn ul.StudentAttnFullWidth
+{
+	display: block;
+	float: left;
+	margin: 2px 0;
+	padding: 0;
+	width: 100%;
+	color: #000080;
+}

@@ -1,0 +1,395 @@
+﻿.
+{
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	float: left;
+	width: 100%;
+	height: inherit;
+	border: double 3px #C0C0C0;
+	background-color: #808080;
+}
+ 
+
+.accordionHeader
+{
+	color: white;
+	padding: 5px;
+	margin-top: 2px;
+	cursor: pointer;
+    font-weight: bold;
+    background: #1B45F8 url(/Themes/Default/Images/bg_PageTitle.gif) repeat-x;
+    color: #191970;
+    
+}
+
+.accordionHeader a
+{
+	color: #8B4513;
+	background: none;
+	text-decoration: none;
+}
+
+.accordionHeader a:hover
+{
+	background: none;
+	text-decoration: underline;
+}
+
+.accordionHeaderSelected
+{
+	border: 2px solid #A9A9A9;
+	color: navy;
+	 
+	padding: 5px 10px;
+	margin-top: 2px;
+	cursor: pointer;
+	background-image: url(/Themes/Default/Images/bg-menu-main.png);
+	background-repeat: repeat-x;
+	background-position: top left;
+	background-color: #E2F0FF;
+	font-size: 110%;
+    font-weight: bold;
+}
+
+.accordionHeaderSelected a
+{
+	color: #DCDCDC;
+	background: none;
+	text-decoration: none;
+}
+
+.accordionHeaderSelected a:hover
+{
+	background: none;
+	text-decoration: underline;
+}
+
+.accordionContent
+{
+	background-color: #CCFFCC;
+	
+	border-top: none;
+	padding: 0px 0px 0px 5px;
+	padding-top: 0px 0px 0px 5px;
+	border-bottom: 2px solid #A9A9A9;
+	border-left: 2px solid #A9A9A9;
+	border-right: 2px solid #A9A9A9;
+}
+
+.accordionContent ul.MenuItems 
+{
+	list-style-type: square;
+	padding: 0px 0px 0px 2px;
+	margin:  0px 0px 0px 10px;
+	list-style-image: url(/Themes/Default/Images/bullet.gif);
+}
+
+.accordionContent ul.MenuItems li.MenuSubHeading
+{
+	list-style-type: none;
+	padding: 0px;
+	margin: 10px 0px 0px -10px;
+	border-bottom: double 3px #c0c0c0;
+	font-weight: bold;
+	color: #F5F5F5;
+	list-style-image: url(../Images/bullet1.gif);
+}
+
+.accordionContent ul.MenuItems li a
+{
+	text-decoration: none;
+}
+
+.accordionContent ul.MenuItems li a:hover
+{
+	text-decoration: none;
+	color: Red;
+}
+
+.accordionContent ul.MenuItems li:hover
+{
+	text-decoration: none;
+	background-image: url(../Images/bg-menu-main.png);
+	background-repeat: repeat-x;
+	
+}
+
+.accordionContent ul.MenuItems li.MenuSubHeading:hover
+{
+	 
+}
+
+.accordionContent
+{
+	background-color: #FFFFFF;
+	margin: 0px;
+	padding: 0px;
+}
+.CheckBox
+{
+    width: 5%;
+}
+
+.PName
+{
+    width: 35%;
+}
+
+.POrg
+{
+    width: 20%;
+}
+
+.TInYear
+{
+    width: 15%;
+}
+
+.EDateFrom
+{
+    width: 18%;
+}
+
+.OfficeName
+{
+    width: 12%;
+}
+
+.BFSID
+{
+    width: 13%;
+}
+
+.BType
+{
+    width: 15%;
+}
+
+.PType
+{
+    width: 20%;
+}
+
+.DFrom
+{
+    width: 12%;
+}
+
+.PTypeDesc
+{
+    width: 30%;
+}
+
+
+/**/
+ul li.SubHeadingOffice
+{
+	background: url("/Themes/Default/Images/BackgroundSubTitle_001.gif") repeat-x scroll 0 0 #E2F0FF;
+    color: #191970;
+    display: block;
+    float: left;
+    font-size: 120%;
+    font-weight: bold;
+    margin: 0;
+    padding: 1%;
+    width: 98%;
+}
+html body form#formMicro div#TheContainer div#WebContent div#WebBody div#PageContent_RightColumn div#ContentPlaceHolderMicroERP_updatePanel_CrmOfficeSettings div. div#ContentPlaceHolderMicroERP_Accordian_ div div#ContentPlaceHolderMicroERP.accordionContent ul li.FormLabel,
+ul li.FormLabel
+{
+	color: #000080;
+    display: block;
+    float: left;
+    margin: 2px;
+    padding: 2px;
+    width: 35%;
+    text-align: right;
+}
+html body form#formMicro div#TheContainer div#WebContent div#WebBody div#PageContent_RightColumn div#ContentPlaceHolderMicroERP_updatePanel_CrmOfficeSettings div. div#ContentPlaceHolderMicroERP_Accordian_ div div#ContentPlaceHolderMicroERP.accordionContent ul li.FormValue,
+ul li.FormValue
+{
+	color: #000080;
+    display: block;
+    float: left;
+    margin: 2px ;
+    padding: 2px;
+    width: 60%;
+}
+html body form#formMicro div#TheContainer div#WebContent div#WebBody div#PageContent_RightColumn div#ContentPlaceHolderMicroERP_updatePanel_CrmOfficeSettings div. div#ContentPlaceHolderMicroERP_Accordian_ div div#ContentPlaceHolderMicroERP.accordionContent ul li.FormValue input
+{
+	border: solid 1px #696969;
+}
+ul li.SubHeadingOfficeSettings
+{
+	background: url("../Images/BackgroundSubTitle_001.gif") repeat-x scroll 0 0 #E2F0FF;
+    color: #191970;
+    display: block;
+    float: left;
+    font-size: 120%;
+    font-weight: bold;
+    margin: 5px 0;
+    padding: 5px 0 2px 2px;
+    width: 99%;
+}
+
+ul li.FullWidthRow
+{
+	display: block;
+	float: left;
+	width: 99%;
+	clear: right;
+}
+
+ul li.FormButtons
+{
+	display: block;
+	float: left;
+	width: 7%;
+	padding: 10px 0px 10px 86%; 
+}
+
+ul li.FullWidthRow div table
+{
+	width: 100%;
+	clear: left;
+}
+
+
+ul li.FullWidthRow div table th
+{
+	background-image: url(/Themes/Default/Images/gvHeaderBackground.gif);
+	background-color: #E2F0FF;
+	border: solid 1px #c1c1c1;
+	padding: 2px 0px;
+}	
+
+ul li.FullWidthRow div table td
+{
+	border: solid 1px #c1c1c1;
+	padding: 0px 2px;
+}
+
+.AlternatingRowStyle
+{
+	background-color: #FFFFFF;
+}
+
+
+.RowStyle
+{
+	background-color: #FFFFCC;
+}
+
+
+.RowHead
+{
+	display: block;
+	float: left;
+	height: 14px;
+	padding: 5px;
+	background-color: #DBDBDB;
+	border-bottom: solid 1px #6E6D6D;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	padding: 0px 5px;
+
+}
+
+.accordionContent div ol
+{
+	list-style-type: none;
+	margin: 1%;
+	padding: 1%;
+	
+	background-color: #FFFFFF;
+	width: 96%;
+}
+.accordionContent div ol li
+{
+	margin: 2px 0px;
+	padding: 0px;
+	width: 99%;
+}
+
+.accordionContent div ol li.NewsHead
+{
+	color: darkred;
+	margin-top: 10px;
+}
+
+.accordionContent div ol li.RowButton
+{
+	text-align: right;
+	margin: 3px 0px;
+	font-weight: bold;
+}
+
+
+.accordionContent div ol li.RowButtonSelectedUsers
+{
+	text-align: right;
+	margin: 3px 0px;
+	font-weight: bold;
+	width: 99%;
+	display: block;
+	float: left;
+	padding: 5px 0px;
+}
+
+.accordionContent div ol li.RowHead
+{
+	display: block;
+	float: left;
+	height: 14px;
+	background-color: #DBDBDB;
+	border-bottom: solid 1px #6E6D6D;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-top: 5px;
+	margin-bottom: 0px;
+	padding: 2px 0px 0px 2px;
+
+}
+ 
+.accordionContent div ol li.RowBody
+{
+	display: block;
+	float: left;
+	width: 98%;
+	margin: 15px 5px 0px 5px;
+	height: 175px;
+	overflow: visible;
+}
+
+.accordionContent div ol li.RowBody1
+{
+	display: block;
+	float: left;
+	width: 35%;
+	margin: 0px 5px;
+	height: 175px;
+	overflow: scroll;
+}
+
+.accordionContent div ol li.RowBody2
+{
+	display: block;
+	float: left;
+	width: 62%;
+	min-height: 150px;
+	margin: 10px 5px;
+}
+ 
+ .accordionContent div ol li.RowBody2 input
+ {
+ 	width: 100%;
+ 	height: 100%;
+ }
+ 
+ .accordionContent div ol li.RowBody1 label
+ {
+ 	padding-left: 4px;
+ }

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MicroNews>
+	<Announcements>
+		<Announcement id="0001" date="20-July-2012">
+			<Title>Foundation day celebration to be held at BBSR</Title>
+			<Body>This is the sample text to be written for announcement</Body>
+			<By>Mr. FirstName Last Name, Designation</By>
+		</Announcement>
+	</Announcements>
+	<News id="0001" date="1/1/2012">
+		<Head>This is the news head</Head>
+		<Body></Body>
+		<Reporter></Reporter>
+	</News>
+</MicroNews>

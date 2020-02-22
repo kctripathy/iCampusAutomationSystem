@@ -1,0 +1,138 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="ICAS.master.cs" Inherits="Micro.WebApplication.App_MasterPages.ICAS" %>
+
+<%@ Register Src="../App_UserControls/ICAS/UC_StudentZone.ascx" TagName="UC_StudentZone" TagPrefix="suvram" %>
+<%@ Register Src="../App_UserControls/ICAS/UC_StaffZone.ascx" TagName="UC_StaffZone" TagPrefix="suvram" %>
+<%@ Register Src="../App_UserControls/ICAS/UC_LinksZone.ascx" TagName="UC_LinksZone" TagPrefix="suvram" %>
+<%@ Register Src="../App_UserControls/Library/UC_LibraryBookSearch.ascx" TagName="UC_LibraryBookSearch" TagPrefix="suvram" %>
+<%@ Register Src="../App_UserControls/ICAS/UC_EstablishmentZone.ascx" TagName="UC_EstablishmentZone" TagPrefix="suvram" %>
+<%@ Register Src="../App_UserControls/ICAS/PrincipalMessage.ascx" TagName="PrincipalMessage" TagPrefix="suvram" %>
+<%@ Register Src="../App_UserControls/Menu/WebUserControlMenu.ascx" TagName="WebUserControlMenu" TagPrefix="suvram" %>
+
+<%@ Register Src="../App_UserControls/ICAS/UC_WebFooter.ascx" TagName="UC_WebFooter" TagPrefix="suvram" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head_ICAS" runat="server" enableviewstate="false">
+	<title>TSD Collge - BD Pur / Tentulia Sasan Debasthan College, BIJAYA DHANURJAYA PUR (SASAN), GANJAM, ODISHA, 761120</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="ROBOTS" content="INDEX, FOLLOW" />
+	<meta name="description" content="TSD Collge, Best Academic College of Odisha, Tentulia Sasan Debasthan College or TSD College or TSDC , B.D.Pur (Sasan) / BIJAYA DHANURJAYA PUR (SASAN), JAGANNATH PRASAD BLOCK, DIST: GANJAM, STATE: ODISHA (INDIA) PIN - 761120 " />
+	<meta name="keywords" content="TSD Collge, Best Academic College of Odisha, undergraduate, graduate, +2, +3, Science, Arts, Commerce, degree colleges, Established 1981, Kishor Tripathy" />
+	<meta name="author" content="Kishor Tripathy, Kanhu Charana Panda, Balabhadra Kar, Deepak Biswal, Pranatosh Roy, Debashish, Sudhir Pattnaik & Team" />
+	<meta name="google-site-verification" content="RQ7kdiFMBg72jvntlec0f0pFHwPyaLw3XI5ZOlOxeNE" />
+
+	<link href="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Content/bootstrap.css"%>" rel="stylesheet" />
+	<link href="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Content/font-awesome.css"%>" rel="stylesheet" />
+	<link href="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"css/menu.css"%>" rel="stylesheet" />
+	<link href="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Content/slider.css"%>" rel="stylesheet" />
+
+	<style type="text/css" media="screen">
+		<!--
+		@import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Themes/Common/CSS/MainStylesHOME.css"%>';
+		@import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Themes/" + this.Page.Theme + @"/CSS/CommonStyles.css"%>';
+		@import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Themes/Default/CSS/Responsive.css"%>';
+		/*@import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Themes/" + this.Page.Theme + @"/CSS/Common_" +  Micro.Commons.Helpers.GetCompanyAlias() + ".css"%>';*/
+		@import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Themes/" + this.Page.Theme + @"/CSS/Pages/" + Micro.Commons.Helpers.GetFullPathPageName(this.Page) + ".css"%>';
+		-->
+	</style>
+
+	<script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Scripts/modernizr-2.6.2.js"%>"></script>
+	<script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Scripts/respond.js"%>"></script>
+	<script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Scripts/jquery-3.1.1.js"%>"></script>
+	<script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Scripts/bootstrap.js"%>"></script>
+	<script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Themes/Common/Javascript/CommonJavaScripts.js"%>"></script>
+
+
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
+
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-59389642-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+	<style type="text/css">
+		h1.PageScrolling
+		{
+			color: aliceblue;
+			font-size: 20px;
+			font-weight: bold;
+			margin: 0;
+			padding: 5px 0px;
+			margin-top: -9px;
+		}
+	</style>
+</head>
+<body>
+
+	<form id="formICAS" runat="server">
+		<suvram:WebUserControlMenu ID="WebUserControlMenu1" runat="server" />
+		<asp:ScriptManager ID="ScriptManagerICAS" runat="server" />
+		<div id="TheContainerICAS" class="container body-content">
+			<div id="WebContentICAS">
+				<div id="WebHead">
+					<asp:Literal runat="server" ID="lit_Welcome"></asp:Literal>
+					<%--<marquee><h1 class="PageScrolling">* HAPPY NEW YEAR - 2018 * Wishing you and your family members a very 'HAPPY NEW YEAR - 2018' *  ALL THE BEST * </h1></marquee>--%>
+				</div>
+
+				<div id="WebBodyICAS">
+					<div id="LeftSide">
+						<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+					</div>
+					<div id="RightSide">
+						&nbsp;        
+					</div>
+				</div>
+				<div class="row" id="WebBodyContentICAS">
+					<div class="col-md-6">
+						<p>
+							TSDC is a 'NAAC' accredidated Grade 'B' college, established in the year 1981, affiliated to CHSE Odisha and Berhampur University. 
+						</p>
+						<p>
+							The main function or strategic goal of the college is to "Promote discipline, healthy outlook and positive attitudes to contribute for national integration".							 
+						</p>
+						<p>
+							To promote quality academic in the locality with the assistance of the NAAC, UGC, Govt. of Odisha and <a href="history">Learn more</a>
+						</p>
+
+					</div>
+					<div class="col-md-6">
+						<suvram:PrincipalMessage ID="ctrl_PrincipalMessage1" runat="server" />
+					</div>
+				</div>
+
+				<div id="WebZones" class="row">
+					<div id="Div_Estb" class="col-lg-12 col-md-12 col-xs-12">
+						<div id="Div_ColoumnTwo_Establishments" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<suvram:UC_EstablishmentZone ID="ctrl_EstablishmentZone1" runat="server" />
+						</div>
+						<div id="Div_ColoumnOne_Library" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+							<suvram:UC_LibraryBookSearch ID="ctrl_LibraryBookSearch" runat="server" />
+						</div>
+					</div>
+					<div id="Div_Student" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<suvram:UC_StudentZone ID="ctrl_StudentZone" runat="server" />
+					</div>
+					<div id="Div_Staff" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+						<suvram:UC_StaffZone ID="ctrl_StaffZone1" runat="server" />
+					</div>
+
+				</div>
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<suvram:UC_LinksZone ID="UC_LinksZone1" runat="server" />
+				</div>
+
+			</div>
+
+		</div>
+		<suvram:UC_WebFooter ID="ctrl_WebFooter" runat="server" />
+	</form>
+</body>
+</html>

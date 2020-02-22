@@ -1,0 +1,20 @@
+﻿#WebHeader
+{
+	color: #fff;
+	border-bottom: 1px solid #ccc;
+	background: #003366 url(../../Common/Images/MHPL/micro-hotel-header.jpg) no-repeat left top;
+	border-top: 1px solid #000080;
+	border-left: 1px solid #000080;
+	border-right: 1px solid #000080;
+}
+
+html body form#formMicro div#TheContainer div#WebContent div#WebHeader ul li#OfficeInfo,
+html body form#formMicro div#TheContainer div#WebContent div#WebHeader ul li#UserInfo ul#CurrentUser li.UserValue
+{
+	color: #000080;
+}
+
+html body form#formMicro div#TheContainer div#WebContent div#WebHeader ul li#UserInfo ul#CurrentUser li.UserValue
+{
+	color: #ffffff;
+}

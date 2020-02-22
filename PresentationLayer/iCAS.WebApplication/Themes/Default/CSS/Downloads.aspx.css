@@ -1,0 +1,59 @@
+﻿ul.downloadableUL
+{
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    list-style-type: none;
+    border: solid 1px white;
+}
+
+    ul.downloadableUL li
+    {
+        display: block;
+        float: left;
+        margin: 0;
+        padding: 0px 5px;
+        width: 48%;
+        border: solid 1px white;
+    }
+
+        ul.downloadableUL li.PageSubtitle
+        {
+            display: block;
+            float: left;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            border-bottom: solid 1px skyblue;
+            font-weight: 400;
+        }
+
+
+    ul.downloadableUL > li:nth-child(even)
+    {
+        width: 50%;
+        border-left: solid 1px navy;
+        padding-left: 10px;
+    }
+
+    ul.downloadableUL li a
+    {
+        display: block;
+        float: right;
+        margin: 0;
+        padding: 0;
+        width: 31%;
+        background-color: skyblue;
+    }
+
+        ul.downloadableUL li a:hover
+        {
+            display: block;
+            float: right;
+            margin: 0;
+            padding: 0;
+            width: 31%;
+            background-color: red;
+        }

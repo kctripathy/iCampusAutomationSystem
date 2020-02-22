@@ -1,0 +1,39 @@
+﻿body {
+}
+
+.CheckBox
+{
+    width: 3%
+}
+
+.CName
+{
+    width: 37%;
+}
+
+.CAName
+{
+    width: 10%;
+}
+
+.CCode
+{
+    width: 10%;
+}
+
+.CMName
+{
+    width: 17%;
+}
+
+.EDate
+{
+    width: 15%;
+}
+
+.IsActive
+{
+    width: 8%;
+}
+
+

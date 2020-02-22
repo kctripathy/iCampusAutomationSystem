@@ -1,0 +1,403 @@
+﻿
+#WebBody #ReportContent div#ReportButtonsTop
+{
+	width: 74%;
+	margin-top: --103px;
+	position: absolute;
+	float: right;
+	text-align: right;
+	padding-top: 2px;
+}
+#WebBody #ReportContent div#ReportButtonsTop input
+{
+	padding: 2px 5px;
+	line-height: 17px;
+	background-image: url(/Themes/Default/Images/bg_Button_Default.gif);
+	background-repeat: repeat-x;
+	color: #080808;
+}
+
+/*----------------------------------------------------------------*/
+/* CSS FOR BODY: REPORT CONTENT                                  */
+/*----------------------------------------------------------------*/
+#WebBody #ReportContent
+{
+	display: block;
+	float: left;
+	width: 100%;
+	margin: 0px;
+	height: inherit;
+	overflow: hidden;
+}
+
+ul#MicroReports
+{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	height: 115px;
+	list-style-type: none;
+	display: block;
+	float: left;
+	border-bottom: solid 1px #ddd;
+	font-family: Trebuchet MS;
+	font-size: 10px;
+}
+
+ul#MicroReports li
+{
+	display: block;
+	float: left;
+	margin: 0px 4px 0px 1px;
+	padding: 0px;
+}
+
+ul#MicroReports li#ReportHeading
+{
+	display: block;
+	float: left;
+	padding: 8px 5px;
+	width: 99%;
+	font-size: 120%;
+	color: White;
+	font-weight: bold;
+	background: #B4B4B4 url(/Themes/Default/Images/gvHeaderBackground.gif) repeat left top;
+	background: url('/Themes/Default/Images/head_banner.jpg') repeat-x left bottom;
+	color: #000099;
+	border: solid 1px #000099;
+}
+
+ul#MicroReports li#Criteria
+{
+	width: 100%;
+	border-top: solid 1px #000099;
+	border-left: solid 1px #000099;
+	border-right: solid 1px #000099;
+	height: 64px;
+	color: #fff;
+	background: url('/Themes/Default/Images/head_banner.jpg') repeat-x left bottom;
+}
+
+ul#MicroReports li#Criteria label
+{
+	color: #fff;
+}
+
+
+
+ul#MicroReports li#Criteria ul
+{
+	margin: 5px;
+	padding: 0px;
+}
+
+ul#MicroReports li#Criteria ul#OfficeList
+{
+	width: auto;
+	margin: 5px;
+	padding: 0px;
+	height: 20px;
+}
+/*
+ul#MicroReports li#Criteria ul#OfficeList li
+{
+	display: block;
+	float: left;
+	width: 50%;
+}
+*/
+
+
+ul#MicroReports li#Criteria ul#OfficeList li#ReportParameter
+{
+	display: block;
+	float: left;
+	width: 98%;
+	text-align: left;
+	padding: 5px;
+	border: double 3px #A9A9A9;
+	background-color: #fff;
+	height: auto;
+	margin-top: 15px;
+	color: #000066;
+	background-color: #ddd;
+	background: url('/Themes/Default/Images/BackgroundSubTitle_001.gif') repeat-x left top; /*HeaderBlue-Volume*/
+	height: 20px;
+}
+ul#MicroReports li#Criteria ul#OfficeList li#ReportParameter label
+{
+	color: #000066;
+}
+ul#MicroReports li#Criteria ul#OfficeList li#ReportButton
+{
+	display: block;
+	float: left;
+	width: 25%;
+	text-align: right;
+	padding-right: 1px;
+}
+
+
+ul#MicroReports li#Criteria ul#OfficeList li#ReportButton input
+{
+	margin-top: 10px;
+	background-image: url(/Themes/Default/Images/bg-menu-main.png);
+	background-repeat: repeat-x;
+	padding: 4px;
+	height: 28px;
+}
+
+
+ul#UCReportParams
+{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	list-style-type: none;
+	height: auto;
+}
+
+
+
+
+ul#UCReportParams li.ReportFormLabelLoanNumber
+{
+	display: block;
+	float: left;
+	width: 25%;
+	margin: 1px 0px;
+	clear: left;
+}
+
+
+ul#ReportPreview
+{
+	margin: 0px 0px 0px 0px;
+	padding: 0px;
+	width: 100%;
+	display: block;
+	float: left;
+	overflow: visible;
+}
+
+.ReportViewerClass
+{
+	width: 100%;
+}
+
+html body form#form2 div div#WebContent div#WebBody div#ReportContent div#cpMicroERPReports_updatePanel_Customers ul#MicroReports li#Criteria ul#OfficeList li.FormButton_Top
+{
+	display: block;
+	float: left;
+	margin-left: 74%;
+	margin-top: -64px;
+	padding-left: 6px;
+	text-align: right;
+	width: 25%;
+}
+
+
+.CenterDiv1
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 30em;
+	height: 18em;
+	margin-top: -9em; /*set to a negative number 1/2 of your height*/
+	margin-left: -15em; /*set to a negative number 1/2 of your width*/
+	text-decoration: blink;
+}
+
+.CenterDiv2
+{
+	position: absolute;
+	top: 52%;
+	left: 50%;
+	width: 30em;
+	height: 18em;
+	margin-top: -9em; /*set to a negative number 1/2 of your height*/
+	margin-left: -15em; /*set to a negative number 1/2 of your width*/
+	text-decoration: blink;
+}
+
+
+.ReportFormLabel
+{
+	display: block;
+	float: left;
+	width: auto;
+	margin: 1px 0px;
+}
+.ReportFormValue
+{
+	display: block;
+	float: left;
+	width: 22%;
+	margin: 1px 5px 1px 0px;
+}
+
+
+
+
+
+/*****************************************************/
+div#BoxReportContainer
+{
+	margin: 0px;
+	padding: 0px;
+	width: auto;
+	height: 880px;
+	border: solid 1px #C0C0C0;
+}
+
+div#BoxReportContainer div#BoxReportNavigation
+{
+	margin: 0px;
+	padding: 5px;
+	display: block;
+	float: left;
+	width: 220px;
+	height: inherit;
+	border-right: solid 1px #C0C0C0;
+	overflow: auto;
+}
+
+div#BoxReportContainer div#BoxReportDisplay
+{
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	float: left;
+	width: 737px;
+	height: inherit;
+}
+
+div#BoxReportContainer div#BoxReportDisplay div#BoxParameters
+{
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	float: left;
+	width: 100%;
+	height: 30%;
+	border-bottom: solid 1px #C0C0C0;
+	overflow: auto;
+}
+
+div#BoxReportContainer div#BoxReportDisplay div#BoxPreview
+{
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	float: left;
+	width: 100%;
+	height: 70%;
+	overflow: auto;
+}
+/************************************************************/
+
+div#BoxReportContainer div#BoxReportDisplay div#BoxParameters ul#Parameter
+{
+	margin: 5px;
+	padding: 0px;
+	width: auto; /* 	height: 200px; 	background-color: #eeeeee; 	border: double 3px #696969; 	*/
+}
+
+
+div#BoxReportContainer div#BoxReportDisplay div#BoxParameters ul#Parameter li#PreviewNewWindow
+{
+	height: auto;
+	display: block;
+	float: left;
+	width: 68%;
+	text-align: right;
+	padding: 10px;
+}
+
+div#BoxReportContainer div#BoxReportDisplay div#BoxParameters ul#Parameter li.Summary
+{
+	height: auto;
+	display: block;
+	float: left;
+	width: 98%;
+	text-align: left;
+	padding: 10px;
+}
+
+div#BoxReportContainer div#BoxReportDisplay div#BoxParameters ul#Parameter li#PreviewNewWindow input
+{
+	padding-top: 10px;
+}
+
+
+div#BoxReportContainer div#BoxReportDisplay div#BoxParameters ul#Parameter li#PreviewBtn
+{
+	height: auto;
+	display: block;
+	float: left;
+	width: 12%;
+	text-align: center;
+}
+
+div#BoxReportContainer div#BoxReportDisplay div#BoxParameters ul#Parameter li#ResetBtn
+{
+	height: auto;
+	display: block;
+	float: left;
+	width: 10%;
+	text-align: center;
+}
+
+div#BoxReportContainer div#BoxReportDisplay div#BoxParameters ul#Parameter li#ResetBtn input, div#BoxReportContainer div#BoxReportDisplay div#BoxParameters ul#Parameter li#PreviewBtn input
+{
+	height: 30px;
+	padding: 3px;
+	color: #4b6c9e;
+	font-weight: bold;
+}
+
+
+ul.ReportParameterView
+{
+	/*border: solid 1px red;*/
+	width: 100%;
+	height: inherit;
+}
+
+
+
+/***********************************/
+.ReportViewerClass
+{
+	border: solid 1px #FFFFCC;
+}
+
+.CalendarImage
+{
+	border: solid 1px #99CCFF;
+}
+
+div#BoxReportNavigation ul.MenuItems
+{
+	list-style-type: none;
+}
+
+div#BoxReportNavigation ul.MenuItems li
+{
+	border-bottom: solid 1px #c0c0c0;
+	padding: 4px;
+	background-color: #99CCFF;
+}
+
+div#BoxReportNavigation ul.MenuItems li a
+{
+	text-decoration: none;
+	font-family: Tahoma, Arial, sans-serif;
+	font-size: 101%;
+}
+
+div#BoxReportNavigation ul.MenuItems li a:hover
+{
+	text-decoration: underline;
+}

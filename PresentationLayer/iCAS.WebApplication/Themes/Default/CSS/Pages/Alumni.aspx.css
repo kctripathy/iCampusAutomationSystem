@@ -1,0 +1,154 @@
+﻿#WebBody #PageContent_RightColumn ul li.FormValue select, #WebBody #PageContent_RightColumn ul li.FormValue input.TextBoxWatermarkExtender
+{
+    font-size: 1em;
+    color: #959494;
+    padding-left: 4PX;
+}
+
+#WebBody #PageContent_RightColumn ul li.FormLabel
+{
+    background-color: #F4F4F2;
+    border-bottom: solid 1px #C4ECF9;
+    width: 43%;
+    text-align: right;
+    padding-right: 2%;
+    font-family: Lato, 'Trebuchet MS';
+    font-size: 11px;
+    margin: 2px 0px;
+    padding: 2px 0px;
+}
+
+#WebBody #PageContent_RightColumn ul li.FormValue
+{
+    background-color: #F6FCFE;
+    width: 54%;
+    margin: 2px 0px;
+    padding: 2px 0px;
+    /*background-color: darkblue;*/
+}
+
+    /*.FormValueFullWidth input,
+FormValueFullWidth select,
+
+.StudentSubjectsFullWidthRow input,
+.StudentSubjectsFullWidthRow select,*/
+
+    #WebBody #PageContent_RightColumn ul li.FormValue select,
+     #WebBody #PageContent_RightColumn ul li.FormValue input
+    {
+        min-height: 17px;
+        border: solid 1px #808080;
+        font-size: 1.2em;
+        font-family: inherit;
+        color: navy;
+        /*text-transform: uppercase;*/
+    }
+     #WebBody #PageContent_RightColumn ul li.FormValue select option 
+    {
+        min-height: 17px;
+        border-bottom: dotted 1px #808080;
+        font-size: 1.1em;
+        font-family: inherit;
+        text-transform: uppercase;
+        color: navy;
+        /*text-transform: uppercase;*/
+    }
+/**/
+
+#WebBody #PageContent_RightColumn ul li.PageSubTitle span,
+#WebBody #PageContent_RightColumn ul li.PageSubTitle
+{
+    width: 100%;
+    /*background-color: yellow;*/
+}
+
+    #WebBody #PageContent_RightColumn ul li.PageSubTitle span
+    {
+        border: solid 1px #fff;
+        display: block;
+        float: left;
+        padding: 2px;
+        width: auto;
+    }
+
+
+.FormLabel_EQ
+{
+    background-color: #EFEFEF;
+    padding: 4px 0px 0px 6px;
+}
+
+.FormValue_EQ
+{
+    background-color: #EFEFEF;
+    padding: 0px;
+    /*width: 20%;*/
+}
+
+.FormValue_EQ_Btn
+{
+    width: 100%;
+    display: block;
+    float: left;
+    text-align: right;
+    margin: 2px 0px;
+    padding: 2px 0px;
+}
+
+
+
+#WebBody #PageContent_LeftColumn ul, #WebBody #PageContent_RightColumn ul.Student li#FormButton input
+{
+    padding: 4px;
+    margin: 2px;
+}
+
+#WebBody #PageContent_LeftColumn ul, #WebBody #PageContent_RightColumn ul.Student,
+ul.StudentSubjectsFullWidthRow,
+.FormValueFullWidth ol li
+{
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    /*background-color: yellow;*/
+}
+
+.Student50pc
+{
+    display: block;
+    float: left;
+    width: 48%;
+    margin: 0px;
+    padding: 0px;
+    /*background-color: yellow;*/
+}
+
+ul.StudentSubjectsFullWidthRow li#FormButton
+{
+    display: block;
+    float: left;
+    border: solid 1px #EFEFEF;
+    text-align: right;
+    margin: 4px;
+    padding: 4px;
+    width: 100%;
+    text-align: right;
+}
+
+    ul.StudentSubjectsFullWidthRow li#FormButton input
+    {
+        font-weight: bold;
+        color: navy;
+        margin: 4px;
+        padding: 4px;
+    }
+
+.ValidationColor
+{
+    color: red;
+    padding: 0px 4px;
+}
+
+@import "Students.aspx.css";

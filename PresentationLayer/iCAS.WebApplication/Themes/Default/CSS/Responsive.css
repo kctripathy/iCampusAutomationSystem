@@ -1,0 +1,388 @@
+/* Extra Small Devices (Phone, 480px and up) */
+
+@media only screen and (max-device-width: 480px)
+{
+
+	#TheContainerICAS #WebHead
+	{
+		display: none;
+	}
+
+	#WebBodyICAS #LeftSide ul li.QuoteLegend
+	{
+		font-size: .8em;
+		color: #660;
+		float: right;
+	}
+
+	#HomepageSlideshow
+	{
+		display: block;
+	}
+
+
+
+	#TheContainerICAS #WebContentICAS
+	{
+		width: 100%;
+		margin: -10px auto 0 auto;
+		height: auto;
+		background-color: #FFF;
+		border: double 3px #244D82;
+		background-repeat: no-repeat;
+		overflow: hidden;
+		padding-bottom: 5px;
+		z-index: 8888888;
+	}
+
+		#TheContainerICAS #WebContentICAS #WebBodyICAS
+		{
+			height: 215px;
+			overflow: hidden;
+		}
+
+	#WebFooterAdmin
+	{
+		display: block;
+		margin-bottom: 10px;
+		border-top: solid 1px navy;
+	}
+
+	p
+	{
+		text-align: justify;
+	}
+
+	#QuoteCollegeUl
+	{
+		display: block;
+		float: left;
+		width: 96%;
+		margin: 1% 0;
+		padding: 0;
+		text-align: center;
+	}
+
+	#WebBodyICAS #LeftSide ul li.QuoteLi
+	{
+		display: block;
+		float: left;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		font-family: Georgia,"Times New Roman",serif;
+		font-size: 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	/* CONTENT SLIDER */
+	#content-slider
+	{
+		width: auto;
+		height: 150px;
+		min-height: 150px;
+		margin: 0px auto;
+		padding-right: -15px;
+		padding-left: -15px;
+		margin-top: -10px;
+	}
+
+	/* SLIDER */
+	#slider
+	{
+		background: #000;
+		height: 150px;
+		width: auto;
+		overflow: hidden;
+		position: relative;
+		z-index: 0;
+		border-top: none;
+	}
+
+		#slider li a img
+		{
+			width: 100%;
+			height: 150px;
+			text-align: center;
+			margin-top: 1px;
+		}
+
+
+	/********************************************/
+	/*WEB ZONES*/
+	/********************************************/
+	#TheContainerICAS #WebContentICAS #WebZones
+	{
+		width: 99%;
+		display: block;
+		float: left;
+	}
+
+	#EstblmntZone
+	{
+		display: block;
+		width: 100%;
+		overflow: auto;
+	}
+
+
+	#TheContainerICAS #WebContentICAS #WebZones #Div_Estb
+	{
+		display: block;
+		float: left;
+		width: auto;
+		min-height: 250px;
+		margin: 0px;
+		padding: 0px;
+		background-color: floralwhite;
+		overflow: auto;
+	}
+
+	#TheContainerICAS #WebContentICAS #WebZones #Div_Estb
+	{
+		/*display: block;
+		float: left;
+		width: auto;
+		min-height: 250px;
+		margin: 0px;
+		padding: 0px;
+		background-color: floralwhite;
+		overflow: auto;*/
+		display: block;
+		float: left;
+		width: auto;
+		min-height: 650px;
+		margin: 0px;
+		padding: 0px;
+		background-color: lightcyan;
+		overflow: auto;
+	}
+
+		#TheContainerICAS #WebContentICAS #WebZones #Div_Estb #Div_ColoumnOne_Library
+		{
+			display: block;
+			float: left;
+			min-height: 350px;
+			overflow-y:auto;
+			overflow-x:hidden;
+		}
+
+	#TheContainerICAS #WebContentICAS #WebZones #Div_Student #Div_ColoumnTwo_Establishments
+	{
+		display: block;
+		float: left;
+		border: solid 1px green;
+	}
+
+	#TheContainerICAS #WebContentICAS #WebZones #Div_Staff
+	{
+		display: block;
+		width: 100%;
+		float: left;
+	}
+
+
+
+
+	UCTitleEstb > table,
+	UCTitleEstb > table tbody,
+	UCTitleEstb > table tbody tr
+	{
+		width: 100%;
+	}
+
+		UCTitleEstb > table > tbody > tr > td
+		{
+			display: block;
+			float: left;
+			width: 10%;
+			overflow: auto;
+		}
+
+	#ctrl_EstablishmentZone1_gridViewEstb
+	{
+		display: block;
+		float: left;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		border-top: solid 2px #a1b95d;
+		overflow: auto;
+	}
+
+	.radioboxlist
+	{
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	table.radioboxlist > tbody > tr > td input
+	{
+		display: block;
+		float: left;
+		width: 100%;
+		text-align: center;
+	}
+
+	table.radioboxlist > tbody > tr > td label
+	{
+		font-weight: normal;
+		font-family: Lato, sans-serif;
+		font-size: 9pt;
+		font-weight: bold;
+		text-transform: fullwidth;
+		text-align: center;
+	}
+
+
+	#ctrl_EstablishmentZone1_gridViewEstb > tbody > tr > td
+	{
+		border: none;
+		font-family: Lato, Arial;
+		border-bottom: solid 1px green;
+	}
+
+	.ItemStyle_Icon
+	{
+		display: none;
+	}
+
+
+
+	UCTitleEstb > table,
+	UCTitleEstb > table tbody,
+	UCTitleEstb > table tbody tr
+	{
+		width: 100%;
+	}
+
+		UCTitleEstb > table > tbody > tr > td
+		{
+			display: block;
+			float: left;
+			width: 10%;
+			overflow: auto;
+		}
+
+	#ctrl_EstablishmentZone1_gridViewEstb
+	{
+		display: block;
+		float: left;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+		border-top: solid 2px #a1b95d;
+		overflow: auto;
+	}
+
+	.radioboxlist
+	{
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	table.radioboxlist > tbody > tr > td input
+	{
+		display: block;
+		float: left;
+		width: 100%;
+		text-align: center;
+	}
+
+	table.radioboxlist > tbody > tr > td label
+	{
+		font-weight: normal;
+		font-family: Lato, sans-serif;
+		font-size: 9pt;
+		font-weight: bold;
+		text-transform: fullwidth;
+		text-align: center;
+	}
+
+
+	#ctrl_EstablishmentZone1_gridViewEstb > tbody > tr > td
+	{
+		border: none;
+		font-family: Lato, Arial;
+		border-bottom: solid 1px green;
+	}
+
+	.ItemStyle_Icon
+	{
+		display: none;
+	}
+	/********************************************/
+
+	/********************************************/
+	/*.home-content
+    {
+        padding-top: 0px;
+    }
+
+    .single-portfolio
+    {
+        float: left;
+        width: 100%;
+    }
+
+    #newsletter input[type="email"]
+    {
+        font-size: 16px;
+    }*/
+}
+
+/* Medium devices (desktops, 992px and up) 
+@media (max-width: 992px) {
+    .home-feature {
+        margin-top: 40px;
+    }
+}
+*/
+
+/* Small devices (tablets, 767px and up)
+
+@media (max-width: 767px) {
+    .home-content {
+        text-align: center;
+    }
+    .service-content {
+        margin-left: 0px;
+        margin-top: -17px;
+    }
+    .single-portfolio {
+        float: left;
+        width: 50%;
+    }
+    .portfolio-filter {
+        text-align: center;
+    }
+    .portfolio-filter a {
+        line-height: 45px;
+    }
+    .section-title {
+        text-align: center;
+    }
+    .footer-menu {
+        text-align: center;
+    }
+    .footer-content {
+        text-align: center;
+    }
+}
+*/
+
+
+div.modalPopup {
+    width: 50%;
+    left: 0;
+    margin-left: -102px;
+    top: 10px;
+    margin-top: 46px;
+}

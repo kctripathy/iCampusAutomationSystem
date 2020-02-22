@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<miscellaneous>
+	<employee-of-month>
+		<current-month>
+			<photo>emp-of-month.jpg</photo>
+			<code>EMP0000CODE</code>
+			<name>NAME OF EMP</name>
+			<designation>DESIGNATION</designation>
+			<office>BARAGAON</office>
+			<remark>Some text here for his achievement. This should not so long . please keep it in 150 words</remark>
+		</current-month>
+	</employee-of-month>
+	<notifications>
+		<allUsers>
+		</allUsers>
+	</notifications>
+	<themes>
+		<theme name="Micro_Default"
+				back-color-body="888888"
+				fore-color-text="666666"
+				back-color="888888"
+				title-image="this.jpg"
+				subtitle-image="that.jpg" />
+	</themes>
+	<slides>
+		<slide no="1" isNewFlag="True">
+			<title>This is the title</title>
+			<caption>this is the caption</caption>
+			<image>abce.jpg</image>
+			<link>abce.htm</link>
+			<keywords>this, that, this, that this that</keywords>
+		</slide>
+		<slide no="2" isNewFlag="False">
+			<title>This is the title</title>
+			<caption>this is the caption</caption>
+			<image>abce.jpg</image>
+			<link>abce.htm</link>
+			<keywords>this, that, this, that this that</keywords>
+		</slide>
+	</slides>
+</miscellaneous>

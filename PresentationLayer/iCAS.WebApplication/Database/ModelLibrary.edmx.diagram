@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6ad0827a68bc45cf9dcace5df5e14e8c" Name="Diagram1" ZoomLevel="92">
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.Account_Years" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.Accounts_Master" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.Accounts_Transactions" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Calendar" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_CommonKeys" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Countries" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Districts" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Modules" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Permissions" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Roles" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_States" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_UserRolePermissionExceptions" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Users" Width="1.5" PointX="10.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.HRMS_MST_Employees" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.iCAS_Students" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.Accounts_Balance" Width="1.5" PointX="12.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.Accounts_BookClose" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.Accounts_Group" Width="1.5" PointX="0.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.Accounts_MonthlyProcess" Width="1.5" PointX="2.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.Accounts_NumberControl" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.Accounts_TranVouchers" Width="1.5" PointX="14.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_BankBranches" Width="1.5" PointX="14.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Banks" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Companies" Width="1.5" PointX="16.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Currency" Width="1.5" PointX="16.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Forms" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Guests" Width="1.5" PointX="18.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_MasterCodes" Width="1.5" PointX="8.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_MasterCodes_Officewise" Width="1.5" PointX="18.75" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_MenuItemsWeb" Width="1.5" PointX="20.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_OfficeGroups" Width="1.5" PointX="0.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Offices" Width="1.5" PointX="2.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Reports" Width="1.5" PointX="20.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_RolePermissions_Web" Width="1.5" PointX="20.75" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_SettingKeys" Width="1.5" PointX="20.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Settings" Width="1.5" PointX="14.75" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Settings_Officewise" Width="1.5" PointX="22.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Users_Companywise" Width="1.5" PointX="22.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Users_Incharge" Width="1.5" PointX="22.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Users_Log" Width="1.5" PointX="16.75" PointY="22.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_Users_Officewise" Width="1.5" PointX="22.75" PointY="18.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_UserSettingKeys" Width="1.5" PointX="24.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_UserSettings" Width="1.5" PointX="24.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_MST_WebForms" Width="1.5" PointX="10.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.ADMN_TRN_ErrorLog" Width="1.5" PointX="24.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.BankBranch" Width="1.5" PointX="24.75" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.Bank" Width="1.5" PointX="22.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.HRMS_MST_Departments" Width="1.5" PointX="24.75" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.HRMS_MST_Designations" Width="1.5" PointX="4.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.LIB_Master_Books" Width="1.5" PointX="6.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.LIB_MasterAuthors" Width="1.5" PointX="18.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.LIB_MasterCategories" Width="1.5" PointX="26.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.LIB_MasterPublishers" Width="1.5" PointX="26.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="tsdcollege_iCASLibraryModel.LIB_Transactions" Width="1.5" PointX="26.75" PointY="7.75" IsExpanded="true" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

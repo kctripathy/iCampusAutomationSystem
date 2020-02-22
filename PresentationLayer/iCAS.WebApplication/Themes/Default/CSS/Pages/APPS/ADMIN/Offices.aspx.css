@@ -1,0 +1,92 @@
+﻿.FullWidth
+{
+	display: block;
+	float: left;
+	width: 100%;
+	height: auto;
+}
+
+.FullWidth ul
+{
+	display: block;
+	float: left;
+	width: 49%;
+	height: auto;
+}
+
+html body form#formMicro div div#WebContent div#WebBody div#PageContent_RightColumn div#ContentPlaceHolderMicroERP_updatePanel_Offices div ul#Office li.FullWidth ul li.FormLabel
+{
+	color: Navy;
+    display: block;
+    float: left;
+    margin: 2px 0;
+    padding: 0;
+    width: 35%;
+}
+
+html body form#formMicro div div#WebContent div#WebBody div#PageContent_RightColumn div#ContentPlaceHolderMicroERP_updatePanel_Offices div ul#Office li.FullWidth ul li.FormValue
+{
+	color: Navy;
+    display: block;
+    float: left;
+    margin: 2px 0;
+    padding: 0;
+    width: 63%;
+}
+
+html body form#formMicro div div#WebContent div#WebBody div#PageContent_RightColumn div#ContentPlaceHolderMicroERP_updatePanel_Offices div ul#Office li.FullWidth ul li.FormValue input
+{
+	width: 94%;
+	border-right: solid 1px #ccc;
+	border-bottom: solid 1px #ccc;
+	height: 15px;
+}
+html body form#formMicro div div#WebContent div#WebBody div#PageContent_RightColumn div#ContentPlaceHolderMicroERP_updatePanel_Offices ul#Office li.FullWidth ul li.FormValue select
+{
+	 
+    width: 95%;
+}
+
+html body form#formMicro div div#WebContent div#WebBody div#PageContent_RightColumn div#ContentPlaceHolderMicroERP_updatePanel_Offices div ul#Office li.FullWidth ul li.FormValue input.TextSmallWidth
+{
+	width: 50px;
+	border-right: solid 1px #ccc;
+	border-bottom: solid 1px #ccc;
+	height: 15px;
+}
+ 
+
+ 
+ html body form#formMicro div div#WebContent div#WebBody div#PageContent_RightColumn div#ContentPlaceHolderMicroERP_updatePanel_Offices div ul#Office li.FullWidth ul li.PageSubTitle
+{
+	
+/* background: url("/Themes/Default/Images/bg_SubTitle.gif") repeat scroll left top #AFEEEE;*/
+    color: Navy;
+    display: block;
+    float: left;
+    font-size: 120%;
+    font-weight: bold;
+    margin: 5px 0;
+    padding: 2px;
+    width: 99%;
+}
+
+.CheckBox
+{
+    width: 5%;
+}
+
+.OfficeName
+{
+    width: 32%;
+}
+
+.OfficeTypeDesc
+{
+    width: 25%;
+}
+
+.OfficeCode
+{
+    width: 20%;
+}

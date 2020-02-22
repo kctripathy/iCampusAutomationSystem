@@ -1,0 +1,31 @@
+﻿#ContentPlaceHolderMicroERP_GridView1 tbody tr td ul
+{
+    display: block;
+    float: left;
+    width: 300px;
+     
+}
+
+
+#ContentPlaceHolderMicroERP_GridView1 tbody tr td ul li
+{
+    display: block;
+    float: left;
+    width: 50%;
+    
+}
+
+.QuestionID
+{
+    width: 3%;
+}
+
+.Questions
+{
+    width: 70%;
+}
+
+QuestionOptions
+{
+     width: 27%;
+}

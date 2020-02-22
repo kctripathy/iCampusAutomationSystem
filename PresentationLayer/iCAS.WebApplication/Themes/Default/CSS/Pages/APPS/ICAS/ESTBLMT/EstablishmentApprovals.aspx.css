@@ -1,0 +1,49 @@
+﻿@import "../../../GridView.css";
+
+ul#EstablishmentApprovalsUL
+{
+    display:block;
+    float:left;
+    width: 100%;
+    min-height: 300px;
+    margin:0;
+    padding:0;
+    list-style-type: none;
+}
+
+ul#EstablishmentApprovalsUL li
+{
+    display: block;
+    float: left;
+    width: 99%;
+    padding: 2px;
+}
+
+table.GridView
+{
+    border: solid 1px #ccc;
+    padding: 2px;
+}
+
+    table.GridView th
+    {
+        background-color: #ccc;
+    }
+
+    table.GridView td
+    {
+        padding: 2px;
+    }
+
+#ContentPlaceHolderMicroERP_lbl_TheMessage
+{
+    color: red;
+    font-size: large;
+}
+
+.FormValueFullWidth select,
+.FormValueFullWidth input
+{
+    font-size: 1.2em;
+    padding: 4px;
+}

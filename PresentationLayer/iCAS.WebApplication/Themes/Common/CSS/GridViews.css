@@ -1,0 +1,106 @@
+﻿@import 'GridViewsPager.css';
+/* 
+	-----------------------------
+	CSS common for grid view in all pages
+	-----------------------------
+*/
+
+
+.GridView
+{
+	float: left;
+	width: 100%;
+}
+
+
+
+.HeaderStyle
+{
+	background-image: url(../Images/gvHeaderBackground.gif);
+	background-color: #E2F0FF;
+	padding: 5px 0px;
+	height: 20px;
+	width: 100%;
+}
+
+.HeaderStyle th
+{
+	padding-left: 4px;
+	text-align: left;
+	border: solid 1px #A3C0E8;
+	color: Navy;
+}
+
+.GridView table
+{
+	clear: left;
+	margin-top: 3px;
+	border: Solid 1px #A3C0E8;
+	width: 100%;
+}
+
+
+.GridView table td
+{
+	padding: 4px 0px 2px 4px;
+	color: Navy;
+	border: dotted 1px #E2F0FF;
+	border-bottom: Solid 1px #A3C0E8;
+	border-right: Solid 1px #A3C0E8;
+	height: auto;
+	
+}
+
+
+.GridView table td.EditLinkItem,
+.GridView table td.DeleteLinkItem,
+.GridView table td.ViewLinkItem
+{
+	background-color: #F4F9FF;
+	 width: 20px;
+	 padding: 0x;
+	 margin: 0px;
+}
+
+.GridView table td.EditLinkItemMediumWidth
+{
+	background-color: #F4F9FF;
+	 width: 6%;
+	 padding: 0x;
+	 margin: 0px;
+}
+
+.GridView table td.SettingKeyDesc
+{
+	 width: 54%;
+	 padding: 2x;
+}
+.GridView table td.SettingValue
+{
+	 width: 40%;
+	 padding: 2x;
+}
+
+.GridView table td.SettingValue select
+{
+	 width: 98%;
+	 padding: 2x;
+}
+
+.EditRowStyle
+{
+	background-color: Yellow;
+}
+
+
+
+.EditLink, 
+.DeleteLink, 
+.ViewLink
+{
+	padding: 0px 0px 0px 4px;
+	width: 16px;
+	height: 16px;
+}
+
+

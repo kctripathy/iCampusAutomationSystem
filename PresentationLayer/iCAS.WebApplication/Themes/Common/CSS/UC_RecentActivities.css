@@ -1,0 +1,27 @@
+﻿
+/*body { BACKGROUND: #888 url(boxBG.gif) repeat-x; COLOR: #D4D4D4; FONT-FAMILY: Arial; FONT-SIZE: 11.6px; MARGIN: 0; PADDING: 0; TEXT-ALIGN: center; }*/
+h1 { COLOR: #95AFC3; FONT-SIZE: 11.6px; FONT-WEIGHT: 400; MARGIN: 0;  TOP: 3px; LEFT: 0; WIDTH: 288px; border:  }
+a { COLOR: #999; }
+
+#content { HEIGHT: 175px;OVERFLOW: hidden; POSITION: absolute; display: block; WIDTH: 301px; }
+
+#about { DISPLAY: none; padding: 19px 5px 0 5px; }
+#about a { COLOR: #CF926F; }
+
+#data { COLOR: #ACACAC; LINE-HEIGHT: 1.3em; POSITION: absolute; TOP: 0; LEFT: 0; }
+
+#search input.submit { MARGIN-TOP: 5px; BORDER: 1px solid #333; }
+#search input.text { BACKGROUND: #FFF; BORDER: #333 1px solid; COLOR: #677d96; FONT-SIZE: 14px; HEIGHT: 25px; MARGIN-TOP: 4px; PADDING: 2px 3px 0 7px; WIDTH: 160px; }
+#search hr { MARGIN: 0; PADDING: 0; }
+#search a { PADDING: 0 2px; TEXT-DECORATION: none; }
+#search { COLOR: #666; DISPLAY: none; PADDING-TOP: 19px; TEXT-ALIGN: center; }
+
+.s0 span,#search span:hover { COLOR: #DBD2CD; }
+.s1 span { COLOR: #CF926F; }
+
+#menu { COLOR: #393939; TEXT-ALIGN: right; margin-top: -14px; }
+#menu a { MARGIN: 0 4px; TEXT-DECORATION: none; }
+#menu a:hover { COLOR: #ddd; }
+
+#slider { BACKGROUND: url(slider.gif); POSITION: absolute; LEFT: 185px; TOP: 13px; HEIGHT: 173px; WIDTH: 15px; TEXT-ALIGN: left; CURSOR: hand; CURSOR: pointer; }
+#slide { HEIGHT: 9px; WIDTH: 9px; BACKGROUND: url(slide.gif); MARGIN: 5px 0 0 3px; FONT-SIZE: 1px; }

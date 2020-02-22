@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ReceiptPayment>
+	<COMPANY Id="1" ParentId="1" Name="MLFL" Receipt="112" Payment="99"/>
+	<COMPANY Id="2" ParentId="1" Name="MFSL" Receipt="215" Payment="212"/>
+	<COMPANY Id="3" ParentId="1" Name="MMEL" Receipt="321" Payment="241"/>
+	<COMPANY Id="4" ParentId="1" Name="MFEL" Receipt="435" Payment="319"/>
+	<COMPANY Id="5" ParentId="1" Name="MCPL" Receipt="543" Payment="442"/>
+	<COMPANY Id="6" ParentId="1" Name="MHPL" Receipt="345" Payment="321"/>
+	<COMPANY Id="7" ParentId="1" Name="MXYZ" Receipt="315" Payment="371"/>
+	<COMPANY Id="8" ParentId="1" Name="MABC" Receipt="615" Payment="471"/>
+
+	<UNIT Id="3" ParentId="1" Name="BERHAMPUR" Receipt="12000" Payment="11000"/>
+	<UNIT Id="4" ParentId="1" Name="BHADRAK" Receipt="15000" Payment="19000"/>
+	<UNIT Id="5" ParentId="1" Name="ODAGAON" Receipt="18000" Payment="17000"/>
+	<UNIT Id="6" ParentId="1" Name="CUTTACK" Receipt="11000" Payment="9000"/>
+	<UNIT Id="7" ParentId="1" Name="ROURKELA" Receipt="23000" Payment="21000"/>
+	<UNIT Id="3" ParentId="1" Name="SURAT" Receipt="17000" Payment="11000"/>
+	<UNIT Id="4" ParentId="1" Name="MUMBAI" Receipt="15000" Payment="19000"/>
+	<UNIT Id="5" ParentId="1" Name="NABARANGPUR" Receipt="18000" Payment="17000"/>
+	<UNIT Id="6" ParentId="1" Name="KORAPUT" Receipt="11000" Payment="9000"/>
+	<UNIT Id="7" ParentId="1" Name="RAIPUR" Receipt="23000" Payment="21000"/>
+
+	<!--<COMPANY Id="1" ParentId="1" Name="MLFL (Leasing) " Receipt="112" Payment="99"/>
+	<COMPANY Id="2" ParentId="1" Name="MFSL (Society)" Receipt="215" Payment="212"/>
+	<COMPANY Id="3" ParentId="1" Name="MMEL (MBCTv) " Receipt="321" Payment="241"/>
+	<COMPANY Id="4" ParentId="1" Name="MFEL (Films)" Receipt="435" Payment="319"/>
+	<COMPANY Id="5" ParentId="1" Name="MCPL (Build) " Receipt="543" Payment="442"/>
+	<COMPANY Id="6" ParentId="1" Name="MHPL (Hotel) " Receipt="345" Payment="321"/>
+	<COMPANY Id="7" ParentId="1" Name="MXYZ (ABCDE) " Receipt="315" Payment="371"/>
+	<COMPANY Id="8" ParentId="1" Name="MXYZ (ABCDE) " Receipt="615" Payment="471"/>-->
+
+</ReceiptPayment>

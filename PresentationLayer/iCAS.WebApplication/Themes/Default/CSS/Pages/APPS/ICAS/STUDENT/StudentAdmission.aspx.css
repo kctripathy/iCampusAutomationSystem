@@ -1,0 +1,104 @@
+﻿
+
+/*
+	#ContentPlaceHolderMicroERP_updatepanel_StudentMaster ul li.FormLabel
+	{
+		background-color: Yellow;
+		display: block;
+		float: left;
+		width: 68%;
+	}
+	#ContentPlaceHolderMicroERP_updatepanel_StudentMaster ul li.FormValue
+	{
+		background-color: #99FFCC;
+		display: block;
+		float: left;
+		width: 28%;
+	}
+	
+	#ContentPlaceHolderMicroERP_updatepanel_StudentMaster ul li.PageSubTitle
+	{
+		background-color: #FF99FF;
+		display: block;
+		float: left;
+		width: 100%;
+	}
+	*/
+
+#ContentPlaceHolderMicroERP_updatepanel_StudentAdmMaster ul#Button
+{
+	display: block;
+	float: left;
+	width: 100%;
+}
+#ContentPlaceHolderMicroERP_updatepanel_StudentAdmMaster ul
+{
+	display: block;
+	float: left;
+	width: 48%;
+	overflow: hidden;
+}
+
+#WebBody #PageContent_RightColumn ul.StudentFullWidth
+{
+	display: block;
+	float: left;
+	margin: 2px 0;
+	padding: 0;
+	width: 100%;
+	color: #000080;
+}
+#WebBody #PageContent_RightColumn ul.Student li.FormLabel
+{
+	display: block;
+	float: left;
+	margin: 2px 0;
+	padding: 0;
+	width: 35%;
+	color: #000080;
+}
+#WebBody #PageContent_RightColumn ul.Student li.FormValue
+{
+	display: block;
+	float: left;
+	margin: 2px 0;
+	padding: 0;
+	width: 64%;
+}
+
+.StudentSubjects
+{
+	display: block;
+	float: left;
+	width: 50%;
+	height: 100px;
+	overflow: auto;
+}
+.SmallFontSubjectDetails
+{
+	color: #0000CC;
+	font-family: Sans-Serif;
+	font-style: normal;
+	font-weight:300;
+	font-size: .8em;
+}
+
+div.SubjectList
+{
+	width: 100%;
+	width: 370px;
+	overflow: auto;
+}
+
+
+div.SubjectList table
+{
+	width: 100%;
+}
+
+div.SubjectList table tr td
+{
+	border-right: solid 1px #c0c0c0;
+	padding: 0px 1px;
+}
+

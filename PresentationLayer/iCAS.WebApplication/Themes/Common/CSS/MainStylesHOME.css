@@ -1,0 +1,1232 @@
+﻿@import "MainStylesHomeZone.css";
+@import "UpdateProgress.css";
+/*@import "Menu_OrangeVerticals.css";
+@import "ReportCharts.css";
+@import "Menu_Micro_DarkGreen.css";*/
+
+
+/*----------------------------------------------------------------*/
+/* CSS FOR ALL THE PAGES OF THE MICRO ERP APPLIACTION, ALL THEMES */
+/*----------------------------------------------------------------*/
+*
+{
+	/*font-family: Verdana, Trebuchet MS,"Segoe UI";*/
+	font-family: 'Lato', sans-serif;
+	font-size: 10pt;
+	letter-spacing: 0.1px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+body
+{
+	color: #003366;
+	font-size: 1em;
+	margin: 0;
+	padding: 0;
+	background: url("../images/screen_bg.gif") repeat scroll left top transparent;
+}
+
+h1
+{
+	font-size: 25px;
+	font-weight: bold;
+	margin: 0;
+	padding: 5px 0px;
+}
+
+ul
+{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#TheContainerICAS
+{
+	margin: 0px 0 0 0;
+	padding: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+	#TheContainerICAS #WebContentICAS
+	{
+		width: 998px;
+		margin: 0px auto 0 auto;
+		min-height: 100%;
+		height: auto;
+		background-color: #FFF;
+		border: double 1px #244D82;
+		background-repeat: no-repeat;
+		overflow: hidden;
+		padding-bottom: 5px;
+		/*background: lightcyan url(../../../Images/slides_tsdc/slide_2017_7.jpg) right 17px bottom 10px no-repeat;*/
+		background: #04164D url(../../../Images/TSDC-WEB-HEAD-80.jpg) left top no-repeat;
+	}
+
+	#TheContainerICAS #WebHead
+	{
+		color: #ccc;
+		width: 100%;
+		height: 75px;
+		float: left;
+		border-bottom: solid 1px #0033CC;
+		background-color: #003366;
+		background: #04164D url(../../../Images/TSDC-WEB-HEAD-80.jpg) left top no-repeat;
+		text-align: center;
+	}
+
+/********************************  login welcome */
+.login-area
+{
+	text-align: right;
+}
+
+.login-welcome
+{
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+.login-photo
+{
+	width: 70px;
+	height: 80px;
+	/*border: solid 1px rgba(37, 181, 251, 0.4);*/
+	display: none;
+	float: right;
+	text-align: right;
+	margin-right: 0px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+	.login-photo img
+	{
+		margin: 0;
+		margin-top: -2px;
+		padding: 0;
+		top: 0;
+	}
+
+.login-text
+{
+	display: block;
+	float: right;
+	padding-top: 0px;
+	width: 15%;
+	text-align: right;
+	padding-top: 20px;
+	margin-right: 10px;
+}
+/********************************  login welcome end */
+
+
+
+
+#TheContainerICAS #WebContentICAS #WebMenu
+{
+	width: 100%;
+	height: 31px;
+	display: block;
+	float: left;
+	background-color: #fff;
+	/*padding-left: 2px;*/
+}
+
+#TheContainerICAS #WebContentICAS #WebBodyICAS
+{
+	width: 100%;
+	display: block;
+	float: left;
+	height: 355px;
+	margin-bottom: 2px;
+	padding: 0px 0px 0px 0px;
+	background-color: #fff;
+	border-bottom: solid 1px #ccc;
+}
+
+#TheContainerICAS #WebContentICAS #WebZones
+{
+	width: 100%;
+	display: block;
+	float: left;
+}
+
+
+#TheContainerICAS #WebFoot
+{
+	width: 100%;
+	height: 40px;
+	font-size: .9em;
+	text-align: center;
+	color: #fff;
+	/*background: url(../Images/TSDC-FOOT.gif) right top repeat-x;*/
+	margin: 2px auto 0 auto;
+	padding-top: 7px;
+	/*background-color: rgb(30, 67, 114);*/
+	background-image: linear-gradient(#04519b, #044687 60%, #033769);
+	background-repeat: no-repeat;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff04519b', endColorstr='#ff033769', GradientType=0);
+	-webkit-filter: none;
+	filter: none;
+	border-bottom: 1px solid #022241;
+}
+
+.accessFlag
+{
+}
+
+
+#WebBodyICAS #LeftSide
+{
+	display: block;
+	float: left;
+	width: 100%;
+	min-height: 350px;
+	background-color: #fff;
+}
+
+.HomepageText
+{
+	width: 33%;
+	/*font-family: Verdana, MS Sans Serif;*/
+	font-size: 100%;
+	padding: 0px;
+	text-align: justify;
+}
+
+
+#WebBodyContentICAS
+{
+	display: block;
+	float: left;
+	padding: 10px;
+	background: #fff;
+}
+
+#WebBodyICAS #MiddleSide
+{
+	display: block;
+	float: left;
+	width: 248px;
+	height: 292px;
+	background-color: #FFF;
+	padding: 4px;
+	border: solid 1px #ccc;
+	margin-right: 2px;
+}
+
+#WebBodyICAS #RightSide
+{
+	display: block;
+	float: left;
+	width: 240px;
+	min-height: 300px;
+	margin-left: 1px;
+	padding: 1px;
+}
+
+/*******************  QUOTE */
+
+
+/************************/
+/* STUDENT USER CONTROL */
+/************************/
+ul#UC_Login_UL
+{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: auto;
+	background-color: #fff;
+	/*font-variant: small-caps;*/
+	overflow: hide;
+}
+
+
+	ul#UC_Login_UL li.FullWidthRow,
+	ul#UC_Login_UL li.FullWidthRowLoginLinks
+	{
+		display: block;
+		float: left;
+		width: 100%;
+		border-bottom: solid 1px #ccc;
+		margin: 5px 0px;
+	}
+
+
+	ul#UC_Login_UL li.FullWidthRowTitle
+	{
+		display: block;
+		float: left;
+		width: 100%;
+		border-bottom: solid 1px #ccc;
+		margin: 1px 0px 4px 0px;
+		font-weight: bold;
+		color: #003366;
+	}
+
+	ul#UC_Login_UL li.UCFormLabel
+	{
+		display: block;
+		float: left;
+		width: 35%;
+		text-align: right;
+	}
+
+	ul#UC_Login_UL li.UCFormValue
+	{
+		display: block;
+		float: left;
+		width: 60%;
+	}
+
+	ul#UC_Login_UL li.UCFormValueForgotPwd
+	{
+		display: block;
+		float: left;
+		width: 90%;
+		margin: 5px 0px;
+	}
+
+.FullWidthRowLoginLinks
+{
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+
+	.FullWidthRowLoginLinks a
+	{
+		color: Red;
+		display: block;
+		float: left;
+		width: 100%;
+	}
+
+.UCFormLabelLogin0
+{
+	display: block;
+	float: left;
+	width: 58%;
+	text-align: left;
+}
+
+.UCFormValueLogin0
+{
+	display: block;
+	float: left;
+	width: 40%;
+	font-weight: bold;
+	padding-left: 2px;
+}
+
+.UCFormLabelLogin1
+{
+	display: block;
+	float: left;
+	width: 56%;
+	padding: 1px 0px;
+}
+
+.UCFormValueLogin1
+{
+	padding: 1px 0px;
+	display: block;
+	float: left;
+	width: 42%;
+	padding-left: 2px;
+}
+
+.UCFormLabelLogin2
+{
+	display: block;
+	float: left;
+	width: 48%;
+	padding: 1px 0px;
+	margin-top: 4px;
+}
+
+.UCFormValueLogin2
+{
+	padding: 0px 0px 0px 2px;
+	display: block;
+	float: left;
+	width: 50%;
+	margin-top: -1px;
+	text-align: left;
+	/*background: url("/Themes/Common/Images/TSDC-Alumni-Zone.png") repeat-y scroll left top #FFFFFF;
+	font-size: 8pt;*/
+}
+
+
+.UC_BtnLogin
+{
+	height: 20px;
+	width: 56px;
+	background: url('../Images/btn_Login.png') no-repeat left top;
+	float: right;
+	display: block;
+	border: none;
+	margin-top: 4px;
+}
+
+
+
+/**************************/
+#UpdateProgress
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#04519b, #044687 60%, #033769);
+	/*opacity: 0.800000011920928955078125;*/
+	z-index: 99997;
+}
+
+.UpdateProgressArea
+{
+	margin: 200px auto;
+	background: url(../Images/UpdateProgress/PleaseWait_BigSize.gif) center top no-repeat #FFFFFF;
+	background-position-x: center;
+	background-position-y: center;
+	width: 150px;
+	height: 150px;
+	border: navy solid 1px;
+	z-index: 99998;
+	text-align: center;
+	font-weight: bold;
+}
+
+.UpdateProgressAreaText
+{
+	border: #C6BFBF solid 1px;
+	background-color: #ff0000;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 3px;
+	display: block;
+	float: left;
+	left: 40%;
+	position: inherit;
+	top: 70%;
+}
+
+.TextSmallWidth
+{
+	width: 26px;
+}
+
+.WatermarkClass
+{
+	color: #808080;
+}
+
+.ValidateMessage
+{
+	color: #FF0000;
+	background-color: #FFFFFF;
+	padding: 2px;
+	clear: left;
+	text-decoration: none;
+}
+
+.ErrorMessage
+{
+	font-size: 105%;
+	margin-top: 30px;
+	font-weight: bold;
+}
+
+.BigErrorText
+{
+	font-size: 175%;
+	color: red;
+}
+
+#WebFooter span#lbl_Database
+{
+	color: #000080;
+}
+
+.HorizentalLineSeparator
+{
+	display: block;
+	float: left;
+	height: 50px;
+	width: 1px;
+	background-color: red;
+	margin: 25px 8px 2px 2px;
+}
+
+.SupportImage
+{
+	width: 50%;
+	border: #ccc solid 1px;
+	display: block;
+	float: left;
+	height: 400px;
+	background-image: url(../Images/micro-customer-support.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #FFFFFF;
+}
+
+div#Mode
+{
+	color: #FFFFFF;
+	display: block;
+	float: right;
+	height: 16px;
+	position: absolute;
+	text-align: center;
+	width: 58%;
+	margin-top: 26px;
+}
+
+	div#Mode span
+	{
+		padding: 3px;
+		color: #FF0000;
+		text-decoration: blink;
+		font-weight: bold;
+	}
+
+html body form#formMicro div#TheContainer div#WebContent div#WebBodyICAS div#PageContent_RightColumn div#ContentPlaceHolderMicroERP_updatePanel_CustomerAccounts ul#CRMScrolls li.FormValue select#ContentPlaceHolderMicroERP_ddl_ScrollNumber
+{
+	width: 29%;
+}
+
+div#ContentPlaceHolderMicroERP_updatePanel_CustomerAccounts ul#CustomerAccounts div#ContentPlaceHolderMicroERP_panel_SelectedScroll.Panel
+{
+	background: url(../Images/BackgroundSubTitle_001.gif) left top 0 repeat-x #000080;
+	width: 300px;
+}
+
+.PopupMessageBox
+{
+	position: absolute;
+	z-index: 10;
+	width: 172px;
+	height: 102px;
+	text-align: center;
+	color: #FF0000;
+	font: 14px Verdana, Arial, Helvetica, sans-serif;
+	background: url(bg_image.gif) bottom right no-repeat;
+	display: none;
+}
+
+ul#SelectDatabase
+{
+	display: block;
+}
+
+.SelectDatabaseControl
+{
+	width: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+}
+
+/*----------------------------------------------------------------*/
+/* LOGO, OFFICE NAME DISPLAY AND USER INFOR DISPLAY AT WEB HEADER */
+/*----------------------------------------------------------------*/
+#WebHeader ul
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 0;
+	width: inherit;
+	height: inherit;
+	color: navy;
+}
+
+	#WebHeader ul li
+	{
+		display: block;
+		float: left;
+	}
+
+		#WebHeader ul li#Logo
+		{
+			display: block;
+			float: left;
+			width: 10%;
+			padding: 0 0 0 10px;
+			margin: 0;
+			text-align: center;
+			height: inherit;
+			background-color: transparent;
+		}
+
+			#WebHeader ul li#Logo img
+			{
+				display: none;
+			}
+
+		#WebHeader ul li#OfficeInfo
+		{
+			display: block;
+			float: left;
+			width: 30%;
+			color: yellow;
+			padding-top: 62px;
+			text-align: center;
+			text-transform: uppercase;
+			font-size: 9pt;
+			font-weight: bold;
+			background-color: transparent;
+		}
+
+		#WebHeader ul li#UserInfo
+		{
+			display: block;
+			float: left;
+			width: 58%;
+			padding: 0 0 0 8px;
+			margin: 0;
+			text-align: right;
+			color: navy;
+		}
+
+			#WebHeader ul li#UserInfo ul#CurrentUser
+			{
+				list-style-type: none;
+				display: block;
+				float: right;
+				margin: 2px 0 0 0;
+				padding: 3px;
+				width: 100%;
+				height: inherit;
+				color: #dbdbdb;
+			}
+
+				#WebHeader ul li#UserInfo ul#CurrentUser li.UserLabel
+				{
+					display: block;
+					float: left;
+					width: 25%;
+					text-align: right;
+					padding: 1px 0;
+					clear: left;
+					color: #dbdbdb;
+				}
+
+				#WebHeader ul li#UserInfo ul#CurrentUser li.UserValue
+				{
+					display: block;
+					float: left;
+					width: 99%;
+					color: #ffffff;
+					padding: 1px 1%;
+					color: #dbdbdb;
+				}
+
+				#WebHeader ul li#UserInfo ul#CurrentUser li.UserValueOffice
+				{
+					display: none;
+					float: left;
+					width: 99%;
+					text-align: right;
+					color: #ffffff;
+					padding: 3px 1%;
+					color: #FFFF00;
+				}
+
+				#WebHeader ul li#UserInfo ul#CurrentUser li.UserValueOffice
+				{
+					text-transform: uppercase;
+					font-size: 9pt;
+					font-weight: bold;
+					background-color: transparent;
+				}
+
+
+html body form#formMicro div#TheContainer div#WebContent div#WebBodyICAS div#PageContent_RightColumn ul#MicroChart li div.ProtectFromCopy
+{
+	display: inline;
+	min-height: 440px;
+	position: absolute;
+	top: 200px;
+	width: 57%;
+	left: 29%;
+}
+
+html body form#formMicro div#TheContainer div#WebContent div#WebBodyICAS div#PageContent_RightColumn div p.ErrorMessage span#ContentPlaceHolderMicroERP_lbl_Reason
+{
+	color: Red;
+}
+
+
+
+
+
+/*******Recent Activities**************/
+
+
+#PhotoLoggedOnUser
+{
+	display: block;
+	float: right;
+	width: 44px;
+	height: 50px;
+	margin-top: 2px;
+	border: double 3px #C0C0C0;
+	/*background: url(../Images/PRINCIPAL-PASSPHOTO-50.jpg) center top no-repeat;*/
+}
+
+
+#PhotoLoggedOnUser1 ul
+{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 107px;
+}
+
+	#PhotoLoggedOnUser1 ul li
+	{
+		display: block;
+		float: left;
+		margin: 1px 0px;
+		padding: 2px;
+		width: 97%;
+		text-align: center;
+	}
+
+#ctrl_Login_lbl_NameValue
+{
+	font-weight: bold;
+}
+
+.LoginPhoto
+{
+	display: none;
+	float: left;
+	width: 80px;
+	height: 80px;
+	border: solid 1px black;
+}
+
+#PhotoLoggedOnUser1
+{
+	display: block;
+	float: left;
+	width: 58%;
+	height: 80px;
+	margin-top: 2px;
+	/*background: #ff0000 url(../Images/PRINCIPAL-PASSPHOTO-50.jpg) center top no-repeat;*/
+}
+
+#PhotoLoggedOnUser2
+{
+	display: block;
+	float: left;
+	width: 40%;
+	height: 107px;
+	margin-top: 2px;
+	/*background: #00ff00 url(../Images/PRINCIPAL-PASSPHOTO-50.jpg) center top no-repeat;*/
+}
+
+.UCTitle
+{
+	display: block;
+	float: left;
+	width: 99%;
+	font-weight: bold;
+	padding: 5px 0px 0px 2px;
+	border-bottom: dotted 1px #c0c0c0;
+}
+
+
+.UCBodyDate
+{
+	display: block;
+	float: left;
+	width: 17%;
+	height: 13px;
+	padding: 4px 0px;
+}
+
+.UCBodyLink
+{
+	width: 78%;
+	height: 13px;
+	display: block;
+	float: left;
+	padding: 4px 0px;
+	font-family: Verdana;
+	font-size: 8pt;
+}
+
+.UCBodyIcon
+{
+	display: block;
+	float: left;
+	width: 5%;
+	height: 13px;
+	text-align: center;
+	padding: 4px 0px;
+}
+
+
+/************** titles *****************/
+
+h2.PageTitle
+{
+	margin: 2px;
+	padding: 6px;
+	width: 99%;
+	text-align: left;
+	background: #fff url(../Images/TITLE-SUB.gif) left top no-repeat;
+}
+
+#WebMenu #WebMenuLinks,
+#WebBodyICAS #MiddleSide
+{
+	/*background: url(../Images/PricipalMessageBg.png) left top repeat-x;*/
+}
+
+
+#WebSearch
+{
+	width: 98%;
+	margin: 0;
+	padding: 0;
+}
+
+	#WebSearch ul
+	{
+		background-color: yellow;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+
+		#WebSearch ul li#SText
+		{
+			display: block;
+			float: left;
+			width: 54%;
+			margin: 0;
+			padding: 0;
+			background-color: Yellow;
+		}
+
+		#WebSearch ul li#SButton
+		{
+			display: block;
+			float: left;
+			width: 10%;
+			margin: 0;
+			padding: 0;
+		}
+
+.LoginTextBox
+{
+	border: solid 1px #003366;
+	color: #003366;
+	width: 100px;
+}
+
+
+.FullWidthRowLoginLinks2
+{
+	display: block;
+	float: left;
+	font-family: Arial Rounded MT Bold;
+	font-variant: normal;
+	width: 100%;
+	font-size: 90%;
+}
+
+	.FullWidthRowLoginLinks2 ul
+	{
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+.LoginLinkLi
+{
+	display: block;
+	float: right;
+	margin: 2px;
+	padding: 2px;
+	width: 44%;
+	height: 31px;
+	border: 1px solid #c0c0c0;
+	text-align: center;
+	background-color: #ccc;
+}
+
+
+.LoginLinks
+{
+	color: #003366;
+	text-decoration: none;
+	margin-top: 5px;
+}
+
+#UL_LatestActivities
+{
+	margin: 0px;
+	padding: 0px;
+	display: block;
+	float: left;
+	height: 122px;
+	font-family: Verdana;
+	font-size: 8pt;
+}
+
+
+
+#ctrl_Login_FullWidthRowLoginLinksAdmin
+{
+	display: block;
+	float: left;
+	width: 100%;
+	border: solid 1px #fff;
+	text-align: center;
+	color: #fff;
+	padding: 2px 0px;
+}
+
+.LoginLinksAdmin
+{
+	display: block;
+	float: right;
+	border: solid 1px #ccc;
+	background-color: transparent;
+	padding: 1px;
+	width: 98%;
+	color: #fff;
+	font-weight: bold;
+}
+
+	.LoginLinksAdmin a
+	{
+		color: #003366;
+	}
+
+.FullWidthRowTitleLogin
+{
+	float: right;
+	padding: 5px 3px;
+	width: 184px;
+	font-weight: bold;
+	margin-bottom: 2px;
+	text-align: center;
+	background: url(../Images/TITLE-SUB.gif) left bottom 0 no-repeat #fff;
+	/*
+    color: #fff;
+    background-color: #Ccc;
+    border: solid 1px #ccc;   
+     */
+}
+
+	.FullWidthRowTitleLogin a
+	{
+		color: #0000ff;
+		font-weight: normal;
+		text-decoration: none;
+	}
+
+		.FullWidthRowTitleLogin a:hover
+		{
+			color: #ff0000;
+			font-weight: normal;
+			text-decoration: none;
+		}
+
+	.FullWidthRowTitleLogin:hover
+	{
+		color: #ff0000;
+	}
+
+.icas
+{
+	font-family: Arial;
+	font-size: 100%;
+	font-weight: bold;
+	color: #003366;
+	text-transform: none;
+}
+
+.icas_i
+{
+	font-family: Times;
+	font-size: 110%;
+	font-style: italic;
+	color: #ff0000;
+	text-transform: none;
+}
+
+.LoginImgLink
+{
+	display: block;
+	float: right;
+	border: solid 1px #ccc;
+	padding: 0px;
+	margin-top: 1px;
+	height: 30px;
+	background-color: #fff;
+}
+
+
+
+
+#HomepageControls
+{
+	height: 100px;
+	width: 238px;
+	margin: 1px;
+	display: block;
+	float: right;
+}
+
+.UCFormLabelLogin0x,
+.UCFormValueLogin0x
+{
+	display: none;
+}
+
+
+
+
+.innercontent
+{
+	padding: 8px;
+	text-align: justify;
+	overflow: auto;
+	height: 310px;
+	color: #000033;
+	background-color: lightcyan;
+}
+
+h1.ContentPageTitle
+{
+	text-transform: capitalize;
+	color: #000099;
+	font-size: 110%;
+}
+
+
+.innercontent ol
+{
+	list-style-type: square;
+	margin: 2px 0px 0px 20px;
+	padding: 4px;
+}
+
+	.innercontent ol li
+	{
+		font-size: 1.3em;
+	}
+
+.innercontent li
+{
+	margin: 2px 0px 0px 20px;
+	padding: 4px;
+}
+
+#ctrl_EstablishmentZone1_radioList_Estb, #ctrl_EstablishmentZone1_gridViewEstb
+{
+	clear: both;
+}
+
+
+#HeaderWelcomeMessage
+{
+	list-style-type: none;
+	margin: 20px 0px 0px 0px;
+	padding: 0px;
+	width: 99%;
+	display: block;
+	float: left;
+	text-align: right;
+	background-color: antiquewhite;
+}
+
+	#HeaderWelcomeMessage li
+	{
+		display: block;
+		color: #fff;
+		text-transform: uppercase;
+		margin-top: -20px;
+		font-size: 0.8em;
+		color: #fff;
+	}
+
+#HeaderSocialIcons
+{
+	list-style-type: none;
+	margin-right: 1px;
+	width: 25%;
+	display: block;
+	float: right;
+}
+
+#FooterSocialIcons
+{
+	list-style-type: none;
+	margin-top: -13px;
+	margin-right: 5px;
+	width: 25%;
+	display: block;
+	float: right;
+}
+
+#HeaderSocialIcons ul
+{
+	margin: 0px;
+	padding: 0px;
+	background-color: red;
+	width: 100%;
+}
+
+#HeaderSocialIcons li,
+#FooterSocialIcons li
+{
+	display: block;
+	float: right;
+	width: 32px;
+	height: 32px;
+	padding: 2px;
+}
+
+	#FooterSocialIcons li:hover
+	{
+		display: block;
+		float: right;
+		width: 32px;
+		height: 32px;
+		padding: 2px;
+		background-color: red;
+	}
+
+	#FooterSocialIcons li a
+	{
+		border: none;
+	}
+
+		#FooterSocialIcons li a img
+		{
+			border: none;
+		}
+
+	#HeaderSocialIcons li a img
+	{
+		width: 85%;
+		border: none;
+	}
+
+#FooterLeft li a
+{
+	font-family: 'Microsoft JhengHei', Trebuchet MS,sans-serif;
+	font-weight: normal;
+	font-size: 0.8em;
+	text-decoration: none;
+	color: navy;
+}
+
+	#FooterLeft li a:hover
+	{
+		font-family: 'Microsoft JhengHei', Trebuchet MS,sans-serif;
+		font-weight: normal;
+		text-decoration: none;
+		font-size: 0.8em;
+		color: red;
+		background-color: #fff;
+	}
+
+
+
+.InformationMessageBody
+{
+	display: block;
+	float: left;
+	width: 94%;
+	padding: 20px;
+	margin: 0px;
+	text-align: justify;
+}
+
+
+.attachmentLink
+{
+	width: 45%;
+	height: 30px;
+	display: block;
+	margin: 21px auto;
+	padding-top: 5px;
+	padding-left: 27PX;
+	text-align: left;
+	background: url(/Images/pdf.gif) left 5px top 5px no-repeat #FFFFFF;
+}
+
+	.attachmentLink:hover
+	{
+		background-color: #dbdbdb;
+		font-weight: bold;
+	}
+
+#accessFlag
+{
+	color: rgb(30, 67, 114);
+	z-index: -10;
+	display: none;
+}
+
+
+#divUserLogin
+{
+	background: #fff;
+	margin: 0px;
+	margin-top: -20px;
+	padding: 5px;
+}
+
+#TreeView1
+{
+	margin: 0;
+	padding: 0;
+	display: block;
+	float: left;
+	width: 96%;
+	background-color: #fff;
+	padding: 1%;
+	overflow: hidden;
+}
+
+#divUserLogin ul#CurrentUser
+{
+	min-height: 68px;
+	overflow: hidden;
+}
+
+	#divUserLogin ul#CurrentUser li.UserLabel,
+	#divUserLogin ul#CurrentUser li.UserValue
+	{
+		display: block;
+		float: left;
+		width: 50%;
+		overflow: hidden;
+		height: 20px;
+	}
+
+#ctrl_LoggedOnUser_lbl_FullNameValue
+{
+	font-weight: bold;
+}

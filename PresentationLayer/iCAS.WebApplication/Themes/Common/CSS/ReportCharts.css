@@ -1,0 +1,87 @@
+﻿ul#MicroReport_Chart
+{
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	min-height: 400px;
+}
+
+ul#MicroReport_Chart li
+{
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+ul#MicroReport_Chart li.ChartTitle
+{
+	width: 100%;
+	color: #191970;
+	border-bottom: 1px solid #A3C0E8;
+	background-image: url('../Images/bg_ChartTitle.gif');
+	background-position: top;
+	background-repeat: repeat-x;
+	background-color: #E2F0FF;
+	text-align: center;
+	margin-top: 5px;
+	padding: 10px 0px;
+	font-weight: bold;
+	height: 8px;
+}
+
+ul#MicroReport_Chart li.SelectOffice
+{
+	width: 100%;
+	background-color: #4b6c9e;
+	font-weight: bold;
+	color: #191970;
+	background: #E2F0FF url(../../Default/Images/BackgroundSubTitle_001.gif) repeat-x;
+}
+
+ul#MicroReport_Chart li.ChartButton
+{
+	margin-left: 89%;
+    margin-top: -66px;
+    text-align: right;
+    width: 10%;
+}
+ul#MicroReport_Chart li.ChartButton input
+{
+	background-image: url(../../Default/Images/bg_Button_Default.gif);
+	background-repeat: repeat-x;
+	color: #080808;
+	padding: 0px 5px;
+	height: 22px;
+}
+
+ul#MicroReport_Chart li.ChartArea
+{
+	width: 100%;
+}
+ul#MicroReport_Chart li.ChartArea div#cpMicroERPReports_Chart_Protect
+{
+	width: 1111px;
+	left: 0;
+	top: 350;
+	min-height: 400px;
+	position: absolute;
+	width: 91%;
+}
+
+ul#MicroReport_Chart li.SelectOffice ul#OfficeDetails
+{
+	margin: 0 auto 0 17%;
+    padding: 5px 0;
+    width: 90%;
+}
+html body form#form2 div div#WebContent div#WebBody div#ReportContent div#cpMicroERPReports_updatePanel_ReportCharts ul#MicroReport_Chart li.SelectOffice ul#OfficeDetails li#FormValueOfficeType select#cpMicroERPReports_ctrl_SelectOffice_ddl_OfficeType
+{
+	border: solid 1px #A3C0E8;
+}
+html body form#form2 div div#WebContent div#WebBody div#ReportContent div#cpMicroERPReports_updatePanel_ReportCharts ul#MicroReport_Chart li.SelectOffice ul#OfficeDetails li#FormValueOfficeName select#cpMicroERPReports_ctrl_SelectOffice_ddl_OfficeName
+{
+	border: solid 1px #A3C0E8;
+	padding-left: 2px;
+	width: 200px;
+}

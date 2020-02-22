@@ -1,0 +1,109 @@
+﻿/* ACCORDION CONTROL CSS */
+/************************/
+
+/* Accordion */
+.accordionHeader
+{
+	border: 1px solid #999;
+	color: white;
+	background-color: #4b6c9e;
+	font-family: Arial, Sans-Serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 5px;
+	margin-top: 2px;
+	cursor: pointer;
+	background-image: url(../Images/bg-menu-main.png);
+	background-repeat: repeat-x;
+}
+
+.accordionHeader a
+{
+	color: navy;
+	background: none;
+	text-decoration: none;
+}
+
+.accordionHeader a:hover
+{
+	background: none;
+	text-decoration: underline;
+}
+
+.accordionHeaderSelected
+{
+	border: 2px solid #A9A9A9;
+	color: white;
+	background-color: #003366;
+	font-family: Arial, Sans-Serif;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 5px;
+	margin-top: 2px;
+	cursor: pointer;
+}
+
+.accordionHeaderSelected a
+{
+	color: #DCDCDC;
+	background: none;
+	text-decoration: none;
+}
+
+.accordionHeaderSelected a:hover
+{
+	background: none;
+	text-decoration: underline;
+}
+
+.accordionContent
+{
+	background-color: #c6d8ee;
+	border: 1px solid #A9A9A9;
+	border-top: none;
+	padding: 0px 0px 0px 5px;
+	padding-top: 0px 0px 0px 5px;
+}
+
+.accordionContent ul.MenuItems 
+{
+	list-style-type: square;
+	padding: 0px 0px 0px 2px;
+	margin:  0px 0px 0px 10px;
+	list-style-image: url(../Images/bullet.gif);
+}
+
+.accordionContent ul.MenuItems li.MenuSubHeading
+{
+	list-style-type: none;
+	padding: 0px;
+	margin: 10px 0px 0px -10px;
+	border-bottom: double 3px #c0c0c0;
+	font-weight: bold;
+	color: Navy;
+	list-style-image: url(../Images/bullet1.gif);
+}
+
+.accordionContent ul.MenuItems li a
+{
+	text-decoration: none;
+}
+
+.accordionContent ul.MenuItems li a:hover
+{
+	text-decoration: none;
+	color: Red;
+}
+
+.accordionContent ul.MenuItems li:hover
+{
+	text-decoration: none;
+	background-image: url(../Images/bg-menu-main.png);
+	background-repeat: repeat-x;
+	
+}
+
+.accordionContent ul.MenuItems li.MenuSubHeading:hover
+{
+	 
+}

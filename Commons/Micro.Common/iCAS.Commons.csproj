@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F565A960-EC2A-4B06-9A73-008FF9D03FC5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Micro.Commons</RootNamespace>
+    <AssemblyName>Micro.Commons</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.60623.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Kishor_JobWorks\ICAS_TSDC\ICAS_TSDC\LTPL-iCAS\Micro.PresentationLayer\Micro.WebApplication\Micro.WebApplication\bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Micro.Security">
+      <HintPath>..\..\Micro.AllAssemblies\ExternalAssemblies\Micro.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BaseUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DialogBox.cs" />
+    <Compile Include="Export.cs" />
+    <Compile Include="FormFunctions.cs" />
+    <Compile Include="LocalPath.cs" />
+    <Compile Include="MicroError.cs" />
+    <Compile Include="PolicyManager.cs" />
+    <Compile Include="DateTimeAdapter.cs" />
+    <Compile Include="RandomImage.cs" />
+    <Compile Include="RawPrinterHelper.cs" />
+    <Compile Include="RupeesInWords.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="ImageFunctions.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="MicroConstants.cs" />
+    <Compile Include="MicroEnums.cs" />
+    <Compile Include="MicroGlobals.cs" />
+    <Compile Include="MicroInterface.cs" />
+    <Compile Include="MicroMessages.cs" />
+    <Compile Include="MicroSecurity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SendMail.cs" />
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="StringValueAttribute.cs" />
+    <Compile Include="Validation.cs" />
+    <Compile Include="WebBaseClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Micro.ErrorLogger\iCAS.ErrorLogger.csproj">
+      <Project>{A6BDFE64-D74B-414E-BC48-3D4D96918BEE}</Project>
+      <Name>iCAS.ErrorLogger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Micro.Objects\iCAS.Objects.csproj">
+      <Project>{AEA9D061-DDF8-4EA7-9A9D-23BFE1130D11}</Project>
+      <Name>iCAS.Objects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\AjaxControlToolkit.dll" />
+    <Content Include="bin\Debug\Micro.Security.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

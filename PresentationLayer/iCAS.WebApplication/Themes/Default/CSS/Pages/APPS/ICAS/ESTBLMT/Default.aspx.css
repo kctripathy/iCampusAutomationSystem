@@ -1,0 +1,141 @@
+﻿
+/*#TreeView1
+{
+    font-family: Verdana, Trebuchet MS;
+    font-size: 8pt;
+    margin-top: -50px;
+}
+
+#ContentPlaceHolderMicroERP_dialog_Message
+{
+    height: 200px;
+    border: solid 1px #ccc;
+}*/
+
+
+.RowStyle
+{
+    border: solid 1px #ccc;
+}
+
+.Estb_ID
+{
+    width: 0%;
+    background-color: Red;
+}
+
+.Estb_DT
+{
+    width: 10%;
+}
+
+.Estb_STATUS,
+.Estb_TYPE
+{
+    width: 5%;
+    text-align: center;
+    color: #ff0;
+}
+
+.Estb_TITLE
+{
+    width: 45%;
+}
+
+.Estb_VIEWSTART
+{
+    width: 10%;
+}
+
+.Estb_VIEWEND
+{
+    width: 10%;
+}
+/**/
+ul#Establishments,
+#ContentPlaceHolderMicroERP_UpdatePanel_Establishment ul
+{
+    width: 100%;
+    min-height: 400px;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+    ul#Establishments li.Formlabel
+    {
+        display: block;
+        float: left;
+        width: 25%;
+        margin: 2px 0px;
+    }
+
+    ul#Establishments.FormValue
+    {
+        display: block;
+        float: left;
+        width: 74%;
+        margin: 2px 0px;
+    }
+    ul#Establishments li.FormButton_Top
+    {
+        display: block;
+        float: left;
+        width: 100%;
+        text-align: right;
+    }
+    ul#Establishments li.FormLabelFullWidth
+    {
+        display: block;
+        float: left;
+        width: 100%;
+        margin-bottom: 1px;
+        border-bottom: solid 1px #ccc;
+    }
+
+
+.Gridview table td
+{
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #E2F0FF #A3C0E8 #A3C0E8 #E2F0FF;
+    border-style: dotted solid solid dotted;
+    border-width: 1px;
+    color: Navy;
+    height: 9px;
+    padding: 1px;
+    background-color: Yellow;
+}
+
+
+#ContentPlaceHolderMicroERP_rbl_EstablishmentTypeCode
+{
+    width: 100%;
+    clear: left;
+}
+
+ul#Establishments li.Formlabel
+{
+    display: block;
+    float: left;
+    width: 25%;
+    margin: 2px 0px;
+}
+
+ul#Establishments li.Formvalue
+{
+    display: block;
+    float: left;
+    width: 74%;
+    margin: 2px 0px;
+}
+
+
+.uploadButton
+{
+   
+    margin: 5px 0px;
+    padding: 4px;
+}

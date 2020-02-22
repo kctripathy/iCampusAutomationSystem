@@ -1,0 +1,22 @@
+﻿#WebHeader ul li#UserInfo ul#CurrentUser,
+#WebBody #PageContent_LeftColumn
+{
+    display: none;
+}
+
+#WebBody #PageContent_RightColumn
+{
+    width: 986px;
+    height: inherit;
+    display: block;
+    float: left;
+    padding: 10px;
+    overflow: auto;
+    /*background: #ffffff url('../../../Images/bg_Login.png') no-repeat fixed center top;*/
+	
+}
+
+ul#TopMenuBar 
+{
+	display: none;
+}

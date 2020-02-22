@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MicroERP-Reports.master.cs" Inherits="Micro.WebApplication.App_MasterPages.MicroERP_Reports" %>
+
+<%@ Register Src="../App_UserControls/User/UC_UserLoggedOn.ascx" TagName="UC_UserLoggedOn" TagPrefix="micro" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+<%@ Register Src="../App_UserControls/Menu/UC_CustomisedMenu.ascx" TagName="UC_CustomisedMenu" TagPrefix="micro" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title>iCAS - TSD COLLEGE (Tentulia Sasan Debstan College), BIJAYA DHANURJAYA PUR SASAN, JAGANNATH
+        PRASAD, GM (Ganjam), ODISHA, INDIA - 761120 :: INTEGRATED COLLEGE AUTOMATION SYSTEM
+        by Lightwave Technologies Private Limited, 617, Satya Nagar, Bhubaneswar</title>
+	<link rel="stylesheet" type="text/css" href="/Themes/Default/CSS/MainStyles.css" />
+	<link rel="stylesheet" type="text/css" href="/Themes/Default/CSS/ReportStyles.css" />
+	<style type="text/css" media="screen">
+        <!--
+        <!--
+        @import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Themes/Common/CSS/MainStyles.css"%>';
+        @import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Themes/" + this.Page.Theme + "/CSS/CommonStyles.css"%>';
+         @import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Themes/" + this.Page.Theme + "/CSS/" + Micro.Commons.Helpers.GetFullPathCompanyAlias(this.Page) + "/Common_" + Micro.Commons.Helpers.GetCompanyAlias(this.Page) +".css"%>';
+		
+        @import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Themes/Common/CSS/ReportStyles.css"%>';
+        @import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Themes/" + this.Page.Theme + "/CSS/Pages/" + Micro.Commons.Helpers.GetFullPathPageName(this.Page) + ".css"%>';
+        --> 
+        -->     
+    </style>
+	<script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Themes/Common/Javascript/CommonJavaScripts.js"%>"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+</head>
+<body>
+	<form id="form2" runat="server">
+	<asp:ScriptManager ID="ScriptManagerMicroReports" runat="server" />
+	<div style="width: 100%; margin: 0px; padding: 0px; top: 0px; left: 0px;">
+		<div id="WebContent">
+			<div id="WebHeader">
+				<ul>
+					<li id="Logo"></li>
+					<li id="OfficeInfo">
+						<asp:Literal runat="server" ID="lit_OfficeValue" Text="....." />
+					</li>
+					<li id="UserInfo">
+						<micro:UC_UserLoggedOn ID="ctrl_LoggedOnUser" runat="server" />
+					</li>
+				</ul>
+			</div>
+			<div id="WebTopMenuHeader">
+				<micro:UC_CustomisedMenu ID="ctrl_CustomisedMenuMicro" runat="server" />
+			</div>
+			<div id="WebBody">
+				<div id="ReportContent">
+					<asp:ContentPlaceHolder ID="cpMicroERPReports" runat="server">
+					</asp:ContentPlaceHolder>
+				</div>
+			</div>
+			<div id="WebFooter">
+				<asp:Label runat="server" ID="lbl_Version" Text="  MicroERP (WEB) vX.Y &nbsp;&nbsp;&nbsp;  |   &nbsp;&nbsp;&nbsp;" />
+			</div>
+		</div>
+	</div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,32 @@
+﻿#ContentPlaceHolderMicroERP_updatepanel_DefaultFeeSetup ul#Button
+{
+	display: block;
+	float: left;
+	width: 100%;
+}
+#ContentPlaceHolderMicroERP_updatepanel_DefaultFeeSetup FeeSet.ul
+{
+	display: block;
+	float: left;
+	width: 48%;
+	overflow: hidden;
+}
+
+
+#WebBody #PageContent_RightColumn FeeSet.ul li.FormLabel
+{
+	display: block;
+	float: left;
+	margin: 2px 0;
+	padding: 0;
+	width: 35%;
+	color: #000080;
+}
+#WebBody #PageContent_RightColumn FeeSet.ul li.FormValue
+{
+	display: block;
+	float: left;
+	margin: 2px 0;
+	padding: 0;
+	width: 64%;
+}

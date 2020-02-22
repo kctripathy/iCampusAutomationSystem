@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Messages>
+
+  <!--LOGIN-->
+  <SuccessMessage id="10000000" code="OK_USER_REGISTER_DONE"  text="WEL-COME {0}! Registration done successfully." />
+  
+  <FailureMessage id="100001001" code="KO_USER_REGISTER_FAILED" text="Sorry {0}!, failed to Register!" />
+  <FailureMessage id="100001002" code="KO_USER_REGISTER_FAILED_INVALID_CAPTCHA" text="Invalid Captcha!" />
+  <FailureMessage id="100001003" code="KO_USER_REGISTER_FAILED_INVALID_EMAIL_CODE" text="Verification Failed: Invalid code number" />
+  <FailureMessage id="100001003" code="KO_USER_REGISTER_FAILED_INVALID_OTP" text="Verification Failed: Invalid OTP (One Time Password)" />
+
+
+  <!--LOGIN-->
+  <FailureMessage id="0000" code="KO_UNKNOWN_ERROR" text="An unknown error occured!" />
+  <FailureMessage id="9001" code="KO_USER_NOT_EXIST" text="This user #B#'{0}'#/B# doesn't exists in our record." />
+  <FailureMessage id="9002" code="KO_PWD_MISMATCH" text="Please enter a #B#correct#/B# password." />
+  <FailureMessage id="9003" code="KO_USER_NO_COMP_CODE" text="This user doesn't have a company code." />
+  <FailureMessage id="9004" code="KO_USER_NO_COMPANY" text="This user doesn't belongs to any company" />
+  <FailureMessage id="9004" code="KO_COMPANY_NOT_SELECTED" text="This given user doesn't belongs to the selected company." />
+
+  <!--PASSWORD-FORGET_CHANGE_TRANSACTION-->
+  <SuccessMessage id="9006" code="PASSWORD_CHANGED"  text="Password Changed Successfully." />
+  <SuccessMessage id="9009" code="PASSWORD_RESET"  text="The Password has been reseted successfully." />
+  <SuccessMessage id="9010" code="PASSWORD_SEND"  text="Password has sent to your email address." />
+  <SuccessMessage id="9012" code="PASSWORD_SAVED"  text="Password saved successfully." />
+
+  <FailureMessage id="9005" code="PASSWORD_MISMATCH" text="Password and Confirm Password must be same." />
+  <FailureMessage id="9007" code="FORGOT_USERID" text="User id is not found"/>
+  <FailureMessage id="9008" code="PASSWORD_NOT_RESET" text="Password reset failed." />
+  <FailureMessage id="9011" code="PASSWORD_NOT_SEND" text="Password sending failed."/>
+  <FailureMessage id="9013" code="PASSWORD_NOT_SAVE" text="Password not Saved."/>
+
+
+
+  <!--Library Books -->
+  <FailureMessage id="1000001" code="KO_EMPTY_SEARCH_TEXT"  text="Please enter some text to search! it can't be empty." />
+
+  <GeneralMessage id="2000000" code="ISSUE_STUDENT"  text="ISSUE A BOOK TO STUDENT" />
+  <GeneralMessage id="2000001" code="ISSUE_STAFF"  text="ISSUE A BOOK TO STAFF" />
+
+  <GeneralMessage id="2000010" code="RETURN_STUDENT"  text="RECEIVE A BOOK FROM STUDENT" />
+  <GeneralMessage id="2000020" code="RETURN_STAFF"  text="RECEIVE A BOOK FROM STAFF" />
+
+  <GeneralMessage id="2000110" code="MISSING_STUDENT"  text="MISSING A BOOK BY STUDENT" />
+  <GeneralMessage id="2000120" code="MISSING_STAFF"  text="MISSING A BOOK BY STAFF" />
+
+
+  <GeneralMessage id="2000210" code="DAMAGED_STUDENT"  text="DAMAGED A BOOK BY STUDENT" />
+  <GeneralMessage id="2000220" code="DAMAGED_STAFF"  text="DAMAGED A BOOK BY STAFF" />
+
+  
+  
+  <GeneralMessage id="2000001" code="ISSUE"  text="ISSUE A BOOK TO " />
+  <GeneralMessage id="2000002" code="RETURN"  text="RECEIVE A BOOK FROM " />
+  <GeneralMessage id="2000003" code="MISSING"  text="RECORD A BOOK MISSING FROM LIBRARY" />
+  <GeneralMessage id="2000004" code="DAMAGED"  text="RECORD A BOOK DAMAGED IN LIBRARY" />
+  <GeneralMessage id="2000005" code="VIEW"  text="VIEW ALL TRANSACTIONS OF LIBRARY" />
+  <GeneralMessage id="2000006" code="MESSAGE"  text="MESSAGE:" />
+
+  <SuccessMessage id="30000001" code="OK_BOOK_ISSUED"  text="Successfully issued the Book ({0}) to [{1}]" />
+  <FailureMessage id="30000001" code="KO_BOOK_ISSUED"  text="Failed to issue the Book" />
+  <SuccessMessage id="30000002" code="OK_BOOK_RECEIVED"  text="Successfully received the Book ({0}) from {1}" />
+  <SuccessMessage id="30000002" code="KO_BOOK_RECEIVED"  text="Failed to receive the Book" />
+  <SuccessMessage id="30000003" code="OK_RECORDING_THE_DAMAGED_BOOK"  text="Successfully recorded the Book ({0}) as damaged" />
+  <SuccessMessage id="30000003" code="KO_RECORDING_THE_DAMAGED_BOOK"  text="Failed to record the Book ({0}) as damaged" />
+  <SuccessMessage id="30000003" code="OK_RECORDING_THE_MISSING_BOOK"  text="Successfully recorded the Book ({0}) as mising" />
+  <SuccessMessage id="30000003" code="KO_RECORDING_THE_MISSING_BOOK"  text="Failed to record the Book ({0}) as missing" />
+
+  
+
+  <!-- Student Message-->
+  <SuccessMessage id="326" code="OK_STUDENT_ADDED"  text="Application For Admission applied successfully."></SuccessMessage>
+  <SuccessMessage id="327" code="OK_STUDENT_UPDATED"  text="Updation of Student details done successfully."></SuccessMessage>
+  <SuccessMessage id="328" code="OK_DATA_UPDATED"  text="Updation of Record Done Successfully."></SuccessMessage>
+  <SuccessMessage id="329" code="OK_DATA_ADDED"  text="Record Submitted Successfully."></SuccessMessage>
+  <SuccessMessage id="329" code="OK_DATA_DELETED"  text="Record Deleted Successfully."></SuccessMessage>
+  
+  <FailureMessage id="1017" code="KO_STUDENT_ADDED" text="Failed to Apply Admission." />
+  <FailureMessage id="1018" code="KO_STUDENT_UPDATED" text="Failed to Update Student Application." />
+  <FailureMessage id="1019" code="KO_DATA_ADDED" text="Failed to Submit The Data." />
+  <FailureMessage id="1020" code="KO_DATA_UPDATED" text="Failed to Update Data." />
+  <FailureMessage id="1021" code="KO_DATA_DELETED" text="Failed to Delete The Record." />
+
+  <FailureMessage id="1022" code="ONE_MINOR_SUBJECT" text="!!! Please Choose One Minor Subject!!!" />
+  <FailureMessage id="1023" code="ONE_MAJOR_SUBJECT" text="!!! Please Choose One Major Subject!!!" />
+  <FailureMessage id="1024" code="ONE_PASS_SUBJECT" text="!!! Please Choose One Pass Subject!!!" />
+  <FailureMessage id="1025" code="FOUR_ELECTIVE_SUBJECT" text="!!! Please Choose Four no of Elective Subjects!!!" />
+  <FailureMessage id="1026" code="TWO_ELECTIVE_SUBJECT" text="!!! Please Choose Two no of Elective Subjects!!!" />
+  
+  <FailureMessage id="1027" code="ONE_HONS_SUBJECT" text="!!! Please Choose One Hons. Subjects!!!" />
+  <FailureMessage id="1028" code="TWO_PASS_SUBJECT" text="!!! Please Choose Two no of Pass Subjects!!!" />
+
+  <FailureMessage id="1029" code="SEAT_NOT_AVAILBLE" text=" !!! Sorry No More Seat availble for The Current Session >>>" />
+  <FailureMessage id="1030" code="KO_DATA_UPDATED_STUDENT_IN_OTHER_SECTION" text=" !!! Sorry Make a valid Section>>>" />
+  
+  
+  
+  <!--EMPLOYEE-->
+	<FailureMessage id="9001" code="KO_EMPLOYEE_DUPLICATE"  text="Another employee with the same name  is found whose Father's name and Date of Birth is also same." />
+
+  <!--EMPLOYEE PROFILE-->
+  <FailureMessage id="2202" code="EMPLOYEE_NOT_SELECTED"  text="Select Employee to view Profile." />
+  <FailureMessage id="2205" code="EMPLOYEE_DUP_COMPONENT"  text="Sorry This Component is Exist in the List." />
+  <FailureMessage id="2206" code="EMPLOYEE_NOT_SELECTED_THEN"  text="Please Select a Employee" />
+
+  <GeneralMessage id="2203" code="PASSINGYEAR_CAN_NOT_GREATER_CURRENTYEAR"  text="Passing Year can't be Greater than Current Year." />
+  <GeneralMessage id="2204" code="ONLY_MOBILE_NUMBER_RANGE"  text="Mobile no range should between 10-12 digits." />
+
+  <!--LEAVEAPPLICATIONS-->
+
+	<SuccessMessage id="6000011" code="OK_LEAVEAPPLICATION_ADDED" text="LeaveApplication applied successfully." />
+	<SuccessMessage id="6000012" code="OK_LEAVEAPPLICATION_UPDATED" text="LeaveApplication updated successfully." />
+	<SuccessMessage id="6000013" code="OK_LEAVEAPPLICATION_DELETED" text="LeaveApplication deleted successfully." />
+	<SuccessMessage id="6000014" code="OK_LEAVEAPPLICATION_APRPOVED" text="successfully approved the leave application." />
+
+	<FailureMessage id="600000003" code="KO_LEAVEAPPLICATION_DELETED" text="Leave Application n't Cancelled Due to Approved/Cancelled." />
+	<FailureMessage id="600000001" code="KO_INSUFFICIENT_LEAVEBALANCE"  text="Insufficient Leave Balance." />
+	<SuccessMessage id="600000004" code="KO_LEAVEAPPLICATION_APRPOVED" text="Sorry! failed to approve / reject the leave application." />
+
+
+
+  <!--ATTENDANCEAMMENDMENT-->
+  <SuccessMessage id="40000000000013" code="OK_ATTENDANCEAMMENDMENT_DELETED" text="AttendanceAmmendment deleted successfully." />
+  <FailureMessage id="4000000000000003" code="KO_ATTENDANCEAMMENDMENT_DELETED" text="Failed to Delete the AttendanceAmmendment." />
+
+
+  <!--ATTENDANCEAMMENDMENT APPROVAL-->
+  <SuccessMessage id="4150013" code="OK_ATTENDANCEAMMENDMENTAPPLICATION_APRPOVED" text="successfully approved the Attendance application." />
+  <FailureMessage id="41500103" code="KO_ATTENDANCEAMMENDMENTAPPLICATION_APRPOVED" text="Sorry! failed to approve / reject the Attendance application.." />
+
+ 
+	<!--USERPROFILE-->
+	<FailureMessage id="9021" code="INVALID_IMAGE_FILE" text="Select only jpg, jpeg, gif, png or bmp file"/>
+	<GeneralMessage id="9051" code="INVALID_PHONE" text="Enter phone Number with in 7-13 digits"/>
+	<GeneralMessage id="9052" code="INVALID_MOBILE" text="Enter mobile Number with in 10-12 digits"/>
+
+
+	<!--MENUITEMS-->
+	<FailureMessage id="9025" code="DUPLICATE_RECORD" text="Duplicate Record Found in The Database."/>
+
+	
+ 
+	<!--GENERAL MESSAGES-->
+	<GeneralMessage id="8000" code="KO_FILE_NOT_FOUND" text="The file doesn't exist." />
+	<GeneralMessage id="8001" code="KO_IMAGE_NOT_SELECTED" text="Upload a Profile Image." />
+	<GeneralMessage id="8002" code="FIELD_CAN_NOT_EMPTY" text="field_code can't left blank" />
+	<GeneralMessage id="8003" code="SELECTION_CAN_NOT_EMPTY" text="Choose One field_code" />
+	<GeneralMessage id="8004" code="PRIVILEGES_REQUIRED" text="Privileges required. You don't have enough permissions."/>
+	<GeneralMessage id="8005" code="PAGE_PERMISSION_DENIED" text="You don't have a permission to access the page. Please contact your supervisor." />
+
+	<GeneralMessage id="8101" code="ONLY_ALPHABET_FIELD" text="Please enter an alphabet only." />
+	<GeneralMessage id="8102" code="ONLY_NUMBER_FIELD" text="Please enter numbers only." />
+	<GeneralMessage id="8103" code="ONLY_NUMBER_RANGE" text="Please enter an number within #MIN#." />
+	<GeneralMessage id="8104" code="ONLY_TENURE_RANGE" text="Please enter an Month Between 1 To 36." />
+	<GeneralMessage id="8105" code="EXCEPT_ZERO" text="Please enter valid amount." />
+	<GeneralMessage id="8106" code="ONLY_DATE_FIELD" text="Please enter a date." />
+	<GeneralMessage id="8107" code="ONLY_SPECIFIC_DATE_FORMAT" text="Please enter a date like 01-Jan-1900." />
+	<GeneralMessage id="8108" code="ONLY_VALID_DATE" text="Please enter a valid date." />
+	<GeneralMessage id="8109" code="ONLY_VALID_AGE" text="Age must be greater than 0" />
+	<GeneralMessage id="8110" code="ONLY_VALID_NAME" text="Only A-Z, Space and dot" />
+	<GeneralMessage id="8112" code="ONLY_EMAIL_FIELD" text="Enter a correct email address." />
+	<GeneralMessage id="8113" code="USER_HAS_NO_EMAIL" text="This user doesn't have an email address attached with his record. Please contact your supervisor." />
+	<GeneralMessage id="8114" code="NOT_A_VALID_USER" text="This user id doesn't exists in our database. please specify a correct user id." />
+	<GeneralMessage id="8115" code="FORGOT_PWD_MAIL_SUBJECT" text="PASSWORD FOR #APP# " />
+	<GeneralMessage id="8116" code="IMAGE_VERIFY_FAILED" text="Image verificatin failed. Please type the text shown in the image. " />
+	<GeneralMessage id="8117" code="LEAVE_APPLICATION_MAIL_SUBJECT" text="LEAVE APPLICATION FOR #APP# " />
+
+
+	<GeneralMessage id="8201" code="REGEX_ALPHABETS_ONLY" text="Please enter an alphabet only." />
+	<GeneralMessage id="8202" code="REGEX_DATE" text="Please enter a date like 25-Jul-1983." />
+	<GeneralMessage id="8203" code="REGEX_EMAILID" text="Enter a correct email address." />
+	<GeneralMessage id="8204" code="REGEX_NUMBER_ONLY" text="Enter a number only." />
+	<GeneralMessage id="8205" code="REGEX_NUMBER_WITH_SPACE" text="Enter a number only. Space is allowed." />
+	<GeneralMessage id="8206" code="REGEX_NUMBER_GREATERTHANZERO" text="Must be number only and greater than Zero." />
+	<GeneralMessage id="8207" code="REGEX_CURRENCY_GREATERTHANZERO" text="Enter valid amount. Must not be zero." /> 
+	<GeneralMessage id="8208" code="REGEX_NAME" text="Enter valid Name. Only A-Z, Space and dot" />
+	<GeneralMessage id="8209" code="REGEX_ALPHANUMERIC" text="Only A-Z, a-z and 0-9." />
+	<GeneralMessage id="8210" code="REGEX_ALPHANUMERIC_MINUS" text="Only A-Z, a-z, 0-9 and (-) minus" />
+	<GeneralMessage id="8211" code="REGEX_ALPHANUMERIC_SPACE_DOT" text="Only A-Z, a-z, 0-9 and (.) (space)" />
+	<GeneralMessage id="8212" code="REGEX_MONTH_YEAR" text="Enter only Month and Year like Jul-1983 or 07-1983." />
+  <GeneralMessage id="8213" code="REGEX_TIME_GREATERTHANZERO" text="Enter valid Time. like 09.45" />
+  <GeneralMessage id="8214" code="REGEX_MOBILE_LENGTH" text="Enter valid Mobile Number" />
+
+
+	<GeneralMessage id="8304" code="MUST_GREATER_THAN_FIRST_DATE" text="End date can't less than Start date" />
+	<GeneralMessage id="8305" code="MUST_GREATER_THAN_PAYMENT-DATE" text="EMI Start date can't less than Payment Date" />
+
+	<GeneralMessage id="9001" code="SELECT_HEADTYPE" text="Please Select Head Type." />
+	<GeneralMessage id="9002" code="SELECT_ACCOUNT_HEAD" text="Please Select Account Head." />
+
+	<GeneralMessage id="11001" code="SELECT_ACCESS_TYPE" text="Please Select Access Type." />
+	<GeneralMessage id="11002" code="SELECT_ACCOUNT_NAME" text="Please Select Account Name." />
+	<GeneralMessage id="11003" code="SELECT_ONE" text="Please Choose One " />
+	<GeneralMessage id="11004" code="SELECT_PAYMENTMODE" text="Please Select mode Of Transaction" />
+
+	<!--USER SETTING-->
+	<SuccessMessage id="2000110" code="OK_USERSETTING_ADDED" text="User Setting  Updated successfully." />
+	<FailureMessage id="3000110" code="KO_USERSETTING_ADDED"  text="User Setting  Updated Failure." />
+
+
+	<SuccessMessage id="111001" code="OK_RECORD_UPDATED"  text="Successfully updated the record." />
+	<FailureMessage id="111002" code="KO_RECORD_UPDATED"  text="Failed to update the record." />
+	<FailureMessage id="111003" code="KO_RECORD_LOADED"  text="Failed to load the record." />
+
+	<!-- REPORTS-->
+	<FailureMessage id="111004" code="KO_SELECTION_CANT_BLANK"  text="Selection(s) can't left blank." />
+	<FailureMessage id="111005" code="KO_FAILED_TO_OPEN"  text="Sorry the report could not found." />
+
+	<GeneralMessage id="C001" code="CHART_ONLY_FOR_CHAIRMAN" text="Sorry! Only top management can see the charts!" />
+  
+	<SuccessMessage id="1111111111" code="OK_SIGNUPSUCCESS"  text="UserName and Password Send Sucessfully To Your EmailID." />
+	<FailureMessage id="2222222222" code="KO_SIGNUPSUCCESS"  text="Sign Up Failure." />
+</Messages>
+

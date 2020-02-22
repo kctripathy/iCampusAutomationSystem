@@ -1,0 +1,392 @@
+﻿@import "DialogBox.css";
+@import "Calendar.css";
+@import "GridView.css";
+@import 'GridViewPagerStyle.css';
+@import "CustomisedMenu.ascx.css";
+@import "Responsive.css";
+/*@import "AjaxAccordion.css";
+
+*/
+
+/*----------------------------------------------------------------*/
+/* CSS FOR ALL THE PAGES OF THE MICRO ERP APPLIACTION, ALL THEMES */
+/*----------------------------------------------------------------*/
+
+
+#WebBody
+{
+    background-color: #FFFFFF;
+    border-left: 1px solid #000080;
+    border-right: 1px solid #000080;
+}
+
+#WebTopMenuHeader
+{
+    color: #fff;
+    background-color: #000080;
+    border-bottom: 1px solid #CCC;
+    border-left: 1px solid #000080;
+    border-right: 1px solid #000080;
+    background: #000033 url(../../Common/Images/nav-repeat1.png) left -5px top repeat-x;
+    width: 996px;
+}
+
+#webHeaderWelcomeText
+{
+    width: 100%;
+    float: right;
+    margin-top: 51px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.DatabaseInfoText
+{
+    display: none;
+}
+
+
+
+#WebFooterAdmin
+{
+    color: #fff;
+    font-size: 8pt;
+    background-image: linear-gradient(#04519b, #044687 60%, #033769);
+    border-bottom: 1px solid #022241;
+    display: block;
+    float: left;
+    width: 100%;
+    height: 35px;
+    margin: 0px auto;
+    padding: 5px 0px;
+    bottom: 0;
+    display: block;
+    float: left;
+    position: relative;
+    text-align: center;
+}
+
+/*----------------------------------------------------------------*/
+/* CSS FOR BODY: THE LEFT COLUMN AND THE CONTENTS AT RIGHT COLUMN */
+/*----------------------------------------------------------------*/
+
+#WebBody #PageContent_RightColumn
+{
+}
+
+
+
+.PageTitle
+{
+    /*color: #04519b;
+    padding-top: 6px;
+    padding-left: 6px;
+    min-height: 30px;
+    width: 100%;
+    font-family: Lato, sans-serif;
+    font-size: 11pt;
+    background: linear-gradient(cyan 33%, skyblue 83%, deepskyblue);
+    text-transform: capitalize;
+    font: 600 18px/22px Nunito, sans-serif;*/
+    color: #000;
+    padding-top: 6px;
+    padding-left: 6px;
+    min-height: 25px;
+    width: 100%;
+    font-family: Lato, sans-serif;
+    font-size: 11pt;
+    background: linear-gradient(lightcyan 31%, #b5c2ca 88%, lightcyan);
+    text-transform: capitalize;
+    font: 600 17px/22px Lato, sans-serif;
+}
+
+.PageSubTitle
+{
+    background-color: #4b6c9e;
+    font-family: Lato, sans-serif;
+    font-size: 11pt;
+    font-weight: bold;
+    color: #191970;
+    background: #E2F0FF url(../Images/BackgroundSubTitle_001.gif) left 15px repeat-x;
+}
+
+#WebBody #PageContent_RightColumn ul li.PageSubTitle
+{
+    background-color: #4b6c9e;
+    font-family: Lato, sans-serif;
+    font-size: 11pt;
+    font-weight: bold;
+    color: #191970;
+    background: #E2F0FF url(../Images/BackgroundSubTitle_001.gif) repeat-x;
+}
+
+.FormButton
+{
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 0px;
+}
+
+    .FormButton input
+    {
+        background-image: url(../Images/bg_Button_Default.gif);
+        background-repeat: repeat-x;
+        color: #080808;
+        font-size: 1em;
+        padding: 5px;
+        font-weight: bold;
+    }
+
+.FormButton_Top
+{
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: right;
+    margin-top: 0px;
+}
+
+    .FormButton_Top input
+    {
+        background-image: url(../Images/bg_Button_Default.gif);
+        background-repeat: repeat-x;
+        color: #080808;
+        font-size: 1em;
+        padding: 5px;
+        font-weight: bold;
+    }
+
+
+
+div#ContentPlaceHolderMicroERP_updatePanel_CustomerAccounts ul#CustomerAccounts div#ContentPlaceHolderMicroERP_panel_SelectedScroll.Panel
+{
+    width: 300px;
+}
+
+ul.MenuItems
+{
+    list-style-type: none;
+}
+
+    ul.MenuItems li
+    {
+        border-bottom: 1px solid #c0c0c0;
+        padding: 4px;
+    }
+
+div.SupportImage
+{
+    width: 50%;
+    border: #ccc solid 1px;
+    display: block;
+    float: left;
+    height: 400px;
+    background-image: url(../Images/micro-customer-support.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #FFFFFF;
+}
+
+#banner
+{
+    background: transparent url("../images/Homepage_Banner_01.jpg") no-repeat scroll 0 0;
+    height: 237px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+}
+
+#bannerContent
+{
+    color: #FFFFFF;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 130px 0 0 406px;
+}
+
+#BigErrorText
+{
+    font-weight: bolder;
+    font-size: 175%;
+    color: red;
+}
+
+.ErrorMessage
+{
+    font-size: 105%;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.inner-content-page-image
+{
+    position: relative;
+    padding: 4px;
+    margin: 4px;
+    display: block;
+    float: right;
+    border: 3px double cyan;
+    height: 200px;
+    width: 200px;
+}
+
+.Align2Center
+{
+    text-align: center;
+}
+
+    .Align2Center a
+    {
+        text-align: center;
+        color: darkgreen;
+    }
+
+        .Align2Center a:hover
+        {
+            text-align: center;
+            color: crimson;
+        }
+
+
+/*p
+{
+    font-size: 15px;
+    color: #727272;
+    line-height: 1.5em;
+    font-weight: 400;
+}
+
+a
+{
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    color: #24C0D9;
+    font-weight: 400;
+    letter-spacing: .3px;
+}
+
+    a:hover
+    {
+        -webkit-transition: background-color .3s ease;
+        -moz-transition: background-color .3s ease;
+        -o-transition: background-color .3s ease;
+        transition: background-color .3s ease;
+    }*/
+.btn-green
+{
+    background-color: #a1b95d;
+    color: #000;
+}
+
+#ctrl_EstablishmentZone1_gridViewEstb
+{
+    border-top: solid 2px #a1b95d;
+}
+
+.radioboxlist
+{
+}
+
+table.radioboxlist > tbody > tr > td input
+{
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+table.radioboxlist > tbody > tr > td label
+{
+    font-weight: normal;
+    font-family: Lato, sans-serif;
+    font-size: 9pt;
+    font-weight: bold;
+    text-transform: fullwidth;
+    text-align: center;
+}
+
+
+#ctrl_EstablishmentZone1_gridViewEstb > tbody > tr > td
+{
+    border: none;
+    font-family: Lato, Arial;
+}
+
+.gridViewEstbRowStyle
+{
+    border-bottom: dotted 1px #a1b95d;
+    height: 15px;
+}
+
+displayGridNewsLi div table
+{
+    border: solid 1px red;
+}
+
+.ItemStyle_DT
+{
+    width: 10%;
+    height: 18px;
+    padding: 1px;
+    text-align: center;
+    background-color: #fff;
+    font-size: 9pt;
+}
+
+.ItemStyle_Title
+{
+    height: 18px;
+    padding: 2px 0px 0px 5px;
+    width: auto;
+    background-color: #fff;
+    /*text-transform: capitalize;*/
+    font-size: 9pt;
+}
+
+.ItemStyle_Icon
+{
+    width: 7%;
+    height: 18px;
+    padding: 1px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.gridViewEstbHeaderStyle
+{
+    display: none;
+}
+
+#displayFirstNewsLi
+{
+    display: block;
+}
+
+#displayGridNewsLi
+{
+    display: block;
+}
+
+
+#DeveloperDiv
+{
+    display: block;
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding: 0;    
+}
+
+#DeveloperDiv > p,
+#DeveloperDiv > p > a
+{
+	font-weight: normal;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 8pt;
+    border-bottom: solid 1px navy;
+}

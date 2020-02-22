@@ -1,0 +1,45 @@
+<public:component>
+<PUBLIC:ATTACH EVENT="onload" ONEVENT="Window_onload" />
+<SCRIPT LANGUAGE="JScript">
+Window_onload();
+function Window_onload()
+{
+   var arr = element.document.all.tags('INPUT');
+   var i;
+   for (i = 0; i<arr.length; i++)
+   {
+    arr[i].attachEvent('onkeypress', checkCharacter);  
+    arr[i].attachEvent('onpaste', checkText);
+   }
+
+   var arrTextArea = element.document.all.tags('TEXTAREA');
+   var j;
+   for (j = 0; j<arrTextArea.length; j++)
+   {
+    arrTextArea[j].attachEvent('onkeypress', checkCharacter);  
+    arrTextArea[j].attachEvent('onpaste', checkText);
+   }
+}
+
+function checkText()
+{
+      var sNewString;
+      sNewString = window.clipboardData.getData("Text");
+      if (sNewString.toLowerCase().match("<script>") || sNewString.toLowerCase().match("<//script>"))
+      {
+		return false;
+      }
+      return true;
+}
+
+function checkCharacter()
+{
+       if (event.keyCode == 60 || event.keyCode == 62)
+       {
+          alert('Please do not user < or >. Kindly enter again.');
+          return false;
+       }
+       return true; 
+}
+</SCRIPT>
+</public:component>

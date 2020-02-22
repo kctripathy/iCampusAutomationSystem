@@ -1,0 +1,783 @@
+﻿
+@import "LibraryBookSearch.ascx.css";
+@import "UpdateProgress.css";
+/*
+	@import "ReportCharts.css";
+@import "Menu_OrangeVerticals.css";
+@import "Menu_Micro_DarkGreen.css";
+@import "Menu_Blue_Vertical.css";*/
+
+/*----------------------------------------------------------------*/
+/* CSS FOR ALL THE PAGES OF THE MICRO ERP APPLIACTION, ALL THEMES */
+/*----------------------------------------------------------------*/
+*
+{
+	behavior: url(SpecialCharacter.htc);
+	/*font-family: tahoma, arial, helvetica, sans-serif;*/
+	color: #000000;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	padding: 0;
+	font-family: Lato, Verdana, Trebuchet MS;
+	font-size: 9pt;
+}
+
+body
+{
+	margin: 0;
+	margin: 0;
+	padding: 0;
+	background: url("../images/screen_bg.gif") repeat scroll left top transparent;
+}
+
+#TheContainer
+{
+	margin: 0;
+	padding: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#WebContent
+{
+	width: 100%;
+	margin: 0px auto 0 auto;
+	height: auto;
+	background-color: #FFF;
+	border: solid 1px #003366;
+}
+
+.navbar
+{
+	margin-bottom: 0px;
+	top: 0;
+}
+
+.row
+{
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+
+
+/*
+#HeaderWelcomeMessage {
+    background: red;
+}
+#WebHeader
+{
+	width: 100%;
+	height: 100px;
+	display: none;
+	float: left;
+	border-bottom: solid 1px #0033CC;
+	background-color: #003366;
+	color: #ccc;
+	background: url(../Images/TSDC-HEAD-ICAS2.jpg) left top no-repeat;
+    
+}*/
+#WebHeader
+{
+	color: #ccc;
+	width: 100%;
+	height: 75px;
+	float: left;
+	border-bottom: solid 1px #0033CC;
+	background-color: #003366;
+	background: #04164D url(../../../Images/TSDC-WEB-HEAD-80.jpg) left top no-repeat;
+	text-align: center;
+}
+
+#WebBody
+{
+	width: 100%;
+	min-height: 550px;
+	height: auto;
+	display: block;
+	float: left;
+}
+
+#WebFooter
+{
+	width: 100%;
+	height: 13px;
+	display: block;
+	float: left;
+	font-family: Microsoft Sans Serif;
+	font-size: 90%;
+	text-align: center;
+	padding: 3px 0;
+}
+
+#WebTopMenuHeader
+{
+	width: 100%;
+	height: 31px;
+	display: block;
+	float: left;
+	font-family: Microsoft Sans Serif;
+	font-size: 100%;
+	text-align: left;
+	padding: 0;
+}
+/*----------------------------------------------------------------*/
+/* CSS FOR BODY: THE LEFT COLUMN AND THE CONTENTS AT RIGHT COLUMN */
+/*----------------------------------------------------------------*/
+
+#WebBody #PageContent_LeftColumn
+{
+	width: 20%;
+	display: block;
+	float: left;
+	min-height: 540px;
+	height: inherit;
+	padding: 0px;
+	background: url('http://tsdcollege.in/Themes/Common/Images/ICAS-LEFT.jpg') top left no-repeat;
+	background-size: 100% 100%;
+}
+
+
+#WebBody #PageContent_RightColumn
+{
+	width: 80%;
+	height: inherit;
+	display: block;
+	float: left;
+	padding: 10px;
+	overflow: auto;
+	border-left: solid 1px #ccc;
+	min-height: 660px;
+}
+
+
+	#WebBody #PageContent_LeftColumn ul, #WebBody #PageContent_RightColumn ul
+	{
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		/*border: solid 1px red;*/
+		min-height: 25px;
+	}
+
+		#WebBody #PageContent_LeftColumn ul, #WebBody #PageContent_RightColumn ul#DialogBoxUL
+		{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			/*border: solid 1px blue;*/
+			min-height: 20px;
+		}
+
+		#WebBody #PageContent_RightColumn ul li.FormLabel
+		{
+			display: block;
+			float: left;
+			margin: 2px 0;
+			padding: 0;
+			width: 25%;
+			color: #000080;
+		}
+
+		#WebBody #PageContent_RightColumn ul li.FormValue
+		{
+			display: block;
+			float: left;
+			margin: 2px 0;
+			padding: 0;
+			width: 74%;
+		}
+
+h1.PageTitle
+{
+	display: block;
+	float: left;
+	width: 98%;
+	margin: -5px 0 10px 0;
+	padding: 8px;
+	height: 12px;
+	border: #ccc solid 1px;
+	text-align: left;
+	vertical-align: middle;
+	font-size: 105%;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#WebBody #PageContent_RightColumn ul li.PageSubTitle
+{
+	display: block;
+	float: left;
+	margin: 5px 0;
+	padding: 5px 0 2px 2px;
+	width: 99%;
+	font-size: 120%;
+	background-color: #4b6c9e;
+	font-weight: bold;
+	background: url(../Images/bg_Header_SubTitle.gif) repeat-x #E2F0FF;
+	color: #191970;
+}
+
+#WebBody #PageContent_RightColumn ul li.PageSubTitle
+{
+	display: block;
+	float: left;
+	margin: 5px 0;
+	padding: 5px 0 2px 2px;
+	width: 99%;
+	font-size: 120%;
+}
+
+#WebBody #PageContent_RightColumn ul li.FormButton
+{
+	display: block;
+	float: left;
+	padding: 0;
+	width: 34%;
+	margin-left: 25%;
+	margin-top: 13px;
+	margin-right: 0;
+	margin-bottom: 2px;
+}
+
+.FormButton_Top
+{
+	display: block;
+	float: right;
+}
+
+	.FormButton_Top input
+	{
+		padding: 2px 5px;
+		line-height: 17px;
+	}
+
+	.FormButton_Top div#Top
+	{
+		display: block;
+		float: left;
+		margin-top: -38px;
+		width: 100%;
+	}
+
+	.FormButton_Top div#Bottom
+	{
+		display: block;
+		float: left;
+		width: 100%;
+		border: red solid 1px;
+	}
+
+#WebBody #PageContent_RightColumn ul li.FormMessage
+{
+	display: block;
+	float: left;
+	padding: 0;
+	width: 98%;
+	margin: 27px 1% 0 1%;
+	color: red;
+	text-align: center;
+}
+
+#WebBody #PageContent_RightColumn ul li.FormButton input
+{
+	padding: 3px;
+	color: #4b6c9e;
+	font-weight: bold;
+}
+
+#WebBody #PageContent_RightColumn ul li.FormSpacer
+{
+	display: block;
+	float: left;
+	width: 99%;
+	height: 40px;
+}
+
+#WebBody #PageContent_RightColumn ul li.FormSpacer20px
+{
+	display: block;
+	float: left;
+	width: 99%;
+	height: 20px;
+}
+
+li.FormValueHighlighter
+{
+	display: block;
+	float: left;
+	width: 99%;
+	border: black solid 1px;
+	background-color: red;
+	color: white;
+	padding: 5px;
+}
+
+	li.FormValueHighlighter span
+	{
+		font-size: 125%;
+		font-weight: bold;
+	}
+
+ul#OfficeDetails
+{
+	margin: 0 2px;
+	padding: 0;
+	width: 100%;
+	height: 30px;
+}
+
+	ul#OfficeDetails li
+	{
+		display: block;
+		float: left;
+	}
+
+		ul#OfficeDetails li#FormLabel
+		{
+			width: 25%;
+			text-align: right;
+		}
+
+		ul#OfficeDetails li#FormValueOfficeType
+		{
+			width: 25%;
+		}
+
+		ul#OfficeDetails li#FormValueOfficeType
+		{
+			width: auto;
+		}
+
+.FormSearch
+{
+	display: block;
+	float: left;
+	width: 100%;
+	margin: 8px 0;
+}
+
+ul.SearchBox
+{
+	margin: 0;
+	padding: 2px 0;
+	height: 20px;
+	width: 758px;
+	list-style-type: none;
+}
+
+	ul.SearchBox li
+	{
+		display: block;
+		float: left;
+		margin: 0;
+		padding: 2px 0 0 0;
+	}
+
+		ul.SearchBox li.SearchLabel
+		{
+			display: block;
+			float: left;
+			margin: 2px 0 0 0;
+			padding: 0;
+			width: 200px;
+			text-align: right;
+		}
+
+		ul.SearchBox li.SearchFields
+		{
+			display: block;
+			float: left;
+			margin: 2px 0 0 0;
+			padding: 0 0 0 2px;
+			width: 150px;
+			text-align: right;
+		}
+
+		ul.SearchBox li.SearchOperator
+		{
+			display: block;
+			float: left;
+			margin: 2px 0 0 0;
+			padding: 0 5px 0 0;
+			width: 80px;
+			text-align: right;
+		}
+
+		ul.SearchBox li.SearchText
+		{
+			display: block;
+			float: left;
+			margin: 2px 0 0 0;
+			padding: 0;
+			width: 144px;
+			text-align: left;
+		}
+
+		ul.SearchBox li.SearchButton
+		{
+			display: block;
+			float: left;
+			margin: 0 0 0 0;
+			padding: 0;
+			width: 50px;
+			text-align: left;
+		}
+
+		ul.SearchBox li.SearchMessage
+		{
+			display: block;
+			float: left;
+			margin: 5px 0 0 0;
+			padding: 0;
+			width: 82%;
+			text-align: right;
+		}
+
+		ul.SearchBox li select, ul.SearchBox li.SearchText input
+		{
+			border: #A3C0E8 solid 1px;
+		}
+
+		ul.SearchBox li.SearchButton input
+		{
+			background-image: url(../Images/bg-menu-main.png);
+			background-repeat: repeat-x;
+			padding: 0;
+		}
+
+html body form#formMicro div#TheContainer div#WebContent div#WebBody div#PageContent_RightColumn ul#MicroChart li ul#OfficeDetails li#FormLabel
+{
+	width: 45%;
+	text-align: right;
+}
+
+html body form#formMicro div#TheContainer div#WebContent div#WebBody div#PageContent_RightColumn ul#MicroChart li ul#OfficeDetails li#FormValueOfficeType
+{
+	width: auto;
+	text-align: right;
+}
+
+html body form#formMicro div#TheContainer div#WebContent div#WebBody div#PageContent_RightColumn ul#MicroChart li ul#OfficeDetails li#FormValueOfficeName
+{
+	width: 40%;
+	text-align: left;
+}
+
+
+.TextSmallWidth
+{
+	width: 26px;
+}
+
+.WatermarkClass
+{
+	color: #808080;
+}
+
+.ValidateMessage
+{
+	color: #FF0000;
+	background-color: #FFFFFF;
+	padding: 2px;
+	clear: left;
+	text-decoration: none;
+}
+
+.ErrorMessage
+{
+	font-size: 105%;
+	margin-top: 30px;
+	font-weight: bold;
+}
+
+.BigErrorText
+{
+	font-size: 175%;
+	color: red;
+}
+
+#WebFooter span#lbl_Database
+{
+	color: #000080;
+}
+
+.HorizentalLineSeparator
+{
+	display: block;
+	float: left;
+	height: 50px;
+	width: 1px;
+	background-color: red;
+	margin: 25px 8px 2px 2px;
+}
+
+.SupportImage
+{
+	width: 50%;
+	border: #ccc solid 1px;
+	display: block;
+	float: left;
+	height: 400px;
+	background-image: url(../Images/micro-customer-support.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: #FFFFFF;
+}
+
+div#Mode
+{
+	color: #FFFFFF;
+	display: block;
+	float: right;
+	height: 16px;
+	position: absolute;
+	text-align: center;
+	width: 58%;
+	margin-top: 26px;
+}
+
+	div#Mode span
+	{
+		padding: 3px;
+		color: #FF0000;
+		text-decoration: blink;
+		font-weight: bold;
+	}
+
+html body form#formMicro div#TheContainer div#WebContent div#WebBody div#PageContent_RightColumn div#ContentPlaceHolderMicroERP_updatePanel_CustomerAccounts ul#CRMScrolls li.FormValue select#ContentPlaceHolderMicroERP_ddl_ScrollNumber
+{
+	width: 29%;
+}
+
+div#ContentPlaceHolderMicroERP_updatePanel_CustomerAccounts ul#CustomerAccounts div#ContentPlaceHolderMicroERP_panel_SelectedScroll.Panel
+{
+	background: url(../Images/BackgroundSubTitle_001.gif) left top 0 repeat-x #000080;
+	width: 300px;
+}
+
+.PopupMessageBox
+{
+	position: absolute;
+	z-index: 10;
+	width: 172px;
+	height: 102px;
+	text-align: center;
+	color: #FF0000;
+	font: 14px Verdana, Arial, Helvetica, sans-serif;
+	background: url(bg_image.gif) bottom right no-repeat;
+	display: none;
+}
+
+ul#SelectDatabase
+{
+	display: block;
+}
+
+.SelectDatabaseControl
+{
+	width: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+}
+
+/*----------------------------------------------------------------*/
+/* LOGO, OFFICE NAME DISPLAY AND USER INFOR DISPLAY AT WEB HEADER */
+/*----------------------------------------------------------------*/
+#WebHeader ul
+{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0 0 0;
+	width: inherit;
+	height: inherit;
+	color: navy;
+}
+
+	#WebHeader ul li
+	{
+		display: block;
+		float: left;
+	}
+
+		#WebHeader ul li#Logo
+		{
+			display: block;
+			float: left;
+			width: 10%;
+			padding: 0 0 0 10px;
+			margin: 0;
+			text-align: center;
+			height: inherit;
+			background-color: transparent;
+		}
+
+			#WebHeader ul li#Logo img
+			{
+				display: none;
+			}
+
+		#WebHeader ul li#OfficeInfo
+		{
+			display: block;
+			float: left;
+			width: 30%;
+			color: yellow;
+			padding-top: 62px;
+			text-align: center;
+			text-transform: uppercase;
+			font-family: Sans-Serif;
+			font-size: 9pt;
+			font-weight: bold;
+			background-color: transparent;
+		}
+
+		#WebHeader ul li#UserInfo
+		{
+			display: block;
+			float: left;
+			width: 58%;
+			padding: 0 0 0 8px;
+			margin: 0;
+			text-align: right;
+			color: navy;
+		}
+
+			#WebHeader ul li#UserInfo ul#CurrentUser
+			{
+				list-style-type: none;
+				display: block;
+				float: right;
+				margin: 2px 0 0 0;
+				padding: 3px;
+				width: 100%;
+				height: inherit;
+				color: #dbdbdb;
+			}
+
+				#WebHeader ul li#UserInfo ul#CurrentUser li.UserLabel
+				{
+					display: block;
+					float: left;
+					width: 25%;
+					text-align: right;
+					padding: 1px 0;
+					clear: left;
+					color: #dbdbdb;
+				}
+
+				#WebHeader ul li#UserInfo ul#CurrentUser li.UserValue
+				{
+					display: block;
+					float: left;
+					width: 99%;
+					color: #ffffff;
+					padding: 1px 1%;
+					color: #dbdbdb;
+				}
+
+				#WebHeader ul li#UserInfo ul#CurrentUser li.UserValueOffice
+				{
+					display: none;
+					float: left;
+					width: 99%;
+					text-align: right;
+					color: #ffffff;
+					padding: 3px 1%;
+					color: #FFFF00;
+				}
+
+				#WebHeader ul li#UserInfo ul#CurrentUser li.UserValueOffice
+				{
+					text-transform: uppercase;
+					font-family: Sans-Serif;
+					font-size: 9pt;
+					font-weight: bold;
+					background-color: transparent;
+				}
+
+
+html body form#formMicro div#TheContainer div#WebContent div#WebBody div#PageContent_RightColumn ul#MicroChart li div.ProtectFromCopy
+{
+	display: inline;
+	min-height: 440px;
+	position: absolute;
+	top: 200px;
+	width: 57%;
+	left: 29%;
+}
+
+html body form#formMicro div#TheContainer div#WebContent div#WebBody div#PageContent_RightColumn div p.ErrorMessage span#ContentPlaceHolderMicroERP_lbl_Reason
+{
+	color: Red;
+}
+
+
+.Spacer
+{
+	display: block;
+	float: left;
+	height: 12px;
+	width: 100%;
+}
+
+
+
+.FormLabel_EQ
+{
+	display: block;
+	float: left;
+	height: 25px;
+	width: 19%;
+	background-color: #ccc;
+	border-right: solid 1px #fff;
+}
+
+.FormValue_EQ
+{
+	display: block;
+	float: left;
+	margin-top: 2px;
+	width: 20%;
+	background-color: #ccc;
+}
+
+#Age
+{
+	border: solid 1px red;
+}
+
+#divUserLogin
+{
+	background: #f0f8ff;
+	margin: 0px;
+	/*margin-top: -20px;*/
+	padding: 5px;
+	border-bottom: solid 1px #ccc;
+}
+
+
+	#divUserLogin ul#CurrentUser
+	{
+		min-height: 68px;
+		overflow: hidden;
+	}
+
+		#divUserLogin ul#CurrentUser li.UserLabel,
+		#divUserLogin ul#CurrentUser li.UserValue
+		{
+			display: block;
+			float: left;
+			width: 50%;
+			overflow: hidden;
+			height: 20px;
+		}
+
+#ctrl_LoggedOnUser_lbl_FullNameValue
+{
+	font-weight: bold;
+}

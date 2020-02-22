@@ -1,0 +1,198 @@
+﻿/*@import url("reset.css") screen;*/
+@import url("slider-animation.css") screen;
+
+/* CONTENT SLIDER */
+#content-slider
+{
+    width: 100%;
+    min-height: 300px;
+    margin: 0px auto;
+    padding-right: -15px;
+    padding-left: -15px;
+}
+
+/* SLIDER */
+#slider
+{
+    background: #000;
+    /*  border:5px solid #eaeaea;
+	box-shadow:1px 1px 5px rgba(0,0,0,0.7);*/
+    height: 300px;
+    width: 100%;
+    /*margin: 2px -15px 0px -15px;*/
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    border-top: none;
+}
+
+#mask
+{
+    /*overflow:hidden;
+	height:400px;*/
+}
+
+#slider ul
+{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: auto;
+    margin-left: -30px;
+    margin-right: -30px;
+}
+
+#slider li
+{
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    top: -325px;
+    list-style: none;
+}
+
+    #slider li.firstanimation
+    {
+        -moz-animation: cycle 25s linear infinite;
+        -webkit-animation: cycle 25s linear infinite;
+    }
+
+    #slider li.secondanimation
+    {
+        -moz-animation: cycletwo 25s linear infinite;
+        -webkit-animation: cycletwo 25s linear infinite;
+    }
+
+    #slider li.thirdanimation
+    {
+        -moz-animation: cyclethree 25s linear infinite;
+        -webkit-animation: cyclethree 25s linear infinite;
+    }
+
+    #slider li.fourthanimation
+    {
+        -moz-animation: cyclefour 25s linear infinite;
+        -webkit-animation: cyclefour 25s linear infinite;
+    }
+
+    #slider li.fifthanimation
+    {
+        -moz-animation: cyclefive 25s linear infinite;
+        -webkit-animation: cyclefive 25s linear infinite;
+    }
+    #slider li.sixthanimation
+    {
+        -moz-animation: cyclesix 25s linear infinite;
+        -webkit-animation: cyclesix 25s linear infinite;
+    }
+    #slider li.seventhanimation
+    {
+        -moz-animation: cycleseven 25s linear infinite;
+        -webkit-animation: cycleseven 25s linear infinite;
+    }
+  
+
+    
+
+#slider .tooltip-text
+{
+    bottom: 0px;
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: rgba(4, 77, 147, 0.54);
+    height: 60px;
+    position: absolute;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    border-top: solid 1px #ccc;
+    padding: 10px;
+}
+
+    #slider .tooltip-text h1
+    {
+        color: #fff;
+        font-family: Georgia, 'Times New Roman', 'Marvel', sans-serif;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 60px;
+        padding: 5px 0px;
+        margin: 0;
+        width: 100%;
+    }
+
+#slider li#first:hover .tooltip-text,
+#slider li#second:hover .tooltip-text,
+#slider li#third:hover .tooltip-text,
+#slider li#fourth:hover .tooltip-text,
+#slider li#fifth:hover .tooltip-text
+{
+    left: 0px;
+}
+
+/**/
+
+
+#slider:hover li,
+#slider:hover .progress-bar
+{
+    -moz-animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+
+/* PROGRESS BAR */
+.progress-bar
+{
+    position: relative;
+    top: -4px;
+    width: 100%;
+    height: 5px;
+    padding: 0px -15px 0px -15px;
+    background: #000;
+    -moz-animation: fullexpand 25s ease-out infinite;
+    -webkit-animation: fullexpand 25s ease-out infinite;
+}
+
+#slider li a img
+{
+    width: 102%;
+    height: 100%;
+    text-align: center;
+}
+
+div.tooltip-text > b
+{
+    font-family: Georgia, 'Times New Roman', 'Marvel', sans-serif;
+    font-weight: 200;
+    font-size: 22px;
+    color: #fff;
+    word-spacing: 0.1em;
+    padding: 0;
+}
+
+@media only screen and (max-device-width: 480px)
+{
+    div.tooltip-text > b
+    {
+        font-family: Georgia, 'Times New Roman', 'Marvel', sans-serif;
+        font-weight: 200;
+        font-size: 1em;
+        color: red;
+        word-spacing: 0.1em;
+        padding: 0;
+    }
+
+    #slider .tooltip-text h1
+    {
+        color: #fff;
+        font-family: 'Marvel', sans-serif;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 60px;
+        padding: 5px 0px;
+        margin: 0;
+        width: 100%;
+    }
+}

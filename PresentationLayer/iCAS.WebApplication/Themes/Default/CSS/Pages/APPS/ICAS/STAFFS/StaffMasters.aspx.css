@@ -1,0 +1,180 @@
+﻿
+
+/*
+	#ContentPlaceHolderMicroERP_updatepanel_Staff ul li.FormLabel
+	{
+		background-color: Yellow;
+		display: block;
+		float: left;
+		width: 68%;
+	}
+	#ContentPlaceHolderMicroERP_updatepanel_Staff ul li.FormValue
+	{
+		background-color: #99FFCC;
+		display: block;
+		float: left;
+		width: 28%;
+	}
+	
+	#ContentPlaceHolderMicroERP_updatepanel_Staff ul li.PageSubTitle
+	{
+		background-color: #FF99FF;
+		display: block;
+		float: left;
+		width: 100%;
+	}
+	*/
+
+
+#ContentPlaceHolderMicroERP_updatepanel_Staff ul#Button
+{
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+#ContentPlaceHolderMicroERP_updatepanel_Staff ul
+{
+    display: block;
+    float: left;
+    width: 99%;
+}
+
+#WebBody #PageContent_RightColumn ul.StaffFullWidth
+{
+    display: block;
+    float: left;
+    margin: 0px 0;
+    padding: 0;
+    width: 100%;
+    color: #000080;
+}
+
+
+#WebBody #PageContent_RightColumn ul.StaffFullWidth li.FormLabel
+{
+    display: block;
+    float: left;
+    margin: 0px ;
+    padding: 0 0px 0px 0px;
+    width: 20%;
+    color: #000080;
+    /*background-color: yellow;*/
+    
+}
+
+#WebBody #PageContent_RightColumn ul.StaffFullWidth li.FormValue
+{
+    display: block;
+    float: left;
+    margin: 0px ;
+    padding: 0 0px 0px 0px;
+    width: 20%;
+    /*background-color: red;*/
+}
+#WebBody #PageContent_RightColumn ul.StaffFullWidth li.FormButton
+{
+    display: block;
+    float: left;
+    margin: 5px 0px 10px 0px;
+    padding: 0 0px 0px 0px;
+    width: 100%;
+    /*background-color: blanchedalmond;*/
+    text-align: right;
+}
+#WebBody #PageContent_RightColumn ul.StaffFullWidth li.GridView
+{
+    display: block;
+    float: left;
+    margin: 0px ;
+    padding: 0 0px 0px 0px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+#WebBody #PageContent_RightColumn ul.Staff li.FormLabel
+{
+    display: block;
+    float: left;
+    margin: 2px 0;
+    padding: 0 0px 0px 20px;
+    width: 44%;
+    color: #000080;
+    
+}
+
+#WebBody #PageContent_RightColumn ul.Staff li.FormValue
+{
+    display: block;
+    float: left;
+    margin: 2px 0;
+    padding: 0;
+    width: 53%;
+}
+
+#WebBody #PageContent_RightColumn ul.Staff li span
+{
+    display: block;
+    float: left;
+}
+
+#WebBody #PageContent_RightColumn ul.Staff li input
+{
+    display: block;
+    float: left;
+    font-size: 1em;
+    width: 90%;
+    margin: -1px 0px 5px;
+}
+
+
+#WebBody #PageContent_RightColumn ul.Staff li select
+{
+    display: block;
+    float: left;
+    /*font-size: 1em;
+	width: 81%;*/
+    margin: -1px 0px 5px;
+}
+
+#WebBody #PageContent_RightColumn ul.Staff li span
+{
+    display: block;
+    float: left;
+}
+
+#ContentPlaceHolderMicroERP_updatepanel_Staff ul.Staff li.FormValue div.GeneralDialogBox
+{
+    
+    display: block;
+    float: left;
+    font-weight: bold;
+}
+
+#ContentPlaceHolderMicroERP_updatepanel_Staff .ValidationColor
+{
+    color: red;
+}
+
+#ContentPlaceHolderMicroERP_updatepanel_Staff div.GeneralDialogBox
+{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+#ContentPlaceHolderMicroERP_updatepanel_Staff .ErrorValidation
+{
+    color: red;
+    font-weight: bold;
+}
+
+#ContentPlaceHolderMicroERP_updatepanel_Staff .ValidateMessage
+{
+    clear: none;
+}

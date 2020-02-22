@@ -1,0 +1,183 @@
+﻿div#RolePermissions
+{
+	width: 99%;
+	border: solid 1px #DCDCDC;
+	margin: 0x;
+	padding: 5px;
+	height: 400px;
+	overflow: scroll;
+}
+
+div#RolePermissions ul#RolePerm
+{
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+	width: 100%;
+	height: auto;
+}
+
+
+
+
+
+div#RolePermissions ul#RolePerm li#Menus
+{
+	display: block;
+	float: left;
+	width: 78%;
+	padding-left: 1%;
+	height: 300px;
+}
+
+div#RolePermissions ul#RolePerm li.PageSubTitle
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+div#RolePermissions ul#RolePerm li.PageSubTitle ul
+{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+}
+
+div#RolePermissions ul#RolePerm li.PageSubTitle ul li
+{
+	display: block;
+	float: left;
+	width: 40%;
+}
+
+.FullWidth
+{
+	display: block;
+	float: left;
+	width: 99%;
+	height: auto;
+	padding: 5px 0px;
+	text-align: right;
+	color: Navy;
+}
+
+.FullWidth ul
+{
+	display: block;
+	float: left;
+	width: 49%;
+	height: auto;
+}
+
+#ContentPlaceHolderMicroERP_chkList_Permission
+{
+	display: block;
+	float: right;
+}
+
+.FiftyFifty
+{
+	display: block;
+	float: left;
+	width: 49%;
+	padding: 4px 0 0 4px;
+}
+
+#ContentPlaceHolderMicroERP_li_Roles
+{
+	display: block;
+	float: left;
+	width: 31%;
+	padding: 0px 2px 0px -10px;
+	color: #000000;
+	overflow: auto;
+	height: inherit;
+	
+}
+
+#ContentPlaceHolderMicroERP_li_Roles li
+{
+	margin: 0px;
+	padding: 1px 0px;
+	border-bottom: solid 1px #eee;
+	
+}
+
+#ContentPlaceHolderMicroERP_li_Forms
+{
+	display: block;
+	float: left;
+	width: auto;
+	height: auto;
+	border-left: solid 1px #ccc;
+	color: #000099;
+	overflow: auto;
+}
+
+#ContentPlaceHolderMicroERP_li_Menus
+{
+	display: block;
+	float: left;
+	width: auto;
+	height: auto;
+	border-left: solid 1px #ccc;
+	color: #000099;
+	overflow: auto;
+}
+
+#ContentPlaceHolderMicroERP_li_Forms table 
+{
+	width: 100%;
+	border: solid 1px red;
+}
+#ContentPlaceHolderMicroERP_li_Forms table td
+{
+	padding: 2px;
+	border: solid 1px #ccc;
+}
+
+#ContentPlaceHolderMicroERP_li_Forms table th
+{
+	padding: 2px;
+	border: solid 1px #ccc;
+	color: #000066;
+	text-align: left;
+	background-image: url(/Themes/Default/Images/gvHeaderBackground.gif);
+    background-color: #E2F0FF;
+}
+
+html body form#formMicro div div#WebContent div#WebBody div#PageContent_RightColumn ul li.PageSubTitle
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+html body form#formMicro div div#WebContent div#WebBody div#PageContent_RightColumn div#RolePermissions ul#RolePerm li#ContentPlaceHolderMicroERP_li_Forms div table#ContentPlaceHolderMicroERP_gview_FormPermissions tbody tr th,
+html body form#formMicro div div#WebContent div#WebBody div#PageContent_RightColumn div#RolePermissions ul#RolePerm li#ContentPlaceHolderMicroERP_li_Forms div table#ContentPlaceHolderMicroERP_gview_FormPermissions tbody tr td
+{
+	text-align: center;
+}
+
+html body form#formMicro div div#WebContent div#WebBody div#PageContent_RightColumn div#RolePermissions ul#RolePerm li#ContentPlaceHolderMicroERP_li_Forms div table#ContentPlaceHolderMicroERP_gview_FormPermissions tbody tr td.FormName
+{
+	text-align: left;
+}
+
+html body form#formMicro div div#WebContent div#WebBody div#PageContent_RightColumn div#RolePermissions ul#RolePerm li#ContentPlaceHolderMicroERP_li_Forms div table#ContentPlaceHolderMicroERP_gview_FormPermissions tbody tr th.LeftAlignHeader
+{
+	text-align: left;
+	padding: 0px 0px 0px 2px;
+}
+
+
+ html body form#formMicro div div#WebContent div#WebBody div#PageContent_RightColumn div#RolePermissions ul#RolePerm li#ContentPlaceHolderMicroERP_li_Menus div#ContentPlaceHolderMicroERP_tview_RolePermissions
+ {
+ 	margin: 0px;
+ 	padding: 0px;
+ }
+ 
+ html body form#formMicro div div#WebContent div#WebBody div#PageContent_RightColumn div.FormButton_Top span#ContentPlaceHolderMicroERP_lbl_Msg.FormMessage
+ {
+ 	color: red;
+ }

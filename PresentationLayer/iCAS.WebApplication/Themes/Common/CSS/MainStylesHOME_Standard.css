@@ -1,0 +1,1069 @@
+﻿@import "Menu_OrangeVerticals.css";
+@import "UpdateProgress.css";
+@import "ReportCharts.css";
+/*----------------------------------------------------------------*/
+/* CSS FOR ALL THE PAGES OF THE MICRO ERP APPLIACTION, ALL THEMES */
+/*----------------------------------------------------------------*/
+*
+{
+    font-family: Verdana, Trebuchet MS;
+    font-size: 8pt;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 0;
+}
+body
+{
+    margin: 0;
+    padding: 0;
+}
+ul
+{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+#TheContainerICAS
+{
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#TheContainerICAS #WebContentICAS
+{
+    width: 998px;
+    margin: 10px auto 0 auto;
+    height: 706px;
+    background-color: #FFF;
+    border: solid 1px #666;
+    /*background: url(../Images/TSDC-foot.gif) LEFT top repeat-y;*/
+}
+
+#TheContainerICAS #WebContentICAS #WebHead
+{
+    width: 100%;
+    height: 100px;
+    display: block;
+    float: left;
+    background: url(../Images/TSDC-HEAD.jpg) LEFT top no-repeat;
+}
+
+#TheContainerICAS #WebContentICAS #WebMenu
+{
+    width: 100%;
+    min-height: 35px;
+    display: block;
+    float: left;
+    background-color: #003366;
+    padding-left: 2px;
+}
+
+#TheContainerICAS #WebContentICAS #WebBodyICAS
+{
+    width: 990px;
+    display: block;
+    float: left;
+    height: 305px;
+    border-bottom: solid 1px #ccc;
+    margin-bottom: 2px;
+    padding: 2px 0px 0px 2px;
+    background-color: #fff;
+}
+
+#TheContainerICAS #WebContentICAS #WebZones
+{
+    width: 100%;
+    display: block;
+    float: left;
+}
+
+
+#TheContainerICAS #WebContentICAS #WebFoot
+{
+    width: 100%;
+    height: 13px;
+    display: block;
+    float: left;
+    font-family: Microsoft Sans Serif;
+    font-size: 90%;
+    text-align: center;
+    padding: 3px 0;
+    bottom: 0;
+    color: #fff;
+    /*background: url(../Images/TSDC-FOOT.gif) LEFT top no-repeat;*/
+}
+
+
+#WebMenu
+{
+    width: 100%;
+    height: 35px;
+    display: block;
+    float: left;
+    background-color: #003366;
+    border-bottom: double 3px #6699CC;
+    color: #fff;
+}
+#WebMenu #WebMenuLinks
+{
+    width: 75%;
+    height: 35px;
+    display: block;
+    float: left;
+    background-color: #003399;
+    border-top: double 3px #c0c0c0;
+    border-bottom: double 3px #6699CC;
+}
+
+
+#WebMenu #WebSearch
+{
+    width: 243px;
+    height: 20px;
+    display: block;
+    float: left;
+/*
+    padding: 5px 0px 0px 5px;
+    border-top: double 3px #6699CC;
+    border-bottom: double 3px #6699CC;
+*/
+}
+
+#WebBodyICAS #LeftSide
+{
+    display: block;
+    float: left;
+    width: 533px;
+    height: 300px;
+    background: url(../Images/TSDC-HOME-SLIDESHOW-001.JPG) LEFT top no-repeat;
+}
+
+#WebBodyICAS #MiddleSide
+{
+    display: block;
+    float: left;
+    width: 248px;
+    height: 292px;
+    background-color: #FFF;
+    padding: 4px;
+    border: solid 1px #ccc;
+    margin-right: 2px;
+}
+
+#WebBodyICAS #RightSide
+{
+    display: block;
+    float: left;
+    width: 193px;
+    min-height: 300px;
+    margin-left: 1px;
+}
+
+#WebZones #Div_Student, #WebZones #Div_Estb, #WebZones #Div_Staff, #WebZones #Div_Alumni
+{
+    display: block;
+    float: left;
+    width: 238px;
+    height: 210px;
+    margin: 1px;
+    padding: 2px;
+    border: solid 1px #666;
+    background-color: #fff;
+}
+
+#WebZones #Div_Student a, #WebZones #Div_Estb a, #WebZones #Div_Staff a, #WebZones #Div_Alumni a
+{
+    text-decoration: none;
+    color: #003366;
+}
+
+#WebZones #Div_Student a:hover, #WebZones #Div_Estb a:hover, #WebZones #Div_Staff a:hover, #WebZones #Div_Alumni a:hover
+{
+    text-decoration: none;
+    color: #990000;
+}
+
+#WebZones #Div_Student
+{
+    margin: 0px 2px 0px 4px;
+    border: solid 1px #cccc33;
+    background: url(../Images/TSDC-Student-Zone.PnG) LEFT top no-repeat;
+}
+
+#WebZones #Div_Estb
+{
+    margin: 0px 2px;
+    border: solid 1px #66CC66;
+    /*background: url(../Images/TSDC-Library-Zone.PnG) LEFT top no-repeat;*/
+}
+
+#WebZones #Div_Staff
+{
+    margin: 0px 2px;
+    border: solid 1px #CC9999;
+    background: url(../Images/TSDC-Staff-Zone.PnG) LEFT top no-repeat;
+}
+
+#WebZones #Div_Alumni
+{
+    margin: 0px 2px;
+    border: solid 1px #6699CC;
+    background: url(../Images/TSDC-Alumni-Zone.PnG) LEFT top no-repeat;
+}
+
+#WebBodyICAS #RightSide #RightSide_Login
+{
+    display: block;
+    float: left;
+    width: 190px;
+    height: 202px;
+    padding: 2px;
+    margin: 2px 2px 4px 0px;
+    border: solid 1px #ccc;
+    /*background-color: Red;*/
+    background: url("/Themes/Common/Images/UC-LOGIN-BG2.jpg") repeat-y scroll left top #FFFFFF;
+}
+
+#WebBodyICAS #RightSide #RightSide_LibraryZone
+{
+    display: block;
+    float: left;
+    width: 188px;
+    height: 81px;
+    margin: 2px 2px 4px 0px;
+    padding: 1px;
+    border: solid 1px #ccc;
+    overflow: hidden;
+}
+
+
+
+
+
+
+
+
+/**************** zones ************/
+#EstblmntZone a
+{
+    width: 100%;
+}
+
+.WebpartTitle
+{
+    display: block;
+    float: left;
+    font-weight: bolder;
+    height: 20px;
+    width: 100%;
+    margin-bottom: 4px;
+    padding: 4px 0px 0px 4px;
+}
+
+.WebpartTitleEstblmntZone
+{
+    display: block;
+    float: left;
+    font-weight: bold;
+    height: 12px;
+    width: 100%;
+    margin-bottom: 2px;
+    padding: 1px;
+}
+
+.WebpartSubTitle
+{
+    display: block;
+    float: left;
+    height: 13px;
+    width: 98%;
+    margin-top: 4px;
+    margin-bottom: 2px;
+    padding-left: 2%;
+}
+
+
+.UCSubTitle
+{
+    display: block;
+    float: left;
+    height: 13px;
+    width: 98%;
+    font-style: italic;
+}
+
+.UCBodyReadMore
+{
+    display: block;
+    float: left;
+    height: 13px;
+    width: 98%;
+    font-style: italic;
+    text-align: right;
+    font-size: 90%;
+}
+
+.AlumniZoneLink
+{
+    display: block;
+    float: left;
+    height: 13px;
+    width: 75%;
+    margin-left: 8%;
+    padding: 2px 1px;
+}
+
+.LibraryZoneLink
+{
+    display: block;
+    float: left;
+    height: 13px;
+    width: 75%;
+    margin-left: 8%;
+    padding: 2px 1px;
+}
+
+
+.StaffZoneLink
+{
+    display: block;
+    float: left;
+    height: 13px;
+    width: 75%;
+    margin-left: 8%;
+    padding: 2px 1px;
+}
+
+.StudentZoneLink
+{
+    display: block;
+    float: left;
+    height: 13px;
+    width: 75%;
+    margin-left: 8%;
+    padding: 2px 1px;
+}
+
+
+/************************/
+/* STUDENT USER CONTROL */
+/************************/
+ul#UC_Login_UL
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    background-color: #CCC;
+     font-family: Arial Rounded MT Bold;
+    font-variant: small-caps;
+}
+
+
+ul#UC_Login_UL li.FullWidthRow,
+ul#UC_Login_UL li.FullWidthRowLoginLinks
+{
+    display: block;
+    float: left;
+    width: 100%;
+    border-bottom: solid 1px #ccc;
+    margin: 10px 0px;
+}
+
+
+ul#UC_Login_UL li.FullWidthRowTitle
+{
+    display: block;
+    float: left;
+    width: 100%;
+    border-bottom: solid 1px #ccc;
+    margin: 1px 0px 4px 0px;
+    font-weight: bold;
+    color: #003366;
+}
+
+ul#UC_Login_UL li.UCFormLabel
+{
+    display: block;
+    float: left;
+    width: 35%;
+    text-align: center;
+}
+ul#UC_Login_UL li.UCFormValue
+{
+    display: block;
+    float: left;
+    width: 60%;
+}
+
+ul#UC_Login_UL li.UCFormValueForgotPwd
+{
+    display: block;
+    float: left;
+    width: 90%;
+    margin: 5px 0px;
+}
+.FullWidthRowLoginLinks
+{
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+
+.FullWidthRowLoginLinks a
+{
+    color: Red;
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.UCFormLabelLogin0
+{
+    display: block;
+    float: left;
+    width: 50%;
+    text-align: right;
+}
+.UCFormValueLogin0
+{
+    display: block;
+    float: left;
+    width: 48%;
+    font-weight: bold;
+}
+
+.UCFormLabelLogin1
+{
+    display: block;
+    float: left;
+    width: 20%;
+    padding: 1px 0px;
+}
+.UCFormValueLogin1
+{
+    padding: 1px 0px;
+    display: block;
+    float: left;
+    width: 76%;
+    padding-left: 2px;
+}
+
+.UC_BtnLogin
+{
+    height: 20px;
+    width: 56px;
+    background: url('../Images/btn_Login.png') no-repeat left top;
+    float: right;
+    display: block;
+    border: none;
+    margin-top: 4px;
+}
+
+
+
+/********************/
+#WebSocialNetworks
+{
+    display: block;
+    float: left;
+    height: 26px;
+    width: 99%;
+    padding: 4px 4px 0px 4px;
+    border-bottom: solid 1px #ccc;
+    background-color: #ccc;
+}
+
+/*******************
+****************
+****************/
+
+
+
+
+
+
+
+
+
+
+
+/**************************/
+#UpdateProgress
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    opacity: 0.800000011920928955078125;
+    z-index: 99997;
+}
+.UpdateProgressArea
+{
+    margin: 200px auto;
+    background: url(../Images/UpdateProgress/PleaseWait_BigSize.gif) center top no-repeat #FFFFFF;
+    width: 320px;
+    height: 240px;
+    border: #FFFFFF solid 1px;
+    z-index: 99998;
+    text-align: center;
+    font-weight: bold;
+}
+.UpdateProgressAreaText
+{
+    border: #C6BFBF solid 1px;
+    background-color: #ff0000;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 3px;
+    display: block;
+    float: left;
+    left: 40%;
+    position: inherit;
+    top: 70%;
+}
+.TextSmallWidth
+{
+    width: 26px;
+}
+.WatermarkClass
+{
+    color: #808080;
+}
+.ValidateMessage
+{
+    color: #FF0000;
+    background-color: #FFFFFF;
+    padding: 2px;
+    clear: left;
+    text-decoration: none;
+}
+.ErrorMessage
+{
+    font-size: 105%;
+    margin-top: 30px;
+    font-weight: bold;
+}
+.BigErrorText
+{
+    font-size: 175%;
+    color: red;
+}
+#WebFooter span#lbl_Database
+{
+    color: #000080;
+}
+.HorizentalLineSeparator
+{
+    display: block;
+    float: left;
+    height: 50px;
+    width: 1px;
+    background-color: red;
+    margin: 25px 8px 2px 2px;
+}
+.SupportImage
+{
+    width: 50%;
+    border: #ccc solid 1px;
+    display: block;
+    float: left;
+    height: 400px;
+    background-image: url(../Images/micro-customer-support.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #FFFFFF;
+}
+div#Mode
+{
+    color: #FFFFFF;
+    display: block;
+    float: right;
+    height: 16px;
+    position: absolute;
+    text-align: center;
+    width: 58%;
+    margin-top: 26px;
+}
+div#Mode span
+{
+    padding: 3px;
+    color: #FF0000;
+    text-decoration: blink;
+    font-weight: bold;
+}
+html body form#formMicro div#TheContainer div#WebContent div#WebBodyICAS div#PageContent_RightColumn div#ContentPlaceHolderMicroERP_updatePanel_CustomerAccounts ul#CRMScrolls li.FormValue select#ContentPlaceHolderMicroERP_ddl_ScrollNumber
+{
+    width: 29%;
+}
+div#ContentPlaceHolderMicroERP_updatePanel_CustomerAccounts ul#CustomerAccounts div#ContentPlaceHolderMicroERP_panel_SelectedScroll.Panel
+{
+    background: url(../Images/BackgroundSubTitle_001.gif) left top 0 repeat-x #000080;
+    width: 300px;
+}
+.PopupMessageBox
+{
+    position: absolute;
+    z-index: 10;
+    width: 172px;
+    height: 102px;
+    text-align: center;
+    color: #FF0000;
+    font: 14px Verdana, Arial, Helvetica, sans-serif;
+    background: url(bg_image.gif) bottom right no-repeat;
+    display: none;
+}
+ul#SelectDatabase
+{
+    display: block;
+}
+.SelectDatabaseControl
+{
+    width: 100%;
+    text-align: center;
+    top: 0;
+    left: 0;
+}
+
+/*----------------------------------------------------------------*/
+/* LOGO, OFFICE NAME DISPLAY AND USER INFOR DISPLAY AT WEB HEADER */
+/*----------------------------------------------------------------*/
+#WebHeader ul
+{
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 0 0;
+    width: inherit;
+    height: inherit;
+    color: navy;
+}
+#WebHeader ul li
+{
+    display: block;
+    float: left;
+}
+#WebHeader ul li#Logo
+{
+    display: block;
+    float: left;
+    width: 10%;
+    padding: 0 0 0 10px;
+    margin: 0;
+    text-align: center;
+    height: inherit;
+    background-color: transparent;
+}
+#WebHeader ul li#Logo img
+{
+    display: none;
+}
+
+#WebHeader ul li#OfficeInfo
+{
+    display: block;
+    float: left;
+    width: 30%;
+    color: yellow;
+    padding-top: 62px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: Sans-Serif;
+    font-size: 9pt;
+    font-weight: bold;
+    background-color: transparent;
+}
+#WebHeader ul li#UserInfo
+{
+    display: block;
+    float: left;
+    width: 58%;
+    padding: 0 0 0 8px;
+    margin: 0;
+    text-align: right;
+    color: navy;
+}
+#WebHeader ul li#UserInfo ul#CurrentUser
+{
+    list-style-type: none;
+    display: block;
+    float: right;
+    margin: 2px 0 0 0;
+    padding: 3px;
+    width: 100%;
+    height: inherit;
+    color: #dbdbdb;
+}
+#WebHeader ul li#UserInfo ul#CurrentUser li.UserLabel
+{
+    display: block;
+    float: left;
+    width: 25%;
+    text-align: right;
+    padding: 1px 0;
+    clear: left;
+    color: #dbdbdb;
+}
+#WebHeader ul li#UserInfo ul#CurrentUser li.UserValue
+{
+    display: block;
+    float: left;
+    width: 99%;
+    color: #ffffff;
+    padding: 1px 1%;
+    color: #dbdbdb;
+}
+#WebHeader ul li#UserInfo ul#CurrentUser li.UserValueOffice
+{
+    display: none;
+    float: left;
+    width: 99%;
+    text-align: right;
+    color: #ffffff;
+    padding: 3px 1%;
+    color: #FFFF00;
+}
+#WebHeader ul li#UserInfo ul#CurrentUser li.UserValueOffice
+{
+    text-transform: uppercase;
+    font-family: Sans-Serif;
+    font-size: 9pt;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+
+html body form#formMicro div#TheContainer div#WebContent div#WebBodyICAS div#PageContent_RightColumn ul#MicroChart li div.ProtectFromCopy
+{
+    display: inline;
+    min-height: 440px;
+    position: absolute;
+    top: 200px;
+    width: 57%;
+    left: 29%;
+}
+
+html body form#formMicro div#TheContainer div#WebContent div#WebBodyICAS div#PageContent_RightColumn div p.ErrorMessage span#ContentPlaceHolderMicroERP_lbl_Reason
+{
+    color: Red;
+}
+
+
+
+/*******EstblmntZone**************/
+
+
+/*******Recent Activities**************/
+
+.PrincipalMessageTitle
+{
+    font-weight: bold;
+    color: #fff;
+    border-bottom: solid 1px #003366;
+    
+}
+
+.PrincipalMessageBody
+{
+    text-align: justify;
+    padding: 2px 4px;
+    margin: 2px 4px;
+}
+
+#PhotoPrincipal
+{
+    display: block;
+    float: right;
+    width: 70px;
+    height: 75px;
+    margin: 5px;
+    border: solid 1px blue;
+    background: url(../Images/PRINCIPAL-PASSPHOTO.jpg) LEFT top no-repeat;
+}
+
+#PhotoLoggedOnUser
+{
+    display: block;
+    float: right;
+    width: 50px;
+    height: 50px;
+    margin-top: -105px;
+    border: solid 1px blue;
+    background: url(../Images/PRINCIPAL-PASSPHOTO-3.jpg) center top no-repeat;
+}
+
+
+.UCTitle
+{
+    display: block;
+    float: left;
+    width: 99%;
+    font-weight: bold;
+    padding: 1px 0px;
+    border-bottom: dotted 1px #c0c0c0;
+}
+
+.UCTitleEstb
+{
+    display: block;
+    float: left;
+    width: 99%;
+    margin-top: 25px;
+    font-weight: bold;
+    padding: 1px 0px;
+    border-bottom: dotted 1px #c0c0c0;
+}
+
+.UCBodyDate
+{
+    display: block;
+    float: left;
+    width: 17%;
+    height: 13px;
+}
+.UCBodyLink
+{
+    width: 78%;
+    height: 13px;
+    display: block;
+    float: left;
+}
+
+.UCBodyIcon
+{
+    display: block;
+    float: left;
+    width: 5%;
+    height: 13px;
+    text-align: center;
+}
+
+div#EstblmntZone
+{
+    overflow: auto;
+}
+
+.UCEstblmntZoneBodyDate
+{
+    display: block;
+    float: left;
+    width: 15%;
+    height: 26px;
+}
+
+.UCEstblmntZoneBodyLink
+{
+    display: block;
+    float: left;
+    width: 73%;
+    height: 26px;
+    text-align: left;
+}
+
+.UCEstblmntZoneBodyLink
+{
+    text-decoration: none;
+}
+
+
+.UCEstblmntZoneBodyIcon
+{
+    display: block;
+    float: left;
+    width: 10%;
+    height: 22px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 2px;
+}
+
+.TwoPxSpacer
+{
+    display: block;
+    float: left;
+    width: 98%;
+    height: 1px;
+    background-color: Red;
+    margin: 2px;
+}
+
+.FullWidthRowLoginUC
+{
+    display: block;
+    float: left;
+    width: 100%;
+    border-bottom: solid 1px #ccc;
+    margin: 1px 0px;
+}
+
+.FullWidthRowTitle
+{
+    display: block;
+    float: left;
+    width: 100%;
+    border-bottom: solid 1px #ccc;
+    margin: 1px 0px;
+   
+}
+.FullWidthRowLoginLinks a,
+.FullWidthRow a
+{
+    display: block;
+    float: left;
+    width: 24%;
+    color: #003366;
+    text-decoration: underline;
+    padding-bottom: 4px;
+    text-align: center;
+    font-weight: bold;
+    border-right: solid 1px #fff;
+}
+
+
+/************** titles *****************/
+
+.WebpartTitle
+{
+    display: block;
+    float: left;
+    font-weight: bolder;
+    height: 20px;
+    width: 100%;
+    margin-bottom: 4px;
+    padding: 4px 0px 0px 4px;
+}
+
+
+
+
+
+
+#WebpartTitleStudent
+{
+    margin: 0px 0px 0px -5px;
+    padding: 0;
+    height: 25px;
+    width: 100%;
+    background: url(../Images/ZONE-TITLE-students.png) left top no-repeat;
+}
+#WebpartTitleStaff
+{
+    margin-top: 0px;
+    padding: 0;
+    height: 25px;
+    width: 100%;
+    background: url(../Images/ZONE-TITLE-staff.png) left top no-repeat;
+}
+#WebpartTitleAlumni
+{
+    margin: 0;
+    padding: 0;
+    height: 25px;
+    width: 100%;
+    background: url(../Images/ZONE-TITLE-alumni.png) left top no-repeat;
+}
+#WebpartTitleEstb
+{
+    margin-top: 0px;
+    padding: 0;
+    height: 25px;
+    width: 100%;
+    background: url(../Images/ZONE-TITLE-estb.png) left top no-repeat;
+}
+
+#WebMenu #WebMenuLinks,
+#WebBodyICAS #MiddleSide
+{
+    background: url(../Images/PricipalMessageBg.png) left top repeat-x;
+}
+
+
+#WebSearch
+{
+    width: 98%;
+    margin: 0;
+    padding: 0;
+}
+
+#WebSearch ul
+{
+   background-color: yellow;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+#WebSearch ul li#SText
+{
+    display: block;
+    float: left;
+    width: 54%;
+    margin: 0;
+    padding: 0;
+    background-color: Yellow;
+}
+
+#WebSearch ul li#SButton
+{
+    display: block;
+    float: left;
+     width: 10%;
+    margin: 0;
+    padding: 0;
+}
+
+.LoginTextBox
+{
+    border: solid 1px #003366;
+    color: #003366;
+    width: 100px;
+}
+
+
+.FullWidthRowLoginLinks2
+{
+   display: block;
+    float: left;
+     font-family: Arial Rounded MT Bold;
+     font-variant: normal;
+    width: 100%;
+    font-size: 90%;
+}
+
+.FullWidthRowLoginLinks2 ul
+{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.LoginLinkLi
+{
+    display: block;
+    float: right;
+   margin: 2px;
+    padding: 2px;
+    width: 44%;
+    height: 31px;
+    border: 1px solid #c0c0c0;
+    text-align: center;
+    background-color: #ccc;
+}
+
+
+.LoginLinks
+{
+    color: #003366;
+    text-decoration: none;
+    margin-top: 5px;
+}
+.

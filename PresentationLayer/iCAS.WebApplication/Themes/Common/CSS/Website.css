@@ -1,0 +1,881 @@
+﻿*
+{
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+body
+{
+	background: #b6b7bc;
+	color: #000011;
+	/*font-family: Verdana, Sans-Serif;
+	font-size: 8pt;*/
+	margin: 0;
+	padding: 0;
+	
+}
+
+#WebContentHomePage
+{
+	background: #fff;
+	border: solid 1px #036;
+	height: 680px;
+	margin: 10px auto 0;
+	width: 900px;
+}
+
+#WebTopHeaderHomePage
+{
+	background-color: #FFF;
+	background-image: url(../Images/bg_TopMenuBar.gif);
+	background-repeat: repeat-x;
+	border-bottom: solid 3px #CCC;
+	color: #fff;
+	display: block;
+	float: left;
+	font-family: Microsoft Sans Serif;
+	font-size: 100%;
+	height: 12px;
+	padding: 2px 3px;
+	text-align: right;
+	width: 894px;
+}
+
+#WebTopHeaderHomePage a
+{
+	color: Blue;
+	font-weight: 700;
+}
+
+#WebTopHeaderHomePage a:hover
+{
+	color: #FFF;
+	font-weight: 700;
+}
+
+ul#TopMenuBarHomePage
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+ul#TopMenuBarHomePage li#CommonLinks
+{
+	color: Navy;
+	float: left;
+	text-align: right;
+	width: 98%;
+}
+
+#WebFooterHomePage a
+{
+	color: #FFF;
+	cursor: hand;
+}
+
+ul#TopMenuBarHomePage li#CommonLinksHomePage a
+{
+	color: #FFF;
+	cursor: hand;
+}
+
+#WebFooterHomePage a:hover
+{
+	color: #0FF;
+	cursor: hand;
+}
+
+ul#TopMenuBar li#CommonLinks a:hover
+{
+	color: #0FF;
+	cursor: hand;
+}
+
+#WebHeaderHomePage
+{
+	background: #339 url(../Images/MLFL-Web-Header.png) no-repeat left top;
+	border-bottom: solid 1px #ccc;
+	color: #fff;
+	display: block;
+	float: left;
+	height: 75px;
+	width: 100%;
+}
+
+#WebBodyHomePage
+{
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+#WebFooterHomePage
+{
+	background-color: #003366;
+	background-image: url(../Images/bg_TopMenuBar.gif);
+	background-repeat: repeat-x;
+	border-top: solid 1px #ccc;
+	border-left: solid 1px #036;
+	border-right: solid 1px #036;
+	
+	color: #fff;
+	display: block;
+	float: left;
+	font-family: Microsoft Sans Serif;
+	font-size: 100%;
+	height: 12px;
+	padding: 0px;
+	text-align: center;
+	width: 100%;
+}
+
+#WebBodyHomePage #PageContent_LeftColumn
+{
+	border-right: solid 1px #ccc;
+	display: block;
+	float: left;
+	height: inherit;
+	padding: 5px;
+	width: 200px;
+}
+
+#WebBodyHomePage #PageContentHomePage
+{
+	display: block;
+	float: left;
+	height: inherit;
+	overflow: auto;
+	padding: 10px;
+	width: 776px;
+}
+
+#WebHeaderHomePage ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 8px;
+	width: 100%;
+}
+
+#WebHeaderHomePage ul li
+{
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 33%;
+}
+
+#WebHeaderHomePage ul li#Logo
+{
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 33%;
+}
+
+#WebHeaderHomePage ul li#UserInfo
+{
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	text-align: right;
+	width: 33%;
+}
+
+h1.PageTitle
+{
+	background-color: #E2F0FF;
+	background-image: url(../Images/gvHeaderBackground.gif);
+	background-position: top;
+	background-repeat: repeat-x;
+	border: solid 1px #ccc;
+	border-bottom: Solid 1px #A3C0E8;
+	color: #4b6c9e;
+	display: block;
+	float: left;
+	font-size: 105%;
+	font-weight: 700;
+	height: 12px;
+	margin: 8px 0 10px;
+	padding: 8px;
+	text-align: left;
+	text-transform: uppercase;
+	vertical-align: middle;
+	width: 98%;
+}
+
+h1#BigErrorText
+{
+	color: Red;
+	font-size: 175%;
+}
+
+p.ErrorMessage
+{
+	font-size: 105%;
+	font-weight: 700;
+	margin-top: 30px;
+}
+
+#WebBody #PageContent_RightColumn ul
+{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#WebBody #PageContent_RightColumn ul li.FormLabel
+{
+	color: Navy;
+	display: block;
+	float: left;
+	margin: 2px 0;
+	padding: 0;
+	width: 25%;
+}
+
+#WebBody #PageContent_RightColumn ul li.FormValue
+{
+	display: block;
+	float: left;
+	margin: 2px 0;
+	padding: 0;
+	width: 74%;
+}
+
+#WebBody #PageContent_RightColumn ul li.PageSubTitle
+{
+	background: #B4B4B4 url(../Images/bg_SubTitle.gif) repeat left top;
+	background-color: #4b6c9e;
+	color: Navy;
+	display: block;
+	float: left;
+	font-size: 120%;
+	font-weight: 700;
+	margin: 5px 0;
+	padding: 5px;
+	width: 99%;
+}
+
+#WebBody #PageContent_RightColumn ul li.FormButton
+{
+	display: block;
+	float: left;
+	margin: 13px 0 2px 25%;
+	padding: 0;
+	width: 34%;
+}
+
+#WebBody #PageContent_RightColumn ul li.FormMessage
+{
+	color: Red;
+	display: block;
+	float: left;
+	margin: 27px 1% 0;
+	padding: 0;
+	text-align: center;
+	width: 98%;
+}
+
+#WebBody #PageContent_RightColumn ul li.FormButton input
+{
+	color: #4b6c9e;
+	font-weight: 700;
+	padding: 3px;
+}
+
+#WebBody #PageContent_RightColumn ul li.FormSpacer
+{
+	display: block;
+	float: left;
+	height: 40px;
+	width: 99%;
+}
+
+#WebBody #PageContent_RightColumn ul li.FormSpacer20px
+{
+	display: block;
+	float: left;
+	height: 20px;
+	width: 99%;
+}
+
+.TextSmallWidth
+{
+	width: 26px;
+}
+
+.WatermarkClass
+{
+	color: gray;
+}
+
+.ValidateMessage
+{
+	background-color: #FFF;
+	clear: left;
+	color: red;
+	padding: 2px;
+	text-decoration: none;
+}
+
+#UpdateProgress
+{
+	-khtml-opacity: 0.7;
+	-moz-opacity: 0.7;
+	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+	background-color: #CFF;
+	filter: alpha(opacity=70);
+	height: 100%;
+	left: 0;
+	opacity: 0.7;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99997;
+}
+
+.UpdateProgressArea
+{
+	background: red url(../Images/UpdateProgress.gif) no-repeat center top;
+	border: solid 1px red;
+	font-weight: 700;
+	height: 48px;
+	margin: 200px auto;
+	text-align: center;
+	width: 48px;
+	z-index: 99998;
+}
+
+.UpdateProgressAreaLogin
+{
+	background: #CFF url(../Images/UpdateProgress.gif) no-repeat center top;
+	border: solid 2px #006;
+	font-weight: 700;
+	height: 48px;
+	margin: 200px auto;
+	text-align: center;
+	width: 48px;
+	z-index: 99998;
+}
+
+.UpdateProgressTextLogin
+{
+	color: red;
+	height: 18px;
+	margin: -280px auto 0;
+	text-align: center;
+	width: 448px;
+}
+
+.PopupMessageBox
+{
+	background: url(bg_image.gif) bottom right no-repeat;
+	color: red;
+	display: none;
+	font: 14px Verdana, Arial, Helvetica, sans-serif;
+	height: 102px;
+	position: absolute;
+	text-align: center;
+	width: 172px;
+	z-index: 10;
+}
+
+div#Mode
+{
+	display: block;
+	float: left;
+	height: 16px;
+	text-align: center;
+	width: 570px;
+}
+
+ul.SearchBox
+{
+	height: 20px;
+	list-style-type: none;
+	margin: 0;
+	padding: 2px 0;
+	width: 758px;
+}
+
+ul.SearchBox li
+{
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 2px 0 0;
+}
+
+ul.SearchBox li.SearchLabel
+{
+	display: block;
+	float: left;
+	margin: 2px 0 0;
+	padding: 0;
+	text-align: right;
+	width: 200px;
+}
+
+ul.SearchBox li.SearchFields
+{
+	display: block;
+	float: left;
+	margin: 2px 0 0;
+	padding: 0 0 0 2px;
+	text-align: right;
+	width: 150px;
+}
+
+ul.SearchBox li.SearchOperator
+{
+	display: block;
+	float: left;
+	margin: 2px 0 0;
+	padding: 0 5px 0 0;
+	text-align: right;
+	width: 80px;
+}
+
+ul.SearchBox li.SearchText
+{
+	display: block;
+	float: left;
+	margin: 2px 0 0;
+	padding: 0;
+	text-align: left;
+	width: 144px;
+}
+
+ul.SearchBox li.SearchButton
+{
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	width: 50px;
+}
+
+ul.SearchBox li.SearchMessage
+{
+	display: block;
+	float: left;
+	margin: 5px 0 0;
+	padding: 0;
+	text-align: left;
+	width: 120px;
+}
+
+ul.SearchBox li select
+{
+	border: solid 1px #A3C0E8;
+}
+
+ul.SearchBox li.SearchText input
+{
+	border: solid 1px #A3C0E8;
+}
+
+ul.SearchBox li.SearchButton input
+{
+	background-image: url(../Images/bg-menu-main.png);
+	background-repeat: repeat-x;
+	padding: 0;
+}
+
+
+#MicroBanner
+{
+	background: url(../images/Homepage_Banner_01.jpg) no-repeat scroll 0 0 transparent;
+	height: 237px;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	width: 100%;
+}
+
+#MicroBannerContent
+{
+	color: #A3C0E8;
+	font-family: Georgia, Sans-Serif;
+	font-size: 16px;
+	line-height: 18px;
+	padding: 128px 15px 4px 402px;
+	display: none;
+}
+
+#MicroBannerContent p
+{
+	-moz-box-shadow: 3.5px 3.5px 5px #000000;
+	-webkit-box-shadow: 3.5px 3.5px 5px #000000;
+	box-shadow: 3.5px 3.5px 5px #000000;
+	border-radius: 6px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-color: #d4d4d4;
+	padding: 0 10px 10px;
+	border-lect: solid 1px #d4d4d4;
+	zoom: 1; /* This enables hasLayout, which is required for older IE browsers */ /* For IE 5.5 – 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=140, Color='#444444'); /* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=140, Color='#444444')";
+	background: url("../../../Images/bg_Login_306x235.png") no-repeat scroll left top transparent;
+	margin-bottom: 10px;
+	color: #ffffff;
+}
+
+#menu
+{
+	background-color: #339;
+	color: #fff;
+	height: 20px;
+	margin: 0;
+	padding: 1px 0;
+	width: 900px;
+}
+
+#menu a
+{
+	color: #fff;
+	text-decoration: none;
+}
+
+#menu a:hover
+{
+	color: #d0d0d0;
+	text-decoration: underline;
+}
+
+#MicroWebMenu
+{
+	padding-top: 4px;
+}
+
+#ThePageContentHTML
+{
+	display: block;
+	float: left;
+	background-color: #fff;
+	height: 291px;
+	padding: 4px 2%;
+	width: 96%;
+}
+
+.heading_1
+{
+	color: #525050;
+	display: block;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 20px;
+	padding: 20px 0 10px;
+}
+
+.heading_2
+{
+	color: #525050;
+	display: block;
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 20px;
+	padding: 10px 0;
+}
+
+.line
+{
+	background: url(../images/divider1.gif) repeat-x scroll left bottom transparent;
+	padding-bottom: 3px;
+}
+
+.link_2
+{
+	color: #2C829B;
+	display: block;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 20px;
+	padding: 10px 0;
+	text-decoration: underline;
+}
+
+.link_2 a:link
+{
+	color: #2C829B;
+	display: block;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 20px;
+	text-decoration: underline;
+}
+
+.link_2 a
+{
+	color: #2C829B;
+	display: block;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 20px;
+	text-decoration: underline;
+}
+
+ul#ContactUs
+{
+	list-style-type: none;
+	margin: 0 20px;
+	padding: 0;
+	width: 100%;
+}
+
+.PageSubTitle
+{
+	font-weight: 700;
+	margin-top: 12px;
+}
+
+.FormValue
+{
+	display: block;
+	float: left;
+	padding: 2px;
+	width: 98%;
+}
+
+.FormButton
+{
+	display: block;
+	float: left;
+	padding: 6px 2px 2px 491px;
+	width: 98%;
+}
+
+ul#ContactUs input
+{
+	border: solid 1px #ccc;
+}
+
+html body form#formMicroERP div div#WebContentHomePage div#WebBodyHomePage div#HomePageContentHomePage div#ContentPlaceHolderMicroERP_ctl00
+{
+	background-color: #c1c1c1;
+}
+
+ul#MicroHomepageMenustyle
+{
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background-color: #dedede;
+	border-color: #5f5f5f;
+	border-radius: 5px;
+	border-style: none;
+	border-width: 1px;
+	display: inline;
+	font-size: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	z-index: 999;
+	zoom: 1;
+}
+
+ul#MicroHomepageMenustyle ul
+{
+	-moz-border-radius: 6px;
+	-moz-box-shadow: 3.5px 3.5px 5px #000;
+	-webkit-border-radius: 6px;
+	-webkit-box-shadow: 3.5px 3.5px 5px #000;
+	background-color: #FFF;
+	border-color: #d4d4d4;
+	border-radius: 6px;
+	border-style: none;
+	border-width: 1px;
+	box-shadow: 3.5px 3.5px 5px #000;
+	display: none;
+	left: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0 10px 10px;
+	position: absolute;
+	top: 100%;
+}
+
+ul#MicroHomepageMenustyle li:hover > *
+{
+	display: block;
+}
+
+ul#MicroHomepageMenustyle li
+{
+	display: block;
+	float: left;
+	font-size: 0;
+	position: relative;
+	white-space: nowrap;
+}
+
+ul#MicroHomepageMenustyle li:hover
+{
+	z-index: 1;
+}
+
+* html ul#MicroHomepageMenustyle li a
+{
+	display: inline-block;
+}
+
+ul#MicroHomepageMenustyle > li
+{
+	margin: 0;
+}
+
+ul#MicroHomepageMenustyle a:active
+{
+	outline-style: none;
+}
+
+ul#MicroHomepageMenustyle a:focus
+{
+	outline-style: none;
+}
+
+ul#MicroHomepageMenustyle a
+{
+	background-color: #c1c1c1;
+	background-image: url(/Themes/Default/Images/mainbk.png);
+	background-position: 0 0;
+	background-repeat: repeat;
+	border-color: silver;
+	border-style: solid;
+	border-width: 0 0 0 1px;
+	color: #000;
+	cursor: pointer;
+	display: block;
+	font: bold 14px Trebuchet MS;
+	padding: 10px;
+	text-align: left;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+ul#MicroHomepageMenustyle ul li
+{
+	float: none;
+	margin: 10px 0 0;
+}
+
+ul#MicroHomepageMenustyle ul a
+{
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	background-color: #FFF;
+	background-image: none;
+	border-radius: 0;
+	border-width: 0;
+	color: #000;
+	font: 14px Tahoma;
+	padding: 4px;
+	text-align: left;
+	text-decoration: none;
+}
+
+ul#MicroHomepageMenustyle li:hover > a
+{
+	background-color: #006;
+	background-image: url(../Images/mainbk.png);
+	background-position: 0 100px;
+	border-color: silver;
+	border-style: solid;
+	color: #fff;
+	text-decoration: none;
+}
+
+ul#MicroHomepageMenustyle li a.pressed
+{
+	background-color: #006;
+	background-image: url(../Images/mainbk.png);
+	background-position: 0 100px;
+	border-color: silver;
+	border-style: solid;
+	color: #fff;
+	text-decoration: none;
+}
+
+ul#MicroHomepageMenustyle span
+{
+	background-position: right center;
+	background-repeat: no-repeat;
+	display: block;
+	overflow: visible;
+	padding-right: 0;
+}
+
+ul#MicroHomepageMenustyle ul li:hover > a
+{
+	background-color: #FFF;
+	background-image: none;
+	color: #868686;
+	text-decoration: none;
+}
+
+ul#MicroHomepageMenustyle ul li a.pressed
+{
+	background-color: #FFF;
+	background-image: none;
+	color: #868686;
+	text-decoration: none;
+}
+
+#MicroHomepageMenu
+{
+	width: 99%;
+	height: 40px;
+	background-color: #c1c1c1;
+	border-bottom: double 3px #e1e1e1;
+	background-color: #c1c1c1;
+	background-image: url(/Themes/Default/Images/mainbk.png);
+	background-position: 0 0;
+	background-repeat: repeat;
+	border-color: silver;
+	border-style: solid;
+	color: #000;
+}
+
+
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .smenu .first .item-title, .buttonlist .item, .s10 .first .item-title, .alphatip .letter, .s12 .first .item-title, #HomeChannel .title, .banner-button a, .content-author-name, .careerNames, .quote .title, .quote .price, .DeptInfo .nopostings, .DeptInfo .postings, .table-data .name-product-row, .ui-modal .title, .promo-text, .button-appPromo
+{
+	font-family: 'SlingLight' ,Georgia, "Times New Roman" ,Times,serif;
+}
+
+div#line ol.list, div#line ol
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: circle;
+}
+
+div#line ol li
+{
+	display: block;
+	float: left;
+	padding: 2px 0;
+}
+
+div#line ol li a
+{
+	text-decoration: none;
+	padding: 2px 0px;
+}
+
+div#line ol li.item
+{
+	display: inline-block;
+	font-size: 13px;
+	margin: 2px 1px;
+	vertical-align: top;
+}

@@ -1,0 +1,2991 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F8EDCA3-BA0E-4722-BAF6-00CEA827BA69}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TCon.iCAS.WebApplication</RootNamespace>
+    <AssemblyName>TCon.iCAS.WebApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <UseIISExpress>true</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExcludeGeneratedDebugSymbol>true</ExcludeGeneratedDebugSymbol>
+    <ExcludeApp_Data>false</ExcludeApp_Data>
+    <PackageAsSingleFile>true</PackageAsSingleFile>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="ICAS_PRDN-Deployment" Order="1">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="c2VydmVyPTE4NC4xNjguMTk0Ljc1O2RhdGFiYXNlPXRzZGNvbGxlZ2VfaWNhczt1aWQ9dHNkYztwd2Q9dHNkY0AxMjM0" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\ICAS_PRDN-Deployment_SchemaAndData.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="ICAS_DEV1-Deployment" Order="2">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="U2VydmVyPU1VS1VMXFNRTEVYUFJFU1MyMDE0O2RhdGFiYXNlPXRzZGNvbGxlZ2VfaWNhczt1aWQ9c2E7cHdkPW1hYUAxMjM0" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\ICAS_DEV1-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PackageAsSingleFile>false</PackageAsSingleFile>
+    <PublishDatabases>false</PublishDatabases>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.60623.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML, Version=0.69.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\CrystalDecisions.ReportSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core">
+      <HintPath>..\..\..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=4.0.5.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\EPPlus.4.0.5\lib\net20\EPPlus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Micro.Security">
+      <HintPath>..\..\..\Micro.Assemblies\ExternalAssemblies\Micro.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web.Abstractions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DataVisualization">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AboutUs.aspx" />
+    <Content Include="AdminAuditActivities.aspx" />
+    <Content Include="AdminGoverningBody.aspx" />
+    <Content Include="Apps\Admin\TheCollege.aspx" />
+    <Content Include="Apps\Admin\UserFeedbackQuestions.aspx" />
+    <Content Include="Apps\UserCaptchaImage.aspx" />
+    <Content Include="Apps\Finance\AcademicYears.aspx" />
+    <Content Include="Apps\Finance\AccountGroups.aspx" />
+    <Content Include="Apps\Finance\AccountHeads.aspx" />
+    <Content Include="Apps\Finance\AccountingYears.aspx" />
+    <Content Include="Apps\Finance\AccountNames.aspx" />
+    <Content Include="Apps\Finance\AccountRemittances.aspx" />
+    <Content Include="Apps\Finance\AccountTransactions.aspx" />
+    <Content Include="Apps\Finance\CalanderYears.aspx" />
+    <Content Include="Apps\Finance\CashBook.aspx" />
+    <Content Include="Apps\Finance\ContraVouchers.aspx" />
+    <Content Include="Apps\Finance\CreditVouchers.aspx" />
+    <Content Include="Apps\Finance\DebitVouchers.aspx" />
+    <Content Include="Apps\Finance\FinancialYears.aspx" />
+    <Content Include="Apps\Finance\JournalVoucher.aspx" />
+    <Content Include="Apps\Finance\MasterAccounts.aspx" />
+    <Content Include="Apps\Finance\Transactions.aspx" />
+    <Content Include="Apps\ICAS\ADMIN\FeedbackMaster.aspx" />
+    <Content Include="Apps\ICAS\ADMIN\OptionMaster.aspx" />
+    <Content Include="Apps\ICAS\ADMIN\QuestionMaster.aspx" />
+    <Content Include="Apps\ICAS\ADMIN\Reports.aspx" />
+    <Content Include="Apps\ICAS\ADMIN\StudentFeedBack.aspx" />
+    <Content Include="Apps\ICAS\ADMIN\Users.aspx" />
+    <Content Include="Apps\ICAS\ALUMNI\Default.aspx" />
+    <Content Include="Apps\ICAS\ESTBLMT\Default.aspx" />
+    <Content Include="Apps\ICAS\ESTBLMT\EstablishmentApprovals.aspx" />
+    <Content Include="Apps\ICAS\FINANCE\AcademicYears.aspx" />
+    <Content Include="Apps\ICAS\FINANCE\AccountGroups.aspx" />
+    <Content Include="Apps\ICAS\FINANCE\AccountHeads.aspx" />
+    <Content Include="Apps\ICAS\FINANCE\AccountTransactions.aspx" />
+    <Content Include="Apps\ICAS\FINANCE\MasterAccounts.aspx" />
+    <Content Include="Apps\ICAS\REPORTS\StudentAttendanceReports.aspx" />
+    <Content Include="Apps\ICAS\REPORTS\StaffReports.aspx" />
+    <Content Include="Apps\ICAS\REPORTS\StudentReports.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\AttendanceRegisters.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\Default.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\LeaveApprovals.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\PolicyPaymentForm.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\Departments.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\Designations.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\LeaveApplications.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\LoanApplications.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\MasterPayComponents.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\Payroll.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\PayRollMasters.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\StaffLICPolicies.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\StaffMasters.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\StaffPayComponents.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\StaffProfiles.aspx" />
+    <Content Include="Apps\ICAS\STUDENT\Default.aspx" />
+    <Content Include="Apps\ICAS\STUDENT\DefaultFeeSetups.aspx" />
+    <Content Include="Apps\ICAS\STUDENT\StudentAdmissionFees.aspx" />
+    <Content Include="Apps\ICAS\STUDENT\StudentSections.aspx" />
+    <Content Include="Apps\ICAS\STUDENT\StudentDailyAttendances.aspx" />
+    <Content Include="Apps\ICAS\STUDENT\StudentAdmission.aspx" />
+    <Content Include="Apps\ICAS\STUDENT\ExamMarkMasters.aspx" />
+    <Content Include="Apps\ICAS\STUDENT\ExamMasters.aspx" />
+    <Content Include="Apps\ICAS\STUDENT\ExamResults.aspx" />
+    <Content Include="Apps\ICAS\STUDENT\Qualifications.aspx" />
+    <Content Include="Apps\ICAS\STUDENT\Students.aspx" />
+    <Content Include="Apps\ICAS\STUDENT\ExamSchedules.aspx" />
+    <Content Include="Apps\ICAS\STUDENT\StudentSubjects.aspx" />
+    <Content Include="Apps\ICAS\STUDENT\StudentFeesEntry.aspx" />
+    <Content Include="Apps\UserRegister.aspx" />
+    <Content Include="Apps\UserLogin.aspx" />
+    <Content Include="App_Data\ICAS\html\althletic-association.htm" />
+    <Content Include="App_Data\ICAS\html\alumni.htm" />
+    <Content Include="App_Data\ICAS\html\association.htm" />
+    <Content Include="App_Data\ICAS\html\calendar.htm" />
+    <Content Include="App_Data\ICAS\html\career-counselling-cell.htm" />
+    <Content Include="App_Data\ICAS\html\career_counselling.htm" />
+    <Content Include="App_Data\ICAS\html\crest.htm" />
+    <Content Include="App_Data\ICAS\html\cultural-association.htm" />
+    <Content Include="App_Data\ICAS\html\day-scholar-association.htm" />
+    <Content Include="App_Data\ICAS\html\department-botany.htm" />
+    <Content Include="App_Data\ICAS\html\department-chemistry.htm" />
+    <Content Include="App_Data\ICAS\html\department-physics.htm" />
+    <Content Include="App_Data\ICAS\html\dramatic-association.htm" />
+    <Content Include="App_Data\ICAS\html\examination.htm" />
+    <Content Include="App_Data\ICAS\html\governing-body.htm" />
+    <Content Include="App_Data\ICAS\html\grievence-cell.htm" />
+    <Content Include="App_Data\ICAS\html\history.htm" />
+    <Content Include="App_Data\ICAS\html\holidays.htm" />
+    <Content Include="App_Data\ICAS\html\iqac-cell.htm" />
+    <Content Include="App_Data\ICAS\html\location.htm" />
+    <Content Include="App_Data\ICAS\html\nss-cell.htm" />
+    <Content Include="App_Data\ICAS\html\principal-message.htm" />
+    <Content Include="App_Data\ICAS\html\principals-list.htm" />
+    <Content Include="App_Data\ICAS\html\right-to-information.htm" />
+    <Content Include="App_Data\ICAS\html\rules.htm" />
+    <Content Include="App_Data\ICAS\html\StaffAchievements.htm" />
+    <Content Include="App_Data\ICAS\html\StaffAssociation.htm" />
+    <Content Include="App_Data\ICAS\html\staffdistributioncurricularactivities.htm" />
+    <Content Include="App_Data\ICAS\html\StaffPrincipalsList.htm" />
+    <Content Include="App_Data\ICAS\html\student-achievements.htm" />
+    <Content Include="App_Data\ICAS\html\student-exam-results.htm" />
+    <Content Include="App_Data\ICAS\html\student-feedback.htm" />
+    <Content Include="App_Data\ICAS\html\students-composition.htm" />
+    <Content Include="App_Data\ICAS\html\teachers-association.htm" />
+    <Content Include="App_Data\ICAS\html\ugc-cell.htm" />
+    <Content Include="App_Data\ICAS\html\union.htm" />
+    <Content Include="App_Data\ICAS\html\vision-mission.htm" />
+    <Content Include="App_Data\ICAS\html\yrc-cell.htm" />
+    <Content Include="App_Data\Library\TSDCLibrary.mdb" />
+    <Content Include="App_Error\Error404.aspx" />
+    <Content Include="App_Error\Maintenance.aspx" />
+    <Content Include="App_Error\WorkInProgress.aspx" />
+    <Content Include="App_MasterPages\Micro-Website.Master" />
+    <Content Include="App_MasterPages\MicroERP-MasterPage.Master" />
+    <Content Include="App_UserControls\Admin\UC_AdminZone.ascx" />
+    <Content Include="App_UserControls\Charts\UC_Chart_Finance.ascx" />
+    <Content Include="App_UserControls\Charts\UC_Chart_StudentStrengthYearWise.ascx" />
+    <Content Include="App_UserControls\Charts\WebUserControl_Chart_StudentStrength.ascx" />
+    <Content Include="App_UserControls\Common\UC_Address.ascx" />
+    <Content Include="App_UserControls\Common\UC_DateWithAge.ascx" />
+    <Content Include="App_UserControls\Common\UC_Item.ascx" />
+    <Content Include="App_UserControls\Common\UC_Login.ascx" />
+    <Content Include="App_UserControls\Common\UC_Name.ascx" />
+    <Content Include="App_UserControls\Common\UC_Room.ascx" />
+    <Content Include="App_UserControls\ICAS\PrincipalMessage.ascx" />
+    <Content Include="App_UserControls\ICAS\UC_AlumniZone.ascx" />
+    <Content Include="App_UserControls\Library\UC_LibraryBooks.ascx" />
+    <Content Include="App_UserControls\ICAS\UC_PhotoGallery.ascx" />
+    <Content Include="App_UserControls\ICAS\UC_EstablishmentZone.ascx" />
+    <Content Include="App_UserControls\ICAS\UC_LinksZone.ascx" />
+    <Content Include="App_UserControls\ICAS\UC_PrideOfCampus.ascx" />
+    <Content Include="App_UserControls\ICAS\UC_RecentActivities.ascx" />
+    <Content Include="App_UserControls\ICAS\UC_Search.ascx" />
+    <Content Include="App_UserControls\ICAS\UC_SearchGoogle.ascx" />
+    <Content Include="App_UserControls\ICAS\UC_SocialNetworks.ascx" />
+    <Content Include="App_UserControls\ICAS\UC_StaffZone.ascx" />
+    <Content Include="App_UserControls\ICAS\UC_StudentZone.ascx" />
+    <Content Include="App_UserControls\ICAS\UC_WebFooter.ascx" />
+    <Content Include="App_UserControls\ICAS\UC_WebHeader.ascx" />
+    <Content Include="Apps\HRMS\AttendanceRegisterDepartments.aspx" />
+    <Content Include="Apps\HRMS\ShiftRoasters.aspx" />
+    <Content Include="Apps\HRMS\Shifts.aspx" />
+    <Content Include="Apps\HRMS\ShiftSchedules.aspx" />
+    <Content Include="Apps\HRMS\ShiftTimings.aspx" />
+    <Content Include="App_UserControls\Library\UC_LibraryBookAdd.ascx" />
+    <Content Include="App_UserControls\Library\UC_LibraryBookSearch.ascx" />
+    <Content Include="App_UserControls\Menu\UC_CustomisedMenu.ascx" />
+    <Content Include="App_UserControls\Menu\UC_MenuDynamic.ascx" />
+    <Content Include="App_UserControls\Menu\WebUserControlMenu.ascx" />
+    <Content Include="App_UserControls\UC_Export.ascx" />
+    <Content Include="App_UserControls\UC_Login.ascx" />
+    <Content Include="App_UserControls\UC_MultiColumnDropdownList.ascx" />
+    <Content Include="App_UserControls\UC_Search.ascx" />
+    <Content Include="App_UserControls\UC_SelectOffice.ascx" />
+    <Content Include="App_UserControls\UC_SlideShowSimple.ascx" />
+    <Content Include="App_UserControls\UC_WebUserControlSlider.ascx" />
+    <Content Include="bin\ClosedXML.dll" />
+    <Content Include="bin\CrystalDecisions.CrystalReports.Engine.dll" />
+    <Content Include="bin\CrystalDecisions.ReportSource.dll" />
+    <Content Include="bin\CrystalDecisions.Shared.dll" />
+    <Content Include="bin\CrystalDecisions.Web.dll" />
+    <Content Include="Alumni.aspx" />
+    <Content Include="bin\Micro.Security.dll" />
+    <Content Include="bin\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-original.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min-original.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Calendar.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\slider-animation.css" />
+    <Content Include="Content\slider.css" />
+    <Content Include="css\menu.css" />
+    <Content Include="css\w3schools.css" />
+    <Content Include="Database\ModelLibrary.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelLibrary.edmx</DependentUpon>
+      <LastGenOutput>ModelLibrary.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Database\ModelLibrary.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelLibrary.edmx</DependentUpon>
+      <LastGenOutput>ModelLibrary.cs</LastGenOutput>
+    </Content>
+    <Content Include="Document.aspx" />
+    <Content Include="Documents\PHOTO_2017_12_21_H19_M19_S22_Y.jpg" />
+    <Content Include="Documents\PHOTO_2017_12_21_H19_M19_S22_Y_Thumbnail.jpg" />
+    <Content Include="Documents\PHOTO_2017_12_21_H19_M1_S51_Y.jpg" />
+    <Content Include="Documents\PHOTO_2017_12_21_H19_M1_S51_Y_Thumbnail.jpg" />
+    <Content Include="Documents\PHOTO_2017_12_21_H19_M27_S16_Y.jpg" />
+    <Content Include="Documents\PHOTO_2017_12_21_H19_M27_S16_Y_Thumbnail.jpg" />
+    <Content Include="Downloads\HtmlPage1.html" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="AdminWorldBank.aspx" />
+    <Content Include="iCAS\HtmlPage1.html" />
+    <Content Include="Images\About\crest.jpg" />
+    <Content Include="Images\About\Departments\Department-.jpg" />
+    <Content Include="Images\About\Departments\department-botanty.jpg" />
+    <Content Include="Images\About\Departments\department-BOTANY.gif" />
+    <Content Include="Images\About\Departments\department-info tech.jpg" />
+    <Content Include="Images\About\Departments\HOD-.jpg" />
+    <Content Include="Images\About\history.jpg" />
+    <Content Include="Images\About\principal-list.jpg" />
+    <Content Include="Images\Glossary\BkgFooter.jpg" />
+    <Content Include="Images\Glossary\BkgList.png" />
+    <Content Include="Images\Glossary\BkgTitle.gif" />
+    <Content Include="Images\Glossary\button-download.gif" />
+    <Content Include="Images\Glossary\button-download2.jpg" />
+    <Content Include="Images\Glossary\button-downloads.png" />
+    <Content Include="Images\Glossary\Calendar.gif" />
+    <Content Include="Images\Glossary\carre.gif" />
+    <Content Include="Images\Glossary\d.gif" />
+    <Content Include="Images\Glossary\estb.gif" />
+    <Content Include="Images\Glossary\ExternalLink.gif" />
+    <Content Include="Images\Glossary\home.gif" />
+    <Content Include="Images\Glossary\indicator.gif" />
+    <Content Include="Images\Glossary\lightbox-blank.gif" />
+    <Content Include="Images\Glossary\lightbox-btn-close.gif" />
+    <Content Include="Images\Glossary\lightbox-btn-next.gif" />
+    <Content Include="Images\Glossary\lightbox-btn-prev.gif" />
+    <Content Include="Images\Glossary\lightbox-ico-loading.gif" />
+    <Content Include="Images\Glossary\masterfiles.gif" />
+    <Content Include="Images\Glossary\Pdf.gif" />
+    <Content Include="Images\Glossary\pdf1.gif" />
+    <Content Include="Images\Glossary\Picto.gif" />
+    <Content Include="Images\Glossary\PictoDistribList.gif" />
+    <Content Include="Images\Glossary\PictoUsers.gif" />
+    <Content Include="Images\Glossary\PleaseWait_BigSize.gif" />
+    <Content Include="Images\Glossary\RegisterNowButton.jpg" />
+    <Content Include="Images\Glossary\report-bg.png" />
+    <Content Include="Images\Glossary\report.png" />
+    <Content Include="Images\Glossary\screen_bg.gif" />
+    <Content Include="Images\Glossary\screen_bg.gif.gif" />
+    <Content Include="Images\Glossary\screen_bg2.gif" />
+    <Content Include="Images\Glossary\Search.gif" />
+    <Content Include="Images\Glossary\Search.png" />
+    <Content Include="Images\Glossary\Separator.gif" />
+    <Content Include="Images\Glossary\spinningglobe.gif" />
+    <Content Include="Images\Glossary\ViewDetails.gif" />
+    <Content Include="Images\Glossary\view_list.png" />
+    <Content Include="Images\Glossary\web.gif" />
+    <Content Include="Images\Glossary\zoom.ico" />
+    <Content Include="Images\LIBRARY-LEFT-COL.jpg" />
+    <Content Include="Images\lightbox-ico-loading.gif" />
+    <Content Include="Images\Pride\student-bharati-jena.jpg" />
+    <Content Include="Images\Pride\student-kasturi.jpg" />
+    <Content Include="Images\Pride\student-miss-nivedita-kar.jpg" />
+    <Content Include="Images\Pride\student-miss-sunita.jpg" />
+    <Content Include="Images\Pride\student-ranka.jpg" />
+    <Content Include="Images\Pride\student-salina.jpg" />
+    <Content Include="Images\Pride\student-subhasri.jpg" />
+    <Content Include="Images\Products\product1.gif" />
+    <Content Include="Images\Products\product10.gif" />
+    <Content Include="Images\Products\product11.gif" />
+    <Content Include="Images\Products\product12.gif" />
+    <Content Include="Images\Products\product2.gif" />
+    <Content Include="Images\Products\product3.gif" />
+    <Content Include="Images\Products\product4.gif" />
+    <Content Include="Images\Products\product6.gif" />
+    <Content Include="Images\Products\product7.gif" />
+    <Content Include="Images\Products\product8.gif" />
+    <Content Include="Images\Products\product9.gif" />
+    <Content Include="Images\slides_tsdc\slide_0002.jpg" />
+    <Content Include="Images\slides_tsdc\slide_2017_4_NCC.jpg" />
+    <Content Include="Images\slides_tsdc\slide_2017_5_YRC.jpg" />
+    <Content Include="Images\slides_tsdc\slide_2017_6.jpg" />
+    <Content Include="Images\slides_tsdc\slide_2017_7.jpg" />
+    <Content Include="Images\slides_tsdc\slide_2017_7_NSS.jpg" />
+    <Content Include="Images\slides_tsdc\slide_2017_8_IT_LAB.jpg" />
+    <Content Include="Images\TSDC-WEB-LEFT-LIBRARY-200X8.jpg" />
+    <Content Include="Images\TSDC-WEB-LEFT-LIBRARY-200X800.jpg" />
+    <Content Include="Images\User\no-user.png" />
+    <Content Include="Index.aspx" />
+    <Content Include="Library\BooksManage.aspx" />
+    <Content Include="Library\Transactions.aspx" />
+    <Content Include="MinutesOfMeeting.aspx" />
+    <Content Include="Images\android-icon-36x36.png" />
+    <Content Include="Images\photo-gallery\thumbnails\sri_ganesh_thumbnail.jpg" />
+    <Content Include="Images\slides_tsdc\slide_2017_1.jpg" />
+    <Content Include="Images\slides_tsdc\slide_2017_2.jpg" />
+    <Content Include="Images\slides_tsdc\slide_2017_3.jpg" />
+    <Content Include="Images\TSDC-WEB-HEAD-80.jpg" />
+    <Content Include="Images\TSDC-WEB-HEAD-NAV-BAR-50.jpg" />
+    <Content Include="Images\User\default-user.png" />
+    <Content Include="Images\User\Employee\staf-01.png" />
+    <Content Include="Images\User\Employee\staf-02.png" />
+    <Content Include="Images\User\Employee\staf-03.png" />
+    <Content Include="Images\User\Employee\staf-04.png" />
+    <Content Include="Images\User\Guest\stud-01.png" />
+    <Content Include="Images\User\Guest\stud-02.png" />
+    <Content Include="Images\User\Guest\stud-03.png" />
+    <Content Include="Images\User\Guest\stud-04.png" />
+    <Content Include="Images\User\Staff\staf-01.png" />
+    <Content Include="Images\User\Staff\staf-02.png" />
+    <Content Include="Images\User\Staff\staf-03.png" />
+    <Content Include="Images\User\Staff\staf-04.png" />
+    <Content Include="Images\User\Student\stud-01.png" />
+    <Content Include="Images\User\Student\stud-02.png" />
+    <Content Include="Images\User\Student\stud-03.png" />
+    <Content Include="Images\User\Student\stud-04.png" />
+    <Content Include="iCAS\AQAR\Default.aspx" />
+    <Content Include="Kishor.aspx" />
+    <Content Include="Library\Admin\BooksMaster.aspx" />
+    <Content Include="Library\Admin\BooksReport.aspx" />
+    <Content Include="Library\Admin\Default.aspx" />
+    <Content Include="Library\BookCategories.aspx" />
+    <Content Include="Library\BookIssue.aspx" />
+    <Content Include="Library\BookReturn.aspx" />
+    <Content Include="Library\Books.aspx" />
+    <Content Include="Passwords.aspx" />
+    <Content Include="GoverningBody.aspx" />
+    <Content Include="Publications.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="Reports.aspx" />
+    <Content Include="css\jquery.lightbox-0.5.css" />
+    <Content Include="css\styles.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Downloads.aspx" />
+    <Content Include="Feedbacks.aspx" />
+    <Content Include="iCAS\ABOUT.aspx" />
+    <Content Include="iCAS\ACTIVTIES.aspx" />
+    <Content Include="iCAS\ADMIN.aspx" />
+    <Content Include="iCAS\ADMIN1.aspx" />
+    <Content Include="iCAS\BEST-LINKS.aspx" />
+    <Content Include="iCAS\CONTACT.aspx" />
+    <Content Include="iCAS\DOWNLOADS.aspx" />
+    <Content Include="iCAS\ESTABLISHMENTS.aspx" />
+    <Content Include="iCAS\FINANCE.aspx" />
+    <Content Include="iCAS\LIBRARY.aspx" />
+    <Content Include="iCAS\RTI.aspx" />
+    <Content Include="iCAS\STAFFS.aspx" />
+    <Content Include="iCAS\STUDENTS.aspx" />
+    <Content Include="Images\photo-gallery\100_0014.jpg" />
+    <Content Include="Images\photo-gallery\100_0019.jpg" />
+    <Content Include="Images\photo-gallery\100_0020.jpg" />
+    <Content Include="Images\photo-gallery\100_0044.jpg" />
+    <Content Include="Images\photo-gallery\DSC01182.jpg" />
+    <Content Include="Images\photo-gallery\DSC01212.jpg" />
+    <Content Include="Images\photo-gallery\DSC01220.jpg" />
+    <Content Include="Images\photo-gallery\DSC01231.jpg" />
+    <Content Include="Images\photo-gallery\DSC01364.jpg" />
+    <Content Include="Images\photo-gallery\DSC01368.jpg" />
+    <Content Include="Images\photo-gallery\DSC01371.jpg" />
+    <Content Include="Images\photo-gallery\DSC01374.jpg" />
+    <Content Include="Images\photo-gallery\DSC01377.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\100_0014.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\100_0019.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\100_0020.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\100_0044.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01182.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01212.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01220.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01231.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01364.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01368.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01371.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01373.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01374.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01377.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01379.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01385.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01412.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01438.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01448.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01471.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01476.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01546.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01592.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01597.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01646.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01672.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01717.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01734.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01752.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01795.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01812.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01817.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSC01820.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSCN2317.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSCN2346.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSCN2351.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\DSCN2366.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\IMG_0085.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\IMG_0252.jpg" />
+    <Content Include="Images\photo-gallery\thumbnails\IMG_2348.jpg" />
+    <Content Include="Images\photo-gallery\YRC-001.jpg" />
+    <Content Include="Images\social-profiles\email.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\social-profiles\facebook.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\social-profiles\gplus.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\social-profiles\linkedin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\social-profiles\rss.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\social-profiles\twitter.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="js\jquery-1.10.1.min.js" />
+    <Content Include="js\jquery.lightbox-0.5.min.js" />
+    <Content Include="PhotoGallery.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="Downloads\AlumniRegistrationForm.pdf" />
+    <Content Include="App_Data\Library\TSDCLibrary.ldb" />
+    <EntityDeploy Include="Database\ModelLibrary.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelLibrary.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Database\ModelLibrary.edmx.diagram">
+      <DependentUpon>ModelLibrary.edmx</DependentUpon>
+    </Content>
+    <Content Include="App_Themes\DarkGreen\DarkGreen.skin" />
+    <Content Include="App_Themes\DarkGreen\Gridview.skin" />
+    <Content Include="Documents\ESTB_R_Y2018_M1_D13-H16_M0_S11.docx" />
+    <Content Include="Documents\ESTB_R_Y2018_M1_D13-H16_M0_S32.docx" />
+    <Content Include="Documents\PUBL_1_Y2017_M12_D26-H13_M11_S44.pdf" />
+    <Content Include="Documents\PUBL_1_Y2017_M12_D28-H10_M1_S4.pdf" />
+    <Content Include="Documents\PUBL_6_Y2017_M12_D29-H13_M13_S2.pdf" />
+    <Content Include="Documents\PUBL_9_Y2017_M12_D21-H21_M31_S38.pdf" />
+    <Content Include="App_MasterPages\Site.Master" />
+    <Content Include="App_MasterPages\PKTrendz.Master" />
+    <None Include="Properties\PublishProfiles\test.tsdcollege.in - Web Deploy %282%29.pubxml" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="SendEmail.aspx" />
+    <Content Include="SendShortMessage.aspx" />
+    <Content Include="SendSMS.aspx" />
+    <Content Include="ShowSlides.aspx" />
+    <Content Include="sitemap.xml" />
+    <Content Include="SlideShow.aspx" />
+    <Content Include="slideshow.html" />
+    <Content Include="slideshow_automatic.html" />
+    <Content Include="slideshow_indicator.html" />
+    <Content Include="slideshow_manual.html" />
+    <Content Include="StaffResearchPublications.aspx" />
+    <Content Include="Students.aspx" />
+    <Content Include="Themes\Common\CSS\LibraryBookSearch.ascx.css" />
+    <Content Include="Themes\Common\CSS\MainStylesHomeZone - Copy.css" />
+    <Content Include="Themes\Common\CSS\MainStylesHomeZone.css" />
+    <Content Include="Themes\Common\CSS\MainStylesHOME_Standard.css" />
+    <Content Include="Themes\Common\CSS\MainStyleICAS.css" />
+    <Content Include="Themes\Common\CSS\MainStylesHOME.css" />
+    <Content Include="Themes\Common\CSS\MenuStyleSheet.css" />
+    <Content Include="Themes\Common\CSS\Menu_Blue_Vertical.css" />
+    <Content Include="Themes\Common\CSS\Menu_OrangeVerticals.css" />
+    <Content Include="Themes\Common\CSS\MicroGroup.css" />
+    <Content Include="Themes\Common\CSS\SpecialCharacter.htc" />
+    <Content Include="Themes\Common\CSS\UC_RecentActivities.css" />
+    <Content Include="Themes\Common\CSS\UpdateProgress.css" />
+    <Content Include="Themes\Common\CSS\Website.css" />
+    <Content Include="Themes\Common\CSS\Global.css" />
+    <Content Include="Themes\Common\CSS\GridViews.css" />
+    <Content Include="Themes\Common\CSS\GridViewsPager.css" />
+    <Content Include="App_Data\MicroERP\ChartData.xml" />
+    <Content Include="App_Error\AccessDenied.aspx" />
+    <Content Include="App_Error\Error.mdb" />
+    <Content Include="App_Error\Error500.aspx" />
+    <Content Include="App_Error\PermissionNeeded.aspx" />
+    <Content Include="App_UserControls\Admin\UC_SelectDatabase.ascx" />
+    <Content Include="App_UserControls\User\UC_User.ascx" />
+    <Content Include="App_UserControls\User\UC_UserLoggedOn.ascx" />
+    <Content Include="bin\AjaxControlToolkit.dll" />
+    <Content Include="CImage.aspx" />
+    <Content Include="ContactUs.aspx" />
+    <Content Include="Apps\Admin\CommonKeys.aspx" />
+    <Content Include="Apps\Admin\ErrorLogs.aspx" />
+    <Content Include="Apps\Admin\RolePermissions.aspx" />
+    <Content Include="Apps\Admin\Roles.aspx" />
+    <Content Include="Apps\Admin\SendSMS.aspx" />
+    <Content Include="Apps\Admin\UserSettings.aspx" />
+    <Content Include="Apps\Admin\WebsiteHome.aspx" />
+    <Content Include="Apps\Admin\ChangePassword.aspx" />
+    <Content Include="Apps\Admin\Companies.aspx" />
+    <Content Include="Apps\Admin\ContactUs.aspx" />
+    <Content Include="Apps\Admin\ForgotPassword.aspx" />
+    <Content Include="Apps\Admin\Forms.aspx" />
+    <Content Include="Apps\Admin\MenuItems.aspx" />
+    <Content Include="Apps\Admin\Offices.aspx" />
+    <Content Include="Apps\Admin\Permissions.aspx" />
+    <Content Include="Apps\Admin\ResetPasswords.aspx" />
+    <Content Include="Apps\Admin\SendMails.aspx" />
+    <Content Include="Apps\Admin\Support.aspx" />
+    <Content Include="Apps\Admin\TransactionPasswords.aspx" />
+    <Content Include="Apps\Admin\UserLog.aspx" />
+    <Content Include="Apps\Admin\UserProfile.aspx" />
+    <Content Include="Apps\Admin\UserRoles.aspx" />
+    <Content Include="Apps\Admin\Users.aspx" />
+    <Content Include="Apps\Admin\WebMenus.aspx" />
+    <Content Include="Apps\Default.aspx" />
+    <Content Include="Apps\HRMS\AttendanceAmmendmentApplies.aspx" />
+    <Content Include="Apps\HRMS\AttendanceAmmendmentApproves.aspx" />
+    <Content Include="Apps\HRMS\AttendanceApplies.aspx" />
+    <Content Include="Apps\HRMS\AttendanceApproves.aspx" />
+    <Content Include="Apps\HRMS\AttendanceRegisters.aspx" />
+    <Content Include="Apps\HRMS\Departments.aspx" />
+    <Content Include="Apps\HRMS\Designations.aspx" />
+    <Content Include="Apps\HRMS\EmployeeDetails.aspx" />
+    <Content Include="Apps\HRMS\Employees.aspx" />
+    <Content Include="Apps\HRMS\EmployeesProfiles.aspx" />
+    <Content Include="Apps\HRMS\Holidays.aspx" />
+    <Content Include="Apps\HRMS\HRMSettings.aspx" />
+    <Content Include="Apps\HRMS\LeaveApplications.aspx" />
+    <Content Include="Apps\HRMS\LeaveApprovals.aspx" />
+    <Content Include="Apps\HRMS\ManageDevicePermissions.aspx" />
+    <Content Include="Apps\HRMS\ManageDevices.aspx" />
+    <Content Include="Apps\Logout.aspx" />
+    <Content Include="App_Data\MicroERP\Messages.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="App_Data\MicroERP\MicroNews.xml" />
+    <Content Include="App_Data\MicroERP\Miscellaneous.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Global.asax" />
+    <Content Include="Themes\Common\CSS\ReportCharts.css" />
+    <Content Include="Themes\Common\CSS\ReportStyles.css" />
+    <Content Include="Themes\Common\Images\Admission.jpg" />
+    <Content Include="Themes\Common\Images\arrowsub.png" />
+    <Content Include="Themes\Common\Images\bg.png" />
+    <Content Include="Themes\Common\Images\bg_ChartTitle.gif" />
+    <Content Include="Themes\Common\Images\btn_Login2.png" />
+    <Content Include="Themes\Common\Images\cancel.png" />
+    <Content Include="Themes\Common\Images\edit.gif" />
+    <Content Include="Themes\Common\Images\ESTB.ICO" />
+    <Content Include="Themes\Common\Images\hsep.png" />
+    <Content Include="Themes\Common\Images\ICAS-LEFT.jpg" />
+    <Content Include="Themes\Common\Images\LOGIN-ICAS4.jpg" />
+    <Content Include="Themes\Common\Images\mainbk.png" />
+    <Content Include="Themes\Common\Images\nav-repeat1.png" />
+    <Content Include="Themes\Common\Images\PricipalMessageBg.png" />
+    <Content Include="Themes\Common\Images\PRINCIPAL-PASSPHOTO2.jpg" />
+    <Content Include="Themes\Common\Images\save-32x32.png" />
+    <Content Include="Themes\Common\Images\SaveTool.png" />
+    <Content Include="Themes\Common\Images\screen_bg.gif" />
+    <Content Include="Themes\Common\Images\SlideShow\arrow-next.png" />
+    <Content Include="Themes\Common\Images\SlideShow\arrow-prev.png" />
+    <Content Include="Themes\Common\Images\SlideShow\background.png" />
+    <Content Include="Themes\Common\Images\SlideShow\example-frame.png" />
+    <Content Include="Themes\Common\Images\SlideShow\loading.gif" />
+    <Content Include="Themes\Common\Images\SlideShow\new-ribbon.png" />
+    <Content Include="Themes\Common\Images\SlideShow\pagination.png" />
+    <Content Include="Themes\Common\Images\SlideShow\slide-1.jpg" />
+    <Content Include="Themes\Common\Images\SlideShow\slide-2.jpg" />
+    <Content Include="Themes\Common\Images\SlideShow\slide-3.jpg" />
+    <Content Include="Themes\Common\Images\SlideShow\slide-4.jpg" />
+    <Content Include="Themes\Common\Images\SlideShow\slide-5.jpg" />
+    <Content Include="Themes\Common\Images\SlideShow\slide-6.jpg" />
+    <Content Include="Themes\Common\Images\SlideShow\slide-7.jpg" />
+    <Content Include="Themes\Common\Images\SlideShow\slide.jpg" />
+    <Content Include="Themes\Common\Images\student-zone.jpg" />
+    <Content Include="Themes\Common\Images\TITLE-BG.gif" />
+    <Content Include="Themes\Common\Images\TITLE-SUB-BG.gif" />
+    <Content Include="Themes\Common\Images\TITLE-SUB.gif" />
+    <Content Include="Themes\Common\Images\TITLE.gif" />
+    <Content Include="Themes\Common\Images\TSDC-Alumni-Zone.png" />
+    <Content Include="Themes\Common\Images\TSDC-APPS-LOGIN.jpg" />
+    <Content Include="Themes\Common\Images\TSDC-Estb-Zone.png" />
+    <Content Include="Themes\Common\Images\TSDC-FOOT.gif" />
+    <Content Include="Themes\Common\Images\TSDC-HEAD-BG-003366.gif" />
+    <Content Include="Themes\Common\Images\TSDC-HEAD-Final.jpg" />
+    <Content Include="Themes\Common\Images\TSDC-HEAD-ICAS2.jpg" />
+    <Content Include="Themes\Common\Images\TSDC-HEAD.gif" />
+    <Content Include="Themes\Common\Images\TSDC-HEAD.jpg" />
+    <Content Include="Themes\Common\Images\TSDC-HOME-SLIDESHOW-001.jpg" />
+    <Content Include="Themes\Common\Images\TSDC-Library-Zone.png" />
+    <Content Include="Themes\Common\Images\TSDC-LOGIN.jpg" />
+    <Content Include="Themes\Common\Images\TSDC-LOGO.gif" />
+    <Content Include="Themes\Common\Images\TSDC-Staff-Zone.png" />
+    <Content Include="Themes\Common\Images\TSDC-Student-Zone.png" />
+    <Content Include="Themes\Common\Images\TSDC-Zone-ESTB.png" />
+    <Content Include="Themes\Common\Images\TSDC-ZONE-TITLE-ICAS-alumni.png" />
+    <Content Include="Themes\Common\Images\TSDC-ZONE-TITLE-ICAS-estb.png" />
+    <Content Include="Themes\Common\Images\TSDC-ZONE-TITLE-ICAS-staff.png" />
+    <Content Include="Themes\Common\Images\TSDC-ZONE-TITLE-ICAS-student.png" />
+    <Content Include="Themes\Common\Images\TSDC-ZONE-TITLE-ICAS-studentszone.png" />
+    <Content Include="Themes\Common\Images\TSDC-ZoneMenuBg.png" />
+    <Content Include="Themes\Common\Images\TSDC\TSD_Slide_01.jpg" />
+    <Content Include="Themes\Common\Images\TSDC\TSD_Slide_02.jpg" />
+    <Content Include="Themes\Common\Images\TSDC\TSD_Slide_03.jpg" />
+    <Content Include="Themes\Common\Images\TSDC\TSD_Slide_04.jpg" />
+    <Content Include="Themes\Common\Images\TSDC_HEADER.jpg" />
+    <Content Include="Themes\Common\Images\UC-LOGIN-BG.jpg" />
+    <Content Include="Themes\Common\Images\UC-LOGIN-BG2.jpg" />
+    <Content Include="Themes\Common\Images\update.gif" />
+    <Content Include="Themes\Common\Images\update.png" />
+    <Content Include="Themes\Common\Images\UpdateProgress\PleaseWait_BigSize.gif" />
+    <Content Include="Themes\Common\Images\UpdateProgress\spinningglobe.gif" />
+    <Content Include="Themes\Common\Images\UserLoginUL.png" />
+    <Content Include="Themes\Common\Images\WebFooter.png" />
+    <Content Include="Themes\Common\Images\WebHeader.png" />
+    <Content Include="Themes\Common\Images\ZONE-TITLE-alumni.png" />
+    <Content Include="Themes\Common\Images\ZONE-TITLE-estb.png" />
+    <Content Include="Themes\Common\Images\ZONE-TITLE-staff.png" />
+    <Content Include="Themes\Common\Images\ZONE-TITLE-students.png" />
+    <Content Include="Themes\Common\JavaScript\CommonJavaScripts.js" />
+    <Content Include="Themes\Common\JavaScript\slides.min.jquery.js" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\external\jquery\jquery.js" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\images\ui-icons_222222_256x240.png" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\index.html" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\jquery-ui.css" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\jquery-ui.js" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\jquery-ui.min.css" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\jquery-ui.min.js" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\jquery-ui.structure.css" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\jquery-ui.structure.min.css" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\jquery-ui.theme.css" />
+    <Content Include="Themes\Common\jquery-ui-1.11.2\jquery-ui.theme.min.css" />
+    <Content Include="Themes\Common\JQuery\jquery-1.7.2.js" />
+    <Content Include="Themes\Common\JQuery\jquery-1.7.2.min.js" />
+    <Content Include="Themes\Default\CSS\AjaxAccordion.css" />
+    <Content Include="Themes\Default\CSS\Calendar.css" />
+    <Content Include="Themes\Default\CSS\CommonStyles.css" />
+    <Content Include="Themes\Default\CSS\Common_MFEL.css" />
+    <Content Include="Themes\Default\CSS\Common_MFSL.css" />
+    <Content Include="Themes\Default\CSS\Common_MHPL.css" />
+    <Content Include="Themes\Default\CSS\Common_MLFL.css" />
+    <Content Include="Themes\Default\CSS\Common_MMEL.css" />
+    <Content Include="Themes\Default\CSS\Common_TSDC.css" />
+    <Content Include="Themes\Default\CSS\CustomisedMenu.ascx.css" />
+    <Content Include="Themes\Default\CSS\DialogBox.css" />
+    <Content Include="Themes\Common\CSS\Menu_Micro_Default.css" />
+    <Content Include="Themes\Common\CSS\Menu_Micro_DarkGreen.css" />
+    <Content Include="Themes\Default\CSS\Downloads.aspx.css" />
+    <Content Include="Themes\Default\CSS\GridView.css" />
+    <Content Include="Themes\Default\CSS\GridViewPagerStyle.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ICAS\ADMIN\StudentFeedBack.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ICAS\ESTBLMT\Default.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ICAS\ESTBLMT\EstablishmentApprovals.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ICAS\FINANCE\DefaultFeeSetups.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ICAS\STAFFS\StaffMasters.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ICAS\STAFF\PolicyPaymentForm.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ICAS\STAFF\StaffPayComponents.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ICAS\STUDENT\DefaultFeeSetups.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ICAS\STUDENT\StudentDailyAttendances.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ICAS\STUDENT\StudentAdmission.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ICAS\STUDENT\ExamSchedules.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ICAS\STUDENT\Students.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ICAS\STUDENT\StudentSections.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\UserRegister.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\UserLogin.aspx - Copy.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\UserLogin.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\App_Error\AccessDenied.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\App_Error\Error500.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\AdminSettings.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\Colleges.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\CommonKeys.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\Companies.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\MenuItems.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\Offices.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\RolePermissions.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\Users.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\Default.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\ChangePassword.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\ContactUs.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\ForgotPassword.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\Permissions.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\ResetPasswords.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\TransactionPasswords.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\APPS\ADMIN\UserProfile.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\ContactUs.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\Default.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\Downloads.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\ICAS\About.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\ICAS\ACTIVTIES.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\ICAS\Staffs.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\ICAS\TableStyle.css" />
+    <Content Include="Themes\Default\CSS\Pages\Library\BookIssueReturn.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\Library\Books.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\Library\BooksManage.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\Library\Transactions.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\Library\Transactions.css" />
+    <Content Include="Themes\Default\CSS\Pages\Publications.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\Register.css" />
+    <Content Include="Themes\Default\CSS\Pages\SendEmail.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\SendSMS.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\Students.aspx.css" />
+    <Content Include="Themes\Default\CSS\Pages\Alumni.aspx.css" />
+    <Content Include="Themes\Default\CSS\Responsive.css" />
+    <Content Include="Themes\Default\Images\arrowsub.png" />
+    <Content Include="Themes\Default\Images\BackgroundSubTitle_001.gif" />
+    <Content Include="Themes\Default\Images\bg-menu-main.png" />
+    <Content Include="Themes\Default\Images\bg_Button_Default.gif" />
+    <Content Include="Themes\Default\Images\bg_Header_PageTitle.gif" />
+    <Content Include="Themes\Default\Images\bg_Header_SubTitle.gif" />
+    <Content Include="Themes\Default\Images\body_bg.gif" />
+    <Content Include="Themes\Default\Images\btn_Login.png" />
+    <Content Include="Themes\Default\Images\bullet.gif" />
+    <Content Include="Themes\Default\Images\bullet1.gif" />
+    <Content Include="Themes\Default\Images\Buttons\Button-Out-Left.gif" />
+    <Content Include="Themes\Default\Images\Buttons\Button-Out-Right.gif" />
+    <Content Include="Themes\Default\Images\Buttons\Button-Over-Left.gif" />
+    <Content Include="Themes\Default\Images\Calander 01.gif" />
+    <Content Include="Themes\Default\Images\calendar.gif" />
+    <Content Include="Themes\Default\Images\Calendar\Calendar.gif" />
+    <Content Include="Themes\Default\Images\Calendar\NextMonth.gif" />
+    <Content Include="Themes\Default\Images\Calendar\PreviousMonth.gif" />
+    <Content Include="Themes\Default\Images\delete.gif" />
+    <Content Include="Themes\Default\Images\delete.png" />
+    <Content Include="Themes\Default\Images\devxArrowDown.gif" />
+    <Content Include="Themes\Default\Images\dialog-error.jpg" />
+    <Content Include="Themes\Default\Images\divider1.gif" />
+    <Content Include="Themes\Default\Images\earth.jpg" />
+    <Content Include="Themes\Default\Images\Edit Icon %281%29.ico" />
+    <Content Include="Themes\Default\Images\edit.gif" />
+    <Content Include="Themes\Default\Images\edit.png" />
+    <Content Include="Themes\Default\Images\error.gif" />
+    <Content Include="Themes\Default\Images\error.jpg" />
+    <Content Include="Themes\Default\Images\error_2.gif" />
+    <Content Include="Themes\Default\Images\flag.gif" />
+    <Content Include="Themes\Default\Images\goto_first.png" />
+    <Content Include="Themes\Default\Images\goto_last.png" />
+    <Content Include="Themes\Default\Images\GRID_DELETE.ico" />
+    <Content Include="Themes\Default\Images\GRID_EDIT.ico" />
+    <Content Include="Themes\Default\Images\GRID_SAVE.ico" />
+    <Content Include="Themes\Default\Images\GRID_SELECT.ICO" />
+    <Content Include="Themes\Default\Images\gvHeaderBackground.gif" />
+    <Content Include="Themes\Default\Images\hand.jpg" />
+    <Content Include="Themes\Default\Images\head_banner.jpg" />
+    <Content Include="Themes\Default\Images\home.png" />
+    <Content Include="Themes\Default\Images\icon_FAQ.png" />
+    <Content Include="Themes\Default\Images\info.jpg" />
+    <Content Include="Themes\Default\Images\letter.jpg" />
+    <Content Include="Themes\Default\Images\Logo_Report_MLFL.jpg" />
+    <Content Include="Themes\Default\Images\mainbk.png" />
+    <Content Include="Themes\Default\Images\micro-customer-support.jpg" />
+    <Content Include="Themes\Default\Images\micro-support.jpg" />
+    <Content Include="Themes\Default\Images\minus.gif" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_Bkg-trans.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_Bkg.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_Close-trans.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_Close.gif" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_Close.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_FooterBkg.gif" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_Puce.gif" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowBottomCenter-trans.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowBottomCenter.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowBottomLeft-trans.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowBottomLeft.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowBottomRight-trans.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowBottomRight.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowMiddleLeft-trans.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowMiddleLeft.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowMiddleRight-trans.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowMiddleRight.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowTopCenter-trans.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowTopCenter.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowTopLeft-trans.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowTopLeft.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowTopRight-trans.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_ShadowTopRight.png" />
+    <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_TitleBkg.gif" />
+    <Content Include="Themes\Default\Images\news.jpg" />
+    <Content Include="Themes\Default\Images\next.png" />
+    <Content Include="Themes\Default\Images\ok.png" />
+    <Content Include="Themes\Default\Images\previous.png" />
+    <Content Include="Themes\Default\Images\signup.jpg" />
+    <Content Include="Themes\Default\Images\top_menubg.gif" />
+    <Content Include="Themes\Default\Images\UpdateProgress.gif" />
+    <Content Include="Themes\Default\Images\UpdateProgress\PleaseWait_BigSize.gif" />
+    <Content Include="Themes\Default\Images\UpdateProgress\spinningglobe.gif" />
+    <Content Include="Themes\Default\Images\Validate.gif" />
+    <Content Include="App_MasterPages\ICAS.Master" />
+    <Content Include="Themes\Profiles\Employee Profile-10-Photo.jpg" />
+    <Content Include="Themes\Profiles\Temp\Employee Profile-1-Photo.jpg" />
+    <Content Include="Upload\Approvals.aspx" />
+    <Content Include="Upload\PhotoGallery.aspx" />
+    <Content Include="Upload\WorldBank.aspx" />
+    <Content Include="Upload\MoM.aspx" />
+    <Content Include="Upload\Publications.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Form4.aspx" />
+    <Content Include="WebSearch.aspx" />
+    <Content Include="WebSearchForm.aspx" />
+    <Content Include="App_MasterPages\ICAS-Reports.Master" />
+    <Content Include="packages.config" />
+    <Content Include="Downloads\SSR TSDC.rar" />
+    <Content Include="Downloads\AlumniRegistrationForm.rar" />
+    <Content Include="Downloads\SSR_TSDC.pdf" />
+    <None Include="Properties\PublishProfiles\local.pubxml" />
+    <None Include="Properties\PublishProfiles\test.tsdcollege.in - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\tsdcollege.in.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Themes\USER_PHOTO\Employee\staf-02.png" />
+    <Content Include="Themes\USER_PHOTO\Guest\stud-01.png" />
+    <Content Include="Themes\USER_PHOTO\Staff\staf-01.png" />
+    <Content Include="Themes\USER_PHOTO\Student\stud-01.png" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="tsd-college-governing-body.pdf" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminAuditActivities.aspx.cs">
+      <DependentUpon>AdminAuditActivities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminAuditActivities.aspx.designer.cs">
+      <DependentUpon>AdminAuditActivities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGoverningBody.aspx.cs">
+      <DependentUpon>AdminGoverningBody.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminGoverningBody.aspx.designer.cs">
+      <DependentUpon>AdminGoverningBody.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="api\BooksController.cs" />
+    <Compile Include="api\ChartController.cs" />
+    <Compile Include="api\EstablishmentController.cs" />
+    <Compile Include="api\LibraryController.cs" />
+    <Compile Include="api\NoticesController.cs" />
+    <Compile Include="api\PublicationsController.cs" />
+    <Compile Include="Apps\Admin\TheCollege.aspx.cs">
+      <DependentUpon>TheCollege.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\TheCollege.aspx.designer.cs">
+      <DependentUpon>TheCollege.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\UserFeedbackQuestions.aspx.cs">
+      <DependentUpon>UserFeedbackQuestions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\UserFeedbackQuestions.aspx.designer.cs">
+      <DependentUpon>UserFeedbackQuestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\UserCaptchaImage.aspx.cs">
+      <DependentUpon>UserCaptchaImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\UserCaptchaImage.aspx.designer.cs">
+      <DependentUpon>UserCaptchaImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\AcademicYears.aspx.cs">
+      <DependentUpon>AcademicYears.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\AcademicYears.aspx.designer.cs">
+      <DependentUpon>AcademicYears.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\AccountGroups.aspx.cs">
+      <DependentUpon>AccountGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\AccountGroups.aspx.designer.cs">
+      <DependentUpon>AccountGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\AccountHeads.aspx.cs">
+      <DependentUpon>AccountHeads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\AccountHeads.aspx.designer.cs">
+      <DependentUpon>AccountHeads.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\AccountingYears.aspx.cs">
+      <DependentUpon>AccountingYears.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\AccountingYears.aspx.designer.cs">
+      <DependentUpon>AccountingYears.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\AccountNames.aspx.cs">
+      <DependentUpon>AccountNames.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\AccountNames.aspx.designer.cs">
+      <DependentUpon>AccountNames.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\AccountRemittances.aspx.cs">
+      <DependentUpon>AccountRemittances.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\AccountRemittances.aspx.designer.cs">
+      <DependentUpon>AccountRemittances.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\AccountTransactions.aspx.cs">
+      <DependentUpon>AccountTransactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\AccountTransactions.aspx.designer.cs">
+      <DependentUpon>AccountTransactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\CalanderYears.aspx.cs">
+      <DependentUpon>CalanderYears.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\CalanderYears.aspx.designer.cs">
+      <DependentUpon>CalanderYears.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\CashBook.aspx.cs">
+      <DependentUpon>CashBook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\CashBook.aspx.designer.cs">
+      <DependentUpon>CashBook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\ContraVouchers.aspx.cs">
+      <DependentUpon>ContraVouchers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\ContraVouchers.aspx.designer.cs">
+      <DependentUpon>ContraVouchers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\CreditVouchers.aspx.cs">
+      <DependentUpon>CreditVouchers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\CreditVouchers.aspx.designer.cs">
+      <DependentUpon>CreditVouchers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\DebitVouchers.aspx.cs">
+      <DependentUpon>DebitVouchers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\DebitVouchers.aspx.designer.cs">
+      <DependentUpon>DebitVouchers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\FinancialYears.aspx.cs">
+      <DependentUpon>FinancialYears.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\FinancialYears.aspx.designer.cs">
+      <DependentUpon>FinancialYears.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\JournalVoucher.aspx.cs">
+      <DependentUpon>JournalVoucher.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\JournalVoucher.aspx.designer.cs">
+      <DependentUpon>JournalVoucher.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\MasterAccounts.aspx.cs">
+      <DependentUpon>MasterAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\MasterAccounts.aspx.designer.cs">
+      <DependentUpon>MasterAccounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Finance\Transactions.aspx.cs">
+      <DependentUpon>Transactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Finance\Transactions.aspx.designer.cs">
+      <DependentUpon>Transactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\ADMIN\FeedbackMaster.aspx.cs">
+      <DependentUpon>FeedbackMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\ADMIN\FeedbackMaster.aspx.designer.cs">
+      <DependentUpon>FeedbackMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\ADMIN\OptionMaster.aspx.cs">
+      <DependentUpon>OptionMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\ADMIN\OptionMaster.aspx.designer.cs">
+      <DependentUpon>OptionMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\ADMIN\QuestionMaster.aspx.cs">
+      <DependentUpon>QuestionMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\ADMIN\QuestionMaster.aspx.designer.cs">
+      <DependentUpon>QuestionMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\ADMIN\Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\ADMIN\Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\ADMIN\StudentFeedBack.aspx.cs">
+      <DependentUpon>StudentFeedBack.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\ADMIN\StudentFeedBack.aspx.designer.cs">
+      <DependentUpon>StudentFeedBack.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\ADMIN\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\ADMIN\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\ALUMNI\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\ALUMNI\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\ESTBLMT\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\ESTBLMT\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\ESTBLMT\EstablishmentApprovals.aspx.cs">
+      <DependentUpon>EstablishmentApprovals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\ESTBLMT\EstablishmentApprovals.aspx.designer.cs">
+      <DependentUpon>EstablishmentApprovals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\FINANCE\AcademicYears.aspx.cs">
+      <DependentUpon>AcademicYears.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\FINANCE\AcademicYears.aspx.designer.cs">
+      <DependentUpon>AcademicYears.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\FINANCE\AccountGroups.aspx.cs">
+      <DependentUpon>AccountGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\FINANCE\AccountGroups.aspx.designer.cs">
+      <DependentUpon>AccountGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\FINANCE\AccountHeads.aspx.cs">
+      <DependentUpon>AccountHeads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\FINANCE\AccountHeads.aspx.designer.cs">
+      <DependentUpon>AccountHeads.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\FINANCE\AccountTransactions.aspx.cs">
+      <DependentUpon>AccountTransactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\FINANCE\AccountTransactions.aspx.designer.cs">
+      <DependentUpon>AccountTransactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\FINANCE\MasterAccounts.aspx.cs">
+      <DependentUpon>MasterAccounts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\FINANCE\MasterAccounts.aspx.designer.cs">
+      <DependentUpon>MasterAccounts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\REPORTS\StudentAttendanceReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentAttendanceReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\REPORTS\StudentAttendanceReports.aspx.cs">
+      <DependentUpon>StudentAttendanceReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\REPORTS\StudentAttendanceReports.aspx.designer.cs">
+      <DependentUpon>StudentAttendanceReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\REPORTS\StaffsReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StaffsReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\REPORTS\StaffReports.aspx.cs">
+      <DependentUpon>StaffReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\REPORTS\StaffReports.aspx.designer.cs">
+      <DependentUpon>StaffReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\REPORTS\StudentReports.aspx.cs">
+      <DependentUpon>StudentReports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\REPORTS\StudentReports.aspx.designer.cs">
+      <DependentUpon>StudentReports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\REPORTS\StudentsReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StudentsReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\AttendanceRegisters.aspx.cs">
+      <DependentUpon>AttendanceRegisters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\AttendanceRegisters.aspx.designer.cs">
+      <DependentUpon>AttendanceRegisters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\LeaveApprovals.aspx.cs">
+      <DependentUpon>LeaveApprovals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\LeaveApprovals.aspx.designer.cs">
+      <DependentUpon>LeaveApprovals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\PolicyPaymentForm.aspx.cs">
+      <DependentUpon>PolicyPaymentForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\PolicyPaymentForm.aspx.designer.cs">
+      <DependentUpon>PolicyPaymentForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\Departments.aspx.cs">
+      <DependentUpon>Departments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\Departments.aspx.designer.cs">
+      <DependentUpon>Departments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\Designations.aspx.cs">
+      <DependentUpon>Designations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\Designations.aspx.designer.cs">
+      <DependentUpon>Designations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\LeaveApplications.aspx.cs">
+      <DependentUpon>LeaveApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\LeaveApplications.aspx.designer.cs">
+      <DependentUpon>LeaveApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\LoanApplications.aspx.cs">
+      <DependentUpon>LoanApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\LoanApplications.aspx.designer.cs">
+      <DependentUpon>LoanApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\MasterPayComponents.aspx.cs">
+      <DependentUpon>MasterPayComponents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\MasterPayComponents.aspx.designer.cs">
+      <DependentUpon>MasterPayComponents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\Payroll.aspx.cs">
+      <DependentUpon>Payroll.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\Payroll.aspx.designer.cs">
+      <DependentUpon>Payroll.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\PayRollMasters.aspx.cs">
+      <DependentUpon>PayRollMasters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\PayRollMasters.aspx.designer.cs">
+      <DependentUpon>PayRollMasters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\StaffLICPolicies.aspx.cs">
+      <DependentUpon>StaffLICPolicies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\StaffLICPolicies.aspx.designer.cs">
+      <DependentUpon>StaffLICPolicies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\StaffMasters.aspx.cs">
+      <DependentUpon>StaffMasters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\StaffMasters.aspx.designer.cs">
+      <DependentUpon>StaffMasters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\StaffPayComponents.aspx.cs">
+      <DependentUpon>StaffPayComponents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\StaffPayComponents.aspx.designer.cs">
+      <DependentUpon>StaffPayComponents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\StaffProfiles.aspx.cs">
+      <DependentUpon>StaffProfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\StaffProfiles.aspx.designer.cs">
+      <DependentUpon>StaffProfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\DefaultFeeSetups.aspx.cs">
+      <DependentUpon>DefaultFeeSetups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\DefaultFeeSetups.aspx.designer.cs">
+      <DependentUpon>DefaultFeeSetups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\StudentAdmissionFees.aspx.cs">
+      <DependentUpon>StudentAdmissionFees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\StudentAdmissionFees.aspx.designer.cs">
+      <DependentUpon>StudentAdmissionFees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\StudentSections.aspx.cs">
+      <DependentUpon>StudentSections.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\StudentSections.aspx.designer.cs">
+      <DependentUpon>StudentSections.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\StudentDailyAttendances.aspx.cs">
+      <DependentUpon>StudentDailyAttendances.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\StudentDailyAttendances.aspx.designer.cs">
+      <DependentUpon>StudentDailyAttendances.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\StudentAdmission.aspx.cs">
+      <DependentUpon>StudentAdmission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\StudentAdmission.aspx.designer.cs">
+      <DependentUpon>StudentAdmission.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\ExamMarkMasters.aspx.cs">
+      <DependentUpon>ExamMarkMasters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\ExamMarkMasters.aspx.designer.cs">
+      <DependentUpon>ExamMarkMasters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\ExamMasters.aspx.cs">
+      <DependentUpon>ExamMasters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\ExamMasters.aspx.designer.cs">
+      <DependentUpon>ExamMasters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\ExamResults.aspx.cs">
+      <DependentUpon>ExamResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\ExamResults.aspx.designer.cs">
+      <DependentUpon>ExamResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\Qualifications.aspx.cs">
+      <DependentUpon>Qualifications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\Qualifications.aspx.designer.cs">
+      <DependentUpon>Qualifications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\Students.aspx.cs">
+      <DependentUpon>Students.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\Students.aspx.designer.cs">
+      <DependentUpon>Students.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\ExamSchedules.aspx.cs">
+      <DependentUpon>ExamSchedules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\ExamSchedules.aspx.designer.cs">
+      <DependentUpon>ExamSchedules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\StudentSubjects.aspx.cs">
+      <DependentUpon>StudentSubjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\StudentSubjects.aspx.designer.cs">
+      <DependentUpon>StudentSubjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\StudentFeesEntry.aspx.cs">
+      <DependentUpon>StudentFeesEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STUDENT\StudentFeesEntry.aspx.designer.cs">
+      <DependentUpon>StudentFeesEntry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\UserRegister.aspx.cs">
+      <DependentUpon>UserRegister.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\UserRegister.aspx.designer.cs">
+      <DependentUpon>UserRegister.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\UserLogin.aspx.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\UserLogin.aspx.designer.cs">
+      <DependentUpon>UserLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Error\Error404.aspx.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Error\Error404.aspx.designer.cs">
+      <DependentUpon>Error404.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Error\Maintenance.aspx.cs">
+      <DependentUpon>Maintenance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Error\Maintenance.aspx.designer.cs">
+      <DependentUpon>Maintenance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Error\WorkInProgress.aspx.cs">
+      <DependentUpon>WorkInProgress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Error\WorkInProgress.aspx.designer.cs">
+      <DependentUpon>WorkInProgress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\ICAS-Reports.Master.cs">
+      <DependentUpon>ICAS-Reports.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\ICAS-Reports.Master.designer.cs">
+      <DependentUpon>ICAS-Reports.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\ICAS.Master.cs">
+      <DependentUpon>ICAS.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\ICAS.Master.designer.cs">
+      <DependentUpon>ICAS.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\Micro-Website.Master.cs">
+      <DependentUpon>Micro-Website.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\Micro-Website.Master.designer.cs">
+      <DependentUpon>Micro-Website.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\MicroERP-MasterPage.Master.cs">
+      <DependentUpon>MicroERP-MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\MicroERP-MasterPage.Master.designer.cs">
+      <DependentUpon>MicroERP-MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\PKTrendz.Master.cs">
+      <DependentUpon>PKTrendz.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\PKTrendz.Master.designer.cs">
+      <DependentUpon>PKTrendz.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Admin\UC_AdminZone.ascx.cs">
+      <DependentUpon>UC_AdminZone.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Admin\UC_AdminZone.ascx.designer.cs">
+      <DependentUpon>UC_AdminZone.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Charts\UC_Chart_Finance.ascx.cs">
+      <DependentUpon>UC_Chart_Finance.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Charts\UC_Chart_Finance.ascx.designer.cs">
+      <DependentUpon>UC_Chart_Finance.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Charts\UC_Chart_StudentStrengthYearWise.ascx.cs">
+      <DependentUpon>UC_Chart_StudentStrengthYearWise.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Charts\UC_Chart_StudentStrengthYearWise.ascx.designer.cs">
+      <DependentUpon>UC_Chart_StudentStrengthYearWise.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Charts\WebUserControl_Chart_StudentStrength.ascx.cs">
+      <DependentUpon>WebUserControl_Chart_StudentStrength.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Charts\WebUserControl_Chart_StudentStrength.ascx.designer.cs">
+      <DependentUpon>WebUserControl_Chart_StudentStrength.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\PrincipalMessage.ascx.cs">
+      <DependentUpon>PrincipalMessage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\PrincipalMessage.ascx.designer.cs">
+      <DependentUpon>PrincipalMessage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_AlumniZone.ascx.cs">
+      <DependentUpon>UC_AlumniZone.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_AlumniZone.ascx.designer.cs">
+      <DependentUpon>UC_AlumniZone.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Library\UC_LibraryBooks.ascx.cs">
+      <DependentUpon>UC_LibraryBooks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Library\UC_LibraryBooks.ascx.designer.cs">
+      <DependentUpon>UC_LibraryBooks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_PhotoGallery.ascx.cs">
+      <DependentUpon>UC_PhotoGallery.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_PhotoGallery.ascx.designer.cs">
+      <DependentUpon>UC_PhotoGallery.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_EstablishmentZone.ascx.cs">
+      <DependentUpon>UC_EstablishmentZone.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_EstablishmentZone.ascx.designer.cs">
+      <DependentUpon>UC_EstablishmentZone.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_LinksZone.ascx.cs">
+      <DependentUpon>UC_LinksZone.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_LinksZone.ascx.designer.cs">
+      <DependentUpon>UC_LinksZone.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_PrideOfCampus.ascx.cs">
+      <DependentUpon>UC_PrideOfCampus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_PrideOfCampus.ascx.designer.cs">
+      <DependentUpon>UC_PrideOfCampus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_RecentActivities.ascx.cs">
+      <DependentUpon>UC_RecentActivities.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_RecentActivities.ascx.designer.cs">
+      <DependentUpon>UC_RecentActivities.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_Search.ascx.cs">
+      <DependentUpon>UC_Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_Search.ascx.designer.cs">
+      <DependentUpon>UC_Search.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_SearchGoogle.ascx.cs">
+      <DependentUpon>UC_SearchGoogle.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_SearchGoogle.ascx.designer.cs">
+      <DependentUpon>UC_SearchGoogle.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_SocialNetworks.ascx.cs">
+      <DependentUpon>UC_SocialNetworks.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_SocialNetworks.ascx.designer.cs">
+      <DependentUpon>UC_SocialNetworks.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_StaffZone.ascx.cs">
+      <DependentUpon>UC_StaffZone.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_StaffZone.ascx.designer.cs">
+      <DependentUpon>UC_StaffZone.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_StudentZone.ascx.cs">
+      <DependentUpon>UC_StudentZone.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_StudentZone.ascx.designer.cs">
+      <DependentUpon>UC_StudentZone.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_WebFooter.ascx.cs">
+      <DependentUpon>UC_WebFooter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_WebFooter.ascx.designer.cs">
+      <DependentUpon>UC_WebFooter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_WebHeader.ascx.cs">
+      <DependentUpon>UC_WebHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\ICAS\UC_WebHeader.ascx.designer.cs">
+      <DependentUpon>UC_WebHeader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Library\UC_LibraryBookAdd.ascx.cs">
+      <DependentUpon>UC_LibraryBookAdd.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Library\UC_LibraryBookAdd.ascx.designer.cs">
+      <DependentUpon>UC_LibraryBookAdd.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Library\UC_LibraryBookSearch.ascx.cs">
+      <DependentUpon>UC_LibraryBookSearch.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Library\UC_LibraryBookSearch.ascx.designer.cs">
+      <DependentUpon>UC_LibraryBookSearch.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Menu\UC_CustomisedMenu.ascx.cs">
+      <DependentUpon>UC_CustomisedMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Menu\UC_CustomisedMenu.ascx.designer.cs">
+      <DependentUpon>UC_CustomisedMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Menu\UC_MenuDynamic.ascx.cs">
+      <DependentUpon>UC_MenuDynamic.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Menu\UC_MenuDynamic.ascx.designer.cs">
+      <DependentUpon>UC_MenuDynamic.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Menu\WebUserControlMenu.ascx.cs">
+      <DependentUpon>WebUserControlMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Menu\WebUserControlMenu.ascx.designer.cs">
+      <DependentUpon>WebUserControlMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\UC_Export.ascx.cs">
+      <DependentUpon>UC_Export.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\UC_Export.ascx.designer.cs">
+      <DependentUpon>UC_Export.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\UC_Login.ascx.cs">
+      <DependentUpon>UC_Login.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\UC_Login.ascx.designer.cs">
+      <DependentUpon>UC_Login.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\UC_MultiColumnDropdownList.ascx.cs">
+      <DependentUpon>UC_MultiColumnDropdownList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\UC_MultiColumnDropdownList.ascx.designer.cs">
+      <DependentUpon>UC_MultiColumnDropdownList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\UC_Search.ascx.cs">
+      <DependentUpon>UC_Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\UC_Search.ascx.designer.cs">
+      <DependentUpon>UC_Search.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\UC_SelectOffice.ascx.cs">
+      <DependentUpon>UC_SelectOffice.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\UC_SelectOffice.ascx.designer.cs">
+      <DependentUpon>UC_SelectOffice.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Alumni.aspx.cs">
+      <DependentUpon>Alumni.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Alumni.aspx.designer.cs">
+      <DependentUpon>Alumni.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\UC_SlideShowSimple.ascx.cs">
+      <DependentUpon>UC_SlideShowSimple.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\UC_SlideShowSimple.ascx.designer.cs">
+      <DependentUpon>UC_SlideShowSimple.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\UC_WebUserControlSlider.ascx.cs">
+      <DependentUpon>UC_WebUserControlSlider.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\UC_WebUserControlSlider.ascx.designer.cs">
+      <DependentUpon>UC_WebUserControlSlider.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Code\ClassExcel.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="AdminWorldBank.aspx.cs">
+      <DependentUpon>AdminWorldBank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminWorldBank.aspx.designer.cs">
+      <DependentUpon>AdminWorldBank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Accounts_Balance.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Accounts_BookClose.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Accounts_Group.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Accounts_Master.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Accounts_MonthlyProcess.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Accounts_NumberControl.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Accounts_Transactions.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Accounts_TranVouchers.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Account_Years.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_BankBranches.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Banks.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Calendar.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_CommonKeys.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Companies.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Countries.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Currency.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Districts.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Forms.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Guests.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_MasterCodes.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_MasterCodes_Officewise.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_MenuItemsWeb.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Modules.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_OfficeGroups.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Offices.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Permissions.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Reports.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_RolePermissions_Web.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Roles.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_SettingKeys.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Settings.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Settings_Officewise.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_States.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_UserRolePermissionExceptions.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Users.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_UserSettingKeys.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_UserSettings.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Users_Companywise.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Users_Incharge.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Users_Log.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_Users_Officewise.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_MST_WebForms.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ADMN_TRN_ErrorLog.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\Bank.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\BankBranch.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\HRMS_MST_Departments.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\HRMS_MST_Designations.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\HRMS_MST_Employees.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\iCAS_Students.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\LIB_Books_SelectAllByAuthorID_Result.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\LIB_Books_SelectAllByAuthor_Result.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\LIB_Books_SelectAllByCategory_Result.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\LIB_Books_SelectAllByID_Result.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\LIB_Books_SelectAll_Result.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\LIB_Book_Insert_Result.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\LIB_Categories_SelectAll_Result.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\LIB_MasterAuthors.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\LIB_MasterCategories.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\LIB_MasterPublishers.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\LIB_Master_Books.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\LIB_Transactions.cs">
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ModelLibrary.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelLibrary.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ModelLibrary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelLibrary.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\ModelLibrary.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelLibrary.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Document.aspx.cs">
+      <DependentUpon>Document.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Document.aspx.designer.cs">
+      <DependentUpon>Document.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library\BooksManage.aspx.cs">
+      <DependentUpon>BooksManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library\BooksManage.aspx.designer.cs">
+      <DependentUpon>BooksManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Transactions.aspx.cs">
+      <DependentUpon>Transactions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library\Transactions.aspx.designer.cs">
+      <DependentUpon>Transactions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MinutesOfMeeting.aspx.cs">
+      <DependentUpon>MinutesOfMeeting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MinutesOfMeeting.aspx.designer.cs">
+      <DependentUpon>MinutesOfMeeting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iCAS\AQAR\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iCAS\AQAR\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Kishor.aspx.cs">
+      <DependentUpon>Kishor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Kishor.aspx.designer.cs">
+      <DependentUpon>Kishor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Admin\BooksMaster.aspx.cs">
+      <DependentUpon>BooksMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library\Admin\BooksMaster.aspx.designer.cs">
+      <DependentUpon>BooksMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Admin\BooksReport.aspx.cs">
+      <DependentUpon>BooksReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library\Admin\BooksReport.aspx.designer.cs">
+      <DependentUpon>BooksReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Admin\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library\Admin\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library\BookCategories.aspx.cs">
+      <DependentUpon>BookCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library\BookCategories.aspx.designer.cs">
+      <DependentUpon>BookCategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library\BookIssue.aspx.cs">
+      <DependentUpon>BookIssue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library\BookIssue.aspx.designer.cs">
+      <DependentUpon>BookIssue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library\BookReturn.aspx.cs">
+      <DependentUpon>BookReturn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library\BookReturn.aspx.designer.cs">
+      <DependentUpon>BookReturn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Books.aspx.cs">
+      <DependentUpon>Books.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Library\Books.aspx.designer.cs">
+      <DependentUpon>Books.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Passwords.aspx.cs">
+      <DependentUpon>Passwords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Passwords.aspx.designer.cs">
+      <DependentUpon>Passwords.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GoverningBody.aspx.cs">
+      <DependentUpon>GoverningBody.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GoverningBody.aspx.designer.cs">
+      <DependentUpon>GoverningBody.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Publications.aspx.cs">
+      <DependentUpon>Publications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Publications.aspx.designer.cs">
+      <DependentUpon>Publications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Downloads.aspx.cs">
+      <DependentUpon>Downloads.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Downloads.aspx.designer.cs">
+      <DependentUpon>Downloads.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Feedbacks.aspx.cs">
+      <DependentUpon>Feedbacks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Feedbacks.aspx.designer.cs">
+      <DependentUpon>Feedbacks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iCAS\ABOUT.aspx.cs">
+      <DependentUpon>ABOUT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iCAS\ABOUT.aspx.designer.cs">
+      <DependentUpon>ABOUT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iCAS\ACTIVTIES.aspx.cs">
+      <DependentUpon>ACTIVTIES.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iCAS\ACTIVTIES.aspx.designer.cs">
+      <DependentUpon>ACTIVTIES.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iCAS\ADMIN.aspx.cs">
+      <DependentUpon>ADMIN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iCAS\ADMIN.aspx.designer.cs">
+      <DependentUpon>ADMIN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iCAS\ADMIN1.aspx.cs">
+      <DependentUpon>ADMIN1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iCAS\ADMIN1.aspx.designer.cs">
+      <DependentUpon>ADMIN1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iCAS\BEST-LINKS.aspx.cs">
+      <DependentUpon>BEST-LINKS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iCAS\BEST-LINKS.aspx.designer.cs">
+      <DependentUpon>BEST-LINKS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iCAS\CONTACT.aspx.cs">
+      <DependentUpon>CONTACT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iCAS\CONTACT.aspx.designer.cs">
+      <DependentUpon>CONTACT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iCAS\DOWNLOADS.aspx.cs">
+      <DependentUpon>DOWNLOADS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iCAS\DOWNLOADS.aspx.designer.cs">
+      <DependentUpon>DOWNLOADS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iCAS\ESTABLISHMENTS.aspx.cs">
+      <DependentUpon>ESTABLISHMENTS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iCAS\ESTABLISHMENTS.aspx.designer.cs">
+      <DependentUpon>ESTABLISHMENTS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iCAS\FINANCE.aspx.cs">
+      <DependentUpon>FINANCE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iCAS\FINANCE.aspx.designer.cs">
+      <DependentUpon>FINANCE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iCAS\LIBRARY.aspx.cs">
+      <DependentUpon>LIBRARY.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iCAS\LIBRARY.aspx.designer.cs">
+      <DependentUpon>LIBRARY.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iCAS\RTI.aspx.cs">
+      <DependentUpon>RTI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iCAS\RTI.aspx.designer.cs">
+      <DependentUpon>RTI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iCAS\STAFFS.aspx.cs">
+      <DependentUpon>STAFFS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iCAS\STAFFS.aspx.designer.cs">
+      <DependentUpon>STAFFS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iCAS\STUDENTS.aspx.cs">
+      <DependentUpon>STUDENTS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iCAS\STUDENTS.aspx.designer.cs">
+      <DependentUpon>STUDENTS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoGallery.aspx.cs">
+      <DependentUpon>PhotoGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PhotoGallery.aspx.designer.cs">
+      <DependentUpon>PhotoGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SendEmail.aspx.cs">
+      <DependentUpon>SendEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendEmail.aspx.designer.cs">
+      <DependentUpon>SendEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SendShortMessage.aspx.cs">
+      <DependentUpon>SendShortMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendShortMessage.aspx.designer.cs">
+      <DependentUpon>SendShortMessage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SendSMS.aspx.cs">
+      <DependentUpon>SendSMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendSMS.aspx.designer.cs">
+      <DependentUpon>SendSMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="ShowSlides.aspx.cs">
+      <DependentUpon>ShowSlides.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowSlides.aspx.designer.cs">
+      <DependentUpon>ShowSlides.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SlideShow.aspx.cs">
+      <DependentUpon>SlideShow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SlideShow.aspx.designer.cs">
+      <DependentUpon>SlideShow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffResearchPublications.aspx.cs">
+      <DependentUpon>StaffResearchPublications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffResearchPublications.aspx.designer.cs">
+      <DependentUpon>StaffResearchPublications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Students.aspx.cs">
+      <DependentUpon>Students.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Students.aspx.designer.cs">
+      <DependentUpon>Students.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.aspx.cs">
+      <DependentUpon>Form4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form4.aspx.designer.cs">
+      <DependentUpon>Form4.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload\Approvals.aspx.cs">
+      <DependentUpon>Approvals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload\Approvals.aspx.designer.cs">
+      <DependentUpon>Approvals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload\PhotoGallery.aspx.cs">
+      <DependentUpon>PhotoGallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload\PhotoGallery.aspx.designer.cs">
+      <DependentUpon>PhotoGallery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload\WorldBank.aspx.cs">
+      <DependentUpon>WorldBank.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload\WorldBank.aspx.designer.cs">
+      <DependentUpon>WorldBank.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload\MoM.aspx.cs">
+      <DependentUpon>MoM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload\MoM.aspx.designer.cs">
+      <DependentUpon>MoM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Upload\Publications.aspx.cs">
+      <DependentUpon>Publications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Upload\Publications.aspx.designer.cs">
+      <DependentUpon>Publications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSearch.aspx.cs">
+      <DependentUpon>WebSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSearch.aspx.designer.cs">
+      <DependentUpon>WebSearch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSearchForm.aspx.cs">
+      <DependentUpon>WebSearchForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSearchForm.aspx.designer.cs">
+      <DependentUpon>WebSearchForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Error\PermissionNeeded.aspx.cs">
+      <DependentUpon>PermissionNeeded.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Error\PermissionNeeded.aspx.designer.cs">
+      <DependentUpon>PermissionNeeded.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_MasterPages\MicroERP-Reports.Master.cs">
+      <DependentUpon>MicroERP-Reports.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_MasterPages\MicroERP-Reports.Master.designer.cs">
+      <DependentUpon>MicroERP-Reports.Master</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Common\UC_Address.ascx.cs">
+      <DependentUpon>UC_Address.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Common\UC_Address.ascx.designer.cs">
+      <DependentUpon>UC_Address.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Common\UC_DateWithAge.ascx.cs">
+      <DependentUpon>UC_DateWithAge.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Common\UC_DateWithAge.ascx.designer.cs">
+      <DependentUpon>UC_DateWithAge.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Common\UC_Item.ascx.cs">
+      <DependentUpon>UC_Item.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Common\UC_Item.ascx.designer.cs">
+      <DependentUpon>UC_Item.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Common\UC_Login.ascx.cs">
+      <DependentUpon>UC_Login.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Common\UC_Login.ascx.designer.cs">
+      <DependentUpon>UC_Login.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Common\UC_Name.ascx.cs">
+      <DependentUpon>UC_Name.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Common\UC_Name.ascx.designer.cs">
+      <DependentUpon>UC_Name.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Common\UC_Room.ascx.cs">
+      <DependentUpon>UC_Room.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Common\UC_Room.ascx.designer.cs">
+      <DependentUpon>UC_Room.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\Admin\UC_SelectDatabase.ascx.cs">
+      <DependentUpon>UC_SelectDatabase.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\Admin\UC_SelectDatabase.ascx.designer.cs">
+      <DependentUpon>UC_SelectDatabase.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CImage.aspx.cs">
+      <DependentUpon>CImage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CImage.aspx.designer.cs">
+      <DependentUpon>CImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\CommonKeys.aspx.cs">
+      <DependentUpon>CommonKeys.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\CommonKeys.aspx.designer.cs">
+      <DependentUpon>CommonKeys.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\ErrorLogs.aspx.cs">
+      <DependentUpon>ErrorLogs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\ErrorLogs.aspx.designer.cs">
+      <DependentUpon>ErrorLogs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\RolePermissions.aspx.cs">
+      <DependentUpon>RolePermissions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\RolePermissions.aspx.designer.cs">
+      <DependentUpon>RolePermissions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\Roles.aspx.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\Roles.aspx.designer.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\SendSMS.aspx.cs">
+      <DependentUpon>SendSMS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\SendSMS.aspx.designer.cs">
+      <DependentUpon>SendSMS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\UserSettings.aspx.cs">
+      <DependentUpon>UserSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\UserSettings.aspx.designer.cs">
+      <DependentUpon>UserSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\WebsiteHome.aspx.cs">
+      <DependentUpon>WebsiteHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\WebsiteHome.aspx.designer.cs">
+      <DependentUpon>WebsiteHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\Companies.aspx.cs">
+      <DependentUpon>Companies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\Companies.aspx.designer.cs">
+      <DependentUpon>Companies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\MenuItems.aspx.cs">
+      <DependentUpon>MenuItems.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\MenuItems.aspx.designer.cs">
+      <DependentUpon>MenuItems.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\Offices.aspx.cs">
+      <DependentUpon>Offices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\Offices.aspx.designer.cs">
+      <DependentUpon>Offices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\Permissions.aspx.cs">
+      <DependentUpon>Permissions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\Permissions.aspx.designer.cs">
+      <DependentUpon>Permissions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\ResetPasswords.aspx.cs">
+      <DependentUpon>ResetPasswords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\ResetPasswords.aspx.designer.cs">
+      <DependentUpon>ResetPasswords.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\SendMails.aspx.cs">
+      <DependentUpon>SendMails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\SendMails.aspx.designer.cs">
+      <DependentUpon>SendMails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\TransactionPasswords.aspx.cs">
+      <DependentUpon>TransactionPasswords.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\TransactionPasswords.aspx.designer.cs">
+      <DependentUpon>TransactionPasswords.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\UserLog.aspx.cs">
+      <DependentUpon>UserLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\UserLog.aspx.designer.cs">
+      <DependentUpon>UserLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\WebMenus.aspx.cs">
+      <DependentUpon>WebMenus.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\WebMenus.aspx.designer.cs">
+      <DependentUpon>WebMenus.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\AttendanceRegisterDepartments.aspx.cs">
+      <DependentUpon>AttendanceRegisterDepartments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\AttendanceRegisterDepartments.aspx.designer.cs">
+      <DependentUpon>AttendanceRegisterDepartments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\ShiftRoasters.aspx.cs">
+      <DependentUpon>ShiftRoasters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\ShiftRoasters.aspx.designer.cs">
+      <DependentUpon>ShiftRoasters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\AttendanceAmmendmentApplies.aspx.cs">
+      <DependentUpon>AttendanceAmmendmentApplies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\AttendanceAmmendmentApplies.aspx.designer.cs">
+      <DependentUpon>AttendanceAmmendmentApplies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\AttendanceAmmendmentApproves.aspx.cs">
+      <DependentUpon>AttendanceAmmendmentApproves.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\AttendanceAmmendmentApproves.aspx.designer.cs">
+      <DependentUpon>AttendanceAmmendmentApproves.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\AttendanceApplies.aspx.cs">
+      <DependentUpon>AttendanceApplies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\AttendanceApplies.aspx.designer.cs">
+      <DependentUpon>AttendanceApplies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\AttendanceApproves.aspx.cs">
+      <DependentUpon>AttendanceApproves.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\AttendanceApproves.aspx.designer.cs">
+      <DependentUpon>AttendanceApproves.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\AttendanceRegisters.aspx.cs">
+      <DependentUpon>AttendanceRegisters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\AttendanceRegisters.aspx.designer.cs">
+      <DependentUpon>AttendanceRegisters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\Departments.aspx.cs">
+      <DependentUpon>Departments.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\Departments.aspx.designer.cs">
+      <DependentUpon>Departments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\Designations.aspx.cs">
+      <DependentUpon>Designations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\Designations.aspx.designer.cs">
+      <DependentUpon>Designations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\EmployeeDetails.aspx.cs">
+      <DependentUpon>EmployeeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\EmployeeDetails.aspx.designer.cs">
+      <DependentUpon>EmployeeDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\Employees.aspx.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\Employees.aspx.designer.cs">
+      <DependentUpon>Employees.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\EmployeesProfiles.aspx.cs">
+      <DependentUpon>EmployeesProfiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\EmployeesProfiles.aspx.designer.cs">
+      <DependentUpon>EmployeesProfiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\Holidays.aspx.cs">
+      <DependentUpon>Holidays.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\Holidays.aspx.designer.cs">
+      <DependentUpon>Holidays.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\HRMSettings.aspx.cs">
+      <DependentUpon>HRMSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\HRMSettings.aspx.designer.cs">
+      <DependentUpon>HRMSettings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\LeaveApplications.aspx.cs">
+      <DependentUpon>LeaveApplications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\LeaveApplications.aspx.designer.cs">
+      <DependentUpon>LeaveApplications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\LeaveApprovals.aspx.cs">
+      <DependentUpon>LeaveApprovals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\LeaveApprovals.aspx.designer.cs">
+      <DependentUpon>LeaveApprovals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\ManageDevicePermissions.aspx.cs">
+      <DependentUpon>ManageDevicePermissions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\ManageDevicePermissions.aspx.designer.cs">
+      <DependentUpon>ManageDevicePermissions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\ManageDevices.aspx.cs">
+      <DependentUpon>ManageDevices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\ManageDevices.aspx.designer.cs">
+      <DependentUpon>ManageDevices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\Shifts.aspx.cs">
+      <DependentUpon>Shifts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\Shifts.aspx.designer.cs">
+      <DependentUpon>Shifts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\ShiftSchedules.aspx.cs">
+      <DependentUpon>ShiftSchedules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\ShiftSchedules.aspx.designer.cs">
+      <DependentUpon>ShiftSchedules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\HRMS\ShiftTimings.aspx.cs">
+      <DependentUpon>ShiftTimings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\HRMS\ShiftTimings.aspx.designer.cs">
+      <DependentUpon>ShiftTimings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Error\AccessDenied.aspx.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Error\AccessDenied.aspx.designer.cs">
+      <DependentUpon>AccessDenied.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Error\Error500.aspx.cs">
+      <DependentUpon>Error500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Error\Error500.aspx.designer.cs">
+      <DependentUpon>Error500.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\User\UC_User.ascx.cs">
+      <DependentUpon>UC_User.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\User\UC_User.ascx.designer.cs">
+      <DependentUpon>UC_User.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="App_UserControls\User\UC_UserLoggedOn.ascx.cs">
+      <DependentUpon>UC_UserLoggedOn.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_UserControls\User\UC_UserLoggedOn.ascx.designer.cs">
+      <DependentUpon>UC_UserLoggedOn.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\Forms.aspx.cs">
+      <DependentUpon>Forms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\Forms.aspx.designer.cs">
+      <DependentUpon>Forms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\Support.aspx.cs">
+      <DependentUpon>Support.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\Support.aspx.designer.cs">
+      <DependentUpon>Support.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\UserProfile.aspx.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\UserProfile.aspx.designer.cs">
+      <DependentUpon>UserProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\UserRoles.aspx.cs">
+      <DependentUpon>UserRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\UserRoles.aspx.designer.cs">
+      <DependentUpon>UserRoles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\ICAS\ESTABLMTS\" />
+    <Folder Include="App_Data\ICAS\estb\" />
+    <Folder Include="App_Data\ICAS\excel\" />
+    <Folder Include="App_Data\ICAS\json\" />
+    <Folder Include="App_Data\ICAS\xml\" />
+    <Folder Include="App_Data\MicroERP\CHARTS\" />
+    <Folder Include="App_Data\MicroERP\CRMS\CustomerProfiles\" />
+    <Folder Include="App_Data\MicroERP\CRMS\FieldForceProfiles\" />
+    <Folder Include="App_Themes\Standard\" />
+    <Folder Include="Images\UpdateProgress\" />
+    <Folder Include="Themes\Common\HTML\TSDC\" />
+    <Folder Include="Themes\Common\NewFolder1\" />
+    <Folder Include="Views\Publications\" />
+    <Folder Include="View\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BusinessLayers\Micro.BusinessLayer\My.BusinessLayer.csproj">
+      <Project>{33040DDB-A6C8-4E33-A803-C6B17283B751}</Project>
+      <Name>My.BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Commons\Micro.Common\iCAS.Commons.csproj">
+      <Project>{F565A960-EC2A-4B06-9A73-008FF9D03FC5}</Project>
+      <Name>iCAS.Commons</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Commons\Micro.Framework\iCAS.Framework.csproj">
+      <Project>{A9171D34-C127-400C-B448-DA66A7140525}</Project>
+      <Name>iCAS.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Commons\Micro.Objects\iCAS.Objects.csproj">
+      <Project>{AEA9D061-DDF8-4EA7-9A9D-23BFE1130D11}</Project>
+      <Name>iCAS.Objects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Apps\ICAS\REPORTS\Report1.rdlc" />
+    <EmbeddedResource Include="Apps\ICAS\REPORTS\StudentAttendanceReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StudentAttendanceReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apps\ICAS\REPORTS\StaffsReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StaffsReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Apps\ICAS\REPORTS\StudentsReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>StudentsReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\Skin1.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_MasterPages\MicroERP-Reports.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Themes\Default\Gridview.skin" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>12280</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:12280/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

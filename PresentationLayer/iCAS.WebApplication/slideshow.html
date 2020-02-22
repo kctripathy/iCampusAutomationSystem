@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/w3schools.css">
+<style>
+.myButton,
+.w3-content ,
+.w3-display-container
+{
+	border: solid 1px #ddd;
+	background-color: #ccc;
+	color: navy;
+	font-weight: 800;
+}
+
+div.w3-content img
+{
+	width: 100%;
+
+}
+</style>
+
+</head>
+<body>
+	<div class="w3-content w3-display-container">
+		<img class="mySlides" src="Images/slides_tsdc/slide_2017_1.jpg" alt="1HEARTY WEL-COME TO OUR COLLEGE WEBSITE" />
+		<img class="mySlides" src="Images/slides_tsdc/slide_2017_7_NSS.jpg" alt="1HEARTY WEL-COME TO OUR COLLEGE WEBSITE" />
+		<img class="mySlides" src="Images/slides_tsdc/slide_2017_7.jpg" alt="1HEARTY WEL-COME TO OUR COLLEGE WEBSITE" />
+		<img class="mySlides" src="Images/slides_tsdc/slide_0002.jpg" alt="1HEARTY WEL-COME TO OUR COLLEGE WEBSITE" />
+			<button class="w3-button w3-display-left myButton" onclick="plusDivs(-1)">&#10094;</button>
+			<button class="w3-button w3-display-right myButton" onclick="plusDivs(+1)">&#10095;</button>	
+	</div>
+	<script>
+	var slideIndex = 1;
+	showDivs(slideIndex);
+
+	function plusDivs(n) {
+	    showDivs(slideIndex += n);
+	}
+
+	function showDivs(n) {
+	    var i;
+	    var x = document.getElementsByClassName("mySlides");
+	    if (n > x.length) {slideIndex = 1} 
+	    if (n < 1) {slideIndex = x.length} ;
+	    for (i = 0; i < x.length; i++) {
+	        x[i].style.display = "none"; 
+	    }
+	    x[slideIndex-1].style.display = "block"; 
+	}
+	</script>	
+</body>
+</html>

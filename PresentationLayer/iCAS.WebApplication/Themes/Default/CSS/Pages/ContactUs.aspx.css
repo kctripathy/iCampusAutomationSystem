@@ -1,0 +1,113 @@
+﻿/*body
+{
+    background-image: url(/Themes/Default/Images/micro-customer-support.jpg);
+    color: #000099;
+}*/
+
+ul#ContactUs
+{
+    margin: 0px;
+    padding: 0px;
+}
+
+div#ColumnOne
+{
+    display: block;
+    float: left;
+    width: 64%;
+    border: solid 1px #DCDCDC;
+    margin: 10px 0px 0px 20px;
+    padding: 10px 4px;
+}
+
+div#ColumnTwo
+{
+    display: block;
+    float: left;
+    width: 28%;
+    /*border: solid 1px #DCDCDC;*/
+    margin: 10px;
+    padding: 5px 4px;
+    /*background-image: url(/Themes/Default/Images/micro-customer-support.jpg);*/
+    /*background-position: left;*/
+}
+#ColumnTwo > ul > li
+{
+    margin: 4px 0px;
+    font-size: 1.1em;
+}
+#ColumnTwo > ul > li.PageSubTitle
+{
+    margin-bottom: 5px;
+    font-size: 1.3em;
+    padding-left: 5px;
+    font-weight: 600;
+}
+
+.Separator
+{
+    display: block;
+    float: left;
+    width: 80%;
+    line-height: 1px;
+    border-top: solid 1px #ccc;
+    margin: 5px;
+}
+
+.FormButton_Top
+{
+    text-align: right;
+    width: 95%;
+}
+
+    .FormButton_Top input
+    {
+        margin-top: 10px;
+        background-image: url(../Images/bg-menu-main.png);
+        background-repeat: repeat-x;
+        padding: 4px;
+        height: 20px;
+    }
+
+ul.Address
+{
+    list-style-type: none;
+}
+
+div#ColumnOne ul#ContactUs li
+{
+    margin: 2px 0px;
+}
+
+    div#ColumnOne ul#ContactUs li.FormLabel
+    {
+        display: block;
+        float: left;
+        width: 20%;
+    }
+
+    div#ColumnOne ul#ContactUs li.FormValue
+    {
+        display: block;
+        float: left;
+        width: 78%;
+    }
+
+    div#ColumnOne ul#ContactUs li.FormValue100pc
+    {
+        display: block;
+        float: left;
+        width: 99%;
+    }
+
+.FormLink
+{
+    display: block;
+    float: left;
+    width: 99%;
+    text-align: center;
+}
+.Watermark
+{
+    color: darkcyan;
+}
