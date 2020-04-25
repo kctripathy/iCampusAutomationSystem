@@ -17,6 +17,8 @@
                         <asp:ListItem Text="Tender" Value="T" />
                         <asp:ListItem Text="Circular" Value="C" />
                         <asp:ListItem Text="Publications" Value="P" />
+                        <asp:ListItem Text="NAAC" Value="Z" />
+                        <asp:ListItem Text="Recent Activities" Value="R" />
                         
                     </asp:RadioButtonList>
                 </li>
@@ -29,7 +31,7 @@
                     <asp:Button ID="btn_Approve" runat="server" OnClick="btn_Approve_Click" Text="Approve" CssClass="btn btn-primary" />
                 </li>
                 <li>
-                    <asp:Label ID="lbl_TheMessage" runat="server" Text="-.-.-" />
+                    <asp:Label ID="lbl_TheMessage" runat="server" Text="" />
                 </li>
                 <li>
                     <asp:GridView ID="gview_EstablishmentApprovals" runat="server" AutoGenerateColumns="false"
@@ -46,6 +48,8 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="EstbID" HeaderText="EstablishmentId" Visible="False" ItemStyle-CssClass="ID" />
+                            <asp:BoundField DataField="EstbDate" HeaderText="Date" DataFormatString="{0:dd-MMM-yyyy}"/>
+                                    
                             <asp:BoundField DataField="EstbTypeCodeDesc" HeaderText="Type" Visible="true" ItemStyle-CssClass="Type" />
                             <asp:BoundField DataField="EstbTitle" HeaderText="Tittle" ItemStyle-CssClass="Tittle" />
                             <%--<asp:BoundField DataField="EstbDescription" HeaderText="Description" ItemStyle-CssClass="Description" />--%>

@@ -136,7 +136,8 @@ namespace Micro.WebApplication
 			routes.MapPageRoute("books-manage", "Library/books", "~/Library/BooksManage.aspx");
 			
 			routes.MapPageRoute("kishor", "kishor", "~/Kishor.aspx");
-			 
+			routes.MapPageRoute("naac", "naac", "~/NAAC.aspx");
+             
 		}
 
 		void Application_End(object sender, EventArgs e)

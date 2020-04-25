@@ -55,15 +55,15 @@ namespace Micro.BusinessLayer.Administration
 
         public User GetUserByLoginName(string loginName)
         {
-            User TheUser = null;
-            string UniqueKey = string.Concat("loginName_", loginName);
-            if (HttpRuntime.Cache[UniqueKey] == null)
-            {
-                TheUser = UserIntegration.GetUserByLoginNameOrPhone(loginName);
-                HttpRuntime.Cache[UniqueKey] = TheUser;
-            }
-            return ((User)(HttpRuntime.Cache[UniqueKey]));
-            //return UserIntegration.GetUserByLoginNameOrPhone(loginName);
+            //User TheUser = null;
+            //string UniqueKey = string.Concat("loginName_", loginName);
+            //if (HttpRuntime.Cache[UniqueKey] == null)
+            //{
+            //    TheUser = UserIntegration.GetUserByLoginNameOrPhone(loginName);
+            //    HttpRuntime.Cache[UniqueKey] = TheUser;
+            //}
+            //return ((User)(HttpRuntime.Cache[UniqueKey]));
+            return UserIntegration.GetUserByLoginNameOrPhone(loginName);
         }
 		public User GetUserByLoginNameGuset(string loginName)
 		{

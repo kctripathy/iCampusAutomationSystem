@@ -113,6 +113,12 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
                               where xyz.EstbTypeCode.Equals("N") 
                               select xyz).ToList();
             }
+            if (rbl_EstablishmentTypeCode.SelectedValue.Equals("Z"))
+            {
+                filterlist = (from xyz in PageVariables.EstablishmentList
+                              where xyz.EstbTypeCode.Equals("Z")
+                              select xyz).ToList();
+            }
             if (rbl_EstablishmentTypeCode.SelectedValue.Equals("P"))
             {
                 List<Establishment> ListPublication = new List<Establishment>();

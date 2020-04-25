@@ -47,14 +47,14 @@ namespace Micro.BusinessLayer.ICAS.ESTBLMT
 
         public List<Establishment> GetEstablishmentList()
         {
-            //return EstablishmentIntegration.GetEstablishmentList();
-            string UniqueKey = "GetEstablishmentList";
-            if (HttpRuntime.Cache[UniqueKey] == null)
-            {
-                List<Establishment> EstablishmentList = EstablishmentIntegration.GetEstablishmentList();
-                HttpRuntime.Cache[UniqueKey] = EstablishmentList;
-            }
-            return (List<Establishment>)(HttpRuntime.Cache[UniqueKey]);
+            return EstablishmentIntegration.GetEstablishmentList();
+            //string UniqueKey = "GetEstablishmentList";
+            //if (HttpRuntime.Cache[UniqueKey] == null)
+            //{
+            //    List<Establishment> EstablishmentList = EstablishmentIntegration.GetEstablishmentList();
+            //    HttpRuntime.Cache[UniqueKey] = EstablishmentList;
+            //}
+            //return (List<Establishment>)(HttpRuntime.Cache[UniqueKey]);
 
         }
 
@@ -80,27 +80,27 @@ namespace Micro.BusinessLayer.ICAS.ESTBLMT
         }
         public List<Establishment> GetEstablishmentListByTypeCodes(string typeCodes)
         {
-            //return EstablishmentIntegration.GetEstablishmentListByTypeCodes(typeCodes);
-			string UniqueKey = string.Format("GetEstablishmentListByTypeCodes___{0}", typeCodes.Replace(",", "_").ToString());
-			if (HttpRuntime.Cache[UniqueKey] == null)
-			{
-				List<Establishment> EstablishmentList = EstablishmentIntegration.GetEstablishmentListByTypeCodes(typeCodes);
-				HttpRuntime.Cache[UniqueKey] = EstablishmentList;
+            return EstablishmentIntegration.GetEstablishmentListByTypeCodes(typeCodes);
+			//string UniqueKey = string.Format("GetEstablishmentListByTypeCodes___{0}", typeCodes.Replace(",", "_").ToString());
+			//if (HttpRuntime.Cache[UniqueKey] == null)
+			//{
+			//	List<Establishment> EstablishmentList = EstablishmentIntegration.GetEstablishmentListByTypeCodes(typeCodes);
+			//	HttpRuntime.Cache[UniqueKey] = EstablishmentList;
 
-			}
-			return (List<Establishment>)(HttpRuntime.Cache[UniqueKey]);
+			//}
+			//return (List<Establishment>)(HttpRuntime.Cache[UniqueKey]);
         }
         public List<Establishment> GetEstablishmentListByTypeCode(string typeCode)
         {
-            //return EstablishmentIntegration.GetEstablishmentListByTypeCode(typeCode);
-            string UniqueKey = string.Format("GetEstablishmentListByTypeCode_{0}",typeCode);
-            if (HttpRuntime.Cache[UniqueKey] == null)
-            {
-                List<Establishment> EstablishmentList = EstablishmentIntegration.GetEstablishmentListByTypeCode(typeCode);
-                HttpRuntime.Cache[UniqueKey] = EstablishmentList;
+            return EstablishmentIntegration.GetEstablishmentListByTypeCode(typeCode);
+            //string UniqueKey = string.Format("GetEstablishmentListByTypeCode_{0}",typeCode);
+            //if (HttpRuntime.Cache[UniqueKey] == null)
+            //{
+            //    List<Establishment> EstablishmentList = EstablishmentIntegration.GetEstablishmentListByTypeCode(typeCode);
+            //    HttpRuntime.Cache[UniqueKey] = EstablishmentList;
                
-            }
-            return (List<Establishment>)(HttpRuntime.Cache[UniqueKey]);
+            //}
+            //return (List<Establishment>)(HttpRuntime.Cache[UniqueKey]);
         }
 
         public List<Establishment> GetEstablishmentPhotoGallery()

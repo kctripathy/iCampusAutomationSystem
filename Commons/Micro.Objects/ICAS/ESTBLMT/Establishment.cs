@@ -96,7 +96,14 @@ namespace Micro.Objects.ICAS.ESTBLMT
                 {
                     _typeCodeDesc = "Video";
                 }
-
+                else if (this.EstbTypeCode.Equals("S"))
+                {
+                    _typeCodeDesc = "Syllabus";
+                }
+                else if (this.EstbTypeCode.Equals("Z"))
+                {
+                    _typeCodeDesc = "NAAC";
+                }
                 return _typeCodeDesc;
             }
         }

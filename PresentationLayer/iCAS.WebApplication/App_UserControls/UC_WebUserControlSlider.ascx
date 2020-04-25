@@ -5,33 +5,33 @@
 			<ul>
 				<li id="first" class="firstanimation">
 					<a href="photo-gallery">
-						<img src="Images/slides_tsdc/slide_2017_1.jpg" class="img-responsive" alt="HEARTY WEL-COME TO OUR COLLEGE WEBSITE" />
+						<img src="Images/slides_tsdc/slide_4.jpg" class="img-responsive" alt="HEARTY WEL-COME TO OUR COLLEGE WEBSITE" />
 					</a>
-					<div class="tooltip-text">
+					<div class="tooltip-text" style="display:none">
 						<b>Hearty Welcome to our Official Website</b>
 					</div>
 				</li>
 				<li id="second" class="secondanimation">
 					<a href="photo-gallery">
-						<img src="Images/slides_tsdc/slide_2017_7_NSS.jpg" class="img-responsive" alt="NSS UNIT OF THE COLLEGE" />
+						<img src="Images/slides_tsdc/slide_2.jpg" class="img-responsive" alt="NSS UNIT OF THE COLLEGE" />
 					</a>
-					<div class="tooltip-text">
+					<div class="tooltip-text" style="display:none">
 						<b>National Service Scheme (NSS)</b>
 					</div>
 				</li>
 				<li id="third" class="thirdanimation">
 					<a href="photo-gallery">
-						<img src="Images/slides_tsdc/slide_0002.jpg" class="img-responsive" alt="LIBRARY: KNOWLEDGE CENTER FOR STAKEHOLDERS..." />
+						<img src="Images/slides_tsdc/slide_3.jpg" class="img-responsive" alt="LIBRARY: KNOWLEDGE CENTER FOR STAKEHOLDERS..." />
 					</a>
-					<div class="tooltip-text">
+					<div class="tooltip-text" style="display:none">
 						<b>Administrative Building & some of the Ministerial Staffs...</b>
 					</div>
 				</li>
 				<li id="fourth" class="fourthanimation">
 					<a href="photo-gallery">
-						<img src="Images/slides_tsdc/slide_2017_7.jpg" class="img-responsive" alt="NCC, SPREADING AWARNESS IN THE RURAL LOCALITY" />
+						<img src="Images/slides_tsdc/slide_1.jpg" class="img-responsive" alt="NCC, SPREADING AWARNESS IN THE RURAL LOCALITY" />
 					</a>
-					<div class="tooltip-text">
+					<div class="tooltip-text" style="display:none">
 						<b>NCC WING OF THE COLLEGE</b>
 					</div>
 				</li>
@@ -39,7 +39,7 @@
 					<a href="photo-gallery">
 						<img src="Images/slides_tsdc/slide_2017_3.jpg" class="img-responsive" alt="LIBRARY: KNOWLEDGE CENTER FOR STAKEHOLDERS..." />
 					</a>
-					<div class="tooltip-text">
+					<div class="tooltip-text" style="display:none">
 						<b>Library: the place to enhance stakeholders Skills and Knowledge</b>
 					</div>
 				</li>
@@ -48,7 +48,7 @@
 					<a href="photo-gallery">
 						<img src="Images/slides_tsdc/slide_2017_5_YRC.jpg" class="img-responsive" alt="YRC UNIT OF THE COLLEGE" />
 					</a>
-					<div class="tooltip-text">
+					<div class="tooltip-text" style="display:none">
 						<b>YOUTH RED CROSS (YRC) UNIT OF THE COLLEGE...</b>
 					</div>
 				</li>

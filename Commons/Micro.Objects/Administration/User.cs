@@ -63,17 +63,20 @@ namespace Micro.Objects.Administration
             get
             {
                 string[] arrName;
-                string firstName;
+                string firstName = this.UserName;
+                if (!(this.UserReferenceName == null))
+                {
+                    if (this.UserReferenceName.Contains(" ") == true)
+                    {
+                        arrName = this.UserReferenceName.ToString().Split(' ');
+                        firstName = string.Format("{0} {1}", arrName[0], arrName[1]);
+                    }
+                    else
+                    {
+                        firstName = this.UserName;
+                    }
+                }
 
-                if (this.UserReferenceName.Contains(" ") == true)
-                {
-                    arrName = this.UserReferenceName.ToString().Split(' ');
-                    firstName = string.Format("{0} {1}",arrName[0], arrName[1]);
-                }
-                else
-                {
-                    firstName = this.UserName;
-                }
                 return firstName;
             }
         }

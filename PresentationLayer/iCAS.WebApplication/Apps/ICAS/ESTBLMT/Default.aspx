@@ -11,7 +11,7 @@
         }
         .viewBtnClass
         {
-            border: solid 1px red;
+          
         }
         .WatermarkCssClass
         {
@@ -38,8 +38,10 @@
                                 <asp:ListItem Value="N">Notice</asp:ListItem>
                                 <asp:ListItem Value="T">Tender</asp:ListItem>
                                 <asp:ListItem Value="C">Circular</asp:ListItem>
-                                <asp:ListItem Value="W">World Bank Project</asp:ListItem>
-                                <asp:ListItem Value="M">Minutes of Meetings</asp:ListItem>
+                                <asp:ListItem Value="C">Syllabus</asp:ListItem>
+                                <asp:ListItem Value="Z">NAAC</asp:ListItem>
+                                <asp:ListItem Value="W">World Bank</asp:ListItem>
+                                <asp:ListItem Value="M">MoM</asp:ListItem>
                             </asp:RadioButtonList>
                             <asp:RequiredFieldValidator ID="requiredFieldValidator_EstablishmentTypeCode" runat="server" ControlToValidate="rbl_EstablishmentTypeCode" Display="Dynamic" SetFocusOnError="true" />
                         </li>
@@ -91,8 +93,8 @@
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <ContentTemplate>
                                     <asp:FileUpload runat="server" ID="fileUploadEstb" Width="63%" BorderStyle="Solid" BorderWidth="1" BorderColor="DarkGray" />
-
-                                    <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="Upload_File" CausesValidation="true" />
+                                    <br />
+                                    <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="Upload_File" CssClass="btn btn-primary m-1 p-1" CausesValidation="true" />
                                     <br />
                                     <asp:Label runat="server" ID="lbl_FileUploadStatus" ForeColor="Red" Text="File uploaded successfully. please save/update the record now" Visible="false" />
 
@@ -105,7 +107,7 @@
                         <li class="Formlabel">&nbsp;</li>
                         <li class="Formvalue">&nbsp;<asp:Label runat="server" ID="lblMessage" Text="" /></li>
                         <li class="FormButton_Top">
-                            <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Save" CssClass="submitBtnClass" />
+                            <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Save" CssClass="btn btn-primary submitBtnClass" />
                             <asp:Button ID="btn_view" runat="server" Text="View" OnClick="btn_view_Click" CausesValidation="false" CssClass="viewBtnClass" />
                         </li>
                         
@@ -137,6 +139,7 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:BoundField DataField="EstbID" HeaderText="EstablishmentId" Visible="false" />
+                                    <asp:BoundField DataField="EstbDate" HeaderText="Date" DataFormatString="{0:dd-MMM-yyyy}"/>
                                     <asp:BoundField DataField="EstbTypeCodeDesc" HeaderText="Type" />
                                     <asp:BoundField DataField="EstbTitle" HeaderText="Tittle" />
                                     <asp:BoundField DataField="EstbViewStartDate" HeaderText="Start Date" DataFormatString="{0:dd/MMM/yyyy}" />

@@ -22,7 +22,7 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -34,6 +34,7 @@
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -338,7 +339,6 @@
     <Content Include="App_Data\ICAS\html\union.htm" />
     <Content Include="App_Data\ICAS\html\vision-mission.htm" />
     <Content Include="App_Data\ICAS\html\yrc-cell.htm" />
-    <Content Include="App_Data\Library\TSDCLibrary.mdb" />
     <Content Include="App_Error\Error404.aspx" />
     <Content Include="App_Error\Maintenance.aspx" />
     <Content Include="App_Error\WorkInProgress.aspx" />
@@ -424,6 +424,7 @@
     <Content Include="Documents\PHOTO_2017_12_21_H19_M1_S51_Y_Thumbnail.jpg" />
     <Content Include="Documents\PHOTO_2017_12_21_H19_M27_S16_Y.jpg" />
     <Content Include="Documents\PHOTO_2017_12_21_H19_M27_S16_Y_Thumbnail.jpg" />
+    <Content Include="NAAC.aspx" />
     <Content Include="Downloads\HtmlPage1.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -658,7 +659,6 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="Downloads\AlumniRegistrationForm.pdf" />
-    <Content Include="App_Data\Library\TSDCLibrary.ldb" />
     <EntityDeploy Include="Database\ModelLibrary.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelLibrary.Designer.cs</LastGenOutput>
@@ -676,6 +676,7 @@
     <Content Include="Documents\PUBL_9_Y2017_M12_D21-H21_M31_S38.pdf" />
     <Content Include="App_MasterPages\Site.Master" />
     <Content Include="App_MasterPages\PKTrendz.Master" />
+    <None Include="Properties\PublishProfiles\local_publish.pubxml" />
     <None Include="Properties\PublishProfiles\test.tsdcollege.in - Web Deploy %282%29.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
@@ -2092,6 +2093,13 @@
     <Compile Include="Document.aspx.designer.cs">
       <DependentUpon>Document.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NAAC.aspx.cs">
+      <DependentUpon>NAAC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NAAC.aspx.designer.cs">
+      <DependentUpon>NAAC.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2893,6 +2901,7 @@
     <Folder Include="App_Data\ICAS\excel\" />
     <Folder Include="App_Data\ICAS\json\" />
     <Folder Include="App_Data\ICAS\xml\" />
+    <Folder Include="App_Data\Library\" />
     <Folder Include="App_Data\MicroERP\CHARTS\" />
     <Folder Include="App_Data\MicroERP\CRMS\CustomerProfiles\" />
     <Folder Include="App_Data\MicroERP\CRMS\FieldForceProfiles\" />
