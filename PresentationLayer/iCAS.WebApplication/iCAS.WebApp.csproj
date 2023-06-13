@@ -140,6 +140,11 @@
     <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.IO.RecyclableMemoryStream.2.2.0\lib\net462\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\ExternalAssemblies\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\..\ExternalAssemblies\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -525,17 +530,6 @@
     <Content Include="Images\Pride\student-ranka.jpg" />
     <Content Include="Images\Pride\student-salina.jpg" />
     <Content Include="Images\Pride\student-subhasri.jpg" />
-    <Content Include="Images\Products\product1.gif" />
-    <Content Include="Images\Products\product10.gif" />
-    <Content Include="Images\Products\product11.gif" />
-    <Content Include="Images\Products\product12.gif" />
-    <Content Include="Images\Products\product2.gif" />
-    <Content Include="Images\Products\product3.gif" />
-    <Content Include="Images\Products\product4.gif" />
-    <Content Include="Images\Products\product6.gif" />
-    <Content Include="Images\Products\product7.gif" />
-    <Content Include="Images\Products\product8.gif" />
-    <Content Include="Images\Products\product9.gif" />
     <Content Include="Images\slides_tsdc\slide_0002.jpg" />
     <Content Include="Images\slides_tsdc\slide_2017_4_NCC.jpg" />
     <Content Include="Images\slides_tsdc\slide_2017_5_YRC.jpg" />
@@ -545,7 +539,6 @@
     <Content Include="Images\slides_tsdc\slide_2017_8_IT_LAB.jpg" />
     <Content Include="Images\TSDC-WEB-LEFT-LIBRARY-200X8.jpg" />
     <Content Include="Images\TSDC-WEB-LEFT-LIBRARY-200X800.jpg" />
-    <Content Include="Images\User\no-user.png" />
     <Content Include="Index.aspx" />
     <Content Include="Library\BooksManage.aspx" />
     <Content Include="Library\Transactions.aspx" />
@@ -557,23 +550,6 @@
     <Content Include="Images\slides_tsdc\slide_2017_3.jpg" />
     <Content Include="Images\TSDC-WEB-HEAD-80.jpg" />
     <Content Include="Images\TSDC-WEB-HEAD-NAV-BAR-50.jpg" />
-    <Content Include="Images\User\default-user.png" />
-    <Content Include="Images\User\Employee\staf-01.png" />
-    <Content Include="Images\User\Employee\staf-02.png" />
-    <Content Include="Images\User\Employee\staf-03.png" />
-    <Content Include="Images\User\Employee\staf-04.png" />
-    <Content Include="Images\User\Guest\stud-01.png" />
-    <Content Include="Images\User\Guest\stud-02.png" />
-    <Content Include="Images\User\Guest\stud-03.png" />
-    <Content Include="Images\User\Guest\stud-04.png" />
-    <Content Include="Images\User\Staff\staf-01.png" />
-    <Content Include="Images\User\Staff\staf-02.png" />
-    <Content Include="Images\User\Staff\staf-03.png" />
-    <Content Include="Images\User\Staff\staf-04.png" />
-    <Content Include="Images\User\Student\stud-01.png" />
-    <Content Include="Images\User\Student\stud-02.png" />
-    <Content Include="Images\User\Student\stud-03.png" />
-    <Content Include="Images\User\Student\stud-04.png" />
     <Content Include="iCAS\AQAR\Default.aspx" />
     <Content Include="Kishor.aspx" />
     <Content Include="Library\Admin\BooksMaster.aspx" />
@@ -1114,7 +1090,6 @@
     <Content Include="Themes\USER_PHOTO\Staff\staf-01.png" />
     <Content Include="Themes\USER_PHOTO\Student\stud-01.png" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="tsd-college-governing-body.pdf" />
     <Content Include="Scripts\bootstrap.min.js.map" />
     <Content Include="Scripts\bootstrap.js.map" />
     <Content Include="Scripts\bootstrap.esm.min.js.map" />
@@ -2939,6 +2914,7 @@
     <Folder Include="App_Data\MicroERP\CRMS\FieldForceProfiles\" />
     <Folder Include="App_Themes\Standard\" />
     <Folder Include="Images\UpdateProgress\" />
+    <Folder Include="Images\User\" />
     <Folder Include="Themes\Common\HTML\TSDC\" />
     <Folder Include="Themes\Common\NewFolder1\" />
     <Folder Include="Views\Publications\" />
