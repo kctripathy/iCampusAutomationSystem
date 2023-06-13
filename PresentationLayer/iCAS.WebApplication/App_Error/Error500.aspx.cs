@@ -47,13 +47,13 @@ namespace Micro.WebApplication.App_Error
 
 
                     lit_ErrorMessage.Text = String.Format(
-                                    @"<a href='mailto:{2}?subject=IncidentNumber_{4}&amp;body=Incident_{5}' class='btn btn-success btn-xs'>Click here to send a mail</a> regarding this issue to <b><a href='{1}' target='_blank'>{0}</a></b> to fix this issue as soon as possible.
+                                    @"<a href='mailto:{2}?subject=IncidentNumber_{4}&amp;body=Incident_{5}' class='btn btn-success btn-xs'>Click here to send a mail</a> to report this issue.
                                     <br/><br/>
                                     Kindly note this reference number (<b><u>{4}</u></b>). It will be in use while all communications to service provider regarding this matter.
                                     <br/><br/>
                                     Warm Regards & Thanking you,
                                     <br/><br/>
-                                    <a href='mailto:{3}?subject=IncidentNumber_{4}&amp;body=Incident_{5}'>Kishor Tripathy & Team</a>
+                                    <a href='mailto:{3}?subject=IncidentNumber_{4}&amp;body=Incident_{5}'>IT Team</a>
                                     ", Creator,
                                     CreatorWebsite,
                                     EmailTechSupport,

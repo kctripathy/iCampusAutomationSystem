@@ -38,7 +38,7 @@ namespace Micro.WebApplication.App_Error
                                     <br/><br/>
                                     Warm Regards & Thanking you,
                                     <br/><br/>
-                                    <a href='mailto:{3}?subject=IncidentNumber_{4}&amp;body=Incident_{5}'>Kishor Tripathy & Team</a>
+                                    <a href='mailto:{3}?subject=IncidentNumber_{4}&amp;body=Incident_{5}'>IT Team</a>
                                     ", Creator,
                                 CreatorWebsite,
                                 EmailTechSupport,

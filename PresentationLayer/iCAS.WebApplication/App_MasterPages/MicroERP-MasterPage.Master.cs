@@ -49,12 +49,7 @@ namespace Micro.WebApplication.App_MasterPages
 				//lit_OfficeValue.Text = DisplayCompanyOfficeInformation();
 				CheckNotification();
 			}
-			if (HttpContext.Current.Session["GeneratedMenuTextForAdmin"] != null)
-			{
-				lit_MenuItems.Text = HttpContext.Current.Session["GeneratedMenuTextForAdmin"].ToString();
-
-				
-			}
+			
 			SetBrowserOptionsforCSS();
             if (Connection.LoggedOnUser != null)
             {
@@ -170,14 +165,12 @@ namespace Micro.WebApplication.App_MasterPages
                 if (Micro.Commons.Connection.LoggedOnUser == null)
                 {
                     ctrl_LoggedOnUser.Visible = false;
-					divUserLogin.Visible = false;
                     return; // user has not logged into the application
                 }
                 else if (Micro.Commons.Connection.LoggedOnUser.UserName.ToUpper().Contains("ADMIN"))
                 {
                     TreeView1.Visible = true;
-                    ctrl_LoggedOnUser.Visible = false;
-					divUserLogin.Visible = true;
+                    ctrl_LoggedOnUser.Visible = true;
                     BindTreeview_Menus(Micro.Commons.Connection.LoggedOnUser.RoleID);
                 }
 
@@ -320,8 +313,11 @@ namespace Micro.WebApplication.App_MasterPages
                 {
                     TreeView1.Nodes[0].CollapseAll();
 					TreeView1.Nodes[0].Expand();
+					
 					TreeView1.Visible = true;
-                }
+					TreeView1.ExpandAll();
+
+				}
             }
             catch (Exception ex)
             {
@@ -330,5 +326,16 @@ namespace Micro.WebApplication.App_MasterPages
             //sbMenu.Append("</ul>");
 
         }
+
+        protected void lnkLogout_Click(object sender, EventArgs e)
+        {
+			HttpContext.Current.Session.Clear();
+			HttpContext.Current.Session.RemoveAll();
+			HttpContext.Current.Session.Abandon();
+			HttpContext.Current.Session.Clear();
+
+			string theDefaultpage = string.Format("http://{0}/Apps/UserLogin.aspx", ConfigurationManager.AppSettings["WebServerIP"]);
+			Response.Redirect(theDefaultpage);
+		}
     }
 }

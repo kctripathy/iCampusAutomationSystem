@@ -36,7 +36,7 @@ namespace Micro.DataAccessLayer.Administration
             using (SqlCommand SelectCommand = new SqlCommand())
             {
                 SelectCommand.CommandType = CommandType.StoredProcedure;
-                SelectCommand.Parameters.Add(GetParameter("@UserId", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserId));
+                SelectCommand.Parameters.Add(GetParameter("@UserId", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserID));
                 SelectCommand.CommandText = "pADM_UserSettings_SelectByUserID";
                 return ExecuteGetDataTable(SelectCommand);
             }

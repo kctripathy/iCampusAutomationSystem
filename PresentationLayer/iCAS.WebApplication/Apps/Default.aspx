@@ -9,7 +9,7 @@
 				<asp:Literal runat="server" ID="lit_PageTitle" Text="Dashboard:" />
 			</h1>
 			<div class="row col-md-12">
-				<uc2:UC_Chart_StudentStrengthYearWise ID="UC_Chart_StudentStrengthYearWise1" runat="server" />
+				<%--<uc2:UC_Chart_StudentStrengthYearWise ID="UC_Chart_StudentStrengthYearWise1" runat="server" />--%>
 			</div>
 		</ContentTemplate>
 	</asp:UpdatePanel>

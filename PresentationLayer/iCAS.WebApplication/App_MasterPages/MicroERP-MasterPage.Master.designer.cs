@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Micro.WebApplication.App_MasterPages {
-    
-    
-    public partial class MicroERP_MasterPage {
-        
+namespace Micro.WebApplication.App_MasterPages
+{
+
+
+    public partial class MicroERP_MasterPage
+    {
+
         /// <summary>
         /// formMicro control.
         /// </summary>
@@ -20,16 +22,7 @@ namespace Micro.WebApplication.App_MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm formMicro;
-        
-        /// <summary>
-        /// WebUserControlMenu1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::WebUserControlMenu WebUserControlMenu1;
-        
+
         /// <summary>
         /// ScriptManagerMicro control.
         /// </summary>
@@ -38,7 +31,7 @@ namespace Micro.WebApplication.App_MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManagerMicro;
-        
+
         /// <summary>
         /// ctrl_LoggedOnUser control.
         /// </summary>
@@ -47,25 +40,7 @@ namespace Micro.WebApplication.App_MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Micro.WebApplication.App_UserControls.UC_UserLoggedOn ctrl_LoggedOnUser;
-        
-        /// <summary>
-        /// divUserLogin control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divUserLogin;
-        
-        /// <summary>
-        /// lit_MenuItems control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lit_MenuItems;
-        
+
         /// <summary>
         /// TreeView1 control.
         /// </summary>
@@ -74,7 +49,16 @@ namespace Micro.WebApplication.App_MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TreeView TreeView1;
-        
+
+        /// <summary>
+        /// lnkLogout control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkLogout;
+
         /// <summary>
         /// ContentPlaceHolderMicroERP control.
         /// </summary>
@@ -83,7 +67,7 @@ namespace Micro.WebApplication.App_MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolderMicroERP;
-        
+
         /// <summary>
         /// lbl_Version control.
         /// </summary>
@@ -92,7 +76,7 @@ namespace Micro.WebApplication.App_MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Version;
-        
+
         /// <summary>
         /// lbl_Database control.
         /// </summary>
@@ -101,7 +85,7 @@ namespace Micro.WebApplication.App_MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Database;
-        
+
         /// <summary>
         /// dialog_Message control.
         /// </summary>
@@ -110,7 +94,7 @@ namespace Micro.WebApplication.App_MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Micro.Commons.DialogBox dialog_Message;
-        
+
         /// <summary>
         /// lit_TheDialogMessage control.
         /// </summary>

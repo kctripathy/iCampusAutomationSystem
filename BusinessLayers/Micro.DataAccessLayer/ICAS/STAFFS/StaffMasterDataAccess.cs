@@ -347,7 +347,7 @@ namespace Micro.DataAccessLayer.ICAS.STAFFS
             using (SqlCommand SelectCommand = new SqlCommand())
             {
                 SelectCommand.CommandType = CommandType.StoredProcedure;
-                SelectCommand.Parameters.Add(GetParameter("@OfficeID", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.OfficeID));
+                SelectCommand.Parameters.Add(GetParameter("@OfficeID", SqlDbType.Int, 44));
                 SelectCommand.CommandText = "pHRM_Employees_SelectByOfficeID";
 
                 return ExecuteGetDataTable(SelectCommand);

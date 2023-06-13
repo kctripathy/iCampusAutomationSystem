@@ -1,6 +1,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.1022
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32002.185
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iCAS.Presentation", "iCAS.Presentation", "{05FEFB5B-E41E-4E30-96D9-59A2E5059355}"
 EndProject
@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCAS.WebApp", "Presentation
 		{33040DDB-A6C8-4E33-A803-C6B17283B751} = {33040DDB-A6C8-4E33-A803-C6B17283B751}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My.BusinessLayer", "BusinessLayers\Micro.BusinessLayer\My.BusinessLayer.csproj", "{33040DDB-A6C8-4E33-A803-C6B17283B751}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.BusinessLayer", "BusinessLayers\Micro.BusinessLayer\Micro.BusinessLayer.csproj", "{33040DDB-A6C8-4E33-A803-C6B17283B751}"
 	ProjectSection(ProjectDependencies) = postProject
 		{447FA23D-A263-4C44-915D-D518832F0B58} = {447FA23D-A263-4C44-915D-D518832F0B58}
 	EndProjectSection
@@ -23,17 +23,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My.DataAccessLayer", "Busin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My.IntegrationLayer", "BusinessLayers\Micro.IntegrationLayer\My.IntegrationLayer.csproj", "{6B51E9FB-80B2-4BF6-AB06-4451B217E40A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCAS.Commons", "Commons\Micro.Common\iCAS.Commons.csproj", "{F565A960-EC2A-4B06-9A73-008FF9D03FC5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Commons", "Commons\Micro.Common\Micro.Commons.csproj", "{F565A960-EC2A-4B06-9A73-008FF9D03FC5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCAS.ErrorLogger", "Commons\Micro.ErrorLogger\iCAS.ErrorLogger.csproj", "{A6BDFE64-D74B-414E-BC48-3D4D96918BEE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCAS.Framework", "Commons\Micro.Framework\iCAS.Framework.csproj", "{A9171D34-C127-400C-B448-DA66A7140525}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCAS.Objects", "Commons\Micro.Objects\iCAS.Objects.csproj", "{AEA9D061-DDF8-4EA7-9A9D-23BFE1130D11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Micro.Objects", "Commons\Micro.Objects\Micro.Objects.csproj", "{AEA9D061-DDF8-4EA7-9A9D-23BFE1130D11}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "My.CacheLayer", "BusinessLayers\Micro.CacheLayer\My.CacheLayer.csproj", "{447FA23D-A263-4C44-915D-D518832F0B58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCAS.WebAPI", "PresentationLayer\iCAS.WebAPI\iCAS.WebAPI.csproj", "{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iCAS.API", "iCAS.API", "{4B768C19-EC1C-4BD4-A50F-467900B4AB35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCAS.APIWeb", "iCAS.API\iCAS.APIWeb\iCAS.APIWeb.csproj", "{B077B409-DC5D-4E55-937C-C2EB54261E07}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -135,18 +137,18 @@ Global
 		{447FA23D-A263-4C44-915D-D518832F0B58}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{447FA23D-A263-4C44-915D-D518832F0B58}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{447FA23D-A263-4C44-915D-D518832F0B58}.Release|x86.ActiveCfg = Release|Any CPU
-		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Debug|x86.Build.0 = Debug|Any CPU
-		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Release|x86.ActiveCfg = Release|Any CPU
-		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E}.Release|x86.Build.0 = Release|Any CPU
+		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Debug|x86.Build.0 = Debug|Any CPU
+		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Release|x86.ActiveCfg = Release|Any CPU
+		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -161,7 +163,7 @@ Global
 		{A9171D34-C127-400C-B448-DA66A7140525} = {C49DB8B4-7DD3-4277-A54F-7465D5DFA3CF}
 		{AEA9D061-DDF8-4EA7-9A9D-23BFE1130D11} = {C49DB8B4-7DD3-4277-A54F-7465D5DFA3CF}
 		{447FA23D-A263-4C44-915D-D518832F0B58} = {9DAFC411-D1D1-47F5-8285-10899EA676EF}
-		{3E7B00CE-5D84-48F5-8D7E-55A04D0ECF9E} = {05FEFB5B-E41E-4E30-96D9-59A2E5059355}
+		{B077B409-DC5D-4E55-937C-C2EB54261E07} = {4B768C19-EC1C-4BD4-A50F-467900B4AB35}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {14D38350-C25C-48C1-A300-9876DA35E24B}

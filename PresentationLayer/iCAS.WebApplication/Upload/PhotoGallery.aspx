@@ -27,7 +27,6 @@
 
                 .Formlabel
                 {
-                    font-weight: bold;
                     font-family: Lato, sans-serif;
                     font-size: 10pt;
                     color: navy;
@@ -187,30 +186,18 @@
                         display:block;
                         float:left;
                     }
+                    .watermark {
+                        color: #808080;
+                    }
             </style>
             <h1 class="PageTitle">
-                <asp:Literal runat="server" ID="lit_PageTitle" Text="Manage/Upload Your Photo Gallery" />
+                <asp:Literal runat="server" ID="lit_PageTitle" Text="Manage Photo Gallery" />
             </h1>
 
             <asp:MultiView ID="Establishment_multi" runat="server">
                 <asp:View ID="InputControls" runat="server">
 
                     <ul id="UploadStyleUL">
-                        <li class="FormButton_Top">
-                            <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Save" class="btn btn-primary btn-xs" />
-                            <asp:Button ID="btn_view" runat="server" Text="View" OnClick="btn_view_Click" CausesValidation="false" class="btn btn-primary btn-xs" />
-                        </li>
-                        <li class="Formlabel InVisible">&nbsp;<asp:Label runat="server" ID="lblMessage" Text="Please specify the Type to upload:" /></li>
-                        <li class="Formvalue InVisible">
-
-                            <asp:RadioButtonList ID="rbl_EstablishmentTypeCode" runat="server" RepeatDirection="Horizontal">
-                                <asp:ListItem Value="Y" Selected="True"> Photo Gallery</asp:ListItem>
-                            </asp:RadioButtonList>
-
-                            <asp:RequiredFieldValidator ID="requiredFieldValidator_EstablishmentTypeCode" runat="server" ControlToValidate="rbl_EstablishmentTypeCode" Display="Dynamic" SetFocusOnError="true" />
-                        </li>
-
-
 
                         <li class="Formlabel">
                             <span class="RequiredField">*</span>
@@ -218,15 +205,20 @@
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_NoticeTitle" runat="server" Width="98%" />
-                            <ajax:TextBoxWatermarkExtender runat="server" ID="watermark_NoticeTitleWater" TargetControlID="txt_NoticeTitle" WatermarkText="Title of the photo" WatermarkCssClass="" />
+                            <ajax:TextBoxWatermarkExtender 
+                                runat="server" 
+                                ID="watermark_NoticeTitleWater" 
+                                TargetControlID="txt_NoticeTitle" 
+                                WatermarkText="Please enter title of the photo that will be shown along with photo in the gallery" 
+                                WatermarkCssClass="watermark" />
                             <asp:RequiredFieldValidator ID="req_NoticeTitle" runat="server" ControlToValidate="txt_NoticeTitle" ErrorMessage="*" ForeColor="Red" Text="* Please enter the title!" SetFocusOnError="true" />
                         </li>
 
-                        <li class="Formlabel TwentyFive5Percent">
+                        <li class="Formlabel">
                             <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_Startdate" runat="server" Text="Upload Date:" />
                         </li>
-                        <li class="Formvalue TwentyFive5Percent">
+                        <li class="Formvalue">
                             <asp:TextBox ID="txt_Startdate" runat="server" AutoPostBack="false" />
                             <asp:ImageButton runat="server" ID="imgbtn_Startdate" CausesValidation="false" ToolTip="Show Calender" ImageAlign="AbsMiddle" ImageUrl="~/Themes/Default/Images/Calander 01.gif" Height="21" Width="21" />
                             <ajax:CalendarExtender runat="server" Format="dd-MMM-yyyy" ID="clndrextender_Startdate" PopupButtonID="imgbtn_Startdate" CssClass="MicroCalendar" TargetControlID="txt_Startdate">
@@ -234,11 +226,11 @@
                             <asp:RequiredFieldValidator ID="requiredFieldValidator_Startdate" runat="server" ControlToValidate="txt_Startdate" SetFocusOnError="true" ErrorMessage="*" ForeColor="Red" Text="It can't be left empty!" />
                         </li>
 
-                        <li class="Formlabel TwentyFive5Percent">
+                        <li class="Formlabel">
                             <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_Enddate" runat="server" Text="Display Till:" />
                         </li>
-                        <li class="Formvalue TwentyFive5Percent">
+                        <li class="Formvalue">
                             <asp:TextBox ID="txt_Enddate" runat="server" AutoPostBack="false" />
                             <asp:ImageButton runat="server" ID="imgbtn_Enddate" CausesValidation="false" ToolTip="Show Calender" ImageAlign="AbsMiddle" ImageUrl="~/Themes/Default/Images/Calander 01.gif" Height="21" Width="21" />
                             <ajax:CalendarExtender runat="server" Format="dd-MMM-yyyy" ID="clndrextender_Enddate" PopupButtonID="imgbtn_Enddate" CssClass="MicroCalendar" TargetControlID="txt_Enddate" />
@@ -253,7 +245,10 @@
                         </li>
                         <li class="Formvalue FullWidth">
                             <asp:TextBox ID="txt_Description" runat="server" Height="125px" Width="100%" TextMode="MultiLine" MaxLength="200" /><br />
-                            <ajax:TextBoxWatermarkExtender runat="server" ID="TextBoxWatermarkExtender_txt_Description" TargetControlID="txt_Description" WatermarkText="Description " WatermarkCssClass="" />
+                            <ajax:TextBoxWatermarkExtender runat="server" ID="TextBoxWatermarkExtender_txt_Description" 
+                                TargetControlID="txt_Description" 
+                                WatermarkText="Please enter brief description for the photo" 
+                                WatermarkCssClass="watermark" />
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator_Description" runat="server" ControlToValidate="txt_Description" ErrorMessage="*" ForeColor="Red" Text="Please enter the Photo Gallery description! it can't left blank." />
                         </li>
 
@@ -266,9 +261,9 @@
                             <li class="Formvalue">
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <ContentTemplate>
-                                        <asp:FileUpload runat="server" ID="fileUploadEstb" Width="80%" Height="30px" BorderStyle="Solid" BorderWidth="1" BorderColor="LightGray" class="btn btn-primary btn-xs" />
+                                        <asp:FileUpload runat="server" ID="fileUploadEstb" Width="80%" Height="36px" BorderStyle="Solid" BorderWidth="1" BorderColor="LightGray" class="btn btn-success btn-xs" />
 
-                                        <asp:Button ID="btnUpload" runat="server" Text=" Upload Now" OnClick="Upload_File" CausesValidation="true" class="btn btn-primary btn-xs" />
+                                        <asp:Button ID="btnUpload" runat="server" Text=" Upload Now" OnClick="Upload_File" CausesValidation="true" class="btn btn-success btn-xs" />
                                         <br />
                                         <asp:Label runat="server" ID="lbl_FileUploadStatus" ForeColor="Red" Text="File uploaded successfully. please save/update the record now" Visible="false" />
 
@@ -277,8 +272,15 @@
                                         <asp:PostBackTrigger ControlID="btnUpload" />
                                     </Triggers>
                                 </asp:UpdatePanel>
+
+                                 <asp:Label runat="server" ID="lblMessage" Text=":" />
                             </li>
                         </div>
+
+                        <li class="FormButton_Top">
+                            <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Save" class="btn btn-primary btn-xs" />
+                            <asp:Button ID="btn_view" runat="server" Text="View" OnClick="btn_view_Click" CausesValidation="false" class="btn btn-primary btn-xs" />
+                        </li>
                     </ul>
                 </asp:View>
                 <asp:View ID="view_gridView" runat="server">

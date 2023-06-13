@@ -50,7 +50,7 @@ namespace Micro.DataAccessLayer.Administration
                 InsertCommand.Parameters.Add(GetParameter("@PermissionID", SqlDbType.Int, objWebMenu.PermissionID));
                 InsertCommand.Parameters.Add(GetParameter("@FormOrMenu", SqlDbType.VarChar, objWebMenu.FormOrMenu));
 
-                InsertCommand.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserId));
+                InsertCommand.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserID));
 
                 InsertCommand.CommandText = "pADM_RolePermissionsWeb_Insert";
 
@@ -82,7 +82,7 @@ namespace Micro.DataAccessLayer.Administration
                 UpdateCommand.Parameters.Add(GetParameter("@FormOrMenu", SqlDbType.VarChar, objWebMenu.FormOrMenu));
                 
 
-                UpdateCommand.Parameters.Add(GetParameter("@ModifiedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserId));
+                UpdateCommand.Parameters.Add(GetParameter("@ModifiedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserID));
 
                 UpdateCommand.CommandText = "pADM_RolePermissionsWeb_Update";
 
@@ -108,7 +108,7 @@ namespace Micro.DataAccessLayer.Administration
 
                 DeleteCommand.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
                 DeleteCommand.Parameters.Add(GetParameter("@WebRolePermissionID", SqlDbType.Int, objWebMenu.WebRolePermissionID));
-                DeleteCommand.Parameters.Add(GetParameter("@ModifiedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserId));
+                DeleteCommand.Parameters.Add(GetParameter("@ModifiedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserID));
 
                 DeleteCommand.CommandText = "pADM_RolePermissionsWeb_Delete";
 
@@ -200,7 +200,7 @@ namespace Micro.DataAccessLayer.Administration
                 SqlCommand SelectCommand = new SqlCommand();
 
                 SelectCommand.CommandType = CommandType.StoredProcedure;
-                SelectCommand.Parameters.Add(GetParameter("@RoleID", SqlDbType.Int, (RoleID==-1? Micro.Commons.Connection.LoggedOnUser.RoleId :RoleID ) ));
+                SelectCommand.Parameters.Add(GetParameter("@RoleID", SqlDbType.Int, (RoleID==-1? Micro.Commons.Connection.LoggedOnUser.RoleID :RoleID ) ));
                 SelectCommand.Parameters.Add(GetParameter("@SearchText", SqlDbType.VarChar, searchText));
                 SelectCommand.Parameters.Add(GetParameter("@ShowDeleted", SqlDbType.Bit, showDeleted));
                 SelectCommand.CommandText = "pADM_MenuItemsWeb_SelectAllByRole";
@@ -259,7 +259,7 @@ namespace Micro.DataAccessLayer.Administration
                 WebMenu TheWebMenu=new WebMenu();
                 SqlCommand SqlCmd = new SqlCommand();
                 SqlCmd.CommandType = CommandType.StoredProcedure;
-                SqlCmd.Parameters.Add(GetParameter("RoleID", SqlDbType.Int, (RoleID == -1 ? Micro.Commons.Connection.LoggedOnUser.RoleId : RoleID)));
+                SqlCmd.Parameters.Add(GetParameter("RoleID", SqlDbType.Int, (RoleID == -1 ? Micro.Commons.Connection.LoggedOnUser.RoleID : RoleID)));
                 SqlCmd.CommandText = "pADM_MenuItemsPermission_SelectByRoleID";
                 return ExecuteGetDataTable(SqlCmd);
             }

@@ -266,6 +266,18 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
                     //    ObjEmployee.LastQualification = dr["LastQualification"].ToString();
                     //}
                     //LastQualification
+
+                    
+                    ObjEmployee.Address_Present_TownOrCity = (dr["Address_Present_TownOrCity"] == null ? "" : dr["Address_Present_TownOrCity"].ToString());
+                    ObjEmployee.Address_Present_LandMark = (dr["Address_Present_LandMark"] == null ? "" : dr["Address_Present_LandMark"].ToString());
+                    ObjEmployee.Address_Present_DistrictName = (dr["Address_Present_DistrictName"] == null ? "" : dr["Address_Present_DistrictName"].ToString());
+                    ObjEmployee.Address_Present_Pincode = (dr["Address_Present_Pincode"] == null? "": dr["Address_Present_Pincode"].ToString());
+
+                    ObjEmployee.Address_Permanent_TownOrCity = (dr["Address_Permanent_TownOrCity"] == null ? "" : dr["Address_Permanent_TownOrCity"].ToString());
+                    ObjEmployee.Address_Permanent_LandMark = (dr["Address_Permanent_LandMark"] == null ? "" : dr["Address_Permanent_LandMark"].ToString());
+                    ObjEmployee.Address_Permanent_DistrictName = (dr["Address_Permanent_DistrictName"] == null ? "" : dr["Address_Permanent_DistrictName"].ToString());
+                    ObjEmployee.Address_Permanent_Pincode = (dr["Address_Permanent_Pincode"] == null ? "" : dr["Address_Permanent_Pincode"].ToString());
+
                     try
                     {
                         if (dr["TeachingOrNonTeaching"] == null)

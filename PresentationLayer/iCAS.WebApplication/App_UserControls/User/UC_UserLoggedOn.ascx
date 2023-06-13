@@ -43,6 +43,7 @@
     {
         text-transform:uppercase;
         text-decoration:underline;
+        color: aqua;
     }
 </style>
 <ul id="CurrentUser">

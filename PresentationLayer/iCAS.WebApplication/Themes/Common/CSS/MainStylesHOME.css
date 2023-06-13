@@ -24,8 +24,8 @@ body
 {
 	color: #003366;
 	font-size: 1em;
-	margin: 0;
-	padding: 0;
+	margin: 10px;
+	padding: 10px;
 	background: url("../images/screen_bg.gif") repeat scroll left top transparent;
 }
 
@@ -388,7 +388,7 @@ ul#UC_Login_UL
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(#04519b, #044687 60%, #033769);
+	background: #C0C0C0;
 	/*opacity: 0.800000011920928955078125;*/
 	z-index: 99997;
 }

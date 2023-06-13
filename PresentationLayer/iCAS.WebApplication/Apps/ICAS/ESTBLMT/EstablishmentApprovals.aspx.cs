@@ -13,6 +13,19 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
     public partial class EstablishmentApprovals : BasePage
     {
 
+        public static string typeCodesToShow = String.Concat(
+                        EstbTypeConstants.RECENT_ACTIVITY,
+                        ",", EstbTypeConstants.NOTICE,
+                        ",", EstbTypeConstants.TENDER,
+                        ",", EstbTypeConstants.CIRCULAR,
+                        ",", EstbTypeConstants.SYLLABUS,
+                        ",", EstbTypeConstants.NAAC,
+                        ",", EstbTypeConstants.AQAR,
+                        ",", EstbTypeConstants.IQAC,
+                        ",", EstbTypeConstants.DOWNLOAD,
+                        ",", EstbTypeConstants.MoM,
+                        ",", EstbTypeConstants.WORLDBANK
+                );
         #region Declaration
         protected static class PageVariables
         {
@@ -52,21 +65,34 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
         {
             if (!IsPostBack)
             {
-                btn_Approve.Text = string.Format(" Apply \"{0}\" Status To Checked Establishments", ddl_EstablishmentStatus.SelectedItem.Text);
-                rbl_EstablishmentTypeCode.SelectedIndex = (int)(MicroEnums.EstablishmentType.All);
+                ddl_EstablishmentTypeCode.SelectedIndex = (int)(MicroEnums.EstablishmentType.All);
+                BindEstbTypeDropdown();
                 BindGridview();
             }
         }
 
-        protected void rbl_EstablishmentTypeCode_SelectedIndexChanged(object sender, EventArgs e)
+        private void BindEstbTypeDropdown()
         {
-            BindGridview();
+            ddl_EstablishmentTypeCode.Items.Clear();
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("-- VIEW ALL --", ""));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("RECENT ACTIVITY", EstbTypeConstants.RECENT_ACTIVITY));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("NOTICE", EstbTypeConstants.NOTICE));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("TENDER", EstbTypeConstants.TENDER));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("CIRCULAR", EstbTypeConstants.CIRCULAR));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("SYLLABUS", EstbTypeConstants.SYLLABUS));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("NAAC", EstbTypeConstants.NAAC));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("AQAR", EstbTypeConstants.AQAR));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("IQAC", EstbTypeConstants.IQAC));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("WORLDBANK", EstbTypeConstants.WORLDBANK));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("MINUTES OF MEETING", EstbTypeConstants.MoM));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("DOWNLOAD", EstbTypeConstants.DOWNLOAD));
         }
+
 
         protected void btn_Approve_Click(object sender, EventArgs e)
         {
             int Ctr = 0;
-            string EstbStatus = ddl_EstablishmentStatus.Text.ToString().Substring(0, 1);
+            string EstbStatus = ((Button)sender).CommandArgument; // rbl_EstablishmentStatus.Text.ToString().Substring(0, 1);
             for (int i = 0; i < gview_EstablishmentApprovals.Rows.Count; i++)
             {
                 GridViewRow row = gview_EstablishmentApprovals.Rows[i];
@@ -75,14 +101,24 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
                 {
                     Label lblEstbID = (Label)row.FindControl("lbl_EstablishmentID");
                     int EstbId = int.Parse(lblEstbID.Text);
-                    //int estbId = (int)lblEstbID.Text.ToString();
                     int x = EstablishmentManagement.GetInstance.UpdateEstablishmentStatus(EstbId, EstbStatus);
                     Ctr++;
                     row.BackColor = Color.LightGreen;
                 }
             }
-            lbl_TheMessage.Text = string.Format(" <b>{0}</b> items {1} Sucessfully.",Ctr,ddl_EstablishmentStatus.SelectedItem.Text);
-            BindGridview();
+            if (Ctr == 0)
+            {
+                lit_Message.Text = "<div class='apply-message'>Please select at least one record to apply any action.</div>";
+            }
+            else
+            {
+                lit_Message.Text = string.Format("<div class='apply-message'>{0} item{1} {2} sucessfully.</div>",
+                                                        Ctr,
+                                                        Ctr > 1 ? "s" : "",
+                                                        EstbStatus == "A" ? "approved" : "made pending");
+                BindGridview();
+            }
+            
         }
         #endregion
 
@@ -90,130 +126,80 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
         #region Methods & Implementation
         public void BindGridview()
         {
-            string x=rbl_EstablishmentTypeCode.Text;
-            PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListFreshRecords();
 
-            List<Establishment> filterlist = new List<Establishment>();
+            string typeCodes = typeCodesToShow;
+            if (ddl_EstablishmentTypeCode.SelectedValue != "")
+            {
+                typeCodes = ddl_EstablishmentTypeCode.SelectedValue;
+            }
 
-            if (rbl_EstablishmentTypeCode.SelectedValue.Equals("T"))
-            {
-                filterlist = (from xyz in PageVariables.EstablishmentList
-                              where xyz.EstbTypeCode.Equals("T") 
-                              select xyz).ToList();
-            }
-            if (rbl_EstablishmentTypeCode.SelectedValue.Equals("C"))
-            {
-                filterlist = (from xyz in PageVariables.EstablishmentList
-                              where xyz.EstbTypeCode.Equals("C") 
-                              select xyz).ToList();
-            }
-            if (rbl_EstablishmentTypeCode.SelectedValue.Equals("N"))
-            {
-                filterlist = (from xyz in PageVariables.EstablishmentList
-                              where xyz.EstbTypeCode.Equals("N") 
-                              select xyz).ToList();
-            }
-            if (rbl_EstablishmentTypeCode.SelectedValue.Equals("Z"))
-            {
-                filterlist = (from xyz in PageVariables.EstablishmentList
-                              where xyz.EstbTypeCode.Equals("Z")
-                              select xyz).ToList();
-            }
-            if (rbl_EstablishmentTypeCode.SelectedValue.Equals("P"))
-            {
-                List<Establishment> ListPublication = new List<Establishment>();
-                ListPublication = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCodes("1,2,3,4,5,6,7,8,9");
-                filterlist = (from xyz in PageVariables.EstablishmentList
-                              where xyz.EstbTypeCode.Equals("N") 
-                              select xyz).ToList();
-            }
-            //All
-            if (rbl_EstablishmentTypeCode.SelectedValue.Equals("A"))
-            {
-                filterlist = (from xyz in PageVariables.EstablishmentList
-                              select xyz).ToList();
-            }
-            //else
+            PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCodes(typeCodes);
+            gview_EstablishmentApprovals.DataSource = PageVariables.EstablishmentList;
+            gview_EstablishmentApprovals.DataBind();
+
+            //string x=rbl_EstablishmentTypeCode.Text;
+            //PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListFreshRecords();
+
+            //List<Establishment> filterlist = new List<Establishment>();
+
+            //if (rbl_EstablishmentTypeCode.SelectedValue.Equals("T"))
             //{
             //    filterlist = (from xyz in PageVariables.EstablishmentList
-            //                  where xyz.EstbTypeCode.Equals(rbl_EstablishmentTypeCode.SelectedValue) //&& xyz.EstbStatusFlag.Equals("P")
+            //                  where xyz.EstbTypeCode.Equals("T") 
             //                  select xyz).ToList();
             //}
+            //if (rbl_EstablishmentTypeCode.SelectedValue.Equals("C"))
+            //{
+            //    filterlist = (from xyz in PageVariables.EstablishmentList
+            //                  where xyz.EstbTypeCode.Equals("C") 
+            //                  select xyz).ToList();
+            //}
+            //if (rbl_EstablishmentTypeCode.SelectedValue.Equals("N"))
+            //{
+            //    filterlist = (from xyz in PageVariables.EstablishmentList
+            //                  where xyz.EstbTypeCode.Equals("N") 
+            //                  select xyz).ToList();
+            //}
+            //if (rbl_EstablishmentTypeCode.SelectedValue.Equals("Z"))
+            //{
+            //    filterlist = (from xyz in PageVariables.EstablishmentList
+            //                  where xyz.EstbTypeCode.Equals("Z")
+            //                  select xyz).ToList();
+            //}
+            //if (rbl_EstablishmentTypeCode.SelectedValue.Equals("P"))
+            //{
+            //    List<Establishment> ListPublication = new List<Establishment>();
+            //    ListPublication = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCodes("1,2,3,4,5,6,7,8,9");
+            //    filterlist = (from xyz in PageVariables.EstablishmentList
+            //                  where xyz.EstbTypeCode.Equals("N") 
+            //                  select xyz).ToList();
+            //}
+            ////All
+            //if (rbl_EstablishmentTypeCode.SelectedValue.Equals("A"))
+            //{
+            //    filterlist = (from xyz in PageVariables.EstablishmentList
+            //                  select xyz).ToList();
+            //}
+            ////else
+            ////{
+            ////    filterlist = (from xyz in PageVariables.EstablishmentList
+            ////                  where xyz.EstbTypeCode.Equals(rbl_EstablishmentTypeCode.SelectedValue) //&& xyz.EstbStatusFlag.Equals("P")
+            ////                  select xyz).ToList();
+            ////}
 
-            gview_EstablishmentApprovals.DataSource = filterlist; // PageVariables.EstablishmentrList; // filterlist;
-            gview_EstablishmentApprovals.DataBind();
+            //gview_EstablishmentApprovals.DataSource = filterlist.OrderByDescending(s => s.EstbID); // PageVariables.EstablishmentrList; // filterlist;
+            //gview_EstablishmentApprovals.DataBind();
         }
 
-        protected void ddl_EstablishmentStatus_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btn_View_Click(object sender, EventArgs e)
         {
-            btn_Approve.Text = string.Format(" Apply \"{0}\" Status To Checked Establishments", ddl_EstablishmentStatus.SelectedItem.Text);
-            if (ddl_EstablishmentStatus.SelectedItem.Value.ToString().Equals("A"))
-            {
-                btn_Approve.CssClass = "btn btn-sucesss btn_Approve";
-            }
-            else
-            {
-                btn_Approve.CssClass = "btn btn-primary btn_Approve";
-            }
+            BindGridview();
         }
 
-        //public int ChangeEstablishmentStatus()
-        //{
-        //    int ReturnValue = 0;
-        //    try
-        //    {
-        //        string EstbIds = GetCheckedItemsValue(gview_EstablishmentApprovals);
-        //        string status= ddl_EstablishmentStatus.SelectedValue;
-                 
-        //        //ReturnValue = EstablishmentManagement.GetInstance.UpdateEstablishment(EstbIds, status);
-                      
-        //    }
-        //    catch
-        //    {
-        //    }
-        //    return ReturnValue;
-		
-        
-        //}
-       
 
-        //public static string GetCheckedItemsValue(GridView parentControl)
-        //{
-
-        //    string CheckedItemsValue = string.Empty;
-
-        //    int Counter = 0;
-        //    for (int i = 0; i < parentControl.Rows.Count; i++)
-        //    {
-
-        //        GridViewRow row = parentControl.Rows[i];
-        //        CheckBox chkb = (CheckBox)row.FindControl("chk_EstablishmentID");
-        //        if (chkb.Checked)
-        //        {
-        //            Label lblEstbId = (Label)row.FindControl("lbl_EstablishmentID");
-        //            string status ;
-        //            int ReturnValue = EstablishmentManagement.GetInstance.UpdateEstablishment(lblEstbId.Text, );
-
-        //            //if (Counter.Equals(0))
-        //            //{
-        //            //    CheckedItemsValue = parentControl.Rows[i].Cells[1].Text;
-
-        //            //    CheckedItemsValue = string.Format("{0}, {1}", CheckedItemsValue, parentControl.Rows[i].Cells[1].Text);
-        //            //}
-        //            //else
-        //            //{
-        //            //    CheckedItemsValue = string.Format("{0}, {1}", CheckedItemsValue, parentControl.Rows[i].Cells[1].Text);
-        //            //}
-        //            // string name = gview_OldDisplay.Rows[i].Cells[2].Text;
-        //            Counter = Counter + 1;
-        //        }
-        //    }
-
-        //    return CheckedItemsValue;
-
-        //}
 
         #endregion
+
     }
 }
 

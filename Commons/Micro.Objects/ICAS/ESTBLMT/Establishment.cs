@@ -32,77 +32,89 @@ namespace Micro.Objects.ICAS.ESTBLMT
             get
             {
                 string _typeCodeDesc = string.Empty;
-                if (this.EstbTypeCode.Equals("N"))
+                if (this.EstbTypeCode.Equals(EstbTypeConstants.AQAR))
                 {
-                    _typeCodeDesc = "Notice";
+                    _typeCodeDesc = "AQAR";
                 }
-                else if (this.EstbTypeCode.Equals("T"))
-                {
-                    _typeCodeDesc = "Tender";
-                }
-                else if (this.EstbTypeCode.Equals("M"))
-                {
-                    _typeCodeDesc = "Minutes of Meeting";
-                }
-                else if (this.EstbTypeCode.Equals("C"))
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.CIRCULAR))
                 {
                     _typeCodeDesc = "Circular";
                 }
-                else if (this.EstbTypeCode.Equals("R"))
-                {
-                    _typeCodeDesc = "Recent Activity";
-                }
-                else if (this.EstbTypeCode.Equals("1"))
-                {
-                    _typeCodeDesc = "Article";
-                }
-                else if (this.EstbTypeCode.Equals("2"))
-                {
-                    _typeCodeDesc = "Project Paper";
-                }
-                else if (this.EstbTypeCode.Equals("3"))
-                {
-                    _typeCodeDesc = "Book/Proceeding";
-                }
-                else if (this.EstbTypeCode.Equals("4"))
-                {
-                    _typeCodeDesc = "Award/Achievment";
-                }
-                else if (this.EstbTypeCode.Equals("5"))
-                {
-                    _typeCodeDesc = "Seminar Paper";
-                }
-                else if (this.EstbTypeCode.Equals("6"))
-                {
-                    _typeCodeDesc = "Study Material";
-                }
-                else if (this.EstbTypeCode.Equals("7"))
-                {
-                    _typeCodeDesc = "Hyperlink";
-                }
-                else if (this.EstbTypeCode.Equals("8"))
-                {
-                    _typeCodeDesc = "Profile";
-                }
-                else if (this.EstbTypeCode.Equals("9"))
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.DOWNLOAD))
                 {
                     _typeCodeDesc = "Downloadable";
                 }
-                else if (this.EstbTypeCode.Equals("Y"))
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.IQAC))
+                {
+                    _typeCodeDesc = "IQAC";
+                }
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.MoM))
+                {
+                    _typeCodeDesc = "Minutes of Meeting";
+                }
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.NOTICE))
+                {
+                    _typeCodeDesc = "Notice";
+                }
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.PHOTO))
                 {
                     _typeCodeDesc = "Photo";
                 }
-                else if (this.EstbTypeCode.Equals("V"))
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.RECENT_ACTIVITY))
                 {
-                    _typeCodeDesc = "Video";
+                    _typeCodeDesc = "Recent Activity";
                 }
-                else if (this.EstbTypeCode.Equals("S"))
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.SYLLABUS))
                 {
                     _typeCodeDesc = "Syllabus";
                 }
-                else if (this.EstbTypeCode.Equals("Z"))
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.TENDER))
+                {
+                    _typeCodeDesc = "Tender";
+                }
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.VIDEO))
+                {
+                    _typeCodeDesc = "Video";
+                }
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.WORLDBANK))
+                {
+                    _typeCodeDesc = "World Bank";
+                }
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.NAAC))
                 {
                     _typeCodeDesc = "NAAC";
+                }
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.ARTCLE))
+                {
+                    _typeCodeDesc = "Article";
+                }
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.PROJECT_PAPER))
+                {
+                    _typeCodeDesc = "Project Paper";
+                }
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.BOOK))
+                {
+                    _typeCodeDesc = "Book";
+                }
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.AWARD))
+                {
+                    _typeCodeDesc = "Award";
+                }
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.SEMINAR_PAPER))
+                {
+                    _typeCodeDesc = "Seminar Paper";
+                }
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.STUDY_MATERIAL))
+                {
+                    _typeCodeDesc = "Study Material";
+                }
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.LITERATURE))
+                {
+                    _typeCodeDesc = "Literature";
+                }
+                else if (this.EstbTypeCode.Equals(EstbTypeConstants.STAFF_PROFILE))
+                {
+                    _typeCodeDesc = "Staff Profile";
                 }
                 return _typeCodeDesc;
             }
@@ -287,4 +299,32 @@ namespace Micro.Objects.ICAS.ESTBLMT
             }
         }
     }
+
+
+    public static class EstbTypeConstants
+    {
+        public static string AQAR = "A";
+        public static string CIRCULAR = "C";
+        public static string DOWNLOAD = "D";
+        public static string IQAC = "I";
+        public static string MoM = "M";
+        public static string NOTICE = "N";
+        public static string PHOTO = "P";
+        public static string RECENT_ACTIVITY = "R";
+        public static string SYLLABUS = "S";
+        public static string TENDER = "T";
+        public static string VIDEO = "V";
+        public static string WORLDBANK = "W";
+        public static string NAAC = "Z";
+
+        public static string ARTCLE = "1";
+        public static string PROJECT_PAPER = "2";
+        public static string BOOK = "3";
+        public static string AWARD = "4";
+        public static string SEMINAR_PAPER = "5";
+        public static string STUDY_MATERIAL = "6";
+        public static string LITERATURE = "7";
+        public static string STAFF_PROFILE = "8";
+    }
+
 }

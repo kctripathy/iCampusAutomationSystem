@@ -84,6 +84,7 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
                 {
                     Department ObjDepartment = new Department();
                     ObjDepartment.DepartmentID = int.Parse(dr["DepartmentID"].ToString());
+                    ObjDepartment.DepartmentName = dr["DepartmentDescription"].ToString();
                     ObjDepartment.DepartmentDescription = dr["DepartmentDescription"].ToString();
                     ObjDepartment.ParentDepartmentId = int.Parse(dr["ParentDepartmentID"].ToString());
                     ObjDepartment.ParentDepartmentDescription = dr["ParentDepartmentDescription"].ToString();

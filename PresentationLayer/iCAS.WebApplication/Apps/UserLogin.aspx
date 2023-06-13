@@ -7,7 +7,6 @@
     <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
             <div id="innercontent">
-                <h1 class="PageTitle">Login | New User Registration:</h1>
                 <div id="UserLoginDiv">
                     <ul id="UserLoginUL">
                         <li class="FormMessage">
@@ -15,7 +14,7 @@
                         </li>
                         <%--User Name--%>
                         <li class="FormLabel">
-                            <asp:Label runat="server" ID="lbl_UserName" Text="Please enter your 'Login ID' / Mobile phone number" />
+                            <asp:Label runat="server" ID="lbl_UserName" Text="User Name:" />
                         </li>
                         <li class="FormValue">
                             <asp:TextBox runat="server" ID="txt_UserName" Text="" MaxLength="10" CssClass="LoginTextClass" />
@@ -24,8 +23,11 @@
                             <%--<ajax:TextBoxWatermarkExtender runat="server" ID="watermarkTxt_UserName" TargetControlID="txt_UserName" WatermarkText="Hints: Your registerd Phone number is your login identity!" WatermarkCssClass="WatermarkCssClass" />--%>
                         </li>
                         <%--User Password--%>
+                        <li class="FormLabel">&nbsp;</li>
+                        <li class="FormValue">&nbsp;</li>
+
                         <li class="FormLabel">
-                            <asp:Label runat="server" ID="lbl_Password" Text="Please provide your Password:" />
+                            <asp:Label runat="server" ID="lbl_Password" Text="Password:" />
                         </li>
                         <li class="FormValue">
                             <asp:TextBox runat="server" ID="txt_Password" Text="" TextMode="Password" CssClass="LoginTextClass" MaxLength="20" />
@@ -34,20 +36,22 @@
                         <%--Remember User Name--%>
                         <li class="FormLabel">
                             <asp:CheckBox runat="server" ID="chk_Remember" TextAlign="Right" Text="&nbsp;Remember me?" Font-Bold="false" CssClass="RememberMe" />
+                            <div style="display:none">
                             &nbsp;|&nbsp;
                             <asp:LinkButton runat="server" ID="lnkBtn_ForgotPassword" Text="&nbsp;&nbsp;Forgot Password?" OnClick="lnkBtn_ForgotPassword_Click" CausesValidation="false" />
+                            </div>
                         </li>
                         <!-- Button Submit -->
                         <li class="FormButtonLogin" style="margin-top: 5px; text-align:center;">
-                            <asp:Button runat="server" ID="btn_Login" Text="LOG IN | SIGN IN" OnClick="btn_Login_Click" CssClass="btn btn-primary" />
+                            <asp:Button runat="server" ID="btn_Login" Text="LOG IN" OnClick="btn_Login_Click" CssClass="btn btn-primary" />
                         </li>
                     </ul>
 
-                    <ul id="UserRegisterUL" style="display: block;">
-                        <li>
+                    <ul id="UserRegisterUL" >
+                        <li style="display: none;">
                             <h4 class="PageSubTitle">New User Registration? Please choose the type of user:</h4>
                         </li>
-                        <li>
+                        <li style="display: none;">
                             
                             <asp:RadioButtonList runat="server" AutoPostBack="true" ID="rbList_UserType" RepeatDirection="Horizontal" OnSelectedIndexChanged="rbList_UserType_SelectedIndexChanged">
                                 <asp:ListItem Text="Alumni" Value="6" Selected="False" />

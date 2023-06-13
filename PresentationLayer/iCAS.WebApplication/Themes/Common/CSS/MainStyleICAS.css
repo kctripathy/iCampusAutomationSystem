@@ -198,7 +198,7 @@ h1.PageTitle
 	width: 98%;
 	margin: -5px 0 10px 0;
 	padding: 8px;
-	height: 12px;
+	height: 40px;
 	border: #ccc solid 1px;
 	text-align: left;
 	vertical-align: middle;
@@ -780,4 +780,5 @@ html body form#formMicro div#TheContainer div#WebContent div#WebBody div#PageCon
 #ctrl_LoggedOnUser_lbl_FullNameValue
 {
 	font-weight: bold;
+	color: sandybrown;
 }

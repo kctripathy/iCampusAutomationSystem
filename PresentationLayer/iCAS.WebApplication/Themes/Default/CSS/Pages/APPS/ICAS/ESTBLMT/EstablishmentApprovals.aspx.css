@@ -33,12 +33,65 @@ table.GridView
     table.GridView td
     {
         padding: 2px;
+        min-width: 50px;
     }
 
-#ContentPlaceHolderMicroERP_lbl_TheMessage
+
+    
+
+    table.GridView tr {
+        border-bottom: solid 1px #ccc;
+    }
+
+
+    table.GridView td.checkBox {
+        width: 5%;
+    }
+
+    
+
+    table.GridView td.date {
+        width: 13%;
+    }
+
+
+    table.GridView td.Type {
+        width: 12%;
+    }
+
+    table.GridView td.Title {
+        width: 50%;
+    }
+
+
+    table.GridView td.AuthorContributor {
+        width: 5%;
+    }
+
+
+    table.GridView td.Status {
+        width: 5%;
+    }
+
+/*
+#ContentPlaceHolderMicroERP_gview_EstablishmentApprovals > tbody > tr > td.ID
 {
+    width: 5%;
+}
+
+
+#ContentPlaceHolderMicroERP_gview_EstablishmentApprovals > tbody > tr > td.date {
+    width: 10%;
+}
+
+
+#ContentPlaceHolderMicroERP_gview_EstablishmentApprovals > tbody > tr > td.Tittle {
+    width: 50%;
+}
+*/
+
+#ContentPlaceHolderMicroERP_lbl_TheMessage {
     color: red;
-    font-size: large;
 }
 
 .FormValueFullWidth select,
@@ -46,4 +99,10 @@ table.GridView
 {
     font-size: 1.2em;
     padding: 4px;
+}
+
+.message-text {
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
 }

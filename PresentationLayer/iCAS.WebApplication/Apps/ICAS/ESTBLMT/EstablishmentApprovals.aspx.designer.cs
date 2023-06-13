@@ -7,20 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT {
-    
-    
-    public partial class EstablishmentApprovals {
-        
+namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
+{
+
+
+    public partial class EstablishmentApprovals
+    {
+
         /// <summary>
-        /// updatePanel_EmployeeDetails control.
+        /// updatePanel_Approval control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updatePanel_EmployeeDetails;
-        
+        protected global::System.Web.UI.UpdatePanel updatePanel_Approval;
+
         /// <summary>
         /// lbl_MessageType control.
         /// </summary>
@@ -29,34 +31,25 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_MessageType;
-        
+
         /// <summary>
-        /// rbl_EstablishmentTypeCode control.
+        /// ddl_EstablishmentTypeCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList rbl_EstablishmentTypeCode;
-        
+        protected global::System.Web.UI.WebControls.DropDownList ddl_EstablishmentTypeCode;
+
         /// <summary>
-        /// lbl_Status control.
+        /// btn_View control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Status;
-        
-        /// <summary>
-        /// ddl_EstablishmentStatus control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_EstablishmentStatus;
-        
+        protected global::System.Web.UI.WebControls.Button btn_View;
+
         /// <summary>
         /// btn_Approve control.
         /// </summary>
@@ -65,16 +58,25 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Approve;
-        
+
         /// <summary>
-        /// lbl_TheMessage control.
+        /// btn_Pending control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_TheMessage;
-        
+        protected global::System.Web.UI.WebControls.Button btn_Pending;
+
+        /// <summary>
+        /// lit_Message control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lit_Message;
+
         /// <summary>
         /// gview_EstablishmentApprovals control.
         /// </summary>
@@ -83,7 +85,16 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gview_EstablishmentApprovals;
-        
+
+        /// <summary>
+        /// PageUpdateProgress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdateProgress PageUpdateProgress;
+
         /// <summary>
         /// dialog_Message control.
         /// </summary>
@@ -92,7 +103,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Micro.Commons.DialogBox dialog_Message;
-        
+
         /// <summary>
         /// Label1 control.
         /// </summary>

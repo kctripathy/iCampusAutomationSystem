@@ -73,60 +73,15 @@
 <body>
 
 	<form id="formICAS" runat="server">
-		<suvram:WebUserControlMenu ID="WebUserControlMenu1" runat="server" />
 		<asp:ScriptManager ID="ScriptManagerICAS" runat="server" />
 		<div id="TheContainerICAS" class="container body-content">
 			<div id="WebContentICAS">
 				<div id="WebHead">
 					<asp:Literal runat="server" ID="lit_Welcome"></asp:Literal>
-					<%--<marquee><h1 class="PageScrolling">* HAPPY NEW YEAR - 2018 * Wishing you and your family members a very 'HAPPY NEW YEAR - 2018' *  ALL THE BEST * </h1></marquee>--%>
 				</div>
 
 				<div id="WebBodyICAS">
-					<div id="LeftSide">
-						<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
-					</div>
-					<div id="RightSide">
-						&nbsp;        
-					</div>
-				</div>
-				<div class="row" id="WebBodyContentICAS">
-					<div class="col-md-6">
-						<p>
-							TSDC is a 'NAAC' accredidated Grade 'B' college, established in the year 1981, affiliated to CHSE Odisha and Berhampur University. 
-						</p>
-						<p>
-							The main function or strategic goal of the college is to "Promote discipline, healthy outlook and positive attitudes to contribute for national integration".							 
-						</p>
-						<p>
-							To promote quality academic in the locality with the assistance of the NAAC, UGC, Govt. of Odisha and <a href="history">Learn more</a>
-						</p>
-
-					</div>
-					<div class="col-md-6">
-						<suvram:PrincipalMessage ID="ctrl_PrincipalMessage1" runat="server" />
-					</div>
-				</div>
-
-				<div id="WebZones" class="row">
-					<div id="Div_Estb" class="col-lg-12 col-md-12 col-xs-12">
-						<div id="Div_ColoumnTwo_Establishments" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-							<suvram:UC_EstablishmentZone ID="ctrl_EstablishmentZone1" runat="server" />
-						</div>
-						<div id="Div_ColoumnOne_Library" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-							<suvram:UC_LibraryBookSearch ID="ctrl_LibraryBookSearch" runat="server" />
-						</div>
-					</div>
-					<div id="Div_Student" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-						<suvram:UC_StudentZone ID="ctrl_StudentZone" runat="server" />
-					</div>
-					<div id="Div_Staff" class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-						<suvram:UC_StaffZone ID="ctrl_StaffZone1" runat="server" />
-					</div>
-
-				</div>
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<suvram:UC_LinksZone ID="UC_LinksZone1" runat="server" />
+					<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
 				</div>
 
 			</div>

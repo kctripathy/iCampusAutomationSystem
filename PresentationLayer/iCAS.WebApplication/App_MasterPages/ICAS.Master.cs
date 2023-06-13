@@ -90,7 +90,7 @@ namespace Micro.WebApplication.App_MasterPages
 					</div>", photoUrl);
 			}
 
-			lit_Welcome.Text = html_code;
+			//lit_Welcome.Text = html_code;
 		}
 		protected override void OnLoad(EventArgs e)
 		{

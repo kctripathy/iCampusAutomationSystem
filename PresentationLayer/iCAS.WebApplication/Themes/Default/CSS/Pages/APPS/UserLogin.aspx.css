@@ -9,7 +9,7 @@
     background-color: aliceblue;
     font-family: Lato, Verdana, sans-serif;
     font-size: 10pt;
-    background: #BDD4FE url(../../../../Common/Images/LOGIN-ICAS4.jpg) left -10px top -10px no-repeat;
+    /*background: #BDD4FE url(../../../../Common/Images/LOGIN-ICAS4.jpg) left -10px top -10px no-repeat;*/
 }
 
 #UserLoginUL,
@@ -33,11 +33,10 @@
     margin-right: 3%;
 }
 
-#UserRegisterUL
-{
+#UserRegisterUL {
     width: 48%;
     height: 100%;
-    background: #fff url(../../../../Common/Images/student-zone.jpg) right 41px top 28px no-repeat;
+    background: url(../../../../../Images/User/no-user.png) right 41px top 28px no-repeat;
     border: solid 1px #fff;
     border-radius: 10px;
     padding: 0px 1%;

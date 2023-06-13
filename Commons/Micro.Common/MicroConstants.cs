@@ -221,5 +221,8 @@ namespace Micro.Commons
         public static string MICRO_KEY_WILL_CONFIRM_BEFORE_DELETE = "WILL_CONFIRM_BEFORE_DELETE";
 
         public static string REPORT_FORM_NAME = "MicroERP.Forms.frmReportViewer";
+        
+        
+
     }
 }

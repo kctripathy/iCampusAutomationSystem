@@ -5,9 +5,7 @@ namespace Micro.Objects.Administration
 	[Serializable]
 	public class User
 	{
-		public object UserId;
 
-		public int RoleId;
 
 		public int UserID
 		{
@@ -212,6 +210,9 @@ namespace Micro.Objects.Administration
 			get;
 			set;
 		}
+		//public object UserId; //used for Micro.Commons.Connection.LoggedOnUser.UserId
+		//public int RoleId;
+
 	}
 
 	[Serializable]
@@ -260,6 +261,22 @@ namespace Micro.Objects.Administration
 		}
 
 		public string SessionID
+		{
+			get;
+			set;
+		}
+	}
+
+	public class UserLogin
+	{
+
+		public string UserName
+		{
+			get;
+			set;
+		}
+
+		public string Password
 		{
 			get;
 			set;

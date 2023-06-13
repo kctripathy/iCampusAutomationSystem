@@ -73,9 +73,23 @@ namespace Micro.WebApplication.UPLOAD
             if (!IsPostBack && !IsCallback)
             {
                 Session["fileName"] = "NA";
+                BindEstbTypeDropdown();
                 Establishment_multi.SetActiveView(InputControls);
             }
 
+        }
+
+        private void BindEstbTypeDropdown()
+        {
+            ddlEstbType.Items.Add(new ListItem("-- SELECT --",""));
+            ddlEstbType.Items.Add(new ListItem("Article", EstbTypeConstants.ARTCLE.ToString()));
+            ddlEstbType.Items.Add(new ListItem("Project Paper", EstbTypeConstants.PROJECT_PAPER.ToString()));
+            ddlEstbType.Items.Add(new ListItem("Book", EstbTypeConstants.BOOK.ToString()));
+            ddlEstbType.Items.Add(new ListItem("Award / Achievement", EstbTypeConstants.AWARD.ToString()));
+            ddlEstbType.Items.Add(new ListItem("Seminar Paper", EstbTypeConstants.SEMINAR_PAPER.ToString()));
+            ddlEstbType.Items.Add(new ListItem("Study Material", EstbTypeConstants.STUDY_MATERIAL.ToString()));
+            ddlEstbType.Items.Add(new ListItem("Staff Profile", EstbTypeConstants.STAFF_PROFILE.ToString()));
+            ddlEstbType.Items.Add(new ListItem("Downloadable", EstbTypeConstants.DOWNLOAD.ToString()));
         }
 
         protected void btn_view_Click(object sender, EventArgs e)
@@ -176,7 +190,7 @@ namespace Micro.WebApplication.UPLOAD
             //string theNewFileName = UploadFileGetNewFileName();
 
             Establishment objEstablishment = new Establishment();
-            objEstablishment.EstbTypeCode = rbl_EstablishmentTypeCode.SelectedValue;
+            objEstablishment.EstbTypeCode = ddlEstbType.SelectedValue;
             objEstablishment.EstbTitle = txt_NoticeTitle.Text;
             objEstablishment.EstbViewStartDate = DateTime.Parse(txt_Startdate.Text);
             objEstablishment.EstbViewEndDate = DateTime.Parse(txt_Enddate.Text);
@@ -204,7 +218,7 @@ namespace Micro.WebApplication.UPLOAD
             //string theNewFileName = UploadFileGetNewFileName();
 
             int ProReturnValue = 0;
-            PageVariables.theestablishment.EstbTypeCode = rbl_EstablishmentTypeCode.SelectedValue;
+            PageVariables.theestablishment.EstbTypeCode = ddlEstbType.SelectedValue;
             PageVariables.theestablishment.EstbTitle = txt_NoticeTitle.Text;
             PageVariables.theestablishment.EstbViewStartDate = DateTime.Parse(txt_Startdate.Text);
             PageVariables.theestablishment.EstbViewEndDate = DateTime.Parse(txt_Enddate.Text);
@@ -229,7 +243,7 @@ namespace Micro.WebApplication.UPLOAD
 
         public void PopulateFormField(Establishment theestablishment)
         {
-            rbl_EstablishmentTypeCode.SelectedValue = theestablishment.EstbTypeCode;
+            ddlEstbType.SelectedValue = theestablishment.EstbTypeCode;
             txt_NoticeTitle.Text = theestablishment.EstbTitle;
             txt_Startdate.Text = theestablishment.EstbViewStartDate.ToString();
             txt_Enddate.Text = theestablishment.EstbViewEndDate.ToString();
@@ -239,7 +253,7 @@ namespace Micro.WebApplication.UPLOAD
 
         public void Reset()
         {
-            //rbl_EstablishmentTypeCode.ClearSelection();
+            //ddlEstbType.ClearSelection();
             txt_NoticeTitle.Text = string.Empty;
             txt_Startdate.Text = string.Empty;
             txt_Enddate.Text = string.Empty;
@@ -281,7 +295,7 @@ namespace Micro.WebApplication.UPLOAD
 
                     //create the path to save the file to
                     theNewFileName = string.Format("PUBL_{0}_Y{1}_M{2}_D{3}-H{4}_M{5}_S{6}{7}",
-                                        rbl_EstablishmentTypeCode.SelectedValue,
+                                        ddlEstbType.SelectedValue,
                                         DateTime.Now.Year.ToString(),
                                         DateTime.Now.Month.ToString(),
                                         DateTime.Now.Day.ToString(),

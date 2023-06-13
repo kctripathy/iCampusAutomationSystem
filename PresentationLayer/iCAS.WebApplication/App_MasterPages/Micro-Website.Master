@@ -74,13 +74,13 @@
 	<asp:ScriptManager ID="ScriptManagerMicroWebsite" runat="server" EnablePartialRendering="true" ScriptMode="Debug" AsyncPostBackTimeout="900" />
 	<div style="width: 100%; margin: 0px; padding: 0px; top: 0px; left: 0px;">
 		<div id="WebContentHomePage">
-			<div id="WebHeaderHomePage">
+			<%--<div id="WebHeaderHomePage">
 				<ul>
 					<li id="LogoHomePage"></li>
 					<li id="MiddleHeadHomePage"></li>
 					<li id="ImportantInfoHomePage"></li>
 				</ul>
-			</div>
+			</div>--%>
 			<div id="WebBodyHomePage">
 				<div id="HomePageContentHomePage">
 					<asp:ContentPlaceHolder ID="ContentPlaceHolderMicroERP" runat="server">

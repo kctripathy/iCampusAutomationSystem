@@ -14,6 +14,21 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
 {
     public partial class Default : BasePage
     {
+
+        public static string typeCodesToShow = String.Concat(
+                        EstbTypeConstants.RECENT_ACTIVITY,
+                        ",", EstbTypeConstants.NOTICE,
+                        ",", EstbTypeConstants.TENDER,
+                        ",", EstbTypeConstants.CIRCULAR,
+                        ",", EstbTypeConstants.SYLLABUS,
+                        ",", EstbTypeConstants.NAAC,
+                        ",", EstbTypeConstants.AQAR,
+                        ",", EstbTypeConstants.IQAC,
+                        ",", EstbTypeConstants.DOWNLOAD,
+                        ",", EstbTypeConstants.MoM,
+                        ",", EstbTypeConstants.WORLDBANK
+                );
+
         #region Declaration
 
         protected static class PageVariables
@@ -73,9 +88,42 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             if (!IsPostBack && !IsCallback)
             {
                 Session["fileName"] = "NA";
+                BindEstbTypeDropdown();
                 Establishment_multi.SetActiveView(InputControls);
             }
 
+        }
+
+        private void BindEstbTypeDropdown()
+        {
+            ddlEstbType.Items.Clear();
+            ddlEstbType.Items.Add(new ListItem("-- SELECT --", ""));
+            ddlEstbType.Items.Add(new ListItem("RECENT ACTIVITY", EstbTypeConstants.RECENT_ACTIVITY));
+            ddlEstbType.Items.Add(new ListItem("NOTICE", EstbTypeConstants.NOTICE));
+            ddlEstbType.Items.Add(new ListItem("TENDER", EstbTypeConstants.TENDER));
+            ddlEstbType.Items.Add(new ListItem("CIRCULAR", EstbTypeConstants.CIRCULAR));
+            ddlEstbType.Items.Add(new ListItem("SYLLABUS", EstbTypeConstants.SYLLABUS));
+            ddlEstbType.Items.Add(new ListItem("NAAC", EstbTypeConstants.NAAC));
+            ddlEstbType.Items.Add(new ListItem("AQAR", EstbTypeConstants.AQAR));
+            ddlEstbType.Items.Add(new ListItem("IQAC", EstbTypeConstants.IQAC));
+            ddlEstbType.Items.Add(new ListItem("WORLDBANK", EstbTypeConstants.WORLDBANK));
+            ddlEstbType.Items.Add(new ListItem("MINUTES OF MEETING", EstbTypeConstants.MoM));
+            ddlEstbType.Items.Add(new ListItem("DOWNLOAD", EstbTypeConstants.DOWNLOAD));
+
+
+            ddlEstbTypeView.Items.Clear();
+            ddlEstbTypeView.Items.Add(new ListItem("-- VIEW ALL --", ""));
+            ddlEstbTypeView.Items.Add(new ListItem("RECENT ACTIVITY", EstbTypeConstants.RECENT_ACTIVITY));
+            ddlEstbTypeView.Items.Add(new ListItem("NOTICE", EstbTypeConstants.NOTICE));
+            ddlEstbTypeView.Items.Add(new ListItem("TENDER", EstbTypeConstants.TENDER));
+            ddlEstbTypeView.Items.Add(new ListItem("CIRCULAR", EstbTypeConstants.CIRCULAR));
+            ddlEstbTypeView.Items.Add(new ListItem("SYLLABUS", EstbTypeConstants.SYLLABUS));
+            ddlEstbTypeView.Items.Add(new ListItem("NAAC", EstbTypeConstants.NAAC));
+            ddlEstbTypeView.Items.Add(new ListItem("AQAR", EstbTypeConstants.AQAR));
+            ddlEstbTypeView.Items.Add(new ListItem("IQAC", EstbTypeConstants.IQAC));
+            ddlEstbTypeView.Items.Add(new ListItem("WORLDBANK", EstbTypeConstants.WORLDBANK));
+            ddlEstbTypeView.Items.Add(new ListItem("MINUTES OF MEETING", EstbTypeConstants.MoM));
+            ddlEstbTypeView.Items.Add(new ListItem("DOWNLOAD", EstbTypeConstants.DOWNLOAD));
         }
 
         protected void btn_view_Click(object sender, EventArgs e)
@@ -157,7 +205,27 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
 
         public void BindGridview()
         {
-            PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCodes("R,N,T,C,W,M,1,2,3,4,5,6,7,8");
+            //PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentList(); //EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCodes("R,N,T,C,W,M,1,2,3,4,5,6,7,8");
+            //string typeCodesToShow = String.Concat(
+            //            EstbTypeConstants.RECENT_ACTIVITY,
+            //            ",",EstbTypeConstants.NOTICE,
+            //            ",",EstbTypeConstants.TENDER,
+            //            ",",EstbTypeConstants.CIRCULAR,
+            //            ",",EstbTypeConstants.SYLLABUS,
+            //            ",",EstbTypeConstants.NAAC,
+            //            ",",EstbTypeConstants.AQAR,
+            //            ",",EstbTypeConstants.IQAC,
+            //            ",",EstbTypeConstants.DOWNLOAD,
+            //            ",",EstbTypeConstants.MoM,
+            //            ",",EstbTypeConstants.WORLDBANK
+            //    );
+            string typeCodes = typeCodesToShow;
+            if (ddlEstbTypeView.SelectedValue != "")
+            {
+                typeCodes = ddlEstbTypeView.SelectedValue;
+            }
+
+            PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCodes(typeCodes);
             gridview_Establishment.DataSource = PageVariables.EstablishmentList;
             gridview_Establishment.DataBind();
         }
@@ -173,7 +241,7 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             //string theNewFileName = UploadFileGetNewFileName();
 
             Establishment objEstablishment = new Establishment();
-            objEstablishment.EstbTypeCode = rbl_EstablishmentTypeCode.SelectedValue;
+            objEstablishment.EstbTypeCode = ddlEstbType.SelectedValue; // rbl_EstablishmentTypeCode.SelectedValue;
             objEstablishment.EstbTitle = txt_NoticeTitle.Text;
             objEstablishment.EstbViewStartDate = DateTime.Parse(txt_Startdate.Text);
             objEstablishment.EstbViewEndDate = DateTime.Parse(txt_Enddate.Text);
@@ -197,7 +265,7 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             //string theNewFileName = UploadFileGetNewFileName();
 
             int ProReturnValue = 0;
-            PageVariables.theestablishment.EstbTypeCode = rbl_EstablishmentTypeCode.SelectedValue;
+            PageVariables.theestablishment.EstbTypeCode = ddlEstbType.SelectedValue; // rbl_EstablishmentTypeCode.SelectedValue;
             PageVariables.theestablishment.EstbTitle = txt_NoticeTitle.Text;
             PageVariables.theestablishment.EstbViewStartDate = DateTime.Parse(txt_Startdate.Text);
             PageVariables.theestablishment.EstbViewEndDate = DateTime.Parse(txt_Enddate.Text);
@@ -222,7 +290,8 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
 
         public void PopulateFormField(Establishment theestablishment)
         {
-            rbl_EstablishmentTypeCode.SelectedValue = theestablishment.EstbTypeCode;
+            ddlEstbType.SelectedValue = theestablishment.EstbTypeCode;
+            //rbl_EstablishmentTypeCode.SelectedValue = theestablishment.EstbTypeCode;
             txt_NoticeTitle.Text = theestablishment.EstbTitle;
             txt_Startdate.Text = theestablishment.EstbViewStartDate.ToString();
             txt_Enddate.Text = theestablishment.EstbViewEndDate.ToString();
@@ -274,7 +343,7 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
 
                     //create the path to save the file to
                     theNewFileName = string.Format("ESTB_{0}_Y{1}_M{2}_D{3}-H{4}_M{5}_S{6}{7}",
-                                        rbl_EstablishmentTypeCode.SelectedValue,
+                                        ddlEstbType.SelectedValue,
                                         DateTime.Now.Year.ToString(),
                                         DateTime.Now.Month.ToString(),
                                         DateTime.Now.Day.ToString(),
@@ -396,16 +465,23 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
 
         protected void rbl_EstablishmentTypeCode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbl_NoticeTitle.Text = string.Format("Please enter the title for ", rbl_EstablishmentTypeCode.Text);
+            lbl_NoticeTitle.Text = string.Format("Please enter the title for ", ddlEstbType.Text);
         }
 
         protected void gridview_Establishment_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
             lit_CurrentPage.Text = string.Format("<span class='CurrentPage'>Page# {0}/{1}", (e.NewPageIndex +1).ToString(), gridview_Establishment.PageCount.ToString());
             gridview_Establishment.PageIndex = e.NewPageIndex;
+
+            BindGridview();
+            
+        }
+
+        protected void btnViewEstbType_Click(object sender, EventArgs e)
+        {
             BindGridview();
         }
 
-        
+         
     }
 }

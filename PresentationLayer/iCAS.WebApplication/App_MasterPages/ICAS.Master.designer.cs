@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Micro.WebApplication.App_MasterPages {
-    
-    
-    public partial class ICAS {
-        
+namespace Micro.WebApplication.App_MasterPages
+{
+
+
+    public partial class ICAS
+    {
+
         /// <summary>
         /// Head_ICAS control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Micro.WebApplication.App_MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlHead Head_ICAS;
-        
+
         /// <summary>
         /// formICAS control.
         /// </summary>
@@ -29,16 +31,7 @@ namespace Micro.WebApplication.App_MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm formICAS;
-        
-        /// <summary>
-        /// WebUserControlMenu1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::WebUserControlMenu WebUserControlMenu1;
-        
+
         /// <summary>
         /// ScriptManagerICAS control.
         /// </summary>
@@ -47,7 +40,7 @@ namespace Micro.WebApplication.App_MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManagerICAS;
-        
+
         /// <summary>
         /// lit_Welcome control.
         /// </summary>
@@ -56,7 +49,7 @@ namespace Micro.WebApplication.App_MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lit_Welcome;
-        
+
         /// <summary>
         /// ContentPlaceHolder1 control.
         /// </summary>
@@ -65,61 +58,7 @@ namespace Micro.WebApplication.App_MasterPages {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
-        
-        /// <summary>
-        /// ctrl_PrincipalMessage1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::LTPL.ICAS.WebApplication.App_UserControls.ICAS.PrincipalMessage ctrl_PrincipalMessage1;
-        
-        /// <summary>
-        /// ctrl_EstablishmentZone1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::LTPL.ICAS.WebApplication.App_UserControls.ICAS.UC_EstablishmentZone ctrl_EstablishmentZone1;
-        
-        /// <summary>
-        /// ctrl_LibraryBookSearch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::TCon.iCAS.WebApplication.App_UserControls.Library.UC_LibraryBookSearch ctrl_LibraryBookSearch;
-        
-        /// <summary>
-        /// ctrl_StudentZone control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::LTPL.ICAS.WebApplication.App_UserControls.ICAS.UC_StudentZone ctrl_StudentZone;
-        
-        /// <summary>
-        /// ctrl_StaffZone1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::LTPL.ICAS.WebApplication.App_UserControls.ICAS.UC_StaffZone ctrl_StaffZone1;
-        
-        /// <summary>
-        /// UC_LinksZone1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::LTPL.ICAS.WebApplication.App_UserControls.ICAS.UC_LinksZone UC_LinksZone1;
-        
+
         /// <summary>
         /// ctrl_WebFooter control.
         /// </summary>

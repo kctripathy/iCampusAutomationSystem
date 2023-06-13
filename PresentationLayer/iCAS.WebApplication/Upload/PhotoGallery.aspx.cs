@@ -160,7 +160,7 @@ namespace Micro.WebApplication.UPLOAD
 
         public void BindGridview()
         {
-            PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCode("Y");
+            PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCode(EstbTypeConstants.PHOTO);
             gridview_Establishment.DataSource = PageVariables.EstablishmentList;
             gridview_Establishment.DataBind();
         }
@@ -176,7 +176,7 @@ namespace Micro.WebApplication.UPLOAD
             //string theNewFileName = UploadFileGetNewFileName();
 
             Establishment objEstablishment = new Establishment();
-            objEstablishment.EstbTypeCode = rbl_EstablishmentTypeCode.SelectedValue;
+            objEstablishment.EstbTypeCode = EstbTypeConstants.PHOTO;
             objEstablishment.EstbTitle = txt_NoticeTitle.Text;
             objEstablishment.EstbViewStartDate = DateTime.Parse(txt_Startdate.Text);
             objEstablishment.EstbViewEndDate = DateTime.Parse(txt_Enddate.Text);
@@ -204,7 +204,7 @@ namespace Micro.WebApplication.UPLOAD
             //string theNewFileName = UploadFileGetNewFileName();
 
             int ProReturnValue = 0;
-            PageVariables.theestablishment.EstbTypeCode = rbl_EstablishmentTypeCode.SelectedValue;
+            PageVariables.theestablishment.EstbTypeCode = EstbTypeConstants.PHOTO;
             PageVariables.theestablishment.EstbTitle = txt_NoticeTitle.Text;
             PageVariables.theestablishment.EstbViewStartDate = DateTime.Parse(txt_Startdate.Text);
             PageVariables.theestablishment.EstbViewEndDate = DateTime.Parse(txt_Enddate.Text);
@@ -229,8 +229,7 @@ namespace Micro.WebApplication.UPLOAD
 
         public void PopulateFormField(Establishment theestablishment)
         {
-            rbl_EstablishmentTypeCode.SelectedValue = theestablishment.EstbTypeCode;
-            txt_NoticeTitle.Text = theestablishment.EstbTitle;
+             txt_NoticeTitle.Text = theestablishment.EstbTitle;
             txt_Startdate.Text = theestablishment.EstbViewStartDate.ToString();
             txt_Enddate.Text = theestablishment.EstbViewEndDate.ToString();
             txt_Description.Text = theestablishment.EstbDescription.Replace("<br/>", "\n");
@@ -239,7 +238,6 @@ namespace Micro.WebApplication.UPLOAD
 
         public void Reset()
         {
-            //rbl_EstablishmentTypeCode.ClearSelection();
             txt_NoticeTitle.Text = string.Empty;
             txt_Startdate.Text = string.Empty;
             txt_Enddate.Text = string.Empty;
@@ -287,7 +285,7 @@ namespace Micro.WebApplication.UPLOAD
 
                     //create the path to save the file to
                     theNewFileName1 = string.Format("PHOTO_{1}_{2}_{3}_H{4}_M{5}_S{6}_{0}{7}",
-                                        rbl_EstablishmentTypeCode.SelectedValue,
+                                        EstbTypeConstants.PHOTO,
                                         DateTime.Now.Year.ToString(),
                                         DateTime.Now.Month.ToString(),
                                         DateTime.Now.Day.ToString(),
@@ -299,7 +297,7 @@ namespace Micro.WebApplication.UPLOAD
 
                     //create the path to save the file to
                     theNewFileName2 = string.Format("PHOTO_{1}_{2}_{3}_H{4}_M{5}_S{6}_{0}_Thumbnail{7}",
-                                        rbl_EstablishmentTypeCode.SelectedValue,
+                                        EstbTypeConstants.PHOTO,
                                         DateTime.Now.Year.ToString(),
                                         DateTime.Now.Month.ToString(),
                                         DateTime.Now.Day.ToString(),

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TCon.iCAS.WebApplication</RootNamespace>
     <AssemblyName>TCon.iCAS.WebApplication</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -35,6 +36,8 @@
     <UseGlobalApplicationHostFile />
     <TargetFrameworkProfile />
     <Use64BitIISExpress />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -81,90 +84,114 @@
   <ItemGroup>
     <Reference Include="AjaxControlToolkit, Version=4.1.60623.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\AjaxControlToolkit.Binary.NET4\AjaxControlToolkit.dll</HintPath>
+      <HintPath>..\..\ExternalAssemblies\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="ClosedXML, Version=0.69.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\ClosedXML.dll</HintPath>
+      <HintPath>..\..\ExternalAssemblies\ClosedXML.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <HintPath>..\..\ExternalAssemblies\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\CrystalDecisions.ReportSource.dll</HintPath>
+      <HintPath>..\..\ExternalAssemblies\CrystalDecisions.ReportSource.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+      <HintPath>..\..\ExternalAssemblies\CrystalDecisions.Shared.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
+      <HintPath>..\..\ExternalAssemblies\CrystalDecisions.Web.dll</HintPath>
     </Reference>
     <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\DocumentFormat.OpenXml.dll</HintPath>
+      <HintPath>..\..\ExternalAssemblies\DocumentFormat.OpenXml.dll</HintPath>
     </Reference>
-    <Reference Include="DotNetOpenAuth.Core">
-      <HintPath>..\..\..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.3.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DotNetOpenAuth.Core.4.3.4.13329\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="EPPlus, Version=4.0.5.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EPPlus.4.0.5\lib\net20\EPPlus.dll</HintPath>
+      <HintPath>..\..\ExternalAssemblies\EPPlus.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EPPlus.Interfaces.6.0.0\lib\net452\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.0.0.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EPPlus.System.Drawing.6.0.0\lib\net452\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
     <Reference Include="Micro.Security">
-      <HintPath>..\..\..\Micro.Assemblies\ExternalAssemblies\Micro.Security.dll</HintPath>
+      <HintPath>..\..\ExternalAssemblies\Micro.Security.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.IO.RecyclableMemoryStream.2.2.0\lib\net462\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <Private>True</Private>
+      <HintPath>..\..\ExternalAssemblies\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
+      <HintPath>..\..\ExternalAssemblies\Microsoft.ReportViewer.WebForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <HintPath>..\..\ExternalAssemblies\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Linq" />
-    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <HintPath>..\..\ExternalAssemblies\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
-    <Reference Include="System.Net.Http.WebRequest, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Threading.Tasks" />
     <Reference Include="System.Web.Abstractions">
       <Private>True</Private>
     </Reference>
@@ -173,23 +200,22 @@
     </Reference>
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.8\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+      <HintPath>..\..\ExternalAssemblies\System.Web.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <HintPath>..\..\ExternalAssemblies\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="System.Web.Mvc, Version=5.2.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.8\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.3.2.8\lib\net45\System.Web.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.Routing">
@@ -200,15 +226,15 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.8\lib\net45\System.Web.WebPages.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.8\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.8\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml">
@@ -394,12 +420,24 @@
     <Content Include="Alumni.aspx" />
     <Content Include="bin\Micro.Security.dll" />
     <Content Include="bin\Microsoft.Office.Interop.Excel.dll" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
     <Content Include="Content\bootstrap-original.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min-original.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Calendar.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
@@ -424,11 +462,11 @@
     <Content Include="Documents\PHOTO_2017_12_21_H19_M1_S51_Y_Thumbnail.jpg" />
     <Content Include="Documents\PHOTO_2017_12_21_H19_M27_S16_Y.jpg" />
     <Content Include="Documents\PHOTO_2017_12_21_H19_M27_S16_Y_Thumbnail.jpg" />
+    <Content Include="Form4.aspx" />
     <Content Include="NAAC.aspx" />
     <Content Include="Downloads\HtmlPage1.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="AdminWorldBank.aspx" />
     <Content Include="iCAS\HtmlPage1.html" />
     <Content Include="Images\About\crest.jpg" />
@@ -643,16 +681,6 @@
     <Content Include="js\jquery-1.10.1.min.js" />
     <Content Include="js\jquery.lightbox-0.5.min.js" />
     <Content Include="PhotoGallery.aspx" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -674,15 +702,35 @@
     <Content Include="Documents\PUBL_1_Y2017_M12_D28-H10_M1_S4.pdf" />
     <Content Include="Documents\PUBL_6_Y2017_M12_D29-H13_M13_S2.pdf" />
     <Content Include="Documents\PUBL_9_Y2017_M12_D21-H21_M31_S38.pdf" />
-    <Content Include="App_MasterPages\Site.Master" />
-    <Content Include="App_MasterPages\PKTrendz.Master" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
     <None Include="Properties\PublishProfiles\local_publish.pubxml" />
     <None Include="Properties\PublishProfiles\test.tsdcollege.in - Web Deploy %282%29.pubxml" />
-    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.1.1.js" />
-    <Content Include="Scripts\jquery-3.1.1.min.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\jquery-3.6.0.js" />
+    <Content Include="Scripts\jquery-3.6.0.min.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.js" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -1047,7 +1095,6 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Form4.aspx" />
     <Content Include="WebSearch.aspx" />
     <Content Include="WebSearchForm.aspx" />
     <Content Include="App_MasterPages\ICAS-Reports.Master" />
@@ -1066,10 +1113,16 @@
     <Content Include="Themes\USER_PHOTO\Guest\stud-01.png" />
     <Content Include="Themes\USER_PHOTO\Staff\staf-01.png" />
     <Content Include="Themes\USER_PHOTO\Student\stud-01.png" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="tsd-college-governing-body.pdf" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.6.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1103,7 +1156,7 @@
     <Compile Include="api\ChartController.cs" />
     <Compile Include="api\EstablishmentController.cs" />
     <Compile Include="api\LibraryController.cs" />
-    <Compile Include="api\NoticesController.cs" />
+    <Compile Include="api\AllControllers.cs" />
     <Compile Include="api\PublicationsController.cs" />
     <Compile Include="Apps\Admin\TheCollege.aspx.cs">
       <DependentUpon>TheCollege.aspx</DependentUpon>
@@ -1641,20 +1694,6 @@
     <Compile Include="App_MasterPages\MicroERP-MasterPage.Master.designer.cs">
       <DependentUpon>MicroERP-MasterPage.Master</DependentUpon>
     </Compile>
-    <Compile Include="App_MasterPages\PKTrendz.Master.cs">
-      <DependentUpon>PKTrendz.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="App_MasterPages\PKTrendz.Master.designer.cs">
-      <DependentUpon>PKTrendz.Master</DependentUpon>
-    </Compile>
-    <Compile Include="App_MasterPages\Site.Master.cs">
-      <DependentUpon>Site.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="App_MasterPages\Site.Master.designer.cs">
-      <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
     <Compile Include="App_UserControls\Admin\UC_AdminZone.ascx.cs">
       <DependentUpon>UC_AdminZone.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1879,7 +1918,6 @@
     <Compile Include="App_UserControls\UC_WebUserControlSlider.ascx.designer.cs">
       <DependentUpon>UC_WebUserControlSlider.ascx</DependentUpon>
     </Compile>
-    <Compile Include="App_Code\ClassExcel.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="AdminWorldBank.aspx.cs">
       <DependentUpon>AdminWorldBank.aspx</DependentUpon>
@@ -2092,6 +2130,13 @@
     </Compile>
     <Compile Include="Document.aspx.designer.cs">
       <DependentUpon>Document.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.aspx.cs">
+      <DependentUpon>Form4.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form4.aspx.designer.cs">
+      <DependentUpon>Form4.aspx</DependentUpon>
     </Compile>
     <Compile Include="NAAC.aspx.cs">
       <DependentUpon>NAAC.aspx</DependentUpon>
@@ -2400,13 +2445,6 @@
     <Compile Include="Students.aspx.designer.cs">
       <DependentUpon>Students.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Form4.aspx.cs">
-      <DependentUpon>Form4.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Form4.aspx.designer.cs">
-      <DependentUpon>Form4.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Upload\Approvals.aspx.cs">
       <DependentUpon>Approvals.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2462,13 +2500,6 @@
     </Compile>
     <Compile Include="App_Error\PermissionNeeded.aspx.designer.cs">
       <DependentUpon>PermissionNeeded.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="App_MasterPages\MicroERP-Reports.Master.cs">
-      <DependentUpon>MicroERP-Reports.Master</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="App_MasterPages\MicroERP-Reports.Master.designer.cs">
-      <DependentUpon>MicroERP-Reports.Master</DependentUpon>
     </Compile>
     <Compile Include="App_UserControls\Common\UC_Address.ascx.cs">
       <DependentUpon>UC_Address.ascx</DependentUpon>
@@ -2896,6 +2927,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="App_Data\ICAS\ESTABLMTS\" />
     <Folder Include="App_Data\ICAS\estb\" />
     <Folder Include="App_Data\ICAS\excel\" />
@@ -2910,24 +2942,25 @@
     <Folder Include="Themes\Common\HTML\TSDC\" />
     <Folder Include="Themes\Common\NewFolder1\" />
     <Folder Include="Views\Publications\" />
+    <Folder Include="Views\TSDC\" />
     <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BusinessLayers\Micro.BusinessLayer\My.BusinessLayer.csproj">
+    <ProjectReference Include="..\..\BusinessLayers\Micro.BusinessLayer\Micro.BusinessLayer.csproj">
       <Project>{33040DDB-A6C8-4E33-A803-C6B17283B751}</Project>
-      <Name>My.BusinessLayer</Name>
+      <Name>Micro.BusinessLayer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Commons\Micro.Common\iCAS.Commons.csproj">
+    <ProjectReference Include="..\..\Commons\Micro.Common\Micro.Commons.csproj">
       <Project>{F565A960-EC2A-4B06-9A73-008FF9D03FC5}</Project>
-      <Name>iCAS.Commons</Name>
+      <Name>Micro.Commons</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Commons\Micro.Framework\iCAS.Framework.csproj">
       <Project>{A9171D34-C127-400C-B448-DA66A7140525}</Project>
       <Name>iCAS.Framework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Commons\Micro.Objects\iCAS.Objects.csproj">
+    <ProjectReference Include="..\..\Commons\Micro.Objects\Micro.Objects.csproj">
       <Project>{AEA9D061-DDF8-4EA7-9A9D-23BFE1130D11}</Project>
-      <Name>iCAS.Objects</Name>
+      <Name>Micro.Objects</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -2948,9 +2981,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Default\Skin1.skin" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_MasterPages\MicroERP-Reports.Master" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
@@ -2990,6 +3020,16 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

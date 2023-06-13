@@ -3,65 +3,93 @@
 
 <%@ Register Assembly="Micro.Commons" Namespace="Micro.Commons" TagPrefix="IAControl" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderMicroERP" runat="server">
-    <asp:UpdatePanel runat="server" ID="updatePanel_EmployeeDetails">
+    <style type="text/css">
+        .divider-line {
+            margin: 0px;
+            padding: 0px;
+            color: #424242;
+        }
+
+        .apply-message {
+            font-weight: bold;
+            font-size: small;
+            color: darkred;
+        }
+
+        .estb-dropdown-view {
+            height: 30px;
+            width: 87%;
+            padding: 5px;
+            font-size: inherit;
+            font-weight: bold;
+        }
+
+        .btn-view {
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+        }
+    </style>
+    <asp:UpdatePanel runat="server" ID="updatePanel_Approval">
         <ContentTemplate>
             <ul id="EstablishmentApprovalsUL">
                 <h1 class="PageTitle">Approve Uploads and Establisments:</h1>
                 <li class="FormLabel">
-                    <asp:Label ID="lbl_MessageType" runat="server" Text="Please Select the Type:" />
+                    <asp:Label ID="lbl_MessageType" runat="server" Text="Establishment Type:" />
                 </li>
                 <li class="FormValue">
-                    <asp:RadioButtonList ID="rbl_EstablishmentTypeCode" runat="server" AutoPostBack="true" RepeatDirection="Horizontal" Width="100%" CssClass="EstbTypeRadioButtons" OnSelectedIndexChanged="rbl_EstablishmentTypeCode_SelectedIndexChanged">
-                        <asp:ListItem Text="All" Value="A" />
-                        <asp:ListItem Text="Notice" Value="N" />
-                        <asp:ListItem Text="Tender" Value="T" />
-                        <asp:ListItem Text="Circular" Value="C" />
-                        <asp:ListItem Text="Publications" Value="P" />
-                        <asp:ListItem Text="NAAC" Value="Z" />
-                        <asp:ListItem Text="Recent Activities" Value="R" />
-                        
-                    </asp:RadioButtonList>
+                        <asp:DropDownList runat="server" ID="ddl_EstablishmentTypeCode" CssClass="estb-dropdown-view">
+                        </asp:DropDownList>
+                        <asp:Button runat="server" ID="btn_View" CssClass="btn btn-primary m-1 p-2 btn-view" Text="View" OnClick="btn_View_Click" />
                 </li>
-                <li>
-                    <asp:Label runat="server" ID="lbl_Status" Text="Select the status to apply:"></asp:Label>
-                    <asp:DropDownList ID="ddl_EstablishmentStatus" runat="server" OnSelectedIndexChanged="ddl_EstablishmentStatus_SelectedIndexChanged" AutoPostBack="true">
-                        <asp:ListItem Value="A">Approved</asp:ListItem>
-                        <asp:ListItem Value="P">Pending</asp:ListItem>
-                    </asp:DropDownList>
-                    <asp:Button ID="btn_Approve" runat="server" OnClick="btn_Approve_Click" Text="Approve" CssClass="btn btn-primary" />
+
+                <li class="FormLabel">
+                    &nbsp;
                 </li>
-                <li>
-                    <asp:Label ID="lbl_TheMessage" runat="server" Text="" />
+                <li class="FormValue">
+                    <asp:Button ID="btn_Approve" runat="server" OnClick="btn_Approve_Click" CommandArgument="A" Text="APPROVE" CssClass="btn btn-success m-1 p-2 btn-view" CausesValidation="true" />
+                    <asp:Button ID="btn_Pending" runat="server" OnClick="btn_Approve_Click" CommandArgument="P" Text="MAKE PENDING" CssClass="btn btn-danger m-1 p-2 btn-view" CausesValidation="true" />
                 </li>
+
+                <li class="message-text">
+                    <asp:Literal ID="lit_Message" runat="server" Text="" />
+                </li>
+
                 <li>
                     <asp:GridView ID="gview_EstablishmentApprovals" runat="server" AutoGenerateColumns="false"
                         CssClass="GridView">
                         <Columns>
-                            <asp:CommandField ShowSelectButton="True" HeaderText="View" ButtonType="Image" SelectImageUrl="~/Themes/Default/Images/GRID_SELECT.ico" ControlStyle-CssClass="ViewLink" ItemStyle-CssClass="ViewLinkItem">
-                                <ControlStyle CssClass="ViewLink" />
-                                <ItemStyle CssClass="ViewLinkItem" />
-                            </asp:CommandField>
                             <asp:TemplateField>
                                 <ItemTemplate>
-                                    <asp:CheckBox runat="server" ID="chk_EstablishmentID" Visible="true" AutoPostBack="true" />
+                                    <asp:CheckBox runat="server" ID="chk_EstablishmentID" Visible="true" AutoPostBack="false"  />
                                     <asp:Label runat="server" ID="lbl_EstablishmentID" Text='<%# Eval("EstbID") %>' Visible="false" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="EstbID" HeaderText="EstablishmentId" Visible="False" ItemStyle-CssClass="ID" />
-                            <asp:BoundField DataField="EstbDate" HeaderText="Date" DataFormatString="{0:dd-MMM-yyyy}"/>
-                                    
+                            <asp:BoundField DataField="EstbDate" HeaderText="Date" DataFormatString="{0:dd-MM-yy}" ItemStyle-CssClass="date"/>
                             <asp:BoundField DataField="EstbTypeCodeDesc" HeaderText="Type" Visible="true" ItemStyle-CssClass="Type" />
-                            <asp:BoundField DataField="EstbTitle" HeaderText="Tittle" ItemStyle-CssClass="Tittle" />
-                            <%--<asp:BoundField DataField="EstbDescription" HeaderText="Description" ItemStyle-CssClass="Description" />--%>
-                            <%--<asp:BoundField DataField="EstbViewStartDate" HeaderText="Start Date" DataFormatString="{0:dd/MM/yyyy}" ItemStyle-CssClass="Date" />--%>
-                            <%--<asp:BoundField DataField="EstbViewEndDate" HeaderText="End Date" DataFormatString="{0:dd/MM/yyyy}" ItemStyle-CssClass="Date" />--%>
-                            <asp:BoundField DataField="AuthorOrContributorName" HeaderText="Author/Contributor Name" ItemStyle-CssClass="AuthorContributor" />
+                            <asp:TemplateField>
+                                <ItemTemplate>
+                                    <asp:Label runat="server" ID="lbl_Title" Text='<%# Eval("EstbTitle") %>' Font-Bold="true" />
+                                    <hr class="divider-line" />
+                                    <asp:Label runat="server" ID="lbl_Desc" Text='<%# Eval("EstbDescription") %>' />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:BoundField DataField="AuthorOrContributorName" HeaderText="Author" ItemStyle-CssClass="AuthorContributor" />
                             <asp:BoundField DataField="EstbStatusFlagDesc" HeaderText="Status" ItemStyle-CssClass="Status" />
                         </Columns>
                     </asp:GridView>
                 </li>
 
             </ul>
+            <asp:UpdateProgress runat="server" ID="PageUpdateProgress">
+                <ProgressTemplate>
+                    <div id="UpdateProgress">
+                        <div class="UpdateProgressAreaLogin">
+                            <span class="UpdateProgressAreaTextLogin">Processing...</span>
+                        </div>
+                    </div>
+                </ProgressTemplate>
+            </asp:UpdateProgress>
         </ContentTemplate>
     </asp:UpdatePanel>
     <IAControl:DialogBox ID="dialog_Message" runat="server" Title="Message:" BackgroundCssClass="modalBackground"

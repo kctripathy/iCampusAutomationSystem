@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Micro.DataAccessLayer</RootNamespace>
     <AssemblyName>Micro.DataAccessLayer</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>
     </SccProjectName>
@@ -20,6 +20,7 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,6 +30,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,10 +39,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Micro.Security">
-      <HintPath>..\..\..\Kishor_JobWorks\ICAS_TSDC\ICAS_TSDC\LTPL-iCAS\Micro.PresentationLayer\Micro.WebApplication\Micro.WebApplication\bin\Micro.Security.dll</HintPath>
+      <HintPath>..\..\ExternalAssemblies\Micro.Security.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
@@ -245,13 +248,13 @@
     <Compile Include="XMLDataAccess.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Commons\Micro.Common\iCAS.Commons.csproj">
+    <ProjectReference Include="..\..\Commons\Micro.Common\Micro.Commons.csproj">
       <Project>{F565A960-EC2A-4B06-9A73-008FF9D03FC5}</Project>
-      <Name>iCAS.Commons</Name>
+      <Name>Micro.Commons</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Commons\Micro.Objects\iCAS.Objects.csproj">
+    <ProjectReference Include="..\..\Commons\Micro.Objects\Micro.Objects.csproj">
       <Project>{AEA9D061-DDF8-4EA7-9A9D-23BFE1130D11}</Project>
-      <Name>iCAS.Objects</Name>
+      <Name>Micro.Objects</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

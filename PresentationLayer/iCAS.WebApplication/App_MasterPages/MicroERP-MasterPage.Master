@@ -76,24 +76,19 @@
 <body>
     <form id="formMicro" runat="server">
 
-        <uc1:WebUserControlMenu ID="WebUserControlMenu1" runat="server" />
+        <%--<uc1:WebUserControlMenu ID="WebUserControlMenu1" runat="server" />--%>
 
         <asp:ScriptManager ID="ScriptManagerMicro" runat="server" />
 
         <div id="TheContainerICAS" class="container body-content">
             <div id="WebContent">
                 <div id="WebHeader">
-                    .<ltpl:UC_UserLoggedOn ID="ctrl_LoggedOnUser" runat="server" />
+                     <ltpl:UC_UserLoggedOn ID="ctrl_LoggedOnUser" runat="server" />
                 </div>
                 <div id="WebBody">
-                    <div id="PageContent_LeftColumn">
-                        <div id="divUserLogin" runat="server" style="border-bottom: solid 1px #ccc; min-height: 125px;display:none;">
-                            
-                        </div>
-                        <asp:Literal runat="server" ID="lit_MenuItems" Visible="false" />
-
-
+                    <div id="PageContent_LeftColumn" style="padding-left: 4px">
                         <asp:TreeView ID="TreeView1" runat="server" ImageSet="Arrows" Visible="true" CssClass="TreeViewStyle" />
+                        <asp:LinkButton runat="server" ID="lnkLogout" OnClick="lnkLogout_Click" CausesValidation="false">&nbsp;Logout</asp:LinkButton>
                     </div>
                     <div id="PageContent_RightColumn">
                         <asp:ContentPlaceHolder ID="ContentPlaceHolderMicroERP" runat="server"></asp:ContentPlaceHolder>

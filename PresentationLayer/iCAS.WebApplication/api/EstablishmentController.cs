@@ -25,7 +25,7 @@ namespace TCon.iCAS.WebApplication.api
 		{
 			//return new string[] { "value1", "value2" };
 			List<Establishment> TheEstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentList();
-			//UC_EstablishmentZone.PageVariables.TheEstablishmentList = TheEstablishmentList;
+			
 
 			return new HttpResponseMessage(HttpStatusCode.OK)
 			{
@@ -34,9 +34,17 @@ namespace TCon.iCAS.WebApplication.api
 		}
 
 		// GET api/<controller>/5
-		public string Get(int id)
+		public HttpResponseMessage Get(int id)
 		{
-			return "value";
+			//return "value";
+			//List<Establishment> TheEstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentList();
+			Establishment estb = (Establishment)EstablishmentManagement.GetInstance.GetEstablishmentList().Where(e => e.EstbID == id);
+								  
+
+			return new HttpResponseMessage(HttpStatusCode.OK)
+			{
+				Content = new StringContent(JArray.FromObject(estb).ToString(), Encoding.UTF8, "application/json")
+			};
 		}
 
 		// POST api/<controller>

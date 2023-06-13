@@ -15,8 +15,28 @@
         }
         .WatermarkCssClass
         {
-            color: darkgray;
+            color: #ccc;
         }
+         
+        .estb-desc {
+             width: 80%;
+             height: 150px;
+        }
+        .estb-dropdown {
+            height: 30px;
+            width: 80%;
+            padding: 5px;
+            font-size: inherit;
+            font-weight: bold;
+        }
+         .estb-dropdown-view {
+            height: 30px;
+            width: 94%;
+            padding: 5px;
+            font-size: inherit;
+            font-weight: bold;
+        }
+        
     </style>
     <asp:UpdatePanel ID="UpdatePanel_Establishment" runat="server" UpdateMode="Conditional">
         <ContentTemplate>
@@ -28,53 +48,54 @@
                 <asp:View ID="InputControls" runat="server">
 
                     <ul id="Establishments">
+                        
                         <li class="Formlabel">
-                            <asp:Label ID="lbl_MessageType" runat="server" Text="Select Establishment Type:" />
+                            <span class="RequiredField">*</span>
+                            <asp:Label ID="lbl_MessageType" runat="server" Text="Establishment Type:" />
                         </li>
 
                         <li class="Formvalue">
-                            <asp:RadioButtonList ID="rbl_EstablishmentTypeCode" runat="server" RepeatDirection="Horizontal" OnSelectedIndexChanged="rbl_EstablishmentTypeCode_SelectedIndexChanged">
-                                <asp:ListItem Value="R" Selected="True">Recent Activities</asp:ListItem>
-                                <asp:ListItem Value="N">Notice</asp:ListItem>
-                                <asp:ListItem Value="T">Tender</asp:ListItem>
-                                <asp:ListItem Value="C">Circular</asp:ListItem>
-                                <asp:ListItem Value="C">Syllabus</asp:ListItem>
-                                <asp:ListItem Value="Z">NAAC</asp:ListItem>
-                                <asp:ListItem Value="W">World Bank</asp:ListItem>
-                                <asp:ListItem Value="M">MoM</asp:ListItem>
-                            </asp:RadioButtonList>
-                            <asp:RequiredFieldValidator ID="requiredFieldValidator_EstablishmentTypeCode" runat="server" ControlToValidate="rbl_EstablishmentTypeCode" Display="Dynamic" SetFocusOnError="true" />
+                            <asp:DropDownList runat="server" ID="ddlEstbType" CssClass="estb-dropdown">
+					        </asp:DropDownList>
+                           
+                            <asp:RequiredFieldValidator 
+                                ID="requiredFieldValidator_EstablishmentTypeCode" 
+                                runat="server" ControlToValidate="ddlEstbType" 
+                                Display="Dynamic" 
+                                ForeColor="Red"
+                                ErrorMessage="required"
+                                SetFocusOnError="true" />
                         </li>
                         <li class="Formlabel">
                             <span class="RequiredField">*</span>
-                            <asp:Label ID="lbl_NoticeTitle" runat="server" Text="Please Enter the Title/Subject: " />
+                            <asp:Label ID="lbl_NoticeTitle" runat="server" Text="Please Enter the Title: " />
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_NoticeTitle" runat="server" Width="80%" />
                             <ajax:TextBoxWatermarkExtender runat="server" ID="watermarkTxt_NoticeTitle" TargetControlID="txt_NoticeTitle" WatermarkText="Example: World Bank Team visited our college" WatermarkCssClass="WatermarkCssClass" />
-                            <asp:RequiredFieldValidator ID="req_NoticeTitle" runat="server" ControlToValidate="txt_NoticeTitle" ErrorMessage="*" ForeColor="Red" Text="* Please enter!" SetFocusOnError="true" />
+                            <asp:RequiredFieldValidator ID="req_NoticeTitle" runat="server" ControlToValidate="txt_NoticeTitle" ErrorMessage="*" ForeColor="Red" Text="required" SetFocusOnError="true" />
                         </li>
                         <li class="Formlabel">
                             <span class="RequiredField">*</span>
-                            <asp:Label ID="lbl_Startdate" runat="server" Text="Display This From Date:" />
+                            <asp:Label ID="lbl_Startdate" runat="server" Text="Display this from date:" />
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_Startdate" runat="server" AutoPostBack="false" />
                             <asp:ImageButton runat="server" ID="imgbtn_Startdate" CausesValidation="false" ToolTip="Show Calender" ImageAlign="AbsMiddle" ImageUrl="~/Themes/Default/Images/Calander 01.gif" Height="21" Width="21" />
                             <ajax:CalendarExtender runat="server" Format="dd-MMM-yyyy" ID="clndrextender_Startdate" PopupButtonID="imgbtn_Startdate" CssClass="MicroCalendar" TargetControlID="txt_Startdate">
                             </ajax:CalendarExtender>
-                            <asp:RequiredFieldValidator ID="requiredFieldValidator_Startdate" runat="server" ControlToValidate="txt_Startdate" SetFocusOnError="true" ErrorMessage="*" ForeColor="Red" Text="It can't be left empty!" />
+                            <asp:RequiredFieldValidator ID="requiredFieldValidator_Startdate" runat="server" ControlToValidate="txt_Startdate" SetFocusOnError="true" ErrorMessage="*" ForeColor="Red" Text="required" />
                         </li>
                         <li class="Formlabel">
                             <span class="RequiredField">*</span>
-                            <asp:Label ID="lbl_Enddate" runat="server" Text="Display This Till Date:" />
+                            <asp:Label ID="lbl_Enddate" runat="server" Text="Display this till date:" />
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_Enddate" runat="server" AutoPostBack="false" />
                             <asp:ImageButton runat="server" ID="imgbtn_Enddate" CausesValidation="false" ToolTip="Show Calender" ImageAlign="AbsMiddle" ImageUrl="~/Themes/Default/Images/Calander 01.gif" Height="21" Width="21" />
                             <ajax:CalendarExtender runat="server" Format="dd-MMM-yyyy" ID="clndrextender_Enddate" PopupButtonID="imgbtn_Enddate" CssClass="MicroCalendar" TargetControlID="txt_Enddate" />
 
-                            <asp:RequiredFieldValidator ID="requiredFieldValidator_Enddate" runat="server" ControlToValidate="txt_Enddate" SetFocusOnError="true" ErrorMessage="*" ForeColor="Red" Text="It can't be left empty!" />
+                            <asp:RequiredFieldValidator ID="requiredFieldValidator_Enddate" runat="server" ControlToValidate="txt_Enddate" SetFocusOnError="true" ErrorMessage="*" ForeColor="Red" Text="required" />
 
                         </li>
                         <li class="Formlabel">
@@ -82,19 +103,20 @@
                             <asp:Label ID="lbl_Description" runat="server" Text="Description:" />
                         </li>
                         <li class="Formvalue">
-                            <asp:TextBox ID="txt_Description" runat="server" Height="81px" Width="400px" TextMode="MultiLine" /><br />
-                            <ajax:TextBoxWatermarkExtender runat="server" ID="TextBoxWatermarkExtender_txt_Description" TargetControlID="txt_Description" WatermarkText="Enter Detail Description of the Notice/ Tender/ Circular/ Recent Activities Here" WatermarkCssClass="" />
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator_Description" runat="server" ControlToValidate="txt_Description" ErrorMessage="*" ForeColor="Red" Text="Please enter the establishment description! it can't left blank." />
+                            <asp:TextBox ID="txt_Description" runat="server" CssClass="estb-desc" TextMode="MultiLine" /><br />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator_Description" runat="server" ControlToValidate="txt_Description" ErrorMessage="*" ForeColor="Red" Text="required" />
                         </li>
-                        <li class="Formlabel">
-                            <asp:Label ID="Label1" runat="server" Text="File to Upload:" />
+
+                        <li class="Formlabel" style="text-align:right">
+                            <asp:Label ID="Label1" runat="server" Text="Choose a file to Upload:" />
                         </li>
+                        
                         <li class="Formvalue">
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <ContentTemplate>
-                                    <asp:FileUpload runat="server" ID="fileUploadEstb" Width="63%" BorderStyle="Solid" BorderWidth="1" BorderColor="DarkGray" />
+                                    <asp:FileUpload runat="server" ID="fileUploadEstb" Width="63%" BorderStyle="Solid" BorderWidth="1" BorderColor="DarkGray" class="btn btn-secondary btn-xs" />
                                     <br />
-                                    <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="Upload_File" CssClass="btn btn-primary m-1 p-1" CausesValidation="true" />
+                                    <asp:Button ID="btnUpload" runat="server" Text="UPLOAD FILE" OnClick="Upload_File" CssClass="btn btn-primary m-2 p-2" CausesValidation="false" />
                                     <br />
                                     <asp:Label runat="server" ID="lbl_FileUploadStatus" ForeColor="Red" Text="File uploaded successfully. please save/update the record now" Visible="false" />
 
@@ -106,9 +128,12 @@
                         </li>
                         <li class="Formlabel">&nbsp;</li>
                         <li class="Formvalue">&nbsp;<asp:Label runat="server" ID="lblMessage" Text="" /></li>
+
+
+                        
                         <li class="FormButton_Top">
-                            <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Save" CssClass="btn btn-primary submitBtnClass" />
-                            <asp:Button ID="btn_view" runat="server" Text="View" OnClick="btn_view_Click" CausesValidation="false" CssClass="viewBtnClass" />
+                            <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Save" CssClass="btn btn-primary p-2 m-1" />
+                            <asp:Button ID="btn_view" runat="server" Text="View" OnClick="btn_view_Click" CausesValidation="false" CssClass="btn btn-primary p-Align2Center m-1" />
                         </li>
                         
                     </ul>
@@ -116,8 +141,13 @@
                 <asp:View ID="view_gridView" runat="server">
                     <ul>
                         <li class="FormButton_Top">
-                            <asp:Literal runat="server" ID="lit_CurrentPage" Text="Current Page: 0/" />                           
+                            <asp:Literal runat="server" ID="lit_CurrentPage" Text="Current Page: 1/" />                           
                             <asp:Button ID="btn_AddNew" runat="server" Text="Add New" OnClick="btn_AddNew_Click" />
+                        </li>
+                        <li class="FormButton_Top">
+                            <asp:DropDownList runat="server" ID="ddlEstbTypeView" CssClass="estb-dropdown-view">
+					        </asp:DropDownList>                         
+                            <asp:Button ID="btnViewEstbType" runat="server" Text="View" OnClick="btnViewEstbType_Click" />
                         </li>
                         <li class="GridView">
                             <asp:GridView ID="gridview_Establishment" runat="server" 
@@ -142,9 +172,9 @@
                                     <asp:BoundField DataField="EstbDate" HeaderText="Date" DataFormatString="{0:dd-MMM-yyyy}"/>
                                     <asp:BoundField DataField="EstbTypeCodeDesc" HeaderText="Type" />
                                     <asp:BoundField DataField="EstbTitle" HeaderText="Tittle" />
+                                    <asp:BoundField DataField="EstbDescription" HeaderText="Description" />
                                     <asp:BoundField DataField="EstbViewStartDate" HeaderText="Start Date" DataFormatString="{0:dd/MMM/yyyy}" />
                                     <asp:BoundField DataField="EstbViewEndDate" HeaderText="End Date" DataFormatString="{0:dd/MMM/yyyy}" />
-                                    <%--<asp:BoundField DataField="EstbDescription" HeaderText="Description" />--%>
                                     <asp:CommandField ShowEditButton="true" HeaderText="Edit" ButtonType="Image" EditImageUrl="~/Themes/Default/Images/GRID_EDIT.ico" ControlStyle-CssClass="EditLink" ItemStyle-CssClass="EditLinkItem">
                                         <ControlStyle CssClass="EditLink" />
                                         <ItemStyle CssClass="EditLinkItem" />

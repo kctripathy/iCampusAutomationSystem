@@ -26,7 +26,8 @@ namespace Micro.WebApplication
 
 			
 
-			RegisterRoutes(RouteTable.Routes);
+
+			//RegisterRoutes(RouteTable.Routes);
 		}
 
 		public static void RegisterRoutes(RouteCollection routes)

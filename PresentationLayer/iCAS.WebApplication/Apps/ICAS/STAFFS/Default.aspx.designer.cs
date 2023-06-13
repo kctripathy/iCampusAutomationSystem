@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace TCon.iCAS.WebApplication.APPS.ICAS.STAFFS {
-    
-    
-    public partial class Default {
-        
+namespace TCon.iCAS.WebApplication.APPS.ICAS.STAFFS
+{
+
+
+    public partial class Default
+    {
+
         /// <summary>
         /// lit_PageTitle control.
         /// </summary>
@@ -20,14 +22,5 @@ namespace TCon.iCAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lit_PageTitle;
-        
-        /// <summary>
-        /// UC_Chart_StudentStrengthYearWise1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::TCon.iCAS.WebApplication.App_UserControls.Charts.UC_Chart_StudentStrengthYearWise UC_Chart_StudentStrengthYearWise1;
     }
 }

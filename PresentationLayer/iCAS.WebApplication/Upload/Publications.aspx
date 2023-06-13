@@ -61,12 +61,14 @@
 
                         ul#ContentPlaceHolderMicroERP_rbl_EstablishmentTypeCode li:nth-child(even)
                         {
-                            background: linear-gradient(white 50%, lightblue 99%, #04a9fc); /*linear-gradient(skyblue, lightblue 98%, #04a9fc);*/
+                            background: #fff;
+                            /*linear-gradient(white 50%, lightblue 99%, #04a9fc);*/ /*linear-gradient(skyblue, lightblue 98%, #04a9fc);*/
                         }
 
                         ul#ContentPlaceHolderMicroERP_rbl_EstablishmentTypeCode li:nth-child(odd)
                         {
-                            background: linear-gradient(white 50%, lightblue 101%, #04a9fc);
+                            background: #fff;
+                                /*linear-gradient(white 50%, lightblue 101%, #04a9fc);*/
                         }
 
                 .TwentyFivePercent
@@ -95,6 +97,12 @@
                 {
                     padding: 0px 20px;
                 }
+                .estb-dropdown {
+                    width: 98%;
+                    padding: 5px;
+                    font-size: medium;
+                    font-weight: bold;
+                }
             </style>
             <h1 class="PageTitle">
                 <asp:Literal runat="server" ID="lit_PageTitle" Text="Manage Publications" />
@@ -104,24 +112,22 @@
                 <asp:View ID="InputControls" runat="server">
 
                     <ul id="UploadStyleUL">
-
-                        <li class="Formlabel">&nbsp;<asp:Label runat="server" ID="lblMessage" Text="Please specify the Publication Type:" /></li>
+                        <li class="Formlabel">
+                            <asp:Label runat="server" ID="lblMessage" Text="Please specify the Publication Type:" />
+                            <span class="RequiredField">*</span>
+                        </li>
 
                         <li class="Formvalue">
-
-                            <asp:RadioButtonList ID="rbl_EstablishmentTypeCode" runat="server" RepeatDirection="Vertical" RepeatLayout="UnorderedList">
-                                <asp:ListItem Value="1" Selected="True"> Article</asp:ListItem>
-                                <asp:ListItem Value="2">Project Paper</asp:ListItem>
-                                <asp:ListItem Value="3">Book/Proceeding</asp:ListItem>
-                                <asp:ListItem Value="4">Award/Achievment</asp:ListItem>
-                                <asp:ListItem Value="5">Seminar Paper</asp:ListItem>
-                                <asp:ListItem Value="6">Study Material</asp:ListItem>
-                                <%--<asp:ListItem Value="7">Hyperlink</asp:ListItem>--%>
-                                <asp:ListItem Value="8">Staff Profile</asp:ListItem>
-                                <asp:ListItem Value="9">Downloadable</asp:ListItem>
-                            </asp:RadioButtonList>
-
-                            <asp:RequiredFieldValidator ID="requiredFieldValidator_EstablishmentTypeCode" runat="server" ControlToValidate="rbl_EstablishmentTypeCode" Display="Dynamic" SetFocusOnError="true" />
+                            <asp:DropDownList runat="server" ID="ddlEstbType" CssClass="estb-dropdown">
+                            </asp:DropDownList>
+                           
+                            <asp:RequiredFieldValidator ID="requiredFieldValidator_EstablishmentTypeCode" 
+                                                        runat="server" 
+                                                        ControlToValidate="ddlEstbType" 
+                                                        ErrorMessage="Publication type is required!"
+                                                        Display="Dynamic" 
+                                                        ForeColor="Red"
+                                                        SetFocusOnError="true" />
                         </li>
 
                         <li class="FormSpacer1">&nbsp;
@@ -132,15 +138,15 @@
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_NoticeTitle" runat="server" Width="98%" />
-                            <ajax:TextBoxWatermarkExtender runat="server" ID="watermark_NoticeTitleWater" TargetControlID="txt_NoticeTitle" WatermarkText="Example: Global Warming in current era " WatermarkCssClass="" />
+                            <%--<ajax:TextBoxWatermarkExtender runat="server" ID="watermark_NoticeTitleWater" TargetControlID="txt_NoticeTitle" WatermarkText="Example: Global Warming in current era " WatermarkCssClass="" />--%>
                             <asp:RequiredFieldValidator ID="req_NoticeTitle" runat="server" ControlToValidate="txt_NoticeTitle" ErrorMessage="*" ForeColor="Red" Text="* Please enter the title!" SetFocusOnError="true" />
                         </li>
 
-                        <li class="Formlabel TwentyFivePercent">
+                        <li class="Formlabel">
                             <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_Startdate" runat="server" Text="Publication Date:" />
                         </li>
-                        <li class="Formvalue TwentyFivePercent">
+                        <li class="Formvalue">
                             <asp:TextBox ID="txt_Startdate" runat="server" AutoPostBack="false" />
                             <asp:ImageButton runat="server" ID="imgbtn_Startdate" CausesValidation="false" ToolTip="Show Calender" ImageAlign="AbsMiddle" ImageUrl="~/Themes/Default/Images/Calander 01.gif" Height="21" Width="21" />
                             <ajax:CalendarExtender runat="server" Format="dd-MMM-yyyy" ID="clndrextender_Startdate" PopupButtonID="imgbtn_Startdate" CssClass="MicroCalendar" TargetControlID="txt_Startdate">
@@ -148,11 +154,11 @@
                             <asp:RequiredFieldValidator ID="requiredFieldValidator_Startdate" runat="server" ControlToValidate="txt_Startdate" SetFocusOnError="true" ErrorMessage="*" ForeColor="Red" Text="It can't be left empty!" />
                         </li>
 
-                        <li class="Formlabel TwentyFivePercent">
+                        <li class="Formlabel">
                             <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_Enddate" runat="server" Text="Display Till Date:" />
                         </li>
-                        <li class="Formvalue TwentyFivePercent">
+                        <li class="Formvalue">
                             <asp:TextBox ID="txt_Enddate" runat="server" AutoPostBack="false" />
                             <asp:ImageButton runat="server" ID="imgbtn_Enddate" CausesValidation="false" ToolTip="Show Calender" ImageAlign="AbsMiddle" ImageUrl="~/Themes/Default/Images/Calander 01.gif" Height="21" Width="21" />
                             <ajax:CalendarExtender runat="server" Format="dd-MMM-yyyy" ID="clndrextender_Enddate" PopupButtonID="imgbtn_Enddate" CssClass="MicroCalendar" TargetControlID="txt_Enddate" />
@@ -166,8 +172,8 @@
                             <asp:Label ID="lbl_Description" runat="server" Text="Brief Description (max 200 alphabets) Please:" />
                         </li>
                         <li class="Formvalue  FullWidth">
-                            <asp:TextBox ID="txt_Description" runat="server" Height="55px" Width="100%" TextMode="MultiLine" MaxLength="200" /><br />
-                            <ajax:TextBoxWatermarkExtender runat="server" ID="TextBoxWatermarkExtender_txt_Description" TargetControlID="txt_Description" WatermarkText="Description " WatermarkCssClass="" />
+                            <asp:TextBox ID="txt_Description" runat="server" Height="35px" Width="98%" TextMode="MultiLine" MaxLength="200" /><br />
+                            <%--<ajax:TextBoxWatermarkExtender runat="server" ID="TextBoxWatermarkExtender_txt_Description" TargetControlID="txt_Description" WatermarkText="Description " WatermarkCssClass="" />--%>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator_Description" runat="server" ControlToValidate="txt_Description" ErrorMessage="*" ForeColor="Red" Text="Please enter the publication description! it can't left blank." />
                         </li>
 
@@ -180,7 +186,7 @@
                             <li class="Formvalue">
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <ContentTemplate>
-                                        <asp:FileUpload runat="server" ID="fileUploadEstb" Width="80%" Height="30px" BorderStyle="Solid" BorderWidth="1" BorderColor="LightGray" class="btn btn-primary btn-xs" />
+                                        <asp:FileUpload runat="server" ID="fileUploadEstb" Width="80%" Height="36px" BorderStyle="Solid" BorderWidth="1" BorderColor="LightGray" class="btn btn-secondary btn-xs" />
 
                                         <asp:Button ID="btnUpload" runat="server" Text=" Upload Now" OnClick="Upload_File" CausesValidation="true" class="btn btn-primary btn-xs" />
                                         <br />
@@ -253,35 +259,15 @@
 
 
             <IAControl:DialogBox ID="dialog_Message" runat="server"
-                Title="Displaying Publication Record:-"
+                Title="Confirmation:"
                 BackgroundCssClass="modalBackground"
                 Style="display: none;"
                 CssClass="modalPopup"
                 EnableViewState="true">
                 <ItemTemplate>
-                    <ul id="DialogBoxUL">
-
-                        <li class="FLabel">Titile/Subject:</li>
-                        <li class="FValue">
-                            <asp:Label ID="lbl_TheMessage" runat="server" Text=""></asp:Label></li>
-
-                        <li class="FLabel">Publication Date:</li>
-                        <li class="FValue">.</li>
-
-
-                        <li class="FLabel">Display Till</li>
-                        <li class="FValue">.</li>
-
-
-                        <li class="FLabel">Description</li>
-                        <li class="FValue">.</li>
-
-
-                        <li class="FLabel">Uploaded File</li>
-                        <li class="FValue">
-                            <asp:HyperLink runat="server" ID="lnkPage" NavigateUrl="#">Click here to download</asp:HyperLink></li>
-
-                    </ul>
+                    <div>
+                        <asp:Label ID="lbl_TheMessage" runat="server" Text=""></asp:Label></li>
+                    </div>
                 </ItemTemplate>
             </IAControl:DialogBox>
 
