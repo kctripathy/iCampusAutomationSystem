@@ -191,7 +191,7 @@
                     }
             </style>
             <h1 class="PageTitle">
-                <asp:Literal runat="server" ID="lit_PageTitle" Text="Manage Photo Gallery" />
+                <asp:Literal runat="server" ID="lit_PageTitle" Text="Manage Photo Gallery:" />
             </h1>
 
             <asp:MultiView ID="Establishment_multi" runat="server">
@@ -200,8 +200,8 @@
                     <ul id="UploadStyleUL">
 
                         <li class="Formlabel">
-                            <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_NoticeTitle" runat="server" Text="Please Enter the Title of the Photo: " />
+                            <span class="RequiredField">*</span>
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_NoticeTitle" runat="server" Width="98%" />
@@ -256,14 +256,14 @@
 
 
                             <li class="Formlabel">
-                                <asp:Label ID="Label1" runat="server" Text="Select the File to Upload (only pdf / word files):" />
+                                <asp:Label ID="Label1" runat="server" Text="Select the File to Upload (only  jpg,jpeg,png,gif,mp4,mpeg,avi,pdf files):" />
                             </li>
                             <li class="Formvalue">
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <ContentTemplate>
-                                        <asp:FileUpload runat="server" ID="fileUploadEstb" Width="80%" Height="36px" BorderStyle="Solid" BorderWidth="1" BorderColor="LightGray" class="btn btn-success btn-xs" />
+                                        <asp:FileUpload runat="server" ID="fileUploadEstb" Width="80%" Height="36px" BorderStyle="Solid" BorderWidth="1" BorderColor="LightGray" class="btn btn-outline-primary btn-xs" />
 
-                                        <asp:Button ID="btnUpload" runat="server" Text=" Upload Now" OnClick="Upload_File" CausesValidation="true" class="btn btn-success btn-xs" />
+                                        <asp:Button ID="btnUpload" runat="server" Text=" Upload Now" OnClick="Upload_File" CausesValidation="true" class="btn btn-primary btn-xs" />
                                         <br />
                                         <asp:Label runat="server" ID="lbl_FileUploadStatus" ForeColor="Red" Text="File uploaded successfully. please save/update the record now" Visible="false" />
 

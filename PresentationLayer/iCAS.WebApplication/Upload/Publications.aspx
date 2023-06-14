@@ -100,7 +100,6 @@
                 .estb-dropdown {
                     width: 98%;
                     padding: 5px;
-                    font-size: medium;
                     font-weight: bold;
                 }
             </style>
@@ -133,8 +132,8 @@
                         <li class="FormSpacer1">&nbsp;
                         </li>
                         <li class="Formlabel">
-                            <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_NoticeTitle" runat="server" Text="Please Enter the Title of the Publication: " />
+                            <span class="RequiredField">*</span>
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_NoticeTitle" runat="server" Width="98%" />
@@ -143,8 +142,8 @@
                         </li>
 
                         <li class="Formlabel">
-                            <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_Startdate" runat="server" Text="Publication Date:" />
+                            <span class="RequiredField">*</span>
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_Startdate" runat="server" AutoPostBack="false" />
@@ -155,8 +154,8 @@
                         </li>
 
                         <li class="Formlabel">
-                            <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_Enddate" runat="server" Text="Display Till Date:" />
+                            <span class="RequiredField">*</span>
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_Enddate" runat="server" AutoPostBack="false" />
@@ -168,8 +167,8 @@
                         </li>
 
                         <li class="Formlabel FullWidth">
-                            <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_Description" runat="server" Text="Brief Description (max 200 alphabets) Please:" />
+                            <span class="RequiredField">*</span>
                         </li>
                         <li class="Formvalue  FullWidth">
                             <asp:TextBox ID="txt_Description" runat="server" Height="35px" Width="98%" TextMode="MultiLine" MaxLength="200" /><br />
@@ -177,16 +176,16 @@
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator_Description" runat="server" ControlToValidate="txt_Description" ErrorMessage="*" ForeColor="Red" Text="Please enter the publication description! it can't left blank." />
                         </li>
 
-                        <div style="display: block; border-top: solid 1px #808080; margin: 10px 0px 40px 0px; font-size: 15px;">
 
 
                             <li class="Formlabel">
                                 <asp:Label ID="Label1" runat="server" Text="Select the File to Upload (only pdf / word files):" />
                             </li>
                             <li class="Formvalue">
+                        <div style="display: block; border-top: solid 1px #808080; margin: 10px 0px 20px 0px; font-size: 15px;">
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <ContentTemplate>
-                                        <asp:FileUpload runat="server" ID="fileUploadEstb" Width="80%" Height="36px" BorderStyle="Solid" BorderWidth="1" BorderColor="LightGray" class="btn btn-secondary btn-xs" />
+                                        <asp:FileUpload runat="server" ID="fileUploadEstb" Width="80%" Height="36px" BorderStyle="Solid" BorderWidth="1" BorderColor="LightGray" class="btn btn-outline-primary btn-xs" />
 
                                         <asp:Button ID="btnUpload" runat="server" Text=" Upload Now" OnClick="Upload_File" CausesValidation="true" class="btn btn-primary btn-xs" />
                                         <br />
@@ -197,8 +196,8 @@
                                         <asp:PostBackTrigger ControlID="btnUpload" />
                                     </Triggers>
                                 </asp:UpdatePanel>
-                            </li>
                         </div>
+                            </li>
 
                         <li class="FormButton_Top">
                             <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Save&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" class="btn btn-primary btn-xs padding20pt" />

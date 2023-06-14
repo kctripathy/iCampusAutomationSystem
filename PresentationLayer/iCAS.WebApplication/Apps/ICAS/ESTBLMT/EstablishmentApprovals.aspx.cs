@@ -13,7 +13,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
     public partial class EstablishmentApprovals : BasePage
     {
 
-        public static string typeCodesToShow = String.Concat(
+        public string typeCodesToShow = String.Concat(
                         EstbTypeConstants.RECENT_ACTIVITY,
                         ",", EstbTypeConstants.NOTICE,
                         ",", EstbTypeConstants.TENDER,
@@ -24,8 +24,19 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
                         ",", EstbTypeConstants.IQAC,
                         ",", EstbTypeConstants.DOWNLOAD,
                         ",", EstbTypeConstants.MoM,
+                        ",", EstbTypeConstants.PHOTO,
                         ",", EstbTypeConstants.WORLDBANK
                 );
+
+        public string typeCodesToShowForPublication = String.Concat(
+                       EstbTypeConstants.ARTCLE,
+                       ",", EstbTypeConstants.PROJECT_PAPER,
+                       ",", EstbTypeConstants.SEMINAR_PAPER,
+                       ",", EstbTypeConstants.BOOK,
+                       ",", EstbTypeConstants.LITERATURE,
+                       ",", EstbTypeConstants.STAFF_PROFILE,
+                       ",", EstbTypeConstants.STUDY_MATERIAL
+               );
         #region Declaration
         protected static class PageVariables
         {
@@ -65,8 +76,17 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
         {
             if (!IsPostBack)
             {
-                ddl_EstablishmentTypeCode.SelectedIndex = (int)(MicroEnums.EstablishmentType.All);
-                BindEstbTypeDropdown();
+                if (Request.QueryString["type"] == null)
+                {
+                    lit_pageTitle.Text = "MANAGE ESTABLISHMENT APPROVALS";
+                    BindEstbTypeDropdown();
+                }
+                else if (Request.QueryString["type"] == "publication")
+                {
+                    lit_pageTitle.Text = "MANAGE PUBLICATION APPROVALS";
+                    typeCodesToShow = typeCodesToShowForPublication;
+                    BindEstbTypeDropdownForPublication();
+                }
                 BindGridview();
             }
         }
@@ -83,9 +103,27 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("NAAC", EstbTypeConstants.NAAC));
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("AQAR", EstbTypeConstants.AQAR));
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("IQAC", EstbTypeConstants.IQAC));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("PHOTO", EstbTypeConstants.PHOTO));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("DOWNLOAD", EstbTypeConstants.DOWNLOAD));
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("WORLDBANK", EstbTypeConstants.WORLDBANK));
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("MINUTES OF MEETING", EstbTypeConstants.MoM));
-            ddl_EstablishmentTypeCode.Items.Add(new ListItem("DOWNLOAD", EstbTypeConstants.DOWNLOAD));
+            ddl_EstablishmentTypeCode.SelectedIndex = (int)(MicroEnums.EstablishmentType.All);
+
+        }
+
+        private void BindEstbTypeDropdownForPublication()
+        {
+            ddl_EstablishmentTypeCode.Items.Clear();
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("-- VIEW ALL --", ""));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("BOOK", EstbTypeConstants.BOOK));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("ARTCLE", EstbTypeConstants.ARTCLE));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("PROJECT PAPER", EstbTypeConstants.PROJECT_PAPER));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("SEMINAR PAPER", EstbTypeConstants.SEMINAR_PAPER));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("STUDY MATERIAL", EstbTypeConstants.STUDY_MATERIAL));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("LITERATURE", EstbTypeConstants.LITERATURE));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("STAFF PROFILE", EstbTypeConstants.STAFF_PROFILE));
+            ddl_EstablishmentTypeCode.SelectedIndex = (int)(MicroEnums.EstablishmentType.All);
+
         }
 
 
@@ -134,7 +172,18 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
             }
 
             PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCodes(typeCodes);
-            gview_EstablishmentApprovals.DataSource = PageVariables.EstablishmentList;
+            List<Establishment> filterlist = new List<Establishment>();
+            if (!chk_ShowApproved.Checked)
+            {
+                filterlist = (from records in PageVariables.EstablishmentList
+                              where records.EstbStatusFlag.Equals("P")
+                              select records).ToList();
+            }
+            else
+            {
+                filterlist = PageVariables.EstablishmentList;
+            }
+            gview_EstablishmentApprovals.DataSource = filterlist.OrderByDescending((record)=> record.EstbID);
             gview_EstablishmentApprovals.DataBind();
 
             //string x=rbl_EstablishmentTypeCode.Text;
@@ -200,6 +249,10 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
 
         #endregion
 
+        protected void chk_ShowApproved_CheckedChanged(object sender, EventArgs e)
+        {
+            BindGridview();
+        }
     }
 }
 

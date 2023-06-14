@@ -153,20 +153,17 @@
                     }
             </style>
             <h1 class="PageTitle">
-                <asp:Literal runat="server" ID="lit_PageTitle" Text="Upload:" />
+                <asp:Literal runat="server" ID="lit_PageTitle" Text="MANAGE World Bank Assisted OHEPEE Project FILES:" />
             </h1>
 
             <asp:MultiView ID="Establishment_multi" runat="server">
                 <asp:View ID="InputControls" runat="server">
 
                     <ul id="UploadStyleUL">
-                        <li class="FormButton_Top">
-                            <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Save" class="btn btn-primary btn-xs" />
-                            <asp:Button ID="btn_view" runat="server" Text="View" OnClick="btn_view_Click" CausesValidation="false" class="btn btn-primary btn-xs" />
-                        </li>
-                        <li class="Formlabel">&nbsp;<asp:Label runat="server" ID="lblMessage" Text="Upload:" /></li>
+                        
+                        <li class="Formlabel" style="display:none;">&nbsp;<asp:Label runat="server" ID="lblMessage" Text="Upload:" /></li>
 
-                        <li class="Formvalue">
+                        <li class="Formvalue" style="display:none;">
 
                             <asp:RadioButtonList ID="rbl_EstablishmentTypeCode" runat="server" RepeatDirection="Horizontal">
                                 <asp:ListItem Value="W" Selected="True">World Bank Assisted OHEPEE Project</asp:ListItem>
@@ -178,18 +175,18 @@
 
 
                         <li class="Formlabel">
-                            <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_NoticeTitle" runat="server" Text="Title: " />
+                            <span class="RequiredField">*</span>
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_NoticeTitle" runat="server" Width="98%" />
-                            <ajax:TextBoxWatermarkExtender runat="server" ID="watermark_NoticeTitleWater" TargetControlID="txt_NoticeTitle" WatermarkText="Title of the article" WatermarkCssClass="" />
+                            <%--<ajax:TextBoxWatermarkExtender runat="server" ID="watermark_NoticeTitleWater" TargetControlID="txt_NoticeTitle" WatermarkText="Title of the article" WatermarkCssClass="" />--%>
                             <asp:RequiredFieldValidator ID="req_NoticeTitle" runat="server" ControlToValidate="txt_NoticeTitle" ErrorMessage="*" ForeColor="Red" Text="* Please enter the title!" SetFocusOnError="true" />
                         </li>
 
                         <li class="Formlabel">
-                            <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_Startdate" runat="server" Text="Date:" />
+                            <span class="RequiredField">*</span>
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_Startdate" runat="server" AutoPostBack="false" />
@@ -200,8 +197,8 @@
                         </li>
 
                         <li class="Formlabel">
-                            <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_Enddate" runat="server" Text="Display till Date:" />
+                            <span class="RequiredField">*</span>
                         </li>
                         <li class="Formvalue">
                             <asp:TextBox ID="txt_Enddate" runat="server" AutoPostBack="false" />
@@ -213,25 +210,25 @@
                         </li>
 
                         <li class="Formlabel">
-                            <span class="RequiredField">*</span>
                             <asp:Label ID="lbl_Description" runat="server" Text="Brief Description (max 200 alphabets):" />
+                            <span class="RequiredField">*</span>
                         </li>
                         <li class="Formvalue">
-                            <asp:TextBox ID="txt_Description" runat="server" Height="125px" Width="100%" TextMode="MultiLine" MaxLength="200" /><br />
-                            <ajax:TextBoxWatermarkExtender runat="server" ID="TextBoxWatermarkExtender_txt_Description" TargetControlID="txt_Description" WatermarkText="Description " WatermarkCssClass="" />
+                            <asp:TextBox ID="txt_Description" runat="server" Height="100px" Width="100%" TextMode="MultiLine" MaxLength="200" /><br />
+                            <%--<ajax:TextBoxWatermarkExtender runat="server" ID="TextBoxWatermarkExtender_txt_Description" TargetControlID="txt_Description" WatermarkText="Description " WatermarkCssClass="watermark" />--%>
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator_Description" runat="server" ControlToValidate="txt_Description" ErrorMessage="*" ForeColor="Red" Text="Please enter the publication description! it can't left blank." />
                         </li>
 
-                        <div style="display: block; border-top: solid 1px #808080; margin: 10px 0px 40px 0px; font-size: 15px;">
 
 
                             <li class="Formlabel">
                                 <asp:Label ID="Label1" runat="server" Text="Select the File to Upload (only pdf / word files):" />
                             </li>
                             <li class="Formvalue">
+                        <div style="display: block; border-top: solid 1px #808080; margin: 10px 0px 20px 0px; font-size: 15px;">
                                 <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                     <ContentTemplate>
-                                        <asp:FileUpload runat="server" ID="fileUploadEstb" Width="80%" Height="30px" BorderStyle="Solid" BorderWidth="1" BorderColor="LightGray" class="btn btn-primary btn-xs" />
+                                        <asp:FileUpload runat="server" ID="fileUploadEstb" Width="80%" Height="36px" BorderStyle="Solid" BorderWidth="1" BorderColor="LightGray" class="btn btn-outline-primary btn-xs" />
 
                                         <asp:Button ID="btnUpload" runat="server" Text=" Upload Now" OnClick="Upload_File" CausesValidation="true" class="btn btn-primary btn-xs" />
                                         <br />
@@ -242,8 +239,13 @@
                                         <asp:PostBackTrigger ControlID="btnUpload" />
                                     </Triggers>
                                 </asp:UpdatePanel>
-                            </li>
                         </div>
+                            </li>
+
+                        <li class="FormButton_Top">
+                            <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Save" class="btn btn-primary btn-xs" />
+                            <asp:Button ID="btn_view" runat="server" Text="View" OnClick="btn_view_Click" CausesValidation="false" class="btn btn-primary btn-xs" />
+                        </li>
                     </ul>
                 </asp:View>
                 <asp:View ID="view_gridView" runat="server">

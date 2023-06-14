@@ -318,7 +318,7 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             {
 
                 string[] validFileTypes = { "pdf", "docx", "doc" };
-                string ext = System.IO.Path.GetExtension(fileUploadEstb.PostedFile.FileName);
+                string ext = System.IO.Path.GetExtension(fileUploadEstb.PostedFile.FileName).ToLower();
                 bool isValidFile = false;
                 for (int i = 0; i < validFileTypes.Length; i++)
                 {

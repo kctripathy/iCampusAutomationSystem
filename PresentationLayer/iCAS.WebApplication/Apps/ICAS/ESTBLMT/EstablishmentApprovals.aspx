@@ -28,12 +28,24 @@
             padding-left: 20px !important;
             padding-right: 20px !important;
         }
+        .tbl-id {
+            width: 10px;
+            margin: 0px !important;
+            padding: 0px !important;
+            
+        }
+        .tbl-author,
+        .tbl-status {
+            text-align: center;
+        }
     </style>
     <asp:UpdatePanel runat="server" ID="updatePanel_Approval">
         <ContentTemplate>
             <ul id="EstablishmentApprovalsUL">
-                <h1 class="PageTitle">Approve Uploads and Establisments:</h1>
-                <li class="FormLabel">
+                <h1 class="PageTitle">
+                    <asp:Literal runat="server" ID="lit_pageTitle"></asp:Literal>
+                </h1>
+                <li class="FormLabel" style="text-align: right; padding: 10px;">
                     <asp:Label ID="lbl_MessageType" runat="server" Text="Establishment Type:" />
                 </li>
                 <li class="FormValue">
@@ -42,31 +54,35 @@
                         <asp:Button runat="server" ID="btn_View" CssClass="btn btn-primary m-1 p-2 btn-view" Text="View" OnClick="btn_View_Click" />
                 </li>
 
-                <li class="FormLabel">
-                    &nbsp;
+                <li class="FormLabel" style="text-align: right; padding: 10px;">
+                    &nbsp;Action:
                 </li>
                 <li class="FormValue">
                     <asp:Button ID="btn_Approve" runat="server" OnClick="btn_Approve_Click" CommandArgument="A" Text="APPROVE" CssClass="btn btn-success m-1 p-2 btn-view" CausesValidation="true" />
                     <asp:Button ID="btn_Pending" runat="server" OnClick="btn_Approve_Click" CommandArgument="P" Text="MAKE PENDING" CssClass="btn btn-danger m-1 p-2 btn-view" CausesValidation="true" />
+                    <div style="float: right; padding-top: 20px">
+                        <asp:CheckBox runat="server" ID="chk_ShowApproved" Text="&nbsp;Show Approved" AutoPostBack="true" OnCheckedChanged="chk_ShowApproved_CheckedChanged" />
+                    </div>
                 </li>
 
                 <li class="message-text">
                     <asp:Literal ID="lit_Message" runat="server" Text="" />
                 </li>
 
-                <li>
+                <li class="GridView">
                     <asp:GridView ID="gview_EstablishmentApprovals" runat="server" AutoGenerateColumns="false"
                         CssClass="GridView">
                         <Columns>
                             <asp:TemplateField>
+                                <ItemStyle HorizontalAlign="Center" CssClass="tbl-id" /> 
                                 <ItemTemplate>
-                                    <asp:CheckBox runat="server" ID="chk_EstablishmentID" Visible="true" AutoPostBack="false"  />
+                                    <asp:CheckBox runat="server" ID="chk_EstablishmentID" Visible="true" AutoPostBack="false"   />
                                     <asp:Label runat="server" ID="lbl_EstablishmentID" Text='<%# Eval("EstbID") %>' Visible="false" />
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:BoundField DataField="EstbID" HeaderText="EstablishmentId" Visible="False" ItemStyle-CssClass="ID" />
-                            <asp:BoundField DataField="EstbDate" HeaderText="Date" DataFormatString="{0:dd-MM-yy}" ItemStyle-CssClass="date"/>
-                            <asp:BoundField DataField="EstbTypeCodeDesc" HeaderText="Type" Visible="true" ItemStyle-CssClass="Type" />
+                            <asp:BoundField DataField="EstbID" HeaderText="EstablishmentId" Visible="False" />
+                            <asp:BoundField DataField="EstbDate" HeaderText="Date" DataFormatString="{0:dd-MM-yy}" ItemStyle-Width="70px"/>
+                            <asp:BoundField DataField="EstbTypeCodeDesc" HeaderText="Type" />
                             <asp:TemplateField>
                                 <ItemTemplate>
                                     <asp:Label runat="server" ID="lbl_Title" Text='<%# Eval("EstbTitle") %>' Font-Bold="true" />
@@ -74,8 +90,8 @@
                                     <asp:Label runat="server" ID="lbl_Desc" Text='<%# Eval("EstbDescription") %>' />
                                 </ItemTemplate>
                             </asp:TemplateField>
-                            <asp:BoundField DataField="AuthorOrContributorName" HeaderText="Author" ItemStyle-CssClass="AuthorContributor" />
-                            <asp:BoundField DataField="EstbStatusFlagDesc" HeaderText="Status" ItemStyle-CssClass="Status" />
+                            <asp:BoundField DataField="AuthorOrContributorName" HeaderText="Author" ItemStyle-CssClass="tbl-author" />
+                            <asp:BoundField DataField="EstbStatusFlagDesc" HeaderText="Status" ItemStyle-CssClass="tbl-status" />
                         </Columns>
                     </asp:GridView>
                 </li>

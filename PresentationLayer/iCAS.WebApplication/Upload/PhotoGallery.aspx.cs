@@ -259,7 +259,7 @@ namespace Micro.WebApplication.UPLOAD
             {
 
                 string[] validFileTypes = { "jpg", "jpeg", "png","gif","mp4","mpeg","avi","pdf" };
-                string ext = System.IO.Path.GetExtension(fileUploadEstb.PostedFile.FileName);
+                string ext = System.IO.Path.GetExtension(fileUploadEstb.PostedFile.FileName).ToLower();
                 bool isValidFile = false;
                 for (int i = 0; i < validFileTypes.Length; i++)
                 {

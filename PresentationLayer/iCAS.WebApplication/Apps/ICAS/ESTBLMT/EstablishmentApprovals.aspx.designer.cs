@@ -24,6 +24,15 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
         protected global::System.Web.UI.UpdatePanel updatePanel_Approval;
 
         /// <summary>
+        /// lit_pageTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lit_pageTitle;
+
+        /// <summary>
         /// lbl_MessageType control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,15 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Pending;
+
+        /// <summary>
+        /// chk_ShowApproved control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chk_ShowApproved;
 
         /// <summary>
         /// lit_Message control.
