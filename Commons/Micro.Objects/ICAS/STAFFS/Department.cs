@@ -62,5 +62,25 @@ namespace Micro.Objects.ICAS.STAFFS
             get;
             set;
         }
+
+        public string DepartmentContent1
+        {
+            get;
+            set;
+        }
+
+        public string DepartmentContent2
+        {
+            get;
+            set;
+        }
+
+        public string DepartmentImage
+        {
+            get
+            {
+                return string.Concat(this.DepartmentName.Replace(" ","_").Trim(), ".jpg");
+            }
+        }
     }
 }

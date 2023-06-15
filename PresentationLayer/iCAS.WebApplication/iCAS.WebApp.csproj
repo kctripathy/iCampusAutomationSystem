@@ -694,6 +694,8 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Properties\PublishProfiles\backoffice.tsdcollege.in - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\local_publish.pubxml" />
     <None Include="Properties\PublishProfiles\test.tsdcollege.in - Web Deploy %282%29.pubxml" />
     <Content Include="Scripts\bootstrap.bundle.js" />

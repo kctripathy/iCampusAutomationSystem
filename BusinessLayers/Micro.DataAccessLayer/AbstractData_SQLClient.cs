@@ -792,7 +792,8 @@ namespace Micro.DataAccessLayer
 
 
                 Connection.ConnectionKeyName = ConfigurationManager.AppSettings["DefaultDatabaseEnviroment"].ToString();
-                Connection.ConnectionKeyValue = Micro.Commons.MicroSecurity.Decrypt(ConfigurationManager.ConnectionStrings[Connection.ConnectionKeyName].ToString());
+                //Connection.ConnectionKeyValue = Micro.Commons.MicroSecurity.Decrypt(ConfigurationManager.ConnectionStrings[Connection.ConnectionKeyName].ToString());
+                Connection.ConnectionKeyValue = ConfigurationManager.ConnectionStrings[Connection.ConnectionKeyName].ToString();
                 Connection.ConnectionString = Connection.ConnectionKeyValue;
 
                 SqlConnection oConn = new SqlConnection(Micro.Commons.Connection.ConnectionKeyValue);

@@ -21,7 +21,7 @@ namespace TCon.iCAS.WebApplication.api
 
 		public HttpResponseMessage GetDepartments()
 		{
-			List<Department> theList = DepartmentManagement.GetInstance.GetDepartmentsList();
+			List<Department> theList = DepartmentManagement.GetInstance.GetDepartments();
 
 			return new HttpResponseMessage(HttpStatusCode.OK)
 			{
@@ -35,7 +35,17 @@ namespace TCon.iCAS.WebApplication.api
 
 		public HttpResponseMessage Get()
 		{
-			List<StaffMaster> theList = StaffMasterManagement.GetInstance.GetOfficeEmployeeList();
+			List<Staff> theList = StaffMasterManagement.GetInstance.GetStaffs();
+
+			return new HttpResponseMessage(HttpStatusCode.OK)
+			{
+				Content = new StringContent(JArray.FromObject(theList).ToString(), Encoding.UTF8, "application/json")
+			};
+		}
+
+		public HttpResponseMessage GetByDepartment(string dept)
+		{
+			List<Staff> theList = StaffMasterManagement.GetInstance.GetStaffsByDepartment(dept);
 
 			return new HttpResponseMessage(HttpStatusCode.OK)
 			{

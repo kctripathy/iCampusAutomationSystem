@@ -74,6 +74,30 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
 
         #region Data Retrive Mathods
 
+        public static List<Department> GetDepartments()
+        {
+            try
+            {
+                DataTable DepartmentsTable = DepartmentDataAccess.GetInstance.GetDepartments();
+                List<Department> DepartmentList = new List<Department>();
+                foreach (DataRow dr in DepartmentsTable.Rows)
+                {
+                    Department ObjDepartment = new Department();
+                    ObjDepartment.DepartmentID = int.Parse(dr["DepartmentID"].ToString());
+                    ObjDepartment.DepartmentName = dr["DepartmentDescription"].ToString();
+                    ObjDepartment.DepartmentContent1 = dr["VC_FIELD1"] ==null? "" : dr["VC_FIELD1"].ToString();
+                    ObjDepartment.DepartmentContent2 = dr["VC_FIELD2"] ==null? "" : dr["VC_FIELD2"].ToString();
+                    DepartmentList.Add(ObjDepartment);
+                }
+                return DepartmentList;
+            }
+            catch (Exception ex)
+            {
+                throw (new Exception(MethodBase.GetCurrentMethod().DeclaringType.ToString() + "." + (new System.Diagnostics.StackFrame()).GetMethod().Name, ex));
+            }
+        }
+
+
         public static List<Department> GetDepartmentsList(String searchText = null, bool showDeleted = false)
         {
             try

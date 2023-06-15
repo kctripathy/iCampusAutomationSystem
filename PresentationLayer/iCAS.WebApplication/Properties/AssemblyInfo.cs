@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyVersion("21.3.2018.0")]
-[assembly: AssemblyFileVersion("21.3.2018.0")]
+[assembly: AssemblyVersion("15.06.23.0")]
+[assembly: AssemblyFileVersion("15.06.23.0")]
 
 [assembly: AssemblyTitle("ICAS.WebApplication")]
 [assembly: AssemblyDescription("Integrated College Automation System -iCAS")]

@@ -42,6 +42,16 @@ namespace Micro.DataAccessLayer.ICAS.STAFFS
 
         #region Methods & Implementation
 
+        //
+
+        public DataTable GetDepartments()
+        {
+            SqlCommand SelectCommand = new SqlCommand();
+            SelectCommand.CommandType = CommandType.StoredProcedure;
+            SelectCommand.CommandText = "pAPI_GET_DEPARTMENTS";
+            return ExecuteGetDataTable(SelectCommand);
+        }
+
         public DataTable GetDepartmentsAll(string SearchText = "", bool ShowDeleted = false)
         {
 

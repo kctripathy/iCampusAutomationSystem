@@ -75,7 +75,17 @@ namespace Micro.BusinessLayer.ICAS.STAFFS
         #endregion
 
         #region Data Retrive Mathods
-
+        public List<Department> GetDepartments()
+        {
+            try
+            {
+                return DepartmentIntegration.GetDepartments();
+            }
+            catch (Exception ex)
+            {
+                throw (new Exception(MethodBase.GetCurrentMethod().DeclaringType.ToString() + "." + (new System.Diagnostics.StackFrame()).GetMethod().Name, ex));
+            }
+        }
         public List<Department> GetDepartmentsList(string searchText = null, bool showDeleted = false)
         {
             try

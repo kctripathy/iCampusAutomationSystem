@@ -41,6 +41,23 @@ namespace Micro.DataAccessLayer.ICAS.STAFFS
         #endregion
 
         #region Transactional Mathods(Insert,Update,Delete)
+        public DataTable GetStaffs()
+        {
+            try
+            {
+                SqlCommand GetCommandName = new SqlCommand();
+                GetCommandName.CommandType = CommandType.StoredProcedure;
+
+                GetCommandName.CommandText = "pAPI_GET_STAFFS";
+
+                return ExecuteGetDataTable(GetCommandName);
+            }
+            catch (Exception ex)
+            {
+                throw (new Exception(MethodBase.GetCurrentMethod().DeclaringType.ToString() + "." + (new System.Diagnostics.StackFrame()).GetMethod().Name, ex));
+            }
+        }
+
 
         public int InsertEmployee(StaffMaster theStaffMaster, string CourseIDs, string Boards, string PassingYears, string Divisions, string PercentageMarks)
         {

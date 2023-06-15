@@ -6,6 +6,27 @@ using System.Drawing;
 
 namespace Micro.Objects.ICAS.STAFFS
 {
+
+    [Serializable]
+    public class Staff
+    {
+        public int EmployeeID { get; set; }
+        public int DesignationID { get; set; }
+        public int DepartmentID { get; set; }
+
+        public string EmployeeCode { get; set; }
+        public string Salutation { get; set; }
+        public string EmployeeName { get; set; }
+        public string EMailID { get; set; }
+        public string Mobile { get; set; }
+        public string TeachingOrNonTeaching { get; set; }
+
+        public string DepartmentDescription { get; set; }
+        public string DesignationDescription { get; set; }
+
+        public int IsActive { get; set; }
+    }
+
     [Serializable]
     public class StaffMaster : IEquatable<StaffMaster>
     {

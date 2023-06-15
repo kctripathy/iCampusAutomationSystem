@@ -42,6 +42,54 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
 
         #region Data Retrive Mathods
 
+        public static List<Staff> GetStaffs()
+        {
+            try
+            {
+                return ConvertDatarowToStaffObject(StaffMasterDataAccess.GetInstance.GetStaffs());
+            }
+            catch (Exception ex)
+            {
+                throw (new Exception(MethodBase.GetCurrentMethod().DeclaringType.ToString() + "." + (new System.Diagnostics.StackFrame()).GetMethod().Name, ex));
+            }
+        }
+
+        private static List<Staff> ConvertDatarowToStaffObject(DataTable EmployeeTable)
+        {
+            try
+            {
+                //TODO: SUBRAT: handle null of this part to 
+                List<Staff> EmployeeList = new List<Staff>();
+
+                foreach (DataRow dr in EmployeeTable.Rows)
+                {
+
+                    Staff ObjEmployee = new Staff();
+
+                    ObjEmployee.EmployeeID = int.Parse(dr["EmployeeID"].ToString());
+                    ObjEmployee.EmployeeCode = dr["EmployeeCode"].ToString();
+                    ObjEmployee.Salutation = dr["Salutation"].ToString().ToUpper().Trim();
+                    ObjEmployee.EmployeeName = dr["EmployeeName"].ToString().ToUpper().Trim();
+                    ObjEmployee.DepartmentID = (dr["DepartmentID"].ToString() != "" ? int.Parse(dr["DepartmentID"].ToString()) : 0);
+                    ObjEmployee.DepartmentDescription = dr["DepartmentDescription"].ToString().ToUpper();
+                    ObjEmployee.DesignationID = (dr["DesignationID"].ToString() != "" ? int.Parse(dr["DesignationID"].ToString()) : 0);
+                    ObjEmployee.DesignationDescription = dr["DesignationDescription"].ToString().ToUpper();
+                    ObjEmployee.Mobile = dr["Mobile"].ToString();
+                    ObjEmployee.TeachingOrNonTeaching = dr["TeachingOrNonTeaching"].ToString();
+                    //ObjEmployee.IsActive = Convert.ToInt32(dr["IsActive"].ToString());
+                     
+                    EmployeeList.Add(ObjEmployee);
+                }
+                return EmployeeList;
+            }
+            catch (Exception ex)
+            {
+
+                throw (new Exception(MethodBase.GetCurrentMethod().DeclaringType.ToString() + "." + (new System.Diagnostics.StackFrame()).GetMethod().Name, ex));
+            }
+        }
+
+
         public static List<StaffMaster> GetCompanyEmployeeList()
         {
             try
@@ -304,6 +352,7 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
             }
         }
 
+        
         public static StaffMaster GetEmployeeDetailsByID(int EmployeeID)
         {
             try

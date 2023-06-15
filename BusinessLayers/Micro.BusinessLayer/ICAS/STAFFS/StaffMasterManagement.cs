@@ -70,6 +70,17 @@ namespace Micro.BusinessLayer.ICAS.STAFFS
 
         #region Data Retrive Mathods
 
+        public List<Staff> GetStaffs()
+        {
+            return StaffMasterIntegration.GetStaffs();
+        }
+
+        public List<Staff> GetStaffsByDepartment(string deptName="")
+        {
+            List<Staff> theList =  StaffMasterIntegration.GetStaffs();
+            return theList.Where((staff)=> staff.DepartmentDescription == deptName).ToList();
+        }
+
         public List<StaffMaster> GetEmployeesListByOfficeID()
         {
             return StaffMasterIntegration.GetEmployeesListByOfficeID();
