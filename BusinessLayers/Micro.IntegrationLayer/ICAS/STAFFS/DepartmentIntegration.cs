@@ -36,6 +36,10 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
                 {
                     Dept.DepartmentID = DepartmentID;
                     Dept.DepartmentDescription = DtRow["DepartmentDescription"].ToString();
+                    Dept.DepartmentContent1 = DtRow["DeptContent1"].ToString();
+                    Dept.DepartmentContent2 = DtRow["DeptContent2"].ToString();
+                    Dept.DepartmentContent3 = DtRow["DeptContent3"].ToString();
+                    Dept.DepartmentHeadId = int.Parse(DtRow["DeptHeadEmployeeId"].ToString());
                     Dept.ParentDepartmentId = int.Parse(DtRow["ParentDepartmentId"].ToString());
                     Dept.ParentDepartmentDescription = DtRow["ParentDepartmentDescription"].ToString();
 

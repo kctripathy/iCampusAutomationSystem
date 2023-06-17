@@ -17,17 +17,14 @@
     </style>
     <h1 class="PageTitle">
         <asp:Literal runat="server" ID="lit_PageTitle" Text="Manage Department Details" />
-    </h1>
-    <ajax:TabContainer runat="server" ID="tab_Departments" ActiveTabIndex="1" AutoPostBack="true" OnActiveTabChanged="tab_Departments_ActiveTabChanged">
-        <ajax:TabPanel ID="tab_DepartmentAll" runat="server" HeaderText="ALL Department" Height="22px">
-            <ContentTemplate>
-                <asp:MultiView runat="server" ID="multiView_DepartmentDetails">
+    </h1> 
+    <asp:MultiView runat="server" ID="multiView_DepartmentDetails" ActiveViewIndex="1">
                     <asp:View ID="view_InputControls" runat="server">
                         <div id="Mode">
                             <asp:Label runat="server" ID="lbl_DataOperationMode" />
                         </div>
                         <ul id="DepartmentDetails">
-                            <li class="FormButton_Top">
+                            <li class="FormButton_Top" style="display:none">
                                 <div id="Top">
                                     <asp:Button runat="server" ID="btn_ViewDepartment" CausesValidation="false" Text=" View " OnClick="btn_ViewDepartment_Click" />
                                     <asp:Button runat="server" ID="btn_Top_Save" Text="Save" OnClick="Btn_Save_Click" />
@@ -151,59 +148,6 @@
                         </ul>
                     </asp:View>
                 </asp:MultiView>
-
-            </ContentTemplate>
-        </ajax:TabPanel>
-        <ajax:TabPanel ID="tab_DepartmentSelect" runat="server" HeaderText="Select Department" Height="22px">
-            <ContentTemplate>
-                <asp:MultiView runat="server" ID="Multiview_Desig">
-                    <asp:View ID="view_GridViewDepart" runat="server">
-                        <ul class="GridView">
-
-                            <asp:GridView runat="server" ID="gview_DepartmentSelect" AutoGenerateColumns="False" AllowPaging="True" PageSize="25" Width="98%" CssClass="GridView" CellPadding="2" OnPageIndexChanging="gview_Department_PageIndexChanging">
-                                <PagerStyle HorizontalAlign="Center" CssClass="MicroPagerStyle" />
-                                <HeaderStyle CssClass="HeaderStyle" />
-                                <Columns>
-
-                                    <asp:TemplateField>
-                                        <ItemTemplate>
-                                            <asp:Label runat="server" ID="lbl_DepartmentId" Text='<%# Eval("DepartmentId") %>' Visible="True" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Department Of Office">
-                                        <ItemTemplate>
-                                            <asp:Label runat="server" ID="lbl_DepartmentOfficeId" Visible="true" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:BoundField DataField="DepartmentID" HeaderText="Department" />
-                                    <asp:BoundField DataField="DepartmentDescription" HeaderText="Name ">
-                                        <ItemStyle CssClass="DDescription" />
-                                    </asp:BoundField>
-                                    <asp:TemplateField HeaderText="Check All">
-                                        <HeaderTemplate>
-                                            <asp:Literal runat="server" ID="lit_Add" Text="Add" /><br />
-                                            <asp:CheckBox ID="chkSelectAll_Add" runat="server" AutoPostBack="true" OnCheckedChanged="chkSelectAll_Add_CheckedChanged" ToolTip="Select All ADD Permissions" />
-                                        </HeaderTemplate>
-                                        <ItemTemplate>
-                                            <asp:CheckBox ID="chk_Add" runat="server" />
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                </Columns>
-                                <PagerSettings Position="TopAndBottom" FirstPageText="First" LastPageText="Last" Mode="NumericFirstLast" />
-                            </asp:GridView>
-
-                            <li class="FormButton_Top">
-                                <asp:Button runat="server" ID="btn_Apply" Text=" ApplyChanges" OnClick="btn_Apply_Click" />
-                            </li>
-
-                        </ul>
-                    </asp:View>
-
-                </asp:MultiView>
-            </ContentTemplate>
-        </ajax:TabPanel>
-    </ajax:TabContainer>
-
     <IAControl:DialogBox ID="dialog_Message" runat="server" Title="Message:" BackgroundCssClass="modalBackground" Style="display: none" CssClass="modalPopup" EnableViewState="true">
         <ItemTemplate>
             <ul>

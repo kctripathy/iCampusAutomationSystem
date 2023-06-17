@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
-    
-    
-    public partial class Designations {
-        
+namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
+{
+
+
+    public partial class Designations
+    {
+
         /// <summary>
         /// lit_PageTitle control.
         /// </summary>
@@ -20,25 +22,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lit_PageTitle;
-        
-        /// <summary>
-        /// tab_Designations control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.TabContainer tab_Designations;
-        
-        /// <summary>
-        /// tab_DesignationAll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.TabPanel tab_DesignationAll;
-        
+
         /// <summary>
         /// multiView_DesignationDetails control.
         /// </summary>
@@ -47,7 +31,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.MultiView multiView_DesignationDetails;
-        
+
         /// <summary>
         /// view_InputControls control.
         /// </summary>
@@ -56,7 +40,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View view_InputControls;
-        
+
         /// <summary>
         /// lbl_DataOperationMode control.
         /// </summary>
@@ -65,7 +49,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_DataOperationMode;
-        
+
         /// <summary>
         /// btn_ViewDesignationDetails control.
         /// </summary>
@@ -74,7 +58,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_ViewDesignationDetails;
-        
+
         /// <summary>
         /// btn_Top_Save control.
         /// </summary>
@@ -83,7 +67,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Top_Save;
-        
+
         /// <summary>
         /// btn_Reset control.
         /// </summary>
@@ -92,7 +76,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Reset;
-        
+
         /// <summary>
         /// lbl_Head_DesigantionDetails control.
         /// </summary>
@@ -101,7 +85,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Head_DesigantionDetails;
-        
+
         /// <summary>
         /// Label4 control.
         /// </summary>
@@ -110,7 +94,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-        
+
         /// <summary>
         /// optCategory control.
         /// </summary>
@@ -119,7 +103,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList optCategory;
-        
+
         /// <summary>
         /// lbl_DesignationsName control.
         /// </summary>
@@ -128,7 +112,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_DesignationsName;
-        
+
         /// <summary>
         /// txt_Designation control.
         /// </summary>
@@ -137,7 +121,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Designation;
-        
+
         /// <summary>
         /// requiredFieldValidator_Designation control.
         /// </summary>
@@ -146,7 +130,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_Designation;
-        
+
         /// <summary>
         /// RegularExpressionValidator_Designation control.
         /// </summary>
@@ -155,7 +139,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegularExpressionValidator_Designation;
-        
+
         /// <summary>
         /// lbl_RoleDescription control.
         /// </summary>
@@ -164,7 +148,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_RoleDescription;
-        
+
         /// <summary>
         /// ddl_RoleDescription control.
         /// </summary>
@@ -173,7 +157,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_RoleDescription;
-        
+
         /// <summary>
         /// RequiredFieldValidator_RoleDescription control.
         /// </summary>
@@ -182,7 +166,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_RoleDescription;
-        
+
         /// <summary>
         /// lbl_ReportingTo control.
         /// </summary>
@@ -191,7 +175,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ReportingTo;
-        
+
         /// <summary>
         /// ddl_ReportingTo control.
         /// </summary>
@@ -200,7 +184,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_ReportingTo;
-        
+
         /// <summary>
         /// RequiredFieldValidator_ddl_ReportingTo control.
         /// </summary>
@@ -209,7 +193,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_ddl_ReportingTo;
-        
+
         /// <summary>
         /// btn_View control.
         /// </summary>
@@ -218,7 +202,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_View;
-        
+
         /// <summary>
         /// Btn_Save control.
         /// </summary>
@@ -227,7 +211,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Btn_Save;
-        
+
         /// <summary>
         /// btn_Cancel control.
         /// </summary>
@@ -236,7 +220,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Cancel;
-        
+
         /// <summary>
         /// lit_Message control.
         /// </summary>
@@ -245,7 +229,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lit_Message;
-        
+
         /// <summary>
         /// view_GridView control.
         /// </summary>
@@ -254,7 +238,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View view_GridView;
-        
+
         /// <summary>
         /// btn_AddDesignation control.
         /// </summary>
@@ -263,7 +247,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_AddDesignation;
-        
+
         /// <summary>
         /// lit_PageCounter control.
         /// </summary>
@@ -272,7 +256,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lit_PageCounter;
-        
+
         /// <summary>
         /// gview_Designation control.
         /// </summary>
@@ -281,7 +265,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gview_Designation;
-        
+
         /// <summary>
         /// lit_GridMessage control.
         /// </summary>
@@ -290,52 +274,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lit_GridMessage;
-        
-        /// <summary>
-        /// tab_DesignationSelect control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.TabPanel tab_DesignationSelect;
-        
-        /// <summary>
-        /// Multiview_Desig control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView Multiview_Desig;
-        
-        /// <summary>
-        /// view_GridViewDesig control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View view_GridViewDesig;
-        
-        /// <summary>
-        /// gview_DesignationSelect control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gview_DesignationSelect;
-        
-        /// <summary>
-        /// btn_Apply control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Apply;
-        
+
         /// <summary>
         /// dialog_Message control.
         /// </summary>
@@ -344,7 +283,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Micro.Commons.DialogBox dialog_Message;
-        
+
         /// <summary>
         /// lbl_TheMessage control.
         /// </summary>
@@ -353,7 +292,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_TheMessage;
-        
+
         /// <summary>
         /// PageUpdateProgress control.
         /// </summary>

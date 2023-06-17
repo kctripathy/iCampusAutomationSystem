@@ -53,42 +53,18 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
         protected void Page_Load(object sender, EventArgs e)
         {
             BasePage.CurrentLoggedOnUser.ClientPage = this.Page;
-            ////////////////////ctrl_Search.OnButtonClick += searchCtrl_ButtonClicked;
-           ///////////////////// ctrl_Search.SearchWhat = MicroEnums.SearchForm.Department.ToString();
             if (!IsPostBack && !IsCallback)
             {
                 SetValidationMessages();
                 ResetPageVariables();
                 BindDropdown();
-                if (HasAddPermission() && IsDefaultModeAdd())
-                {
-                    multiView_DepartmentDetails.SetActiveView(view_InputControls);
-                    ResetBackColor(view_InputControls);
-                }
-                else
-                {
-                    BindGridView();
-                    //multiView_DepartmentDetails.SetActiveView(view_GridView);
-                    BasePage.ShowHidePagePermissions(gview_Department, btn_AddDepartment, this.Page);
-                    tab_Departments_ActiveTabChanged(sender, e);
-                }
-            }
-        }
-
-        protected void tab_Departments_ActiveTabChanged(object sender, EventArgs e)
-        {
-            if (tab_Departments.ActiveTab == tab_DepartmentAll)
-            {
-
+                BindGridView();
                 multiView_DepartmentDetails.SetActiveView(view_GridView);
-            }
-            else
-            {
-                Multiview_Desig.SetActiveView(view_GridViewDepart);
-                BindGridViewOfficeDepartments();
+                BasePage.ShowHidePagePermissions(gview_Department, btn_AddDepartment, this.Page);
             }
         }
 
+         
 
 
         protected void gview_Department_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -204,7 +180,6 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
                 if (ProcReturnValue > (int)MicroEnums.DataOperationResult.Success)
                 {
                     BindGridView();
-                    BindGridViewOfficeDepartments();
                     ResetTextBoxes();
                 }
             }
@@ -222,6 +197,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
         protected void btn_AddDepartment_Click(object sender, EventArgs e)
         {
             ResetTextBoxes();
+            //BindDropdown_HOD();
             multiView_DepartmentDetails.SetActiveView(view_InputControls);
 
 
@@ -231,80 +207,9 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
             //    multiView_DepartmentDetails.SetActiveView(view_GridView);
             //}
         }
-        protected void chkSelectAll_Add_CheckedChanged(object sender, EventArgs e)
-        {
-            CheckBox chkAll = (CheckBox)gview_DepartmentSelect.HeaderRow.FindControl("chkSelectAll_Add");
-            if (chkAll.Checked == true)
-            {
-                foreach (GridViewRow gvRow in gview_DepartmentSelect.Rows)
-                {
-                    CheckBox chkSel = (CheckBox)gvRow.FindControl("chk_Add");
-                    chkSel.Checked = true;
+        
 
-                }
-            }
-            else
-            {
-                foreach (GridViewRow gvRow in gview_DepartmentSelect.Rows)
-                {
-                    CheckBox chkSel = (CheckBox)gvRow.FindControl("chk_Add");
-                    chkSel.Checked = false;
-
-                }
-            }
-        }
-
-        protected void gview_DepartmentSelect_PageIndexChanging(object sender, GridViewPageEventArgs e)
-        {
-            gview_DepartmentSelect.PageIndex = e.NewPageIndex;
-            BindGridViewOfficeDepartments();
-        }
-
-        protected void btn_Apply_Click(object sender, EventArgs e)
-        {
-
-            int result = (int)MicroEnums.DataOperationResult.Failure;
-
-            DepartmentOfficewise theDepartmentOfficewise = new DepartmentOfficewise();
-            List<DepartmentOfficewise> thisDepartmentOfficewiseList = new List<DepartmentOfficewise>();
-            foreach (GridViewRow therow in gview_DepartmentSelect.Rows)
-            {
-
-                DepartmentOfficewise thisDepartmentOfficewise = new DepartmentOfficewise();
-                CheckBox chkb = (CheckBox)therow.FindControl("chk_Add");
-                Label theOfficelabel = (Label)therow.FindControl("lbl_DepartmentOfficeId");
-
-                if (int.Parse(theOfficelabel.Text) == 0)
-                {
-                    if (chkb.Checked)
-                    {
-                        theDepartmentOfficewise.DepartmentID = int.Parse(therow.Cells[2].Text);
-
-                        result = DepartmentOfficewiseManagement.GetInstance.InsertDepartmentOfficewise(theDepartmentOfficewise);
-                        lbl_TheMessage.Text = GetDataOperationResult(result, "Department", MicroEnums.DataOperation.AddNew);
-
-                    }
-                }
-                else if (int.Parse(theOfficelabel.Text) != 0)
-                {
-                    theDepartmentOfficewise.DepartmentID = int.Parse(therow.Cells[2].Text);
-                    if (!chkb.Checked)
-                    {
-                        theDepartmentOfficewise.IsActive = false;
-                    }
-                    else
-                    {
-                        theDepartmentOfficewise.IsActive = true;
-                    }
-                    theDepartmentOfficewise.DepartmentOfficewiseID = int.Parse(theOfficelabel.Text);
-
-                    result = DepartmentOfficewiseManagement.GetInstance.UpdateDepartmentOfficewise(theDepartmentOfficewise);
-                    lbl_TheMessage.Text = GetDataOperationResult(result, "Department", MicroEnums.DataOperation.Edit);
-                }
-            }
-            if (!string.IsNullOrEmpty(lbl_TheMessage.Text))
-                dialog_Message.Show();
-        }
+        
 
 
         #endregion
@@ -336,7 +241,8 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
 
         private void BindDropdown_HOD()
         {
-            ddl_DeptHead.DataSource = StaffMasterManagement.GetInstance.GetEmployeeList();
+            List<Staff> staffs = StaffMasterManagement.GetInstance.GetStaffs();
+            ddl_DeptHead.DataSource = staffs;
             ddl_DeptHead.DataTextField = StaffMasterManagement.GetInstance.DisplayMember;
             ddl_DeptHead.DataValueField = StaffMasterManagement.GetInstance.ValueMember;
             ddl_DeptHead.DataBind();
@@ -349,7 +255,6 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
             ddl_ParentDepartment.DataValueField = DepartmentManagement.GetInstance.ValueMember;
             ddl_ParentDepartment.DataBind();
             ddl_ParentDepartment.Items.Insert(0, MicroConstants.DROPDOWNLIST_DEFAULT_ITEMTEXT);
-            ddl_ParentDepartment.SelectedIndex = 1;
         }
 
         private void BindGridView()
@@ -412,6 +317,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
 
         private void PopulatePageFields(Department theDepartment)
         {
+            //BindDropdown_HOD();
             txt_DepartmentDescription.Text = theDepartment.DepartmentDescription;
             txtContent1.Text = theDepartment.DepartmentContent1;
             txtContent2.Text = theDepartment.DepartmentContent2;
@@ -461,10 +367,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
             EnableControls(view_InputControls, true);
             ResetBackColor(view_InputControls);
 
-            if (tab_Departments.ActiveTab == tab_DepartmentAll)
-            {
-                multiView_DepartmentDetails.SetActiveView(view_InputControls);
-            }
+            
         }
 
         private static void ResetPageVariables()
@@ -506,12 +409,9 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
                                                                   select m).ToList<DepartmentOfficewise>();
 
                 // Bind the GridView for the forms
-
-                gview_DepartmentSelect.DataSource = BindDepartmentItems;
-                gview_DepartmentSelect.DataBind();
+ 
 
                 //All checked ITEMS in GridView
-                CheckUncheckGridItems();
 
             }
 
@@ -521,25 +421,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
             }
         }
 
-        private void CheckUncheckGridItems()
-        {
 
-            int OfficeID = ((User)Session["CurrentUser"]).OfficeID;
-            List<DepartmentOfficewise> TheDepartmentByoffice = DepartmentOfficewiseManagement.GetInstance.GetDepartmentOfficewiseByOfficeID(OfficeID);
-
-            foreach (GridViewRow gvRow in gview_DepartmentSelect.Rows)
-            {
-                int TheOfficeID = ((User)Session["CurrentUser"]).OfficeID;
-                CheckBox chkSelAdd = (CheckBox)gvRow.FindControl("chk_Add");
-
-
-                Label lbl_DepartmentId = (Label)gvRow.FindControl("lbl_DepartmentId");
-
-                int DepartmentIdd = int.Parse(lbl_DepartmentId.Text);
-
-                chkSelAdd.Checked = WillSelectCheckBox(TheDepartmentByoffice, DepartmentIdd, BasePage.IsActive, TheOfficeID);
-            }
-        }
 
         private bool WillSelectCheckBox(List<DepartmentOfficewise> TheDepartmentByoffice, int departmentIdd, bool IsActive, int theofficeid)
         {
@@ -561,74 +443,7 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
             return ReturnValue;
         }
 
-        public void BindGridViewOfficeDepartments()
-        {
-            List<Department> AllDepartments = new List<Department>();
-            AllDepartments = DepartmentManagement.GetInstance.GetDepartmentsList();
-            //DesignationManagement.GetInstance.GetDesignationsList();
-
-            List<DepartmentOfficewise> CurrentOfficeDepartments = new List<DepartmentOfficewise>();
-            CurrentOfficeDepartments = DepartmentOfficewiseManagement.GetInstance.GetDepartmentOfficewiseByOfficeID();
-
-            gview_DepartmentSelect.DataSource = AllDepartments;
-            gview_DepartmentSelect.DataBind();
-
-
-            int counter = 0;
-            if (CurrentOfficeDepartments.Count > 0)
-            {
-                foreach (DepartmentOfficewise thedepartmentofficewise in CurrentOfficeDepartments)
-                {
-                    counter++;
-                    foreach (GridViewRow therow in gview_DepartmentSelect.Rows)
-                    {
-                        Label thedepartmentlabel = (Label)therow.FindControl("lbl_DepartmentId");
-                        Label theOfficelabel = (Label)therow.FindControl("lbl_DepartmentOfficeId");
-                        CheckBox theCheckBox = (CheckBox)therow.FindControl("chk_Add");
-
-                        if (thedepartmentlabel.Text.Equals(thedepartmentofficewise.DepartmentID.ToString()))
-                        {
-                            if (thedepartmentofficewise.IsActive.Equals(true))
-                                theCheckBox.Checked = true;
-                            theOfficelabel.Text = thedepartmentofficewise.DepartmentOfficewiseID.ToString();
-
-                            if (CurrentOfficeDepartments.Count > 1 && counter == CurrentOfficeDepartments.Count)
-                            {
-                                break;
-                            }
-                        }
-                        else
-                        {
-                            if (counter == 1)
-                            {
-                                theOfficelabel.Text = "0";
-                            }
-                        }
-                    }
-                }
-            }
-
-            else
-            {
-                foreach (GridViewRow therow in gview_DepartmentSelect.Rows)
-                {
-                    Label thedesiglabel = (Label)therow.FindControl("lbl_DepartmentId");
-                    Label theOfficelabel = (Label)therow.FindControl("lbl_DepartmentOfficeId");
-                    CheckBox theCheckBox = (CheckBox)therow.FindControl("chk_Add");
-
-                    theOfficelabel.Text = "0";
-                }
-
-            }
-
-
-            //TODO: SUBRAT: Role Permission
-            //BasePage.HideGridViewColumn(gview_DepartmentSelect, "DepartmentOfficeID");
-            //BasePage.HideGridViewColumn(gview_DepartmentSelect, "DepartmentID");
-        }
-
-
-
+       
         #endregion
     }
 }

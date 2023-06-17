@@ -24,24 +24,6 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
         protected global::System.Web.UI.WebControls.Literal lit_PageTitle;
 
         /// <summary>
-        /// tab_Departments control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.TabContainer tab_Departments;
-
-        /// <summary>
-        /// tab_DepartmentAll control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.TabPanel tab_DepartmentAll;
-
-        /// <summary>
         /// multiView_DepartmentDetails control.
         /// </summary>
         /// <remarks>
@@ -328,51 +310,6 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gview_Department;
-
-        /// <summary>
-        /// tab_DepartmentSelect control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.TabPanel tab_DepartmentSelect;
-
-        /// <summary>
-        /// Multiview_Desig control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView Multiview_Desig;
-
-        /// <summary>
-        /// view_GridViewDepart control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View view_GridViewDepart;
-
-        /// <summary>
-        /// gview_DepartmentSelect control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gview_DepartmentSelect;
-
-        /// <summary>
-        /// btn_Apply control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Apply;
 
         /// <summary>
         /// dialog_Message control.

@@ -98,7 +98,7 @@ namespace Micro.BusinessLayer.ICAS.STAFFS
         {
             //return StaffMasterIntegration.GetEmployeeList();
 
-			string UniqueKey = "GetEmployeeList";
+			string UniqueKey = "GetEmployeeListByUserType";
 			if (HttpRuntime.Cache[UniqueKey] == null)
 			{
 				List<StaffMaster> StaffMasterList = StaffMasterIntegration.GetEmployeeList();
