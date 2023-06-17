@@ -686,7 +686,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS
             BindDropdown_PresentDistrict();
             BindDropdown_Designation();
             BindDropdown_Department();
-            BindDropdown_Office();
+            //BindDropdown_Office();
             BindDropdown_ReportingTo();
            // BindDropdown_ServiceStatus();
            
@@ -772,7 +772,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS
             ddl_Qualification.Items.Insert(0, ddlDefaultItem);
             ddl_Designation.Items.Insert(0, ddlDefaultItem);
             ddl_Department.Items.Insert(0, ddlDefaultItem);
-            ddl_Office.Items.Insert(0, ddlDefaultItem);
+            //ddl_Office.Items.Insert(0, ddlDefaultItem);
             ddl_ReportingTo.Items.Insert(0, ddlDefaultItem);
            // ddl_Status.Items.Insert(0, ddlDefaultItem);
            
@@ -898,16 +898,16 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS
             ddl_Department.DataBind();
         }
 
-        private void BindDropdown_Office()
-        {
-            ddl_Office.Enabled = true;
-            ddl_Office.DataSource = OfficeManagement.GetInstance.GetOfficeListByReportingOfficeIDs();
-            ddl_Office.DataTextField = OfficeManagement.GetInstance.DisplayMember;
-            ddl_Office.DataValueField = OfficeManagement.GetInstance.ValueMember;
-            ddl_Office.DataBind();
-            ddl_Office.SelectedIndex = 0;
-            ddl_Office.Enabled = false;
-        }
+        //private void BindDropdown_Office()
+        //{
+        //    ddl_Office.Enabled = true;
+        //    ddl_Office.DataSource = OfficeManagement.GetInstance.GetOfficeListByReportingOfficeIDs();
+        //    ddl_Office.DataTextField = OfficeManagement.GetInstance.DisplayMember;
+        //    ddl_Office.DataValueField = OfficeManagement.GetInstance.ValueMember;
+        //    ddl_Office.DataBind();
+        //    ddl_Office.SelectedIndex = 0;
+        //    ddl_Office.Enabled = false;
+        //}
 
         private void BindDropdown_ReportingTo()
         {
@@ -931,7 +931,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS
             ddl_Designation.SelectedIndex = 0;
             ddl_Department.SelectedIndex = 0;
             ddl_ReportingTo.SelectedIndex = 0;
-            ddl_Office.SelectedIndex = 0;
+            //ddl_Office.SelectedIndex = 0;
            
             ddl_Salutation.SelectedIndex = 0;
             ddl_Gender.SelectedIndex = 0;
@@ -1118,7 +1118,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS
             TheStaffMasters.ReportingToEffectiveDateFrom = txt_JoinDate.Text;
             TheStaffMasters.DesignationID = int.Parse(ddl_Designation.SelectedValue);
             TheStaffMasters.DepartmentID = int.Parse(ddl_Department.SelectedValue);
-            TheStaffMasters.OfficeID = int.Parse(ddl_Office.SelectedValue);
+            TheStaffMasters.OfficeID = 44;// int.Parse(ddl_Office.SelectedValue);
             TheStaffMasters.BioDeviceEmployeeID = txt_BioDeviceEmpid.Text;
             
            // TheStaffMasters.ServiceType = ddl_ServiceType.SelectedValue;
@@ -1449,7 +1449,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS
             PageVariables.ThisStaffMaster.EmployeeCode = txt_EmpCode.Text;
             PageVariables.ThisStaffMaster.DesignationID = int.Parse(ddl_Designation.SelectedValue);
             PageVariables.ThisStaffMaster.DepartmentID = int.Parse(ddl_Department.SelectedValue);
-            PageVariables.ThisStaffMaster.OfficeID = int.Parse(ddl_Office.SelectedValue);
+            PageVariables.ThisStaffMaster.OfficeID = 44;// int.Parse(ddl_Office.SelectedValue);
             PageVariables.ThisStaffMaster.ReportingToEmployeeID = int.Parse(ddl_ReportingTo.SelectedValue);
             PageVariables.ThisStaffMaster.ReportingToEffectiveDateFrom = txt_JoinDate.Text;
             PageVariables.ThisStaffMaster.BioDeviceEmployeeID = txt_BioDeviceEmpid.Text;
@@ -1559,7 +1559,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS
 
 
             ddl_Department.SelectedIndex = GetDropDownSelectedIndex(ddl_Department, Convert.ToString(theStaffMaster.DepartmentID));
-            ddl_Office.SelectedIndex = GetDropDownSelectedIndex(ddl_Office, Convert.ToString(theStaffMaster.OfficeID));
+            //ddl_Office.SelectedIndex = GetDropDownSelectedIndex(ddl_Office, Convert.ToString(theStaffMaster.OfficeID));
             txt_BioDeviceEmpid.Text = theStaffMaster.BioDeviceEmployeeID;
             txt_JoinDate.Text = theStaffMaster.JoiningDateInOffice;
             txt_JoinDateinService.Text = theStaffMaster.JoiningDateInService;

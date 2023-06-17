@@ -4,11 +4,22 @@
 <%--<%@ Register Src="../../App_UserControls/UC_Search.ascx" TagName="UC_Search" TagPrefix="micro" %>--%>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajax" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolderMicroERP" runat="server">
+    <style type="text/css">
+        #__tab_ContentPlaceHolderMicroERP_tab_Departments_tab_DepartmentSelect,
+        #__tab_ContentPlaceHolderMicroERP_tab_Departments_tab_DepartmentAll {
+            height: 22px !important;
+        }
+
+        #ContentPlaceHolderMicroERP_tab_Departments_tab_DepartmentAll_lbl_DataOperationMode {
+            margin-top: -20px;
+            display: block;
+        }
+    </style>
     <h1 class="PageTitle">
         <asp:Literal runat="server" ID="lit_PageTitle" Text="Manage Department Details" />
     </h1>
     <ajax:TabContainer runat="server" ID="tab_Departments" ActiveTabIndex="1" AutoPostBack="true" OnActiveTabChanged="tab_Departments_ActiveTabChanged">
-        <ajax:TabPanel ID="tab_DepartmentAll" runat="server" HeaderText="ALL Department">
+        <ajax:TabPanel ID="tab_DepartmentAll" runat="server" HeaderText="ALL Department" Height="22px">
             <ContentTemplate>
                 <asp:MultiView runat="server" ID="multiView_DepartmentDetails">
                     <asp:View ID="view_InputControls" runat="server">
@@ -26,25 +37,60 @@
                             <li class="PageSubTitle">
                                 <asp:Label runat="server" ID="lbl_Head_DepartmentDetails" Text="Department Details :-" />
                             </li>
-                            <!--Department Name"-->
-                            <li class="FormLabel">
-                                <asp:Label runat="server" ID="lbl_DepartmentsName" Text="Department'sName " />
-                                <asp:Label runat="server" ID="lbl_DepartmentsNameValidator" Text="*" ForeColor="Red" />
-                            </li>
-                            <li class="FormValue">
-                                <asp:TextBox ID="txt_DepartmentDescription" runat="server" />
-                                <asp:RequiredFieldValidator runat="server" ID="requiredFieldValidator_DepartmentDescription" ControlToValidate="txt_DepartmentDescription" Display="Dynamic" SetFocusOnError="true" />
-                                <asp:RegularExpressionValidator runat="server" ID="regularExpressionValidator_DepartmentDescription" ControlToValidate="txt_DepartmentDescription" Display="Dynamic" SetFocusOnError="true" ValidationExpression="[a-zA-Z\s]+" />
-                            </li>
+
                             <!--Parent Department-->
                             <li class="FormLabel">
-                                <asp:Label runat="server" ID="lbl_ParentDepartment" Text="Parent Department " />
+                                <asp:Label runat="server" ID="lbl_ParentDepartment" Text="Parent Department: " />
                                 <asp:Label runat="server" ID="lbl_ParentDepartmentValidator" Text="*" ForeColor="Red" />
                             </li>
                             <li class="FormValue">
                                 <asp:DropDownList runat="server" ID="ddl_ParentDepartment" />
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_ddl_ParentDepartment" runat="server" ControlToValidate="ddl_ParentDepartment" Display="Dynamic" SetFocusOnError="true" />
                             </li>
+
+                            <!--Parent Department-->
+                            <li class="FormLabel">
+                                <asp:Label runat="server" ID="Label1" Text="Head of the Department:" />
+                            </li>
+                            <li class="FormValue">
+                                <asp:DropDownList runat="server" ID="ddl_DeptHead" />
+                            </li>
+
+
+                            <!--Department Name"-->
+                            <li class="FormLabel">
+                                <asp:Label runat="server" ID="lbl_DepartmentsName" Text="Department's Name " />
+                                <asp:Label runat="server" ID="lbl_DepartmentsNameValidator" Text="*" ForeColor="Red" />
+                            </li>
+                            <li class="FormValue">
+                                <asp:TextBox ID="txt_DepartmentDescription" runat="server" Width="300px" />
+                                <asp:RequiredFieldValidator runat="server" ID="requiredFieldValidator_DepartmentDescription" ControlToValidate="txt_DepartmentDescription" Display="Dynamic" SetFocusOnError="true" />
+                                <asp:RegularExpressionValidator runat="server" ID="regularExpressionValidator_DepartmentDescription" ControlToValidate="txt_DepartmentDescription" Display="Dynamic" SetFocusOnError="true" ValidationExpression="[a-zA-Z\s]+" />
+                            </li>
+
+                            <li class="FormLabel">
+                                <asp:Label runat="server" ID="lblContent" Text="Department Content 1 " />
+                            </li>
+                            <li class="FormValue">
+                                <asp:TextBox ID="txtContent1" runat="server" TextMode="MultiLine" Width="300px"  Height="80px"/>
+                            </li>
+
+                            <li class="FormLabel">
+                                <asp:Label runat="server" ID="Label2" Text="Department Content 2 " />
+                            </li>
+                             <li class="FormValue">
+                                <asp:TextBox ID="txtContent2" runat="server" TextMode="MultiLine" Width="300px"  Height="80px"/>
+                            </li>
+
+                            <li class="FormLabel">
+                                <asp:Label runat="server" ID="Label3" Text="Department Content 3 " />
+                            </li>
+                            <li class="FormValue">
+                                <asp:TextBox ID="txtContent3" runat="server" TextMode="MultiLine" Width="300px" Height="80px" />
+                            </li>
+                            
+                        
+                            
                             <li class="FormLabel"></li>
                             <!--Action Button-->
                             <li class="FormButton_Top">
@@ -77,13 +123,22 @@
                                     <HeaderStyle CssClass="HeaderStyle" />
                                     <Columns>
                                         <asp:BoundField ShowHeader="false" DataField="DepartmentID" Visible="false" />
-                                        <asp:TemplateField ItemStyle-CssClass="CheckBox">
+                                        <asp:TemplateField>
                                             <ItemTemplate>
-                                                <asp:CheckBox runat="server" ID="chk_DepartmentID" Visible="true" />
-                                                <asp:Label runat="server" ID="lbl_DepartmentID" Text='<%# Eval("DepartmentID") %>' Visible="True" />
+                                                <asp:Label runat="server" ID="lbl_DepartmentID" Text='<%# Eval("DepartmentID") %>' Visible="false" />
                                             </ItemTemplate>
                                         </asp:TemplateField>
+
                                         <asp:BoundField DataField="DepartmentDescription" HeaderText="Department " ItemStyle-CssClass="DeptDescription" />
+                                        <asp:TemplateField ItemStyle-CssClass="CheckBox">
+                                            <ItemTemplate>
+                                                <asp:Label runat="server" ID="lblContent1" Text='<%# Eval("DepartmentContent1") %>' Visible="True" />
+                                                <asp:Label runat="server" ID="lblContent2" Text='<%# Eval("DepartmentContent2") %>' Visible="True" />
+                                                <asp:Label runat="server" ID="lblContent3" Text='<%# Eval("DepartmentContent3") %>' Visible="True" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:BoundField DataField="DepartmentHeadName" HeaderText="HOD Name " />
+
                                         <asp:CommandField ShowEditButton="True" HeaderText="Edit" ButtonType="Image" EditImageUrl="~/Themes/Default/Images/GRID_EDIT.ico" ItemStyle-CssClass="EditLinkItem" ControlStyle-CssClass="EditLink" />
                                         <asp:CommandField ShowDeleteButton="True" HeaderText="Del." ButtonType="Image" DeleteImageUrl="~/Themes/Default/Images/GRID_DELETE.ico" ItemStyle-CssClass="DeleteLinkItem" ControlStyle-CssClass="DeleteLink" />
                                         <asp:CommandField ShowSelectButton="true" HeaderText="View" ButtonType="Image" SelectImageUrl="~/Themes/Default/Images/GRID_SELECT.ico" ItemStyle-CssClass="ViewLinkItem" ControlStyle-CssClass="ViewLink" />
@@ -99,7 +154,7 @@
 
             </ContentTemplate>
         </ajax:TabPanel>
-        <ajax:TabPanel ID="tab_DepartmentSelect" runat="server" HeaderText="Select Department">
+        <ajax:TabPanel ID="tab_DepartmentSelect" runat="server" HeaderText="Select Department" Height="22px">
             <ContentTemplate>
                 <asp:MultiView runat="server" ID="Multiview_Desig">
                     <asp:View ID="view_GridViewDepart" runat="server">

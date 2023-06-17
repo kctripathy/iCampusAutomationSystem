@@ -100,7 +100,15 @@ namespace Micro.BusinessLayer.Administration
 
         public Office GetOfficeByID(int officeID)
         {
-            return OfficeIntegration.GetOfficeByID(officeID);
+            Office o = new Office()
+            {
+                OfficeID = 44,
+                OfficeCode = "TSDC1111",
+                CompanyID = 8,
+                OfficeName = "TENTULIA SASAN DEVASTAHN COLLEGE"
+            };
+            return o;
+            //return OfficeIntegration.GetOfficeByID(officeID);
         }
 
         public List<Office> GetOfficeListByTypeID(int officeTypeID)

@@ -330,6 +330,8 @@ namespace TCon.iCAS.WebApplication.APPS
 
 
             BasePage.CurrentLoggedOnUser.TheUser = currentUser;
+
+
             BasePage.CurrentLoggedOnUser.TheCompany = Micro.BusinessLayer.Administration.CompanyManagement.GetInstance.GetCompanyByComapnyID(currentUser.CompanyID);
             BasePage.CurrentLoggedOnUser.TheOffice = Micro.BusinessLayer.Administration.OfficeManagement.GetInstance.GetOfficeByID(currentUser.OfficeID);
         }
@@ -385,7 +387,7 @@ namespace TCon.iCAS.WebApplication.APPS
             List<Permission> thePermissionList = RolePermissionManagement.GetInstance.GetPermissions();
 
             BasePage.CurrentLoggedOnUser.PermissionList = thePermissionList;
-            BasePage.CurrentLoggedOnUser.UserRolePermissions = RolePermissionManagement.GetInstance.SelectAllRolePermissionsByRoleID(CurrentUser.RoleID);
+            BasePage.CurrentLoggedOnUser.UserRolePermissions =  RolePermissionManagement.GetInstance.SelectAllRolePermissionsByRoleID(CurrentUser.RoleID);
 
             var AddPermissionId = thePermissionList.Find(p => p.PermissionDescription.Equals(MicroEnums.PermissionDescription.Add.ToString()));
             var EdiPermissionId = thePermissionList.Find(p => p.PermissionDescription.Equals(MicroEnums.PermissionDescription.Edit.ToString()));
@@ -416,7 +418,7 @@ namespace TCon.iCAS.WebApplication.APPS
             List<Permission> thePermissionList = RolePermissionManagement.GetInstance.GetPermissions();
 
             BasePage.CurrentLoggedOnUser.PermissionList = thePermissionList;
-            BasePage.CurrentLoggedOnUser.UserRolePermissions = RolePermissionManagement.GetInstance.SelectAllRolePermissionsByRoleID(roleId);
+            BasePage.CurrentLoggedOnUser.UserRolePermissions =  RolePermissionManagement.GetInstance.SelectAllRolePermissionsByRoleID(roleId);
 
             var AddPermissionId = thePermissionList.Find(p => p.PermissionDescription.Equals(MicroEnums.PermissionDescription.Add.ToString()));
             var EdiPermissionId = thePermissionList.Find(p => p.PermissionDescription.Equals(MicroEnums.PermissionDescription.Edit.ToString()));
@@ -481,7 +483,7 @@ namespace TCon.iCAS.WebApplication.APPS
             else
             {
                 RedirectURL = string.Concat(WebServerIP, "/Default.aspx");
-                }
+            }
 
                 Response.Redirect(RedirectURL);
         }

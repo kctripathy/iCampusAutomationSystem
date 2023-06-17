@@ -75,12 +75,36 @@ namespace Micro.Objects.ICAS.STAFFS
             set;
         }
 
+        public string DepartmentContent3
+        {
+            get;
+            set;
+        }
+
+        public int DepartmentHeadId
+        {
+            get;
+            set;
+        }
+
+        public string DepartmentHeadName
+        {
+            get;
+            set;
+        }
+
         public string DepartmentImage
         {
             get
             {
-                return string.Concat(this.DepartmentName.Replace(" ","_").Trim(), ".jpg");
+                return string.Concat(this.DepartmentName.Replace(" ","_").Trim(), ".jpg").ToLower();
             }
+        }
+
+        public List<Staff> Staffs
+        {
+            get;
+            set;
         }
     }
 }

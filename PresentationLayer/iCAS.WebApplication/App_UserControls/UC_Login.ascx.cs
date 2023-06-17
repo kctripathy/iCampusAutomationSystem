@@ -202,7 +202,7 @@ namespace Micro.WebApplication.App_UserControls
 
                 // Get the record of the user from the database to validate against supplied data
                 User CurrentUser;
-                CurrentUser = UserManagement.GetInstance.GetUserByLoginName(UserInfo.UserName);
+                CurrentUser = UserManagement.GetInstance.Login(UserInfo.UserName);
                 currUser = CurrentUser;
 
                 sbFormMessage = new StringBuilder();

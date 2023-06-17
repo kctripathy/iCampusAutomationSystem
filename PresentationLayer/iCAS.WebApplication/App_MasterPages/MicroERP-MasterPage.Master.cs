@@ -309,10 +309,10 @@ namespace Micro.WebApplication.App_MasterPages
                     }
 
                 }
-                if (TreeView1.Nodes.Count > 1)
+                if (TreeView1.Nodes.Count >= 1)
                 {
-                    TreeView1.Nodes[0].CollapseAll();
-					TreeView1.Nodes[0].Expand();
+                    //TreeView1.Nodes[0].CollapseAll();
+					//TreeView1.Nodes[0].Expand();
 					
 					TreeView1.Visible = true;
 					TreeView1.ExpandAll();

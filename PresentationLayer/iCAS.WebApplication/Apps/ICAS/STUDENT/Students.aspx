@@ -524,7 +524,7 @@
                         </li>
                         <li class="GridView">
                             <asp:GridView ID="gridview_Students" runat="server" AllowPaging="True" AllowSorting="True"
-                                PageSize="22" AutoGenerateColumns="False" CssClass="GridView" GridLines="Both"
+                                PageSize="50" AutoGenerateColumns="False" CssClass="GridView" GridLines="Both"
                                 CellPadding="2" Width="98%" OnRowCommand="gridview_Students_RowCommand" OnRowDeleting="gridview_Students_RowDeleting"
                                 OnRowEditing="gridview_Students_RowEditing" OnRowDataBound="gridview_Students_RowDataBound"
                                 OnPageIndexChanging="gridview_Students_PageIndexChanging">
@@ -549,7 +549,9 @@
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                     <asp:BoundField DataField="DateOfAdmission" Visible="false" HeaderText="Date Of Admission" />
-                                    <asp:BoundField DataField="RollNo" Visible="false" HeaderText="Roll No" />
+                                    <asp:BoundField DataField="RollNo" Visible="true" HeaderText="Roll No" />
+                                    <asp:BoundField DataField="StudentCode" HeaderText="Code" Visible="false" />
+
                                     <asp:BoundField DataField="StudentName" HeaderText="Student Name" />
                                     <asp:TemplateField HeaderText="Name of the Class">
                                         <ItemTemplate>
@@ -567,7 +569,6 @@
 													 <asp:BoundField DataField="MotherName" HeaderText="Mother Name" />--%>
                                     <%--   <asp:BoundField DataField="LandPhoneNumber" HeaderText="Phone Number" />--%>
                                     <asp:BoundField DataField="Mobile" HeaderText="Mobile" />
-                                    <asp:BoundField DataField="StudentCode" HeaderText="Student Code" />
                                     <%--<asp:BoundField DataField="MRINO" HeaderText="MRI NO" />
 													 <asp:BoundField DataField="ReceiptNo" HeaderText="Receipt No" />
 													 <asp:BoundField DataField="TCNo" HeaderText="TC No" />--%>

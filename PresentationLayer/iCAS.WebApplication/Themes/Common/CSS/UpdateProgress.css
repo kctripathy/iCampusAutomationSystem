@@ -26,9 +26,8 @@
 .UpdateProgressAreaText
 {
 	border: #C6BFBF solid 1px;
-	background-color: #ff0000;
-	color: #ffffff;
-	font-weight: bold;
+	background-color: white;
+	color: red;
 	padding: 3px;
 	display: block;
 	float: left;
@@ -70,17 +69,16 @@ div.UpdateProgressAreaLogin
 
 span.UpdateProgressAreaTextLogin
 {
-	border: #C6BFBF solid 1px;
-	background-color: #ff0000;
-	color: #ffffff;
+	background-color: transparent;
+	color: red;
 	font-weight: bold;
 	padding: 3px;
 	display: block;
 	float: left;
-	
 	position: inherit;
-	margin-top: 80px;
-    width: 92%;
+	margin-top: 70px;
+	margin-left: 3px;
+    width: 97%;
     /*left: 40%;*/
 }
 

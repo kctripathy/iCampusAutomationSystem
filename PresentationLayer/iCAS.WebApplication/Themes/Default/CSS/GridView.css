@@ -72,6 +72,7 @@
 	 width: 20px;
 	 padding: 0px;
 	 margin: 0px;
+	 vertical-align: top;
 }
 
 .GridView table td.EditLinkItemMediumWidth
@@ -106,20 +107,27 @@
 
 
 
-.EditLink, 
-.DeleteLink, 
-.ViewLink
-{
+.EditLink,
+.DeleteLink,
+.ViewLink {
 	padding: 0px 0px 0px 4px;
-	width: 16px;
-	height: 16px;
+	width: 24px;
+	height: 24px;
+	border: solid 1px #ccc;
+	margin-left: 2px;
+	margin-top: 4px;
+	border-radius: 12px;
+	background: gainsboro;
+	vertical-align: top;
 }
 
+	.EditLink:hover {
+		background: green;
+	}
 
-.GridAlternatRowStyle
-{
-    background-color: lightcyan;
-}
+	.GridAlternatRowStyle {
+		background-color: lightcyan;
+	}
 
 .GridRowStyle
 {

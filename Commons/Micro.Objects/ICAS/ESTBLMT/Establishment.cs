@@ -6,8 +6,8 @@ using System.Text;
 
 namespace Micro.Objects.ICAS.ESTBLMT
 {
-    [Serializable]
-    public class Establishment
+
+    public class EstablishmentObject
     {
         public int EstbID
         {
@@ -31,92 +31,7 @@ namespace Micro.Objects.ICAS.ESTBLMT
         {
             get
             {
-                string _typeCodeDesc = string.Empty;
-                if (this.EstbTypeCode.Equals(EstbTypeConstants.AQAR))
-                {
-                    _typeCodeDesc = "AQAR";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.CIRCULAR))
-                {
-                    _typeCodeDesc = "Circular";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.DOWNLOAD))
-                {
-                    _typeCodeDesc = "Downloadable";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.IQAC))
-                {
-                    _typeCodeDesc = "IQAC";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.MoM))
-                {
-                    _typeCodeDesc = "Minutes of Meeting";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.NOTICE))
-                {
-                    _typeCodeDesc = "Notice";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.PHOTO))
-                {
-                    _typeCodeDesc = "Photo";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.RECENT_ACTIVITY))
-                {
-                    _typeCodeDesc = "Recent Activity";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.SYLLABUS))
-                {
-                    _typeCodeDesc = "Syllabus";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.TENDER))
-                {
-                    _typeCodeDesc = "Tender";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.VIDEO))
-                {
-                    _typeCodeDesc = "Video";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.WORLDBANK))
-                {
-                    _typeCodeDesc = "World Bank";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.NAAC))
-                {
-                    _typeCodeDesc = "NAAC";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.ARTCLE))
-                {
-                    _typeCodeDesc = "Article";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.PROJECT_PAPER))
-                {
-                    _typeCodeDesc = "Project Paper";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.BOOK))
-                {
-                    _typeCodeDesc = "Book";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.AWARD))
-                {
-                    _typeCodeDesc = "Award";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.SEMINAR_PAPER))
-                {
-                    _typeCodeDesc = "Seminar Paper";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.STUDY_MATERIAL))
-                {
-                    _typeCodeDesc = "Study Material";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.LITERATURE))
-                {
-                    _typeCodeDesc = "Literature";
-                }
-                else if (this.EstbTypeCode.Equals(EstbTypeConstants.STAFF_PROFILE))
-                {
-                    _typeCodeDesc = "Staff Profile";
-                }
-                return _typeCodeDesc;
+                return EstbTypeConstants.GetEstbTypeDescription(this.EstbTypeCode);
             }
         }
 
@@ -127,6 +42,99 @@ namespace Micro.Objects.ICAS.ESTBLMT
 
         }
 
+       
+
+        public string EstbDescription
+        {
+            get;
+            set;
+        }
+
+        public string EstbDescription1
+        {
+            get;
+            set;
+        }
+
+        public string EstbDescription2
+        {
+            get;
+            set;
+        }
+
+
+        public DateTime EstbDate
+        {
+            get;
+            set;
+        }
+        public string EstbMessage
+        {
+            get;
+            set;
+        }
+        public byte[] EstbUploadFile
+        {
+            set;
+            get;
+        }
+
+        public string EstbUploadFileType
+        {
+            get;
+            set;
+        }
+        public DateTime EstbViewStartDate
+        {
+            get;
+            set;
+        }
+
+        public string FileNameWithPath
+        {
+            get;
+            set;
+
+        }
+        public string AuthorOrContributorName
+        {
+            get;
+            set;
+
+        }
+    }
+
+    [Serializable]
+    public class Establishment
+    {
+        public int EstbID
+        {
+            get;
+            set;
+        }
+        public string EstbCode
+        {
+            get;
+            set;
+        }
+        public string EstbTypeCode
+        {
+            get;
+            set;
+        }
+        public string EstbTypeCodeDesc
+        {
+            get
+            {
+                return EstbTypeConstants.GetEstbTypeDescription(this.EstbTypeCode);
+            }
+        }
+        public string EstbTitle
+        {
+            get;
+            set;
+
+        }
         public int EstbTitletZoneMaxLengh
         {
             get
@@ -150,8 +158,17 @@ namespace Micro.Objects.ICAS.ESTBLMT
             }
 
         }
-
         public string EstbDescription
+        {
+            get;
+            set;
+        }
+        public string EstbDescription1
+        {
+            get;
+            set;
+        }
+        public string EstbDescription2
         {
             get;
             set;
@@ -268,6 +285,13 @@ namespace Micro.Objects.ICAS.ESTBLMT
             set;
 
         }
+
+        public string PublicationAuthorName
+        {
+            get;
+            set;
+
+        }
     }
 
     [Serializable]
@@ -325,6 +349,96 @@ namespace Micro.Objects.ICAS.ESTBLMT
         public static string STUDY_MATERIAL = "6";
         public static string LITERATURE = "7";
         public static string STAFF_PROFILE = "8";
-    }
+    
 
+    public static string GetEstbTypeDescription(string typeCode)
+    {
+        string _typeCodeDesc = string.Empty;
+        if (typeCode.Equals(EstbTypeConstants.AQAR))
+        {
+            _typeCodeDesc = "AQAR";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.CIRCULAR))
+        {
+            _typeCodeDesc = "Circular";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.DOWNLOAD))
+        {
+            _typeCodeDesc = "Downloadable";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.IQAC))
+        {
+            _typeCodeDesc = "IQAC";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.MoM))
+        {
+            _typeCodeDesc = "Minutes of Meeting";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.NOTICE))
+        {
+            _typeCodeDesc = "Notice";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.PHOTO))
+        {
+            _typeCodeDesc = "Photo";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.RECENT_ACTIVITY))
+        {
+            _typeCodeDesc = "Recent Activity";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.SYLLABUS))
+        {
+            _typeCodeDesc = "Syllabus";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.TENDER))
+        {
+            _typeCodeDesc = "Tender";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.VIDEO))
+        {
+            _typeCodeDesc = "Video";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.WORLDBANK))
+        {
+            _typeCodeDesc = "World Bank";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.NAAC))
+        {
+            _typeCodeDesc = "NAAC";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.ARTCLE))
+        {
+            _typeCodeDesc = "Article";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.PROJECT_PAPER))
+        {
+            _typeCodeDesc = "Project Paper";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.BOOK))
+        {
+            _typeCodeDesc = "Book";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.AWARD))
+        {
+            _typeCodeDesc = "Award";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.SEMINAR_PAPER))
+        {
+            _typeCodeDesc = "Seminar Paper";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.STUDY_MATERIAL))
+        {
+            _typeCodeDesc = "Study Material";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.LITERATURE))
+        {
+            _typeCodeDesc = "Literature";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.STAFF_PROFILE))
+        {
+            _typeCodeDesc = "Staff Profile";
+        }
+        return _typeCodeDesc;
+    }
+    }
 }

@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Micro.WebApplication.APPS.ICAS.STAFFS {
-    
-    
-    public partial class StaffMasters {
-        
+namespace Micro.WebApplication.APPS.ICAS.STAFFS
+{
+
+
+    public partial class StaffMasters
+    {
+
         /// <summary>
         /// lit_PageTitle control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lit_PageTitle;
-        
+
         /// <summary>
         /// updatepanel_Staff control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel updatepanel_Staff;
-        
+
         /// <summary>
         /// multiView_EmployeeDetails control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.MultiView multiView_EmployeeDetails;
-        
+
         /// <summary>
         /// view_InputControls control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View view_InputControls;
-        
+
         /// <summary>
         /// Button1 control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
+
         /// <summary>
         /// btn_Saveupdate control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Saveupdate;
-        
+
         /// <summary>
         /// Button3 control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button3;
-        
+
         /// <summary>
         /// Label141 control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label141;
-        
+
         /// <summary>
         /// lbl_EmpCode control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_EmpCode;
-        
+
         /// <summary>
         /// txt_EmpCode control.
         /// </summary>
@@ -101,25 +103,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_EmpCode;
-        
-        /// <summary>
-        /// Label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
-        
-        /// <summary>
-        /// ddl_Office control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddl_Office;
-        
+
         /// <summary>
         /// lbl_Department control.
         /// </summary>
@@ -128,7 +112,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Department;
-        
+
         /// <summary>
         /// Label23 control.
         /// </summary>
@@ -137,7 +121,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label23;
-        
+
         /// <summary>
         /// ddl_Department control.
         /// </summary>
@@ -146,7 +130,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Department;
-        
+
         /// <summary>
         /// requiredFieldValidator_Department control.
         /// </summary>
@@ -155,7 +139,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_Department;
-        
+
         /// <summary>
         /// lbl_Designation control.
         /// </summary>
@@ -164,7 +148,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Designation;
-        
+
         /// <summary>
         /// Label22 control.
         /// </summary>
@@ -173,7 +157,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label22;
-        
+
         /// <summary>
         /// ddl_Designation control.
         /// </summary>
@@ -182,7 +166,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Designation;
-        
+
         /// <summary>
         /// requiredFieldValidator_Designation control.
         /// </summary>
@@ -191,7 +175,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_Designation;
-        
+
         /// <summary>
         /// lbl_Salutation control.
         /// </summary>
@@ -200,7 +184,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Salutation;
-        
+
         /// <summary>
         /// Label7 control.
         /// </summary>
@@ -209,7 +193,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label7;
-        
+
         /// <summary>
         /// ddl_Salutation control.
         /// </summary>
@@ -218,7 +202,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Salutation;
-        
+
         /// <summary>
         /// requiredFieldValidator_Salutation control.
         /// </summary>
@@ -227,7 +211,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_Salutation;
-        
+
         /// <summary>
         /// txt_EmployeeName control.
         /// </summary>
@@ -236,7 +220,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_EmployeeName;
-        
+
         /// <summary>
         /// requiredFieldValidator_EmployeeName control.
         /// </summary>
@@ -245,7 +229,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_EmployeeName;
-        
+
         /// <summary>
         /// regularExpressionValidator_EmployeeName control.
         /// </summary>
@@ -254,7 +238,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_EmployeeName;
-        
+
         /// <summary>
         /// lblDateOfBirth control.
         /// </summary>
@@ -263,7 +247,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDateOfBirth;
-        
+
         /// <summary>
         /// Label11 control.
         /// </summary>
@@ -272,7 +256,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label11;
-        
+
         /// <summary>
         /// txt_DOB control.
         /// </summary>
@@ -281,7 +265,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_DOB;
-        
+
         /// <summary>
         /// imgButton_DateOfBirth control.
         /// </summary>
@@ -290,7 +274,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imgButton_DateOfBirth;
-        
+
         /// <summary>
         /// ajaxCalender_DOB control.
         /// </summary>
@@ -299,7 +283,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender ajaxCalender_DOB;
-        
+
         /// <summary>
         /// requiredFieldValidator_DOB control.
         /// </summary>
@@ -308,7 +292,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_DOB;
-        
+
         /// <summary>
         /// regularExpressionValidator_DOB control.
         /// </summary>
@@ -317,7 +301,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_DOB;
-        
+
         /// <summary>
         /// txt_Age control.
         /// </summary>
@@ -326,7 +310,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Age;
-        
+
         /// <summary>
         /// lbl_ReportingTo control.
         /// </summary>
@@ -335,7 +319,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ReportingTo;
-        
+
         /// <summary>
         /// Label25 control.
         /// </summary>
@@ -344,7 +328,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label25;
-        
+
         /// <summary>
         /// ddl_ReportingTo control.
         /// </summary>
@@ -353,7 +337,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_ReportingTo;
-        
+
         /// <summary>
         /// requiredFieldValidator_ReportingTo control.
         /// </summary>
@@ -362,7 +346,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_ReportingTo;
-        
+
         /// <summary>
         /// lbl_IdentificationMark control.
         /// </summary>
@@ -371,7 +355,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_IdentificationMark;
-        
+
         /// <summary>
         /// txt_IdentificationMark control.
         /// </summary>
@@ -380,7 +364,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_IdentificationMark;
-        
+
         /// <summary>
         /// lbl_KnownAilment control.
         /// </summary>
@@ -389,7 +373,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_KnownAilment;
-        
+
         /// <summary>
         /// txt_KnownAilment control.
         /// </summary>
@@ -398,7 +382,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_KnownAilment;
-        
+
         /// <summary>
         /// Label5 control.
         /// </summary>
@@ -407,7 +391,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
-        
+
         /// <summary>
         /// lbl_Gender control.
         /// </summary>
@@ -416,7 +400,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Gender;
-        
+
         /// <summary>
         /// lbl_GenderErr control.
         /// </summary>
@@ -425,7 +409,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_GenderErr;
-        
+
         /// <summary>
         /// ddl_Gender control.
         /// </summary>
@@ -434,7 +418,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Gender;
-        
+
         /// <summary>
         /// requiredFieldValidator_Gender control.
         /// </summary>
@@ -443,7 +427,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_Gender;
-        
+
         /// <summary>
         /// lbl_MaritalStatus control.
         /// </summary>
@@ -452,7 +436,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_MaritalStatus;
-        
+
         /// <summary>
         /// ddl_MaritalStatus control.
         /// </summary>
@@ -461,7 +445,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_MaritalStatus;
-        
+
         /// <summary>
         /// lbl_FathersName control.
         /// </summary>
@@ -470,7 +454,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_FathersName;
-        
+
         /// <summary>
         /// txt_FathersName control.
         /// </summary>
@@ -479,7 +463,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_FathersName;
-        
+
         /// <summary>
         /// lblSpouceName control.
         /// </summary>
@@ -488,7 +472,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSpouceName;
-        
+
         /// <summary>
         /// txt_SpouceName control.
         /// </summary>
@@ -497,7 +481,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_SpouceName;
-        
+
         /// <summary>
         /// lbl_Nationality control.
         /// </summary>
@@ -506,7 +490,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Nationality;
-        
+
         /// <summary>
         /// ddl_Nationality control.
         /// </summary>
@@ -515,7 +499,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Nationality;
-        
+
         /// <summary>
         /// lbl_Religion control.
         /// </summary>
@@ -524,7 +508,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Religion;
-        
+
         /// <summary>
         /// ddl_Religion control.
         /// </summary>
@@ -533,7 +517,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Religion;
-        
+
         /// <summary>
         /// lbl_Bloodgroup control.
         /// </summary>
@@ -542,7 +526,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Bloodgroup;
-        
+
         /// <summary>
         /// ddl_BloodGroup control.
         /// </summary>
@@ -551,7 +535,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_BloodGroup;
-        
+
         /// <summary>
         /// lbl_BioEmpid control.
         /// </summary>
@@ -560,7 +544,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_BioEmpid;
-        
+
         /// <summary>
         /// txt_BioDeviceEmpid control.
         /// </summary>
@@ -569,7 +553,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_BioDeviceEmpid;
-        
+
         /// <summary>
         /// lbl_ContactDetailsubHeading control.
         /// </summary>
@@ -578,7 +562,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ContactDetailsubHeading;
-        
+
         /// <summary>
         /// lbl_Phone control.
         /// </summary>
@@ -587,7 +571,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Phone;
-        
+
         /// <summary>
         /// txt_PhoneNumber control.
         /// </summary>
@@ -596,7 +580,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PhoneNumber;
-        
+
         /// <summary>
         /// regularExpressionValidator_PhoneNumber control.
         /// </summary>
@@ -605,7 +589,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_PhoneNumber;
-        
+
         /// <summary>
         /// regularExpressionValidator_PhoneNumberLength control.
         /// </summary>
@@ -614,7 +598,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_PhoneNumberLength;
-        
+
         /// <summary>
         /// lbl_Mobile control.
         /// </summary>
@@ -623,7 +607,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Mobile;
-        
+
         /// <summary>
         /// txt_Mobile control.
         /// </summary>
@@ -632,7 +616,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Mobile;
-        
+
         /// <summary>
         /// regularExpressionValidator_MobileNumber control.
         /// </summary>
@@ -641,7 +625,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_MobileNumber;
-        
+
         /// <summary>
         /// rangeValidator_Mobile control.
         /// </summary>
@@ -650,7 +634,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RangeValidator rangeValidator_Mobile;
-        
+
         /// <summary>
         /// regularExpressionValidator_MobileLength control.
         /// </summary>
@@ -659,7 +643,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_MobileLength;
-        
+
         /// <summary>
         /// lbl_PersonalEmailID control.
         /// </summary>
@@ -668,7 +652,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PersonalEmailID;
-        
+
         /// <summary>
         /// txt_PersonalEmailID control.
         /// </summary>
@@ -677,7 +661,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PersonalEmailID;
-        
+
         /// <summary>
         /// regularExpressionValidator_PersonalEmailID control.
         /// </summary>
@@ -686,7 +670,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_PersonalEmailID;
-        
+
         /// <summary>
         /// lbl_OfficialEmailID control.
         /// </summary>
@@ -695,7 +679,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_OfficialEmailID;
-        
+
         /// <summary>
         /// txt_OfficialEmailID control.
         /// </summary>
@@ -704,7 +688,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_OfficialEmailID;
-        
+
         /// <summary>
         /// lbl_ReferenceName control.
         /// </summary>
@@ -713,7 +697,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ReferenceName;
-        
+
         /// <summary>
         /// txt_ReferenceName control.
         /// </summary>
@@ -722,7 +706,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_ReferenceName;
-        
+
         /// <summary>
         /// lbl_ReferencePhone control.
         /// </summary>
@@ -731,7 +715,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ReferencePhone;
-        
+
         /// <summary>
         /// txt_ReferencePhone control.
         /// </summary>
@@ -740,7 +724,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_ReferencePhone;
-        
+
         /// <summary>
         /// regularExpressionValidator_ReferencePhone control.
         /// </summary>
@@ -749,7 +733,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_ReferencePhone;
-        
+
         /// <summary>
         /// regularExpressionValidator_ReferencephoneLength control.
         /// </summary>
@@ -758,7 +742,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_ReferencephoneLength;
-        
+
         /// <summary>
         /// lbl_ReferenceMobile control.
         /// </summary>
@@ -767,7 +751,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ReferenceMobile;
-        
+
         /// <summary>
         /// txt_ReferenceMobile control.
         /// </summary>
@@ -776,7 +760,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_ReferenceMobile;
-        
+
         /// <summary>
         /// regularExpressionValidator_ReferenceMobile control.
         /// </summary>
@@ -785,7 +769,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_ReferenceMobile;
-        
+
         /// <summary>
         /// regularExpressionValidator_Reference_Mobile_length control.
         /// </summary>
@@ -794,7 +778,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_Reference_Mobile_length;
-        
+
         /// <summary>
         /// rangeValidator_ReferenceMobile control.
         /// </summary>
@@ -803,7 +787,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RangeValidator rangeValidator_ReferenceMobile;
-        
+
         /// <summary>
         /// Label8 control.
         /// </summary>
@@ -812,7 +796,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label8;
-        
+
         /// <summary>
         /// lbl_EpfGPFAccNo control.
         /// </summary>
@@ -821,7 +805,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_EpfGPFAccNo;
-        
+
         /// <summary>
         /// txt_EpfAndGpfAccNo control.
         /// </summary>
@@ -830,7 +814,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_EpfAndGpfAccNo;
-        
+
         /// <summary>
         /// lbl_PanNo control.
         /// </summary>
@@ -839,7 +823,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PanNo;
-        
+
         /// <summary>
         /// txt_PanNo control.
         /// </summary>
@@ -848,7 +832,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PanNo;
-        
+
         /// <summary>
         /// lbl_SbiAccNo control.
         /// </summary>
@@ -857,7 +841,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_SbiAccNo;
-        
+
         /// <summary>
         /// txt_SbiAccountNo control.
         /// </summary>
@@ -866,7 +850,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_SbiAccountNo;
-        
+
         /// <summary>
         /// lbl_ScaleOfPay control.
         /// </summary>
@@ -875,7 +859,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ScaleOfPay;
-        
+
         /// <summary>
         /// txt_ScaleOfPay control.
         /// </summary>
@@ -884,7 +868,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_ScaleOfPay;
-        
+
         /// <summary>
         /// lbl_GporAGP control.
         /// </summary>
@@ -893,7 +877,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_GporAGP;
-        
+
         /// <summary>
         /// txt_GporAgp control.
         /// </summary>
@@ -902,7 +886,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_GporAgp;
-        
+
         /// <summary>
         /// lbl_ChseRegdno control.
         /// </summary>
@@ -911,7 +895,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ChseRegdno;
-        
+
         /// <summary>
         /// txt_ChseRegdno control.
         /// </summary>
@@ -920,7 +904,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_ChseRegdno;
-        
+
         /// <summary>
         /// lbl_UnivRegdNo control.
         /// </summary>
@@ -929,7 +913,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_UnivRegdNo;
-        
+
         /// <summary>
         /// txt_UniverRegdNo control.
         /// </summary>
@@ -938,7 +922,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_UniverRegdNo;
-        
+
         /// <summary>
         /// Label6 control.
         /// </summary>
@@ -947,7 +931,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label6;
-        
+
         /// <summary>
         /// lbl_JoinDate control.
         /// </summary>
@@ -956,7 +940,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_JoinDate;
-        
+
         /// <summary>
         /// Label21 control.
         /// </summary>
@@ -965,7 +949,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label21;
-        
+
         /// <summary>
         /// txt_JoinDate control.
         /// </summary>
@@ -974,7 +958,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_JoinDate;
-        
+
         /// <summary>
         /// CalendarExtender1 control.
         /// </summary>
@@ -983,7 +967,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
-        
+
         /// <summary>
         /// imgButton_JoinDate control.
         /// </summary>
@@ -992,7 +976,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imgButton_JoinDate;
-        
+
         /// <summary>
         /// requiredFieldValidator_JoinDate control.
         /// </summary>
@@ -1001,7 +985,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_JoinDate;
-        
+
         /// <summary>
         /// regularExpressionValidator_JoinDate control.
         /// </summary>
@@ -1010,7 +994,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_JoinDate;
-        
+
         /// <summary>
         /// lbl_JoinDateInService control.
         /// </summary>
@@ -1019,7 +1003,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_JoinDateInService;
-        
+
         /// <summary>
         /// Label888 control.
         /// </summary>
@@ -1028,7 +1012,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label888;
-        
+
         /// <summary>
         /// txt_JoinDateinService control.
         /// </summary>
@@ -1037,7 +1021,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_JoinDateinService;
-        
+
         /// <summary>
         /// CalendarExtender_JoinDateinService control.
         /// </summary>
@@ -1046,7 +1030,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender_JoinDateinService;
-        
+
         /// <summary>
         /// imgButton_JoinDateinService control.
         /// </summary>
@@ -1055,7 +1039,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imgButton_JoinDateinService;
-        
+
         /// <summary>
         /// requiredFieldValidator_JoinDateinService control.
         /// </summary>
@@ -1064,7 +1048,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_JoinDateinService;
-        
+
         /// <summary>
         /// lbl_DateofNextIncrement control.
         /// </summary>
@@ -1073,7 +1057,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_DateofNextIncrement;
-        
+
         /// <summary>
         /// Label17 control.
         /// </summary>
@@ -1082,7 +1066,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label17;
-        
+
         /// <summary>
         /// txt_DateofNextIncrement control.
         /// </summary>
@@ -1091,7 +1075,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_DateofNextIncrement;
-        
+
         /// <summary>
         /// imgButton_DateofNextIncrement control.
         /// </summary>
@@ -1100,7 +1084,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imgButton_DateofNextIncrement;
-        
+
         /// <summary>
         /// CalendarExtender_DateofNextIncrement control.
         /// </summary>
@@ -1109,7 +1093,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender_DateofNextIncrement;
-        
+
         /// <summary>
         /// requiredFieldValidator_DateofNextIncrement control.
         /// </summary>
@@ -1118,7 +1102,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_DateofNextIncrement;
-        
+
         /// <summary>
         /// lbl_EmployeeType1 control.
         /// </summary>
@@ -1127,7 +1111,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_EmployeeType1;
-        
+
         /// <summary>
         /// Label20 control.
         /// </summary>
@@ -1136,7 +1120,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label20;
-        
+
         /// <summary>
         /// ddl_Employeetyp1 control.
         /// </summary>
@@ -1145,7 +1129,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Employeetyp1;
-        
+
         /// <summary>
         /// requiredFieldValidator_Employeetyp1 control.
         /// </summary>
@@ -1154,7 +1138,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_Employeetyp1;
-        
+
         /// <summary>
         /// lbl_EmployeeType2 control.
         /// </summary>
@@ -1163,7 +1147,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_EmployeeType2;
-        
+
         /// <summary>
         /// Label28 control.
         /// </summary>
@@ -1172,7 +1156,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label28;
-        
+
         /// <summary>
         /// ddl_Employeetyp2 control.
         /// </summary>
@@ -1181,7 +1165,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Employeetyp2;
-        
+
         /// <summary>
         /// requiredFieldValidator_Employeetyp2 control.
         /// </summary>
@@ -1190,7 +1174,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_Employeetyp2;
-        
+
         /// <summary>
         /// lbl_EmployeeType3 control.
         /// </summary>
@@ -1199,7 +1183,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_EmployeeType3;
-        
+
         /// <summary>
         /// Label29 control.
         /// </summary>
@@ -1208,7 +1192,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label29;
-        
+
         /// <summary>
         /// ddl_Employeetyp3 control.
         /// </summary>
@@ -1217,7 +1201,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Employeetyp3;
-        
+
         /// <summary>
         /// requiredFieldValidator_Employeetyp3 control.
         /// </summary>
@@ -1226,7 +1210,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_Employeetyp3;
-        
+
         /// <summary>
         /// lbl_EmployeeType4 control.
         /// </summary>
@@ -1235,7 +1219,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_EmployeeType4;
-        
+
         /// <summary>
         /// Label30 control.
         /// </summary>
@@ -1244,7 +1228,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label30;
-        
+
         /// <summary>
         /// ddl_Employeetyp4 control.
         /// </summary>
@@ -1253,7 +1237,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Employeetyp4;
-        
+
         /// <summary>
         /// requiredFieldValidator_Employeetyp4 control.
         /// </summary>
@@ -1262,7 +1246,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_Employeetyp4;
-        
+
         /// <summary>
         /// Label9 control.
         /// </summary>
@@ -1271,7 +1255,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label9;
-        
+
         /// <summary>
         /// lbl_ServiceStatusLastWorkingDate control.
         /// </summary>
@@ -1280,7 +1264,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ServiceStatusLastWorkingDate;
-        
+
         /// <summary>
         /// Label31 control.
         /// </summary>
@@ -1289,7 +1273,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label31;
-        
+
         /// <summary>
         /// txt_ServiceStatusLastWorkingDate control.
         /// </summary>
@@ -1298,7 +1282,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_ServiceStatusLastWorkingDate;
-        
+
         /// <summary>
         /// CalendarExtender_ServiceStatusLastWorkingDate control.
         /// </summary>
@@ -1307,7 +1291,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender_ServiceStatusLastWorkingDate;
-        
+
         /// <summary>
         /// imgButton_ServiceStatusLastWorkingDate control.
         /// </summary>
@@ -1316,7 +1300,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imgButton_ServiceStatusLastWorkingDate;
-        
+
         /// <summary>
         /// requiredFieldValidator_ServiceStatusLastWorkingDate control.
         /// </summary>
@@ -1325,7 +1309,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_ServiceStatusLastWorkingDate;
-        
+
         /// <summary>
         /// lbl_ServiceStatusChangeRequestDate control.
         /// </summary>
@@ -1334,7 +1318,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_ServiceStatusChangeRequestDate;
-        
+
         /// <summary>
         /// Label899 control.
         /// </summary>
@@ -1343,7 +1327,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label899;
-        
+
         /// <summary>
         /// txt_ServiceStatusChangeRequestDate control.
         /// </summary>
@@ -1352,7 +1336,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_ServiceStatusChangeRequestDate;
-        
+
         /// <summary>
         /// CalendarExtender_ServiceStatusChangeRequestDate control.
         /// </summary>
@@ -1361,7 +1345,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender_ServiceStatusChangeRequestDate;
-        
+
         /// <summary>
         /// imgButton_ServiceStatusChangeRequestDate control.
         /// </summary>
@@ -1370,7 +1354,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ImageButton imgButton_ServiceStatusChangeRequestDate;
-        
+
         /// <summary>
         /// requiredFieldValidator_ServiceStatusChangeRequestDate control.
         /// </summary>
@@ -1379,7 +1363,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_ServiceStatusChangeRequestDate;
-        
+
         /// <summary>
         /// lbl_RefLetterNo control.
         /// </summary>
@@ -1388,7 +1372,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_RefLetterNo;
-        
+
         /// <summary>
         /// txt_RefLetterNo control.
         /// </summary>
@@ -1397,7 +1381,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_RefLetterNo;
-        
+
         /// <summary>
         /// regularExpressionValidator_RefLetterNo control.
         /// </summary>
@@ -1406,7 +1390,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_RefLetterNo;
-        
+
         /// <summary>
         /// lbl_PhStatus control.
         /// </summary>
@@ -1415,7 +1399,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PhStatus;
-        
+
         /// <summary>
         /// Label27 control.
         /// </summary>
@@ -1424,7 +1408,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label27;
-        
+
         /// <summary>
         /// txt_PhStatus control.
         /// </summary>
@@ -1433,7 +1417,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PhStatus;
-        
+
         /// <summary>
         /// lbl_Notice control.
         /// </summary>
@@ -1442,7 +1426,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Notice;
-        
+
         /// <summary>
         /// txt_Notice control.
         /// </summary>
@@ -1451,7 +1435,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Notice;
-        
+
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -1460,7 +1444,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
+
         /// <summary>
         /// lbl_PresentAddress control.
         /// </summary>
@@ -1469,7 +1453,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PresentAddress;
-        
+
         /// <summary>
         /// Label13 control.
         /// </summary>
@@ -1478,7 +1462,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label13;
-        
+
         /// <summary>
         /// txt_PresentAddress control.
         /// </summary>
@@ -1487,7 +1471,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PresentAddress;
-        
+
         /// <summary>
         /// requiredFieldValidator_PresentAddress control.
         /// </summary>
@@ -1496,7 +1480,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_PresentAddress;
-        
+
         /// <summary>
         /// lbl_PresentLandMark control.
         /// </summary>
@@ -1505,7 +1489,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PresentLandMark;
-        
+
         /// <summary>
         /// txt_PresentLandMark control.
         /// </summary>
@@ -1514,7 +1498,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PresentLandMark;
-        
+
         /// <summary>
         /// lbl_PresentPinCode control.
         /// </summary>
@@ -1523,7 +1507,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PresentPinCode;
-        
+
         /// <summary>
         /// txt_PresentPincode control.
         /// </summary>
@@ -1532,7 +1516,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PresentPincode;
-        
+
         /// <summary>
         /// regularExpressionValidator_Present_Pincode control.
         /// </summary>
@@ -1541,7 +1525,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_Present_Pincode;
-        
+
         /// <summary>
         /// lbl_PresentDistrict control.
         /// </summary>
@@ -1550,7 +1534,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PresentDistrict;
-        
+
         /// <summary>
         /// Label15 control.
         /// </summary>
@@ -1559,7 +1543,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label15;
-        
+
         /// <summary>
         /// ddl_PresentDistrict control.
         /// </summary>
@@ -1568,7 +1552,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_PresentDistrict;
-        
+
         /// <summary>
         /// requiredFieldValidator_Present_District control.
         /// </summary>
@@ -1577,7 +1561,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_Present_District;
-        
+
         /// <summary>
         /// lbl_PresentState control.
         /// </summary>
@@ -1586,7 +1570,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PresentState;
-        
+
         /// <summary>
         /// txt_PresentState control.
         /// </summary>
@@ -1595,7 +1579,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PresentState;
-        
+
         /// <summary>
         /// lbl_PresentCountry control.
         /// </summary>
@@ -1604,7 +1588,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PresentCountry;
-        
+
         /// <summary>
         /// txt_PresentCountry control.
         /// </summary>
@@ -1613,7 +1597,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PresentCountry;
-        
+
         /// <summary>
         /// Label2 control.
         /// </summary>
@@ -1622,7 +1606,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-        
+
         /// <summary>
         /// chk_CopyPresentAddress control.
         /// </summary>
@@ -1631,7 +1615,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBox chk_CopyPresentAddress;
-        
+
         /// <summary>
         /// lbl_PermanentAddress control.
         /// </summary>
@@ -1640,7 +1624,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PermanentAddress;
-        
+
         /// <summary>
         /// Label16 control.
         /// </summary>
@@ -1649,7 +1633,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label16;
-        
+
         /// <summary>
         /// txt_PermanentAddress control.
         /// </summary>
@@ -1658,7 +1642,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PermanentAddress;
-        
+
         /// <summary>
         /// RequiredFieldValidator_PermanentAddress control.
         /// </summary>
@@ -1667,7 +1651,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_PermanentAddress;
-        
+
         /// <summary>
         /// lbl_PermanentLandMark control.
         /// </summary>
@@ -1676,7 +1660,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PermanentLandMark;
-        
+
         /// <summary>
         /// txt_PermanentLandMark control.
         /// </summary>
@@ -1685,7 +1669,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PermanentLandMark;
-        
+
         /// <summary>
         /// lbl_PermanentPinCode control.
         /// </summary>
@@ -1694,7 +1678,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PermanentPinCode;
-        
+
         /// <summary>
         /// txt_PermanentPincode control.
         /// </summary>
@@ -1703,7 +1687,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PermanentPincode;
-        
+
         /// <summary>
         /// regularExpressionValidator_Permanent_Pincode control.
         /// </summary>
@@ -1712,7 +1696,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_Permanent_Pincode;
-        
+
         /// <summary>
         /// lbl_PermanentDistrict control.
         /// </summary>
@@ -1721,7 +1705,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PermanentDistrict;
-        
+
         /// <summary>
         /// Label18 control.
         /// </summary>
@@ -1730,7 +1714,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label18;
-        
+
         /// <summary>
         /// ddl_PermanentDistrict control.
         /// </summary>
@@ -1739,7 +1723,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_PermanentDistrict;
-        
+
         /// <summary>
         /// requiredFieldValidator_Permanent_District control.
         /// </summary>
@@ -1748,7 +1732,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_Permanent_District;
-        
+
         /// <summary>
         /// lbl_PermanentState control.
         /// </summary>
@@ -1757,7 +1741,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PermanentState;
-        
+
         /// <summary>
         /// txt_PermanentState control.
         /// </summary>
@@ -1766,7 +1750,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PermanentState;
-        
+
         /// <summary>
         /// lbl_PermanentCountry control.
         /// </summary>
@@ -1775,7 +1759,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PermanentCountry;
-        
+
         /// <summary>
         /// txt_PermanentCountry control.
         /// </summary>
@@ -1784,7 +1768,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PermanentCountry;
-        
+
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -1793,7 +1777,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
+
         /// <summary>
         /// lbl_Qualification control.
         /// </summary>
@@ -1802,7 +1786,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Qualification;
-        
+
         /// <summary>
         /// Label19 control.
         /// </summary>
@@ -1811,7 +1795,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label19;
-        
+
         /// <summary>
         /// lbl_PassingYear control.
         /// </summary>
@@ -1820,7 +1804,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_PassingYear;
-        
+
         /// <summary>
         /// lbl_Board control.
         /// </summary>
@@ -1829,7 +1813,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Board;
-        
+
         /// <summary>
         /// lbl_Division control.
         /// </summary>
@@ -1838,7 +1822,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Division;
-        
+
         /// <summary>
         /// lbl_Percentage control.
         /// </summary>
@@ -1847,7 +1831,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_Percentage;
-        
+
         /// <summary>
         /// ddl_Qualification control.
         /// </summary>
@@ -1856,7 +1840,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddl_Qualification;
-        
+
         /// <summary>
         /// txt_PassingYear control.
         /// </summary>
@@ -1865,7 +1849,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_PassingYear;
-        
+
         /// <summary>
         /// regularExpressionValidator_PassingYear control.
         /// </summary>
@@ -1874,7 +1858,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator regularExpressionValidator_PassingYear;
-        
+
         /// <summary>
         /// txt_Board control.
         /// </summary>
@@ -1883,7 +1867,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Board;
-        
+
         /// <summary>
         /// txt_Division control.
         /// </summary>
@@ -1892,7 +1876,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Division;
-        
+
         /// <summary>
         /// txt_Percentage control.
         /// </summary>
@@ -1901,7 +1885,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_Percentage;
-        
+
         /// <summary>
         /// btn_AddSample control.
         /// </summary>
@@ -1910,7 +1894,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_AddSample;
-        
+
         /// <summary>
         /// gview_Course control.
         /// </summary>
@@ -1919,7 +1903,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gview_Course;
-        
+
         /// <summary>
         /// btn_ViewEmployeeDetails control.
         /// </summary>
@@ -1928,7 +1912,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_ViewEmployeeDetails;
-        
+
         /// <summary>
         /// btn_Top_Save control.
         /// </summary>
@@ -1937,7 +1921,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Top_Save;
-        
+
         /// <summary>
         /// btn_Reset control.
         /// </summary>
@@ -1946,7 +1930,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Reset;
-        
+
         /// <summary>
         /// view_GridView control.
         /// </summary>
@@ -1955,7 +1939,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View view_GridView;
-        
+
         /// <summary>
         /// btn_AddNew control.
         /// </summary>
@@ -1964,7 +1948,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_AddNew;
-        
+
         /// <summary>
         /// lit_PageCounter control.
         /// </summary>
@@ -1973,7 +1957,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lit_PageCounter;
-        
+
         /// <summary>
         /// gview_Employee control.
         /// </summary>
@@ -1982,7 +1966,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gview_Employee;
-        
+
         /// <summary>
         /// dialog_Message control.
         /// </summary>
@@ -1991,7 +1975,7 @@ namespace Micro.WebApplication.APPS.ICAS.STAFFS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Micro.Commons.DialogBox dialog_Message;
-        
+
         /// <summary>
         /// lbl_TheMessage control.
         /// </summary>

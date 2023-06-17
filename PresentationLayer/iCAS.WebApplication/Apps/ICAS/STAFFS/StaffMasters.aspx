@@ -33,12 +33,12 @@
                         </li>
 
                         <!--Teaching?-->
-                        <li class="FormLabel">
+                        <%--<li class="FormLabel">
                             <asp:Label runat="server" ID="Label4" Text="Name of the Office / College:" />
                         </li>
                         <li class="FormValue">
                             <asp:DropDownList runat="server" ID="ddl_Office" Width="90%" />
-                        </li>
+                        </li>--%>
 
 
 
@@ -690,7 +690,20 @@
                             <asp:Literal runat="server" ID="lit_PageCounter" />
                         </li>
                         <li class="GridView">
-                            <asp:GridView runat="server" ID="gview_Employee" AutoGenerateColumns="false" AllowPaging="true" AllowSorting="true" PageSize="30" Width="98%" CssClass="GridView" GridLines="Both" CellPadding="2" OnRowCommand="gview_Employee_RowCommand" OnRowEditing="gview_Employee_RowEditing" OnRowDeleting="gview_Employee_RowDeleting" OnRowDataBound="gview_Employee_RowDataBound" OnPageIndexChanging="gview_Employee_PageIndexChanging">
+                            <asp:GridView runat="server" ID="gview_Employee" 
+                                AutoGenerateColumns="false" 
+                                AllowPaging="true" 
+                                AllowSorting="true" 
+                                PageSize="50" 
+                                Width="98%" 
+                                CssClass="GridView" 
+                                GridLines="Both" 
+                                CellPadding="2" 
+                                OnRowCommand="gview_Employee_RowCommand" 
+                                OnRowEditing="gview_Employee_RowEditing" 
+                                OnRowDeleting="gview_Employee_RowDeleting" 
+                                OnRowDataBound="gview_Employee_RowDataBound" 
+                                OnPageIndexChanging="gview_Employee_PageIndexChanging">
                                 <HeaderStyle CssClass="HeaderStyle" />
                                 <Columns>
                                     <asp:TemplateField ItemStyle-CssClass="CheckBox">

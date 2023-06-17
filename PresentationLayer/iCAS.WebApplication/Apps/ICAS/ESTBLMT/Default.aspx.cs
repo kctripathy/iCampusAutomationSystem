@@ -28,7 +28,15 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                         ",", EstbTypeConstants.MoM,
                         ",", EstbTypeConstants.WORLDBANK
                 );
-
+        public string typeCodesToShowForPublication = String.Concat(
+                       EstbTypeConstants.ARTCLE,
+                       ",", EstbTypeConstants.PROJECT_PAPER,
+                       ",", EstbTypeConstants.SEMINAR_PAPER,
+                       ",", EstbTypeConstants.BOOK,
+                       ",", EstbTypeConstants.LITERATURE,
+                       ",", EstbTypeConstants.STAFF_PROFILE,
+                       ",", EstbTypeConstants.STUDY_MATERIAL
+               );
         #region Declaration
 
         protected static class PageVariables
@@ -84,13 +92,26 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!IsPostBack && !IsCallback)
             {
                 Session["fileName"] = "NA";
-                BindEstbTypeDropdown();
+                if (Request.QueryString["type"] == null)
+                {
+                    lit_PageTitle.Text = "MANAGE ESTABLISHMENTS";
+                    BindEstbTypeDropdown();
+                }
+                else if (Request.QueryString["type"] == "publication")
+                {
+                    lit_PageTitle.Text = "MANAGE PUBLICATIONS";
+                    typeCodesToShow = typeCodesToShowForPublication;
+                    BindEstbTypeDropdownForPublication();
+                }
+                //BindEstbTypeDropdown();
                 Establishment_multi.SetActiveView(InputControls);
+
             }
+            
 
         }
 
@@ -126,6 +147,33 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             ddlEstbTypeView.Items.Add(new ListItem("DOWNLOAD", EstbTypeConstants.DOWNLOAD));
         }
 
+        private void BindEstbTypeDropdownForPublication()
+        {
+            ddlEstbType.Items.Clear();
+            ddlEstbType.Items.Add(new ListItem("-- VIEW ALL --", ""));
+            ddlEstbType.Items.Add(new ListItem("BOOK", EstbTypeConstants.BOOK));
+            ddlEstbType.Items.Add(new ListItem("ARTCLE", EstbTypeConstants.ARTCLE));
+            ddlEstbType.Items.Add(new ListItem("PROJECT PAPER", EstbTypeConstants.PROJECT_PAPER));
+            ddlEstbType.Items.Add(new ListItem("SEMINAR PAPER", EstbTypeConstants.SEMINAR_PAPER));
+            ddlEstbType.Items.Add(new ListItem("STUDY MATERIAL", EstbTypeConstants.STUDY_MATERIAL));
+            ddlEstbType.Items.Add(new ListItem("LITERATURE", EstbTypeConstants.LITERATURE));
+            ddlEstbType.Items.Add(new ListItem("STAFF PROFILE", EstbTypeConstants.STAFF_PROFILE));
+            ddlEstbType.SelectedIndex = (int)(MicroEnums.EstablishmentType.All);
+
+
+            ddlEstbTypeView.Items.Clear();
+            ddlEstbTypeView.Items.Add(new ListItem("-- VIEW ALL --", ""));
+            ddlEstbTypeView.Items.Add(new ListItem("BOOK", EstbTypeConstants.BOOK));
+            ddlEstbTypeView.Items.Add(new ListItem("ARTCLE", EstbTypeConstants.ARTCLE));
+            ddlEstbTypeView.Items.Add(new ListItem("PROJECT PAPER", EstbTypeConstants.PROJECT_PAPER));
+            ddlEstbTypeView.Items.Add(new ListItem("SEMINAR PAPER", EstbTypeConstants.SEMINAR_PAPER));
+            ddlEstbTypeView.Items.Add(new ListItem("STUDY MATERIAL", EstbTypeConstants.STUDY_MATERIAL));
+            ddlEstbTypeView.Items.Add(new ListItem("LITERATURE", EstbTypeConstants.LITERATURE));
+            ddlEstbTypeView.Items.Add(new ListItem("STAFF PROFILE", EstbTypeConstants.STAFF_PROFILE));
+            ddlEstbTypeView.SelectedIndex = (int)(MicroEnums.EstablishmentType.All);
+
+        }
+
         protected void btn_view_Click(object sender, EventArgs e)
         {
             PageVariables.EstablishmentList = null;
@@ -142,7 +190,7 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                 RowIndex = Convert.ToInt32(e.CommandArgument);
                 int RecodrId = int.Parse(((Label)gridview_Establishment.Rows[RowIndex].FindControl("lbl_EstbID")).Text);
 
-                BindGridview();
+                //BindGridview();
                 PageVariables.theestablishment = null;
                 PageVariables.theestablishment = (from establishment in PageVariables.EstablishmentList
                                                   where establishment.EstbID == RecodrId
@@ -188,6 +236,8 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
 
         protected void gridview_Establishment_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
+
+
             e.Cancel = true;
         }
 
@@ -205,26 +255,11 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
 
         public void BindGridview()
         {
-            //PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentList(); //EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCodes("R,N,T,C,W,M,1,2,3,4,5,6,7,8");
-            //string typeCodesToShow = String.Concat(
-            //            EstbTypeConstants.RECENT_ACTIVITY,
-            //            ",",EstbTypeConstants.NOTICE,
-            //            ",",EstbTypeConstants.TENDER,
-            //            ",",EstbTypeConstants.CIRCULAR,
-            //            ",",EstbTypeConstants.SYLLABUS,
-            //            ",",EstbTypeConstants.NAAC,
-            //            ",",EstbTypeConstants.AQAR,
-            //            ",",EstbTypeConstants.IQAC,
-            //            ",",EstbTypeConstants.DOWNLOAD,
-            //            ",",EstbTypeConstants.MoM,
-            //            ",",EstbTypeConstants.WORLDBANK
-            //    );
             string typeCodes = typeCodesToShow;
             if (ddlEstbTypeView.SelectedValue != "")
             {
                 typeCodes = ddlEstbTypeView.SelectedValue;
             }
-
             PageVariables.EstablishmentList = EstablishmentManagement.GetInstance.GetEstablishmentListByTypeCodes(typeCodes);
             gridview_Establishment.DataSource = PageVariables.EstablishmentList;
             gridview_Establishment.DataBind();
@@ -244,9 +279,10 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             objEstablishment.EstbTypeCode = ddlEstbType.SelectedValue; // rbl_EstablishmentTypeCode.SelectedValue;
             objEstablishment.EstbTitle = txt_NoticeTitle.Text;
             objEstablishment.EstbViewStartDate = DateTime.Parse(txt_Startdate.Text);
-            objEstablishment.EstbViewEndDate = DateTime.Parse(txt_Enddate.Text);
-            objEstablishment.EstbDescription = txt_Description.Text.Replace("\n", "<br/>");
-            //theestablishment.EstbMessage = txt_Description.Text.Replace("\n", "<br/>");
+            objEstablishment.EstbViewEndDate = DateTime.Parse(txt_Startdate.Text).AddYears(99);
+            objEstablishment.EstbDescription = txt_Description.Text;
+            objEstablishment.EstbDescription1 = txt_Description1.Text;
+            objEstablishment.EstbDescription2 = txt_Description2.Text;
 
             if (Session["fileName"].ToString() != "NA")
             {
@@ -268,14 +304,15 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             PageVariables.theestablishment.EstbTypeCode = ddlEstbType.SelectedValue; // rbl_EstablishmentTypeCode.SelectedValue;
             PageVariables.theestablishment.EstbTitle = txt_NoticeTitle.Text;
             PageVariables.theestablishment.EstbViewStartDate = DateTime.Parse(txt_Startdate.Text);
-            PageVariables.theestablishment.EstbViewEndDate = DateTime.Parse(txt_Enddate.Text);
+            PageVariables.theestablishment.EstbViewEndDate = DateTime.Parse(txt_Startdate.Text).AddYears(99);
             PageVariables.theestablishment.EstbDescription = txt_Description.Text.Replace("\n", "<br/>");
+            PageVariables.theestablishment.EstbDescription1 = txt_Description1.Text.Replace("\n", "<br/>");
+            PageVariables.theestablishment.EstbDescription2 = txt_Description2.Text.Replace("\n", "<br/>");
             //PageVariables.theestablishment.EstbMessage = txt_Description.Text.Replace("\n", "<br/>");
             if (Session["fileName"].ToString() != "NA")
             {
                 PageVariables.theestablishment.FileNameWithPath = Session["fileName"].ToString();
             }
-
 
             ProReturnValue = EstablishmentManagement.GetInstance.UpdateEstablishment(PageVariables.theestablishment);
 
@@ -294,8 +331,10 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             //rbl_EstablishmentTypeCode.SelectedValue = theestablishment.EstbTypeCode;
             txt_NoticeTitle.Text = theestablishment.EstbTitle;
             txt_Startdate.Text = theestablishment.EstbViewStartDate.ToString();
-            txt_Enddate.Text = theestablishment.EstbViewEndDate.ToString();
+            //txt_Enddate.Text = theestablishment.EstbViewEndDate.ToString();
             txt_Description.Text = theestablishment.EstbDescription.Replace("<br/>","\n");
+            txt_Description1.Text = theestablishment.EstbDescription1.Replace("<br/>","\n");
+            txt_Description2.Text = theestablishment.EstbDescription1.Replace("<br/>","\n");
 
         }
 
@@ -304,67 +343,73 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             //rbl_EstablishmentTypeCode.ClearSelection();
             txt_NoticeTitle.Text = string.Empty;
             txt_Startdate.Text = string.Empty;
-            txt_Enddate.Text = string.Empty;
+            //txt_Enddate.Text = string.Empty;
             txt_Description.Text = string.Empty;
+            txt_Description1.Text = string.Empty;
+            txt_Description2.Text = string.Empty;
             lbl_FileUploadStatus.Text = string.Empty;
 
         }
 
         private string UploadFileGetNewFileName()
         {
-            string theNewFileName = string.Empty;
-            string fileNameWithPath = string.Empty;
-            if (fileUploadEstb.HasFile)
+            try
             {
-
-                string[] validFileTypes = { "pdf", "docx", "doc" };
-                string ext = System.IO.Path.GetExtension(fileUploadEstb.PostedFile.FileName).ToLower();
-                bool isValidFile = false;
-                for (int i = 0; i < validFileTypes.Length; i++)
+                string theNewFileName = string.Empty;
+                string fileNameWithPath = string.Empty;
+                if (fileUploadEstb.HasFile)
                 {
-                    if (ext == "." + validFileTypes[i])
+                    string[] validFileTypes = { "pdf", "docx", "doc" };
+                    string ext = System.IO.Path.GetExtension(fileUploadEstb.PostedFile.FileName).ToLower();
+                    bool isValidFile = false;
+                    for (int i = 0; i < validFileTypes.Length; i++)
                     {
-                        isValidFile = true;
-                        break;
+                        if (ext == "." + validFileTypes[i])
+                        {
+                            isValidFile = true;
+                            break;
+                        }
                     }
-                }
-                if (!isValidFile)
-                {
-                    //lblMessage.ForeColor = System.Drawing.Color.Red;
-                    //lblMessage.Text = "Invalid File. Please upload a File with extension " + string.Join(",", validFileTypes);
-                    //lbl_TheMessage.Text = lblMessage.Text;
-                    //dialog_Message.Show();
-                    lbl_FileUploadStatus.Text = "Invalid File. Please upload a File with extension " + string.Join(",", validFileTypes);
-                    return "NA";
+                    if (!isValidFile)
+                    {
+                        lbl_FileUploadStatus.Text = "Invalid File. Please upload a File with extension " + string.Join(",", validFileTypes);
+                        return "NA";
+                    }
+                    else
+                    {
+
+
+                        //create the path to save the file to
+                        theNewFileName = string.Format("ESTB_{0}_Y{1}_M{2}_D{3}-H{4}_M{5}_S{6}{7}",
+                                            ddlEstbType.SelectedValue,
+                                            DateTime.Now.Year.ToString(),
+                                            DateTime.Now.Month.ToString(),
+                                            DateTime.Now.Day.ToString(),
+                                            DateTime.Now.Hour.ToString(),
+                                            DateTime.Now.Minute.ToString(),
+                                            DateTime.Now.Second.ToString(),
+                                            ext
+                                            );
+
+                        fileNameWithPath = Path.Combine(Server.MapPath("~/Documents"), theNewFileName);
+                        //save the file to our local path
+                        fileUploadEstb.SaveAs(fileNameWithPath);
+                        fileUploadEstb = null;
+                    }
                 }
                 else
                 {
-
-
-                    //create the path to save the file to
-                    theNewFileName = string.Format("ESTB_{0}_Y{1}_M{2}_D{3}-H{4}_M{5}_S{6}{7}",
-                                        ddlEstbType.SelectedValue,
-                                        DateTime.Now.Year.ToString(),
-                                        DateTime.Now.Month.ToString(),
-                                        DateTime.Now.Day.ToString(),
-                                        DateTime.Now.Hour.ToString(),
-                                        DateTime.Now.Minute.ToString(),
-                                        DateTime.Now.Second.ToString(),
-                                        ext
-                                        );
-
-                    fileNameWithPath = Path.Combine(Server.MapPath("~/Documents"), theNewFileName);
-                    //save the file to our local path
-                    fileUploadEstb.SaveAs(fileNameWithPath);
-                    fileUploadEstb = null;
+                    lbl_FileUploadStatus.Text = "File couldn't be uploaded! it seems some problem is there";
+                    return "NA";
                 }
+                return theNewFileName;
+
             }
-            else
+            catch (Exception ex)
             {
-                lbl_FileUploadStatus.Text = "File couldn't be uploaded! it seems some problem is there";
+                lbl_FileUploadStatus.Text = ex.Message;
                 return "NA";
             }
-            return theNewFileName;
         }
 
 
@@ -482,6 +527,29 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             BindGridview();
         }
 
-         
+        protected void gridview_Establishment_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                foreach (Button button in e.Row.Cells[8].Controls.OfType<Button>())
+                {
+                    if (button.CommandName == "Delete")
+                    {
+                        button.Attributes["onclick"] = "if(!confirm('Do you want to delete?')){ return false; };";
+                    }
+                }
+
+                string item = e.Row.Cells[5].Text;
+                if (item.ToUpper().Trim() == "APPROVED")
+                {
+                    e.Row.Cells[5].BackColor = System.Drawing.Color.LightGreen;
+                }
+                else
+                {
+                    e.Row.Cells[5].BackColor = System.Drawing.Color.LightYellow;
+                }
+
+            }
+        }
     }
 }

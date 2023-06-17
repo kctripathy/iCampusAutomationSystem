@@ -53,6 +53,11 @@ namespace Micro.BusinessLayer.Administration
             return UserIntegration.GetUserByID(userID);
         }
 
+        public User Login(string loginName)
+        {
+            return UserIntegration.Login(loginName);
+        }
+
         public User GetUserByLoginName(string loginName)
         {
             //User TheUser = null;

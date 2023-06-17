@@ -5,15 +5,15 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyVersion("15.06.23.0")]
-[assembly: AssemblyFileVersion("15.06.23.0")]
+[assembly: AssemblyVersion("17.06.23.1712")]
+[assembly: AssemblyFileVersion("17.06.23.1712")]
 
 [assembly: AssemblyTitle("ICAS.WebApplication")]
 [assembly: AssemblyDescription("Integrated College Automation System -iCAS")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Kishor Chandra Tripathy")]
 [assembly: AssemblyProduct("ICAS.WebApplication")]
-[assembly: AssemblyCopyright("Copyright © 2013-17 | Kishor Tripathy (kctripathy@gmail.com), Bhubaneswar (Odisha)")]
+[assembly: AssemblyCopyright("Copyright © 2013-23 TSD College, BD Pur Sasan, Ganjam, Odisha, 761120")]
 [assembly: AssemblyTrademark("Suvram Solutions")]
 [assembly: AssemblyCulture("")]
 

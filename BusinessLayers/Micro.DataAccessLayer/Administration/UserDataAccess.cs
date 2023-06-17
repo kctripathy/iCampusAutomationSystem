@@ -27,6 +27,17 @@ namespace Micro.DataAccessLayer.Administration
         #endregion
 
         #region Methods & Implemenations
+        public DataRow Login(string loginName)
+        {
+            using (SqlCommand SelectCommand = new SqlCommand())
+            {
+                SelectCommand.CommandType = CommandType.StoredProcedure;
+                SelectCommand.Parameters.Add(GetParameter("@LoginName", SqlDbType.VarChar, loginName));
+                SelectCommand.CommandText = "[pAPI_LOGIN]";
+                return ExecuteGetDataRow(SelectCommand);
+            }
+        }
+
         public DataTable GetUserList(bool allOffices = false, bool showDeleted = false)
         {
             using (SqlCommand SelectCommand = new SqlCommand())
@@ -73,12 +84,25 @@ namespace Micro.DataAccessLayer.Administration
                 return ExecuteGetDataRow(SelectCommand);
             }
         }
-		/// <summary>
-		/// Used For LogIn User Control
-		/// </summary>
-		/// <param name="loginName"></param>
-		/// <returns></returns>
-		public DataRow GetUserByLoginNameGuset(string loginName)
+
+        public DataRow GetUserDataLoginNameOrPhoneNo(string loginNameOrPhone)
+        {
+            using (SqlCommand SelectCommand = new SqlCommand())
+            {
+                SelectCommand.CommandType = CommandType.StoredProcedure;
+                SelectCommand.Parameters.Add(GetParameter("@LoginName", SqlDbType.VarChar, loginNameOrPhone));
+                SelectCommand.CommandText = "pAPI_GetUserLoginNameOrPhoneNo";
+                return ExecuteGetDataRow(SelectCommand);
+            }
+        }
+
+
+        /// <summary>
+        /// Used For LogIn User Control
+        /// </summary>
+        /// <param name="loginName"></param>
+        /// <returns></returns>
+        public DataRow GetUserByLoginNameGuset(string loginName)
 		{
 			using (SqlCommand SelectCommand = new SqlCommand())
 			{

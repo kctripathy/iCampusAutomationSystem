@@ -90,7 +90,9 @@ namespace Micro.DataAccessLayer.ICAS.ESTBLMT
                 insCmd.Parameters.Add(GetParameter("@ESTB_TITLE", SqlDbType.VarChar, oEstb.EstbTitle));
                 insCmd.Parameters.Add(GetParameter("@ESTB_TYPE_CODE", SqlDbType.Char, oEstb.EstbTypeCode));
                 //insCmd.Parameters.Add(GetParameter("@ESTB_DATE", SqlDbType.DateTime, DateTime.Today));
-                insCmd.Parameters.Add(GetParameter("@ESTB_MESSAGE", SqlDbType.VarChar, oEstb.EstbDescription));
+                insCmd.Parameters.Add(GetParameter("@ESTB_DESC", SqlDbType.VarChar, oEstb.EstbDescription));
+                insCmd.Parameters.Add(GetParameter("@ESTB_DESC_1", SqlDbType.VarChar, oEstb.EstbDescription1));
+                insCmd.Parameters.Add(GetParameter("@ESTB_DESC_2", SqlDbType.VarChar, oEstb.EstbDescription2));
                 insCmd.Parameters.Add(GetParameter("@ESTB_UPLOADED_FILE", SqlDbType.VarBinary, oEstb.EstbUploadFile));
                 insCmd.Parameters.Add(GetParameter("@ESTB_UPLOADED_FILETYPE", SqlDbType.VarChar, oEstb.EstbUploadFileType));
                 insCmd.Parameters.Add(GetParameter("@ESTB_VIEW_START_DATE", SqlDbType.DateTime, oEstb.EstbViewStartDate));
@@ -98,12 +100,11 @@ namespace Micro.DataAccessLayer.ICAS.ESTBLMT
                 insCmd.Parameters.Add(GetParameter("@ESTBSTATUSFLAG", SqlDbType.VarChar, "Pending"));
                 insCmd.Parameters.Add(GetParameter("@OfficeID", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.OfficeID));
                 insCmd.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserReferenceID));
+                insCmd.Parameters.Add(GetParameter("@VC_FIELD1", SqlDbType.VarChar, oEstb.PublicationAuthorName));
                 insCmd.Parameters.Add(GetParameter("@VC_FIELD2", SqlDbType.VarChar, oEstb.FileNameWithPath));
+
+                insCmd.CommandText = "[pICAS_Establishments_Insert_Record]";
                 
-                //InsertCommand.Parameters.Add(GetParameter("@IsActive", SqlDbType.Int, 1));
-                //InsertCommand.Parameters.Add(GetParameter("@IsDeleted", SqlDbType.Int, 0));
-                insCmd.CommandText = "[pICAS_Establishments_Insert]";
-                //TODO: KT: remove hardcode
                 ExecuteStoredProcedure(insCmd);
                  
                 ReturnValue =  int.Parse(insCmd.Parameters[0].Value.ToString());
@@ -127,15 +128,18 @@ namespace Micro.DataAccessLayer.ICAS.ESTBLMT
                 //    UpdateCommand.Parameters.Add(GetParameter("@EstbUploadFile", SqlDbType.VarBinary, theestablishment.EstbUploadFile));
                 //}
                 UpdateCommand.Parameters.Add(GetParameter("@EstbDescription", SqlDbType.VarChar, theestablishment.EstbDescription));
+                UpdateCommand.Parameters.Add(GetParameter("@EstbDescription1", SqlDbType.VarChar, theestablishment.EstbDescription1));
+                UpdateCommand.Parameters.Add(GetParameter("@EstbDescription2", SqlDbType.VarChar, theestablishment.EstbDescription2));
                 UpdateCommand.Parameters.Add(GetParameter("@EstbDate", SqlDbType.DateTime, theestablishment.EstbDate));
                 UpdateCommand.Parameters.Add(GetParameter("@EstbMessage", SqlDbType.VarChar, theestablishment.EstbMessage));
                // UpdateCommand.Parameters.Add(GetParameter("@EstbUploadFile", SqlDbType.VarBinary, theestablishment.EstbUploadFile));
                 UpdateCommand.Parameters.Add(GetParameter("@EstbViewStartDate", SqlDbType.DateTime, theestablishment.EstbViewStartDate));
                 UpdateCommand.Parameters.Add(GetParameter("@EstbViewEndDate", SqlDbType.DateTime, theestablishment.EstbViewEndDate));
+                UpdateCommand.Parameters.Add(GetParameter("@VC_FIELD1", SqlDbType.VarChar, theestablishment.PublicationAuthorName));
                 UpdateCommand.Parameters.Add(GetParameter("@VC_FIELD2", SqlDbType.VarChar, theestablishment.FileNameWithPath));
                UpdateCommand.Parameters.Add(GetParameter("@ModifiedBy", SqlDbType.Int, 1));
 
-                UpdateCommand.CommandText = "pICAS_ESTB_Update";
+                UpdateCommand.CommandText = "[pICAS_ESTB_Update_Record]";
                 ExecuteStoredProcedure(UpdateCommand);
                 ReturnValue = int.Parse(UpdateCommand.Parameters[0].Value.ToString());
 
@@ -154,8 +158,7 @@ namespace Micro.DataAccessLayer.ICAS.ESTBLMT
                 DeleteCommand.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
                 DeleteCommand.Parameters.Add(GetParameter("@EstbID", SqlDbType.Int, theestablishment.EstbID));
                // DeleteCommand.Parameters.Add(GetParameter("@DateModified", SqlDbType.DateTime, theestablishment.DateModified));
-                DeleteCommand.Parameters.Add(GetParameter("@ModifiedBy", SqlDbType.Int, 1));
-                DeleteCommand.CommandText = "pICAS_ESTB_Delete";
+                DeleteCommand.CommandText = "pICAS_ESTB_Delete_Record";
                 ExecuteStoredProcedure(DeleteCommand);
                 ReturnValue = int.Parse(DeleteCommand.Parameters[0].Value.ToString());
 

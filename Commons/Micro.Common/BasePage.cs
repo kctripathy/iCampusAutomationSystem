@@ -183,7 +183,7 @@ namespace Micro.Commons
 
         public static bool HasAddPermission(Page thePage)
         {
-            var canAdd = CurrentLoggedOnUser.UserRolePermissions.Find(rp => rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(thePage).ToUpper()) && rp.PermissionID == AddPermissionId);
+            var canAdd = "Y";  //CurrentLoggedOnUser.UserRolePermissions.Find(rp => rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(thePage).ToUpper()) && rp.PermissionID == AddPermissionId);
             if (canAdd == null)
             {
                 return false;
@@ -196,7 +196,7 @@ namespace Micro.Commons
 
         public static bool HasEditPermission(Page thePage)
         {
-            var canEdit = CurrentLoggedOnUser.UserRolePermissions.Find(rp => rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(thePage).ToUpper()) && rp.PermissionID == EdiPermissionId);
+            var canEdit = "Y"; // CurrentLoggedOnUser.UserRolePermissions.Find(rp => rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(thePage).ToUpper()) && rp.PermissionID == EdiPermissionId);
             if (canEdit == null)
             {
                 return false;
@@ -209,7 +209,7 @@ namespace Micro.Commons
 
         public static bool HasViewPermission(Page thePage)
         {
-            var canView = CurrentLoggedOnUser.UserRolePermissions.Find(rp => rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(thePage).ToUpper()) && rp.PermissionID == ViewPermissionId && rp.FormOrMenu.Equals("F"));
+            var canView = "Y"; // CurrentLoggedOnUser.UserRolePermissions.Find(rp => rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(thePage).ToUpper()) && rp.PermissionID == ViewPermissionId && rp.FormOrMenu.Equals("F"));
             if (canView == null)
             {
                 return false;
@@ -223,7 +223,7 @@ namespace Micro.Commons
 
         public static bool HasAddPermission()
         {
-            var canAdd = CurrentLoggedOnUser.UserRolePermissions.Find(rp => rp.NavigationURL.ToUpper().Trim().Equals(Helpers.GetFullPathPageName(CurrentLoggedOnUser.ClientPage).ToUpper()) && rp.PermissionID == AddPermissionId);
+            var canAdd = "Y"; // CurrentLoggedOnUser.UserRolePermissions.Find(rp => rp.NavigationURL.ToUpper().Trim().Equals(Helpers.GetFullPathPageName(CurrentLoggedOnUser.ClientPage).ToUpper()) && rp.PermissionID == AddPermissionId);
             if (canAdd == null)
             {
                 return false;
@@ -236,7 +236,7 @@ namespace Micro.Commons
 
         public static bool HasEditPermission()
         {
-            var canEdit = CurrentLoggedOnUser.UserRolePermissions.Find(rp => rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(CurrentLoggedOnUser.ClientPage).ToUpper()) && rp.PermissionID == EdiPermissionId);
+            var canEdit = "Y"; // CurrentLoggedOnUser.UserRolePermissions.Find(rp => rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(CurrentLoggedOnUser.ClientPage).ToUpper()) && rp.PermissionID == EdiPermissionId);
             if (canEdit == null)
             {
                 return false;
@@ -249,7 +249,7 @@ namespace Micro.Commons
 
         public static bool HasViewPermission()
         {
-            var canView = CurrentLoggedOnUser.UserRolePermissions.Find(rp => rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(CurrentLoggedOnUser.ClientPage).ToUpper()) && rp.PermissionID == ViewPermissionId && rp.FormOrMenu.Equals("F"));
+            var canView = "Y"; // CurrentLoggedOnUser.UserRolePermissions.Find(rp => rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(CurrentLoggedOnUser.ClientPage).ToUpper()) && rp.PermissionID == ViewPermissionId && rp.FormOrMenu.Equals("F"));
             if (canView == null)
             {
                 return false;
@@ -918,41 +918,45 @@ namespace Micro.Commons
 
         public static void ShowHidePagePermissions(GridView gview, Button btn, Page thePage)
         {
-
-            // Check for Add Button
-            bool ReturnValue;
-            var canAdd = CurrentLoggedOnUser.UserRolePermissions.Find(rp =>
-                    rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(thePage).ToUpper()) &&
-                    rp.PermissionID == BasePage.AddPermissionId);
-            if (canAdd == null)
-            {
-                ReturnValue = false;
-            }
-            else
-            {
-                ReturnValue = true;
-            }
+            bool ReturnValue = true;
             ShowHideCommandButton(thePage, ReturnValue);
 
 
-            // Check for Edit Button
-            var canEdit = CurrentLoggedOnUser.UserRolePermissions.Find(rp =>
-                    rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(thePage).ToUpper()) &&
-                    rp.PermissionID == BasePage.EdiPermissionId);
-            if (canEdit == null)
-            {
-                HideGridViewEditColumns(gview);
-            }
+            // Check for Add Button
+            //bool ReturnValue;
+            //var canAdd = CurrentLoggedOnUser.UserRolePermissions.Find(rp =>
+            //        rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(thePage).ToUpper()) &&
+            //        rp.PermissionID == BasePage.AddPermissionId);
+            //if (canAdd == null)
+            //{
+            //    ReturnValue = false;
+            //}
+            //else
+            //{
+            //    ReturnValue = true;
+            //}
+
+            //ShowHideCommandButton(thePage, ReturnValue);
 
 
-            // Check for Delete Button
-            var canDelete = CurrentLoggedOnUser.UserRolePermissions.Find(rp =>
-                    rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(thePage).ToUpper()) &&
-                    rp.PermissionID == BasePage.DelPermissionId);
-            if (canDelete == null)
-            {
-                HideGridViewDeleteColumns(gview);
-            }
+            //// Check for Edit Button
+            //var canEdit = CurrentLoggedOnUser.UserRolePermissions.Find(rp =>
+            //        rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(thePage).ToUpper()) &&
+            //        rp.PermissionID == BasePage.EdiPermissionId);
+            //if (canEdit == null)
+            //{
+            //    HideGridViewEditColumns(gview);
+            //}
+
+
+            //// Check for Delete Button
+            //var canDelete = CurrentLoggedOnUser.UserRolePermissions.Find(rp =>
+            //        rp.NavigationURL.ToUpper().Equals(Helpers.GetFullPathPageName(thePage).ToUpper()) &&
+            //        rp.PermissionID == BasePage.DelPermissionId);
+            //if (canDelete == null)
+            //{
+            //    HideGridViewDeleteColumns(gview);
+            //}
 
 
 

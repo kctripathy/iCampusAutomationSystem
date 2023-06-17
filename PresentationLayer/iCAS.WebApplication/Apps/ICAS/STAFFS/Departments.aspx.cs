@@ -151,10 +151,10 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
             {
                 if (e.Row.RowType == DataControlRowType.DataRow)
                 {
-                    BasePage.GridViewOnDelete(e, 4);
+                    BasePage.GridViewOnDelete(e, 6);
                     BasePage.GridViewOnClientMouseOver(e);
                     BasePage.GridViewOnClientMouseOut(e);
-                    BasePage.GridViewToolTips(e, 3, 4);
+                    BasePage.GridViewToolTips(e, 5, 6);
                 }
             }
             catch (Exception ex)
@@ -331,22 +331,27 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
         {
             BindDropdown_ParentDepartment();
 
-            BindDropdown_AppendSelectToFirst();
+            BindDropdown_HOD();
         }
 
+        private void BindDropdown_HOD()
+        {
+            ddl_DeptHead.DataSource = StaffMasterManagement.GetInstance.GetEmployeeList();
+            ddl_DeptHead.DataTextField = StaffMasterManagement.GetInstance.DisplayMember;
+            ddl_DeptHead.DataValueField = StaffMasterManagement.GetInstance.ValueMember;
+            ddl_DeptHead.DataBind();
+            ddl_DeptHead.Items.Insert(0, MicroConstants.DROPDOWNLIST_DEFAULT_ITEMTEXT);
+        }
         private void BindDropdown_ParentDepartment()
         {
             ddl_ParentDepartment.DataSource = DepartmentManagement.GetInstance.GetDepartmentsList();
             ddl_ParentDepartment.DataTextField = DepartmentManagement.GetInstance.DisplayMember;
             ddl_ParentDepartment.DataValueField = DepartmentManagement.GetInstance.ValueMember;
             ddl_ParentDepartment.DataBind();
-
-        }
-
-        private void BindDropdown_AppendSelectToFirst()
-        {
             ddl_ParentDepartment.Items.Insert(0, MicroConstants.DROPDOWNLIST_DEFAULT_ITEMTEXT);
+            ddl_ParentDepartment.SelectedIndex = 1;
         }
+
         private void BindGridView()
         {
             gview_Department.DataSource = null;
@@ -408,6 +413,10 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
         private void PopulatePageFields(Department theDepartment)
         {
             txt_DepartmentDescription.Text = theDepartment.DepartmentDescription;
+            txtContent1.Text = theDepartment.DepartmentContent1;
+            txtContent2.Text = theDepartment.DepartmentContent2;
+            txtContent3.Text = theDepartment.DepartmentContent3;
+            ddl_DeptHead.SelectedIndex = GetDropDownSelectedIndex(ddl_DeptHead, Convert.ToString(theDepartment.DepartmentHeadId));
             ddl_ParentDepartment.SelectedIndex = GetDropDownSelectedIndex(ddl_ParentDepartment, Convert.ToString(theDepartment.ParentDepartmentId));
         }
 
@@ -423,6 +432,10 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
             Department TheDepartments = new Department();
 
             TheDepartments.DepartmentDescription = txt_DepartmentDescription.Text;
+            TheDepartments.DepartmentContent1 = txtContent1.Text;
+            TheDepartments.DepartmentContent2 = txtContent2.Text;
+            TheDepartments.DepartmentContent3 = txtContent3.Text;
+            TheDepartments.DepartmentHeadId = int.Parse(ddl_DeptHead.SelectedValue);
             TheDepartments.ParentDepartmentId = int.Parse(ddl_ParentDepartment.SelectedValue);
 
             ProcReturnValue = DepartmentManagement.GetInstance.InsertDepartment(TheDepartments);
@@ -434,6 +447,9 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
         {
             ddl_ParentDepartment.SelectedIndex = 0;
             txt_DepartmentDescription.Text = string.Empty;
+            txtContent1.Text = string.Empty;
+            txtContent2.Text = string.Empty;
+            txtContent3.Text = string.Empty;
 
             PageVariables.ThisDepartment = null;
             lbl_DataOperationMode.Text = "ADD NEW DEPARTMENT";
@@ -461,7 +477,10 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
         {
             PageVariables.ThisDepartment.DepartmentDescription = txt_DepartmentDescription.Text;
             PageVariables.ThisDepartment.ParentDepartmentId = int.Parse(ddl_ParentDepartment.SelectedValue);
-
+            PageVariables.ThisDepartment.DepartmentContent1 = txtContent1.Text;
+            PageVariables.ThisDepartment.DepartmentContent2 = txtContent2.Text;
+            PageVariables.ThisDepartment.DepartmentContent3 = txtContent3.Text;
+            PageVariables.ThisDepartment.DepartmentHeadId = int.Parse(ddl_DeptHead.SelectedValue);
             int ProcReturnValue = DepartmentManagement.GetInstance.UpdateDepartment(PageVariables.ThisDepartment);
             return ProcReturnValue;
         }

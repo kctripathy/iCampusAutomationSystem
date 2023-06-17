@@ -29,7 +29,9 @@ namespace Micro.IntegrationLayer.ICAS.ESTBLMT
                 theestablishment.EstbTypeCode = dr["EstbTypeCode"].ToString();
                 theestablishment.EstbTitle = dr["EstbTitle"].ToString();
                 theestablishment.EstbDescription = dr["EstbDescription"].ToString();
-                theestablishment.EstbMessage = dr["EstbMessage"].ToString();
+                theestablishment.EstbDescription1 = dr["EstbDescription1"].ToString();
+                theestablishment.EstbDescription2 = dr["EstbDescription2"].ToString();
+            theestablishment.EstbMessage = dr["EstbMessage"].ToString();
                 if (dr["EstbDate"] != null)
                 {
                     theestablishment.EstbDate = DateTime.Parse(DateTime.Parse(dr["EstbDate"].ToString()).ToString(MicroConstants.DateFormat));
@@ -37,7 +39,7 @@ namespace Micro.IntegrationLayer.ICAS.ESTBLMT
 				//if (dr["EstbUploadFile"] != null)
 				//{
 				//    theestablishment.EstbUploadFile = ((byte[])(dr["EstbUploadFile"])); // dr["EstbUploadFile"].ToString();
-				//}
+				//
 
                 theestablishment.EstbViewStartDate = DateTime.Parse(dr["EstbViewStartDate"].ToString()); //.ToString(MicroConstants.DateFormat);
                 theestablishment.EstbViewEndDate = DateTime.Parse(dr["EstbViewEndDate"].ToString()); //.ToString(MicroConstants.DateFormat);

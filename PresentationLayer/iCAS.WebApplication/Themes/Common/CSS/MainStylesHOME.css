@@ -46,7 +46,7 @@ ul
 
 #TheContainerICAS
 {
-	margin: 0px 0 0 0;
+	margin: 50px auto;
 	padding: 0;
 	left: 0;
 	width: 100%;
@@ -56,7 +56,7 @@ ul
 	#TheContainerICAS #WebContentICAS
 	{
 		width: 998px;
-		margin: 0px auto 0 auto;
+		margin: 0px auto 25px auto;
 		min-height: 100%;
 		height: auto;
 		background-color: #FFF;

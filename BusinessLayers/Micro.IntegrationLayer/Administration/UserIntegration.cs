@@ -50,6 +50,33 @@ namespace Micro.IntegrationLayer.Administration
             return TheUser;
         }
 
+        public static User Login(string userName)
+        {
+            User TheUser = new User();
+            DataRow dRowUser = UserDataAccess.GetInstance.Login(userName);
+            if (dRowUser != null)
+            {
+                TheUser.UserID = int.Parse(dRowUser["UserID"].ToString());
+                TheUser.UserName = dRowUser["UserName"].ToString();
+                TheUser.Password = dRowUser["Password"].ToString();
+                TheUser.RoleID = (dRowUser["RoleID"] != null ? int.Parse(dRowUser["RoleID"].ToString()) : 0);
+                TheUser.RoleDescription = dRowUser["RoleDescription"].ToString();
+                TheUser.UserType = dRowUser["UserType"].ToString();
+                TheUser.UserReferenceID = (((dRowUser["UserReferenceID"] == null) || (string.IsNullOrEmpty(dRowUser["UserReferenceID"].ToString()))) ? 0 : int.Parse(dRowUser["UserReferenceID"].ToString()));
+                TheUser.UserReferenceName = dRowUser["UserReferenceName"].ToString();
+                TheUser.OfficeID = (((dRowUser["OfficeID"] == null) || (string.IsNullOrEmpty(dRowUser["OfficeID"].ToString()))) ? 0 : int.Parse(dRowUser["OfficeID"].ToString()));
+                TheUser.OfficeCode = (dRowUser["OfficeCode"] != null ? dRowUser["OfficeCode"].ToString() : "N/A");
+                TheUser.OfficeName = dRowUser["OfficeName"].ToString();
+                TheUser.CompanyID = 8;
+                TheUser.CompanyCode = "C0001";
+                TheUser.CompanyName = "TSD COLLEGE";
+                TheUser.CompanyAliasName = "TSDC";
+                TheUser.EmailAddress = ((dRowUser["EmailID"] == null) ? "" : dRowUser["EmailID"].ToString().ToLower());
+                TheUser.PhoneNumber = ((dRowUser["PhoneNumber"] == null) ? "" : dRowUser["PhoneNumber"].ToString());
+            }
+
+            return TheUser;
+        }
         public static List<User> GetUserList()
         {
             List<User> UserList = new List<User>();
@@ -156,6 +183,38 @@ namespace Micro.IntegrationLayer.Administration
 
             return TheUser;
         }
+
+        public static User GetUserDataByLoginName(string loginNameorPhoneNo)
+        {
+            User TheUser = new User();
+            DataRow dRowUser = UserDataAccess.GetInstance.GetUserByLoginNameOrPhoneNo(loginNameorPhoneNo);
+            if (dRowUser != null)
+            {
+                TheUser.UserID = int.Parse(dRowUser["UserID"].ToString());
+                TheUser.UserName = dRowUser["UserName"].ToString();
+                TheUser.Password = dRowUser["Password"].ToString();
+                TheUser.RoleID = (dRowUser["RoleID"] != null ? int.Parse(dRowUser["RoleID"].ToString()) : 0);
+                TheUser.RoleDescription = dRowUser["RoleDescription"].ToString();
+                TheUser.UserType = dRowUser["UserType"].ToString();
+                TheUser.UserReferenceID = (((dRowUser["UserReferenceID"] == null) || (string.IsNullOrEmpty(dRowUser["UserReferenceID"].ToString()))) ? 0 : int.Parse(dRowUser["UserReferenceID"].ToString()));
+                TheUser.UserReferenceName = dRowUser["UserReferenceName"].ToString();
+                TheUser.OfficeID = (((dRowUser["OfficeID"] == null) || (string.IsNullOrEmpty(dRowUser["OfficeID"].ToString()))) ? 0 : int.Parse(dRowUser["OfficeID"].ToString()));
+                TheUser.OfficeCode = (dRowUser["OfficeCode"] != null ? dRowUser["OfficeCode"].ToString() : "N/A");
+                TheUser.OfficeName = dRowUser["OfficeName"].ToString();
+                TheUser.CompanyID = (dRowUser["CompanyID"] != null ? int.Parse(dRowUser["CompanyID"].ToString()) : 0);
+                TheUser.CompanyCode = dRowUser["CompanyCode"].ToString();
+                TheUser.CompanyName = dRowUser["CompanyName"].ToString();
+                TheUser.CompanyAliasName = dRowUser["CompanyAliasName"].ToString();
+                TheUser.EmailAddress = ((dRowUser["EmailID"] == null) ? null : dRowUser["EmailID"].ToString().ToLower());
+                TheUser.PhoneNumber = ((dRowUser["PhoneNumber"] == null) ? null : dRowUser["PhoneNumber"].ToString());
+                TheUser.UserPhoto_SmallSize = ((dRowUser["UserPhoto_SmallSize"] == null) ? null : dRowUser["UserPhoto_SmallSize"].ToString());
+                //TheUser.DepartmentName = dRowUser["DeptName"].ToString();
+                //Company c = Micro.DataAccessLayer.Administration.CompanyDataAccess.GetInstance.GetCompanyByComapnyID(TheUser.CompanyID);
+            }
+
+            return TheUser;
+        }
+
         public static User GetUserByLoginNameGuset(string loginName)
         {
             User TheUser = new User();

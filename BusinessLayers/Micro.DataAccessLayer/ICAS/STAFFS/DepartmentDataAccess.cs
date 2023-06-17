@@ -61,7 +61,7 @@ namespace Micro.DataAccessLayer.ICAS.STAFFS
             //SelectCommand.Parameters.Add(GetParameter("@SearchText", SqlDbType.VarChar, SearchText));
             //SelectCommand.Parameters.Add(GetParameter("@ShowDeleted", SqlDbType.Bit, ShowDeleted));
 
-            SelectCommand.CommandText = "pHRM_Department_Select";
+            SelectCommand.CommandText = "[pHRM_Department_Select_All]";
 
             return ExecuteGetDataTable(SelectCommand);
 
@@ -107,8 +107,11 @@ namespace Micro.DataAccessLayer.ICAS.STAFFS
             InsertCommand.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
 
             InsertCommand.Parameters.Add(GetParameter("@DepartmentDescription", SqlDbType.VarChar, theDepartment.DepartmentDescription));
-            InsertCommand.Parameters.Add(GetParameter("@ParentDepartmentId", SqlDbType.Int, theDepartment.ParentDepartmentId));
-
+            InsertCommand.Parameters.Add(GetParameter("@DepartmentConent1", SqlDbType.VarChar, theDepartment.DepartmentContent1));
+            InsertCommand.Parameters.Add(GetParameter("@DepartmentConent2", SqlDbType.VarChar, theDepartment.DepartmentContent2));
+            InsertCommand.Parameters.Add(GetParameter("@DepartmentConent3", SqlDbType.VarChar, theDepartment.DepartmentContent3));
+            InsertCommand.Parameters.Add(GetParameter("@DepartmentHeadID", SqlDbType.Int, theDepartment.DepartmentHeadId));
+            InsertCommand.Parameters.Add(GetParameter("@ParentDepartmentID", SqlDbType.Int, theDepartment.ParentDepartmentId));
             InsertCommand.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserID));
 
             InsertCommand.CommandText = "pHRM_Department_Insert";
@@ -131,6 +134,10 @@ namespace Micro.DataAccessLayer.ICAS.STAFFS
 
             UpdateCommand.Parameters.Add(GetParameter("@DepartmentID", SqlDbType.Int, Dept.DepartmentID));
             UpdateCommand.Parameters.Add(GetParameter("@DepartmentDescription", SqlDbType.VarChar, Dept.DepartmentDescription));
+            UpdateCommand.Parameters.Add(GetParameter("@DepartmentConent1", SqlDbType.VarChar, Dept.DepartmentContent1));
+            UpdateCommand.Parameters.Add(GetParameter("@DepartmentConent2", SqlDbType.VarChar, Dept.DepartmentContent2));
+            UpdateCommand.Parameters.Add(GetParameter("@DepartmentConent3", SqlDbType.VarChar, Dept.DepartmentContent3));
+            UpdateCommand.Parameters.Add(GetParameter("@DepartmentHeadID", SqlDbType.Int, Dept.DepartmentHeadId));
             UpdateCommand.Parameters.Add(GetParameter("@ParentDepartmentID", SqlDbType.Int, Dept.ParentDepartmentId));
             //UpdateCommand.Parameters.Add(GetParameter("@IsActive", SqlDbType.Int, Dept.IsActive));
 

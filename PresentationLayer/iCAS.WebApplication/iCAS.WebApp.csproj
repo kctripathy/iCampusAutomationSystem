@@ -461,12 +461,6 @@
       <LastGenOutput>ModelLibrary.cs</LastGenOutput>
     </Content>
     <Content Include="Document.aspx" />
-    <Content Include="Documents\PHOTO_2017_12_21_H19_M19_S22_Y.jpg" />
-    <Content Include="Documents\PHOTO_2017_12_21_H19_M19_S22_Y_Thumbnail.jpg" />
-    <Content Include="Documents\PHOTO_2017_12_21_H19_M1_S51_Y.jpg" />
-    <Content Include="Documents\PHOTO_2017_12_21_H19_M1_S51_Y_Thumbnail.jpg" />
-    <Content Include="Documents\PHOTO_2017_12_21_H19_M27_S16_Y.jpg" />
-    <Content Include="Documents\PHOTO_2017_12_21_H19_M27_S16_Y_Thumbnail.jpg" />
     <Content Include="Form4.aspx" />
     <Content Include="NAAC.aspx" />
     <Content Include="Downloads\HtmlPage1.html" />
@@ -672,12 +666,6 @@
     </Content>
     <Content Include="App_Themes\DarkGreen\DarkGreen.skin" />
     <Content Include="App_Themes\DarkGreen\Gridview.skin" />
-    <Content Include="Documents\ESTB_R_Y2018_M1_D13-H16_M0_S11.docx" />
-    <Content Include="Documents\ESTB_R_Y2018_M1_D13-H16_M0_S32.docx" />
-    <Content Include="Documents\PUBL_1_Y2017_M12_D26-H13_M11_S44.pdf" />
-    <Content Include="Documents\PUBL_1_Y2017_M12_D28-H10_M1_S4.pdf" />
-    <Content Include="Documents\PUBL_6_Y2017_M12_D29-H13_M13_S2.pdf" />
-    <Content Include="Documents\PUBL_9_Y2017_M12_D21-H21_M31_S38.pdf" />
     <Content Include="Content\bootstrap.rtl.min.css.map" />
     <Content Include="Content\bootstrap.rtl.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />

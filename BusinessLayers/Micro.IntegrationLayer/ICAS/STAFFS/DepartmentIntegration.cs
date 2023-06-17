@@ -85,8 +85,12 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
                     Department ObjDepartment = new Department();
                     ObjDepartment.DepartmentID = int.Parse(dr["DepartmentID"].ToString());
                     ObjDepartment.DepartmentName = dr["DepartmentDescription"].ToString();
-                    ObjDepartment.DepartmentContent1 = dr["VC_FIELD1"] ==null? "" : dr["VC_FIELD1"].ToString();
-                    ObjDepartment.DepartmentContent2 = dr["VC_FIELD2"] ==null? "" : dr["VC_FIELD2"].ToString();
+                    ObjDepartment.DepartmentContent1 = dr["DepartmentContent1"].ToString();
+                    ObjDepartment.DepartmentContent2 = dr["DepartmentContent2"].ToString();
+                    ObjDepartment.DepartmentContent3 = dr["DepartmentContent3"].ToString();
+                    ObjDepartment.DepartmentHeadId = int.Parse(dr["DepartmentHeadId"].ToString());
+                    ObjDepartment.DepartmentHeadName = dr["DepartmentHeadName"].ToString();
+                    ObjDepartment.Staffs = StaffMasterIntegration.GetStaffs().Where((dept) => dept.DepartmentDescription == ObjDepartment.DepartmentName).ToList();
                     DepartmentList.Add(ObjDepartment);
                 }
                 return DepartmentList;
@@ -112,6 +116,11 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
                     ObjDepartment.DepartmentDescription = dr["DepartmentDescription"].ToString();
                     ObjDepartment.ParentDepartmentId = int.Parse(dr["ParentDepartmentID"].ToString());
                     ObjDepartment.ParentDepartmentDescription = dr["ParentDepartmentDescription"].ToString();
+                    ObjDepartment.DepartmentContent1 = dr["DepartmentContent1"].ToString();
+                    ObjDepartment.DepartmentContent2 = dr["DepartmentContent2"].ToString();
+                    ObjDepartment.DepartmentContent3 = dr["DepartmentContent3"].ToString();
+                    ObjDepartment.DepartmentHeadId = int.Parse(dr["DepartmentHeadId"].ToString());
+                    ObjDepartment.DepartmentHeadName = dr["DepartmentHeadName"].ToString();
                     ObjDepartment.IsActive = (Boolean)dr["IsActive"];
 
                     DepartmentList.Add(ObjDepartment);

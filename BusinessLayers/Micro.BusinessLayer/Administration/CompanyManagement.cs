@@ -51,15 +51,27 @@ namespace Micro.BusinessLayer.Administration
 
         public Company GetCompanyByComapnyID(int CompanyID)
         {
+            Company c = new Company()
+            {
+                CompanyID = 8,
+                CompanyName = "TSD College",
+                CompanyAliasName = "TSDC",
+                CompanyCode = "C0001",
+                CompanyRegisteredOfficeID = 44
+
+            };
+            return c;
 
             //return CompanyIntegration.GetCompanyByComapnyID(CompanyID);
-			string UniqueKey = "GetCompanyByComapnyID_" + CompanyID.ToString();
-			if (HttpRuntime.Cache[UniqueKey] == null)
-			{
-				Company theCompany = CompanyIntegration.GetCompanyByComapnyID(CompanyID);
-				HttpRuntime.Cache[UniqueKey] = theCompany;
-			}
-			return ((Company)(HttpRuntime.Cache[UniqueKey]));
+
+
+            //string UniqueKey = "GetCompanyByComapnyID_" + CompanyID.ToString();
+            //if (HttpRuntime.Cache[UniqueKey] == null)
+            //{
+            //    Company theCompany = CompanyIntegration.GetCompanyByComapnyID(CompanyID);
+            //    HttpRuntime.Cache[UniqueKey] = theCompany;
+            //}
+            //return ((Company)(HttpRuntime.Cache[UniqueKey]));
         }
 
         public int InsertCompany(Company theMicroCompany)

@@ -78,42 +78,6 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_EstablishmentTypeCode;
 
         /// <summary>
-        /// lbl_NoticeTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_NoticeTitle;
-
-        /// <summary>
-        /// txt_NoticeTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_NoticeTitle;
-
-        /// <summary>
-        /// watermarkTxt_NoticeTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::AjaxControlToolkit.TextBoxWatermarkExtender watermarkTxt_NoticeTitle;
-
-        /// <summary>
-        /// req_NoticeTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_NoticeTitle;
-
-        /// <summary>
         /// lbl_Startdate control.
         /// </summary>
         /// <remarks>
@@ -159,49 +123,40 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
         protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_Startdate;
 
         /// <summary>
-        /// lbl_Enddate control.
+        /// lbl_NoticeTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Enddate;
+        protected global::System.Web.UI.WebControls.Label lbl_NoticeTitle;
 
         /// <summary>
-        /// txt_Enddate control.
+        /// txt_NoticeTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Enddate;
+        protected global::System.Web.UI.WebControls.TextBox txt_NoticeTitle;
 
         /// <summary>
-        /// imgbtn_Enddate control.
+        /// watermarkTxt_NoticeTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton imgbtn_Enddate;
+        protected global::AjaxControlToolkit.TextBoxWatermarkExtender watermarkTxt_NoticeTitle;
 
         /// <summary>
-        /// clndrextender_Enddate control.
+        /// req_NoticeTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.CalendarExtender clndrextender_Enddate;
-
-        /// <summary>
-        /// requiredFieldValidator_Enddate control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator requiredFieldValidator_Enddate;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_NoticeTitle;
 
         /// <summary>
         /// lbl_Description control.
@@ -229,6 +184,42 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Description;
+
+        /// <summary>
+        /// lbl_Description1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Description1;
+
+        /// <summary>
+        /// txt_Description1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Description1;
+
+        /// <summary>
+        /// lbl_Description2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_Description2;
+
+        /// <summary>
+        /// txt_Description2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_Description2;
 
         /// <summary>
         /// Label1 control.
