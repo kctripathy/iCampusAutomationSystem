@@ -89,11 +89,19 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
                     Department ObjDepartment = new Department();
                     ObjDepartment.DepartmentID = int.Parse(dr["DepartmentID"].ToString());
                     ObjDepartment.DepartmentName = dr["DepartmentDescription"].ToString();
+
+                    ObjDepartment.DepartmentHeadId = int.Parse(dr["DepartmentHeadId"].ToString());
+                    ObjDepartment.DepartmentHeadName = dr["DepartmentHeadName"].ToString();
+                    
                     ObjDepartment.DepartmentContent1 = dr["DepartmentContent1"].ToString();
                     ObjDepartment.DepartmentContent2 = dr["DepartmentContent2"].ToString();
                     ObjDepartment.DepartmentContent3 = dr["DepartmentContent3"].ToString();
+
+                    ObjDepartment.IsActive = (Boolean)dr["IsActive"];
+                    ObjDepartment.IsDeleted = (Boolean)dr["IsDeleted"];
+
                     ObjDepartment.DepartmentHeadId = int.Parse(dr["DepartmentHeadId"].ToString());
-                    ObjDepartment.DepartmentHeadName = dr["DepartmentHeadName"].ToString();
+
                     ObjDepartment.Staffs = StaffMasterIntegration.GetStaffs().Where((dept) => dept.DepartmentDescription == ObjDepartment.DepartmentName).ToList();
                     DepartmentList.Add(ObjDepartment);
                 }

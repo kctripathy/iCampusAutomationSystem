@@ -14,6 +14,11 @@
             margin-top: -20px;
             display: block;
         }
+
+        .divider-line {
+            height: 1px;
+            border-bottom: solid 1px #ccc;
+        }
     </style>
     <h1 class="PageTitle">
         <asp:Literal runat="server" ID="lit_PageTitle" Text="Manage Department Details" />
@@ -37,11 +42,11 @@
 
                             <!--Parent Department-->
                             <li class="FormLabel">
-                                <asp:Label runat="server" ID="lbl_ParentDepartment" Text="Parent Department: " />
+                                <asp:Label runat="server" ID="lbl_ParentDepartment" Text="Parent Department: " Height="30px" width="80%"/>
                                 <asp:Label runat="server" ID="lbl_ParentDepartmentValidator" Text="*" ForeColor="Red" />
                             </li>
                             <li class="FormValue">
-                                <asp:DropDownList runat="server" ID="ddl_ParentDepartment" />
+                                <asp:DropDownList runat="server" ID="ddl_ParentDepartment" Height="30px" width="80%"/>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_ddl_ParentDepartment" runat="server" ControlToValidate="ddl_ParentDepartment" Display="Dynamic" SetFocusOnError="true" />
                             </li>
 
@@ -50,7 +55,7 @@
                                 <asp:Label runat="server" ID="Label1" Text="Head of the Department:" />
                             </li>
                             <li class="FormValue">
-                                <asp:DropDownList runat="server" ID="ddl_DeptHead" />
+                                <asp:DropDownList runat="server" ID="ddl_DeptHead" Height="30px" width="80%"/>
                             </li>
 
 
@@ -60,7 +65,7 @@
                                 <asp:Label runat="server" ID="lbl_DepartmentsNameValidator" Text="*" ForeColor="Red" />
                             </li>
                             <li class="FormValue">
-                                <asp:TextBox ID="txt_DepartmentDescription" runat="server" Width="300px" />
+                                <asp:TextBox ID="txt_DepartmentDescription" runat="server" Height="30px" width="80%"/>
                                 <asp:RequiredFieldValidator runat="server" ID="requiredFieldValidator_DepartmentDescription" ControlToValidate="txt_DepartmentDescription" Display="Dynamic" SetFocusOnError="true" />
                                 <asp:RegularExpressionValidator runat="server" ID="regularExpressionValidator_DepartmentDescription" ControlToValidate="txt_DepartmentDescription" Display="Dynamic" SetFocusOnError="true" ValidationExpression="[a-zA-Z\s]+" />
                             </li>
@@ -69,21 +74,21 @@
                                 <asp:Label runat="server" ID="lblContent" Text="Department Content 1 " />
                             </li>
                             <li class="FormValue">
-                                <asp:TextBox ID="txtContent1" runat="server" TextMode="MultiLine" Width="300px"  Height="80px"/>
+                                <asp:TextBox ID="txtContent1" runat="server" TextMode="MultiLine" width="80%"  Height="80px"/>
                             </li>
 
                             <li class="FormLabel">
                                 <asp:Label runat="server" ID="Label2" Text="Department Content 2 " />
                             </li>
                              <li class="FormValue">
-                                <asp:TextBox ID="txtContent2" runat="server" TextMode="MultiLine" Width="300px"  Height="80px"/>
+                                <asp:TextBox ID="txtContent2" runat="server" TextMode="MultiLine" width="80%"  Height="80px"/>
                             </li>
 
                             <li class="FormLabel">
                                 <asp:Label runat="server" ID="Label3" Text="Department Content 3 " />
                             </li>
                             <li class="FormValue">
-                                <asp:TextBox ID="txtContent3" runat="server" TextMode="MultiLine" Width="300px" Height="80px" />
+                                <asp:TextBox ID="txtContent3" runat="server" TextMode="MultiLine" width="80%" Height="80px" />
                             </li>
                             
                         
@@ -126,11 +131,11 @@
                                             </ItemTemplate>
                                         </asp:TemplateField>
 
-                                        <asp:BoundField DataField="DepartmentDescription" HeaderText="Department " ItemStyle-CssClass="DeptDescription" />
-                                        <asp:TemplateField ItemStyle-CssClass="CheckBox">
+                                        <asp:BoundField DataField="DepartmentDescription" HeaderText="Department Name:" ItemStyle-CssClass="DeptDescription" />
+                                        <asp:TemplateField ItemStyle-CssClass="CheckBox" HeaderText="Department Content for website">
                                             <ItemTemplate>
-                                                <asp:Label runat="server" ID="lblContent1" Text='<%# Eval("DepartmentContent1") %>' Visible="True" />
-                                                <asp:Label runat="server" ID="lblContent2" Text='<%# Eval("DepartmentContent2") %>' Visible="True" />
+                                                <asp:Label runat="server" ID="lblContent1" Text='<%# Eval("DepartmentContent1") %>' Visible="True" /><hr  class="divider-line" />
+                                                <asp:Label runat="server" ID="lblContent2" Text='<%# Eval("DepartmentContent2") %>' Visible="True" /><hr  class="divider-line" />
                                                 <asp:Label runat="server" ID="lblContent3" Text='<%# Eval("DepartmentContent3") %>' Visible="True" />
                                             </ItemTemplate>
                                         </asp:TemplateField>

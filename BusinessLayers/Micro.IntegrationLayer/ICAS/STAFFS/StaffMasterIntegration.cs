@@ -58,7 +58,6 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
         {
             try
             {
-                //TODO: SUBRAT: handle null of this part to 
                 List<Staff> EmployeeList = new List<Staff>();
 
                 foreach (DataRow dr in EmployeeTable.Rows)
@@ -76,7 +75,6 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
                     ObjEmployee.DesignationDescription = dr["DesignationDescription"].ToString().ToUpper();
                     ObjEmployee.Mobile = dr["Mobile"].ToString();
                     ObjEmployee.TeachingOrNonTeaching = dr["TeachingOrNonTeaching"].ToString();
-                    //ObjEmployee.IsActive = Convert.ToInt32(dr["IsActive"].ToString());
                      
                     EmployeeList.Add(ObjEmployee);
                 }

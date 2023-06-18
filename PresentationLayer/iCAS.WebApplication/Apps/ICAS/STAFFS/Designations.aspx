@@ -46,7 +46,7 @@
                                 <asp:Label runat="server" ID="lbl_DesignationsName" Text="Description:" />
                             </li>
                             <li class="FormValue">
-                                <asp:TextBox ID="txt_Designation" runat="server" Height="17px" />
+                                <asp:TextBox ID="txt_Designation" runat="server" Height="30px" width="80%" />
                                 <asp:RequiredFieldValidator ID="requiredFieldValidator_Designation" runat="server" ControlToValidate="txt_Designation" SetFocusOnError="True" Display="Dynamic" />
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator_Designation" runat="server" ControlToValidate="txt_Designation" SetFocusOnError="True" Display="Dynamic" ValidationExpression="[a-zA-Z\s]+" />
                             </li>
@@ -55,7 +55,7 @@
                                 <asp:Label runat="server" ID="lbl_RoleDescription" Text="Role:" />
                             </li>
                             <li class="FormValue">
-                                <asp:DropDownList runat="server" ID="ddl_RoleDescription" />
+                                <asp:DropDownList runat="server" ID="ddl_RoleDescription" Height="30px" width="80%"/>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_RoleDescription" runat="server" ControlToValidate="ddl_RoleDescription" SetFocusOnError="True" Display="Dynamic" />
                             </li>
 
@@ -64,7 +64,7 @@
                                 <asp:Label runat="server" ID="lbl_ReportingTo" Text="Reporting To:" />
                             </li>
                             <li class="FormValue">
-                                <asp:DropDownList runat="server" ID="ddl_ReportingTo" />
+                                <asp:DropDownList runat="server" ID="ddl_ReportingTo" Height="30px" width="80%"/>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_ddl_ReportingTo" runat="server" ControlToValidate="ddl_ReportingTo" SetFocusOnError="True" Display="Dynamic" />
                             </li>
                             <li class="FormLabel"></li>
