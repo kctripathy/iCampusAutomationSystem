@@ -103,10 +103,10 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("NAAC", EstbTypeConstants.NAAC));
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("AQAR", EstbTypeConstants.AQAR));
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("IQAC", EstbTypeConstants.IQAC));
-            ddl_EstablishmentTypeCode.Items.Add(new ListItem("PHOTO", EstbTypeConstants.PHOTO));
-            ddl_EstablishmentTypeCode.Items.Add(new ListItem("DOWNLOAD", EstbTypeConstants.DOWNLOAD));
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("WORLDBANK", EstbTypeConstants.WORLDBANK));
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("MINUTES OF MEETING", EstbTypeConstants.MoM));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("PHOTO GALLERY", EstbTypeConstants.PHOTO));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("DOWNLOAD", EstbTypeConstants.DOWNLOAD));
             ddl_EstablishmentTypeCode.SelectedIndex = (int)(MicroEnums.EstablishmentType.All);
 
         }

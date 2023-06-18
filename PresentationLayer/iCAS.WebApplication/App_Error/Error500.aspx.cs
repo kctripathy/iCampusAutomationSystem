@@ -51,7 +51,7 @@ namespace Micro.WebApplication.App_Error
                                     <br/><br/>
                                     Kindly note this reference number (<b><u>{4}</u></b>). It will be in use while all communications to service provider regarding this matter.
                                     <br/><br/>
-                                    Warm Regards & Thanking you,
+                                    Regards & Thanking you,
                                     <br/><br/>
                                     <a href='mailto:{3}?subject=IncidentNumber_{4}&amp;body=Incident_{5}'>IT Team</a>
                                     ", Creator,

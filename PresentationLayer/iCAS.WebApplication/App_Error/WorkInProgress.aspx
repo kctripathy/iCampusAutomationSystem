@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Website work in progress for TSD Collge - BD Pur / Tentulia Sasan Debasthan College, BIJAYA DHANURJAYA PUR (SASAN), GANJAM, ODISHA, 761120</title>
+    <title>Website work in progress</title>
     
 </head>
 <body>

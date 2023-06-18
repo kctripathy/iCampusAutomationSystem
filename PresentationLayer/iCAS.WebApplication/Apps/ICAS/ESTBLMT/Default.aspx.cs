@@ -26,6 +26,7 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                         ",", EstbTypeConstants.IQAC,
                         ",", EstbTypeConstants.DOWNLOAD,
                         ",", EstbTypeConstants.MoM,
+                        ",", EstbTypeConstants.PHOTO,
                         ",", EstbTypeConstants.WORLDBANK
                 );
         public string typeCodesToShowForPublication = String.Concat(
@@ -127,9 +128,10 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             ddlEstbType.Items.Add(new ListItem("NAAC", EstbTypeConstants.NAAC));
             ddlEstbType.Items.Add(new ListItem("AQAR", EstbTypeConstants.AQAR));
             ddlEstbType.Items.Add(new ListItem("IQAC", EstbTypeConstants.IQAC));
-            ddlEstbType.Items.Add(new ListItem("WORLDBANK", EstbTypeConstants.WORLDBANK));
             ddlEstbType.Items.Add(new ListItem("MINUTES OF MEETING", EstbTypeConstants.MoM));
+            ddlEstbType.Items.Add(new ListItem("PHOTO GALLERY", EstbTypeConstants.PHOTO));
             ddlEstbType.Items.Add(new ListItem("DOWNLOAD", EstbTypeConstants.DOWNLOAD));
+            ddlEstbType.Items.Add(new ListItem("WORLD BANK", EstbTypeConstants.WORLDBANK));
 
 
             ddlEstbTypeView.Items.Clear();
@@ -142,9 +144,10 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             ddlEstbTypeView.Items.Add(new ListItem("NAAC", EstbTypeConstants.NAAC));
             ddlEstbTypeView.Items.Add(new ListItem("AQAR", EstbTypeConstants.AQAR));
             ddlEstbTypeView.Items.Add(new ListItem("IQAC", EstbTypeConstants.IQAC));
-            ddlEstbTypeView.Items.Add(new ListItem("WORLDBANK", EstbTypeConstants.WORLDBANK));
             ddlEstbTypeView.Items.Add(new ListItem("MINUTES OF MEETING", EstbTypeConstants.MoM));
+            ddlEstbTypeView.Items.Add(new ListItem("PHOTO GALLERY", EstbTypeConstants.PHOTO));
             ddlEstbTypeView.Items.Add(new ListItem("DOWNLOAD", EstbTypeConstants.DOWNLOAD));
+            ddlEstbTypeView.Items.Add(new ListItem("WORLD BANK", EstbTypeConstants.WORLDBANK));
         }
 
         private void BindEstbTypeDropdownForPublication()
@@ -360,6 +363,16 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                 if (fileUploadEstb.HasFile)
                 {
                     string[] validFileTypes = { "pdf", "docx", "doc" };
+                    if (ddlEstbType.SelectedValue.Equals(EstbTypeConstants.PHOTO))
+                    {
+                        List<string> list = new List<string>();
+                        list.Add("jpg");
+                        list.Add("jpeg");
+                        list.Add("png");
+                        list.Add("gif");
+                        validFileTypes = list.ToArray();
+                    } 
+                    
                     string ext = System.IO.Path.GetExtension(fileUploadEstb.PostedFile.FileName).ToLower();
                     bool isValidFile = false;
                     for (int i = 0; i < validFileTypes.Length; i++)
@@ -372,7 +385,7 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                     }
                     if (!isValidFile)
                     {
-                        lbl_FileUploadStatus.Text = "Invalid File. Please upload a File with extension " + string.Join(",", validFileTypes);
+                        lbl_FileUploadStatus.Text = "Invalid! please upload a file with extension " + string.Join(",", validFileTypes);
                         return "NA";
                     }
                     else

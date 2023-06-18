@@ -14,7 +14,7 @@
 			<asp:Label ID="LabelEnglishDateTime" runat="server" CssClass="BigErrorText" />. 
 			
 			<br /><br /><br /><br />
-			We are So Sorry for any inconvenience.<br />
+			Sorry for any inconvenience.<br />
 			<br />
 			<br />
 			<br />

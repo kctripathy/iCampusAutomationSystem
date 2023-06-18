@@ -262,9 +262,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AboutUs.aspx" />
-    <Content Include="AdminAuditActivities.aspx" />
-    <Content Include="AdminGoverningBody.aspx" />
+    <Content Include="Apps\Admin\Communications.aspx" />
     <Content Include="Apps\Admin\TheCollege.aspx" />
     <Content Include="Apps\Admin\UserFeedbackQuestions.aspx" />
     <Content Include="Apps\UserCaptchaImage.aspx" />
@@ -422,9 +420,9 @@
     <Content Include="bin\CrystalDecisions.ReportSource.dll" />
     <Content Include="bin\CrystalDecisions.Shared.dll" />
     <Content Include="bin\CrystalDecisions.Web.dll" />
-    <Content Include="Alumni.aspx" />
     <Content Include="bin\Micro.Security.dll" />
     <Content Include="bin\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="CImage.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
@@ -460,14 +458,10 @@
       <DependentUpon>ModelLibrary.edmx</DependentUpon>
       <LastGenOutput>ModelLibrary.cs</LastGenOutput>
     </Content>
-    <Content Include="Document.aspx" />
-    <Content Include="Form4.aspx" />
-    <Content Include="NAAC.aspx" />
     <Content Include="Downloads\HtmlPage1.html" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
-    <Content Include="AdminWorldBank.aspx" />
-    <Content Include="iCAS\HtmlPage1.html" />
+    <Content Include="Form4.aspx" />
+    <Content Include="Global.asax" />
     <Content Include="Images\About\crest.jpg" />
     <Content Include="Images\About\Departments\Department-.jpg" />
     <Content Include="Images\About\Departments\department-botanty.jpg" />
@@ -533,10 +527,8 @@
     <Content Include="Images\slides_tsdc\slide_2017_8_IT_LAB.jpg" />
     <Content Include="Images\TSDC-WEB-LEFT-LIBRARY-200X8.jpg" />
     <Content Include="Images\TSDC-WEB-LEFT-LIBRARY-200X800.jpg" />
-    <Content Include="Index.aspx" />
     <Content Include="Library\BooksManage.aspx" />
     <Content Include="Library\Transactions.aspx" />
-    <Content Include="MinutesOfMeeting.aspx" />
     <Content Include="Images\android-icon-36x36.png" />
     <Content Include="Images\photo-gallery\thumbnails\sri_ganesh_thumbnail.jpg" />
     <Content Include="Images\slides_tsdc\slide_2017_1.jpg" />
@@ -544,8 +536,6 @@
     <Content Include="Images\slides_tsdc\slide_2017_3.jpg" />
     <Content Include="Images\TSDC-WEB-HEAD-80.jpg" />
     <Content Include="Images\TSDC-WEB-HEAD-NAV-BAR-50.jpg" />
-    <Content Include="iCAS\AQAR\Default.aspx" />
-    <Content Include="Kishor.aspx" />
     <Content Include="Library\Admin\BooksMaster.aspx" />
     <Content Include="Library\Admin\BooksReport.aspx" />
     <Content Include="Library\Admin\Default.aspx" />
@@ -553,29 +543,9 @@
     <Content Include="Library\BookIssue.aspx" />
     <Content Include="Library\BookReturn.aspx" />
     <Content Include="Library\Books.aspx" />
-    <Content Include="Passwords.aspx" />
-    <Content Include="GoverningBody.aspx" />
-    <Content Include="Publications.aspx" />
-    <Content Include="Register.aspx" />
-    <Content Include="Reports.aspx" />
     <Content Include="css\jquery.lightbox-0.5.css" />
     <Content Include="css\styles.css" />
-    <Content Include="Default.aspx" />
     <Content Include="Downloads.aspx" />
-    <Content Include="Feedbacks.aspx" />
-    <Content Include="iCAS\ABOUT.aspx" />
-    <Content Include="iCAS\ACTIVTIES.aspx" />
-    <Content Include="iCAS\ADMIN.aspx" />
-    <Content Include="iCAS\ADMIN1.aspx" />
-    <Content Include="iCAS\BEST-LINKS.aspx" />
-    <Content Include="iCAS\CONTACT.aspx" />
-    <Content Include="iCAS\DOWNLOADS.aspx" />
-    <Content Include="iCAS\ESTABLISHMENTS.aspx" />
-    <Content Include="iCAS\FINANCE.aspx" />
-    <Content Include="iCAS\LIBRARY.aspx" />
-    <Content Include="iCAS\RTI.aspx" />
-    <Content Include="iCAS\STAFFS.aspx" />
-    <Content Include="iCAS\STUDENTS.aspx" />
     <Content Include="Images\photo-gallery\100_0014.jpg" />
     <Content Include="Images\photo-gallery\100_0019.jpg" />
     <Content Include="Images\photo-gallery\100_0020.jpg" />
@@ -650,7 +620,6 @@
     </Content>
     <Content Include="js\jquery-1.10.1.min.js" />
     <Content Include="js\jquery.lightbox-0.5.min.js" />
-    <Content Include="PhotoGallery.aspx" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
@@ -686,6 +655,7 @@
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\local_publish.pubxml" />
     <None Include="Properties\PublishProfiles\test.tsdcollege.in - Web Deploy %282%29.pubxml" />
+    <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -700,18 +670,6 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="SendEmail.aspx" />
-    <Content Include="SendShortMessage.aspx" />
-    <Content Include="SendSMS.aspx" />
-    <Content Include="ShowSlides.aspx" />
-    <Content Include="sitemap.xml" />
-    <Content Include="SlideShow.aspx" />
-    <Content Include="slideshow.html" />
-    <Content Include="slideshow_automatic.html" />
-    <Content Include="slideshow_indicator.html" />
-    <Content Include="slideshow_manual.html" />
-    <Content Include="StaffResearchPublications.aspx" />
-    <Content Include="Students.aspx" />
     <Content Include="Themes\Common\CSS\LibraryBookSearch.ascx.css" />
     <Content Include="Themes\Common\CSS\MainStylesHomeZone - Copy.css" />
     <Content Include="Themes\Common\CSS\MainStylesHomeZone.css" />
@@ -738,8 +696,6 @@
     <Content Include="App_UserControls\User\UC_User.ascx" />
     <Content Include="App_UserControls\User\UC_UserLoggedOn.ascx" />
     <Content Include="bin\AjaxControlToolkit.dll" />
-    <Content Include="CImage.aspx" />
-    <Content Include="ContactUs.aspx" />
     <Content Include="Apps\Admin\CommonKeys.aspx" />
     <Content Include="Apps\Admin\ErrorLogs.aspx" />
     <Content Include="Apps\Admin\RolePermissions.aspx" />
@@ -789,7 +745,6 @@
     <Content Include="App_Data\MicroERP\Miscellaneous.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Global.asax" />
     <Content Include="Themes\Common\CSS\ReportCharts.css" />
     <Content Include="Themes\Common\CSS\ReportStyles.css" />
     <Content Include="Themes\Common\Images\Admission.jpg" />
@@ -951,10 +906,6 @@
     <Content Include="Themes\Default\CSS\Pages\ContactUs.aspx.css" />
     <Content Include="Themes\Default\CSS\Pages\Default.aspx.css" />
     <Content Include="Themes\Default\CSS\Pages\Downloads.aspx.css" />
-    <Content Include="Themes\Default\CSS\Pages\ICAS\About.aspx.css" />
-    <Content Include="Themes\Default\CSS\Pages\ICAS\ACTIVTIES.aspx.css" />
-    <Content Include="Themes\Default\CSS\Pages\ICAS\Staffs.aspx.css" />
-    <Content Include="Themes\Default\CSS\Pages\ICAS\TableStyle.css" />
     <Content Include="Themes\Default\CSS\Pages\Library\BookIssueReturn.aspx.css" />
     <Content Include="Themes\Default\CSS\Pages\Library\Books.aspx.css" />
     <Content Include="Themes\Default\CSS\Pages\Library\BooksManage.aspx.css" />
@@ -1053,18 +1004,10 @@
     <Content Include="App_MasterPages\ICAS.Master" />
     <Content Include="Themes\Profiles\Employee Profile-10-Photo.jpg" />
     <Content Include="Themes\Profiles\Temp\Employee Profile-1-Photo.jpg" />
-    <Content Include="Upload\Approvals.aspx" />
-    <Content Include="Upload\PhotoGallery.aspx" />
-    <Content Include="Upload\WorldBank.aspx" />
-    <Content Include="Upload\MoM.aspx" />
-    <Content Include="Upload\Publications.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="WebSearch.aspx" />
-    <Content Include="WebSearchForm.aspx" />
     <Content Include="App_MasterPages\ICAS-Reports.Master" />
-    <Content Include="packages.config" />
     <Content Include="Downloads\SSR TSDC.rar" />
     <Content Include="Downloads\AlumniRegistrationForm.rar" />
     <Content Include="Downloads\SSR_TSDC.pdf" />
@@ -1096,33 +1039,16 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutUs.aspx.cs">
-      <DependentUpon>AboutUs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AboutUs.aspx.designer.cs">
-      <DependentUpon>AboutUs.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminAuditActivities.aspx.cs">
-      <DependentUpon>AdminAuditActivities.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminAuditActivities.aspx.designer.cs">
-      <DependentUpon>AdminAuditActivities.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdminGoverningBody.aspx.cs">
-      <DependentUpon>AdminGoverningBody.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdminGoverningBody.aspx.designer.cs">
-      <DependentUpon>AdminGoverningBody.aspx</DependentUpon>
-    </Compile>
     <Compile Include="api\BooksController.cs" />
-    <Compile Include="api\ChartController.cs" />
     <Compile Include="api\EstablishmentController.cs" />
-    <Compile Include="api\LibraryController.cs" />
     <Compile Include="api\AllControllers.cs" />
-    <Compile Include="api\PublicationsController.cs" />
+    <Compile Include="Apps\Admin\Communications.aspx.cs">
+      <DependentUpon>Communications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\Communications.aspx.designer.cs">
+      <DependentUpon>Communications.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Apps\Admin\TheCollege.aspx.cs">
       <DependentUpon>TheCollege.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1862,13 +1788,6 @@
     <Compile Include="App_UserControls\UC_SelectOffice.ascx.designer.cs">
       <DependentUpon>UC_SelectOffice.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Alumni.aspx.cs">
-      <DependentUpon>Alumni.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Alumni.aspx.designer.cs">
-      <DependentUpon>Alumni.aspx</DependentUpon>
-    </Compile>
     <Compile Include="App_UserControls\UC_SlideShowSimple.ascx.cs">
       <DependentUpon>UC_SlideShowSimple.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1883,14 +1802,14 @@
     <Compile Include="App_UserControls\UC_WebUserControlSlider.ascx.designer.cs">
       <DependentUpon>UC_WebUserControlSlider.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="AdminWorldBank.aspx.cs">
-      <DependentUpon>AdminWorldBank.aspx</DependentUpon>
+    <Compile Include="CImage.aspx.cs">
+      <DependentUpon>CImage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AdminWorldBank.aspx.designer.cs">
-      <DependentUpon>AdminWorldBank.aspx</DependentUpon>
+    <Compile Include="CImage.aspx.designer.cs">
+      <DependentUpon>CImage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Database\Accounts_Balance.cs">
       <DependentUpon>ModelLibrary.tt</DependentUpon>
     </Compile>
@@ -2089,13 +2008,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ModelLibrary.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Document.aspx.cs">
-      <DependentUpon>Document.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Document.aspx.designer.cs">
-      <DependentUpon>Document.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Form4.aspx.cs">
       <DependentUpon>Form4.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2103,19 +2015,8 @@
     <Compile Include="Form4.aspx.designer.cs">
       <DependentUpon>Form4.aspx</DependentUpon>
     </Compile>
-    <Compile Include="NAAC.aspx.cs">
-      <DependentUpon>NAAC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="NAAC.aspx.designer.cs">
-      <DependentUpon>NAAC.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Library\BooksManage.aspx.cs">
       <DependentUpon>BooksManage.aspx</DependentUpon>
@@ -2130,27 +2031,6 @@
     </Compile>
     <Compile Include="Library\Transactions.aspx.designer.cs">
       <DependentUpon>Transactions.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="MinutesOfMeeting.aspx.cs">
-      <DependentUpon>MinutesOfMeeting.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="MinutesOfMeeting.aspx.designer.cs">
-      <DependentUpon>MinutesOfMeeting.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="iCAS\AQAR\Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iCAS\AQAR\Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Kishor.aspx.cs">
-      <DependentUpon>Kishor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Kishor.aspx.designer.cs">
-      <DependentUpon>Kishor.aspx</DependentUpon>
     </Compile>
     <Compile Include="Library\Admin\BooksMaster.aspx.cs">
       <DependentUpon>BooksMaster.aspx</DependentUpon>
@@ -2201,48 +2081,6 @@
     <Compile Include="Library\Books.aspx.designer.cs">
       <DependentUpon>Books.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Passwords.aspx.cs">
-      <DependentUpon>Passwords.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Passwords.aspx.designer.cs">
-      <DependentUpon>Passwords.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GoverningBody.aspx.cs">
-      <DependentUpon>GoverningBody.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GoverningBody.aspx.designer.cs">
-      <DependentUpon>GoverningBody.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Publications.aspx.cs">
-      <DependentUpon>Publications.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Publications.aspx.designer.cs">
-      <DependentUpon>Publications.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Register.aspx.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Register.aspx.designer.cs">
-      <DependentUpon>Register.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Reports.aspx.cs">
-      <DependentUpon>Reports.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Reports.aspx.designer.cs">
-      <DependentUpon>Reports.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Default.aspx.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Default.aspx.designer.cs">
-      <DependentUpon>Default.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Downloads.aspx.cs">
       <DependentUpon>Downloads.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2250,214 +2088,10 @@
     <Compile Include="Downloads.aspx.designer.cs">
       <DependentUpon>Downloads.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Feedbacks.aspx.cs">
-      <DependentUpon>Feedbacks.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Feedbacks.aspx.designer.cs">
-      <DependentUpon>Feedbacks.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="iCAS\ABOUT.aspx.cs">
-      <DependentUpon>ABOUT.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iCAS\ABOUT.aspx.designer.cs">
-      <DependentUpon>ABOUT.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="iCAS\ACTIVTIES.aspx.cs">
-      <DependentUpon>ACTIVTIES.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iCAS\ACTIVTIES.aspx.designer.cs">
-      <DependentUpon>ACTIVTIES.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="iCAS\ADMIN.aspx.cs">
-      <DependentUpon>ADMIN.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iCAS\ADMIN.aspx.designer.cs">
-      <DependentUpon>ADMIN.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="iCAS\ADMIN1.aspx.cs">
-      <DependentUpon>ADMIN1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iCAS\ADMIN1.aspx.designer.cs">
-      <DependentUpon>ADMIN1.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="iCAS\BEST-LINKS.aspx.cs">
-      <DependentUpon>BEST-LINKS.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iCAS\BEST-LINKS.aspx.designer.cs">
-      <DependentUpon>BEST-LINKS.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="iCAS\CONTACT.aspx.cs">
-      <DependentUpon>CONTACT.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iCAS\CONTACT.aspx.designer.cs">
-      <DependentUpon>CONTACT.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="iCAS\DOWNLOADS.aspx.cs">
-      <DependentUpon>DOWNLOADS.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iCAS\DOWNLOADS.aspx.designer.cs">
-      <DependentUpon>DOWNLOADS.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="iCAS\ESTABLISHMENTS.aspx.cs">
-      <DependentUpon>ESTABLISHMENTS.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iCAS\ESTABLISHMENTS.aspx.designer.cs">
-      <DependentUpon>ESTABLISHMENTS.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="iCAS\FINANCE.aspx.cs">
-      <DependentUpon>FINANCE.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iCAS\FINANCE.aspx.designer.cs">
-      <DependentUpon>FINANCE.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="iCAS\LIBRARY.aspx.cs">
-      <DependentUpon>LIBRARY.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iCAS\LIBRARY.aspx.designer.cs">
-      <DependentUpon>LIBRARY.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="iCAS\RTI.aspx.cs">
-      <DependentUpon>RTI.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iCAS\RTI.aspx.designer.cs">
-      <DependentUpon>RTI.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="iCAS\STAFFS.aspx.cs">
-      <DependentUpon>STAFFS.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iCAS\STAFFS.aspx.designer.cs">
-      <DependentUpon>STAFFS.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="iCAS\STUDENTS.aspx.cs">
-      <DependentUpon>STUDENTS.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="iCAS\STUDENTS.aspx.designer.cs">
-      <DependentUpon>STUDENTS.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PhotoGallery.aspx.cs">
-      <DependentUpon>PhotoGallery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PhotoGallery.aspx.designer.cs">
-      <DependentUpon>PhotoGallery.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
-    </Compile>
-    <Compile Include="SendEmail.aspx.cs">
-      <DependentUpon>SendEmail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SendEmail.aspx.designer.cs">
-      <DependentUpon>SendEmail.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SendShortMessage.aspx.cs">
-      <DependentUpon>SendShortMessage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SendShortMessage.aspx.designer.cs">
-      <DependentUpon>SendShortMessage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SendSMS.aspx.cs">
-      <DependentUpon>SendSMS.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SendSMS.aspx.designer.cs">
-      <DependentUpon>SendSMS.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Settings.cs" />
-    <Compile Include="ShowSlides.aspx.cs">
-      <DependentUpon>ShowSlides.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ShowSlides.aspx.designer.cs">
-      <DependentUpon>ShowSlides.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SlideShow.aspx.cs">
-      <DependentUpon>SlideShow.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SlideShow.aspx.designer.cs">
-      <DependentUpon>SlideShow.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="StaffResearchPublications.aspx.cs">
-      <DependentUpon>StaffResearchPublications.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="StaffResearchPublications.aspx.designer.cs">
-      <DependentUpon>StaffResearchPublications.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Students.aspx.cs">
-      <DependentUpon>Students.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Students.aspx.designer.cs">
-      <DependentUpon>Students.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Upload\Approvals.aspx.cs">
-      <DependentUpon>Approvals.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Upload\Approvals.aspx.designer.cs">
-      <DependentUpon>Approvals.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Upload\PhotoGallery.aspx.cs">
-      <DependentUpon>PhotoGallery.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Upload\PhotoGallery.aspx.designer.cs">
-      <DependentUpon>PhotoGallery.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Upload\WorldBank.aspx.cs">
-      <DependentUpon>WorldBank.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Upload\WorldBank.aspx.designer.cs">
-      <DependentUpon>WorldBank.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Upload\MoM.aspx.cs">
-      <DependentUpon>MoM.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Upload\MoM.aspx.designer.cs">
-      <DependentUpon>MoM.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Upload\Publications.aspx.cs">
-      <DependentUpon>Publications.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Upload\Publications.aspx.designer.cs">
-      <DependentUpon>Publications.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebSearch.aspx.cs">
-      <DependentUpon>WebSearch.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebSearch.aspx.designer.cs">
-      <DependentUpon>WebSearch.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebSearchForm.aspx.cs">
-      <DependentUpon>WebSearchForm.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebSearchForm.aspx.designer.cs">
-      <DependentUpon>WebSearchForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Error\PermissionNeeded.aspx.cs">
       <DependentUpon>PermissionNeeded.aspx</DependentUpon>
@@ -2514,20 +2148,6 @@
     </Compile>
     <Compile Include="App_UserControls\Admin\UC_SelectDatabase.ascx.designer.cs">
       <DependentUpon>UC_SelectDatabase.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="CImage.aspx.cs">
-      <DependentUpon>CImage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CImage.aspx.designer.cs">
-      <DependentUpon>CImage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ContactUs.aspx.cs">
-      <DependentUpon>ContactUs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ContactUs.aspx.designer.cs">
-      <DependentUpon>ContactUs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Apps\Admin\CommonKeys.aspx.cs">
       <DependentUpon>CommonKeys.aspx</DependentUpon>
@@ -2823,9 +2443,6 @@
     <Compile Include="App_UserControls\User\UC_UserLoggedOn.ascx.designer.cs">
       <DependentUpon>UC_UserLoggedOn.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
     <Compile Include="Apps\Admin\ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2909,7 +2526,6 @@
     <Folder Include="Themes\Common\NewFolder1\" />
     <Folder Include="Views\Publications\" />
     <Folder Include="Views\TSDC\" />
-    <Folder Include="View\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BusinessLayers\Micro.BusinessLayer\Micro.BusinessLayer.csproj">

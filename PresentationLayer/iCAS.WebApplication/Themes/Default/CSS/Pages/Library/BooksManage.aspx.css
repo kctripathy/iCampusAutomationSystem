@@ -193,7 +193,7 @@ ul#BookUploadUL
     position: fixed;
     color: white;
     text-align: center;
-    background-color: red;
+    background-color: #ccc;
     width: 100%;
 }
 
