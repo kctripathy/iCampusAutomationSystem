@@ -27,6 +27,9 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                         ",", EstbTypeConstants.DOWNLOAD,
                         ",", EstbTypeConstants.MoM,
                         ",", EstbTypeConstants.PHOTO,
+                        ",", EstbTypeConstants.QUESTION_PAPER,
+                        ",", EstbTypeConstants.GOVERNING_BODY,
+                        ",", EstbTypeConstants.STUDENT_ACHIEVEMENT,
                         ",", EstbTypeConstants.WORLDBANK
                 );
         public string typeCodesToShowForPublication = String.Concat(
@@ -110,7 +113,7 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                 }
                 //BindEstbTypeDropdown();
                 Establishment_multi.SetActiveView(InputControls);
-
+                txt_Startdate.Text = DateTime.Now.ToString("dd-MMM-yyyy");
             }
             
 
@@ -128,9 +131,12 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             ddlEstbType.Items.Add(new ListItem("NAAC", EstbTypeConstants.NAAC));
             ddlEstbType.Items.Add(new ListItem("AQAR", EstbTypeConstants.AQAR));
             ddlEstbType.Items.Add(new ListItem("IQAC", EstbTypeConstants.IQAC));
+            ddlEstbType.Items.Add(new ListItem("GOVERNING BODY", EstbTypeConstants.GOVERNING_BODY));
             ddlEstbType.Items.Add(new ListItem("MINUTES OF MEETING", EstbTypeConstants.MoM));
             ddlEstbType.Items.Add(new ListItem("PHOTO GALLERY", EstbTypeConstants.PHOTO));
+            ddlEstbType.Items.Add(new ListItem("QUESTION PAPER", EstbTypeConstants.QUESTION_PAPER));
             ddlEstbType.Items.Add(new ListItem("DOWNLOAD", EstbTypeConstants.DOWNLOAD));
+            ddlEstbType.Items.Add(new ListItem("STUDENT ACHIEVEMENT", EstbTypeConstants.STUDENT_ACHIEVEMENT));
             ddlEstbType.Items.Add(new ListItem("WORLD BANK", EstbTypeConstants.WORLDBANK));
 
 
@@ -144,8 +150,11 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             ddlEstbTypeView.Items.Add(new ListItem("NAAC", EstbTypeConstants.NAAC));
             ddlEstbTypeView.Items.Add(new ListItem("AQAR", EstbTypeConstants.AQAR));
             ddlEstbTypeView.Items.Add(new ListItem("IQAC", EstbTypeConstants.IQAC));
+            ddlEstbTypeView.Items.Add(new ListItem("GOVERNING BODY", EstbTypeConstants.GOVERNING_BODY));
             ddlEstbTypeView.Items.Add(new ListItem("MINUTES OF MEETING", EstbTypeConstants.MoM));
             ddlEstbTypeView.Items.Add(new ListItem("PHOTO GALLERY", EstbTypeConstants.PHOTO));
+            ddlEstbTypeView.Items.Add(new ListItem("QUESTION PAPERS", EstbTypeConstants.QUESTION_PAPER));
+            ddlEstbTypeView.Items.Add(new ListItem("STUDENT ACHIEVEMENT", EstbTypeConstants.STUDENT_ACHIEVEMENT));
             ddlEstbTypeView.Items.Add(new ListItem("DOWNLOAD", EstbTypeConstants.DOWNLOAD));
             ddlEstbTypeView.Items.Add(new ListItem("WORLD BANK", EstbTypeConstants.WORLDBANK));
         }
@@ -333,11 +342,11 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             ddlEstbType.SelectedValue = theestablishment.EstbTypeCode;
             //rbl_EstablishmentTypeCode.SelectedValue = theestablishment.EstbTypeCode;
             txt_NoticeTitle.Text = theestablishment.EstbTitle;
-            txt_Startdate.Text = theestablishment.EstbViewStartDate.ToString();
+            txt_Startdate.Text = theestablishment.EstbViewStartDate.ToString("dd-MMM-yyyy");
             //txt_Enddate.Text = theestablishment.EstbViewEndDate.ToString();
             txt_Description.Text = theestablishment.EstbDescription.Replace("<br/>","\n");
             txt_Description1.Text = theestablishment.EstbDescription1.Replace("<br/>","\n");
-            txt_Description2.Text = theestablishment.EstbDescription1.Replace("<br/>","\n");
+            txt_Description2.Text = theestablishment.EstbDescription2.Replace("<br/>","\n");
 
         }
 
@@ -345,7 +354,7 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
         {
             //rbl_EstablishmentTypeCode.ClearSelection();
             txt_NoticeTitle.Text = string.Empty;
-            txt_Startdate.Text = string.Empty;
+            txt_Startdate.Text = DateTime.Now.ToString("dd-MMM-yyyy"); // string.Empty;
             //txt_Enddate.Text = string.Empty;
             txt_Description.Text = string.Empty;
             txt_Description1.Text = string.Empty;
@@ -363,7 +372,8 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                 if (fileUploadEstb.HasFile)
                 {
                     string[] validFileTypes = { "pdf", "docx", "doc" };
-                    if (ddlEstbType.SelectedValue.Equals(EstbTypeConstants.PHOTO))
+                    if (ddlEstbType.SelectedValue.Equals(EstbTypeConstants.PHOTO) || 
+                        ddlEstbType.SelectedValue.Equals(EstbTypeConstants.STUDENT_ACHIEVEMENT))
                     {
                         List<string> list = new List<string>();
                         list.Add("jpg");
@@ -372,6 +382,18 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                         list.Add("gif");
                         validFileTypes = list.ToArray();
                     } 
+                    else if (ddlEstbType.SelectedValue.Equals(EstbTypeConstants.GOVERNING_BODY))
+                    {
+                        List<string> list = new List<string>();
+                        list.Add("jpg");
+                        list.Add("jpeg");
+                        list.Add("png");
+                        list.Add("gif");
+                        list.Add("doc");
+                        list.Add("docx");
+                        list.Add("pdf");
+                        validFileTypes = list.ToArray();
+                    }
                     
                     string ext = System.IO.Path.GetExtension(fileUploadEstb.PostedFile.FileName).ToLower();
                     bool isValidFile = false;

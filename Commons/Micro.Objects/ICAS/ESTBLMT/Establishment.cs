@@ -330,15 +330,18 @@ namespace Micro.Objects.ICAS.ESTBLMT
         public static string AQAR = "A";
         public static string CIRCULAR = "C";
         public static string DOWNLOAD = "D";
+        public static string GOVERNING_BODY = "G";
         public static string IQAC = "I";
         public static string MoM = "M";
         public static string NOTICE = "N";
         public static string PHOTO = "P";
+        public static string QUESTION_PAPER = "Q";
         public static string RECENT_ACTIVITY = "R";
         public static string SYLLABUS = "S";
         public static string TENDER = "T";
         public static string VIDEO = "V";
         public static string WORLDBANK = "W";
+        public static string STUDENT_ACHIEVEMENT = "Y";
         public static string NAAC = "Z";
 
         public static string ARTCLE = "1";
@@ -366,6 +369,10 @@ namespace Micro.Objects.ICAS.ESTBLMT
         {
             _typeCodeDesc = "Downloadable";
         }
+        else if (typeCode.Equals(EstbTypeConstants.GOVERNING_BODY))
+        {
+            _typeCodeDesc = "Governing Body";
+        }
         else if (typeCode.Equals(EstbTypeConstants.IQAC))
         {
             _typeCodeDesc = "IQAC";
@@ -381,6 +388,10 @@ namespace Micro.Objects.ICAS.ESTBLMT
         else if (typeCode.Equals(EstbTypeConstants.PHOTO))
         {
             _typeCodeDesc = "Photo";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.QUESTION_PAPER))
+        {
+            _typeCodeDesc = "Question Paper";
         }
         else if (typeCode.Equals(EstbTypeConstants.RECENT_ACTIVITY))
         {
@@ -405,6 +416,10 @@ namespace Micro.Objects.ICAS.ESTBLMT
         else if (typeCode.Equals(EstbTypeConstants.NAAC))
         {
             _typeCodeDesc = "NAAC";
+        }
+        else if (typeCode.Equals(EstbTypeConstants.STUDENT_ACHIEVEMENT))
+        {
+            _typeCodeDesc = "STUDENT ACHIEVEMENT";
         }
         else if (typeCode.Equals(EstbTypeConstants.ARTCLE))
         {
@@ -438,6 +453,7 @@ namespace Micro.Objects.ICAS.ESTBLMT
         {
             _typeCodeDesc = "Staff Profile";
         }
+        
         return _typeCodeDesc;
     }
     }

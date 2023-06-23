@@ -136,7 +136,7 @@ body
 	min-height: 540px;
 	height: inherit;
 	padding: 0px;
-	background: url('http://tsdcollege.in/Themes/Common/Images/ICAS-LEFT.jpg') top left no-repeat;
+	/*background: url('http://tsdcollege.in/Themes/Common/Images/ICAS-LEFT.jpg') top left no-repeat;*/
 	background-size: 100% 100%;
 }
 

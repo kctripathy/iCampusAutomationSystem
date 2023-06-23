@@ -27,14 +27,16 @@
         <!--
         @import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Themes/" + this.Page.Theme + @"/CSS/Pages/" + Micro.Commons.Helpers.GetFullPathPageName(this.Page) + ".css"%>';
         @import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Themes/Common/CSS/MainStyleICAS.css"%>';
+        /*@import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Themes/Default/CSS/Calendar.css"%>';*/
         @import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Themes/" + this.Page.Theme + @"/CSS/CommonStyles.css"%>';
         /*@import '<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + @"Themes/" + this.Page.Theme + @"/CSS/Common_" +  Micro.Commons.Helpers.GetCompanyAlias() + ".css"%>';*/
         -->
     </style>
     <script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Scripts/modernizr-2.6.2.js"%>"></script>
     <script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Scripts/respond.js"%>"></script>
-    <script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Scripts/jquery-3.1.1.js"%>"></script>
+    <script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Scripts/jquery-3.6.0.js"%>"></script>
     <script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Scripts/bootstrap.js"%>"></script>
+    <%--<script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Scripts/Extension.min.js"%>"></script>--%>
 
     <script type="text/javascript" src="<%#Micro.Commons.Helpers.GetApplicationPath(this.Page) + "Themes/Common/Javascript/CommonJavaScripts.js"%>"></script>
     <style type="text/css">

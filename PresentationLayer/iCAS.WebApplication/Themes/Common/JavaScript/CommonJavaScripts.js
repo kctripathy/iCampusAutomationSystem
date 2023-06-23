@@ -9,8 +9,14 @@ function CheckLeaveDateRange(sender, args) {
     var TodayDate = new Date();
 
     if (sender._selectedDate > TodayDate) {
-        alert("The selected date can't be greater than today's date.");
-        sender._textbox.set_Value("")
+
+        const date = new Date();
+        const formattedDate = date.toLocaleDateString('en-GB', {
+            day: '2-digit', month: 'short', year: 'numeric'
+        }).replace(/ /g, '-');
+
+        alert("The selected date can't be greater than today's date. " + formattedDate);
+        sender._textbox.set_Value(formattedDate)
     }
 }
 function CheckLeaveDateRangeForLeave(sender, args) {

@@ -545,7 +545,6 @@
     <Content Include="Library\Books.aspx" />
     <Content Include="css\jquery.lightbox-0.5.css" />
     <Content Include="css\styles.css" />
-    <Content Include="Downloads.aspx" />
     <Content Include="Images\photo-gallery\100_0014.jpg" />
     <Content Include="Images\photo-gallery\100_0019.jpg" />
     <Content Include="Images\photo-gallery\100_0020.jpg" />
@@ -2080,13 +2079,6 @@
     </Compile>
     <Compile Include="Library\Books.aspx.designer.cs">
       <DependentUpon>Books.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Downloads.aspx.cs">
-      <DependentUpon>Downloads.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Downloads.aspx.designer.cs">
-      <DependentUpon>Downloads.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>

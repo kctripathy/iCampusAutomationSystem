@@ -42,7 +42,10 @@
 	text-align: center;
 }
 
-
+.ajax__calendar_day_disabled {
+	background-color: #ccc !important;
+	color: #eee !important;
+}
 
 .MicroCalendar .ajax__calendar_days table
 {

@@ -39,6 +39,11 @@
             text-align: center;
         }
     </style>
+    <script type="text/javascript">
+        function onEstbTypeClick(data) {
+            alert(data);
+        }
+    </script>
     <asp:UpdatePanel runat="server" ID="updatePanel_Approval">
         <ContentTemplate>
             <ul id="EstablishmentApprovalsUL">
@@ -88,6 +93,10 @@
                                     <asp:Label runat="server" ID="lbl_Title" Text='<%# Eval("EstbTitle") %>' Font-Bold="true" />
                                     <hr class="divider-line" />
                                     <asp:Label runat="server" ID="lbl_Desc" Text='<%# Eval("EstbDescription") %>' />
+                                    <hr class="divider-line" />
+                                    <asp:Label runat="server" ID="Label2" Text='<%# Eval("EstbDescription1") %>' />
+                                    <hr class="divider-line" />
+                                    <asp:Label runat="server" ID="Label3" Text='<%# Eval("EstbDescription2") %>' />
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:BoundField DataField="AuthorOrContributorName" HeaderText="Author" ItemStyle-CssClass="tbl-author" />

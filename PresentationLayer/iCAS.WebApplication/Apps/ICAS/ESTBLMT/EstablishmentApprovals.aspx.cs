@@ -23,6 +23,9 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
                         ",", EstbTypeConstants.AQAR,
                         ",", EstbTypeConstants.IQAC,
                         ",", EstbTypeConstants.DOWNLOAD,
+                        ",", EstbTypeConstants.QUESTION_PAPER,
+                        ",", EstbTypeConstants.STUDENT_ACHIEVEMENT,
+                        ",", EstbTypeConstants.GOVERNING_BODY,
                         ",", EstbTypeConstants.MoM,
                         ",", EstbTypeConstants.PHOTO,
                         ",", EstbTypeConstants.WORLDBANK
@@ -103,10 +106,13 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.ESTBLMT
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("NAAC", EstbTypeConstants.NAAC));
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("AQAR", EstbTypeConstants.AQAR));
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("IQAC", EstbTypeConstants.IQAC));
-            ddl_EstablishmentTypeCode.Items.Add(new ListItem("WORLDBANK", EstbTypeConstants.WORLDBANK));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("GOVERNING BODY", EstbTypeConstants.GOVERNING_BODY));
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("MINUTES OF MEETING", EstbTypeConstants.MoM));
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("PHOTO GALLERY", EstbTypeConstants.PHOTO));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("QUESTION PAPER", EstbTypeConstants.QUESTION_PAPER));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("STUDENT ACHIEVEMENT", EstbTypeConstants.STUDENT_ACHIEVEMENT));
             ddl_EstablishmentTypeCode.Items.Add(new ListItem("DOWNLOAD", EstbTypeConstants.DOWNLOAD));
+            ddl_EstablishmentTypeCode.Items.Add(new ListItem("WORLDBANK", EstbTypeConstants.WORLDBANK));
             ddl_EstablishmentTypeCode.SelectedIndex = (int)(MicroEnums.EstablishmentType.All);
 
         }
