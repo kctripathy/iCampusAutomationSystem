@@ -515,6 +515,7 @@ namespace Micro.Objects.HumanResource
         {
             get
             {
+				if (this.EmployeeName == null) return "";
                 int padLength = (50 - this.EmployeeName.Length);
                 return String.Format("{0}{1} {2}", this.EmployeeName.ToUpper().PadRight(padLength, '\u00A0'), " ", this.EmployeeCode.ToUpper());
             }

@@ -141,13 +141,16 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
                 ResetTextBoxes();
                 EnableControls(view_InputControls, true);
                 EnableDisableButtons();
-                if (!string.IsNullOrEmpty(PageVariables.TheProfileImage.ImageUrl))
+                if (PageVariables.TheProfileImage != null)
                 {
-                    if (PageVariables.TheProfileImage.ImageUrl.Contains("Temp"))
+                    if (!string.IsNullOrEmpty(PageVariables.TheProfileImage.ImageUrl))
                     {
-                        if (PageVariables.TheProfileImage != null)
-                            RemoveImageFile(PageVariables.TheProfileImage.ImageUrl);
+                        if (PageVariables.TheProfileImage.ImageUrl.Contains("Temp"))
+                        {
+                            if (PageVariables.TheProfileImage != null)
+                                RemoveImageFile(PageVariables.TheProfileImage.ImageUrl);
 
+                        }
                     }
                 }
 
@@ -290,7 +293,8 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
             ddl_Profile.DataValueField = CommonKeyManagement.GetInstance.ValueMember;
             ddl_Profile.DataBind();
 
-            ddl_Profile.Items.Insert(0, new ListItem(MicroConstants.DROPDOWNLIST_DEFAULT_ITEMTEXT));
+            //ddl_Profile.Items.Insert(0, new ListItem(MicroConstants.DROPDOWNLIST_DEFAULT_ITEMTEXT));
+            //ddl_Profile.SelectedIndex = 1;
         }
 
         private void BindGridView()
@@ -370,16 +374,17 @@ namespace LTPL.ICAS.WebApplication.APPS.ICAS.STAFFS
         private int DeleteRecord()
         {
             int ProcReturnValue = EmployeeProfileManagement.GetInstance.DeleteEmployeeProfile(PageVariables.ThisEmployeeProfile);
-
-
             return ProcReturnValue;
         }
 
         private bool ValidateCustomerProfile()
         {
             bool ReturnValue;
-
-            if (ddl_Employees.SelectedItem.Text.Equals(MicroConstants.DROPDOWNLIST_DEFAULT_ITEMTEXT))
+            if (ddl_Employees.SelectedItem ==null)
+            {
+                ReturnValue = false;
+            }
+            else if (ddl_Employees.SelectedItem.Text.Equals(MicroConstants.DROPDOWNLIST_DEFAULT_ITEMTEXT))
                 ReturnValue = false;
             else
                 ReturnValue = true;

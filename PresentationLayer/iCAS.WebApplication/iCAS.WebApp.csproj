@@ -265,6 +265,7 @@
     <Content Include="Apps\Admin\Communications.aspx" />
     <Content Include="Apps\Admin\TheCollege.aspx" />
     <Content Include="Apps\Admin\UserFeedbackQuestions.aspx" />
+    <Content Include="Apps\ICAS\STAFFS\StaffPhotoUpload.aspx" />
     <Content Include="Apps\UserCaptchaImage.aspx" />
     <Content Include="Apps\Finance\AcademicYears.aspx" />
     <Content Include="Apps\Finance\AccountGroups.aspx" />
@@ -940,7 +941,6 @@
     <Content Include="Themes\Default\Images\devxArrowDown.gif" />
     <Content Include="Themes\Default\Images\dialog-error.jpg" />
     <Content Include="Themes\Default\Images\divider1.gif" />
-    <Content Include="Themes\Default\Images\earth.jpg" />
     <Content Include="Themes\Default\Images\Edit Icon %281%29.ico" />
     <Content Include="Themes\Default\Images\edit.gif" />
     <Content Include="Themes\Default\Images\edit.png" />
@@ -950,6 +950,7 @@
     <Content Include="Themes\Default\Images\flag.gif" />
     <Content Include="Themes\Default\Images\goto_first.png" />
     <Content Include="Themes\Default\Images\goto_last.png" />
+    <Content Include="Themes\Default\Images\GRID_ADD.ico" />
     <Content Include="Themes\Default\Images\GRID_DELETE.ico" />
     <Content Include="Themes\Default\Images\GRID_EDIT.ico" />
     <Content Include="Themes\Default\Images\GRID_SAVE.ico" />
@@ -961,10 +962,7 @@
     <Content Include="Themes\Default\Images\icon_FAQ.png" />
     <Content Include="Themes\Default\Images\info.jpg" />
     <Content Include="Themes\Default\Images\letter.jpg" />
-    <Content Include="Themes\Default\Images\Logo_Report_MLFL.jpg" />
     <Content Include="Themes\Default\Images\mainbk.png" />
-    <Content Include="Themes\Default\Images\micro-customer-support.jpg" />
-    <Content Include="Themes\Default\Images\micro-support.jpg" />
     <Content Include="Themes\Default\Images\minus.gif" />
     <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_Bkg-trans.png" />
     <Content Include="Themes\Default\Images\ModalPopUp\ModalPopup_Bkg.png" />
@@ -1061,6 +1059,13 @@
     </Compile>
     <Compile Include="Apps\Admin\UserFeedbackQuestions.aspx.designer.cs">
       <DependentUpon>UserFeedbackQuestions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\StaffPhotoUpload.aspx.cs">
+      <DependentUpon>StaffPhotoUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\ICAS\STAFFS\StaffPhotoUpload.aspx.designer.cs">
+      <DependentUpon>StaffPhotoUpload.aspx</DependentUpon>
     </Compile>
     <Compile Include="Apps\UserCaptchaImage.aspx.cs">
       <DependentUpon>UserCaptchaImage.aspx</DependentUpon>

@@ -145,8 +145,7 @@ namespace Micro.DataAccessLayer.HumanResource
 
 			DeleteCommand.CommandType = CommandType.StoredProcedure;
 			DeleteCommand.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
-			DeleteCommand.Parameters.Add(GetParameter("@EmployeeProfileID", SqlDbType.Int, theEmployeeProfile.EmployeeProfilleID));
-			DeleteCommand.Parameters.Add(GetParameter("@ModifiedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserID));
+			DeleteCommand.Parameters.Add(GetParameter("@EmployeeID", SqlDbType.Int, theEmployeeProfile.EmployeeID));
 			DeleteCommand.CommandText = "pHRM_EmployeeProfiles_Delete";
 
 			ExecuteStoredProcedure(DeleteCommand);

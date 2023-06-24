@@ -12,6 +12,10 @@ using Newtonsoft.Json.Linq;
 using System.Text;
 using System.Web.Mvc;
 using Micro.Commons;
+using Micro.Objects.HumanResource;
+using Micro.BusinessLayer.HumanResource;
+using System.Drawing;
+using System.IO;
 
 namespace TCon.iCAS.WebApplication.api
 {
@@ -21,7 +25,7 @@ namespace TCon.iCAS.WebApplication.api
 
 		public HttpResponseMessage GetDepartments()
 		{
-			List<Department> theList = DepartmentManagement.GetInstance.GetDepartments();
+			List<Micro.Objects.ICAS.STAFFS.Department> theList = Micro.BusinessLayer.ICAS.STAFFS.DepartmentManagement.GetInstance.GetDepartments();
 
 			return new HttpResponseMessage(HttpStatusCode.OK)
 			{
@@ -53,6 +57,40 @@ namespace TCon.iCAS.WebApplication.api
 			};
 		}
 	}
+
+	public class StaffPhotoController : ApiController
+	{
+
+		public HttpResponseMessage Get(int id)
+		{
+			List<EmployeeProfile> theList = EmployeeProfileManagement.GetInstance.GetEmployeeProfileByEmployeeID(id); // StaffMasterManagement.GetInstance.GetStaffs();
+
+			if (theList == null || theList.Count == 0)
+            {
+				return new HttpResponseMessage(HttpStatusCode.OK)
+				{
+					Content = new StringContent(JArray.FromObject(theList).ToString(), Encoding.UTF8, "application/json")
+				};
+			}
+
+			//Image img = (Image)theList[0].SettingKeyValue;
+			byte[] imgData = theList[0].SettingKeyValue;
+			MemoryStream ms = new MemoryStream(imgData);
+			HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
+			response.Content = new StreamContent(ms);
+			response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/png");
+			return response;
+
+			//return new HttpResponseMessage(HttpStatusCode.OK)
+			//{
+			//	Content = new StringContent(JArray.FromObject(theList).ToString(), Encoding.UTF8, "application/json")
+			//};
+		}
+
+	
+	}
+
+
 
 	public class LoginController : ApiController
 	{
