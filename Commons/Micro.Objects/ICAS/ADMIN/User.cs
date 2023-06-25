@@ -21,6 +21,20 @@ namespace Micro.Objects.ICAS.ADMIN
 		public bool is_active { get; set; }
     }
 
+	public class UserFeedbackViewModel
+	{
+		public int id { get; set; }
+		public int category_id { get; set; }
+		public string category_desc { get; set; }
+		public DateTime feedback_date { get; set; }
+		public string feedback_by { get; set; }
+		public string name { get; set; }
+		public string email { get; set; }
+		public string phone { get; set; }
+		public string description { get; set; }
+		public bool is_active { get; set; }
+	}
+
 
 	[Serializable]
 	public class User

@@ -263,6 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Apps\Admin\Communications.aspx" />
+    <Content Include="Apps\Admin\Feedback.aspx" />
     <Content Include="Apps\Admin\TheCollege.aspx" />
     <Content Include="Apps\Admin\UserFeedbackQuestions.aspx" />
     <Content Include="Apps\ICAS\STAFFS\StaffPhotoUpload.aspx" />
@@ -1045,6 +1046,13 @@
     </Compile>
     <Compile Include="Apps\Admin\Communications.aspx.designer.cs">
       <DependentUpon>Communications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apps\Admin\Feedback.aspx.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apps\Admin\Feedback.aspx.designer.cs">
+      <DependentUpon>Feedback.aspx</DependentUpon>
     </Compile>
     <Compile Include="Apps\Admin\TheCollege.aspx.cs">
       <DependentUpon>TheCollege.aspx</DependentUpon>

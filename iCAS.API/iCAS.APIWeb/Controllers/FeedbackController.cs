@@ -12,9 +12,9 @@ namespace iCAS.APIWeb.Controllers
     public class FeedbackController : ApiController
     {
         // GET: api/Feedback
-        public List<UserFeedback> Get()
+        public List<UserFeedbackViewModel> Get()
         {
-            List<UserFeedback> theList = Micro.BusinessLayer.ICAS.ADMIN.UserManagement.GetInstance.SelectUserFeedback();
+            List<UserFeedbackViewModel> theList = Micro.BusinessLayer.ICAS.ADMIN.UserManagement.GetInstance.SelectUserFeedback();
             return theList;
         }
 

@@ -129,42 +129,7 @@ namespace TCon.iCAS.WebApplication.api
 		}
 	}
 
-	public class FeedbackController : ApiController
-	{
-
-		public HttpResponseMessage Get()
-		{
-			List<UserFeedback> theList = Micro.BusinessLayer.ICAS.ADMIN.UserManagement.GetInstance.SelectUserFeedback();
-
-			return new HttpResponseMessage(HttpStatusCode.OK)
-			{
-				Content = new StringContent(JArray.FromObject(theList).ToString(), Encoding.UTF8, "application/json")
-			};
-		}
-
-		public HttpResponseMessage Post([FromBody] UserFeedback userFeedback)
-		{
-			int ret_value = Micro.BusinessLayer.ICAS.ADMIN.UserManagement.GetInstance.InsertUserFeedback(userFeedback);
-
-			APIResponse response = new APIResponse();
-			if (ret_value <= 0)
-			{
-				response.message = "Failed";
-				return new HttpResponseMessage(HttpStatusCode.OK)
-				{
-					Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
-				};
-			}
-			else
-			{
-				response.message = "Success";
-				return new HttpResponseMessage(HttpStatusCode.OK)
-				{
-					Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
-				};
-			}
-		}
-	}
+	
 
 	public class APIResponse
     {

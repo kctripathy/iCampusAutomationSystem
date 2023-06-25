@@ -142,7 +142,7 @@ namespace Micro.BusinessLayer.ICAS.ADMIN
             return UserIntegration.InsertUserFeedback(userFeedback);
         }
 
-        public List<UserFeedback> SelectUserFeedback()
+        public List<UserFeedbackViewModel> SelectUserFeedback()
         {
             return UserIntegration.SelectUserFeedback();
         }

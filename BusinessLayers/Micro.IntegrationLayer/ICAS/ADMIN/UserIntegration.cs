@@ -115,17 +115,18 @@ namespace Micro.IntegrationLayer.ICAS.ADMIN
             return list;
         }
 
-        public static List<UserFeedback> SelectUserFeedback()
+        public static List<UserFeedbackViewModel> SelectUserFeedback()
         {
-            List<UserFeedback> list = new List<UserFeedback>();
+            List<UserFeedbackViewModel> list = new List<UserFeedbackViewModel>();
             DataTable dt = UserDataAccess.GetInstance.SelectUserFeedback();
             foreach (DataRow dr in dt.Rows)
             {
-                UserFeedback userFeedback = new UserFeedback
+                UserFeedbackViewModel userFeedback = new UserFeedbackViewModel
                 {
                     id = int.Parse(dr["id"].ToString()),
                     feedback_date = DateTime.Parse(dr["feedback_date"].ToString()),
                     category_id = int.Parse(dr["category_id"].ToString()),
+                    category_desc = dr["category_desc"].ToString(),
                     feedback_by = dr["feedback_by"].ToString(),
                     name = dr["name"].ToString(),
                     email = dr["email"].ToString(),
