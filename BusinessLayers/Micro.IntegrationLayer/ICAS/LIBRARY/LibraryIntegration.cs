@@ -76,8 +76,6 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             {
                 Book theBookObject = DataRowToObject(dr);
                 theBooksList.Add(theBookObject);
-
-
             }
             return theBooksList;
         }
@@ -90,8 +88,6 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             {
                 Book theBookObject = DataRowToObject(dr);
                 theBooksList.Add(theBookObject);
-
-
             }
             return theBooksList;
         }

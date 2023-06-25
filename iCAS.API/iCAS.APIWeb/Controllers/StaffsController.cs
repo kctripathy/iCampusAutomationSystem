@@ -6,21 +6,33 @@ using System.Net.Http;
 using System.Web.Http;
 using Micro.Objects.ICAS.STAFFS;
 using Micro.BusinessLayer.ICAS.STAFFS;
+using System.Text;
+using Newtonsoft.Json.Linq;
 
 namespace iCAS.APIWeb.Controllers
 {
     public class StaffsController : ApiController
     {
         // GET: api/Staffs
-        public IEnumerable<string> Get()
+        public HttpResponseMessage Get()
+        {
+            List<Staff> list = StaffMasterManagement.GetInstance.GetStaffs();
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JArray.FromObject(list).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+        [Route("api/Staff/Photo/{id}")]
+        public IEnumerable<string> GetPhoto(int id)
         {
             return new string[] { "value1", "value2" };
         }
 
         // GET: api/Staffs/5
-        public string Get(int id)
+        public Staff Get(int id)
         {
-            return "value";
+            return StaffMasterManagement.GetInstance.GetStaffs().Where((record) => record.EmployeeID == id).SingleOrDefault();
         }
 
         // POST: api/Staffs

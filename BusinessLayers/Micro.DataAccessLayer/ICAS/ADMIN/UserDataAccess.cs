@@ -121,6 +121,53 @@ namespace Micro.DataAccessLayer.ICAS.ADMIN
             }
         }
 
+        
+
+        public int InsertUserFeedback(UserFeedback userFeedback)
+        {
+            int ReturnValue = 0;
+            {
+                using (SqlCommand objCommmand = new SqlCommand())
+                {
+                    objCommmand.CommandType = CommandType.StoredProcedure;
+                    objCommmand.Parameters.Add(GetParameter("@return_value", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
+                    objCommmand.Parameters.Add(GetParameter("@feedback_by", SqlDbType.VarChar, userFeedback.feedback_by));
+                    objCommmand.Parameters.Add(GetParameter("@category_id", SqlDbType.Int, userFeedback.category_id));
+                    objCommmand.Parameters.Add(GetParameter("@name", SqlDbType.VarChar, userFeedback.name));
+                    objCommmand.Parameters.Add(GetParameter("@email", SqlDbType.VarChar, userFeedback.email));
+                    objCommmand.Parameters.Add(GetParameter("@phone", SqlDbType.VarChar, userFeedback.phone));
+                    objCommmand.Parameters.Add(GetParameter("@description", SqlDbType.VarChar, userFeedback.description));
+                    objCommmand.CommandText = "UserFeedback_Insert";
+
+                    ExecuteStoredProcedure(objCommmand);
+
+                    ReturnValue = int.Parse(objCommmand.Parameters[0].Value.ToString());
+
+                    return ReturnValue;
+                }
+            }
+        }
+
+        public DataTable SelectUserFeedback()
+        {
+            using (SqlCommand SelectCommand = new SqlCommand())
+            {
+                SelectCommand.CommandType = CommandType.StoredProcedure;
+                SelectCommand.CommandText = "UserFeedback_SelectAll";
+                return ExecuteGetDataTable(SelectCommand);
+            }
+        }
+
+        public DataTable SelectUserFeedbackCategory()
+        {
+            using (SqlCommand SelectCommand = new SqlCommand())
+            {
+                SelectCommand.CommandType = CommandType.StoredProcedure;
+                SelectCommand.CommandText = "UserFeedback_SelectAllCategories";
+                return ExecuteGetDataTable(SelectCommand);
+            }
+        }
+
         public int UpdateUser(User theUser)
         {
             int ReturnValue = 0;

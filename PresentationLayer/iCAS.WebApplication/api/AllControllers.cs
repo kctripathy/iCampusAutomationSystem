@@ -16,6 +16,7 @@ using Micro.Objects.HumanResource;
 using Micro.BusinessLayer.HumanResource;
 using System.Drawing;
 using System.IO;
+using Micro.Objects.ICAS.ADMIN;
 
 namespace TCon.iCAS.WebApplication.api
 {
@@ -97,7 +98,7 @@ namespace TCon.iCAS.WebApplication.api
 
 		public HttpResponseMessage Post([FromBody] UserLogin user)
 		{
-			User CurrentUser = UserManagement.GetInstance.GetUserByLoginName(user.UserName);
+			Micro.Objects.Administration.User CurrentUser = UserManagement.GetInstance.GetUserByLoginName(user.UserName);
 			Response response = new Response();
 
 			if (CurrentUser.UserID.Equals(0) || CurrentUser == null)
@@ -128,10 +129,52 @@ namespace TCon.iCAS.WebApplication.api
 		}
 	}
 
-	public class Response
+	public class FeedbackController : ApiController
+	{
+
+		public HttpResponseMessage Get()
+		{
+			List<UserFeedback> theList = Micro.BusinessLayer.ICAS.ADMIN.UserManagement.GetInstance.SelectUserFeedback();
+
+			return new HttpResponseMessage(HttpStatusCode.OK)
+			{
+				Content = new StringContent(JArray.FromObject(theList).ToString(), Encoding.UTF8, "application/json")
+			};
+		}
+
+		public HttpResponseMessage Post([FromBody] UserFeedback userFeedback)
+		{
+			int ret_value = Micro.BusinessLayer.ICAS.ADMIN.UserManagement.GetInstance.InsertUserFeedback(userFeedback);
+
+			APIResponse response = new APIResponse();
+			if (ret_value <= 0)
+			{
+				response.message = "Failed";
+				return new HttpResponseMessage(HttpStatusCode.OK)
+				{
+					Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+				};
+			}
+			else
+			{
+				response.message = "Success";
+				return new HttpResponseMessage(HttpStatusCode.OK)
+				{
+					Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+				};
+			}
+		}
+	}
+
+	public class APIResponse
     {
 		public string message { get; set; }
-		public User user { get; set; }
     }
+
+	public class Response
+	{
+		public string message { get; set; }
+		public Micro.Objects.Administration.User user { get; set; }
+	}
 
 }

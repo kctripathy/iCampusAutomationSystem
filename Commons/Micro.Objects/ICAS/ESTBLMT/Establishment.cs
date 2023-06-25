@@ -139,8 +139,7 @@ namespace Micro.Objects.ICAS.ESTBLMT
         {
             get
             {
-                //return 25;
-                return int.Parse(ConfigurationManager.AppSettings["EstbTitletZoneMaxLengh"].ToString());
+                return 155;
             }
         }
         public string EstbTitleZone

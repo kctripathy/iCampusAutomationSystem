@@ -15,3 +15,15 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar-inverse {
+    background-image: url("../Images/web_head.jpg");
+    background-color: #05194e;
+    background-repeat: no-repeat;
+    background-position-y: -9px;
+    padding: 5px 10px;
+}
+
+    .navbar-inverse .navbar-brand {
+        color: #fff;
+    }

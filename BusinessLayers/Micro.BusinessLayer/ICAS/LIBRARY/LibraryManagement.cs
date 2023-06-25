@@ -46,7 +46,7 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
         public List<Book> GetBooksList(bool willRefresh = false)
         {
             string UniqueKey = "GetBooksList";
-            List<Book> ListOfBooks = null;
+            List<Book> ListOfBooks;
             if (willRefresh.Equals(true))
             {
                 ListOfBooks = LibraryIntegration.GetBooksList();

@@ -10,7 +10,7 @@ namespace iCAS.APIWeb.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Title = "Home Page";
+            ViewBag.Title = "TSD College's RESTful Web API";
 
             return View();
         }

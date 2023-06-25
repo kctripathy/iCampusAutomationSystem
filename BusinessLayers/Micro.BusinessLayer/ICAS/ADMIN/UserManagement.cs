@@ -22,6 +22,8 @@ namespace Micro.BusinessLayer.ICAS.ADMIN
         /// </summary>
         private static UserManagement _Instance;
 
+       
+
         /// <summary>
         /// Return the instance of the application by initialising once only.
         /// </summary>
@@ -134,6 +136,21 @@ namespace Micro.BusinessLayer.ICAS.ADMIN
 			UserIntegration.UpdateUserPageVisit(recordId);
 		}
 
+
+        public int InsertUserFeedback(UserFeedback userFeedback)
+        {
+            return UserIntegration.InsertUserFeedback(userFeedback);
+        }
+
+        public List<UserFeedback> SelectUserFeedback()
+        {
+            return UserIntegration.SelectUserFeedback();
+        }
+
+        public List<UserFeedbackCategory> SelectUserFeedbackCategory()
+        {
+            return UserIntegration.SelectUserFeedbackCategory();
+        }
         //public List<ErrorLog> GetErrorLogs()
         //{
         //    return UserIntegration.GetErrorLogs();

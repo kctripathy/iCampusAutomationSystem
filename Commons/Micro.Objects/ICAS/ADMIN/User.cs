@@ -2,6 +2,26 @@
 
 namespace Micro.Objects.ICAS.ADMIN
 {
+	public class UserFeedbackCategory
+	{
+		public int id { get; set; }
+		public string name { get; set; }
+	}
+
+	public class UserFeedback
+    {
+		public int id { get; set; }
+		public int category_id { get; set; }
+		public DateTime feedback_date { get; set; }
+		public string feedback_by { get; set; }
+		public string name { get; set; }
+		public string email { get; set; }
+		public string phone { get; set; }
+		public string description { get; set; }
+		public bool is_active { get; set; }
+    }
+
+
 	[Serializable]
 	public class User
 	{
@@ -282,4 +302,6 @@ namespace Micro.Objects.ICAS.ADMIN
 	//        set;
 	//    }
 	//}
+
+
 }
