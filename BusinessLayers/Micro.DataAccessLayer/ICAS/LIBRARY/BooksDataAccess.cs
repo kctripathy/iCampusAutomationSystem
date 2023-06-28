@@ -1,4 +1,5 @@
-﻿using Micro.Objects.ICAS.LIBRARY;
+﻿using Micro.Objects.ICAS;
+using Micro.Objects.ICAS.LIBRARY;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -75,6 +76,8 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 				return ExecuteGetDataTable(Selectcommand);
 			}
 		}
+
+
 		public DataTable GetLibraryBooksList(bool showDeleted = false)
 		{
 			using (SqlCommand Selectcommand = new SqlCommand())
@@ -85,6 +88,19 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 				return ExecuteGetDataTable(Selectcommand);
 			}
 		}
+
+		public DataTable GetBooksListPage(PagingParameterModel pagingParameterModel)
+		{
+			using (SqlCommand Selectcommand = new SqlCommand())
+			{
+				Selectcommand.CommandType = CommandType.StoredProcedure;
+				Selectcommand.Parameters.Add(GetParameter("@PageNo", SqlDbType.Int, pagingParameterModel.pageNumber)); 
+				Selectcommand.Parameters.Add(GetParameter("@PageSize", SqlDbType.Int, pagingParameterModel.pageSize)); 
+				Selectcommand.CommandText = "pICAS_Library_Books_SelectAllByPageInfo";
+				return ExecuteGetDataTable(Selectcommand);
+			}
+		}
+
 		public int UpdateBook(Book b)
 		{
 

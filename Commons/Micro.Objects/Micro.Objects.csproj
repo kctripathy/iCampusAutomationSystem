@@ -118,6 +118,7 @@
     <Compile Include="ICAS\LIBRARY\Supplier.cs" />
     <Compile Include="ICAS\LIBRARY\Publisher.cs" />
     <Compile Include="ICAS\LIBRARY\Transaction.cs" />
+    <Compile Include="ICAS\PaginationModel.cs" />
     <Compile Include="ICAS\STAFFS\PolicyApplication.cs" />
     <Compile Include="ICAS\STAFFS\EmployeePayroll.cs" />
     <Compile Include="ICAS\STAFFS\EmpPayrollcomponent.cs" />

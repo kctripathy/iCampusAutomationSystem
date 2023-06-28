@@ -74,6 +74,7 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
                     ObjEmployee.DesignationID = (dr["DesignationID"].ToString() != "" ? int.Parse(dr["DesignationID"].ToString()) : 0);
                     ObjEmployee.DesignationDescription = dr["DesignationDescription"].ToString().ToUpper();
                     ObjEmployee.Mobile = dr["Mobile"].ToString();
+                    ObjEmployee.EMailID = dr["EMailID"] == null? "": dr["EMailID"].ToString();
                     ObjEmployee.TeachingOrNonTeaching = dr["TeachingOrNonTeaching"].ToString();
                      
                     EmployeeList.Add(ObjEmployee);

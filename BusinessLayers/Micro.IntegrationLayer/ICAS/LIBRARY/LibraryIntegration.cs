@@ -1,5 +1,6 @@
 ﻿using Micro.Commons;
 using Micro.DataAccessLayer.ICAS.LIBRARY;
+using Micro.Objects.ICAS;
 using Micro.Objects.ICAS.LIBRARY;
 using System;
 using System.Collections.Generic;
@@ -66,6 +67,48 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
 
 
             return theBookObj;
+        }
+
+        public static BookViewModel DataRowToBookViewModelObject(DataRow dRow)
+        {
+
+            //BookID	BookType	AccessionNo	Title	CategoryID	CategoryName	AuthorID	Author	PublisherID	Publisher	SegmentID	SegmentName	IsBookIssued	TotalRows
+            //10000200    GEN 200 PASU PAKHIRA KABYA  36  ODIA LITERATURE 4390    PATTNAIK RADHAMOHAN 1281    GRANTHA MANDIRA 13 + 3 ARTS NO  4211
+
+            BookViewModel theBookObj = new BookViewModel();
+            theBookObj.BookID = (dRow["BookID"] == null ? 0 : int.Parse(dRow["BookID"].ToString()));
+            theBookObj.BookType = dRow["BookType"].ToString();
+            
+            theBookObj.CategoryID = int.Parse(dRow["CategoryID"].ToString());
+            theBookObj.Category = dRow["CategoryName"].ToString();
+
+            theBookObj.SegmentID = int.Parse(dRow["SegmentID"].ToString());
+            theBookObj.Segment = dRow["SegmentName"].ToString();
+
+            theBookObj.AuthorID = int.Parse(dRow["AuthorID"].ToString());
+            theBookObj.Author = dRow["Author"].ToString();
+
+            theBookObj.PublisherID = int.Parse(dRow["PublisherID"].ToString());
+            theBookObj.Publisher = dRow["Publisher"].ToString();
+            
+            theBookObj.Title = dRow["Title"].ToString();
+            theBookObj.AccessionNo = dRow["AccessionNo"].ToString();
+            
+            theBookObj.IsBookIssued = dRow["IsBookIssued"].ToString();
+            
+            return theBookObj;
+        }
+
+        public static List<BookViewModel> GetBooksListPage(PagingParameterModel pagingParameterModel)
+        {
+            List<BookViewModel> theBooksList = new List<BookViewModel>();
+            DataTable theBooksTable = LibraryDataAccess.GetInstance.GetBooksListPage(pagingParameterModel);
+            foreach (DataRow dr in theBooksTable.Rows)
+            {
+                BookViewModel theBookObject = DataRowToBookViewModelObject(dr);
+                theBooksList.Add(theBookObject);
+            }
+            return theBooksList;
         }
 
         public static List<Book> GetBooksList()

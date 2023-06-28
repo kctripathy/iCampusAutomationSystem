@@ -1,4 +1,5 @@
 ﻿using Micro.IntegrationLayer.ICAS.LIBRARY;
+using Micro.Objects.ICAS;
 using Micro.Objects.ICAS.LIBRARY;
 using System;
 using System.Collections.Generic;
@@ -60,6 +61,11 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
             }
             return (List<Book>)(HttpRuntime.Cache[UniqueKey]);
 
+        }
+
+        public List<BookViewModel> GetBooksListPage(PagingParameterModel pagingParameterModel)
+        {
+            return LibraryIntegration.GetBooksListPage(pagingParameterModel);
         }
 
         public List<Book> GetBooksList_DistinctRecords()

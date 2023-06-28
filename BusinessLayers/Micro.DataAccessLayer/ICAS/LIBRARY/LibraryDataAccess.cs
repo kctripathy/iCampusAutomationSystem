@@ -1,6 +1,7 @@
 ﻿using Micro.Commons;
 using Micro.Objects.Administration;
 using Micro.Objects.HumanResource;
+using Micro.Objects.ICAS;
 using Micro.Objects.ICAS.LIBRARY;
 using Micro.Objects.ICAS.STUDENT;
 using System;
@@ -53,7 +54,7 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
             return RetValue;
         }
 
-
+       
 
         public DataTable GetBookCategoryByID(int categoryId)
         {
@@ -119,7 +120,9 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 
             return NewID;
         }
+
         
+
         #endregion
 
     }

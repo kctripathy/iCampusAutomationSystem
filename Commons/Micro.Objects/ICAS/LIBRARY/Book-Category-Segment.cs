@@ -5,6 +5,37 @@ using System.Text;
 
 namespace Micro.Objects.ICAS.LIBRARY
 {
+
+	public class BookViewModel
+    {
+		public Int64 BookID { get; set; }
+		public int CategoryID { get; set; }
+		public string Category { get; set; }
+
+		public string BookType { get; set; }
+		public string Title { get; set; }
+		public string AccessionNo { get; set; }
+
+		public int AuthorID { get; set; }
+		public string Author { get; set; }
+
+		public int PublisherID { get; set; }
+		public string Publisher { get; set; }
+
+		public int SegmentID { get; set; }
+		public string Segment { get; set; }
+
+		public string IsBookIssued { get; set; }
+	}
+
+	public class BookDetail : BookViewModel
+	{
+
+		//BookID BookType    SegmentID CategoryID  CategoryCode BillNo  BillDate AuthorID    PublisherID SupplierID  SubjectID AccessionNo AccessionDate ClassNo Title Edition BookYear VolumeNo    Pages BookPrice   Remarks IBNNo   Book_ImageURL_Small Book_ImageURL_Medium    Book_Image_URL_Big Book_PDF_URL    IsBookIssued Issued2UserID   Issued2UserName AddedBy AddedDated ModifiedBy  ModifiedDate VC_Field1   Nu_Field1 Dt_Field1   IsDeleted IsActive    BookStatus OfficeID    CompanyID
+		//10004099	GEN	13	44	Q	1015	2011-07-30 00:00:00.000	4264	1390	1041	NULL	4099	2011-12-01 00:00:00.000		+3 BHARAT ITASHA	2ND	2011		476	150.00	1	1	NULL NULL    NULL NULL    NO NULL    NULL	1	2017-12-30 08:33:40.460	NULL NULL    NULL NULL    NULL	0	1	NULL	44	8
+
+	}
+
 	[Serializable]
 	public class Book
 	{

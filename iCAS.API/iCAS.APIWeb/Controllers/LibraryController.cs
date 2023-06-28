@@ -1,4 +1,6 @@
-﻿using Micro.BusinessLayer.ICAS.LIBRARY;
+﻿using iCAS.APIWeb.Models;
+using Micro.BusinessLayer.ICAS.LIBRARY;
+using Micro.Objects.ICAS;
 using Micro.Objects.ICAS.LIBRARY;
 using Newtonsoft.Json.Linq;
 using System;
@@ -26,8 +28,29 @@ namespace iCAS.APIWeb.Controllers
                 Content = new StringContent(JArray.FromObject(TheBooksList).ToString(), Encoding.UTF8, "application/json")
             };
         }
-        
 
+        [Route("api/Library/BooksList")]
+        public HttpResponseMessage GetBooks([FromUri] PagingParameterModel pageRequest)
+        {
+            string ReturnMessage = WebConstants.SUCCESS;
+            List<BookViewModel> TheBooksList = LibraryManagement.GetInstance.GetBooksListPage(pageRequest);
+            if (TheBooksList.Count == 0) ReturnMessage = WebConstants.FAILURE;
+            Response response = new Response { message = ReturnMessage,data = TheBooksList };
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+        //[Route("api/Library/Book/{id}")]
+        //public HttpResponseMessage GetBook([FromUri] int id)
+        //{
+        //    List<BookDetail> TheBooksList = LibraryManagement.GetInstance.GetBooksByID(id);
+        //    return new HttpResponseMessage(HttpStatusCode.OK)
+        //    {
+        //        Content = new StringContent(JArray.FromObject(TheBooksList).ToString(), Encoding.UTF8, "application/json")
+        //    };
+        //}
 
         // GET: api/Library
         public IEnumerable<string> Get()
