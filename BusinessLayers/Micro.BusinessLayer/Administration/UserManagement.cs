@@ -58,6 +58,11 @@ namespace Micro.BusinessLayer.Administration
             return UserIntegration.Login(loginName);
         }
 
+        public UserLoginRespsonse LoginFromAPI(string loginName)
+        {
+            return UserIntegration.LoginFromAPI(loginName);
+        }
+
         public User GetUserByLoginName(string loginName)
         {
             //User TheUser = null;

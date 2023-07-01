@@ -19,7 +19,7 @@ namespace iCAS.APIWeb.Controllers
 		[Route("api/User/Login")]
 		public HttpResponseMessage Post([FromBody] UserLogin user)
 		{
-			Micro.Objects.Administration.User CurrentUser = UserManagement.GetInstance.GetUserByLoginName(user.UserName);
+			Micro.Objects.Administration.User CurrentUser = UserManagement.GetInstance.Login(user.UserName);
 			Response response = new Response();
 
 			if (CurrentUser.UserID.Equals(0) || CurrentUser == null)
@@ -33,6 +33,7 @@ namespace iCAS.APIWeb.Controllers
 			else if (!CurrentUser.Password.Equals(MicroSecurity.Encrypt(user.Password)))
 			{
 				response.message = "Invalid credential!";
+				
 				return new HttpResponseMessage(HttpStatusCode.OK)
 				{
 					Content = new StringContent(JArray.FromObject(response).ToString(), Encoding.UTF8, "application/json")
@@ -41,12 +42,26 @@ namespace iCAS.APIWeb.Controllers
 			else
 			{
 				response.message = "Valid user";
-				response.data = CurrentUser;
+				response.data = new UserLoginRespsonse
+				{
+					UserID = CurrentUser.UserID,
+					RoleID = CurrentUser.RoleID,
+					UserReferenceID = CurrentUser.UserReferenceID,
+					UserType = CurrentUser.UserType,
+					UserName = CurrentUser.UserName,
+					UserReferenceName = CurrentUser.UserReferenceName,
+					RoleDescription = CurrentUser.RoleDescription,
+					EmailAddress = CurrentUser.EmailAddress,
+					PhoneNumber = CurrentUser.PhoneNumber
+				};
 				return new HttpResponseMessage(HttpStatusCode.OK)
 				{
 					Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
 				};
 			}
 		}
+	
+	
+	
 	}
 }

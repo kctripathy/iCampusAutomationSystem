@@ -38,6 +38,17 @@ namespace Micro.DataAccessLayer.Administration
             }
         }
 
+        //public DataRow LoginFromAPI(string loginName)
+        //{
+        //    using (SqlCommand SelectCommand = new SqlCommand())
+        //    {
+        //        SelectCommand.CommandType = CommandType.StoredProcedure;
+        //        SelectCommand.Parameters.Add(GetParameter("@LoginName", SqlDbType.VarChar, loginName));
+        //        SelectCommand.CommandText = "[pAPI_USERLOGIN]";
+        //        return ExecuteGetDataRow(SelectCommand);
+        //    }
+        //}
+
         public DataTable GetUserList(bool allOffices = false, bool showDeleted = false)
         {
             using (SqlCommand SelectCommand = new SqlCommand())

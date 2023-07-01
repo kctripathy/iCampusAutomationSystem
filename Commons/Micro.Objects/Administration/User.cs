@@ -283,6 +283,108 @@ namespace Micro.Objects.Administration
 		}
 	}
 
+	public class UserLoginRespsonse
+	{
+		private string  _initial;
+		private string  _lastname;
+
+		public int UserID
+		{
+			get;
+			set;
+		}
+
+		public string UserName
+		{
+			get;
+			set;
+		}
+
+
+		public int RoleID
+		{
+			get;
+			set;
+		}
+
+		public string RoleDescription
+		{
+			get;
+			set;
+		}
+
+		public string UserType
+		{
+			get;
+			set;
+		}
+
+		public int UserReferenceID
+		{
+			get;
+			set;
+		}
+
+		public string UserReferenceName
+		{
+			get;
+			set;
+		}
+
+
+		public string FirstName
+		{
+			get
+			{
+				string firstName = String.Empty;
+				if (!(this.UserReferenceName == null))
+				{
+					if (this.UserReferenceName.Contains(" "))
+					{
+						string[] arrName = this.UserReferenceName.ToString().Split(' ');
+						if (arrName.Length >= 1)
+						{
+							firstName = arrName[1];
+							this._lastname = arrName[arrName.Length - 1];
+							this._initial = string.Concat(firstName.Substring(0, 1), arrName[arrName.Length - 1].Substring(0, 1));
+							
+						}
+					}
+				}
+				return firstName;
+			}
+		}
+
+		public string LastName
+		{
+			get
+			{
+				return _lastname;
+			}
+		}
+
+		public string Initial
+		{
+			get
+            {
+				return _initial;
+            }
+		}
+
+		public string EmailAddress
+		{
+			get;
+			set;
+		}
+		public string PhoneNumber
+		{
+			get;
+			set;
+		}
+
+	}
+
+
 	//[Serializable]
 	//public class UserSetting
 	//{
@@ -313,4 +415,6 @@ namespace Micro.Objects.Administration
 	//        set;
 	//    }
 	//}
+
+
 }

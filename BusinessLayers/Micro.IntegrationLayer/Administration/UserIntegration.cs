@@ -64,11 +64,11 @@ namespace Micro.IntegrationLayer.Administration
                 TheUser.UserType = dRowUser["UserType"].ToString();
                 TheUser.UserReferenceID = (((dRowUser["UserReferenceID"] == null) || (string.IsNullOrEmpty(dRowUser["UserReferenceID"].ToString()))) ? 0 : int.Parse(dRowUser["UserReferenceID"].ToString()));
                 TheUser.UserReferenceName = dRowUser["UserReferenceName"].ToString();
-                TheUser.OfficeID = (((dRowUser["OfficeID"] == null) || (string.IsNullOrEmpty(dRowUser["OfficeID"].ToString()))) ? 0 : int.Parse(dRowUser["OfficeID"].ToString()));
-                TheUser.OfficeCode = (dRowUser["OfficeCode"] != null ? dRowUser["OfficeCode"].ToString() : "N/A");
-                TheUser.OfficeName = dRowUser["OfficeName"].ToString();
+                TheUser.OfficeID = 44; // (((dRowUser["OfficeID"] == null) || (string.IsNullOrEmpty(dRowUser["OfficeID"].ToString()))) ? 0 : int.Parse(dRowUser["OfficeID"].ToString()));
+                //TheUser.OfficeCode = (dRowUser["OfficeCode"] != null ? dRowUser["OfficeCode"].ToString() : "N/A");
+                //TheUser.OfficeName = dRowUser["OfficeName"].ToString();
                 TheUser.CompanyID = 8;
-                TheUser.CompanyCode = "C0001";
+                //TheUser.CompanyCode = "C0001";
                 TheUser.CompanyName = "TSD COLLEGE";
                 TheUser.CompanyAliasName = "TSDC";
                 TheUser.EmailAddress = ((dRowUser["EmailID"] == null) ? "" : dRowUser["EmailID"].ToString().ToLower());
@@ -77,6 +77,25 @@ namespace Micro.IntegrationLayer.Administration
 
             return TheUser;
         }
+
+        public static UserLoginRespsonse LoginFromAPI(string userName)
+        {
+            UserLoginRespsonse user = new UserLoginRespsonse();
+            DataRow dRowUser = UserDataAccess.GetInstance.Login(userName);
+            if (dRowUser != null)
+            {
+                user.UserID = int.Parse(dRowUser["UserID"].ToString());
+                user.UserName = dRowUser["UserName"].ToString();
+                user.RoleID = (dRowUser["RoleID"] != null ? int.Parse(dRowUser["RoleID"].ToString()) : 0);
+                user.RoleDescription = dRowUser["RoleDescription"].ToString();
+                user.UserType = dRowUser["UserType"].ToString();
+                user.UserReferenceID = (((dRowUser["UserReferenceID"] == null) || (string.IsNullOrEmpty(dRowUser["UserReferenceID"].ToString()))) ? 0 : int.Parse(dRowUser["UserReferenceID"].ToString()));
+                user.UserReferenceName = dRowUser["UserReferenceName"].ToString();
+            }
+            return user;
+        }
+
+
         public static List<User> GetUserList()
         {
             List<User> UserList = new List<User>();
