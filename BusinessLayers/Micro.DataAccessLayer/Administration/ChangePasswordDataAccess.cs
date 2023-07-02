@@ -55,7 +55,7 @@ namespace Micro.DataAccessLayer.Administration
                 UpdateCommand.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
                 UpdateCommand.Parameters.Add(GetParameter("@UserID", SqlDbType.Int, theUser.UserID));
                 UpdateCommand.Parameters.Add(GetParameter("@NewPassword", SqlDbType.VarChar,theUser.Password));
-                UpdateCommand.Parameters.Add(GetParameter("@ModifiedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserID));
+                UpdateCommand.Parameters.Add(GetParameter("@ModifiedBy", SqlDbType.Int, theUser.UserID));
                 UpdateCommand.CommandText = "pADM_Users_ChangePassword";
 
                 ExecuteStoredProcedure(UpdateCommand);

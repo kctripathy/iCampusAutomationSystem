@@ -1,4 +1,6 @@
-﻿using Micro.BusinessLayer.HumanResource;
+﻿using iCAS.APIWeb.Models;
+using Micro.BusinessLayer.Administration;
+using Micro.BusinessLayer.HumanResource;
 using Micro.BusinessLayer.ICAS.ESTBLMT;
 using Micro.BusinessLayer.ICAS.STAFFS;
 using Micro.Objects.HumanResource;
@@ -18,6 +20,20 @@ namespace iCAS.APIWeb.Controllers
 {
     public class CollegeController : ApiController
     {
+
+        public string GetRequestToken()
+        {
+            var re = Request;
+            var headers = re.Headers;
+            string token = string.Empty;
+
+            if (headers.Contains("Token"))
+            {
+                token = headers.GetValues("Token").First();
+            }
+
+            return token;
+        }
 
         /// <summary>
         /// Get all establishments of the office
@@ -61,6 +77,28 @@ namespace iCAS.APIWeb.Controllers
             return new HttpResponseMessage(HttpStatusCode.OK)
             {
                 Content = new StringContent(JArray.FromObject(theList).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+        [Route("api/College/StaffDetails/{userId}/{staffId}")]
+        public HttpResponseMessage GetStaffDetails(int userId, int staffId)
+        {
+            Response response = new Response();
+            StaffMaster staffMaster = new StaffMaster();
+            string token = GetRequestToken();
+            if (token.Length > 0 && UserManagement.GetInstance.ValidateToken(userId, token))
+            {
+                staffMaster = StaffMasterManagement.GetInstance.GetEmployeeByID(staffId);
+                response.message = "Success";
+                response.data = staffMaster;
+            }
+            else
+            {
+                response.message = "Access denied";
+            }
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
             };
         }
 

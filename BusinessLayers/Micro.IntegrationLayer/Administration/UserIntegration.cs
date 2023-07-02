@@ -50,10 +50,10 @@ namespace Micro.IntegrationLayer.Administration
             return TheUser;
         }
 
-        public static User Login(string userName)
+        public static User Login(string userName, string willGenerateToken)
         {
             User TheUser = new User();
-            DataRow dRowUser = UserDataAccess.GetInstance.Login(userName);
+            DataRow dRowUser = UserDataAccess.GetInstance.Login(userName, willGenerateToken);
             if (dRowUser != null)
             {
                 TheUser.UserID = int.Parse(dRowUser["UserID"].ToString());
@@ -73,6 +73,7 @@ namespace Micro.IntegrationLayer.Administration
                 TheUser.CompanyAliasName = "TSDC";
                 TheUser.EmailAddress = ((dRowUser["EmailID"] == null) ? "" : dRowUser["EmailID"].ToString().ToLower());
                 TheUser.PhoneNumber = ((dRowUser["PhoneNumber"] == null) ? "" : dRowUser["PhoneNumber"].ToString());
+                TheUser.token = ((dRowUser["token"] == null) ? "" : dRowUser["token"].ToString());
             }
 
             return TheUser;
@@ -132,9 +133,9 @@ namespace Micro.IntegrationLayer.Administration
             //TheUser.OfficeID = (UserDataRow["OfficeID"] != null ? int.Parse(UserDataRow["OfficeID"].ToString()) : 0);
             //TheUser.OfficeCode = (UserDataRow["OfficeCode"] != null ? UserDataRow["OfficeCode"].ToString() : "N/A");
             //TheUser.OfficeName = UserDataRow["OfficeName"].ToString();
-            TheUser.CompanyID = int.Parse(UserDataRow["CompanyID"].ToString());
-            TheUser.CompanyCode = UserDataRow["CompanyCode"].ToString();
-            TheUser.CompanyName = UserDataRow["CompanyName"].ToString();
+            //TheUser.CompanyID = int.Parse(UserDataRow["CompanyID"].ToString());
+            //TheUser.CompanyCode = UserDataRow["CompanyCode"].ToString();
+            //TheUser.CompanyName = UserDataRow["CompanyName"].ToString();
 
             return TheUser;
         }

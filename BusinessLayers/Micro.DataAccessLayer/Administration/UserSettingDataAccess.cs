@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using Micro.Objects.Administration;
@@ -98,6 +99,23 @@ namespace Micro.DataAccessLayer.Administration
             }
 
             ExecuteStoredProcedure(InsertCommand);
+        }
+
+        public string GetUserToken(int userId)
+        {
+            string returnValue = string.Empty;
+            using (SqlCommand SelectCommand = new SqlCommand())
+            {
+                SelectCommand.CommandType = CommandType.StoredProcedure;
+                SelectCommand.Parameters.Add(GetParameter("@UserId", SqlDbType.Int, userId));
+                SelectCommand.CommandText = "pAPI_GET_USER_TOKEN";
+                DataRow dr =  ExecuteGetDataRow(SelectCommand);
+                if (dr != null)
+                {
+                    returnValue = dr["token"].ToString();
+                }
+            }
+            return returnValue;
         }
 
         public void DeleteAllUserSettings()

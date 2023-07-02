@@ -213,6 +213,11 @@ namespace Micro.Objects.Administration
 		//public object UserId; //used for Micro.Commons.Connection.LoggedOnUser.UserId
 		//public int RoleId;
 
+		public string token
+        {
+			get; set;
+        }
+
 	}
 
 	[Serializable]
@@ -281,6 +286,36 @@ namespace Micro.Objects.Administration
 			get;
 			set;
 		}
+	}
+
+	public class UserChangePassword
+	{
+
+
+
+		public string OldPassword
+		{
+			get;
+			set;
+		}
+
+		public string NewPassword
+		{
+			get;
+			set;
+		}
+		public int UserId
+		{
+			get;
+			set;
+		}
+		public string UserName
+
+		{
+			get;
+			set;
+		}
+		
 	}
 
 	public class UserLoginRespsonse
@@ -380,6 +415,10 @@ namespace Micro.Objects.Administration
 		{
 			get;
 			set;
+		}
+
+		public string token {
+			get; set;
 		}
 
 	}

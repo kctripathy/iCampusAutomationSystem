@@ -13,13 +13,13 @@ using System.Web.Http;
 
 namespace iCAS.APIWeb.Controllers
 {
-    public class UserController : ApiController
-    {
+	public class UserController : ApiController
+	{
 
 		[Route("api/User/Login")]
 		public HttpResponseMessage Post([FromBody] UserLogin user)
 		{
-			Micro.Objects.Administration.User CurrentUser = UserManagement.GetInstance.Login(user.UserName);
+			Micro.Objects.Administration.User CurrentUser = UserManagement.GetInstance.Login(user.UserName,"YES");
 			Response response = new Response();
 
 			if (CurrentUser.UserID.Equals(0) || CurrentUser == null)
@@ -32,11 +32,11 @@ namespace iCAS.APIWeb.Controllers
 			}
 			else if (!CurrentUser.Password.Equals(MicroSecurity.Encrypt(user.Password)))
 			{
-				response.message = "Invalid credential!";
-				
+				response.message = "Invalid password!";
+
 				return new HttpResponseMessage(HttpStatusCode.OK)
 				{
-					Content = new StringContent(JArray.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+					Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
 				};
 			}
 			else
@@ -52,7 +52,8 @@ namespace iCAS.APIWeb.Controllers
 					UserReferenceName = CurrentUser.UserReferenceName,
 					RoleDescription = CurrentUser.RoleDescription,
 					EmailAddress = CurrentUser.EmailAddress,
-					PhoneNumber = CurrentUser.PhoneNumber
+					PhoneNumber = CurrentUser.PhoneNumber,
+					token = CurrentUser.token
 				};
 				return new HttpResponseMessage(HttpStatusCode.OK)
 				{
@@ -60,8 +61,96 @@ namespace iCAS.APIWeb.Controllers
 				};
 			}
 		}
-	
-	
-	
+
+		[Route("api/User/{id}")]
+		public HttpResponseMessage GetUserById([FromUri] int id)
+		{
+
+			Response response = new Response();
+			string token = GetRequestToken();
+			if (UserManagement.GetInstance.ValidateToken(id, token))
+            {
+				response.message = "Success";
+				
+			}
+			else
+            {
+				response.message = "Access denied";
+            }
+
+
+			return new HttpResponseMessage(HttpStatusCode.OK)
+			{
+				Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+			};
+		}
+
+		//api/User/495/ChangePassword
+		[Route("api/User/ChangePassword")]
+		public HttpResponseMessage ChangePassword([FromBody] UserChangePassword user)
+		{
+			Response response = new Response();
+
+			//Validate the token first
+			string token = GetRequestToken();
+			//if (!UserManagement.GetInstance.ValidateToken(user.UserId, token))
+			//{
+			//	response.message = "Invalid token!";
+			//	return new HttpResponseMessage(HttpStatusCode.OK)
+			//	{
+			//		Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+			//	};
+			//}
+
+			//Check if old password is okayy
+			Micro.Objects.Administration.User CurrentUser = UserManagement.GetInstance.Login(user.UserName, "NO");
+			if (!CurrentUser.Password.Equals(MicroSecurity.Encrypt(user.OldPassword)))
+			{
+				response.message = "Invalid old password!";
+				return new HttpResponseMessage(HttpStatusCode.OK)
+				{
+					Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+				};
+			}
+			if (!CurrentUser.token.ToUpper().Equals(token.ToUpper()))
+			{
+				response.message = "Invalid token!";
+				return new HttpResponseMessage(HttpStatusCode.OK)
+				{
+					Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+				};
+			}
+			else
+			{
+				User ThisUser = new User
+                {
+					UserID = user.UserId,
+					Password = MicroSecurity.Encrypt(user.NewPassword)
+                };
+				int result = ChangePasswordManagement.GetInstance.UpdateChangePassword(ThisUser);
+				response.message = result>0? "Success": "Failure";
+
+				return new HttpResponseMessage(HttpStatusCode.OK)
+				{
+					Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+				};
+			}
+		}
+
+
+
+		public string GetRequestToken()
+		{
+			var re = Request;
+			var headers = re.Headers;
+			string token = string.Empty;
+
+			if (headers.Contains("Token"))
+			{
+				token = headers.GetValues("Token").First();
+			}
+
+			return token;
+		}
 	}
 }

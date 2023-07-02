@@ -53,9 +53,9 @@ namespace Micro.BusinessLayer.Administration
             return UserIntegration.GetUserByID(userID);
         }
 
-        public User Login(string loginName)
+        public User Login(string loginName, string willGenerateToken = "NO")
         {
-            return UserIntegration.Login(loginName);
+            return UserIntegration.Login(loginName, willGenerateToken);
         }
 
         public UserLoginRespsonse LoginFromAPI(string loginName)
@@ -151,6 +151,13 @@ namespace Micro.BusinessLayer.Administration
         {
             return UserIntegration.GetErrorLogs();
         }
+
+        public bool ValidateToken(int userId, string token)
+        {
+            string userToken =  UserIntegration.GetUserToken(userId);
+            return userToken.ToUpper().Equals(token.ToUpper());
+        }
+
         #endregion
     }
 }

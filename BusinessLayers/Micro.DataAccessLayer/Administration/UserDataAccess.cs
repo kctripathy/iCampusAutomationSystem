@@ -27,12 +27,13 @@ namespace Micro.DataAccessLayer.Administration
         #endregion
 
         #region Methods & Implemenations
-        public DataRow Login(string loginName)
+        public DataRow Login(string loginName, string willGenerateToken = "NO")
         {
             using (SqlCommand SelectCommand = new SqlCommand())
             {
                 SelectCommand.CommandType = CommandType.StoredProcedure;
                 SelectCommand.Parameters.Add(GetParameter("@LoginName", SqlDbType.VarChar, loginName));
+                SelectCommand.Parameters.Add(GetParameter("@WillGenerateToken", SqlDbType.VarChar, willGenerateToken));
                 SelectCommand.CommandText = "[pAPI_LOGIN]";
                 return ExecuteGetDataRow(SelectCommand);
             }

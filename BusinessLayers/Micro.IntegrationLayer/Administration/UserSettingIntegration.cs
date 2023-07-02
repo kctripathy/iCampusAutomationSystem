@@ -3,6 +3,7 @@ using System.Data;
 using Micro.DataAccessLayer.Administration;
 using Micro.Objects.Administration;
 using Micro.Commons;
+using System;
 
 namespace Micro.IntegrationLayer.Administration
 {
@@ -109,5 +110,10 @@ namespace Micro.IntegrationLayer.Administration
 		{
 			UserDataAccess.GetInstance.DeleteAllUserSettings();
 		}
-	}
+
+        public static string GetUserToken(int userId)
+        {
+			return UserDataAccess.GetInstance.GetUserToken(userId);
+		}
+    }
 }
