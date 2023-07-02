@@ -30,7 +30,7 @@ bld/
 [Oo]bj/
 [Ll]og/
 [Ll]ogs/
-
+Documents/*
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
@@ -348,3 +348,10 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+PresentationLayer/iCAS.WebApplication/Documents/*.pdf
+PresentationLayer/iCAS.WebApplication/Documents/*.doc
+PresentationLayer/iCAS.WebApplication/Documents/*.docx
+PresentationLayer/iCAS.WebApplication/Documents/*.jpg
+PresentationLayer/iCAS.WebApplication/Documents/*.jpeg
+
+
