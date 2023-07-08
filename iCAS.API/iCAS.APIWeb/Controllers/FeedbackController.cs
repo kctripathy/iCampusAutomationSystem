@@ -1,7 +1,10 @@
 ﻿using iCAS.APIWeb.Models;
+using Micro.BusinessLayer.ICAS.ADMIN;
 using Micro.Objects.ICAS.ADMIN;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Net;
 using System.Net.Http;
 using System.Text;
@@ -24,6 +27,7 @@ namespace iCAS.APIWeb.Controllers
             List<UserFeedbackCategory> theList = Micro.BusinessLayer.ICAS.ADMIN.UserManagement.GetInstance.SelectUserFeedbackCategory();
             return theList;
         }
+
 
         // GET: api/Feedback/5
         public string Get(int id)
@@ -61,5 +65,47 @@ namespace iCAS.APIWeb.Controllers
         public void Delete(int id)
         {
         }
+
+        #region STUDENT FEEDBACK
+        [Route("api/Student/Feedback/Questions")]
+        public List<Feedback> GetFeedbackQuestion()
+        {
+            List<Feedback> theList = FeedbackMasterManagement.GetInstance.GetFeedbackQuestions();
+            return theList;
+        }
+
+        [HttpPost]
+        [Route("api/Student/Feedback/Submit")]
+        public HttpResponseMessage SubmitFeedback(object answers)
+        {
+            Response response = new Response();
+            var feedback = JsonConvert.DeserializeObject<Dictionary<string, string>>(answers.ToString());
+            
+            Debug.Print(answers.ToString());
+            Debug.Print(feedback.ToString());
+
+            foreach (var f in feedback)
+            {
+                Debug.Print($"{f.Key}: {f.Value}");
+            }
+
+            int ret_value = FeedbackMasterManagement.GetInstance.SubmitFeedback(feedback);
+            if (ret_value <= 0)
+            {
+                response.message = "Failed";
+                response.data = 0;
+            }
+            else
+            {
+                response.message = "Success";
+                response.data = ret_value;
+            }
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+        #endregion
     }
 }

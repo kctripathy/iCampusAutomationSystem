@@ -41,6 +41,13 @@ namespace Micro.BusinessLayer.ICAS.ADMIN
         #endregion
 
         #region Methods & Implementation For Question
+
+        public List<Feedback> GetFeedbackQuestions()
+        {
+            return FeedbackMasterIntegration.GetFeedbackQuestions();
+        }
+
+
         public List<QuestionMasters> GetFeedbackQuestionsList()
         {
             return FeedbackMasterIntegration.GetFeedbackQuestionsList();
@@ -87,6 +94,12 @@ namespace Micro.BusinessLayer.ICAS.ADMIN
         {
             return FeedbackMasterIntegration.GetFeedBackMastersList();
         }
+
+        public int SubmitFeedback(Dictionary<string, string> feedback)
+        {
+            return FeedbackMasterIntegration.SubmitFeedback(feedback);
+        }
+
         public List<FeedBackMasters> GetFeedBackMastersList(int userID)
         {
             return FeedbackMasterIntegration.GetFeedBackMastersList(userID);

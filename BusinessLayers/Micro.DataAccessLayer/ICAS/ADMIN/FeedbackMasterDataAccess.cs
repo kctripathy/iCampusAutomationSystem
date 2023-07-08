@@ -77,6 +77,17 @@ namespace Micro.DataAccessLayer.ICAS.ADMIN
             return ReturnValue;
         }
 
+        public DataTable GetFeedbackQuestionsAndOptions()
+        {
+            using (SqlCommand SelectCommand = new SqlCommand())
+            {
+                SelectCommand.CommandType = CommandType.StoredProcedure;
+                SelectCommand.CommandText = "pAPI_GET_FEEDBACK_QUESTIONS_AND_OPTIONS";
+
+                return ExecuteGetDataTable(SelectCommand);
+            }
+        }
+
         public int UpdateFeedbackQuestions(QuestionMasters theFeedbackMaster)
         {
             int ReturnValue = 0;
@@ -96,6 +107,47 @@ namespace Micro.DataAccessLayer.ICAS.ADMIN
                 ReturnValue = int.Parse(UpdateCommand.Parameters[0].Value.ToString());
             }
             return ReturnValue;
+        }
+
+        public int SubmitFeedback(Dictionary<string, string> feedback)
+        {
+            int returnValue = 0;
+            string feedbackId = feedback["FeedbackID"];
+            string studentId = feedback["StudetID"];
+
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(GetParameter("@feedback_submit_id", SqlDbType.Int, returnValue)).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(GetParameter("@feedback_id", SqlDbType.Int, feedbackId));
+                cmd.Parameters.Add(GetParameter("@user_id", SqlDbType.Int, studentId));
+                cmd.CommandText = "pAPI_INSERT_FEEDBACK_MASTER";
+                ExecuteStoredProcedure(cmd);
+                returnValue = int.Parse(cmd.Parameters[0].Value.ToString());
+            }
+
+
+
+            
+            feedback.Remove("FeedbackID");
+            feedback.Remove("StudetID");
+
+            StringBuilder sb = new StringBuilder("INSERT INTO FeedbackQuestionAnswers (feedback_submit_id, question_id, option_id) VALUES  ");
+            foreach (var f in feedback)
+            {
+                //Debug.Print($"{f.Key}: {f.Value}");
+                sb.Append(String.Format("({0},{1},{2}),", returnValue, f.Key.Replace("q", ""), f.Value));
+            }
+            System.Diagnostics.Debug.Print(sb.ToString());
+            string insertStatement = sb.ToString().Substring(0, sb.ToString().Length - 1);
+            using (SqlCommand cmd1 = new SqlCommand())
+            {
+                cmd1.CommandType = CommandType.StoredProcedure;
+                cmd1.CommandText = insertStatement;
+                ExecuteSqlStatement(cmd1);
+            }
+            return returnValue;
+            
         }
 
         public int DeleteFeedbackQuestions(QuestionMasters theFeedbackMaster)

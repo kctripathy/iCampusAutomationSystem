@@ -32,7 +32,105 @@ namespace Micro.IntegrationLayer.ICAS.ADMIN
             return TheFeedbackMaster;
         }
 
+        public static FeedbackQuestion ConvertDataRowToObject(DataRow dr)
+        {
+            FeedbackQuestion TheFeedbackMaster = new FeedbackQuestion();
+
+            //TheFeedbackMaster.QuestionID = int.Parse(dr["QuestionID"].ToString());
+            //TheFeedbackMaster.QuestionTitle = dr["QuestionTitle"].ToString();
+            //TheFeedbackMaster.QuestionDesc = dr["QuestionDesc"].ToString();
+
+            //TheFeedbackMaster.Option1 = dr["Option1"].ToString();
+            //TheFeedbackMaster.Option2 = dr["Option2"].ToString();
+            //TheFeedbackMaster.Option3 = dr["Option3"].ToString();
+            //TheFeedbackMaster.Option4 = dr["Option4"].ToString();
+
+            //TheFeedbackMaster.IsActive = bool.Parse(dr["IsActive"].ToString());
+            //TheFeedbackMaster.IsDeleted = bool.Parse(dr["IsDeleted"].ToString());
+
+            return TheFeedbackMaster;
+        }
+
+        public static DataTable GetDistinctRecords(DataTable dt, string[] Columns)
+        {
+            DataTable dtUniqRecords = new DataTable();
+            dtUniqRecords = dt.DefaultView.ToTable(true, Columns);
+            return dtUniqRecords;
+        }
+
+        public static List<Feedback> GetFeedbackQuestions()
+        {
+            List<Feedback> feedbacksList = new List<Feedback>();
+            DataTable FeedbackQuestionTable = FeedbackMasterDataAccess.GetInstance.GetFeedbackQuestionsAndOptions();
+
+            string[] TobeDistinct = { "FeedbackId", "FeedbackDesc", "feedback_date_start", "feedback_date_end" };
+            DataTable dtDistinct = GetDistinctRecords(FeedbackQuestionTable, TobeDistinct);
+
+
+            foreach (DataRow dRow in dtDistinct.Rows)
+            {
+                Feedback f = new Feedback();
+                f.FeedbackID = int.Parse(dRow["FeedbackId"].ToString());
+                f.FeedbackDesc = dRow["FeedbackDesc"].ToString();
+                f.FeedbackStartDate = DateTime.Parse(dRow["feedback_date_start"].ToString());
+                f.FeedbackEndDate = DateTime.Parse(dRow["feedback_date_end"].ToString());
+                f.FeedbackQuestions = GetFeedbackQuestionsList(f.FeedbackID, FeedbackQuestionTable);
+                feedbacksList.Add(f);
+            }
+            return feedbacksList;
+        }
+
+        public static int SubmitFeedback(Dictionary<string, string> feedback)
+        {
+            return FeedbackMasterDataAccess.GetInstance.SubmitFeedback(feedback);
+        }
+
+        private static List<FeedbackQuestion> GetFeedbackQuestionsList(int feedbackId, DataTable feedbackQuestionTable)
+        {
+            List<FeedbackQuestion> FeedbackQuestionList = new List<FeedbackQuestion>();
+            string[] TobeDistinct = { "FeedbackId", "QuestionId", "QuestionDesc" };
+            DataTable dtDistinct = GetDistinctRecords(feedbackQuestionTable, TobeDistinct);
+            foreach (DataRow dr in dtDistinct.Rows)
+            {
+                FeedbackQuestion f = new FeedbackQuestion();
+                f.QuestionID = int.Parse(dr["QuestionID"].ToString());
+                f.QuestionDesc = dr["QuestionDesc"].ToString();
+                f.FeedbackQuestionOptions = GetOptions(f.QuestionID, feedbackQuestionTable);
+                FeedbackQuestionList.Add(f);
+            }
+            return FeedbackQuestionList;
+        }
+
+        private static List<FeedbackQuestionOption> GetOptions(int questionID, DataTable feedbackQuestionTable)
+        {
+            List<FeedbackQuestionOption> feedbackQuestionOptions = new List<FeedbackQuestionOption>();
+            foreach (DataRow dr in feedbackQuestionTable.Rows)
+            {
+                if (int.Parse(dr["QuestionID"].ToString()) == questionID)
+                {
+                    FeedbackQuestionOption f = new FeedbackQuestionOption();
+                    f.OptionID = int.Parse(dr["OptionId"].ToString());
+                    f.OptionDesc = dr["OptionDesc"].ToString();
+                    feedbackQuestionOptions.Add(f);
+                }
+            }
+            return feedbackQuestionOptions;
+        }
+
         public static List<QuestionMasters> GetFeedbackQuestionsList()
+        {
+            List<QuestionMasters> FeedbackQuestionList = new List<QuestionMasters>();
+            DataTable FeedbackQuestionTable = FeedbackMasterDataAccess.GetInstance.GetFeedbackQuestionsList();
+            foreach (DataRow dr in FeedbackQuestionTable.Rows)
+            {
+                QuestionMasters TheFeedbackMaster = DataRowToObject(dr);
+                FeedbackQuestionList.Add(TheFeedbackMaster);
+            }
+            return FeedbackQuestionList;
+
+        }
+
+        public static List<QuestionMasters> GetFeedbackQuestionAndOptions()
         {
             List<QuestionMasters> FeedbackQuestionList = new List<QuestionMasters>();
             DataTable FeedbackQuestionTable = FeedbackMasterDataAccess.GetInstance.GetFeedbackQuestionsList();
