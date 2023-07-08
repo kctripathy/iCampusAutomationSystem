@@ -8,7 +8,8 @@ using Micro.Commons;
 using Micro.BusinessLayer.ICAS.ESTBLMT;
 using Micro.Objects.ICAS.ESTBLMT;
 using System.IO;
-
+using LazZiya.ImageResize;
+using System.Drawing;
 
 namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
 {
@@ -368,7 +369,11 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             try
             {
                 string theNewFileName = string.Empty;
+                string theNewFileAfterResize = string.Empty;
+
                 string fileNameWithPath = string.Empty;
+                string fileNameWithPathAfterResize = string.Empty;
+
                 if (fileUploadEstb.HasFile)
                 {
                     string[] validFileTypes = { "pdf", "docx", "doc" };
@@ -430,6 +435,48 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                         //save the file to our local path
                         fileUploadEstb.SaveAs(fileNameWithPath);
                         fileUploadEstb = null;
+
+                        if (ext.ToLower().Contains("jpg") || ext.ToLower().Contains("jpeg") || ext.ToLower().Contains("png")) 
+                        {
+                            using (var img = System.Drawing.Image.FromFile(fileNameWithPath))
+                            {
+                                
+
+                                theNewFileAfterResize = string.Format("PHOTO_{0}{1}{2}{3}{4}{5}{6}{7}",
+                                            ddlEstbType.SelectedValue,
+                                            DateTime.Now.Year.ToString(),
+                                            DateTime.Now.Month.ToString(),
+                                            DateTime.Now.Day.ToString(),
+                                            DateTime.Now.Hour.ToString(),
+                                            DateTime.Now.Minute.ToString(),
+                                            DateTime.Now.Second.ToString(),
+                                            ext
+                                            );
+                                fileNameWithPathAfterResize = Path.Combine(Server.MapPath("~/Documents"), theNewFileAfterResize);
+
+                                if (ddlEstbType.SelectedValue.Equals(EstbTypeConstants.STUDENT_ACHIEVEMENT))
+                                {
+                                    img.ScaleByHeight(400).SaveAs(fileNameWithPathAfterResize);
+                                }
+                                else
+                                {
+                                    var tOps = new TextWatermarkOptions
+                                    {
+                                        TextColor = Color.FromArgb(75, Color.White),
+                                        Location = TargetSpot.BottomMiddle,
+                                        OutlineWidth = 1.5f,
+                                        FontSize = 30,
+                                        OutlineColor = Color.FromArgb(255, Color.Black)
+                                    };
+                                    img.AddTextWatermark("http://www.tsdcollege.in", tOps).ScaleByHeight(600).SaveAs(fileNameWithPathAfterResize);
+                                }
+                                
+
+                                
+                                theNewFileName = theNewFileAfterResize;
+                            }
+                        }
+                        
                     }
                 }
                 else
@@ -437,6 +484,12 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                     lbl_FileUploadStatus.Text = "File couldn't be uploaded! it seems some problem is there";
                     return "NA";
                 }
+
+                if ((ddlEstbType.SelectedValue.Equals(EstbTypeConstants.PHOTO) || ddlEstbType.SelectedValue.Equals(EstbTypeConstants.STUDENT_ACHIEVEMENT)) && 
+                    System.IO.File.Exists(Path.Combine(Server.MapPath("~/Documents"), fileNameWithPath))) {
+                    System.IO.File.Delete(Path.Combine(Server.MapPath("~/Documents"), fileNameWithPath));
+                }
+
                 return theNewFileName;
 
             }
@@ -509,6 +562,7 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
         {
             bool HasFile = fileUploadEstb.HasFile;
         }
+        
         protected void Upload_File(object sender, EventArgs e)
         {
            
