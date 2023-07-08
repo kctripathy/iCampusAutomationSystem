@@ -98,6 +98,7 @@ namespace Micro.IntegrationLayer.ICAS.ADMIN
             return UserDataAccess.GetInstance.InsertUserFeedback(userFeedback);
         }
 
+      
         public static List<UserFeedbackCategory> SelectUserFeedbackCategory()
         {
             List<UserFeedbackCategory> list = new List<UserFeedbackCategory>();

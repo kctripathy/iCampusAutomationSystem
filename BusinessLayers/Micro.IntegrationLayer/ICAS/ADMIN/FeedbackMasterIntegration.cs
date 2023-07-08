@@ -58,6 +58,67 @@ namespace Micro.IntegrationLayer.ICAS.ADMIN
             return dtUniqRecords;
         }
 
+        public static List<Feedback> GetFeedbackMaster()
+        {
+            List<Feedback> feedbacksList = new List<Feedback>();
+            DataTable dt = FeedbackMasterDataAccess.GetInstance.GetFeedbacks();
+
+
+            foreach (DataRow dRow in dt.Rows)
+            {
+                Feedback f = new Feedback();
+                f.FeedbackID = int.Parse(dRow["id"].ToString());
+                f.FeedbackDesc = dRow["name"].ToString();
+                f.FeedbackStartDate = DateTime.Parse(dRow["feedback_date_start"].ToString());
+                f.FeedbackEndDate = DateTime.Parse(dRow["feedback_date_end"].ToString());
+                f.IsActive = bool.Parse(dRow["is_active"].ToString());
+                feedbacksList.Add(f);
+            }
+            return feedbacksList;
+        }
+
+        //GetStudentsWhoSubmittedFeedbacks
+        public static List<StudentWhoSubmittedFeedback> GetStudentWhoSubmittedFeedback(int feedbackId)
+        {
+            List<StudentWhoSubmittedFeedback> list = new List<StudentWhoSubmittedFeedback>();
+            DataTable dt = FeedbackMasterDataAccess.GetInstance.GetStudentsWhoSubmittedFeedbacks(feedbackId);
+
+            //id	user_id	feedback_submit_date	UserName	StudentName
+            //1   5352    2023 - 07 - 08 03:46:10.277 IA17 - 001    ANIL KUMAR SWAIN
+            foreach (DataRow dRow in dt.Rows)
+            {
+                StudentWhoSubmittedFeedback f = new StudentWhoSubmittedFeedback();
+                f.id = int.Parse(dRow["id"].ToString());
+                f.user_id = int.Parse(dRow["user_id"].ToString());
+                f.name = dRow["StudentName"].ToString();
+                f.roll_no =dRow["UserName"].ToString();
+                f.feedback_submit_date = DateTime.Parse(dRow["feedback_submit_date"].ToString());
+                list.Add(f);
+            }
+            return list;
+        }
+
+
+        public static List<StudentFeedbackAnswer> GetStudentsFeedbacksAnswers(int feedbackId, int studentId)
+        {
+            List<StudentFeedbackAnswer> list = new List<StudentFeedbackAnswer>();
+            DataTable dt = FeedbackMasterDataAccess.GetInstance.GetStudentsFeedbacksAnswers(feedbackId, studentId);
+
+
+            foreach (DataRow dRow in dt.Rows)
+            {
+                StudentFeedbackAnswer f = new StudentFeedbackAnswer();
+                f.id = int.Parse(dRow["id"].ToString());
+                f.user_id = int.Parse(dRow["user_id"].ToString());
+                f.question_id = int.Parse(dRow["question_id"].ToString());
+                f.option_id = int.Parse(dRow["option_id"].ToString());
+                f.question = dRow["question"].ToString();
+                f.option = dRow["option"].ToString();
+                list.Add(f);
+            }
+            return list;
+        }
+
         public static List<Feedback> GetFeedbackQuestions()
         {
             List<Feedback> feedbacksList = new List<Feedback>();

@@ -89,6 +89,27 @@ namespace Micro.Objects.ICAS.ADMIN
         }
     }
 
+
+    public class StudentWhoSubmittedFeedback
+    {
+        public int id { get; set; }
+        public int user_id { get; set; }
+        public string name { get; set; }
+        public string roll_no { get; set; }
+        public DateTime feedback_submit_date { get; set; }
+    }
+
+    public class StudentFeedbackAnswer
+    {
+        public int id { get; set; }
+        public int user_id { get; set; }
+        public int question_id { get; set; }
+        public string question { get; set; }
+        public int option_id { get; set; }
+        public string option { get; set; }
+    }
+
+
     #endregion
 
 

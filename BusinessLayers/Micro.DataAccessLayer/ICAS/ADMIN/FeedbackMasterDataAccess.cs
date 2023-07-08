@@ -88,6 +88,43 @@ namespace Micro.DataAccessLayer.ICAS.ADMIN
             }
         }
 
+        public DataTable GetFeedbacks()
+        {
+            using (SqlCommand SelectCommand = new SqlCommand())
+            {
+                SelectCommand.CommandType = CommandType.StoredProcedure;
+                SelectCommand.CommandText = "pAPI_GET_FEEDBACK_MASTER";
+
+                return ExecuteGetDataTable(SelectCommand);
+            }
+        }
+
+        public DataTable GetStudentsWhoSubmittedFeedbacks(int feedbackId)
+        {
+            using (SqlCommand SelectCommand = new SqlCommand())
+            {
+                SelectCommand.CommandType = CommandType.StoredProcedure;
+                SelectCommand.Parameters.Add(GetParameter("@feedback_id", SqlDbType.Int, feedbackId)); 
+                SelectCommand.CommandText = "pAPI_GET_STUDENTS_SUBMITTED_FEEDBACK";
+
+                return ExecuteGetDataTable(SelectCommand);
+            }
+        }
+
+        public DataTable GetStudentsFeedbacksAnswers(int feedbackId, int userId)
+        {
+            using (SqlCommand SelectCommand = new SqlCommand())
+            {
+                SelectCommand.CommandType = CommandType.StoredProcedure;
+                SelectCommand.Parameters.Add(GetParameter("@feedback_id", SqlDbType.Int, feedbackId));
+                SelectCommand.Parameters.Add(GetParameter("@user_id", SqlDbType.Int, userId));
+                SelectCommand.CommandText = "pAPI_GET_FEEDBACK_OF_STUDENT";
+
+                return ExecuteGetDataTable(SelectCommand);
+            }
+        }
+
+
         public int UpdateFeedbackQuestions(QuestionMasters theFeedbackMaster)
         {
             int ReturnValue = 0;
@@ -113,7 +150,7 @@ namespace Micro.DataAccessLayer.ICAS.ADMIN
         {
             int returnValue = 0;
             string feedbackId = feedback["FeedbackID"];
-            string studentId = feedback["StudetID"];
+            string studentId = feedback["UserID"];
 
             using (SqlCommand cmd = new SqlCommand())
             {
@@ -125,12 +162,9 @@ namespace Micro.DataAccessLayer.ICAS.ADMIN
                 ExecuteStoredProcedure(cmd);
                 returnValue = int.Parse(cmd.Parameters[0].Value.ToString());
             }
-
-
-
             
             feedback.Remove("FeedbackID");
-            feedback.Remove("StudetID");
+            feedback.Remove("UserID");
 
             StringBuilder sb = new StringBuilder("INSERT INTO FeedbackQuestionAnswers (feedback_submit_id, question_id, option_id) VALUES  ");
             foreach (var f in feedback)

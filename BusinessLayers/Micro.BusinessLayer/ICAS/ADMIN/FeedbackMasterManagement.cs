@@ -90,6 +90,23 @@ namespace Micro.BusinessLayer.ICAS.ADMIN
         #endregion
 
         #region Methods & Implementation For FeedBack
+
+        public List<Feedback> GetFeedbackMaster()
+        {
+            return FeedbackMasterIntegration.GetFeedbackMaster();
+        }
+
+        public List<StudentWhoSubmittedFeedback> GetStudentWhoSubmittedFeedback(int feedbackId)
+        {
+            return FeedbackMasterIntegration.GetStudentWhoSubmittedFeedback(feedbackId);
+        }
+
+        public List<StudentFeedbackAnswer> GetStudentsFeedbacksAnswers(int feedbackId, int studentId)
+        {
+            return FeedbackMasterIntegration.GetStudentsFeedbacksAnswers(feedbackId, studentId);
+        }
+
+
         public List<FeedBackMasters> GetFeedBackMastersList()
         {
             return FeedbackMasterIntegration.GetFeedBackMastersList();
