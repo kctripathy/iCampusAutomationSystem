@@ -146,6 +146,63 @@ namespace Micro.DataAccessLayer.ICAS.ADMIN
             return ReturnValue;
         }
 
+        public int DeleteFeedbackQuestion(int questionId)
+        {
+            //int returnValue = 0;
+            //using (SqlCommand cmd = new SqlCommand())
+            //{
+            //    cmd.CommandType = CommandType.StoredProcedure;
+            //    cmd.Parameters.Add(GetParameter("@question_id", SqlDbType.Int, questionId));
+            //    cmd.CommandText = "pAPI_DELETE_FEEDBACK_QUESTION";
+            //    ExecuteStoredProcedure(cmd);
+            //    returnValue = int.Parse(cmd.Parameters[0].Value.ToString());
+            //}
+            //return returnValue;
+            int ReturnValue = 0;
+
+            using (SqlCommand DeleteCommand = new SqlCommand())
+            {
+                DeleteCommand.CommandType = CommandType.StoredProcedure;
+                DeleteCommand.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
+                DeleteCommand.Parameters.Add(GetParameter("@QuestionID", SqlDbType.Int, questionId));
+                DeleteCommand.CommandText = "pAPI_DELETE_FEEDBACK_QUESTION";
+                ExecuteStoredProcedure(DeleteCommand);
+                ReturnValue = int.Parse(DeleteCommand.Parameters[0].Value.ToString());
+                return ReturnValue;
+            }
+        }
+
+        public int InsertFeedbackQuestion(FeedbackQuestionInput fq)
+        {
+            int returnValue = 0;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(GetParameter("@question_id", SqlDbType.Int, returnValue)).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(GetParameter("@feedback_id", SqlDbType.Int, fq.feedback_id));
+                cmd.Parameters.Add(GetParameter("@question", SqlDbType.VarChar, fq.question));
+                cmd.CommandText = "pAPI_INSERT_FEEDBACK_QUESTION";
+                ExecuteStoredProcedure(cmd);
+                returnValue = int.Parse(cmd.Parameters[0].Value.ToString());
+            }
+
+            if (returnValue < 0) return returnValue; //DUPLICATE QUESTION FOUND, DON'T PROCEED TO ENTER OPTIONS
+
+            StringBuilder sb = new StringBuilder("INSERT INTO FeedbackQuestionOptions ([question_id], [option]) VALUES  ");
+            foreach (var f in fq.options)
+            {
+                sb.Append(String.Format("({0},'{1}'),", returnValue, f.option));
+            }
+            string insertStatement = sb.ToString().Substring(0, sb.ToString().Length - 1);
+            using (SqlCommand cmd1 = new SqlCommand())
+            {
+                cmd1.CommandType = CommandType.StoredProcedure;
+                cmd1.CommandText = insertStatement;
+                ExecuteSqlStatement(cmd1);
+            }
+            return returnValue;
+        }
+
         public int SubmitFeedback(Dictionary<string, string> feedback)
         {
             int returnValue = 0;

@@ -136,6 +136,16 @@ namespace Micro.BusinessLayer.ICAS.ADMIN
             return FeedbackMasterIntegration.DeleteFeedBack(theFeedBackMasters);
         }
 
+        public int InsertFeedbackQuestion(FeedbackQuestionInput fq)
+        {
+            return FeedbackMasterIntegration.InsertFeedbackQuestion(fq);
+        }
+
+        public int DeleteFeedbackQuestion(int questionId)
+        {
+            return FeedbackMasterIntegration.DeleteFeedbackQuestion(questionId);
+        }
+
         #endregion
 
 

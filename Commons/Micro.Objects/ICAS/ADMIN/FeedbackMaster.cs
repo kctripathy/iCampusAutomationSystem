@@ -54,7 +54,7 @@ namespace Micro.Objects.ICAS.ADMIN
             get;
             set;
         }
-       
+
         public string QuestionDesc
         {
             get;
@@ -81,7 +81,7 @@ namespace Micro.Objects.ICAS.ADMIN
             get;
             set;
         }
-        
+
         public string OptionDesc
         {
             get;
@@ -109,7 +109,16 @@ namespace Micro.Objects.ICAS.ADMIN
         public string option { get; set; }
     }
 
+    public class FeedbackQuestionInput {
+        public int feedback_id { get; set; }
+        public string question { get; set; }
+        public List<FeedbackQuestionInputOption> options { get; set; }
+    }
 
+    public class FeedbackQuestionInputOption
+    {
+        public string option { get; set; }
+    }
     #endregion
 
 

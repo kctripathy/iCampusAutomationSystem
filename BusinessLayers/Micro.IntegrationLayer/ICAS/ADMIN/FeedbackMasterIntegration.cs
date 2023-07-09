@@ -119,6 +119,16 @@ namespace Micro.IntegrationLayer.ICAS.ADMIN
             return list;
         }
 
+        public static int DeleteFeedbackQuestion(int questionId)
+        {
+            return FeedbackMasterDataAccess.GetInstance.DeleteFeedbackQuestion(questionId);
+        }
+
+        public static int InsertFeedbackQuestion(FeedbackQuestionInput fq)
+        {
+            return FeedbackMasterDataAccess.GetInstance.InsertFeedbackQuestion(fq);
+        }
+
         public static List<Feedback> GetFeedbackQuestions()
         {
             List<Feedback> feedbacksList = new List<Feedback>();

@@ -138,6 +138,52 @@ namespace iCAS.APIWeb.Controllers
             };
         }
 
+        [HttpPost]
+        [Route("api/Student/Feedback/Questions/{staffId}")]
+        public HttpResponseMessage InsertStudentFeedbackQuestions(int staffId, FeedbackQuestionInput fq)
+        {
+
+            Response response = new Response();
+            string token = GetRequestToken();
+            if (token.Length > 0 && Micro.BusinessLayer.Administration.UserManagement.GetInstance.ValidateToken(staffId, token))
+            {
+                int returnValue = FeedbackMasterManagement.GetInstance.InsertFeedbackQuestion(fq);
+                response.message = "Success";
+                response.data = returnValue;
+            }
+            else
+            {
+                response.message = "Access denied";
+            }
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+        [HttpPost]
+        [Route("api/Student/Feedback/Questions/{staffId}/{questionId}")]
+        public HttpResponseMessage DeleteStudentFeedbackQuestions(int staffId, int questionId)
+        {
+
+            Response response = new Response();
+            string token = GetRequestToken();
+            if (token.Length > 0 && Micro.BusinessLayer.Administration.UserManagement.GetInstance.ValidateToken(staffId, token))
+            {
+                int returnValue = FeedbackMasterManagement.GetInstance.DeleteFeedbackQuestion(questionId);
+                response.message = "Success";
+                response.data = returnValue;
+            }
+            else
+            {
+                response.message = "Access denied";
+            }
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
         #endregion
     }
 }
