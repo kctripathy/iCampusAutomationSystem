@@ -6,6 +6,35 @@ using System.Text;
 namespace Micro.Objects.ICAS.LIBRARY
 {
 
+	public class BookFetchModel
+    {
+		const int maxPageSize = 50;
+
+		public string searchText { get; set; }
+
+		public SearchCriteria searchCriteria { get; set; }
+
+		public int pageNumber { get; set; } = 1;
+
+		private int _pageSize { get; set; } = 50;
+
+		public int pageSize
+		{
+			get { return _pageSize; }
+			set
+			{
+				_pageSize = (value > maxPageSize) ? maxPageSize : value;
+			}
+		}
+	}
+
+	public class SearchCriteria
+    {
+		public List<string> categories { get; set; }
+		public List<string> segements { get; set; }
+
+	}
+
 	public class BookViewModel
     {
 		public Int64 BookID { get; set; }

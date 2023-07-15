@@ -101,6 +101,24 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 			}
 		}
 
+
+		/// <summary>
+		/// This is being called by library application
+		/// </summary>
+		/// <param name="pagingParameterModel"></param>
+		/// <returns></returns>
+		public DataTable GetLibraryBooks(PagingParameterModel pagingParameterModel)
+		{
+			using (SqlCommand Selectcommand = new SqlCommand())
+			{
+				Selectcommand.CommandType = CommandType.StoredProcedure;
+				Selectcommand.Parameters.Add(GetParameter("@PageNo", SqlDbType.Int, pagingParameterModel.pageNumber));
+				Selectcommand.Parameters.Add(GetParameter("@PageSize", SqlDbType.Int, pagingParameterModel.pageSize));
+				Selectcommand.CommandText = "[pAPI_GET_LIBRARY_BOOKS]";
+				return ExecuteGetDataTable(Selectcommand);
+			}
+		}
+
 		public int UpdateBook(Book b)
 		{
 
