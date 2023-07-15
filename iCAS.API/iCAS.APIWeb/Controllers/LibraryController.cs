@@ -42,15 +42,53 @@ namespace iCAS.APIWeb.Controllers
             };
         }
 
-        //[Route("api/Library/Book/{id}")]
-        //public HttpResponseMessage GetBook([FromUri] int id)
-        //{
-        //    List<BookDetail> TheBooksList = LibraryManagement.GetInstance.GetBooksByID(id);
-        //    return new HttpResponseMessage(HttpStatusCode.OK)
-        //    {
-        //        Content = new StringContent(JArray.FromObject(TheBooksList).ToString(), Encoding.UTF8, "application/json")
-        //    };
-        //}
+
+        #region for library module
+
+        [Route("api/Library/Book/Categories")]
+        public HttpResponseMessage GetCategories()
+        {
+            List<BookCategory> list = LibraryManagement.GetInstance.GetBook_Categories(true); //get categories those have books available
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JArray.FromObject(list).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+        [Route("api/Library/Book/Segments")]
+        public HttpResponseMessage GetSegments()
+        {
+            List<BookSegment> list = LibraryManagement.GetInstance.GetBook_BookSegments(true); //get categories those have books available
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JArray.FromObject(list).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+
+        [HttpPost]
+        [Route("api/Library/Book/List")]
+        public HttpResponseMessage GetLibraryBookList([FromBody] payload payload)
+        {
+            string ReturnMessage = WebConstants.SUCCESS;
+            List<BookViewModel> TheBooksList = LibraryManagement.GetInstance.GetLibraryBooksList(payload);
+
+            if (TheBooksList.Count == 0) ReturnMessage = WebConstants.FAILURE;
+
+            ListResponse response = new ListResponse { 
+                message = ReturnMessage, 
+                data = TheBooksList, 
+                pageNo = payload.pageNo,
+                pageSize = payload.pageSize,
+                totalRecordFetched = TheBooksList.Count
+            };
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+        #endregion
 
         // GET: api/Library
         public IEnumerable<string> Get()

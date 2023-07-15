@@ -5,6 +5,14 @@ using System.Text;
 
 namespace Micro.Objects.ICAS.LIBRARY
 {
+	public class payload
+    {
+		public string searchText { get; set; }
+		public string[] categories { get; set;}
+		public string[] segments { get; set; }
+		public int pageNo { get; set; }
+		public int pageSize { get; set; }
+     }
 
 	public class BookFetchModel
     {
@@ -299,7 +307,7 @@ namespace Micro.Objects.ICAS.LIBRARY
 
 	}
 
-	[Serializable]
+	//[Serializable]
 	public class BookCategory
 	{
 		public int ID
@@ -321,7 +329,7 @@ namespace Micro.Objects.ICAS.LIBRARY
 		}
 	}
 
-	[Serializable]
+	//[Serializable]
 	public class BookSegment
 	{
 		public int ID

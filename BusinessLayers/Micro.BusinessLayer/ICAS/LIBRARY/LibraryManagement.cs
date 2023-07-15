@@ -97,6 +97,12 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
             }           
             return NewAccessionNo;
         }
+
+        public List<BookViewModel> GetLibraryBooksList(payload payload)
+        {
+            return LibraryIntegration.GetLibraryBooksList(payload);
+        }
+
         public int GetBooks_Count()
         {
             return LibraryIntegration.GetBooks_Count();
@@ -111,9 +117,9 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
         }
         #endregion
 
-        public List<BookCategory> GetBook_Categories()
+        public List<BookCategory> GetBook_Categories(bool havingBooks = false)
         {
-            return LibraryIntegration.GetBook_Categories();
+            return LibraryIntegration.GetBook_Categories(havingBooks);
         }
 
         public List<Author> GetBook_Authors()
@@ -134,10 +140,10 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
             return LibraryIntegration.GetBook_Publishers();
         }
 
-        public List<BookSegment> GetBook_BookSegments()
+        public List<BookSegment> GetBook_BookSegments(bool onlyBooksHavingSegment = false)
         {
             //throw new NotImplementedException();
-            return LibraryIntegration.GetBook_Segments();
+            return LibraryIntegration.GetBook_Segments(onlyBooksHavingSegment);
         }
 		public int InsertBookTransaction_ISSUE(BookTransaction b)
 		{

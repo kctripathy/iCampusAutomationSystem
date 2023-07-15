@@ -69,6 +69,18 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             return theBookObj;
         }
 
+        public static List<BookViewModel> GetLibraryBooksList(payload payload)
+        {
+            List<BookViewModel> theBooksList = new List<BookViewModel>();
+            DataTable theBooksTable = LibraryDataAccess.GetInstance.GetLibraryBooksList(payload);
+            foreach (DataRow dr in theBooksTable.Rows)
+            {
+                BookViewModel theBookObject = DataRowToBookViewModelObject(dr);
+                theBooksList.Add(theBookObject);
+            }
+            return theBooksList;
+        }
+
         public static BookViewModel DataRowToBookViewModelObject(DataRow dRow)
         {
 
@@ -165,6 +177,27 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
         {
             return LibraryDataAccess.GetInstance.UpdateBook(b);
         }
+        public static List<BookCategory> GetBook_Categories(bool havingBooks)
+        {
+            DataTable dt;
+            List<BookCategory> list = new List<BookCategory>();
+            
+            if (havingBooks)
+                dt = LibraryDataAccess.GetInstance.GetLibraryBookCategoriesHavingBooks();
+            else
+                dt = LibraryDataAccess.GetInstance.GetBook_Categories();
+
+            foreach (DataRow item in dt.Rows)
+            {
+                BookCategory b = new BookCategory();
+                b.ID = int.Parse(item["CategoryID"].ToString());
+                b.Name = item["CategoryName"].ToString();
+                b.Code = item["CategoryCode"].ToString();
+                list.Add(b);
+            }
+            return list;
+        }
+
         public static List<BookCategory> GetBook_Categories()
         {
             List<BookCategory> bookList = new List<BookCategory>();
@@ -223,11 +256,15 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             return bookSupplierList;
         }
 
-        public static List<BookSegment> GetBook_Segments()
+        public static List<BookSegment> GetBook_Segments(bool onlyBooksHavingSegment)
         {
             //throw new NotImplementedException();
             List<BookSegment> BookSegmentList = new List<BookSegment>();
-            DataTable dt = LibraryDataAccess.GetInstance.GetBook_BookSegments();
+
+
+            DataTable dt = LibraryDataAccess.GetInstance.GetBook_BookSegments(onlyBooksHavingSegment);
+            
+
             foreach (DataRow item in dt.Rows)
             {
                 BookSegment b = new BookSegment();
