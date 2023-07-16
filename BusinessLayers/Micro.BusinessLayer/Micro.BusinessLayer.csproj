@@ -171,6 +171,7 @@
     <Compile Include="ICAS\FINANCE\AccountTransactionManagement.cs" />
     <Compile Include="ICAS\FINANCE\DefaultFeeManagement.cs" />
     <Compile Include="ICAS\LIBRARY\LibraryManagement.cs" />
+    <Compile Include="ICAS\LIBRARY\LibraryManagementAPICalls.cs" />
     <Compile Include="ICAS\STAFFS\AttendanceManagement.cs" />
     <Compile Include="ICAS\STAFFS\PolicyApplicationManagement.cs" />
     <Compile Include="ICAS\STAFFS\EmployeePayrollManagement.cs" />

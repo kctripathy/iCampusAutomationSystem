@@ -116,6 +116,7 @@
     <Compile Include="ICAS\FINANCE\DefaultFeeDataAccess.cs" />
     <Compile Include="ICAS\FINANCE\VoucherDataAccess.cs" />
     <Compile Include="ICAS\LIBRARY\BooksDataAccess.cs" />
+    <Compile Include="ICAS\LIBRARY\LibraryAPICalls.cs" />
     <Compile Include="ICAS\LIBRARY\LibraryDataAccess.cs" />
     <Compile Include="ICAS\STAFFS\AttendanceDataAccess.cs" />
     <Compile Include="ICAS\STAFFS\StaffLICDataAccess.cs" />

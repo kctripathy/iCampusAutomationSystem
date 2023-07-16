@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Micro.IntegrationLayer.ICAS.LIBRARY
 {
-    public class LibraryIntegration
+    public partial class LibraryIntegration
     {
 
         public static Book DataRowToObject(DataRow dRow)

@@ -88,6 +88,18 @@ namespace iCAS.APIWeb.Controllers
             };
         }
 
+
+        [Route("api/Library/Summary")]
+        public HttpResponseMessage GetSummary()
+        {
+            LibrarySummary library = LibraryManagement.GetInstance.GetLibrarySummary();
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(library).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+
         #endregion
 
         // GET: api/Library

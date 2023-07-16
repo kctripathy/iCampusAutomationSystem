@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using Micro.Commons;
 using Micro.Objects.Administration;
 using System.Configuration;
+using System.Collections.Generic;
 
 namespace Micro.DataAccessLayer
 {
@@ -528,6 +529,78 @@ namespace Micro.DataAccessLayer
             }
         }
 
+        protected SqlDataReader ExecuteSqlReader(SqlCommand oCommand)
+        {
+            try
+            {
+                oCommand.Connection = ConnectionFactory.GetInstance.GetConnection(_ConnectionKey);
+                oCommand.Connection.Open();
+                oCommand.CommandType = CommandType.Text;
+                return oCommand.ExecuteReader();
+            }
+            catch (Exception e)
+            {
+                if (oCommand != null)
+                {
+                    Exception ex = new Exception(oCommand.CommandText, e);
+                    Log.Error(ex, true);
+                }
+                else
+                {
+                    Log.Error(e, true);
+                }
+                return null;
+            }
+            finally
+            {
+                ConnectionFactory.GetInstance.CloseConnection(oCommand.Connection);
+                
+            }
+        }
+
+
+        protected DataSet ExecuteGetDataset(SqlCommand oCommand)
+        {
+            //using (SqlConnection conn = new SqlConnection(connection))
+            //{
+            //    DataSet dataset = new DataSet();
+            //    SqlDataAdapter adapter = new SqlDataAdapter();
+            //    adapter.SelectCommand = new SqlCommand("MyProcedure", conn);
+            //    adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+            //    adapter.Fill(dataset);
+            //    return dataset;
+            //}
+            try
+            {
+                DataSet dataset = new DataSet();
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                oCommand.Connection = ConnectionFactory.GetInstance.GetConnection(_ConnectionKey);
+                oCommand.Connection.Open();
+                oCommand.CommandType = CommandType.StoredProcedure;
+
+                adapter.SelectCommand = oCommand;
+                adapter.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adapter.Fill(dataset);
+                return dataset;
+            }
+            catch (Exception e)
+            {
+                if (oCommand != null)
+                {
+                    Exception ex = new Exception(oCommand.CommandText, e);
+                    Log.Error(ex, true);
+                }
+                else
+                {
+                    Log.Error(e, true);
+                }
+                return null;
+            }
+            finally
+            {
+                ConnectionFactory.GetInstance.CloseConnection(oCommand.Connection);
+            }
+        }
 
 
         /// <summary>

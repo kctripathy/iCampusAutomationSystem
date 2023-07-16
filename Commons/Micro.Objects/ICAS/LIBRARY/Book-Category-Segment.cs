@@ -6,16 +6,16 @@ using System.Text;
 namespace Micro.Objects.ICAS.LIBRARY
 {
 	public class payload
-    {
+	{
 		public string searchText { get; set; }
-		public string[] categories { get; set;}
+		public string[] categories { get; set; }
 		public string[] segments { get; set; }
 		public int pageNo { get; set; }
 		public int pageSize { get; set; }
-     }
+	}
 
 	public class BookFetchModel
-    {
+	{
 		const int maxPageSize = 50;
 
 		public string searchText { get; set; }
@@ -37,14 +37,14 @@ namespace Micro.Objects.ICAS.LIBRARY
 	}
 
 	public class SearchCriteria
-    {
+	{
 		public List<string> categories { get; set; }
 		public List<string> segements { get; set; }
 
 	}
 
 	public class BookViewModel
-    {
+	{
 		public Int64 BookID { get; set; }
 		public int CategoryID { get; set; }
 		public string Category { get; set; }
@@ -71,6 +71,26 @@ namespace Micro.Objects.ICAS.LIBRARY
 		//BookID BookType    SegmentID CategoryID  CategoryCode BillNo  BillDate AuthorID    PublisherID SupplierID  SubjectID AccessionNo AccessionDate ClassNo Title Edition BookYear VolumeNo    Pages BookPrice   Remarks IBNNo   Book_ImageURL_Small Book_ImageURL_Medium    Book_Image_URL_Big Book_PDF_URL    IsBookIssued Issued2UserID   Issued2UserName AddedBy AddedDated ModifiedBy  ModifiedDate VC_Field1   Nu_Field1 Dt_Field1   IsDeleted IsActive    BookStatus OfficeID    CompanyID
 		//10004099	GEN	13	44	Q	1015	2011-07-30 00:00:00.000	4264	1390	1041	NULL	4099	2011-12-01 00:00:00.000		+3 BHARAT ITASHA	2ND	2011		476	150.00	1	1	NULL NULL    NULL NULL    NO NULL    NULL	1	2017-12-30 08:33:40.460	NULL NULL    NULL NULL    NULL	0	1	NULL	44	8
 
+	}
+
+	public class LibrarySummary
+	{
+		public int totalBooks { get; set; }
+
+		public List<LibrarySummaryCategory> countBooksByCategory { get; set; }
+		
+		public List<LibrarySummarySegment> countBooksBySegment { get; set; }
+	}
+
+	public class LibrarySummaryCategory
+	{
+		public int ID { get; set; }
+		public string Name { get; set; }
+		public int Count { get; set; }
+	}
+
+	public class LibrarySummarySegment: LibrarySummaryCategory
+	{
 	}
 
 	[Serializable]
