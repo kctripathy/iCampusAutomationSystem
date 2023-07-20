@@ -81,6 +81,16 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             return theBooksList;
         }
 
+        public static int SaveSegment(dynamic payload)
+        {
+            return LibraryDataAccess.GetInstance.SaveSegment(payload);
+        }
+
+        public static int DeleteSegment(int id)
+        {
+            return LibraryDataAccess.GetInstance.DeleteSegment(id);
+        }
+
         public static BookViewModel DataRowToBookViewModelObject(DataRow dRow)
         {
 

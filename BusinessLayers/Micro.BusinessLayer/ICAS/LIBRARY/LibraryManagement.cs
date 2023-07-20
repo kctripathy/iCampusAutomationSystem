@@ -149,7 +149,18 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
 		{
 			return LibraryIntegration.InsertBookTransaction_ISSUE(b);
 		}
-		public int InsertBookTransaction_RECEIVE(BookTransaction b)
+
+        public int SaveSegment(dynamic payload)
+        {
+            return LibraryIntegration.SaveSegment(payload);
+        }
+
+        public int DeleteSegment(int id)
+        {
+            return LibraryIntegration.DeleteSegment(id);
+        }
+
+        public int InsertBookTransaction_RECEIVE(BookTransaction b)
 		{
 			return LibraryIntegration.InsertBookTransaction_RECEIVE(b);
 		}
@@ -166,5 +177,7 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
 		{
 			throw new NotImplementedException();
 		}
-	}
+
+
+    }
 }

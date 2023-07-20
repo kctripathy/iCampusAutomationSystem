@@ -89,6 +89,7 @@ namespace iCAS.APIWeb.Controllers
         }
 
 
+        [HttpGet]
         [Route("api/Library/Summary")]
         public HttpResponseMessage GetSummary()
         {
@@ -100,33 +101,99 @@ namespace iCAS.APIWeb.Controllers
         }
 
 
+        [HttpGet]
+        [Route("api/Library/Admin/GetSegments")]
+        public HttpResponseMessage AdminGetSegments()
+        {
+            List<BookSegment> list = LibraryManagement.GetInstance.GetBook_BookSegments(false); //get all segments
+            Response response = new Response { message = "Success", data = list };
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+        [HttpPost]
+        [Route("api/Library/Admin/SaveSegments/{userId}")]
+        public HttpResponseMessage AdminSaveSegments([FromBody] dynamic payload, int userId)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                int returnValue = LibraryManagement.GetInstance.SaveSegment(payload); //get all segments
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+        [HttpPost]
+        [Route("api/Library/Admin/DeleteSegment/{userId}")]
+        public HttpResponseMessage AdminDeleteSegments([FromBody] int id, int userId)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                int returnValue = LibraryManagement.GetInstance.DeleteSegment(id);
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
         #endregion
 
-        // GET: api/Library
-        public IEnumerable<string> Get()
+        #region Authentication
+        private bool ValidateToken(int userId)
         {
-            return new string[] { "value1", "value2" };
+            Response response = new Response();
+            string token = GetRequestToken();
+            if (token.Length > 0 && Micro.BusinessLayer.Administration.UserManagement.GetInstance.ValidateToken(userId, token))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        // GET: api/Library/5
-        public string Get(int id)
+        public string GetRequestToken()
         {
-            return "value";
-        }
+            var re = Request;
+            var headers = re.Headers;
+            string token = string.Empty;
 
-        // POST: api/Library
-        public void Post([FromBody]string value)
-        {
-        }
+            if (headers.Contains("Token"))
+            {
+                token = headers.GetValues("Token").First();
+            }
 
-        // PUT: api/Library/5
-        public void Put(int id, [FromBody]string value)
-        {
+            return token;
         }
+        #endregion
 
-        // DELETE: api/Library/5
-        public void Delete(int id)
-        {
-        }
     }
 }
