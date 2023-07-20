@@ -160,6 +160,22 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
             return LibraryIntegration.DeleteSegment(id);
         }
 
+       
+
+
+
+
+        public int SaveCategory(dynamic payload)
+        {
+            return LibraryIntegration.SaveCategory(payload);
+        }
+
+        public int DeleteCategory(int id)
+        {
+            return LibraryIntegration.DeleteCategory(id);
+        }
+
+
         public int InsertBookTransaction_RECEIVE(BookTransaction b)
 		{
 			return LibraryIntegration.InsertBookTransaction_RECEIVE(b);
@@ -177,7 +193,6 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
 		{
 			throw new NotImplementedException();
 		}
-
 
     }
 }

@@ -133,5 +133,56 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
             }
 			
 		}
+
+
+		public int SaveCategory(dynamic payload)
+		{
+			int RetValue = 0;
+			int ID = int.Parse(payload.categoryID.ToString());
+			string Code = payload.categoryCode.ToString();
+			string Name = payload.categoryName.ToString();
+
+			using (SqlCommand InsertCommand = new SqlCommand())
+			{
+				InsertCommand.CommandType = CommandType.StoredProcedure;
+				InsertCommand.Parameters.Add(GetParameter("@returnValue", SqlDbType.Int, RetValue)).Direction = ParameterDirection.Output;
+				InsertCommand.Parameters.Add(GetParameter("@id", SqlDbType.Int, ID));
+				InsertCommand.Parameters.Add(GetParameter("@code", SqlDbType.VarChar, Code));
+				InsertCommand.Parameters.Add(GetParameter("@name", SqlDbType.VarChar, Name));
+				InsertCommand.CommandText = "[pAPI_LIBRARY_CATEGORY_SAVE]";
+				ExecuteStoredProcedure(InsertCommand);
+				if (InsertCommand.Parameters[0].Value.ToString().Equals(string.Empty))
+				{
+					RetValue = 0;
+				}
+				else
+				{
+					RetValue = int.Parse(InsertCommand.Parameters[0].Value.ToString());
+				}
+			}
+
+			return RetValue;
+		}
+
+
+
+		public int DeleteCategory(int id)
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.CommandType = CommandType.Text;
+					cmd.CommandText = string.Concat("DELETE FROM [LIB_MasterCategories] WHERE [CategoryID]=", id.ToString());
+					ExecuteSqlStatement(cmd);
+				}
+				return id;
+			}
+			catch (Exception)
+			{
+				return -1;
+			}
+		}
+
 	}
 }

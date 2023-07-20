@@ -114,7 +114,7 @@ namespace iCAS.APIWeb.Controllers
         }
 
         [HttpPost]
-        [Route("api/Library/Admin/SaveSegments/{userId}")]
+        [Route("api/Library/Admin/SaveSegment/{userId}")]
         public HttpResponseMessage AdminSaveSegments([FromBody] dynamic payload, int userId)
         {
             Response response = new Response();
@@ -163,6 +163,70 @@ namespace iCAS.APIWeb.Controllers
             }
         }
 
+        //
+        // CATEGORIES
+        //
+        [HttpGet]
+        [Route("api/Library/Admin/GetCategories")]
+        public HttpResponseMessage AdminGetCategories()
+        {
+            List<BookCategory> list = LibraryManagement.GetInstance.GetBook_Categories(false); //get all segments
+            Response response = new Response { message = "Success", data = list };
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+        [HttpPost]
+        [Route("api/Library/Admin/SaveCategory/{userId}")]
+        public HttpResponseMessage AdminSaveCategory([FromBody] dynamic payload, int userId)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                int returnValue = LibraryManagement.GetInstance.SaveCategory(payload); //get all segments
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+        [HttpPost]
+        [Route("api/Library/Admin/DeleteCategory/{userId}")]
+        public HttpResponseMessage AdminDeleteCategory([FromBody] int id, int userId)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                int returnValue = LibraryManagement.GetInstance.DeleteCategory(id);
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
         #endregion
 
         #region Authentication
