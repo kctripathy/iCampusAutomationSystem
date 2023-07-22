@@ -131,7 +131,6 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
             {
 				return -1;
             }
-			
 		}
 
 
@@ -165,7 +164,6 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 		}
 
 
-
 		public int DeleteCategory(int id)
 		{
 			try
@@ -174,6 +172,178 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 				{
 					cmd.CommandType = CommandType.Text;
 					cmd.CommandText = string.Concat("DELETE FROM [LIB_MasterCategories] WHERE [CategoryID]=", id.ToString());
+					ExecuteSqlStatement(cmd);
+				}
+				return id;
+			}
+			catch (Exception)
+			{
+				return -1;
+			}
+		}
+
+
+
+		public int SaveAuthor(dynamic payload)
+		{
+			int RetValue = 0;
+			int ID = int.Parse(payload.ID.ToString());
+			string Name = payload.Name.ToString();
+			string Address = payload.Address.ToString();
+			string City = payload.City.ToString();
+			int StateId = int.Parse(payload.StateId.ToString());
+			string Email = payload.Email.ToString();
+			string Phone = payload.Phone.ToString();
+
+
+			using (SqlCommand InsertCommand = new SqlCommand())
+			{
+				InsertCommand.CommandType = CommandType.StoredProcedure;
+				InsertCommand.Parameters.Add(GetParameter("@returnValue", SqlDbType.Int, RetValue)).Direction = ParameterDirection.Output;
+				InsertCommand.Parameters.Add(GetParameter("@id", SqlDbType.Int, ID));
+				InsertCommand.Parameters.Add(GetParameter("@name", SqlDbType.VarChar, Name));
+				InsertCommand.Parameters.Add(GetParameter("@address", SqlDbType.VarChar, Address));
+				InsertCommand.Parameters.Add(GetParameter("@city", SqlDbType.VarChar, City));
+				InsertCommand.Parameters.Add(GetParameter("@stateId", SqlDbType.Int, StateId));
+				InsertCommand.Parameters.Add(GetParameter("@email", SqlDbType.VarChar, Email));
+				InsertCommand.Parameters.Add(GetParameter("@phone", SqlDbType.VarChar, Phone));
+				InsertCommand.CommandText = "[pAPI_LIBRARY_AUTHOR_SAVE]";
+				ExecuteStoredProcedure(InsertCommand);
+				if (InsertCommand.Parameters[0].Value.ToString().Equals(string.Empty))
+				{
+					RetValue = 0;
+				}
+				else
+				{
+					RetValue = int.Parse(InsertCommand.Parameters[0].Value.ToString());
+				}
+			}
+
+			return RetValue;
+		}
+
+		public int DeleteAuthor(int id)
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.CommandType = CommandType.Text;
+					cmd.CommandText = string.Concat("DELETE FROM [LIB_MasterAuthors] WHERE [SegmentID]=", id.ToString());
+					ExecuteSqlStatement(cmd);
+				}
+				return id;
+			}
+			catch (Exception)
+			{
+				return -1;
+			}
+		}
+
+
+
+
+		public int SavePublisher(dynamic payload)
+		{
+			int RetValue = 0;
+			int ID = int.Parse(payload.categoryID.ToString());
+			string Name = payload.Name.ToString();
+			string Address = payload.Address.ToString();
+			string City = payload.City.ToString();
+			string State = payload.State.ToString();
+			string Email = payload.Email.ToString();
+			string Phone = payload.Phone.ToString();
+
+			string fullAddress = string.Concat(Address, ", ", City, ", ", State);
+
+			using (SqlCommand InsertCommand = new SqlCommand())
+			{
+				InsertCommand.CommandType = CommandType.StoredProcedure;
+				InsertCommand.Parameters.Add(GetParameter("@returnValue", SqlDbType.Int, RetValue)).Direction = ParameterDirection.Output;
+				InsertCommand.Parameters.Add(GetParameter("@id", SqlDbType.Int, ID));
+				InsertCommand.Parameters.Add(GetParameter("@name", SqlDbType.VarChar, Name));
+				InsertCommand.Parameters.Add(GetParameter("@address", SqlDbType.VarChar, fullAddress));
+				InsertCommand.Parameters.Add(GetParameter("@email", SqlDbType.VarChar, Email));
+				InsertCommand.Parameters.Add(GetParameter("@phone", SqlDbType.VarChar, Phone));
+				InsertCommand.CommandText = "[pAPI_LIBRARY_PUBLISHER_SAVE]";
+				ExecuteStoredProcedure(InsertCommand);
+				if (InsertCommand.Parameters[0].Value.ToString().Equals(string.Empty))
+				{
+					RetValue = 0;
+				}
+				else
+				{
+					RetValue = int.Parse(InsertCommand.Parameters[0].Value.ToString());
+				}
+			}
+
+			return RetValue;
+		}
+
+		public int DeletePublisher(int id)
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.CommandType = CommandType.Text;
+					cmd.CommandText = string.Concat("DELETE FROM [LIB_MasterPublishers] WHERE [SegmentID]=", id.ToString());
+					ExecuteSqlStatement(cmd);
+				}
+				return id;
+			}
+			catch (Exception)
+			{
+				return -1;
+			}
+		}
+
+
+		public int SaveSupplier(dynamic payload)
+		{
+			int RetValue = 0;
+			int ID = int.Parse(payload.categoryID.ToString());
+			string Name = payload.Name.ToString();
+			string Address = payload.Address.ToString();
+			string City = payload.City.ToString();
+			string State = payload.State.ToString();
+			string Email = payload.Email.ToString();
+			string Phone = payload.Phone.ToString();
+
+			string fullAddress = string.Concat(Address, ", ", City, ", ", State);
+
+			using (SqlCommand InsertCommand = new SqlCommand())
+			{
+				InsertCommand.CommandType = CommandType.StoredProcedure;
+				InsertCommand.Parameters.Add(GetParameter("@returnValue", SqlDbType.Int, RetValue)).Direction = ParameterDirection.Output;
+				InsertCommand.Parameters.Add(GetParameter("@id", SqlDbType.Int, ID));
+				InsertCommand.Parameters.Add(GetParameter("@name", SqlDbType.VarChar, Name));
+				InsertCommand.Parameters.Add(GetParameter("@address", SqlDbType.VarChar, fullAddress));
+				InsertCommand.Parameters.Add(GetParameter("@email", SqlDbType.VarChar, Email));
+				InsertCommand.Parameters.Add(GetParameter("@phone", SqlDbType.VarChar, Phone));
+				InsertCommand.CommandText = "[pAPI_LIBRARY_SUPPLIER_SAVE]";
+				ExecuteStoredProcedure(InsertCommand);
+				if (InsertCommand.Parameters[0].Value.ToString().Equals(string.Empty))
+				{
+					RetValue = 0;
+				}
+				else
+				{
+					RetValue = int.Parse(InsertCommand.Parameters[0].Value.ToString());
+				}
+			}
+
+			return RetValue;
+		}
+
+		public int DeleteSupplier(int id)
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.CommandType = CommandType.Text;
+					cmd.CommandText = string.Concat("DELETE FROM [LIB_MasterSuppliers] WHERE [SegmentID]=", id.ToString());
 					ExecuteSqlStatement(cmd);
 				}
 				return id;

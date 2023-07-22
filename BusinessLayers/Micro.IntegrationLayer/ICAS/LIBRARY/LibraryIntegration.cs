@@ -104,6 +104,41 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             return LibraryDataAccess.GetInstance.DeleteCategory(id);
         }
 
+
+
+        public static int SaveAuthor(dynamic payload)
+        {
+            return LibraryDataAccess.GetInstance.SaveAuthor(payload);
+        }
+
+        public static int DeleteAuthor(int id)
+        {
+            return LibraryDataAccess.GetInstance.DeleteAuthor(id);
+        }
+
+
+        public static int SavePublisher(dynamic payload)
+        {
+            return LibraryDataAccess.GetInstance.SavePublisher(payload);
+        }
+
+        public static int DeletePublisher(int id)
+        {
+            return LibraryDataAccess.GetInstance.DeletePublisher(id);
+        }
+
+        public static int SaveSupplier(dynamic payload)
+        {
+            return LibraryDataAccess.GetInstance.SaveSupplier(payload);
+        }
+
+        public static int DeleteSupplier(int id)
+        {
+            return LibraryDataAccess.GetInstance.DeleteSupplier(id);
+        }
+
+
+
         public static BookViewModel DataRowToBookViewModelObject(DataRow dRow)
         {
 
@@ -239,44 +274,64 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
 
         public static List<Author> GetBook_Authors()
         {
-            List<Author> bookAuthorList = new List<Author>();
+            List<Author> list = new List<Author>();
             DataTable dt = LibraryDataAccess.GetInstance.GetBook_Authors();
             foreach (DataRow item in dt.Rows)
             {
                 Author b = new Author();
                 b.ID = int.Parse(item["AuthorID"].ToString());
                 b.Name = item["Name"].ToString();
-                bookAuthorList.Add(b);
+                b.Address = item["Address"]==null? "" : item["Address"].ToString();
+                b.City = item["City"] == null? "" : item["City"].ToString();
+                b.State = item["State"] == null? "" : item["State"].ToString();
+                b.Email = item["Email"] == null? "" : item["Email"].ToString();
+                b.Phone = item["Phone"] == null? "" : item["Phone"].ToString();
+                b.IsActive = item["isActive"].ToString() == "" ? true : bool.Parse(item["isActive"].ToString());
+                list.Add(b);
             }
-            return bookAuthorList;
+            return list;
         }
 
         public static List<Publisher> GetBook_Publishers()
         {
-            List<Publisher> bookPublisherList = new List<Publisher>();
+            List<Publisher> list = new List<Publisher>();
             DataTable dt = LibraryDataAccess.GetInstance.GetBook_Publishers();
             foreach (DataRow item in dt.Rows)
             {
                 Publisher b = new Publisher();
                 b.ID = int.Parse(item["PublisherID"].ToString());
                 b.Name = item["Name"].ToString();
-                bookPublisherList.Add(b);
+                b.Address = item["Address"] == null ? "" : item["Address"].ToString();
+                b.City = item["City"] == null ? "" : item["City"].ToString();
+                b.State = item["State"] == null ? "" : item["State"].ToString();
+                b.Email = item["Email"] == null ? "" : item["Email"].ToString();
+                b.Phone = item["Phone"] == null ? "" : item["Phone"].ToString();
+                b.ContactPersonName = item["ContactPersonName"] == null ? "" : item["ContactPersonName"].ToString();
+                b.IsActive = item["isActive"].ToString() == ""? true :  bool.Parse(item["isActive"].ToString());
+                list.Add(b);
             }
-            return bookPublisherList;
+            return list;
         }
 
         public static List<Supplier> GetBook_Suppliers()
         {
-            List<Supplier> bookSupplierList = new List<Supplier>();
+            List<Supplier> list = new List<Supplier>();
             DataTable dt = LibraryDataAccess.GetInstance.GetBook_Suppliers();
             foreach (DataRow item in dt.Rows)
             {
                 Supplier b = new Supplier();
                 b.ID = int.Parse(item["SupplierID"].ToString());
                 b.Name = item["Name"].ToString();
-                bookSupplierList.Add(b);
+                b.Address = item["Address"] == null ? "" : item["Address"].ToString();
+                b.City = item["City"] == null ? "" : item["City"].ToString();
+                b.State = item["State"] == null ? "" : item["State"].ToString();
+                b.Email = item["Email"] == null ? "" : item["Email"].ToString();
+                b.Phone = item["Phone"] == null ? "" : item["Phone"].ToString();
+                b.ContactPersonName = item["ContactPersonName"] == null ? "" : item["ContactPersonName"].ToString();
+                b.IsActive = item["isActive"].ToString() == "" ? true : bool.Parse(item["isActive"].ToString());
+                list.Add(b);
             }
-            return bookSupplierList;
+            return list;
         }
 
         public static List<BookSegment> GetBook_Segments(bool onlyBooksHavingSegment)

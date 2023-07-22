@@ -66,6 +66,11 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
                 return ExecuteGetDataTable(Selectcommand);
             }
         }
+
+
+
+
+
         public int InsertAuthor(Author a)
         {
             int NewId = 0;
@@ -120,12 +125,6 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 
             return NewID;
         }
-
-
-
-
-
         #endregion
-
     }
 }

@@ -43,7 +43,7 @@ namespace iCAS.APIWeb.Controllers
         }
 
 
-        #region for library module
+        #region Categories and Segments
 
         [Route("api/Library/Book/Categories")]
         public HttpResponseMessage GetCategories()
@@ -131,7 +131,7 @@ namespace iCAS.APIWeb.Controllers
             else
             {
                 response.message = "Invalid request";
-                return new HttpResponseMessage(HttpStatusCode.OK)
+                return new HttpResponseMessage(HttpStatusCode.BadRequest)
                 {
                     Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
                 };
@@ -227,7 +227,247 @@ namespace iCAS.APIWeb.Controllers
                 };
             }
         }
+
         #endregion
+
+        #region Author
+        [HttpGet]
+        [Route("api/Library/Author/List")]
+        public HttpResponseMessage GetAuthors()
+        {
+            Response response = new Response();
+            try
+            {
+                List<Author> list = LibraryManagement.GetInstance.GetBook_Authors();
+                response.message = "Success";
+                response.data = list;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            catch (Exception)
+            {
+                response.message = "Failure";
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+
+        [HttpPost]
+        [Route("api/Library/Author/Save/{userId}")]
+        public HttpResponseMessage SaveAuthor([FromBody] dynamic payload, int userId)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                int returnValue = LibraryManagement.GetInstance.SaveAuthor(payload);
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                return new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+        [HttpPost]
+        [Route("api/Library/Author/Delete/{userId}")]
+        public HttpResponseMessage DeleteAuthor([FromBody] int id, int userId)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                int returnValue = LibraryManagement.GetInstance.DeleteAuthor(id);
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+        #endregion
+
+        #region Publisher
+        [HttpGet]
+        [Route("api/Library/Publisher/List")]
+        public HttpResponseMessage GetPublishers()
+        {
+            Response response = new Response();
+            try
+            {
+                List<Publisher> list = LibraryManagement.GetInstance.GetBook_Publishers();
+                response.message = "Success";
+                response.data = list;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            catch (Exception)
+            {
+                response.message = "Failure";
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+
+        [HttpPost]
+        [Route("api/Library/Publisher/Save/{userId}")]
+        public HttpResponseMessage SavePublisher([FromBody] dynamic payload, int userId)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                int returnValue = LibraryManagement.GetInstance.SavePublisher(payload);
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                return new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+        [HttpPost]
+        [Route("api/Library/Publisher/Delete/{userId}")]
+        public HttpResponseMessage DeletePublisher([FromBody] int id, int userId)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                int returnValue = LibraryManagement.GetInstance.DeletePublisher(id);
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+        #endregion
+
+
+        #region Supplier
+        [HttpGet]
+        [Route("api/Library/Supplier/List")]
+        public HttpResponseMessage GetSuppliers()
+        {
+            Response response = new Response();
+            try
+            {
+                List<Supplier> list = LibraryManagement.GetInstance.GetBook_Suppliers();
+                response.message = "Success";
+                response.data = list;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            catch (Exception)
+            {
+                response.message = "Failure";
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+
+        [HttpPost]
+        [Route("api/Library/Supplier/Save/{userId}")]
+        public HttpResponseMessage SaveSupplier([FromBody] dynamic payload, int userId)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                int returnValue = LibraryManagement.GetInstance.SaveSupplier(payload);
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                return new HttpResponseMessage(HttpStatusCode.BadRequest)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+        [HttpPost]
+        [Route("api/Library/Supplier/Delete/{userId}")]
+        public HttpResponseMessage DeleteSupplier([FromBody] int id, int userId)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                int returnValue = LibraryManagement.GetInstance.DeleteSupplier(id);
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+        #endregion
+
 
         #region Authentication
         private bool ValidateToken(int userId)

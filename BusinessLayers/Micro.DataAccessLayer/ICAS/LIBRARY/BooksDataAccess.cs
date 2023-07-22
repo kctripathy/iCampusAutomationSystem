@@ -45,6 +45,9 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 			}
 		}
 
+		
+
+
 		public DataTable GetBook_Publishers()
 		{
 			using (SqlCommand Selectcommand = new SqlCommand())
@@ -172,6 +175,7 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 
 			return ReturnValue;
 		}
+		
 		public int InsertNewBook(Book b)
 		{
 

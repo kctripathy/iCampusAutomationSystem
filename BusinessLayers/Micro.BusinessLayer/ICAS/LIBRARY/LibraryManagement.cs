@@ -124,25 +124,21 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
 
         public List<Author> GetBook_Authors()
         {
-            //throw new NotImplementedException();
             return LibraryIntegration.GetBook_Authors();
         }
 
         public List<Supplier> GetBook_Suppliers()
         {
-            //throw new NotImplementedException();
             return LibraryIntegration.GetBook_Suppliers();
         }
 
         public List<Publisher> GetBook_Publishers()
         {
-            //throw new NotImplementedException();
             return LibraryIntegration.GetBook_Publishers();
         }
 
         public List<BookSegment> GetBook_BookSegments(bool onlyBooksHavingSegment = false)
         {
-            //throw new NotImplementedException();
             return LibraryIntegration.GetBook_Segments(onlyBooksHavingSegment);
         }
 		public int InsertBookTransaction_ISSUE(BookTransaction b)
@@ -160,10 +156,6 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
             return LibraryIntegration.DeleteSegment(id);
         }
 
-       
-
-
-
 
         public int SaveCategory(dynamic payload)
         {
@@ -173,6 +165,35 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
         public int DeleteCategory(int id)
         {
             return LibraryIntegration.DeleteCategory(id);
+        }
+
+
+        public int SaveAuthor(dynamic payload)
+        {
+            return LibraryIntegration.SaveAuthor(payload);
+        }
+        public int DeleteAuthor(int id)
+        {
+            return LibraryIntegration.DeleteAuthor(id);
+        }
+
+
+        public int SavePublisher(dynamic payload)
+        {
+            return LibraryIntegration.SavePublisher(payload);
+        }
+        public int DeletePublisher(int id)
+        {
+            return LibraryIntegration.DeletePublisher(id);
+        }
+
+        public int SaveSupplier(dynamic payload)
+        {
+            return LibraryIntegration.SaveSupplier(payload);
+        }
+        public int DeleteSupplier(int id)
+        {
+            return LibraryIntegration.DeleteSupplier(id);
         }
 
 
