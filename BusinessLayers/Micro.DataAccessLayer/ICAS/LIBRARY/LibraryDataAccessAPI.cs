@@ -229,14 +229,17 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.CommandType = CommandType.Text;
-					cmd.CommandText = string.Concat("DELETE FROM [LIB_MasterAuthors] WHERE [SegmentID]=", id.ToString());
+					cmd.CommandText = string.Concat("DELETE FROM [LIB_MasterAuthors] WHERE [AuthorID]=", id.ToString());
 					ExecuteSqlStatement(cmd);
 				}
 				return id;
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				return -1;
+				if (ex.Message.Contains("conflicted with the REFERENCE constraint"))
+					return -1;
+				else
+					return -2;
 			}
 		}
 
@@ -246,15 +249,15 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 		public int SavePublisher(dynamic payload)
 		{
 			int RetValue = 0;
-			int ID = int.Parse(payload.categoryID.ToString());
+			int ID = int.Parse(payload.ID.ToString());
 			string Name = payload.Name.ToString();
 			string Address = payload.Address.ToString();
 			string City = payload.City.ToString();
-			string State = payload.State.ToString();
+			int StateId = int.Parse(payload.StateId.ToString());
 			string Email = payload.Email.ToString();
 			string Phone = payload.Phone.ToString();
+			string ContactPersonName = payload.ContactPersonName.ToString();
 
-			string fullAddress = string.Concat(Address, ", ", City, ", ", State);
 
 			using (SqlCommand InsertCommand = new SqlCommand())
 			{
@@ -262,9 +265,12 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 				InsertCommand.Parameters.Add(GetParameter("@returnValue", SqlDbType.Int, RetValue)).Direction = ParameterDirection.Output;
 				InsertCommand.Parameters.Add(GetParameter("@id", SqlDbType.Int, ID));
 				InsertCommand.Parameters.Add(GetParameter("@name", SqlDbType.VarChar, Name));
-				InsertCommand.Parameters.Add(GetParameter("@address", SqlDbType.VarChar, fullAddress));
+				InsertCommand.Parameters.Add(GetParameter("@address", SqlDbType.VarChar, Address));
+				InsertCommand.Parameters.Add(GetParameter("@city", SqlDbType.VarChar, City));
+				InsertCommand.Parameters.Add(GetParameter("@stateId", SqlDbType.Int, StateId));
 				InsertCommand.Parameters.Add(GetParameter("@email", SqlDbType.VarChar, Email));
 				InsertCommand.Parameters.Add(GetParameter("@phone", SqlDbType.VarChar, Phone));
+				InsertCommand.Parameters.Add(GetParameter("@contactPersonaName", SqlDbType.VarChar, ContactPersonName));
 				InsertCommand.CommandText = "[pAPI_LIBRARY_PUBLISHER_SAVE]";
 				ExecuteStoredProcedure(InsertCommand);
 				if (InsertCommand.Parameters[0].Value.ToString().Equals(string.Empty))
@@ -287,7 +293,7 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.CommandType = CommandType.Text;
-					cmd.CommandText = string.Concat("DELETE FROM [LIB_MasterPublishers] WHERE [SegmentID]=", id.ToString());
+					cmd.CommandText = string.Concat("DELETE FROM [LIB_MasterPublishers] WHERE [PublisherId]=", id.ToString());
 					ExecuteSqlStatement(cmd);
 				}
 				return id;
@@ -302,15 +308,15 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 		public int SaveSupplier(dynamic payload)
 		{
 			int RetValue = 0;
-			int ID = int.Parse(payload.categoryID.ToString());
+			int ID = int.Parse(payload.ID.ToString());
 			string Name = payload.Name.ToString();
 			string Address = payload.Address.ToString();
 			string City = payload.City.ToString();
-			string State = payload.State.ToString();
+			int StateId = int.Parse(payload.StateId.ToString());
 			string Email = payload.Email.ToString();
 			string Phone = payload.Phone.ToString();
+			string ContactPersonName = payload.ContactPersonName.ToString();
 
-			string fullAddress = string.Concat(Address, ", ", City, ", ", State);
 
 			using (SqlCommand InsertCommand = new SqlCommand())
 			{
@@ -318,9 +324,12 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 				InsertCommand.Parameters.Add(GetParameter("@returnValue", SqlDbType.Int, RetValue)).Direction = ParameterDirection.Output;
 				InsertCommand.Parameters.Add(GetParameter("@id", SqlDbType.Int, ID));
 				InsertCommand.Parameters.Add(GetParameter("@name", SqlDbType.VarChar, Name));
-				InsertCommand.Parameters.Add(GetParameter("@address", SqlDbType.VarChar, fullAddress));
+				InsertCommand.Parameters.Add(GetParameter("@address", SqlDbType.VarChar, Address));
+				InsertCommand.Parameters.Add(GetParameter("@city", SqlDbType.VarChar, City));
+				InsertCommand.Parameters.Add(GetParameter("@stateId", SqlDbType.Int, StateId));
 				InsertCommand.Parameters.Add(GetParameter("@email", SqlDbType.VarChar, Email));
 				InsertCommand.Parameters.Add(GetParameter("@phone", SqlDbType.VarChar, Phone));
+				InsertCommand.Parameters.Add(GetParameter("@contactPersonaName", SqlDbType.VarChar, ContactPersonName));
 				InsertCommand.CommandText = "[pAPI_LIBRARY_SUPPLIER_SAVE]";
 				ExecuteStoredProcedure(InsertCommand);
 				if (InsertCommand.Parameters[0].Value.ToString().Equals(string.Empty))
@@ -343,7 +352,7 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 				using (SqlCommand cmd = new SqlCommand())
 				{
 					cmd.CommandType = CommandType.Text;
-					cmd.CommandText = string.Concat("DELETE FROM [LIB_MasterSuppliers] WHERE [SegmentID]=", id.ToString());
+					cmd.CommandText = string.Concat("DELETE FROM [LIB_MasterSuppliers] WHERE [SupplierId]=", id.ToString());
 					ExecuteSqlStatement(cmd);
 				}
 				return id;

@@ -513,15 +513,16 @@ namespace Micro.DataAccessLayer
             }
             catch (Exception e)
             {
-                if (oCommand != null)
-                {
-                    Exception ex = new Exception(oCommand.CommandText, e);
-                    Log.Error(ex, true);
-                }
-                else
-                {
-                    Log.Error(e, true);
-                }
+                throw (e);
+                //if (oCommand != null)
+                //{
+                //    Exception ex = new Exception(oCommand.CommandText, e);
+                //    //Log.Error(ex, true);
+                //}
+                //else
+                //{
+                //    Log.Error(e, true);
+                //}
             }
             finally
             {
