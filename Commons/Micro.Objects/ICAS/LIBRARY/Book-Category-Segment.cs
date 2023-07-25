@@ -43,15 +43,19 @@ namespace Micro.Objects.ICAS.LIBRARY
 
 	}
 
+
+	//BookID	BookType	AccessionNo	AccessionDate	Title	BookStatus	IsActive	BookPrice	AuthorID	Author	
+	////PublisherID	Publisher	SupplierID	Supplier	CategoryID	CategoryName	CategoryCode	SegmentID	SegmentName
+	//10000000	GEN	1	2011-03-31 00:00:00.000	YUGAPRABATAKA SRASTHA RADHANATH A   1	12.00	5144	SAMANTARYA NATABAR  1513	NEW PRESS   1090	ABC Suppliers   36	ODIA LITERATURE O1	13	+3 ARTS
 	public class BookViewModel
 	{
 		public Int64 BookID { get; set; }
-		public int CategoryID { get; set; }
-		public string Category { get; set; }
-
 		public string BookType { get; set; }
-		public string Title { get; set; }
 		public string AccessionNo { get; set; }
+		public DateTime AccessionDate { get; set; }
+		public string Title { get; set; }
+		public string BookStatus { get; set; }
+		public float BookPrice { get; set; }
 
 		public int AuthorID { get; set; }
 		public string Author { get; set; }
@@ -59,10 +63,17 @@ namespace Micro.Objects.ICAS.LIBRARY
 		public int PublisherID { get; set; }
 		public string Publisher { get; set; }
 
+		public int SupplierID { get; set; }
+		public string Supplier { get; set; }
+
+		public int CategoryID { get; set; }
+		public string CategoryCode { get; set; }
+		public string Category { get; set; }
+
 		public int SegmentID { get; set; }
 		public string Segment { get; set; }
 
-		public string IsBookIssued { get; set; }
+		public bool IsActive { get; set; }
 	}
 
 	public class BookDetail : BookViewModel

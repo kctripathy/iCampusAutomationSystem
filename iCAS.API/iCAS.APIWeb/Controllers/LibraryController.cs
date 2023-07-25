@@ -15,6 +15,20 @@ namespace iCAS.APIWeb.Controllers
 {
     public class LibraryController : ApiController
     {
+
+        [HttpGet]
+        [Route("api/Library/Summary")]
+        public HttpResponseMessage GetSummary()
+        {
+            LibrarySummary library = LibraryManagement.GetInstance.GetLibrarySummary();
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(library).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+
+
         /// <summary>
         /// Get Library Books
         /// </summary>
@@ -29,6 +43,31 @@ namespace iCAS.APIWeb.Controllers
             };
         }
 
+        [HttpPost]
+        [Route("api/Library/Book/List")]
+        public HttpResponseMessage GetLibraryBookList([FromBody] payload payload)
+        {
+            string ReturnMessage = WebConstants.SUCCESS;
+            List<BookViewModel> TheBooksList = LibraryManagement.GetInstance.GetLibraryBooksList(payload);
+
+            if (TheBooksList.Count == 0) ReturnMessage = WebConstants.FAILURE;
+
+            ListResponse response = new ListResponse
+            {
+                message = ReturnMessage,
+                data = TheBooksList,
+                pageNo = payload.pageNo,
+                pageSize = payload.pageSize,
+                totalRecordFetched = TheBooksList.Count
+            };
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+
+        [Obsolete]
         [Route("api/Library/BooksList")]
         public HttpResponseMessage GetBooks([FromUri] PagingParameterModel pageRequest)
         {
@@ -62,41 +101,6 @@ namespace iCAS.APIWeb.Controllers
             return new HttpResponseMessage(HttpStatusCode.OK)
             {
                 Content = new StringContent(JArray.FromObject(list).ToString(), Encoding.UTF8, "application/json")
-            };
-        }
-
-
-        [HttpPost]
-        [Route("api/Library/Book/List")]
-        public HttpResponseMessage GetLibraryBookList([FromBody] payload payload)
-        {
-            string ReturnMessage = WebConstants.SUCCESS;
-            List<BookViewModel> TheBooksList = LibraryManagement.GetInstance.GetLibraryBooksList(payload);
-
-            if (TheBooksList.Count == 0) ReturnMessage = WebConstants.FAILURE;
-
-            ListResponse response = new ListResponse { 
-                message = ReturnMessage, 
-                data = TheBooksList, 
-                pageNo = payload.pageNo,
-                pageSize = payload.pageSize,
-                totalRecordFetched = TheBooksList.Count
-            };
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
-            };
-        }
-
-
-        [HttpGet]
-        [Route("api/Library/Summary")]
-        public HttpResponseMessage GetSummary()
-        {
-            LibrarySummary library = LibraryManagement.GetInstance.GetLibrarySummary();
-            return new HttpResponseMessage(HttpStatusCode.OK)
-            {
-                Content = new StringContent(JObject.FromObject(library).ToString(), Encoding.UTF8, "application/json")
             };
         }
 

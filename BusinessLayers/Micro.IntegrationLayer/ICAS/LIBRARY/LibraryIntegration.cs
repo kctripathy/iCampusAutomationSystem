@@ -137,34 +137,40 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             return LibraryDataAccess.GetInstance.DeleteSupplier(id);
         }
 
+        //BookID	BookType	AccessionNo	AccessionDate	Title	BookStatus	IsActive	BookPrice	AuthorID	Author	
+        ////PublisherID	Publisher	SupplierID	Supplier	CategoryID	CategoryName	CategoryCode	SegmentID	SegmentName
 
 
         public static BookViewModel DataRowToBookViewModelObject(DataRow dRow)
         {
-
-            //BookID	BookType	AccessionNo	Title	CategoryID	CategoryName	AuthorID	Author	PublisherID	Publisher	SegmentID	SegmentName	IsBookIssued	TotalRows
-            //10000200    GEN 200 PASU PAKHIRA KABYA  36  ODIA LITERATURE 4390    PATTNAIK RADHAMOHAN 1281    GRANTHA MANDIRA 13 + 3 ARTS NO  4211
-
+            
             BookViewModel theBookObj = new BookViewModel();
+
             theBookObj.BookID = (dRow["BookID"] == null ? 0 : int.Parse(dRow["BookID"].ToString()));
             theBookObj.BookType = dRow["BookType"].ToString();
-            
-            theBookObj.CategoryID = int.Parse(dRow["CategoryID"].ToString());
-            theBookObj.Category = dRow["CategoryName"].ToString();
-
-            theBookObj.SegmentID = int.Parse(dRow["SegmentID"].ToString());
-            theBookObj.Segment = dRow["SegmentName"].ToString();
+            theBookObj.AccessionNo = dRow["AccessionNo"].ToString();
+            theBookObj.AccessionDate = DateTime.Parse(dRow["AccessionDate"].ToString());
+            theBookObj.Title = dRow["Title"].ToString();
+            theBookObj.BookStatus = dRow["BookStatus"].ToString();
+            theBookObj.BookPrice = float.Parse(dRow["BookPrice"].ToString());
 
             theBookObj.AuthorID = int.Parse(dRow["AuthorID"].ToString());
             theBookObj.Author = dRow["Author"].ToString();
 
             theBookObj.PublisherID = int.Parse(dRow["PublisherID"].ToString());
             theBookObj.Publisher = dRow["Publisher"].ToString();
-            
-            theBookObj.Title = dRow["Title"].ToString();
-            theBookObj.AccessionNo = dRow["AccessionNo"].ToString();
-            
-            theBookObj.IsBookIssued = dRow["IsBookIssued"].ToString();
+
+            theBookObj.SupplierID = int.Parse(dRow["SupplierID"].ToString());
+            theBookObj.Supplier = dRow["Supplier"].ToString();
+
+            theBookObj.CategoryID = int.Parse(dRow["CategoryID"].ToString());
+            theBookObj.CategoryCode = dRow["CategoryCode"].ToString();
+            theBookObj.Category = dRow["CategoryName"].ToString();
+
+            theBookObj.SegmentID = int.Parse(dRow["SegmentID"].ToString());
+            theBookObj.Segment = dRow["SegmentName"].ToString();
+             
+            theBookObj.IsActive = Boolean.Parse(dRow["IsActive"].ToString());
             
             return theBookObj;
         }

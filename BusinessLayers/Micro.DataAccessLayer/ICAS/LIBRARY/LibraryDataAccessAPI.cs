@@ -82,7 +82,7 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 				Selectcommand.Parameters.Add(GetParameter("@searchCriteria", SqlDbType.VarChar, sb.ToString()));
 				Selectcommand.Parameters.Add(GetParameter("@pageNo", SqlDbType.Int, payload.pageNo));
 				Selectcommand.Parameters.Add(GetParameter("@pageSize", SqlDbType.Int, payload.pageSize));
-				Selectcommand.CommandText = "pAPI_GET_LIBRARY_BOOKS";
+				Selectcommand.CommandText = "pAPI_GET_LIBRARY_BOOKS_NEW";
 				return ExecuteGetDataTable(Selectcommand);
 			}
 		}
