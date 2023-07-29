@@ -14,5 +14,25 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
         {
             return LibraryIntegration.GetLibrarySummary();
         }
+
+        public LibraryBook GetBookByID(long id)
+        {
+            return LibraryIntegration.GetBookByID(id);
+        }
+
+        public BookViewModel GetBookByAccessionNo(int acno)
+        {
+            return LibraryIntegration.GetLibraryBookByAccessionNumber(acno);
+        }
+
+        public long SaveBook(LibraryBook payload, int userId)
+        {
+            return LibraryIntegration.SaveBook(payload, userId);
+        }
+
+        public long DeleteBook(long id)
+        {
+            return LibraryIntegration.DeleteBook(id);
+        }
     }
 }

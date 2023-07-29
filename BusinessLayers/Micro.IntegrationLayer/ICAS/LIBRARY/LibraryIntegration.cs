@@ -137,10 +137,6 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             return LibraryDataAccess.GetInstance.DeleteSupplier(id);
         }
 
-        //BookID	BookType	AccessionNo	AccessionDate	Title	BookStatus	IsActive	BookPrice	AuthorID	Author	
-        ////PublisherID	Publisher	SupplierID	Supplier	CategoryID	CategoryName	CategoryCode	SegmentID	SegmentName
-
-
         public static BookViewModel DataRowToBookViewModelObject(DataRow dRow)
         {
             

@@ -66,6 +66,81 @@ namespace iCAS.APIWeb.Controllers
             };
         }
 
+        [HttpGet]
+        [Route("api/Library/Book/{id}")]
+        public HttpResponseMessage GetBookById([FromUri] long id)
+        {
+            LibraryBook book = LibraryManagement.GetInstance.GetBookByID(id);
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(book).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+        [HttpGet]
+        [Route("api/Library/Book/AccessionNo/{acno}")]
+        public HttpResponseMessage GetBookById([FromUri] int acno)
+        {
+            BookViewModel book = LibraryManagement.GetInstance.GetBookByAccessionNo(acno);
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(book).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+
+        [HttpPost]
+        [Route("api/Library/Admin/SaveBook/{userId}")]
+        public HttpResponseMessage AdminSaveBook([FromBody] LibraryBook payload, int userId)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                long returnValue = LibraryManagement.GetInstance.SaveBook(payload, userId); //get all segments
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                response.data = -4;
+                return new HttpResponseMessage(HttpStatusCode.Unauthorized)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+
+        [HttpPost]
+        [Route("api/Library/Admin/DeleteBook/{userId}")]
+        public HttpResponseMessage AdminDeleteBook([FromBody] long id, int userId)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                long returnValue = LibraryManagement.GetInstance.DeleteBook(id);
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Unauthorized request";
+                return new HttpResponseMessage(HttpStatusCode.Unauthorized)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
 
         [Obsolete]
         [Route("api/Library/BooksList")]

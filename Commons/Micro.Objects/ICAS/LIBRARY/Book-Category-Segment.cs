@@ -43,10 +43,57 @@ namespace Micro.Objects.ICAS.LIBRARY
 
 	}
 
+	
+	public class LibraryBook
+	{
+		public Int64 BookID { get; set; }
+		public string BookType { get; set; }
+		public string Title { get; set; }
 
-	//BookID	BookType	AccessionNo	AccessionDate	Title	BookStatus	IsActive	BookPrice	AuthorID	Author	
-	////PublisherID	Publisher	SupplierID	Supplier	CategoryID	CategoryName	CategoryCode	SegmentID	SegmentName
-	//10000000	GEN	1	2011-03-31 00:00:00.000	YUGAPRABATAKA SRASTHA RADHANATH A   1	12.00	5144	SAMANTARYA NATABAR  1513	NEW PRESS   1090	ABC Suppliers   36	ODIA LITERATURE O1	13	+3 ARTS
+		public int SegmentID { get; set; }
+		public int AuthorID { get; set; } 
+		public int PublisherID { get; set; } 
+		public int SupplierID { get; set; } 
+		public int SubjectID { get; set; }
+		public int CategoryID { get; set; }
+		public int Issued2UserID { get; set; } 
+		  
+		public string AccessionNo { get; set; } 
+		public DateTime AccessionDate { get; set; } 
+		 
+		 
+		public string ClassNo { get; set; } 
+		public string Edition { get; set; } 
+		public string BookYear { get; set; } 
+		public string VolumeNo { get; set; } 
+		public int Pages { get; set; } 
+		public float BookPrice { get; set; } 
+		public string BookPriceDisplay { 
+			get
+            {
+				return String.Format("{0:0.00}", this.BookPrice);
+            }
+				
+		}
+
+		public string BillNo { get; set; } 
+		public DateTime? BillDate { get; set; } 
+		   
+		public string Remarks { get; set; } 
+		public string IBNNo { get; set; } 
+		 
+		public string Book_ImageURL_Small { get; set; } 
+		public string Book_ImageURL_Medium { get; set; } 
+		public string Book_Image_URL_Big { get; set; } 
+		public string Book_PDF_URL { get; set; } 
+		 
+		public bool IsActive { get; set; } 
+		public bool IsDeleted { get; set; } 
+
+		public string BookStatus { get; set; } 
+
+	}
+
 	public class BookViewModel
 	{
 		public Int64 BookID { get; set; }

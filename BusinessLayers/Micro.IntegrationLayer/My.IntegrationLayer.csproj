@@ -114,7 +114,7 @@
     <Compile Include="ICAS\FINANCE\AccountsTransactionIntegration.cs" />
     <Compile Include="ICAS\FINANCE\AccountTransactionIntegration.cs" />
     <Compile Include="ICAS\FINANCE\DefaultFeeIntegration.cs" />
-    <Compile Include="ICAS\LIBRARY\LibraryAPICalls.cs" />
+    <Compile Include="ICAS\LIBRARY\LibraryIntegrationAPI.cs" />
     <Compile Include="ICAS\LIBRARY\LibraryIntegration.cs" />
     <Compile Include="ICAS\STAFFS\AttendanceIntegration.cs" />
     <Compile Include="ICAS\STAFFS\PolicyApplicationIntegration.cs" />

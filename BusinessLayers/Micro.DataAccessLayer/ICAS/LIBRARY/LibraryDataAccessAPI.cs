@@ -87,6 +87,99 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 			}
 		}
 
+		public DataRow GetLibraryBookById(long id)
+        {
+			using (SqlCommand SelectCommand = new SqlCommand())
+			{
+				SelectCommand.CommandType = CommandType.StoredProcedure;
+				SelectCommand.Parameters.Add(GetParameter("@id", SqlDbType.BigInt, id));
+				SelectCommand.CommandText = "[pAPI_LIBRARY_BOOKS_GET_BY_ID]";
+				return ExecuteGetDataRow(SelectCommand);
+			}
+		}
+
+		public DataRow GetLibraryBookByAccessionNumber(int acno)
+		{
+			using (SqlCommand SelectCommand = new SqlCommand())
+			{
+				SelectCommand.CommandType = CommandType.StoredProcedure;
+				SelectCommand.Parameters.Add(GetParameter("@accessionNo", SqlDbType.Int, acno));
+				SelectCommand.CommandText = "[pAPI_LIBRARY_BOOKS_GET_BY_ACNO]";
+				return ExecuteGetDataRow(SelectCommand);
+			}
+		}
+
+		public long SaveBook(LibraryBook payload, int userId)
+		{
+			long RetValue = 0;
+
+			using (SqlCommand Command = new SqlCommand())
+			{
+				Command.CommandType = CommandType.StoredProcedure;
+				Command.Parameters.Add(GetParameter("@returnValue", SqlDbType.Int, RetValue)).Direction = ParameterDirection.Output;
+				Command.Parameters.Add(GetParameter("@BookID", SqlDbType.BigInt, payload.BookID));
+				Command.Parameters.Add(GetParameter("@BookType", SqlDbType.VarChar, payload.BookType));
+				Command.Parameters.Add(GetParameter("@Title", SqlDbType.VarChar, payload.Title));
+				Command.Parameters.Add(GetParameter("@SegmentID", SqlDbType.Int, payload.SegmentID));
+				Command.Parameters.Add(GetParameter("@AuthorID", SqlDbType.Int, payload.AuthorID));
+				Command.Parameters.Add(GetParameter("@PublisherID", SqlDbType.Int, payload.PublisherID));
+				Command.Parameters.Add(GetParameter("@SupplierID", SqlDbType.Int, payload.SupplierID));
+				Command.Parameters.Add(GetParameter("@SubjectID", SqlDbType.Int, payload.SubjectID));
+				Command.Parameters.Add(GetParameter("@CategoryID", SqlDbType.Int, payload.CategoryID));
+				Command.Parameters.Add(GetParameter("@Issued2UserID", SqlDbType.Int, payload.Issued2UserID));
+				Command.Parameters.Add(GetParameter("@AccessionNo", SqlDbType.Int, int.Parse(payload.AccessionNo)));
+				Command.Parameters.Add(GetParameter("@AccessionDate", SqlDbType.DateTime, payload.AccessionDate));
+				Command.Parameters.Add(GetParameter("@ClassNo", SqlDbType.VarChar, payload.ClassNo));
+				Command.Parameters.Add(GetParameter("@Edition", SqlDbType.VarChar, payload.Edition));
+				Command.Parameters.Add(GetParameter("@BookYear", SqlDbType.Int, int.Parse(payload.BookYear)));
+				Command.Parameters.Add(GetParameter("@VolumeNo", SqlDbType.VarChar, payload.VolumeNo));
+				Command.Parameters.Add(GetParameter("@Pages", SqlDbType.Int, payload.Pages));
+				Command.Parameters.Add(GetParameter("@BookPrice", SqlDbType.Money, payload.BookPrice));
+				Command.Parameters.Add(GetParameter("@BillNo", SqlDbType.VarChar, payload.BillNo));
+				Command.Parameters.Add(GetParameter("@BillDate", SqlDbType.DateTime, payload.BillDate));
+				Command.Parameters.Add(GetParameter("@Remarks", SqlDbType.VarChar, payload.Remarks));
+				Command.Parameters.Add(GetParameter("@IBNNo", SqlDbType.VarChar, payload.IBNNo));
+				Command.Parameters.Add(GetParameter("@Book_ImageURL_Small", SqlDbType.VarChar, payload.Book_ImageURL_Small));
+				Command.Parameters.Add(GetParameter("@Book_ImageURL_Medium", SqlDbType.VarChar, payload.Book_ImageURL_Medium));
+				Command.Parameters.Add(GetParameter("@Book_Image_URL_Big", SqlDbType.VarChar, payload.Book_Image_URL_Big));
+				Command.Parameters.Add(GetParameter("@Book_PDF_URL", SqlDbType.VarChar, payload.Book_PDF_URL));
+				Command.Parameters.Add(GetParameter("@BookStatus", SqlDbType.VarChar, payload.BookStatus));
+				Command.Parameters.Add(GetParameter("@IsActive", SqlDbType.Int, payload.IsActive? 1: 0));
+				Command.Parameters.Add(GetParameter("@userId", SqlDbType.Int, userId));
+
+				Command.CommandText = "[pAPI_LIBRARY_BOOK_SAVE]";
+				ExecuteStoredProcedure(Command);
+				if (Command.Parameters[0].Value.ToString().Equals(string.Empty))
+				{
+					RetValue = -2;
+				}
+				else
+				{
+					RetValue = long.Parse(Command.Parameters[0].Value.ToString());
+				}
+			}
+
+			return RetValue;
+		}
+
+		public long DeleteBook(long id)
+		{
+			try
+			{
+				using (SqlCommand cmd = new SqlCommand())
+				{
+					cmd.CommandType = CommandType.Text;
+					cmd.CommandText = string.Concat("DELETE FROM [LIB_Master_Books] WHERE [BookID]=", id.ToString());
+					ExecuteSqlStatement(cmd);
+				}
+				return id;
+			}
+			catch (Exception)
+			{
+				return -1;
+			}
+		}
+
 
 		public int SaveSegment(dynamic payload)
 		{
@@ -162,7 +255,6 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 
 			return RetValue;
 		}
-
 
 		public int DeleteCategory(int id)
 		{
@@ -242,7 +334,6 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 					return -2;
 			}
 		}
-
 
 
 
