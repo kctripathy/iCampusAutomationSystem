@@ -5,10 +5,15 @@ using Micro.Objects.ICAS.LIBRARY;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Web;
 using System.Web.Http;
 
 namespace iCAS.APIWeb.Controllers
@@ -78,6 +83,31 @@ namespace iCAS.APIWeb.Controllers
         }
 
         [HttpGet]
+        [Route("api/Library/Book/Image/{id}")]
+        public HttpResponseMessage GetBookImageById([FromUri] long id)
+        {
+            string path = String.Concat(HttpContext.Current.Server.MapPath("~/LibraryBook/Images"), "\\", id.ToString(), ".jpg");
+            //string imageUrl = String.Concat(ConfigurationManager.AppSettings["apiUrl"], "/LibraryBook/Images/0.jpg");
+            if (!File.Exists(path))
+            {
+                path = String.Concat(HttpContext.Current.Server.MapPath("~/LibraryBook/Images"), "\\0.jpg");
+            }
+
+            Byte[] imgData = System.IO.File.ReadAllBytes(path);   
+            //byte[] imgData = theList[0].SettingKeyValue;
+            MemoryStream ms = new MemoryStream(imgData);
+            HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
+            response.Content = new StreamContent(ms);
+            response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/png");
+            return response;
+
+            //return new HttpResponseMessage(HttpStatusCode.OK)
+            //{
+            //    Content = new StringContent(JObject.FromObject(imageUrl).ToString(), Encoding.UTF8, "application/json")
+            //};
+        }
+
+        [HttpGet]
         [Route("api/Library/Book/AccessionNo/{acno}")]
         public HttpResponseMessage GetBookById([FromUri] int acno)
         {
@@ -140,6 +170,119 @@ namespace iCAS.APIWeb.Controllers
                 };
             }
         }
+
+       
+        [HttpPost]
+        [Route("api/Library/Admin/UploadBookImage/{userId}/{id}")]
+        public HttpResponseMessage AdminUploadBookImage(int userId, long id)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                if (HttpContext.Current.Request.Form.ToString().Equals(""))
+                {
+                    response.message = "No file to upload";
+                    return new HttpResponseMessage(HttpStatusCode.OK)
+                    {
+                        Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                    };
+                }
+                //Create the Directory.
+                string path = HttpContext.Current.Server.MapPath("~/LibraryBook/Images");
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                string filePath = String.Concat(path, "/", id.ToString(), ".jpg");
+                var base64String = Uri.UnescapeDataString(HttpContext.Current.Request.Form.ToString()).Split(',')[1];
+
+                using (MemoryStream ms = new MemoryStream(Convert.FromBase64String(base64String)))
+                {
+                    using (Bitmap bm2 = new Bitmap(ms))
+                    {
+                        bm2.Save(filePath);
+                    }
+                }
+                long returnValue = LibraryManagement.GetInstance.UpdateImageOrPDF(id,"image");
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                response.data = -4;
+                return new HttpResponseMessage(HttpStatusCode.Unauthorized)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+
+
+        [HttpPost]
+        [Route("api/Library/Admin/UploadBookPDF/{userId}/{id}")]
+        public HttpResponseMessage AdminUploadBookPDF(int userId, long id)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                if (HttpContext.Current.Request.Form.ToString().Equals(""))
+                {
+                    response.message = "No file to upload";
+                    return new HttpResponseMessage(HttpStatusCode.OK)
+                    {
+                        Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                    };
+                }
+                //Create the Directory.
+                string path = HttpContext.Current.Server.MapPath("~/LibraryBook/PDF");
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                string filePath = String.Concat(path, "/", id.ToString(), ".pdf");
+                var base64String = Uri.UnescapeDataString(HttpContext.Current.Request.Form.ToString()).Split(',')[1];
+
+                using (MemoryStream ms = new MemoryStream(Convert.FromBase64String(base64String)))
+                {
+                    using (FileStream file = new FileStream(filePath, FileMode.Create, FileAccess.Write))
+                    {
+                        byte[] bytes = new byte[ms.Length];
+                        ms.Read(bytes, 0, (int)ms.Length);
+                        file.Write(bytes, 0, bytes.Length);
+                        ms.Close();
+                    }
+                }
+
+                //
+                long returnValue = LibraryManagement.GetInstance.UpdateImageOrPDF(id);
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                response.data = -4;
+                return new HttpResponseMessage(HttpStatusCode.Unauthorized)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+
+
 
 
         [Obsolete]

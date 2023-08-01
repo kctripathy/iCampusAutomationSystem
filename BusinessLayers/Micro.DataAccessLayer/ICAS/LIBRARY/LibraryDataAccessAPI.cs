@@ -180,6 +180,21 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 			}
 		}
 
+		public long UpdateImageOrPDF(long id, string fileType = "pdf")
+		{
+			string SQL_STMT = string.Concat("UPDATE [LIB_Master_Books] SET Book_PDF_URL='Y' WHERE [BookID]=", id.ToString());
+
+			if (fileType == "image") SQL_STMT = string.Concat("UPDATE [LIB_Master_Books] SET Book_ImageURL_Small='Y' WHERE [BookID]=", id.ToString());
+
+			using (SqlCommand cmd = new SqlCommand())
+			{
+				cmd.CommandType = CommandType.Text;
+				cmd.CommandText = SQL_STMT;
+				ExecuteSqlStatement(cmd);
+			}
+			return id;
+		}
+
 
 		public int SaveSegment(dynamic payload)
 		{

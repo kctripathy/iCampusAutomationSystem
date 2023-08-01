@@ -165,7 +165,12 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
 
             theBookObj.SegmentID = int.Parse(dRow["SegmentID"].ToString());
             theBookObj.Segment = dRow["SegmentName"].ToString();
-             
+
+            theBookObj.PDF = dRow["PDF"].ToString();
+            theBookObj.PHOTO = dRow["PHOTO"].ToString();
+
+            theBookObj.Issued2UserID = dRow["Issued2UserID"] == null || dRow["Issued2UserID"].ToString() == "" ? -1 :  int.Parse(dRow["Issued2UserID"].ToString());
+            
             theBookObj.IsActive = Boolean.Parse(dRow["IsActive"].ToString());
             
             return theBookObj;

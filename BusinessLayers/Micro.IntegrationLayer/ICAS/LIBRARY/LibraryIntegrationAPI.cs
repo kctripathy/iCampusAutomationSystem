@@ -75,6 +75,11 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             return LibraryDataAccess.GetInstance.DeleteBook(id);
         }
 
+        public static long UpdateImageOrPDF(long id, string fileType = "pdf")
+        {
+            return LibraryDataAccess.GetInstance.UpdateImageOrPDF(id, fileType);
+        }
+
         public static LibraryBook DataRowToLibraryBookModel(DataRow dRow)
         {
 

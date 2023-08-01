@@ -34,5 +34,10 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
         {
             return LibraryIntegration.DeleteBook(id);
         }
+
+        public long UpdateImageOrPDF(long id, string fileType = "pdf")
+        {
+            return LibraryIntegration.UpdateImageOrPDF(id, fileType);
+        }
     }
 }

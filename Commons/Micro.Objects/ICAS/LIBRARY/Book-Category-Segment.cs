@@ -120,6 +120,10 @@ namespace Micro.Objects.ICAS.LIBRARY
 		public int SegmentID { get; set; }
 		public string Segment { get; set; }
 
+		public string PDF { get; set; }
+		public string PHOTO { get; set; }
+
+		public int Issued2UserID { get; set; }
 		public bool IsActive { get; set; }
 	}
 
