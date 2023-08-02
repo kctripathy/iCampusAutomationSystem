@@ -52,6 +52,7 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 		{
 			string segments = "";
 			string categories = "";
+			string statuses = "";
 			StringBuilder sb = new StringBuilder();
 			if (payload.segments.Length > 0)
 			{
@@ -72,8 +73,20 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 				}
 				categories = sbCategories.ToString().Substring(0, sbCategories.Length - 1) + ") ";
 			}
+			if (payload.status.Length > 0 && payload.status.Length != 4)
+			{
+				var and2join = payload.segments.Length == 0 && payload.categories.Length == 0 ? " " : " AND ";
+				StringBuilder sbStatus = new StringBuilder(and2join + " b.BookStatus IN (");
+				foreach (string item in payload.status)
+				{
+					sbStatus.Append("'" +item + "',");
+				}
+				statuses = sbStatus.ToString().Substring(0, sbStatus.Length - 1) + ") ";
+			}
+
 			sb.Append(segments);
 			sb.Append(categories);
+			sb.Append(statuses);
 
 			using (SqlCommand Selectcommand = new SqlCommand())
 			{

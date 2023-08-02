@@ -10,6 +10,7 @@ namespace Micro.Objects.ICAS.LIBRARY
 		public string searchText { get; set; }
 		public string[] categories { get; set; }
 		public string[] segments { get; set; }
+		public string[] status { get; set; }
 		public int pageNo { get; set; }
 		public int pageSize { get; set; }
 	}

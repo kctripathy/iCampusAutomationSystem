@@ -87,24 +87,17 @@ namespace iCAS.APIWeb.Controllers
         public HttpResponseMessage GetBookImageById([FromUri] long id)
         {
             string path = String.Concat(HttpContext.Current.Server.MapPath("~/LibraryBook/Images"), "\\", id.ToString(), ".jpg");
-            //string imageUrl = String.Concat(ConfigurationManager.AppSettings["apiUrl"], "/LibraryBook/Images/0.jpg");
             if (!File.Exists(path))
             {
                 path = String.Concat(HttpContext.Current.Server.MapPath("~/LibraryBook/Images"), "\\0.jpg");
             }
 
             Byte[] imgData = System.IO.File.ReadAllBytes(path);   
-            //byte[] imgData = theList[0].SettingKeyValue;
             MemoryStream ms = new MemoryStream(imgData);
             HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
             response.Content = new StreamContent(ms);
             response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/png");
             return response;
-
-            //return new HttpResponseMessage(HttpStatusCode.OK)
-            //{
-            //    Content = new StringContent(JObject.FromObject(imageUrl).ToString(), Encoding.UTF8, "application/json")
-            //};
         }
 
         [HttpGet]
