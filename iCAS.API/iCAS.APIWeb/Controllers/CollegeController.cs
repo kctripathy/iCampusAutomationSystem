@@ -170,5 +170,18 @@ namespace iCAS.APIWeb.Controllers
         public void Delete(int id)
         {
         }
+
+        #region students
+        [Route("api/College/Students")]
+        public HttpResponseMessage GetStudents()
+        {
+            List<Staff> theList = StaffMasterManagement.GetInstance.GetStaffs();
+
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JArray.FromObject(theList).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+        #endregion
     }
 }

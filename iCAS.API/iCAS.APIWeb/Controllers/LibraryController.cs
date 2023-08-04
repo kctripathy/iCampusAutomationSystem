@@ -86,11 +86,13 @@ namespace iCAS.APIWeb.Controllers
         [Route("api/Library/Book/Image/{id}")]
         public HttpResponseMessage GetBookImageById([FromUri] long id)
         {
-            string path = String.Concat(HttpContext.Current.Server.MapPath("~/LibraryBook/Images"), "\\", id.ToString(), ".jpg");
-            if (!File.Exists(path))
-            {
-                path = String.Concat(HttpContext.Current.Server.MapPath("~/LibraryBook/Images"), "\\0.jpg");
-            }
+            string path = string.Concat(ConfigurationManager.AppSettings["uploadPdfPath"].ToString(), "PHOTO/", id.ToString(), ".jpg");
+
+            //string path = String.Concat(HttpContext.Current.Server.MapPath("~/LibraryBook/Images"), "\\", id.ToString(), ".jpg");
+            //if (!File.Exists(path))
+            //{
+            //    path = String.Concat(HttpContext.Current.Server.MapPath("~/LibraryBook/Images"), "\\0.jpg");
+            //}
 
             Byte[] imgData = System.IO.File.ReadAllBytes(path);   
             MemoryStream ms = new MemoryStream(imgData);
@@ -181,7 +183,8 @@ namespace iCAS.APIWeb.Controllers
                     };
                 }
                 //Create the Directory.
-                string path = HttpContext.Current.Server.MapPath("~/LibraryBook/Images");
+                //string path = HttpContext.Current.Server.MapPath("~/LibraryBook/Images");
+                string path = string.Concat(ConfigurationManager.AppSettings["uploadPdfPath"].ToString(), "PHOTO");
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);
@@ -234,7 +237,9 @@ namespace iCAS.APIWeb.Controllers
                     };
                 }
                 //Create the Directory.
-                string path = HttpContext.Current.Server.MapPath("~/LibraryBook/PDF");
+                //string path = HttpContext.Current.Server.MapPath("~/LibraryBook/PDF");
+                //string path = @"P:\tsdc\docs\backoffice.tsdcollege.in\Documents\LibraryBook\PDF";
+                string path = string.Concat(ConfigurationManager.AppSettings["uploadPdfPath"].ToString(), "PDF");
                 if (!Directory.Exists(path))
                 {
                     Directory.CreateDirectory(path);
