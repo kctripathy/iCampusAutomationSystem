@@ -43,6 +43,8 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                        ",", EstbTypeConstants.STAFF_PROFILE,
                        ",", EstbTypeConstants.STUDY_MATERIAL
                );
+
+        public bool isEdit { get; private set; }
         #region Declaration
 
         protected static class PageVariables
@@ -551,8 +553,6 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
         
         private bool IsValidQuestionInput()
         {
-            bool retValue = true;
-
             if (txt_NoticeTitle.Text.ToString().Trim() == "" ||
                 txt_Description.Text.ToString().Trim() == "" ||
                 txt_Description1.Text.ToString().Trim() == "" ||
@@ -580,7 +580,7 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                 dialog_Message.Show();
                 return false;
             }
-            else if (Session["fileName"].ToString() == "NA")
+            else if (this.isEdit == false && Session["fileName"].ToString() == "NA")
             {
                 lbl_TheMessage.Text = "Please upload the question paper!";
                 dialog_Message.Show();
@@ -588,7 +588,7 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             }
             else
             {
-                if ((txt_Description.Text.ToUpper().Trim() == "+3 SCIENCE") || (txt_Description1.Text.ToUpper().Trim() == "+3 ARTS")) { }
+                if ((txt_Description.Text.ToUpper().Trim() == "+3 SCIENCE") || (txt_Description.Text.ToUpper().Trim() == "+3 ARTS")) { }
                 else
                 {
                     lbl_TheMessage.Text = "Class must be in correct format!" + Environment.NewLine + "Like: +3 SCIENCE / +3 ARTS";
@@ -617,8 +617,8 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-
-            if(ddlEstbType.SelectedValue == "Q" && IsValidQuestionInput() == false)
+            this.isEdit = !((Button)sender).Text.Trim().Equals(MicroEnums.DataOperation.Save.GetStringValue());
+            if (ddlEstbType.SelectedValue == "Q" && IsValidQuestionInput() == false)
             {
                 return;
             }
