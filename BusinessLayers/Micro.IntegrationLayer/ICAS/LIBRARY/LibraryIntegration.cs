@@ -93,7 +93,6 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
 
 
 
-
         public static int SaveCategory(dynamic payload)
         {
             return LibraryDataAccess.GetInstance.SaveCategory(payload);
@@ -174,6 +173,34 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             theBookObj.IsActive = Boolean.Parse(dRow["IsActive"].ToString());
             
             return theBookObj;
+        }
+
+        public static int SaveLibrarySettings(List<LibrarySettingInput> payload)
+        {
+            return LibraryDataAccess.GetInstance.SaveLibrarySettings(payload);
+        }
+
+        public static List<LibrarySettings> GetLibrarySettings()
+        {
+            List<LibrarySettings> list = new List<LibrarySettings>();
+            DataTable dt = LibraryDataAccess.GetInstance.GetLibrarySettings();
+            foreach (DataRow dr in dt.Rows)
+            {
+                LibrarySettings s = new LibrarySettings
+                {
+                    SettingKeyName = dr["SettingKeyName"].ToString(),
+                    SettingValue = dr["SettingValue"].ToString(),
+                    EffectiveDateFrom = DateTime.Parse(dr["EffectiveDateFrom"].ToString()),
+                    IsActive = bool.Parse(dr["IsActive"].ToString())
+                };
+                if (dr["EffectiveDateTo"] != null && dr["EffectiveDateTo"].ToString() != "")
+                {
+                    s.EffectiveDateTo = DateTime.Parse(dr["EffectiveDateTo"].ToString());
+                }
+                list.Add(s);
+            }
+
+            return list;
         }
 
         public static List<BookViewModel> GetBooksListPage(PagingParameterModel pagingParameterModel)
@@ -360,8 +387,59 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             return BookSegmentList;
         }
 
+        public static int SaveLibraryTransaction(LibraryTransactionInputPayLoad payload)
+        {
+            return LibraryDataAccess.GetInstance.SaveLibraryTransaction(payload);
+        }
 
-		public static int InsertBookTransaction_ISSUE(BookTransaction b)
+        public static List<LibraryTransaction> GetLibraryTransactions(DateTime? fromDate = null, DateTime? toDate = null, int? userId = null)
+        {
+            List<LibraryTransaction> list = new List<LibraryTransaction>();
+            DataTable dt = LibraryDataAccess.GetInstance.GetLibraryTransactions(fromDate, toDate, userId);
+            foreach (DataRow dataRow in dt.Rows)
+            {
+                LibraryTransaction lt = new LibraryTransaction
+                {
+                    TRAN_ID = int.Parse(dataRow["TRAN_ID"].ToString()),
+                    BOOK_ID = Int64.Parse(dataRow["BOOK_ID"].ToString()),
+
+                    BOOK_ISSUE_DATE = DateTime.Parse(dataRow["BOOK_ISSUE_DATE"].ToString()),
+                    
+                    USER_ID = int.Parse(dataRow["USER_ID"].ToString()),
+                    USER_REF_ID = Int64.Parse(dataRow["USER_REF_ID"].ToString()),
+                    USER_TYPE = dataRow["USER_TYPE"].ToString(),
+                    USER_NAME = dataRow["USER_NAME"].ToString(),
+                    USER_FULL_NAME = dataRow["USER_FULL_NAME"].ToString(),
+                    AC_NO = int.Parse(dataRow["AC_NO"].ToString()),
+                    TITLE = dataRow["TITLE"].ToString(),
+
+                    FINE_AMOUNT_PER_DAY = double.Parse(dataRow["FINE_AMOUNT_PER_DAY"].ToString()),
+                    NO_OF_DAYS_CAN_KEEP = int.Parse(dataRow["NO_OF_DAYS_CAN_KEEP"].ToString()),
+                    NO_OF_DAYS_BOOK_KEPT = int.Parse(dataRow["NO_OF_DAYS_BOOK_KEPT"].ToString()),
+                    TOTAL_DAY_DUE_FOR_FINE = int.Parse(dataRow["TOTAL_DAY_DUE_FOR_FINE"].ToString()),
+                    TOTAL_FINE_AMOUNT = double.Parse(dataRow["TOTAL_FINE_AMOUNT"].ToString()),
+                    TOTAL_FINE_AMOUNT_PAID = double.Parse(dataRow["FINE_AMOUNT_PAID"].ToString()),
+                    FINE_AMOUNT_PAID_DATE = DateTime.Parse(dataRow["FINE_AMOUNT_PAID_DATE"].ToString()),
+
+                    BOOK_ISSUED_BY_USER_ID = int.Parse(dataRow["BOOK_ISSUED_BY_USER_ID"].ToString()),
+                    BOOK_ISSUED_BY_EMP_NAME = dataRow["BOOK_ISSUED_BY_EMP_NAME"].ToString(),
+                    
+                    BOOK_RECEIVED_BY_USER_ID = int.Parse(dataRow["BOOK_RECEIVED_BY_USER_ID"].ToString()),
+                    BOOK_RECEIVED_BY_EMP_NAME = dataRow["BOOK_RECEIVED_BY_EMP_NAME"].ToString(),
+                };
+
+                if (!dataRow["BOOK_RETURN_DATE"].ToString().Equals(""))
+                {
+                    lt.BOOK_RETURN_DATE = DateTime.Parse(dataRow["BOOK_RETURN_DATE"].ToString());
+                }
+
+                list.Add(lt);
+            }
+            return list;
+        }
+
+
+        public static int InsertBookTransaction_ISSUE(BookTransaction b)
 		{
 			return LibraryDataAccess.GetInstance.InsertBookTransaction_Issue(b);
 		}
@@ -369,7 +447,6 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
 		{
 			return LibraryDataAccess.GetInstance.InsertBookTransaction_Receive(b);
 		}
-
 		public static int InsertBookTransaction_MISSING(BookTransaction b)
 		{
 			return LibraryDataAccess.GetInstance.InsertBookTransaction_Missing(b);

@@ -215,5 +215,26 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
 			throw new NotImplementedException();
 		}
 
+        public List<LibrarySettings> GetLibrarySettings()
+        {
+            return LibraryIntegration.GetLibrarySettings();
+        }
+
+        public int SaveLibrarySettings(List<LibrarySettingInput> payload)
+        {
+            return LibraryIntegration.SaveLibrarySettings(payload);
+        }
+
+
+        public int SaveLibraryTransaction(LibraryTransactionInputPayLoad payload)
+        {
+            return LibraryIntegration.SaveLibraryTransaction(payload);
+        }
+
+        public List<LibraryTransaction> GetLibraryTransactions(DateTime? fromDate = null, DateTime? toDate = null, int? userId = null)
+        {
+            return LibraryIntegration.GetLibraryTransactions(fromDate, toDate, userId);
+        }
+
     }
 }

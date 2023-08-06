@@ -608,7 +608,6 @@ namespace iCAS.APIWeb.Controllers
 
         #endregion
 
-
         #region Supplier
         [HttpGet]
         [Route("api/Library/Supplier/List")]
@@ -688,6 +687,115 @@ namespace iCAS.APIWeb.Controllers
 
         #endregion
 
+        #region Settings
+        [HttpGet]
+        [Route("api/Library/Admin/Settings")]
+        public HttpResponseMessage GetLibrarySettings()
+        {
+            Response response = new Response();
+            try
+            {
+                List<LibrarySettings> list = LibraryManagement.GetInstance.GetLibrarySettings();
+                response.message = "Success";
+                response.data = list;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            catch (Exception)
+            {
+                response.message = "Failure";
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+        [HttpPost]
+        [Route("api/Library/Admin/SaveSettings")]
+        public HttpResponseMessage SaveLibrarySettings([FromBody] List<LibrarySettingInput> payload)
+        {
+            Response response = new Response();
+            try
+            {
+               int retValue = LibraryManagement.GetInstance.SaveLibrarySettings(payload);
+                response.message = "Success";
+                response.data = retValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            catch (Exception)
+            {
+                response.message = "Failure";
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+        #endregion
+
+        #region TRANSACTION
+
+
+        [HttpPost]
+        [Route("api/Library/Admin/Transaction/{userId}")]
+        public HttpResponseMessage SaveTransaction([FromBody] LibraryTransactionInputPayLoad payLoad,  int userId)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                long returnValue = LibraryManagement.GetInstance.SaveLibraryTransaction(payLoad);
+                response.message = "Success";
+                response.data = returnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                response.data = -4;
+                return new HttpResponseMessage(HttpStatusCode.Unauthorized)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+
+        [HttpPost]
+        [Route("api/Library/Admin/Transactions")]
+        public HttpResponseMessage GetLibraryTransactions([FromBody] LibrarySettingGetPayload payload)
+        {
+            Response response = new Response();
+            try
+            {
+                List<LibraryTransaction> list = LibraryManagement.GetInstance.GetLibraryTransactions(payload.fromDate, payload.toDate, payload.userId);
+                response.message = "Success";
+                response.data = list;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            catch (Exception)
+            {
+                response.message = "Failure";
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
+
+        #endregion
 
         #region Authentication
         private bool ValidateToken(int userId)

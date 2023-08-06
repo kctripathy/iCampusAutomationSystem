@@ -482,5 +482,99 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 			}
 		}
 
+
+
+
+		public DataTable GetLibrarySettings()
+		{
+			using (SqlCommand Selectcommand = new SqlCommand())
+			{
+				Selectcommand.CommandType = CommandType.StoredProcedure;
+				Selectcommand.CommandText = "pAPI_LIBRARY_SETTINGS_GET_ALL";
+				return ExecuteGetDataTable(Selectcommand);
+			}
+		}
+
+		public int SaveLibrarySettings(List<LibrarySettingInput> payload)
+		{
+			int RetValue = 0;
+			
+			string effective_date = payload.First(s => s.key == "rule_effective_from_date").value;
+			var newList = payload.Where(s => s.key != "rule_effective_from_date");
+
+            foreach (LibrarySettingInput item in newList)
+            {
+				using (SqlCommand InsertCommand = new SqlCommand())
+				{
+					InsertCommand.CommandType = CommandType.StoredProcedure;
+					InsertCommand.Parameters.Add(GetParameter("@key_name", SqlDbType.VarChar, item.key));
+					InsertCommand.Parameters.Add(GetParameter("@key_value", SqlDbType.VarChar, item.value));
+					InsertCommand.Parameters.Add(GetParameter("@effective_date", SqlDbType.Date, DateTime.Parse(effective_date)));
+					InsertCommand.CommandText = "[pAPI_LIBRARY_SETTINGS_SAVE]";
+					ExecuteStoredProcedure(InsertCommand);
+					RetValue++;
+				}
+			}
+			return RetValue;
+		}
+
+
+		public int SaveLibraryTransaction(LibraryTransactionInputPayLoad payload)
+		{
+			int RetValue = 0;
+            foreach (Int64 BOOK_ID in payload.BOOK_ID_LIST)
+            {
+				using (SqlCommand InsertCommand = new SqlCommand())
+				{
+					InsertCommand.CommandType = CommandType.StoredProcedure;
+					InsertCommand.Parameters.Add(GetParameter("@RETURN_VALUE", SqlDbType.Int, RetValue)).Direction = ParameterDirection.Output;
+					InsertCommand.Parameters.Add(GetParameter("@TRAN_ID", SqlDbType.Int, payload.TRAN_ID));
+					InsertCommand.Parameters.Add(GetParameter("@USER_REF_ID", SqlDbType.Int, payload.USER_REF_ID));
+					InsertCommand.Parameters.Add(GetParameter("@BOOK_ID", SqlDbType.BigInt, BOOK_ID));
+					InsertCommand.Parameters.Add(GetParameter("@BOOK_ISSUE_DATE", SqlDbType.DateTime, payload.BOOK_ISSUE_DATE));
+					InsertCommand.Parameters.Add(GetParameter("@BOOK_RETURN_DATE", SqlDbType.DateTime, payload.BOOK_RETURN_DATE));
+					InsertCommand.Parameters.Add(GetParameter("@FINE_AMOUNT_PER_DAY", SqlDbType.Decimal, payload.FINE_AMOUNT_PER_DAY));
+					InsertCommand.Parameters.Add(GetParameter("@FINE_AMOUNT_PAID", SqlDbType.Decimal, payload.FINE_AMOUNT_PAID));
+					InsertCommand.Parameters.Add(GetParameter("@RECEIPT_NO", SqlDbType.VarChar, payload.RECEIPT_NO));
+					InsertCommand.Parameters.Add(GetParameter("@NO_OF_DAYS_CAN_KEEP", SqlDbType.Int, payload.NO_OF_DAYS_CAN_KEEP));
+					InsertCommand.Parameters.Add(GetParameter("@TRAN_BY_USER_ID", SqlDbType.Int, payload.TRANSACTION_BY_USER_ID));
+
+					InsertCommand.CommandText = "[pAPI_LIBRARY_TRANSACTION_SAVE]";
+					ExecuteStoredProcedure(InsertCommand);
+					if (InsertCommand.Parameters[0].Value.ToString().Equals(string.Empty))
+					{
+						RetValue = -1;
+					}
+					else
+					{
+						RetValue = int.Parse(InsertCommand.Parameters[0].Value.ToString());
+					}
+				}
+			}
+			return RetValue;
+		}
+
+		public DataTable GetLibraryTransactions(DateTime? fromDate = null, DateTime? toDate = null, int? userId = null)
+		{
+			using (SqlCommand Selectcommand = new SqlCommand())
+			{
+				Selectcommand.CommandType = CommandType.StoredProcedure;
+				if (fromDate != null)
+                {
+					Selectcommand.Parameters.Add(GetParameter("@FROM_DATE", SqlDbType.DateTime, fromDate));
+                }
+				if (toDate != null)
+				{
+					Selectcommand.Parameters.Add(GetParameter("@TO_DATE", SqlDbType.DateTime, toDate));
+				}
+				if (userId != null)
+				{
+					Selectcommand.Parameters.Add(GetParameter("@USER_ID", SqlDbType.Int, userId));
+				}
+
+				Selectcommand.CommandText = "pAPI_LIBRARY_TRANSACTION_GET";
+				return ExecuteGetDataTable(Selectcommand);
+			}
+		}
 	}
 }
