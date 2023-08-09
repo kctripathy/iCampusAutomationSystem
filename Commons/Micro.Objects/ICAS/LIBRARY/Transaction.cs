@@ -83,10 +83,14 @@ namespace Micro.Objects.ICAS.LIBRARY
         public string value { get; set; }
     }
 
-    public class LibrarySettingGetPayload
+    public class LibraryTransactionGetPayload
     {
         public DateTime? fromDate { get; set; } = null;
         public DateTime? toDate { get; set; } = null;
         public int? userId { get; set; } = null;
+        public string tranType { get; set; }
+
+        public int pageNo { get; set; }
+        public int pageSize { get; set; }
     }
 }

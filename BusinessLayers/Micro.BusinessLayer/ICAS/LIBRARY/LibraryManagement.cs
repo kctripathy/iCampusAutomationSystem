@@ -231,9 +231,9 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
             return LibraryIntegration.SaveLibraryTransaction(payload);
         }
 
-        public List<LibraryTransaction> GetLibraryTransactions(DateTime? fromDate = null, DateTime? toDate = null, int? userId = null)
+        public List<LibraryTransaction> GetLibraryTransactions(DateTime? fromDate = null, DateTime? toDate = null, int? userId = null, string tranType = "I", int pageNo = 1, int pageSize = 50)
         {
-            return LibraryIntegration.GetLibraryTransactions(fromDate, toDate, userId);
+            return LibraryIntegration.GetLibraryTransactions(fromDate, toDate, userId, tranType, pageNo, pageSize);
         }
 
     }

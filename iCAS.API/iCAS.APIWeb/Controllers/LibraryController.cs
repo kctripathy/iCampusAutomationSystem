@@ -771,12 +771,12 @@ namespace iCAS.APIWeb.Controllers
 
         [HttpPost]
         [Route("api/Library/Admin/Transactions")]
-        public HttpResponseMessage GetLibraryTransactions([FromBody] LibrarySettingGetPayload payload)
+        public HttpResponseMessage GetLibraryTransactions([FromBody] LibraryTransactionGetPayload payload)
         {
             Response response = new Response();
             try
             {
-                List<LibraryTransaction> list = LibraryManagement.GetInstance.GetLibraryTransactions(payload.fromDate, payload.toDate, payload.userId);
+                List<LibraryTransaction> list = LibraryManagement.GetInstance.GetLibraryTransactions(payload.fromDate, payload.toDate, payload.userId, payload.tranType, payload.pageNo, payload.pageSize);
                 response.message = "Success";
                 response.data = list;
                 return new HttpResponseMessage(HttpStatusCode.OK)

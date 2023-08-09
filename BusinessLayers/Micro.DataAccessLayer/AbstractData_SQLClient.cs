@@ -237,10 +237,10 @@ namespace Micro.DataAccessLayer
 						{
 							string ErrorAtProcName = this.GetType().FullName.ToString() + "~" + oCommand.CommandText;
 							Exception ex = new Exception(ErrorAtProcName, e);
-							Log.Error(ex, true);
+							//Log.Error(ex, true);
 						}
-						else
-							Log.Error(e, true);
+						//else
+						//	Log.Error(e, true);
 					}
 					finally
 					{

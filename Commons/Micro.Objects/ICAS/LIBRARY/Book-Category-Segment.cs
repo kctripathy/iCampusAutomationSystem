@@ -125,6 +125,7 @@ namespace Micro.Objects.ICAS.LIBRARY
 		public string PHOTO { get; set; }
 
 		public int Issued2UserID { get; set; }
+		public string Issued2UserName { get; set; }
 		public bool IsActive { get; set; }
 	}
 

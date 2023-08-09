@@ -554,25 +554,34 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 			return RetValue;
 		}
 
-		public DataTable GetLibraryTransactions(DateTime? fromDate = null, DateTime? toDate = null, int? userId = null)
+		public DataTable GetLibraryTransactions(DateTime? fromDate = null, DateTime? toDate = null, int? userId = null, string tranType = "I", int pageNo = 1, int pageSize = 50)
 		{
 			using (SqlCommand Selectcommand = new SqlCommand())
 			{
 				Selectcommand.CommandType = CommandType.StoredProcedure;
-				if (fromDate != null)
-                {
-					Selectcommand.Parameters.Add(GetParameter("@FROM_DATE", SqlDbType.DateTime, fromDate));
-                }
-				if (toDate != null)
-				{
-					Selectcommand.Parameters.Add(GetParameter("@TO_DATE", SqlDbType.DateTime, toDate));
-				}
+				
+				
 				if (userId != null)
 				{
-					Selectcommand.Parameters.Add(GetParameter("@USER_ID", SqlDbType.Int, userId));
+					Selectcommand.Parameters.Add(GetParameter("@USER_REF_ID", SqlDbType.Int, userId));
+					Selectcommand.CommandText = "pAPI_LIBRARY_TRANSACTION_GET_ISSUED_TO_USER";
 				}
-
-				Selectcommand.CommandText = "pAPI_LIBRARY_TRANSACTION_GET";
+				else
+                {
+					if (fromDate != null)
+					{
+						Selectcommand.Parameters.Add(GetParameter("@FROM_DATE", SqlDbType.DateTime, fromDate));
+					}
+					if (toDate != null)
+					{
+						Selectcommand.Parameters.Add(GetParameter("@TO_DATE", SqlDbType.DateTime, toDate));
+					}
+					Selectcommand.Parameters.Add(GetParameter("@TRAN_TYPE", SqlDbType.VarChar, tranType));
+					Selectcommand.Parameters.Add(GetParameter("@PAGE_NO", SqlDbType.Int, pageNo));
+					Selectcommand.Parameters.Add(GetParameter("@PAGE_SIZE", SqlDbType.Int, pageSize));
+					Selectcommand.Parameters.Add(GetParameter("@USER_REF_ID", SqlDbType.Int, userId));
+					Selectcommand.CommandText = "pAPI_LIBRARY_TRANSACTION_GET_BOOKS_ISSUED";
+				}
 				return ExecuteGetDataTable(Selectcommand);
 			}
 		}

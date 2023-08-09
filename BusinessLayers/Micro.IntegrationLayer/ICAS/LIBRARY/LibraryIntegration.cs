@@ -169,6 +169,7 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             theBookObj.PHOTO = dRow["PHOTO"].ToString();
 
             theBookObj.Issued2UserID = dRow["Issued2UserID"] == null || dRow["Issued2UserID"].ToString() == "" ? -1 :  int.Parse(dRow["Issued2UserID"].ToString());
+            theBookObj.Issued2UserName = (dRow["Issued2UserName"] == null || dRow["Issued2UserName"].ToString() == "") ? "" :  dRow["Issued2UserName"].ToString();
             
             theBookObj.IsActive = Boolean.Parse(dRow["IsActive"].ToString());
             
@@ -392,10 +393,10 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             return LibraryDataAccess.GetInstance.SaveLibraryTransaction(payload);
         }
 
-        public static List<LibraryTransaction> GetLibraryTransactions(DateTime? fromDate = null, DateTime? toDate = null, int? userId = null)
+        public static List<LibraryTransaction> GetLibraryTransactions(DateTime? fromDate = null, DateTime? toDate = null, int? userId = null, string tranType = "I", int pageNo = 1, int pageSize = 50)
         {
             List<LibraryTransaction> list = new List<LibraryTransaction>();
-            DataTable dt = LibraryDataAccess.GetInstance.GetLibraryTransactions(fromDate, toDate, userId);
+            DataTable dt = LibraryDataAccess.GetInstance.GetLibraryTransactions(fromDate, toDate, userId, tranType, pageNo, pageSize);
             foreach (DataRow dataRow in dt.Rows)
             {
                 LibraryTransaction lt = new LibraryTransaction
