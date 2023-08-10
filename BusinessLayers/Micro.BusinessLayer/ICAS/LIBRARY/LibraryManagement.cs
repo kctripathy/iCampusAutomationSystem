@@ -236,5 +236,10 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
             return LibraryIntegration.GetLibraryTransactions(fromDate, toDate, userId, tranType, pageNo, pageSize);
         }
 
+        public List<LibraryTransactionSummary> GetLibraryTransactionSummary()
+        {
+            return LibraryIntegration.GetLibraryTransactionSummary();
+        }
+
     }
 }

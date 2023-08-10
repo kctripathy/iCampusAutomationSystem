@@ -585,5 +585,16 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 				return ExecuteGetDataTable(Selectcommand);
 			}
 		}
+
+		public DataTable GetLibraryTransactionSummary()
+		{
+			using (SqlCommand Selectcommand = new SqlCommand())
+			{
+				Selectcommand.CommandType = CommandType.StoredProcedure;
+				Selectcommand.CommandText = "pAPI_LIBRARY_TRANSACTION_BOOK_ISSUE_SUMMARY";
+				return ExecuteGetDataTable(Selectcommand);
+			}
+		}
+
 	}
 }

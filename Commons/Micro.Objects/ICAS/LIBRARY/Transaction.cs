@@ -93,4 +93,13 @@ namespace Micro.Objects.ICAS.LIBRARY
         public int pageNo { get; set; }
         public int pageSize { get; set; }
     }
+
+    public class LibraryTransactionSummary
+    {
+        public int USER_ID { get; set; }
+        public string USER_TYPE { get; set; }
+        public string USER_FULL_NAME { get; set; }
+        public int BOOKS_ISSUED { get; set; }
+        public double TOTAL_FINE_AMOUNT { get; set; }
+    }
 }

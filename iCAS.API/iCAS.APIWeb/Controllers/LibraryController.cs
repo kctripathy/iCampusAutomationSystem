@@ -794,6 +794,19 @@ namespace iCAS.APIWeb.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("api/Library/Admin/Transaction/Summary")]
+        public HttpResponseMessage GetLibraryTransactionSummary()
+        {
+            Response response = new Response();
+            List<LibraryTransactionSummary> list = LibraryManagement.GetInstance.GetLibraryTransactionSummary();
+            response.message = "Success";
+            response.data = list;
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
 
         #endregion
 

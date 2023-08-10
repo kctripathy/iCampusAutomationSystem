@@ -439,7 +439,23 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             return list;
         }
 
+        public static List<LibraryTransactionSummary> GetLibraryTransactionSummary()
+        {
+            List<LibraryTransactionSummary> list = new List<LibraryTransactionSummary>();
+            DataTable dt = LibraryDataAccess.GetInstance.GetLibraryTransactionSummary();
+            foreach (DataRow item in dt.Rows)
+            {
+                LibraryTransactionSummary t = new LibraryTransactionSummary();
+                t.USER_ID = int.Parse(item["USER_ID"].ToString());
+                t.USER_TYPE = item["USER_TYPE"].ToString();
+                t.USER_FULL_NAME = item["USER_FULL_NAME"].ToString();
+                t.BOOKS_ISSUED = int.Parse(item["BOOKS_ISSUED"].ToString());
+                t.TOTAL_FINE_AMOUNT = double.Parse(item["TOTAL_FINE_AMOUNT"].ToString());
 
+                list.Add(t);
+            }
+            return list;
+        }
         public static int InsertBookTransaction_ISSUE(BookTransaction b)
 		{
 			return LibraryDataAccess.GetInstance.InsertBookTransaction_Issue(b);
