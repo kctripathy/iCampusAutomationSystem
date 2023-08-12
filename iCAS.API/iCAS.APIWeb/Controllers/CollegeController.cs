@@ -3,9 +3,11 @@ using Micro.BusinessLayer.Administration;
 using Micro.BusinessLayer.HumanResource;
 using Micro.BusinessLayer.ICAS.ESTBLMT;
 using Micro.BusinessLayer.ICAS.STAFFS;
+using Micro.BusinessLayer.ICAS.STUDENT;
 using Micro.Objects.HumanResource;
 using Micro.Objects.ICAS.ESTBLMT;
 using Micro.Objects.ICAS.STAFFS;
+using Micro.Objects.ICAS.STUDENT;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -172,10 +174,11 @@ namespace iCAS.APIWeb.Controllers
         }
 
         #region students
+        [HttpPost]
         [Route("api/College/Students")]
-        public HttpResponseMessage GetStudents()
+        public HttpResponseMessage GetStudents([FromBody] StudentSearchPayload payload)
         {
-            List<Staff> theList = StaffMasterManagement.GetInstance.GetStaffs();
+            List<StudentViewModel> theList = StudentManagement.GetInstance.GetStudents(payload);
 
             return new HttpResponseMessage(HttpStatusCode.OK)
             {

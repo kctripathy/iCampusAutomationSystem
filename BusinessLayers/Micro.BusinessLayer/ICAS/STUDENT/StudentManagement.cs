@@ -148,5 +148,12 @@ namespace Micro.BusinessLayer.ICAS.STUDENT
 		{
 			throw new NotImplementedException();
 		}
-	}
+
+
+        public List<StudentViewModel> GetStudents(StudentSearchPayload payload)
+        {
+            return StudentIntegration.GetStudents(payload);
+        }
+
+    }
 }

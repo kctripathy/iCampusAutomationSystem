@@ -388,5 +388,26 @@ namespace Micro.Objects.ICAS.STUDENT
         {
             return obj.GetType().GetProperties();
         }
-    }  
+    }
+
+
+    public class StudentViewModel
+    {
+
+        public long StudentID { get; set; }
+        public string RollNo { get; set; }
+        public string Salutation { get; set; }
+        public string StudentName { get; set; }
+        public string FullName { get { return this.Salutation + ' ' + this.StudentName; } }
+        public string ClassName { get; set; }
+        public string StreamName { get; set; }
+
+    }
+
+    public class StudentSearchPayload
+    {
+        public int pageNo { get; set; }
+        public int pageSize { get; set; }
+        public string searchText { get; set; }
+    }
 } 
