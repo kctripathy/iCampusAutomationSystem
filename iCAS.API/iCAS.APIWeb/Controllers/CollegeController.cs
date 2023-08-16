@@ -4,6 +4,7 @@ using Micro.BusinessLayer.HumanResource;
 using Micro.BusinessLayer.ICAS.ESTBLMT;
 using Micro.BusinessLayer.ICAS.STAFFS;
 using Micro.BusinessLayer.ICAS.STUDENT;
+using Micro.Commons;
 using Micro.Objects.HumanResource;
 using Micro.Objects.ICAS.ESTBLMT;
 using Micro.Objects.ICAS.STAFFS;
@@ -16,6 +17,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Web;
 using System.Web.Http;
 
 namespace iCAS.APIWeb.Controllers
@@ -146,32 +148,56 @@ namespace iCAS.APIWeb.Controllers
             return response;
         }
 
-        // GET: api/College
-        public IEnumerable<string> Get()
+        public Byte[] ToByteArray(Stream stream)
         {
-            return new string[] { "value1", "value2" };
+            Int32 length = stream.Length > Int32.MaxValue ? Int32.MaxValue : Convert.ToInt32(stream.Length);
+            Byte[] buffer = new Byte[length];
+            stream.Read(buffer, 0, length);
+            return buffer;
         }
 
-        // GET: api/College/5
-        public string Get(int id)
+        [HttpPost]
+        [Route("api/College/Staff/{loggedOnUserId}/{id}/UploadPhoto")]
+        public HttpResponseMessage UploadStaffPhoto( int loggedOnUserId, int id)
         {
-            return "value";
+            Response response = new Response();
+            string token = GetRequestToken();
+            if (token.Length > 0 && UserManagement.GetInstance.ValidateToken(loggedOnUserId, token))
+            {
+                byte[] StaffImage = null;
+                response.message = "Success";
+                var base64String = Uri.UnescapeDataString(HttpContext.Current.Request.Form.ToString()).Split(',')[1];
+                using (MemoryStream ms = new MemoryStream(Convert.FromBase64String(base64String)))
+                {
+                    StaffImage = ToByteArray(ms);
+                }
+
+                EmployeeProfile TheEmployeeProfile = new EmployeeProfile();
+                TheEmployeeProfile.EmployeeID = id;
+                TheEmployeeProfile.SettingKeyName = MicroEnums.CommonKeyNames.EmployeeProfile.GetStringValue();
+                TheEmployeeProfile.SettingKeyID = 81;
+                TheEmployeeProfile.SettingKeyReference = "Photo";
+                TheEmployeeProfile.SettingKeyValue = StaffImage;
+
+                int ProcReturnValue = EmployeeProfileManagement.GetInstance.InsertEmployeeProfile(TheEmployeeProfile);
+                response.data = ProcReturnValue;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+                //return GetStaffPhoto(id);
+            }
+            else
+            {
+                response.message = "Access denied";
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            
         }
 
-        // POST: api/College
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/College/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/College/5
-        public void Delete(int id)
-        {
-        }
 
         #region students
         [HttpPost]
@@ -187,4 +213,5 @@ namespace iCAS.APIWeb.Controllers
         }
         #endregion
     }
+  
 }
