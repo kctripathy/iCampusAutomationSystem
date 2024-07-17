@@ -10,6 +10,7 @@ using Micro.Objects.ICAS.ESTBLMT;
 using System.IO;
 using LazZiya.ImageResize;
 using System.Drawing;
+using System.Text;
 
 namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
 {
@@ -42,6 +43,8 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                        ",", EstbTypeConstants.STAFF_PROFILE,
                        ",", EstbTypeConstants.STUDY_MATERIAL
                );
+
+        public bool isEdit { get; private set; }
         #region Declaration
 
         protected static class PageVariables
@@ -260,6 +263,8 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             PageVariables.theestablishment = null;
             btnSubmit.Text = MicroEnums.DataOperation.Save.GetStringValue();
             Establishment_multi.SetActiveView(InputControls);
+            setLabels();
+
         }
 
         #endregion
@@ -290,11 +295,11 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
 
             Establishment objEstablishment = new Establishment();
             objEstablishment.EstbTypeCode = ddlEstbType.SelectedValue; // rbl_EstablishmentTypeCode.SelectedValue;
-            objEstablishment.EstbTitle = txt_NoticeTitle.Text;
+            objEstablishment.EstbTitle = txt_NoticeTitle.Text.Trim();
             objEstablishment.EstbViewStartDate = DateTime.Parse(txt_Startdate.Text);
             objEstablishment.EstbViewEndDate = DateTime.Parse(txt_Startdate.Text).AddYears(99);
-            objEstablishment.EstbDescription = txt_Description.Text;
-            objEstablishment.EstbDescription1 = txt_Description1.Text;
+            objEstablishment.EstbDescription = ddlEstbType.SelectedValue == "Q"? txt_Description.Text.ToUpper().Trim() : txt_Description.Text.Trim();
+            objEstablishment.EstbDescription1 = ddlEstbType.SelectedValue == "Q" ? txt_Description1.Text.ToUpper().Trim() : txt_Description1.Text.Trim();
             objEstablishment.EstbDescription2 = txt_Description2.Text;
 
             if (Session["fileName"].ToString() != "NA")
@@ -349,17 +354,26 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             txt_Description1.Text = theestablishment.EstbDescription1.Replace("<br/>","\n");
             txt_Description2.Text = theestablishment.EstbDescription2.Replace("<br/>","\n");
 
+            setLabels();
+
+
         }
 
         public void Reset()
         {
-            //rbl_EstablishmentTypeCode.ClearSelection();
+            if (ddlEstbType.SelectedValue == "Q")
+            {
+
+            }
+            else
+            {
+                txt_Startdate.Text = DateTime.Now.ToString("dd-MMM-yyyy"); 
+                txt_Description.Text = string.Empty;
+                txt_Description1.Text = string.Empty;
+                txt_Description2.Text = string.Empty;
+            }
+
             txt_NoticeTitle.Text = string.Empty;
-            txt_Startdate.Text = DateTime.Now.ToString("dd-MMM-yyyy"); // string.Empty;
-            //txt_Enddate.Text = string.Empty;
-            txt_Description.Text = string.Empty;
-            txt_Description1.Text = string.Empty;
-            txt_Description2.Text = string.Empty;
             lbl_FileUploadStatus.Text = string.Empty;
 
         }
@@ -376,7 +390,7 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
 
                 if (fileUploadEstb.HasFile)
                 {
-                    string[] validFileTypes = { "pdf", "docx", "doc" };
+                    string[] validFileTypes = { "pdf" };
                     if (ddlEstbType.SelectedValue.Equals(EstbTypeConstants.PHOTO) || 
                         ddlEstbType.SelectedValue.Equals(EstbTypeConstants.STUDENT_ACHIEVEMENT))
                     {
@@ -489,6 +503,8 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
                     System.IO.File.Exists(Path.Combine(Server.MapPath("~/Documents"), fileNameWithPath))) {
                     System.IO.File.Delete(Path.Combine(Server.MapPath("~/Documents"), fileNameWithPath));
                 }
+                setLabels();
+
 
                 return theNewFileName;
 
@@ -503,14 +519,110 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
 
         #endregion
 
+        private void setLabels()
+        {
+            txt_Description2.Visible = true;
+            lbl_NoticeTitle.Text = "Title";
 
+            if (ddlEstbType.SelectedValue.Equals(EstbTypeConstants.QUESTION_PAPER))
+            {
+                lbl_NoticeTitle.Text = "Subject of the question paper:";
+                lbl_Description.Text = "Class:";
+                lbl_Description1.Text = "Semester:";
+                lbl_Description2.Text = "Year:";
+            }
+            else if (ddlEstbType.SelectedValue.Equals(EstbTypeConstants.PHOTO))
+            {
+                lbl_NoticeTitle.Text = "Caption of the Photo:";
+                lbl_Description.Text = "Description about the photo:";
+                txt_Description2.Visible = false;
+            }
+            else if (ddlEstbType.SelectedValue.Equals(EstbTypeConstants.STUDENT_ACHIEVEMENT))
+            {
+                lbl_NoticeTitle.Text = "Name of the student:";
+                lbl_Description.Text = "Class of the student:";
+                lbl_Description1.Text = "Description about the achievement:";
+            }
+            else
+            {
+                txt_Description.Height = 55;
+                txt_Description1.Height = 55;
+            }
+        }
 
         
+        private bool IsValidQuestionInput()
+        {
+            if (txt_NoticeTitle.Text.ToString().Trim() == "" ||
+                txt_Description.Text.ToString().Trim() == "" ||
+                txt_Description1.Text.ToString().Trim() == "" ||
+                txt_Description2.Text.ToString().Trim() == "" )
+            {
+                lbl_TheMessage.Text = "Please fill all fields and submit save";
+                dialog_Message.Show();
+                return false;
+            }
+            else if (txt_Description.Text.ToUpper().Trim() == "+3 SCIENCE | ARTS")
+            {
+                lbl_TheMessage.Text = "Please specify if +3 SCIENCE OR +3 ARTS!";
+                dialog_Message.Show();
+                return false;
+            }
+            else if (txt_Description1.Text.ToUpper().Trim() == "? SEMESTER EXAM")
+            {
+                lbl_TheMessage.Text = "Please specify which sememster!";
+                dialog_Message.Show();
+                return false;
+            }
+            else if (txt_Description2.Text.ToString().Length != 4)
+            {
+                lbl_TheMessage.Text = "Please provide year in 4 digits, like 2022, 2021, etc.!";
+                dialog_Message.Show();
+                return false;
+            }
+            else if (this.isEdit == false && Session["fileName"].ToString() == "NA")
+            {
+                lbl_TheMessage.Text = "Please upload the question paper!";
+                dialog_Message.Show();
+                return false;
+            }
+            else
+            {
+                if ((txt_Description.Text.ToUpper().Trim() == "+3 SCIENCE") || (txt_Description.Text.ToUpper().Trim() == "+3 ARTS")) { }
+                else
+                {
+                    lbl_TheMessage.Text = "Class must be in correct format!" + Environment.NewLine + "Like: +3 SCIENCE / +3 ARTS";
+                    dialog_Message.Show();
+                    return false;
+                };
 
-         
+                if ((txt_Description1.Text.ToUpper().Trim() == "1ST SEMESTER EXAM") ||
+                        (txt_Description1.Text.ToUpper().Trim() == "2ND SEMESTER EXAM") ||
+                        (txt_Description1.Text.ToUpper().Trim() == "3RD SEMESTER EXAM") ||
+                        (txt_Description1.Text.ToUpper().Trim() == "4TH SEMESTER EXAM") ||
+                        (txt_Description1.Text.ToUpper().Trim() == "5TH SEMESTER EXAM") ||
+                        (txt_Description1.Text.ToUpper().Trim() == "6TH SEMESTER EXAM")
+                   ) { }
+                else
+                {
+                    lbl_TheMessage.Text = "Semester must be in correct format!" + Environment.NewLine + "Like: 1ST SEMESTER EXAM /  2ND SEMESTER EXAM etc.";
+                    dialog_Message.Show();
+                    return false;
+                }; 
+            }
+            return true;
+        }
+
+
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
+            this.isEdit = !((Button)sender).Text.Trim().Equals(MicroEnums.DataOperation.Save.GetStringValue());
+            if (ddlEstbType.SelectedValue == "Q" && IsValidQuestionInput() == false)
+            {
+                return;
+            }
+
             int ProcReturnValue = (int)MicroEnums.DataOperationResult.Failure;
 
             if (((Button)sender).Text.Trim().Equals(MicroEnums.DataOperation.Save.GetStringValue()))
@@ -558,10 +670,10 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             }
         }
 
-        protected void Async_Upload_File(object sender, EventArgs e)
-        {
-            bool HasFile = fileUploadEstb.HasFile;
-        }
+        //protected void Async_Upload_File(object sender, EventArgs e)
+        //{
+        //    bool HasFile = fileUploadEstb.HasFile;
+        //}
         
         protected void Upload_File(object sender, EventArgs e)
         {

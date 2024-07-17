@@ -5,16 +5,105 @@ using System.Text;
 
 namespace Micro.Objects.ICAS.LIBRARY
 {
+	public class payload
+	{
+		public string searchText { get; set; }
+		public string[] categories { get; set; }
+		public string[] segments { get; set; }
+		public string[] status { get; set; }
+		public int pageNo { get; set; }
+		public int pageSize { get; set; }
+	}
 
-	public class BookViewModel
-    {
+	public class BookFetchModel
+	{
+		const int maxPageSize = 50;
+
+		public string searchText { get; set; }
+
+		public SearchCriteria searchCriteria { get; set; }
+
+		public int pageNumber { get; set; } = 1;
+
+		private int _pageSize { get; set; } = 50;
+
+		public int pageSize
+		{
+			get { return _pageSize; }
+			set
+			{
+				_pageSize = (value > maxPageSize) ? maxPageSize : value;
+			}
+		}
+	}
+
+	public class SearchCriteria
+	{
+		public List<string> categories { get; set; }
+		public List<string> segements { get; set; }
+
+	}
+
+	
+	public class LibraryBook
+	{
 		public Int64 BookID { get; set; }
-		public int CategoryID { get; set; }
-		public string Category { get; set; }
-
 		public string BookType { get; set; }
 		public string Title { get; set; }
+
+		public int SegmentID { get; set; }
+		public int AuthorID { get; set; } 
+		public int PublisherID { get; set; } 
+		public int SupplierID { get; set; } 
+		public int SubjectID { get; set; }
+		public int CategoryID { get; set; }
+		public int Issued2UserID { get; set; } 
+		  
+		public string AccessionNo { get; set; } 
+		public DateTime AccessionDate { get; set; } 
+		 
+		 
+		public string ClassNo { get; set; } 
+		public string Edition { get; set; } 
+		public string BookYear { get; set; } 
+		public string VolumeNo { get; set; } 
+		public int Pages { get; set; } 
+		public float BookPrice { get; set; } 
+		public string BookPriceDisplay { 
+			get
+            {
+				return String.Format("{0:0.00}", this.BookPrice);
+            }
+				
+		}
+
+		public string BillNo { get; set; } 
+		public DateTime? BillDate { get; set; } 
+		   
+		public string Remarks { get; set; } 
+		public string IBNNo { get; set; } 
+		 
+		public string Book_ImageURL_Small { get; set; } 
+		public string Book_ImageURL_Medium { get; set; } 
+		public string Book_Image_URL_Big { get; set; } 
+		public string Book_PDF_URL { get; set; } 
+		 
+		public bool IsActive { get; set; } 
+		public bool IsDeleted { get; set; } 
+
+		public string BookStatus { get; set; } 
+
+	}
+
+	public class BookViewModel
+	{
+		public Int64 BookID { get; set; }
+		public string BookType { get; set; }
 		public string AccessionNo { get; set; }
+		public DateTime AccessionDate { get; set; }
+		public string Title { get; set; }
+		public string BookStatus { get; set; }
+		public float BookPrice { get; set; }
 
 		public int AuthorID { get; set; }
 		public string Author { get; set; }
@@ -22,10 +111,22 @@ namespace Micro.Objects.ICAS.LIBRARY
 		public int PublisherID { get; set; }
 		public string Publisher { get; set; }
 
+		public int SupplierID { get; set; }
+		public string Supplier { get; set; }
+
+		public int CategoryID { get; set; }
+		public string CategoryCode { get; set; }
+		public string Category { get; set; }
+
 		public int SegmentID { get; set; }
 		public string Segment { get; set; }
 
-		public string IsBookIssued { get; set; }
+		public string PDF { get; set; }
+		public string PHOTO { get; set; }
+
+		public int Issued2UserID { get; set; }
+		public string Issued2UserName { get; set; }
+		public bool IsActive { get; set; }
 	}
 
 	public class BookDetail : BookViewModel
@@ -34,6 +135,26 @@ namespace Micro.Objects.ICAS.LIBRARY
 		//BookID BookType    SegmentID CategoryID  CategoryCode BillNo  BillDate AuthorID    PublisherID SupplierID  SubjectID AccessionNo AccessionDate ClassNo Title Edition BookYear VolumeNo    Pages BookPrice   Remarks IBNNo   Book_ImageURL_Small Book_ImageURL_Medium    Book_Image_URL_Big Book_PDF_URL    IsBookIssued Issued2UserID   Issued2UserName AddedBy AddedDated ModifiedBy  ModifiedDate VC_Field1   Nu_Field1 Dt_Field1   IsDeleted IsActive    BookStatus OfficeID    CompanyID
 		//10004099	GEN	13	44	Q	1015	2011-07-30 00:00:00.000	4264	1390	1041	NULL	4099	2011-12-01 00:00:00.000		+3 BHARAT ITASHA	2ND	2011		476	150.00	1	1	NULL NULL    NULL NULL    NO NULL    NULL	1	2017-12-30 08:33:40.460	NULL NULL    NULL NULL    NULL	0	1	NULL	44	8
 
+	}
+
+	public class LibrarySummary
+	{
+		public int totalBooks { get; set; }
+
+		public List<LibrarySummaryCategory> countBooksByCategory { get; set; }
+		
+		public List<LibrarySummarySegment> countBooksBySegment { get; set; }
+	}
+
+	public class LibrarySummaryCategory
+	{
+		public int ID { get; set; }
+		public string Name { get; set; }
+		public int Count { get; set; }
+	}
+
+	public class LibrarySummarySegment: LibrarySummaryCategory
+	{
 	}
 
 	[Serializable]
@@ -270,7 +391,7 @@ namespace Micro.Objects.ICAS.LIBRARY
 
 	}
 
-	[Serializable]
+	//[Serializable]
 	public class BookCategory
 	{
 		public int ID
@@ -292,7 +413,7 @@ namespace Micro.Objects.ICAS.LIBRARY
 		}
 	}
 
-	[Serializable]
+	//[Serializable]
 	public class BookSegment
 	{
 		public int ID

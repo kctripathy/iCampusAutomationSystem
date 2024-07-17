@@ -18,7 +18,7 @@ namespace TCon.iCAS.WebApplication
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            txtInfo.Text = Server.MapPath("~");
         }
 
         protected void lnk_test_Click(object sender, EventArgs e)

@@ -104,6 +104,72 @@ namespace Micro.Objects.ICAS.ESTBLMT
         }
     }
 
+    public class Establishment2Save
+    {
+        public int EstbID
+        {
+            get;
+            set;
+        }
+        public string EstbCode
+        {
+            get;
+            set;
+        }
+        public string EstbTypeCode
+        {
+            get;
+            set;
+        }
+
+        public DateTime EstbDate
+        {
+            get;
+            set;
+        }
+
+        public string EstbTitle
+        {
+            get;
+            set;
+
+        }
+        
+        public string EstbDesc
+        {
+            get;
+            set;
+        }
+        public string EstbDesc1
+        {
+            get;
+            set;
+        }
+        public string EstbDesc2
+        {
+            get;
+            set;
+        }
+        public string FileName
+        {
+            get;
+            set;
+        }
+
+        public string Author
+        {
+            get;
+            set;
+        }
+
+        public int AddedBy
+        {
+            get;
+            set;
+        }
+    }
+
+
     [Serializable]
     public class Establishment
     {

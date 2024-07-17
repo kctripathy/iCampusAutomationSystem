@@ -24,7 +24,28 @@ namespace Micro.Objects.ICAS.STAFFS
         public string DepartmentDescription { get; set; }
         public string DesignationDescription { get; set; }
 
+        public DateTime DateOfJoin { get; set; }
+        public string PresentAddress { get; set; }
+
+
+
         public int IsActive { get; set; }
+    }
+
+    public class Staff2Save
+    {
+        public int EmployeeID { get; set; }
+        public string EmployeeCode { get; set; }
+        public int DesignationID { get; set; }
+        public int DepartmentID { get; set; }
+        public string Salutation { get; set; }
+        public string EmployeeName { get; set; }
+        public string EMailID { get; set; }
+        public string Mobile { get; set; }
+        public DateTime DateOfJoin { get; set; }
+        public string PresentAddress { get; set; }
+        public int SavedByUserId { get; set; }
+
     }
 
     [Serializable]

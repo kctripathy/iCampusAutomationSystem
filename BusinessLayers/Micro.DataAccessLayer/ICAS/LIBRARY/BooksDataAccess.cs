@@ -12,71 +12,6 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 	public partial class LibraryDataAccess : AbstractData_SQLClient
 	{
 
-		public DataTable GetBook_BookSegments()
-		{
-			//throw new NotImplementedException();
-			using (SqlCommand Selectcommand = new SqlCommand())
-			{
-				Selectcommand.CommandType = CommandType.StoredProcedure;
-				Selectcommand.CommandText = "[pICAS_Library_BookSegments_SelectAll]";
-				return ExecuteGetDataTable(Selectcommand);
-			}
-		}
-		public DataTable GetBook_Categories()
-		{
-			using (SqlCommand Selectcommand = new SqlCommand())
-			{
-				Selectcommand.CommandType = CommandType.StoredProcedure;
-				Selectcommand.CommandText = "[pICAS_Library_BookCategories_SelectAll]";
-				return ExecuteGetDataTable(Selectcommand);
-			}
-		}
-		public DataTable GetBook_Authors()
-		{
-			using (SqlCommand Selectcommand = new SqlCommand())
-			{
-				Selectcommand.CommandType = CommandType.StoredProcedure;
-				Selectcommand.CommandText = "[pICAS_Library_Authors_SelectAll]";
-				return ExecuteGetDataTable(Selectcommand);
-			}
-		}
-		public DataTable GetBook_Publishers()
-		{
-			using (SqlCommand Selectcommand = new SqlCommand())
-			{
-				Selectcommand.CommandType = CommandType.StoredProcedure;
-				Selectcommand.CommandText = "[pICAS_Library_BookPublishers_SelectAll]";
-				return ExecuteGetDataTable(Selectcommand);
-			}
-		}
-		public DataTable GetBook_Suppliers()
-		{
-			using (SqlCommand Selectcommand = new SqlCommand())
-			{
-				Selectcommand.CommandType = CommandType.StoredProcedure;
-				Selectcommand.CommandText = "[pICAS_Library_BookSuppliers_SelectAll]";
-				return ExecuteGetDataTable(Selectcommand);
-			}
-		}
-		public DataTable GetLibraryBooksList_Distinct()
-		{
-			using (SqlCommand Selectcommand = new SqlCommand())
-			{
-				Selectcommand.CommandType = CommandType.StoredProcedure;
-				Selectcommand.CommandText = "[pICAS_Library_Books_SelectAllUnique]";
-				return ExecuteGetDataTable(Selectcommand);
-			}
-		}
-		public DataTable GetLibraryBooks_Count()
-		{
-			using (SqlCommand Selectcommand = new SqlCommand())
-			{
-				Selectcommand.CommandType = CommandType.StoredProcedure;
-				Selectcommand.CommandText = "[pICAS_Library_Books_Count]";
-				return ExecuteGetDataTable(Selectcommand);
-			}
-		}
-
 
 		public DataTable GetLibraryBooksList(bool showDeleted = false)
 		{
@@ -89,6 +24,71 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 			}
 		}
 
+
+		public DataTable GetBook_Categories()
+		{
+			using (SqlCommand Selectcommand = new SqlCommand())
+			{
+				Selectcommand.CommandType = CommandType.StoredProcedure;
+				Selectcommand.CommandText = "[pICAS_Library_BookCategories_SelectAll]";
+				return ExecuteGetDataTable(Selectcommand);
+			}
+		}
+
+		public DataTable GetBook_Authors()
+		{
+			using (SqlCommand Selectcommand = new SqlCommand())
+			{
+				Selectcommand.CommandType = CommandType.StoredProcedure;
+				Selectcommand.CommandText = "[pICAS_Library_Authors_SelectAll]";
+				return ExecuteGetDataTable(Selectcommand);
+			}
+		}
+
+		
+
+
+		public DataTable GetBook_Publishers()
+		{
+			using (SqlCommand Selectcommand = new SqlCommand())
+			{
+				Selectcommand.CommandType = CommandType.StoredProcedure;
+				Selectcommand.CommandText = "[pICAS_Library_BookPublishers_SelectAll]";
+				return ExecuteGetDataTable(Selectcommand);
+			}
+		}
+
+		public DataTable GetBook_Suppliers()
+		{
+			using (SqlCommand Selectcommand = new SqlCommand())
+			{
+				Selectcommand.CommandType = CommandType.StoredProcedure;
+				Selectcommand.CommandText = "[pICAS_Library_BookSuppliers_SelectAll]";
+				return ExecuteGetDataTable(Selectcommand);
+			}
+		}
+
+		public DataTable GetLibraryBooksList_Distinct()
+		{
+			using (SqlCommand Selectcommand = new SqlCommand())
+			{
+				Selectcommand.CommandType = CommandType.StoredProcedure;
+				Selectcommand.CommandText = "[pICAS_Library_Books_SelectAllUnique]";
+				return ExecuteGetDataTable(Selectcommand);
+			}
+		}
+
+		public DataTable GetLibraryBooks_Count()
+		{
+			using (SqlCommand Selectcommand = new SqlCommand())
+			{
+				Selectcommand.CommandType = CommandType.StoredProcedure;
+				Selectcommand.CommandText = "[pICAS_Library_Books_Count]";
+				return ExecuteGetDataTable(Selectcommand);
+			}
+		}
+
+
 		public DataTable GetBooksListPage(PagingParameterModel pagingParameterModel)
 		{
 			using (SqlCommand Selectcommand = new SqlCommand())
@@ -97,6 +97,24 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 				Selectcommand.Parameters.Add(GetParameter("@PageNo", SqlDbType.Int, pagingParameterModel.pageNumber)); 
 				Selectcommand.Parameters.Add(GetParameter("@PageSize", SqlDbType.Int, pagingParameterModel.pageSize)); 
 				Selectcommand.CommandText = "pICAS_Library_Books_SelectAllByPageInfo";
+				return ExecuteGetDataTable(Selectcommand);
+			}
+		}
+
+
+		/// <summary>
+		/// This is being called by library application
+		/// </summary>
+		/// <param name="pagingParameterModel"></param>
+		/// <returns></returns>
+		public DataTable GetLibraryBooks(PagingParameterModel pagingParameterModel)
+		{
+			using (SqlCommand Selectcommand = new SqlCommand())
+			{
+				Selectcommand.CommandType = CommandType.StoredProcedure;
+				Selectcommand.Parameters.Add(GetParameter("@PageNo", SqlDbType.Int, pagingParameterModel.pageNumber));
+				Selectcommand.Parameters.Add(GetParameter("@PageSize", SqlDbType.Int, pagingParameterModel.pageSize));
+				Selectcommand.CommandText = "[pAPI_GET_LIBRARY_BOOKS]";
 				return ExecuteGetDataTable(Selectcommand);
 			}
 		}
@@ -157,6 +175,7 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 
 			return ReturnValue;
 		}
+		
 		public int InsertNewBook(Book b)
 		{
 
@@ -286,5 +305,13 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 			//throw new NotImplementedException();
 			return 1;
 		}
+
+
+		#region for API calling 
+
+
+
+		#endregion
+
 	}
 }

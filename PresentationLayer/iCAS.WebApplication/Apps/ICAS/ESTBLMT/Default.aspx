@@ -99,15 +99,35 @@
             var lblDescription2 = document.getElementById('<%= lbl_Description2.ClientID %>');
 
             lblPageTitle.innerHTML = estbText;
+            debugger;
 
             if (estbValue == 'Y') {
                 lblTitle.innerHTML = "Please enter the name of the student to be displyed in the " + titleCase(estbText) + " section of the website:";
                 lblDescription.innerHTML = "Class of the student:"
                 lblDescription1.innerHTML = "Description about " + titleCase(estbText) + ":";
                 lblDescription2.innerHTML = "Description (paragraph 1) about " + titleCase(estbText) + ":";
-                textAreaAdjust('20px');
+                textAreaAdjust('25px');
             }
-            else {
+            if (estbValue == 'Q') {
+                lblTitle.innerHTML = "Please enter the subject of the " + titleCase(estbText);
+                lblDescription.innerHTML = "Class:"
+
+                var txtDesc = document.getElementById('<%= txt_Description.ClientID %>');
+                txtDesc.value = "+3 SCIENCE | ARTS";
+                txtDesc.style.height = "25px";
+
+                lblDescription1.innerHTML = "Semester:";
+                var txtAreaDesc1 = document.getElementById('<%= txt_Description1.ClientID %>');
+                txtAreaDesc1.value = "? SEMESTER EXAM";
+                txtAreaDesc1.style.height = "25px";
+
+                lblDescription2.innerHTML = "Year:";
+                var txtAreaDesc2 = document.getElementById('<%= txt_Description2.ClientID %>');
+                txtAreaDesc2.value = "";
+                txtAreaDesc2.style.height = "25px";
+
+                lblDescription2.innerHTML = "Additional info (if any) " + titleCase(estbText) + ":";
+            }else {
                 lblTitle.innerHTML = "Title for the " + titleCase(estbText) + ":";
                 lblDescription.innerHTML = "Description for " + titleCase(estbText) + ":";
                 lblDescription1.innerHTML = "Description (paragraph 1) for " + titleCase(estbText) + ":";
@@ -131,7 +151,7 @@
                 lblUploadLabel.innerHTML = "Please choose a file/photo to upload (pdf / doc / docx / jpg / jpeg / png / gif) Max.(4MB):";
             }
             else {
-                lblUploadLabel.innerHTML = "Please choose a file to upload (pdf / doc / docx) Max.(4MB):";
+                lblUploadLabel.innerHTML = "Please choose a PDF file to upload (Max. 4MB):";
             }
         }
 
@@ -265,7 +285,25 @@
                         </li>
 
                         
+<%--                        <asp:Panel runat="server" ID="pnlQuestionPaper" Visible="true">
+                             <li class="FormLabelFullWidth" style="margin-top:10px;">
+                                 <b>Class:</b>
+                                 <asp:RadioButtonList runat="server" ID="rblClass" onchange="javascript: onEstbClassChange(this);">
+                                     <asp:ListItem Text="+3 ARTS" Value="+3 ARTS"></asp:ListItem>
+                                     <asp:ListItem Text="+3 SCIENCE" Value="+3 SCIENCE"></asp:ListItem>
+                                 </asp:RadioButtonList>
 
+                                 <b>Semester:</b>
+                                 <asp:DropDownList runat="server" ID="ddlSemester" onchange="javascript: onEstbSemesterChange(this);">
+                                     <asp:ListItem Text="SEMESTER - 1" Value="SEMESTER - 1"></asp:ListItem>
+                                     <asp:ListItem Text="SEMESTER - 2" Value="SEMESTER - 2"></asp:ListItem>
+                                     <asp:ListItem Text="SEMESTER - 3" Value="SEMESTER - 3"></asp:ListItem>
+                                     <asp:ListItem Text="SEMESTER - 4" Value="SEMESTER - 4"></asp:ListItem>
+                                     <asp:ListItem Text="SEMESTER - 5" Value="SEMESTER - 5"></asp:ListItem>
+                                     <asp:ListItem Text="SEMESTER - 6" Value="SEMESTER - 6"></asp:ListItem>
+                                 </asp:DropDownList>
+                            </li>
+                        </asp:Panel>--%>
 
 
                         <li class="FormLabelFullWidth">
@@ -283,31 +321,32 @@
                         </li>
                         
 
-                         <li class="FormLabelFullWidth" style="margin-top:10px;">
-                            <asp:Label ID="lbl_Description" runat="server" Text="Description:" />
-                            <span class="RequiredField">*</span>
-                        </li>
-                        <li class="FormvalueFullWidth">
-                            <asp:TextBox ID="txt_Description" runat="server" CssClass="estb-desc" TextMode="MultiLine" />
-                            <asp:RequiredFieldValidator ID="RequiredFieldValidator_Description" runat="server" ControlToValidate="txt_Description" ErrorMessage="*" ForeColor="Red" Text="required" />
-                        </li>
+                        <%--<asp:Panel runat="server" ID="allOthers" Visible="true">--%>
+                             <li class="FormLabelFullWidth" style="margin-top:5px;">
+                                <asp:Label ID="lbl_Description" runat="server" Text="Description:" />
+                                <span class="RequiredField">*</span>
+                            </li>
+                            <li class="FormvalueFullWidth">
+                                <asp:TextBox ID="txt_Description" runat="server" CssClass="estb-desc" TextMode="MultiLine" Rows="1" Height="25"/>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Description" runat="server" ControlToValidate="txt_Description" ErrorMessage="*" ForeColor="Red" Text="required" />
+                            </li>
 
-                        <li class="FormLabelFullWidth" style="margin-top:10px;">
-                            <asp:Label ID="lbl_Description1" runat="server" Text="Description (Paragraph 1):" />
-                        </li>
-                        <li class="FormvalueFullWidth">
-                            <asp:TextBox ID="txt_Description1" runat="server" CssClass="estb-desc" TextMode="MultiLine" />
-                        </li>
+                            <li class="FormLabelFullWidth" style="margin-top:5px;">
+                                <asp:Label ID="lbl_Description1" runat="server" Text="Description (Paragraph 1):" />
+                            </li>
+                            <li class="FormvalueFullWidth">
+                                <asp:TextBox ID="txt_Description1" runat="server" CssClass="estb-desc" TextMode="MultiLine" Rows="1" Height="25"/>
+                            </li>
 
                         
-                        <li class="FormLabelFullWidth" style="margin-top:10px;">
-                            <asp:Label ID="lbl_Description2" runat="server" Text="Description (Paragraph 2):" />
-                        </li>
-                        <li class="FormvalueFullWidth">
-                            <asp:TextBox ID="txt_Description2" runat="server" CssClass="estb-desc" TextMode="MultiLine" />
-                        </li>
-
-                        <li class="FormLabelFullWidth" style="margin-top:10px;">
+                            <li class="FormLabelFullWidth" style="margin-top:5px;">
+                                <asp:Label ID="lbl_Description2" runat="server" Text="Description (Paragraph 2):" />
+                            </li>
+                            <li class="FormvalueFullWidth">
+                                <asp:TextBox ID="txt_Description2" runat="server" CssClass="estb-desc" TextMode="MultiLine" Rows="1" Height="25" />
+                            </li>
+                        <%--</asp:Panel>--%>
+                        <li class="FormLabelFullWidth" style="margin-top:5px;">
                             <asp:Label ID="Label1" runat="server" Text="Choose a file to Upload:" />
                         </li>
                         
@@ -315,7 +354,7 @@
                             <asp:UpdatePanel ID="UpdatePanel1" runat="server">
                                 <ContentTemplate>
                                     <asp:FileUpload runat="server" ID="fileUploadEstb" Width="63%" BorderStyle="Solid" BorderWidth="1" BorderColor="DarkGray" class="btn btn-outline-primary btn-xs" />
-                                    <asp:Button ID="btnUpload" runat="server" Text="UPLOAD FILE" OnClick="Upload_File" CssClass="btn btn-primary m-2 p-2" CausesValidation="false" OnClientClick="return validate();" />
+                                    <asp:Button ID="btnUpload" runat="server" Text="UPLOAD FILE" OnClick="Upload_File" CssClass="btn btn-primary m-2 p-2" CausesValidation="false" />
                                     <br />
                                     <asp:Label runat="server" ID="lbl_FileUploadStatus" ForeColor="Red" Text="File uploaded successfully. please save/update the record now" Visible="false" />
                                 </ContentTemplate>

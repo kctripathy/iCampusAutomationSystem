@@ -97,9 +97,9 @@ namespace Micro.DataAccessLayer.ICAS.ESTBLMT
                 insCmd.Parameters.Add(GetParameter("@ESTB_UPLOADED_FILETYPE", SqlDbType.VarChar, oEstb.EstbUploadFileType));
                 insCmd.Parameters.Add(GetParameter("@ESTB_VIEW_START_DATE", SqlDbType.DateTime, oEstb.EstbViewStartDate));
                 insCmd.Parameters.Add(GetParameter("@ESTB_VIEW_END_DATE", SqlDbType.DateTime, oEstb.EstbViewEndDate));
-                insCmd.Parameters.Add(GetParameter("@ESTBSTATUSFLAG", SqlDbType.VarChar, "Pending"));
-                insCmd.Parameters.Add(GetParameter("@OfficeID", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.OfficeID));
-                insCmd.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserReferenceID));
+                insCmd.Parameters.Add(GetParameter("@ESTBSTATUSFLAG", SqlDbType.VarChar, oEstb.EstbStatusFlag));
+                insCmd.Parameters.Add(GetParameter("@OfficeID", SqlDbType.Int, 44));
+                insCmd.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, oEstb.AddedBy));
                 insCmd.Parameters.Add(GetParameter("@VC_FIELD1", SqlDbType.VarChar, oEstb.PublicationAuthorName));
                 insCmd.Parameters.Add(GetParameter("@VC_FIELD2", SqlDbType.VarChar, oEstb.FileNameWithPath));
 
@@ -133,11 +133,11 @@ namespace Micro.DataAccessLayer.ICAS.ESTBLMT
                 UpdateCommand.Parameters.Add(GetParameter("@EstbDate", SqlDbType.DateTime, theestablishment.EstbDate));
                 UpdateCommand.Parameters.Add(GetParameter("@EstbMessage", SqlDbType.VarChar, theestablishment.EstbMessage));
                // UpdateCommand.Parameters.Add(GetParameter("@EstbUploadFile", SqlDbType.VarBinary, theestablishment.EstbUploadFile));
-                UpdateCommand.Parameters.Add(GetParameter("@EstbViewStartDate", SqlDbType.DateTime, theestablishment.EstbViewStartDate));
-                UpdateCommand.Parameters.Add(GetParameter("@EstbViewEndDate", SqlDbType.DateTime, theestablishment.EstbViewEndDate));
+                UpdateCommand.Parameters.Add(GetParameter("@EstbViewStartDate", SqlDbType.DateTime, theestablishment.EstbDate.AddDays(-1)));
+                UpdateCommand.Parameters.Add(GetParameter("@EstbViewEndDate", SqlDbType.DateTime, theestablishment.EstbDate.AddYears(99)));
                 UpdateCommand.Parameters.Add(GetParameter("@VC_FIELD1", SqlDbType.VarChar, theestablishment.PublicationAuthorName));
                 UpdateCommand.Parameters.Add(GetParameter("@VC_FIELD2", SqlDbType.VarChar, theestablishment.FileNameWithPath));
-               UpdateCommand.Parameters.Add(GetParameter("@ModifiedBy", SqlDbType.Int, 1));
+               UpdateCommand.Parameters.Add(GetParameter("@ModifiedBy", SqlDbType.Int, theestablishment.AddedBy));
 
                 UpdateCommand.CommandText = "[pICAS_ESTB_Update_Record]";
                 ExecuteStoredProcedure(UpdateCommand);
@@ -220,15 +220,54 @@ namespace Micro.DataAccessLayer.ICAS.ESTBLMT
         //        RejectCommand.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserID));
         //        ExecuteStoredProcedure(RejectCommand);
         //        ReturnValue = int.Parse(RejectCommand.Parameters[0].Value.ToString());
-            
+
         //    }
         //    return ReturnValue;
-        
+
         //}
-      
-       
+
+
         #endregion
 
+        #region API 
+        public long UpdateFileName(long id, string fileName)
+        {
+            try
+            {
+                string SQL_STMT = $"UPDATE [ICAS_Establishments] SET VC_FIELD2='{fileName}' WHERE [EstbID]={id}";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = SQL_STMT;
+                    ExecuteSqlStatement(cmd);
+                }
+                return id;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+        }
+
+        public long UpdateStatusFlag(long id, string newStatus)
+        {
+            try
+            {
+                string SQL_STMT = $"UPDATE [ICAS_Establishments] SET EstbStatusFlag='{newStatus}' WHERE [EstbID]={id}";
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = SQL_STMT;
+                    ExecuteSqlStatement(cmd);
+                }
+                return id;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+        }
+        #endregion
 
 
         public object EstbSatusFlag { get; set; }

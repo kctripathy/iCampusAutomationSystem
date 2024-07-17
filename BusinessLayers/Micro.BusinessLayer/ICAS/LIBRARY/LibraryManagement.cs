@@ -97,6 +97,12 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
             }           
             return NewAccessionNo;
         }
+
+        public List<BookViewModel> GetLibraryBooksList(payload payload)
+        {
+            return LibraryIntegration.GetLibraryBooksList(payload);
+        }
+
         public int GetBooks_Count()
         {
             return LibraryIntegration.GetBooks_Count();
@@ -111,39 +117,87 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
         }
         #endregion
 
-        public List<BookCategory> GetBook_Categories()
+        public List<BookCategory> GetBook_Categories(bool havingBooks = false)
         {
-            return LibraryIntegration.GetBook_Categories();
+            return LibraryIntegration.GetBook_Categories(havingBooks);
         }
 
         public List<Author> GetBook_Authors()
         {
-            //throw new NotImplementedException();
             return LibraryIntegration.GetBook_Authors();
         }
 
         public List<Supplier> GetBook_Suppliers()
         {
-            //throw new NotImplementedException();
             return LibraryIntegration.GetBook_Suppliers();
         }
 
         public List<Publisher> GetBook_Publishers()
         {
-            //throw new NotImplementedException();
             return LibraryIntegration.GetBook_Publishers();
         }
 
-        public List<BookSegment> GetBook_BookSegments()
+        public List<BookSegment> GetBook_BookSegments(bool onlyBooksHavingSegment = false)
         {
-            //throw new NotImplementedException();
-            return LibraryIntegration.GetBook_Segments();
+            return LibraryIntegration.GetBook_Segments(onlyBooksHavingSegment);
         }
 		public int InsertBookTransaction_ISSUE(BookTransaction b)
 		{
 			return LibraryIntegration.InsertBookTransaction_ISSUE(b);
 		}
-		public int InsertBookTransaction_RECEIVE(BookTransaction b)
+
+        public int SaveSegment(dynamic payload)
+        {
+            return LibraryIntegration.SaveSegment(payload);
+        }
+
+        public int DeleteSegment(int id)
+        {
+            return LibraryIntegration.DeleteSegment(id);
+        }
+
+
+        public int SaveCategory(dynamic payload)
+        {
+            return LibraryIntegration.SaveCategory(payload);
+        }
+
+        public int DeleteCategory(int id)
+        {
+            return LibraryIntegration.DeleteCategory(id);
+        }
+
+
+        public int SaveAuthor(dynamic payload)
+        {
+            return LibraryIntegration.SaveAuthor(payload);
+        }
+        public int DeleteAuthor(int id)
+        {
+            return LibraryIntegration.DeleteAuthor(id);
+        }
+
+
+        public int SavePublisher(dynamic payload)
+        {
+            return LibraryIntegration.SavePublisher(payload);
+        }
+        public int DeletePublisher(int id)
+        {
+            return LibraryIntegration.DeletePublisher(id);
+        }
+
+        public int SaveSupplier(dynamic payload)
+        {
+            return LibraryIntegration.SaveSupplier(payload);
+        }
+        public int DeleteSupplier(int id)
+        {
+            return LibraryIntegration.DeleteSupplier(id);
+        }
+
+
+        public int InsertBookTransaction_RECEIVE(BookTransaction b)
 		{
 			return LibraryIntegration.InsertBookTransaction_RECEIVE(b);
 		}
@@ -160,5 +214,32 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
 		{
 			throw new NotImplementedException();
 		}
-	}
+
+        public List<LibrarySettings> GetLibrarySettings()
+        {
+            return LibraryIntegration.GetLibrarySettings();
+        }
+
+        public int SaveLibrarySettings(List<LibrarySettingInput> payload)
+        {
+            return LibraryIntegration.SaveLibrarySettings(payload);
+        }
+
+
+        public int SaveLibraryTransaction(LibraryTransactionInputPayLoad payload)
+        {
+            return LibraryIntegration.SaveLibraryTransaction(payload);
+        }
+
+        public List<LibraryTransaction> GetLibraryTransactions(DateTime? fromDate = null, DateTime? toDate = null, int? userId = null, string tranType = "I", int pageNo = 1, int pageSize = 50)
+        {
+            return LibraryIntegration.GetLibraryTransactions(fromDate, toDate, userId, tranType, pageNo, pageSize);
+        }
+
+        public List<LibraryTransactionSummary> GetLibraryTransactionSummary()
+        {
+            return LibraryIntegration.GetLibraryTransactionSummary();
+        }
+
+    }
 }

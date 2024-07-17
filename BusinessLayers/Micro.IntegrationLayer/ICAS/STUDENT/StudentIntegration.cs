@@ -82,6 +82,77 @@ namespace Micro.IntegrationLayer.ICAS.STUDENT
 
             return TheStudent;
         }
+
+        public static StudentViewModel DataRowToStudentVidwModelObject(DataRow dr)
+        {
+
+//SessionID StudentID   StudentCode MRINO   ReceiptNo TCNo    RollNo ClassID ClassName QualID  QualName StreamID    StreamName Salutation  StudentName FatherName  MotherName Gender  Caste PHStatus    Status TotalFeesPaid   DateOfAdmission DateOfLeaving   DateOfBirth AGE Address_Present_TownOrCity Address_Present_Landmark    Address_Present_PinCode Address_Present_DistrictID  Address_Present_DistrictName Address_Present_StateName   Address_Present_CountryName Address_Permanent_TownOrCity    Address_Permanent_Landmark Address_Permanent_PinCode   Address_Permanent_DistrictID Address_Permanent_DistrictName  Address_Permanent_StateName Address_Permanent_CountryName   LandPhoneNumber MobileNumber    EMailID IsActive    IsDeleted
+//39  10000000    IA17 - 001    11162102 / 0160   NULL NULL    IA17 - 001    10 + 2 SECOND YEAR ARTS 2   INTERMEDIATE    2   ARTS Mr.	ANIL KUMAR SWAIN GANESHA SWAIN NULL    Male OBC NULL NULL    NULL    2017 - 06 - 16 00:00:00.000 NULL    2002 - 02 - 22 00:00:00.000 21  AT - CHADHIAPALLI, POST - AMBAPUA, PS - BHANJANAGAR,761119 NULL NULL    366 Ganjam Odisha  INDIA AT-CHADHIAPALLI, POST - AMBAPUA, PS - BHANJANAGAR,761119 NULL NULL    366 Ganjam Odisha  INDIA NULL    8338041583  NULL    1   0
+            StudentViewModel TheStudent = new StudentViewModel();
+
+            TheStudent.StudentID = long.Parse(dr["StudentId"].ToString());
+            TheStudent.Salutation = dr["Salutation"].ToString();
+            TheStudent.StudentName = dr["StudentName"].ToString();
+            TheStudent.RollNo = dr["RollNo"].ToString();
+            TheStudent.ClassName = dr["ClassName"].ToString();
+            TheStudent.StreamName = dr["StreamName"].ToString();
+
+            //TheStudent.SessionID = int.Parse(dr["SessionID"].ToString());
+            //TheStudent.StudentCode = dr["StudentCode"].ToString();
+            //TheStudent.MRINO = dr["MRINO"].ToString();
+            //TheStudent.ReceiptNo = dr["ReceiptNo"].ToString();
+            //TheStudent.TCNo = dr["TCNo"].ToString();
+            //
+            //TheStudent.ClassID = (string.IsNullOrEmpty(dr["ClassId"].ToString()) == true ? -1 : int.Parse(dr["ClassId"].ToString()));
+            //TheStudent.QualID = (string.IsNullOrEmpty(dr["QualID"].ToString()) == true ? -1 : int.Parse(dr["QualID"].ToString()));  //int.Parse(dr["QualID"].ToString());
+            //TheStudent.StreamID = (string.IsNullOrEmpty(dr["StreamID"].ToString()) == true ? -1 : int.Parse(dr["StreamID"].ToString()));  //int.Parse(dr["StreamID"].ToString());
+            //TheStudent.FatherName = dr["FatherName"].ToString();
+            //TheStudent.MotherName = dr["MotherName"].ToString();
+            //TheStudent.Gender = dr["Gender"].ToString();
+            //TheStudent.Caste = dr["Caste"].ToString();
+            //TheStudent.PHStatus = dr["PHStatus"].ToString();
+            //TheStudent.Status = dr["Status"].ToString();
+            //TheStudent.TotalFeesPaid = dr["TotalFeesPaid"].ToString();
+            //TheStudent.DateOfBirth = dr["DateOfBirth"].ToString() == "" ? "" : DateTime.Parse(dr["DateOfBirth"].ToString()).ToString(MicroConstants.DateFormat);
+            //TheStudent.DateOfAdmission = dr["DateOfAdmission"].ToString() == "" ? "" : DateTime.Parse(dr["DateOfAdmission"].ToString()).ToString(MicroConstants.DateFormat);
+            //TheStudent.DateOfLeaving = dr["DateOfLeaving"].ToString() == "" ? "" : DateTime.Parse(dr["DateOfLeaving"].ToString()).ToString(MicroConstants.DateFormat);
+            //TheStudent.Address_Present_TownOrCity = dr["Address_Present_TownOrCity"].ToString();
+            //TheStudent.Address_Present_Landmark = dr["Address_Present_Landmark"].ToString();
+            //TheStudent.Address_Present_PinCode = dr["Address_Present_PinCode"].ToString();
+            //TheStudent.Address_Present_DistrictID = int.Parse(dr["Address_Present_DistrictID"].ToString());
+            //if (dr["Address_Present_DistrictID"].ToString() != "")
+            //{
+            //    TheStudent.Address_Present_DistrictID = int.Parse(dr["Address_Present_DistrictID"].ToString());
+            //    TheStudent.Address_Present_DistrictName = dr["Address_Present_DistrictName"].ToString();
+            //}
+            //TheStudent.Address_Present_StateName = dr["Address_Present_StateName"].ToString();
+            //TheStudent.Address_Present_CountryName = dr["Address_Present_CountryName"].ToString();
+
+            //TheStudent.Address_Permanent_TownOrCity = dr["Address_Permanent_TownOrCity"].ToString();
+            //TheStudent.Address_Permanent_Landmark = dr["Address_Permanent_Landmark"].ToString();
+            //TheStudent.Address_Permanent_PinCode = dr["Address_Permanent_PinCode"].ToString();
+            //TheStudent.Address_Permanent_DistrictID = int.Parse(dr["Address_Permanent_DistrictID"].ToString());
+            //if (dr["Address_Permanent_DistrictID"].ToString() != "")
+            //{
+            //    TheStudent.Address_Permanent_DistrictID = int.Parse(dr["Address_Permanent_DistrictID"].ToString());
+            //    TheStudent.Address_Permanent_DistrictName = dr["Address_Permanent_DistrictName"].ToString();
+            //}
+            //TheStudent.Address_Permanent_StateName = dr["Address_Permanent_StateName"].ToString();
+            //TheStudent.Address_Permanent_CountryName = dr["Address_Permanent_CountryName"].ToString();
+
+            //TheStudent.PhoneNumber = dr["LandPhoneNumber"].ToString();
+            //TheStudent.Mobile = dr["MobileNumber"].ToString();
+            //TheStudent.EMailID = dr["EmailID"].ToString();
+            //TheStudent.OfficeID = int.Parse(dr["OfficeID"].ToString());
+
+            //TheStudent.AlumniFlag = dr["AlumniFlag"].ToString();
+            //TheStudent.RegistrationNumber = dr["RegistrationNumber"].ToString();
+            //TheStudent.AlumniPresentOccupation = dr["AlumniPresentOccupation"].ToString();
+            //TheStudent.AlumniYearOfPassing = dr["AlumniYearOfPassing"].ToString();
+
+            return TheStudent;
+        }
+
         public static StudentListBySubject StDataRowToObject(DataRow dr)
         {
             StudentListBySubject TheStudent = new StudentListBySubject();
@@ -105,6 +176,8 @@ namespace Micro.IntegrationLayer.ICAS.STUDENT
             }
             return StudentList;
         }
+
+
 
         public static List<Student> GetStudentList(bool allOffices = false, bool showDeleted = false, bool alumniFlag = false)
         {
@@ -159,7 +232,22 @@ namespace Micro.IntegrationLayer.ICAS.STUDENT
         {
             return StudentDataAccess.GetInstance.DeleteStudent(theStudent);
         }
-     
+
+        #endregion
+
+
+        #region for api
+        public static List<StudentViewModel> GetStudents(StudentSearchPayload payload)
+        {
+            List<StudentViewModel> StudentList = new List<StudentViewModel>();
+            DataTable StudentTable = StudentDataAccess.GetInstance.GetStudents(payload);
+            foreach (DataRow dr in StudentTable.Rows)
+            {
+                StudentViewModel TheStudent = DataRowToStudentVidwModelObject(dr);
+                StudentList.Add(TheStudent);
+            }
+            return StudentList;
+        }
         #endregion
 
     }

@@ -139,7 +139,7 @@ namespace Micro.IntegrationLayer.ICAS.ESTBLMT
         //public static int RejectEstablishment(string EstbIDS)
         //{
         //    return EstablishmentDataAccess.GetInstance.ApproveEstablishment(EstbIDS);
-        
+
         //}
         #endregion
 
@@ -158,6 +158,17 @@ namespace Micro.IntegrationLayer.ICAS.ESTBLMT
         //    throw new NotImplementedException();
         //}
 
- 
+        #region API 
+        public static long UpdateFileName(long id, string fileName)
+        {
+            return EstablishmentDataAccess.GetInstance.UpdateFileName(id, fileName);
+        }
+        public static long UpdateStatusFlag(long id, string status)
+        {
+            return EstablishmentDataAccess.GetInstance.UpdateStatusFlag(id, status);
+        }
+        #endregion
+
+
     }
 }

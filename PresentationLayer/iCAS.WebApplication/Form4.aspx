@@ -36,6 +36,10 @@
 			<asp:Button runat="server" ID="ButtonDecrypt" Text="Decrypt" OnClick="ButtonDecrypt_Click" />
 			<asp:TextBox runat="server" ID="txt_ResultDecrypt" Width="100%" />
 		</div>
+
+		<asp:TextBox runat="server" TextMode="MultiLine" Rows="10" ID="txtInfo">
+
+		</asp:TextBox>
 	</form>
 
 </body>

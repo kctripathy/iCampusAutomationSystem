@@ -208,5 +208,18 @@ namespace Micro.BusinessLayer.ICAS.STAFFS
 			//}
 			//return sListByDept1;
 		}
-	}
+
+        #region API
+
+        public int InsertUpdateEmployee(Staff2Save staff)
+        {
+            return StaffMasterIntegration.InsertUpdateEmployee(staff); 
+        }
+
+        public int DeleteStaff(int id, int loggedOnUserId)
+        {
+            return StaffMasterIntegration.DeleteStaff(id, loggedOnUserId);
+        }
+        #endregion
+    }
 }

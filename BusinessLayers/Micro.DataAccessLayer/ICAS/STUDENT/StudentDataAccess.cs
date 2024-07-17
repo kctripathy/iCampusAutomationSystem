@@ -470,5 +470,29 @@ namespace Micro.DataAccessLayer.ICAS.STUDENT
             }
         }
         #endregion
+
+
+        #region for api call 
+
+        public DataTable GetStudents(StudentSearchPayload payload)
+        {
+            using (SqlCommand SelectCommand = new SqlCommand())
+            {
+                SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                SelectCommand.Parameters.Add(GetParameter("@pageNo", SqlDbType.Int, payload.pageNo));
+                SelectCommand.Parameters.Add(GetParameter("@pageSize", SqlDbType.Int, payload.pageSize));
+                SelectCommand.Parameters.Add(GetParameter("@searchText", SqlDbType.VarChar, payload.searchText));
+
+                SelectCommand.CommandText = "pAPI_GET_STUDENTS";
+
+                return ExecuteGetDataTable(SelectCommand);
+
+            }
+        }
+
+
+        #endregion
+
     }
 }

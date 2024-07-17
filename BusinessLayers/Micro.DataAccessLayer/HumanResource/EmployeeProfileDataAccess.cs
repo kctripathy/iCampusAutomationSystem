@@ -97,7 +97,7 @@ namespace Micro.DataAccessLayer.HumanResource
 					InsertCommand.Parameters.Add(GetParameter("@SettingKeyValue", SqlDbType.VarBinary, theEmployeeProfile.SettingKeyValue));
 					InsertCommand.Parameters.Add(GetParameter("@SettingKeyDescription", SqlDbType.VarChar, theEmployeeProfile.SettingKeyReference));
 
-					InsertCommand.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserID));
+					//InsertCommand.Parameters.Add(GetParameter("@AddedBy", SqlDbType.Int, Micro.Commons.Connection.LoggedOnUser.UserID));
 
 					InsertCommand.CommandText = "pHRM_EmployeeProfiles_Insert";
 					ExecuteStoredProcedure(InsertCommand);

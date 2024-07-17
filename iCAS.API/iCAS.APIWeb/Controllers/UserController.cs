@@ -112,7 +112,7 @@ namespace iCAS.APIWeb.Controllers
 					Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
 				};
 			}
-			if (!CurrentUser.token.ToUpper().Equals(token.ToUpper()))
+			if (!token.ToUpper().Contains(CurrentUser.token.ToUpper()))
 			{
 				response.message = "Invalid token!";
 				return new HttpResponseMessage(HttpStatusCode.OK)
