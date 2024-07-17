@@ -76,7 +76,14 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
                     ObjEmployee.Mobile = dr["Mobile"].ToString();
                     ObjEmployee.EMailID = dr["EMailID"] == null? "": dr["EMailID"].ToString();
                     ObjEmployee.TeachingOrNonTeaching = dr["TeachingOrNonTeaching"].ToString();
-                     
+
+                    ObjEmployee.PresentAddress = dr["PresentAddress"]?.ToString();
+                    //ObjEmployee.DateOfJoin = dr["DateOfJoin"]?.ToString();
+                    if (dr["DateOfJoin"] != null)
+                    {
+                        ObjEmployee.DateOfJoin = DateTime.Parse(DateTime.Parse(dr["DateOfJoin"].ToString()).ToString(MicroConstants.DateFormat));
+                    }
+
                     EmployeeList.Add(ObjEmployee);
                 }
                 return EmployeeList;
@@ -198,6 +205,7 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
             return TheDuplicateEmployeeList;
         }
 
+        
 
         public static List<StaffMaster> GetCompanyEmployeeListByOfficeandDepartment(int DepartmentID, int OfficeID = -1)
         {
@@ -806,6 +814,19 @@ namespace Micro.IntegrationLayer.ICAS.STAFFS
             List<StaffMaster> EmployeeList = ConvertDatarowToObject(EmployeeTable);
 
             return EmployeeList;
+        }
+
+        
+        #endregion
+
+        #region API
+        public static int InsertUpdateEmployee(Staff2Save staff)
+        {
+            return StaffMasterDataAccess.GetInstance.InsertUpdateEmployee(staff);
+        }
+        public static int DeleteStaff(int id, int loggedOnUserId)
+        {
+            return StaffMasterDataAccess.GetInstance.DeleteStaff(id, loggedOnUserId);
         }
         #endregion
     }

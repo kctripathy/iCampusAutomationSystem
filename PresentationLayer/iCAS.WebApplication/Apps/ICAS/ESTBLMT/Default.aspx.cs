@@ -670,10 +670,10 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             }
         }
 
-        protected void Async_Upload_File(object sender, EventArgs e)
-        {
-            bool HasFile = fileUploadEstb.HasFile;
-        }
+        //protected void Async_Upload_File(object sender, EventArgs e)
+        //{
+        //    bool HasFile = fileUploadEstb.HasFile;
+        //}
         
         protected void Upload_File(object sender, EventArgs e)
         {

@@ -41,22 +41,7 @@ namespace Micro.DataAccessLayer.ICAS.STAFFS
         #endregion
 
         #region Transactional Mathods(Insert,Update,Delete)
-        public DataTable GetStaffs()
-        {
-            try
-            {
-                SqlCommand GetCommandName = new SqlCommand();
-                GetCommandName.CommandType = CommandType.StoredProcedure;
-
-                GetCommandName.CommandText = "pAPI_GET_STAFFS";
-
-                return ExecuteGetDataTable(GetCommandName);
-            }
-            catch (Exception ex)
-            {
-                throw (new Exception(MethodBase.GetCurrentMethod().DeclaringType.ToString() + "." + (new System.Diagnostics.StackFrame()).GetMethod().Name, ex));
-            }
-        }
+        
 
 
         public int InsertEmployee(StaffMaster theStaffMaster, string CourseIDs, string Boards, string PassingYears, string Divisions, string PercentageMarks)
@@ -355,7 +340,7 @@ namespace Micro.DataAccessLayer.ICAS.STAFFS
             }
 
         }
-
+        
         #endregion
 
         #region Data Retrive Mathods
@@ -641,6 +626,77 @@ namespace Micro.DataAccessLayer.ICAS.STAFFS
         }
         #endregion
 
-       
+        #region for API
+        public DataTable GetStaffs()
+        {
+            try
+            {
+                SqlCommand GetCommandName = new SqlCommand();
+                GetCommandName.CommandType = CommandType.StoredProcedure;
+
+                GetCommandName.CommandText = "pAPI_STAFFS_GET";
+
+                return ExecuteGetDataTable(GetCommandName);
+            }
+            catch (Exception ex)
+            {
+                throw (new Exception(MethodBase.GetCurrentMethod().DeclaringType.ToString() + "." + (new System.Diagnostics.StackFrame()).GetMethod().Name, ex));
+            }
+        }
+
+        public int InsertUpdateEmployee(Staff2Save staff)
+        {
+            try
+            {
+                int ReturnValue = 0;
+
+                SqlCommand InsertCommand = new SqlCommand();
+                InsertCommand.CommandType = CommandType.StoredProcedure;
+
+                InsertCommand.Parameters.Add(GetParameter("@RETURN_VALUE", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
+                
+                InsertCommand.Parameters.Add(GetParameter("@STAFF_ID", SqlDbType.Int, staff.EmployeeID));
+                InsertCommand.Parameters.Add(GetParameter("@DESG_ID", SqlDbType.Int, staff.DesignationID));
+                InsertCommand.Parameters.Add(GetParameter("@DEPT_ID", SqlDbType.Int, staff.DepartmentID));
+                InsertCommand.Parameters.Add(GetParameter("@ADDED_BY_USERID", SqlDbType.Int, staff.SavedByUserId));
+                
+                InsertCommand.Parameters.Add(GetParameter("@STAFF_CODE", SqlDbType.VarChar, staff.EmployeeCode));
+                InsertCommand.Parameters.Add(GetParameter("@STAFF_SALUTAION", SqlDbType.VarChar, staff.Salutation));
+                InsertCommand.Parameters.Add(GetParameter("@STAFF_NAME", SqlDbType.VarChar, staff.EmployeeName));
+                InsertCommand.Parameters.Add(GetParameter("@STAFF_ADDR", SqlDbType.VarChar, staff.PresentAddress));
+                InsertCommand.Parameters.Add(GetParameter("@PHONE_NO", SqlDbType.VarChar, staff.Mobile));
+                InsertCommand.Parameters.Add(GetParameter("@EMAIL_ID", SqlDbType.VarChar, staff.EMailID));
+                InsertCommand.Parameters.Add(GetParameter("@JOIN_DATE", SqlDbType.DateTime, staff.DateOfJoin));
+
+                InsertCommand.CommandText = "[dbo].[pAPI_STAFF_SAVE]";
+
+                ExecuteStoredProcedure(InsertCommand);
+
+                return int.Parse(InsertCommand.Parameters[0].Value.ToString());
+            }
+            catch (Exception ex)
+            {
+                throw (new Exception(MethodBase.GetCurrentMethod().DeclaringType.ToString() + "." + (new System.Diagnostics.StackFrame()).GetMethod().Name, ex));
+            }
+        }
+
+        public int DeleteStaff(int id, int loggedOnUserId)
+        {
+            int ReturnValue = 0;
+
+            using (SqlCommand DeleteCommand = new SqlCommand())
+            {
+                DeleteCommand.CommandType = CommandType.StoredProcedure;
+                DeleteCommand.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
+                DeleteCommand.Parameters.Add(GetParameter("@EmployeeID", SqlDbType.Int, id));
+                DeleteCommand.Parameters.Add(GetParameter("@ModifiedBy", SqlDbType.Int, loggedOnUserId));
+                DeleteCommand.CommandText = "pHRM_Employees_Delete";
+                ExecuteStoredProcedure(DeleteCommand);
+                ReturnValue = int.Parse(DeleteCommand.Parameters[0].Value.ToString());
+                return ReturnValue;
+            }
+        }
+
+        #endregion
     }
 }

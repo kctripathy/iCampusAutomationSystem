@@ -145,5 +145,16 @@ namespace Micro.BusinessLayer.ICAS.ESTBLMT
         //    return EstablishmentIntegration.RejectEstablishment(EstbIDS);
         //}
         #endregion
+
+        #region API 
+        public long UpdateFileName(long id, string fileName)
+        {
+            return EstablishmentIntegration.UpdateFileName(id, fileName);
+        }
+        public long UpdateStatusFlag(long id, string status)
+        {
+            return EstablishmentIntegration.UpdateStatusFlag(id, status);
+        }
+        #endregion
     }
 }
