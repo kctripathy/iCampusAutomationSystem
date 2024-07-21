@@ -49,7 +49,7 @@ namespace iCAS.APIWeb.Controllers
             return buffer;
         }
 
-        #region @@@@@@@@@@@@@@ College @@@@@@@@@@@@@@@@@@@@@
+        #region  College 
         /// <summary>
         /// Get all departments of the college
         /// </summary>
@@ -78,7 +78,7 @@ namespace iCAS.APIWeb.Controllers
 
         #endregion
 
-        #region @@@@@@@@@@@@@@@@ Staffs @@@@@@@@@@@@@@@@@@@@@@@@@
+        #region Staffs
 
         /// <summary>
         /// Get all staffs of the college
@@ -260,7 +260,7 @@ namespace iCAS.APIWeb.Controllers
 
         #endregion
 
-        #region @@@@@@@@@ Students @@@@@@@@@@@@@@@@@@@@@@
+        #region Students
         [HttpPost]
         [Route("api/College/Students")]
         public HttpResponseMessage GetStudents([FromBody] StudentSearchPayload payload)
@@ -274,7 +274,7 @@ namespace iCAS.APIWeb.Controllers
         }
         #endregion
 
-        #region @@@@@@@@@@@@@@@ Establishments @@@@@@@@@@@@@@@@@@@@@@@
+        #region Establishments 
 
         /// <summary>
         /// Get all establishments of the office
