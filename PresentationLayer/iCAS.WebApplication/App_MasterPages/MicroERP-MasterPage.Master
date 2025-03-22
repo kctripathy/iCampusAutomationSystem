@@ -80,7 +80,7 @@
 
         <%--<uc1:WebUserControlMenu ID="WebUserControlMenu1" runat="server" />--%>
 
-        <asp:ScriptManager ID="ScriptManagerMicro" runat="server" />
+        <asp:ScriptManager ID="ScriptManagerMicro" runat="server" EnableCdn="true" />
 
         <div id="TheContainerICAS" class="container body-content">
             <div id="WebContent">

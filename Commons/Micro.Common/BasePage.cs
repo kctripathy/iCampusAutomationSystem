@@ -103,7 +103,11 @@ namespace Micro.Commons
             //Check if the current session has expired or not
             else if (Micro.Commons.Connection.LoggedOnUser == null)
             {
-                Response.Redirect("~/App_Error/AccessDenied.aspx");
+                Exception ex = Server.GetLastError();
+                HttpContext.Current.Session["LastError"] = ex;
+                Log.Error(ex);
+                Response.Redirect("~/App_Error/Error500.aspx?errorpath=" + Request.RawUrl);
+                //Response.Redirect("~/App_Error/AccessDenied.aspx");
             }
 
 

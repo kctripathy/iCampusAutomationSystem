@@ -133,7 +133,7 @@ namespace Micro.DataAccessLayer.ICAS.ESTBLMT
                 UpdateCommand.Parameters.Add(GetParameter("@EstbDate", SqlDbType.DateTime, theestablishment.EstbDate));
                 UpdateCommand.Parameters.Add(GetParameter("@EstbMessage", SqlDbType.VarChar, theestablishment.EstbMessage));
                // UpdateCommand.Parameters.Add(GetParameter("@EstbUploadFile", SqlDbType.VarBinary, theestablishment.EstbUploadFile));
-                UpdateCommand.Parameters.Add(GetParameter("@EstbViewStartDate", SqlDbType.DateTime, theestablishment.EstbDate.AddDays(-1)));
+                UpdateCommand.Parameters.Add(GetParameter("@EstbViewStartDate", SqlDbType.DateTime, theestablishment.EstbDate));
                 UpdateCommand.Parameters.Add(GetParameter("@EstbViewEndDate", SqlDbType.DateTime, theestablishment.EstbDate.AddYears(99)));
                 UpdateCommand.Parameters.Add(GetParameter("@VC_FIELD1", SqlDbType.VarChar, theestablishment.PublicationAuthorName));
                 UpdateCommand.Parameters.Add(GetParameter("@VC_FIELD2", SqlDbType.VarChar, theestablishment.FileNameWithPath));
