@@ -401,6 +401,7 @@ namespace Micro.Objects.ICAS.STUDENT
         public string FullName { get { return this.Salutation + ' ' + this.StudentName; } }
         public string ClassName { get; set; }
         public string StreamName { get; set; }
+        public string Mobile { get; set; }
 
     }
 

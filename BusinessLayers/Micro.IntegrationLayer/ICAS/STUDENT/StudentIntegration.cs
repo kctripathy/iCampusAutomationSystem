@@ -96,6 +96,7 @@ namespace Micro.IntegrationLayer.ICAS.STUDENT
             TheStudent.RollNo = dr["RollNo"].ToString();
             TheStudent.ClassName = dr["ClassName"].ToString();
             TheStudent.StreamName = dr["StreamName"].ToString();
+            TheStudent.Mobile = dr["MobileNumber"]?.ToString();
 
             //TheStudent.SessionID = int.Parse(dr["SessionID"].ToString());
             //TheStudent.StudentCode = dr["StudentCode"].ToString();
