@@ -301,7 +301,8 @@ namespace Micro.WebApplication.APPS.ICAS.ESTBLMT
             objEstablishment.EstbDescription = ddlEstbType.SelectedValue == "Q"? txt_Description.Text.ToUpper().Trim() : txt_Description.Text.Trim();
             objEstablishment.EstbDescription1 = ddlEstbType.SelectedValue == "Q" ? txt_Description1.Text.ToUpper().Trim() : txt_Description1.Text.Trim();
             objEstablishment.EstbDescription2 = txt_Description2.Text;
-
+            objEstablishment.EstbStatusFlag = "P";
+            objEstablishment.AddedBy = CurrentLoggedOnUser.TheUser.UserReferenceID;
             if (Session["fileName"].ToString() != "NA")
             {
                 objEstablishment.FileNameWithPath = Session["fileName"].ToString();

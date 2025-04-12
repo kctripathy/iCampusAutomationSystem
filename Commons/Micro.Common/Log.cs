@@ -239,7 +239,7 @@ namespace Micro.Commons
 				// Log on Module Mail
 				if (p_Severity == SEVERITY_ERROR)
 				{
-					Log.LoggerMail(v_Message, exception.Message, p_Severity);
+					//Log.LoggerMail(v_Message, exception.Message, p_Severity);
 				}
 
 				// Throw Error

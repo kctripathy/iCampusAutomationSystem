@@ -57,6 +57,12 @@ namespace Micro.WebApplication.App_MasterPages
             }
 		}
 
+		protected void Page_Error(object sender, EventArgs e)
+        {
+			Exception ex = Server.GetLastError();
+			Micro.Commons.Log.Error(ex);
+		}
+
 		private void DisplayCompanyLogoAsImage()
 		{
 			

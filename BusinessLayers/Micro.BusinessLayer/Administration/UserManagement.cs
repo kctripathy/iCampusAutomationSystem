@@ -155,7 +155,7 @@ namespace Micro.BusinessLayer.Administration
         public bool ValidateToken(int userId, string token)
         {
             string userToken =  UserIntegration.GetUserToken(userId);
-            return userToken.ToUpper().Equals(token.ToUpper());
+            return token.ToUpper().Contains(userToken.ToUpper());
         }
 
         #endregion
