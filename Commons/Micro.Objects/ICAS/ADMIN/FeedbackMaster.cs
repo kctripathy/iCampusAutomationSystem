@@ -45,7 +45,35 @@ namespace Micro.Objects.ICAS.ADMIN
             get;
             set;
         } = true;
+
+        public int IsOpen
+        {
+            get;
+            set;
+        } 
     }
+
+    public class FeedbackMasterAddViewModel
+    {
+        public string FeedbackDesc
+        {
+            get;
+            set;
+        }
+
+        public DateTime FeedbackStartDate
+        {
+            get;
+            set;
+        }
+
+        public DateTime FeedbackEndDate
+        {
+            get;
+            set;
+        }
+    }
+
 
     public class FeedbackQuestion
     {

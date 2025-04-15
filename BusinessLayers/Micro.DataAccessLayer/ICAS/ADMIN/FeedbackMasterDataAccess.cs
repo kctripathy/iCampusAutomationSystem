@@ -77,22 +77,25 @@ namespace Micro.DataAccessLayer.ICAS.ADMIN
             return ReturnValue;
         }
 
-        public DataTable GetFeedbackQuestionsAndOptions()
+        public DataTable GetFeedbackQuestionsAndOptions(int feedbackId)
         {
             using (SqlCommand SelectCommand = new SqlCommand())
             {
                 SelectCommand.CommandType = CommandType.StoredProcedure;
+                SelectCommand.Parameters.Add(GetParameter("@feedback_id", SqlDbType.Int, feedbackId));
+                
                 SelectCommand.CommandText = "pAPI_GET_FEEDBACK_QUESTIONS_AND_OPTIONS";
 
                 return ExecuteGetDataTable(SelectCommand);
             }
         }
 
-        public DataTable GetFeedbacks()
+        public DataTable GetFeedbacks(int willFetchAll = 0)
         {
             using (SqlCommand SelectCommand = new SqlCommand())
             {
                 SelectCommand.CommandType = CommandType.StoredProcedure;
+                SelectCommand.Parameters.Add(GetParameter("@willfetchAll", SqlDbType.Int, willFetchAll));
                 SelectCommand.CommandText = "pAPI_GET_FEEDBACK_MASTER";
 
                 return ExecuteGetDataTable(SelectCommand);
@@ -144,6 +147,18 @@ namespace Micro.DataAccessLayer.ICAS.ADMIN
                 ReturnValue = int.Parse(UpdateCommand.Parameters[0].Value.ToString());
             }
             return ReturnValue;
+        }
+
+        public DataTable GetAllStudentsFeedbacksAnswers(int feedbackId)
+        {
+            using (SqlCommand SelectCommand = new SqlCommand())
+            {
+                SelectCommand.CommandType = CommandType.StoredProcedure;
+                SelectCommand.Parameters.Add(GetParameter("@feedbackId", SqlDbType.Int, feedbackId));
+                SelectCommand.CommandText = "pAPI_GET_FEEDBACK_ALL_STUDENTS";
+
+                return ExecuteGetDataTable(SelectCommand);
+            }
         }
 
         public int DeleteFeedbackQuestion(int questionId)
@@ -215,7 +230,7 @@ namespace Micro.DataAccessLayer.ICAS.ADMIN
                 cmd.Parameters.Add(GetParameter("@feedback_submit_id", SqlDbType.Int, returnValue)).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add(GetParameter("@feedback_id", SqlDbType.Int, feedbackId));
                 cmd.Parameters.Add(GetParameter("@user_id", SqlDbType.Int, studentId));
-                cmd.CommandText = "pAPI_INSERT_FEEDBACK_MASTER";
+                cmd.CommandText = "pAPI_INSERT_STUDENT_FEEDBACK_MASTER";
                 ExecuteStoredProcedure(cmd);
                 returnValue = int.Parse(cmd.Parameters[0].Value.ToString());
             }
@@ -256,6 +271,23 @@ namespace Micro.DataAccessLayer.ICAS.ADMIN
                 ReturnValue = int.Parse(DeleteCommand.Parameters[0].Value.ToString());
                 return ReturnValue;
             }
+        }
+
+        public int InsertFeedbackMaster(FeedbackMasterAddViewModel fm)
+        {
+            int returnValue = 0;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(GetParameter("@feedback_id", SqlDbType.Int, returnValue)).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(GetParameter("@feedback_desc", SqlDbType.VarChar, fm.FeedbackDesc));
+                cmd.Parameters.Add(GetParameter("@startdate", SqlDbType.DateTime, fm.FeedbackStartDate));
+                cmd.Parameters.Add(GetParameter("@closedate", SqlDbType.DateTime, fm.FeedbackEndDate));
+                cmd.CommandText = "[pAPI_INSERT_FEEDBACK_MASTER]";
+                ExecuteStoredProcedure(cmd);
+                returnValue = int.Parse(cmd.Parameters[0].Value.ToString());
+            }
+            return returnValue;
         }
         #endregion
 
