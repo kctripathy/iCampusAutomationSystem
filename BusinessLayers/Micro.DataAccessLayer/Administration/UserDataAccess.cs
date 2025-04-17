@@ -34,7 +34,7 @@ namespace Micro.DataAccessLayer.Administration
                 SelectCommand.CommandType = CommandType.StoredProcedure;
                 SelectCommand.Parameters.Add(GetParameter("@LoginName", SqlDbType.VarChar, loginName));
                 SelectCommand.Parameters.Add(GetParameter("@WillGenerateToken", SqlDbType.VarChar, willGenerateToken));
-                SelectCommand.CommandText = "[pAPI_LOGIN]";
+                SelectCommand.CommandText = "[pAPI_LOGIN_WITH_USERNAME_PHONE_EMAIL]";
                 return ExecuteGetDataRow(SelectCommand);
             }
         }
@@ -103,7 +103,7 @@ namespace Micro.DataAccessLayer.Administration
             {
                 SelectCommand.CommandType = CommandType.StoredProcedure;
                 SelectCommand.Parameters.Add(GetParameter("@LoginName", SqlDbType.VarChar, loginNameOrPhone));
-                SelectCommand.CommandText = "pAPI_GetUserLoginNameOrPhoneNo";
+                SelectCommand.CommandText = "pAPI_LOGIN_WITH_USERNAME_PHONE_EMAIL";
                 return ExecuteGetDataRow(SelectCommand);
             }
         }

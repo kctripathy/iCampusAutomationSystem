@@ -230,7 +230,7 @@ namespace Micro.DataAccessLayer.ICAS.ADMIN
                 cmd.Parameters.Add(GetParameter("@feedback_submit_id", SqlDbType.Int, returnValue)).Direction = ParameterDirection.Output;
                 cmd.Parameters.Add(GetParameter("@feedback_id", SqlDbType.Int, feedbackId));
                 cmd.Parameters.Add(GetParameter("@user_id", SqlDbType.Int, studentId));
-                cmd.CommandText = "pAPI_INSERT_STUDENT_FEEDBACK_MASTER";
+                cmd.CommandText = "pAPI_INSERT_FEEDBACK_SUBMIT_BY_STUDENT";
                 ExecuteStoredProcedure(cmd);
                 returnValue = int.Parse(cmd.Parameters[0].Value.ToString());
             }

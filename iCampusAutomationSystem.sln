@@ -37,6 +37,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iCAS.API", "iCAS.API", "{4B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iCAS.APIWeb", "iCAS.API\iCAS.APIWeb\iCAS.APIWeb.csproj", "{B077B409-DC5D-4E55-937C-C2EB54261E07}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "iCAS.BulkUploadStudentData", "iCAS.BulkUploadStudentData", "{D9728788-5A14-4410-A7F2-F6C499ECDFFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReadExcelFileApp", "..\iCampusAutomationReadExcelBulkUploadStudentData\ReadExcelFileApp.csproj", "{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,6 +153,18 @@ Global
 		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Release|x86.ActiveCfg = Release|Any CPU
 		{B077B409-DC5D-4E55-937C-C2EB54261E07}.Release|x86.Build.0 = Release|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Debug|x86.Build.0 = Debug|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Release|x86.ActiveCfg = Release|Any CPU
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -164,6 +180,7 @@ Global
 		{AEA9D061-DDF8-4EA7-9A9D-23BFE1130D11} = {C49DB8B4-7DD3-4277-A54F-7465D5DFA3CF}
 		{447FA23D-A263-4C44-915D-D518832F0B58} = {9DAFC411-D1D1-47F5-8285-10899EA676EF}
 		{B077B409-DC5D-4E55-937C-C2EB54261E07} = {4B768C19-EC1C-4BD4-A50F-467900B4AB35}
+		{C0BEFE44-1490-4A7F-B4E5-F2C1CFDFFCA0} = {D9728788-5A14-4410-A7F2-F6C499ECDFFB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {14D38350-C25C-48C1-A300-9876DA35E24B}
