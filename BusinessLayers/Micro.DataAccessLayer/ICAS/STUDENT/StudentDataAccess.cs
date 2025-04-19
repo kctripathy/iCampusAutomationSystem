@@ -212,6 +212,26 @@ namespace Micro.DataAccessLayer.ICAS.STUDENT
             return ReturnValueStudent;
         }
 
+        public DataSet StudentStrengthByYear()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[pAPI_GET_STUDENTS_COUNT_BY_SESSION_SUMMARY]";
+                return ExecuteGetDataset(cmd);
+            }
+        }
+
+        public DataSet GetCollegeSummary()
+        {
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "[dbo].[pAPI_GET_COLLEGE_SUMMARY]";
+                return ExecuteGetDataset(cmd);
+            }
+        }
+
         // alumni
         public int InsertStudent(Student theStudent, List<StudentSubjectTaken> StudentSubjects, List<StudentPreviousQual> StudentPreQualList, bool alumniFlag)
         {
@@ -480,11 +500,12 @@ namespace Micro.DataAccessLayer.ICAS.STUDENT
             {
                 SelectCommand.CommandType = CommandType.StoredProcedure;
 
+                SelectCommand.Parameters.Add(GetParameter("@studentId", SqlDbType.BigInt, payload.studentId));
                 SelectCommand.Parameters.Add(GetParameter("@pageNo", SqlDbType.Int, payload.pageNo));
                 SelectCommand.Parameters.Add(GetParameter("@pageSize", SqlDbType.Int, payload.pageSize));
                 SelectCommand.Parameters.Add(GetParameter("@searchText", SqlDbType.VarChar, payload.searchText));
 
-                SelectCommand.CommandText = "pAPI_GET_STUDENTS";
+                SelectCommand.CommandText = "[dbo].[pAPI_GET_STUDENTS_INFO]";
 
                 return ExecuteGetDataTable(SelectCommand);
 

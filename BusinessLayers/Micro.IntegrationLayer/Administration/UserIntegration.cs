@@ -52,31 +52,29 @@ namespace Micro.IntegrationLayer.Administration
 
         public static User Login(string userName, string willGenerateToken)
         {
-            User TheUser = new User();
+            User u = new User();
             DataRow dRowUser = UserDataAccess.GetInstance.Login(userName, willGenerateToken);
             if (dRowUser != null)
             {
-                TheUser.UserID = int.Parse(dRowUser["UserID"].ToString());
-                TheUser.UserName = dRowUser["UserName"].ToString();
-                TheUser.Password = dRowUser["Password"].ToString();
-                TheUser.RoleID = (dRowUser["RoleID"] != null ? int.Parse(dRowUser["RoleID"].ToString()) : 0);
-                TheUser.RoleDescription = dRowUser["RoleDescription"].ToString();
-                TheUser.UserType = dRowUser["UserType"].ToString();
-                TheUser.UserReferenceID = (((dRowUser["UserReferenceID"] == null) || (string.IsNullOrEmpty(dRowUser["UserReferenceID"].ToString()))) ? 0 : int.Parse(dRowUser["UserReferenceID"].ToString()));
-                TheUser.UserReferenceName = dRowUser["UserReferenceName"].ToString();
-                TheUser.OfficeID = 44; // (((dRowUser["OfficeID"] == null) || (string.IsNullOrEmpty(dRowUser["OfficeID"].ToString()))) ? 0 : int.Parse(dRowUser["OfficeID"].ToString()));
-                //TheUser.OfficeCode = (dRowUser["OfficeCode"] != null ? dRowUser["OfficeCode"].ToString() : "N/A");
-                //TheUser.OfficeName = dRowUser["OfficeName"].ToString();
-                TheUser.CompanyID = 8;
-                //TheUser.CompanyCode = "C0001";
-                TheUser.CompanyName = "TSD COLLEGE";
-                TheUser.CompanyAliasName = "TSDC";
-                TheUser.EmailAddress = ((dRowUser["EmailID"] == null) ? "" : dRowUser["EmailID"].ToString().ToLower());
-                TheUser.PhoneNumber = ((dRowUser["PhoneNumber"] == null) ? "" : dRowUser["PhoneNumber"].ToString());
-                TheUser.token = ((dRowUser["token"] == null) ? "" : dRowUser["token"].ToString());
+                u.UserID = int.Parse(dRowUser["UserID"].ToString());
+                u.UserName = dRowUser["UserName"].ToString();
+                u.Password = dRowUser["Password"].ToString();
+                u.RoleID = (dRowUser["RoleID"] != null ? int.Parse(dRowUser["RoleID"].ToString()) : 0);
+                u.RoleDescription = dRowUser["RoleDescription"].ToString();
+                u.Designation = dRowUser["Designation"]?.ToString();
+                u.UserType = dRowUser["UserType"].ToString();
+                u.UserReferenceID = (((dRowUser["UserReferenceID"] == null) || (string.IsNullOrEmpty(dRowUser["UserReferenceID"].ToString()))) ? 0 : int.Parse(dRowUser["UserReferenceID"].ToString()));
+                u.UserReferenceName = dRowUser["UserReferenceName"].ToString();
+                u.OfficeID = 44; // (((dRowUser["OfficeID"] == null) || (string.IsNullOrEmpty(dRowUser["OfficeID"].ToString()))) ? 0 : int.Parse(dRowUser["OfficeID"].ToString()));
+                u.CompanyName = "TSD COLLEGE";
+                u.CompanyAliasName = "TSDC";
+                u.EmailAddress = ((dRowUser["EmailID"] == null) ? "" : dRowUser["EmailID"].ToString().ToLower());
+                u.PhoneNumber = ((dRowUser["PhoneNumber"] == null) ? "" : dRowUser["PhoneNumber"].ToString());
+                u.IsPasswordChangeDue = bool.Parse(dRowUser["IsPasswordChangeDue"].ToString()) == true ? "Y" : "N";
+                u.token = ((dRowUser["token"] == null) ? "" : dRowUser["token"].ToString());
             }
 
-            return TheUser;
+            return u;
         }
 
         public static UserLoginRespsonse LoginFromAPI(string userName)

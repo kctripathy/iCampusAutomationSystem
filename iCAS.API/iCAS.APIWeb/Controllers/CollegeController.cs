@@ -9,6 +9,7 @@ using Micro.Objects.HumanResource;
 using Micro.Objects.ICAS.ESTBLMT;
 using Micro.Objects.ICAS.STAFFS;
 using Micro.Objects.ICAS.STUDENT;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -50,6 +51,38 @@ namespace iCAS.APIWeb.Controllers
         }
 
         #region  College 
+
+        [Route("api/College/Summary")]
+        public HttpResponseMessage GetCollegeSummary()
+        {
+            Response response = new Response();
+            dynamic summary = StudentManagement.GetInstance.GetCollegeSummary();
+            //object obj = JsonConvert.SerializeObject(summary, Formatting.Indented);
+            //response.data = obj;
+            response.message = "Success";
+            response.data = summary;
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+        [HttpGet]
+        [Route("api/College/StudentCountByYear")]
+        public HttpResponseMessage StudentStrengthByYear()
+        {
+            Response response = new Response();
+            dynamic summary = StudentManagement.GetInstance.StudentStrengthByYear();
+            //object obj = JsonConvert.SerializeObject(summary, Formatting.Indented);
+            //response.data = obj;
+            response.message = "Success";
+            response.data = summary;
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
         /// <summary>
         /// Get all departments of the college
         /// </summary>
@@ -272,6 +305,8 @@ namespace iCAS.APIWeb.Controllers
                 Content = new StringContent(JArray.FromObject(theList).ToString(), Encoding.UTF8, "application/json")
             };
         }
+
+        
         #endregion
 
         #region Establishments 

@@ -53,6 +53,8 @@ namespace iCAS.APIWeb.Controllers
 					RoleDescription = CurrentUser.RoleDescription,
 					EmailAddress = CurrentUser.EmailAddress,
 					PhoneNumber = CurrentUser.PhoneNumber,
+					IsPasswordChangeDue = CurrentUser.IsPasswordChangeDue,
+					Designation = CurrentUser.Designation,
 					token = CurrentUser.token
 				};
 				return new HttpResponseMessage(HttpStatusCode.OK)

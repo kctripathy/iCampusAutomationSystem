@@ -86,72 +86,75 @@ namespace Micro.IntegrationLayer.ICAS.STUDENT
         public static StudentViewModel DataRowToStudentVidwModelObject(DataRow dr)
         {
 
-//SessionID StudentID   StudentCode MRINO   ReceiptNo TCNo    RollNo ClassID ClassName QualID  QualName StreamID    StreamName Salutation  StudentName FatherName  MotherName Gender  Caste PHStatus    Status TotalFeesPaid   DateOfAdmission DateOfLeaving   DateOfBirth AGE Address_Present_TownOrCity Address_Present_Landmark    Address_Present_PinCode Address_Present_DistrictID  Address_Present_DistrictName Address_Present_StateName   Address_Present_CountryName Address_Permanent_TownOrCity    Address_Permanent_Landmark Address_Permanent_PinCode   Address_Permanent_DistrictID Address_Permanent_DistrictName  Address_Permanent_StateName Address_Permanent_CountryName   LandPhoneNumber MobileNumber    EMailID IsActive    IsDeleted
-//39  10000000    IA17 - 001    11162102 / 0160   NULL NULL    IA17 - 001    10 + 2 SECOND YEAR ARTS 2   INTERMEDIATE    2   ARTS Mr.	ANIL KUMAR SWAIN GANESHA SWAIN NULL    Male OBC NULL NULL    NULL    2017 - 06 - 16 00:00:00.000 NULL    2002 - 02 - 22 00:00:00.000 21  AT - CHADHIAPALLI, POST - AMBAPUA, PS - BHANJANAGAR,761119 NULL NULL    366 Ganjam Odisha  INDIA AT-CHADHIAPALLI, POST - AMBAPUA, PS - BHANJANAGAR,761119 NULL NULL    366 Ganjam Odisha  INDIA NULL    8338041583  NULL    1   0
-            StudentViewModel TheStudent = new StudentViewModel();
+            StudentViewModel student = new StudentViewModel();
 
-            TheStudent.StudentID = long.Parse(dr["StudentId"].ToString());
-            TheStudent.Salutation = dr["Salutation"].ToString();
-            TheStudent.StudentName = dr["StudentName"].ToString();
-            TheStudent.RollNo = dr["RollNo"].ToString();
-            TheStudent.ClassName = dr["ClassName"].ToString();
-            TheStudent.StreamName = dr["StreamName"].ToString();
-            TheStudent.Mobile = dr["MobileNumber"]?.ToString();
+            student.SessionID = int.Parse(dr["SessionID"].ToString());
+            student.StudentID = long.Parse(dr["StudentId"].ToString());
+            student.StudentCode = dr["StudentCode"].ToString();
+            student.RollNo = dr["RollNo"].ToString();
+            student.ClassName = dr["ClassName"].ToString();
+            student.StreamName = dr["StreamName"].ToString();
+            student.QualName = dr["QualName"].ToString();
+            student.StreamID = (string.IsNullOrEmpty(dr["StreamID"].ToString()) == true ? -1 : int.Parse(dr["StreamID"].ToString())); 
+            student.ClassID = (string.IsNullOrEmpty(dr["ClassId"].ToString()) == true ? -1 : int.Parse(dr["ClassId"].ToString()));
+            student.QualID = (string.IsNullOrEmpty(dr["QualID"].ToString()) == true ? -1 : int.Parse(dr["QualID"].ToString()));
+            student.Salutation = dr["Salutation"].ToString();
+            student.StudentName = dr["StudentName"].ToString();
+            student.FatherName = dr["FatherName"].ToString();
+            student.MotherName = dr["MotherName"].ToString();
+            student.Gender = dr["Gender"].ToString();
+            student.Category = dr["Category"].ToString();
+            student.DateOfBirth = dr["DateOfBirth"]?.ToString() == "" ? "" : DateTime.Parse(dr["DateOfBirth"].ToString()).ToString(MicroConstants.DateFormat);
+            student.DateOfAdmission = dr["DateOfAdmission"]?.ToString() == "" ? "" : DateTime.Parse(dr["DateOfAdmission"].ToString()).ToString(MicroConstants.DateFormat);
+            student.PresentAddress_TownCity = dr["Address_Present_TownOrCity"]?.ToString();
+            student.PresentAddress_District = dr["Address_Present_DistrictName"]?.ToString();
+            student.PresentAddress_State = dr["Address_Present_StateName"]?.ToString();
+            student.PresentAddress_PIN =   dr["Address_Present_PinCode"]?.ToString();
+            student.PermanentAddress_TownCity = dr["Address_Permanent_TownOrCity"]?.ToString();
+            student.PermanentAddress_District = dr["Address_Permanent_DistrictName"]?.ToString();
+            student.PermanentAddress_State = dr["Address_Permanent_StateName"]?.ToString();
+            student.PermanentAddress_PIN = dr["Address_Permanent_PinCode"]?.ToString();
+            student.Mobile = dr["MobileNumber"].ToString();
+            student.EMail = dr["EmailID"].ToString();
+            student.MRINO = dr["MRINO"].ToString();
+            student.BarcodeNo = dr["BarcodeNo"].ToString();
+            student.AadhaarNo = dr["AadhaarNo"].ToString();
+            student.AdmissionType = dr["AdmissionType"].ToString();
+            student.SubjectName = dr["SubjectName"].ToString();
+            student.SLCNo = dr["SLCNo"].ToString();
+            student.SLCDate = dr["SLCDate"]?.ToString() == "" ? "" : DateTime.Parse(dr["SLCDate"].ToString()).ToString(MicroConstants.DateFormat);
+            student.isActive = bool.Parse(dr["isActive"].ToString());
 
-            //TheStudent.SessionID = int.Parse(dr["SessionID"].ToString());
-            //TheStudent.StudentCode = dr["StudentCode"].ToString();
-            //TheStudent.MRINO = dr["MRINO"].ToString();
-            //TheStudent.ReceiptNo = dr["ReceiptNo"].ToString();
-            //TheStudent.TCNo = dr["TCNo"].ToString();
-            //
-            //TheStudent.ClassID = (string.IsNullOrEmpty(dr["ClassId"].ToString()) == true ? -1 : int.Parse(dr["ClassId"].ToString()));
-            //TheStudent.QualID = (string.IsNullOrEmpty(dr["QualID"].ToString()) == true ? -1 : int.Parse(dr["QualID"].ToString()));  //int.Parse(dr["QualID"].ToString());
-            //TheStudent.StreamID = (string.IsNullOrEmpty(dr["StreamID"].ToString()) == true ? -1 : int.Parse(dr["StreamID"].ToString()));  //int.Parse(dr["StreamID"].ToString());
-            //TheStudent.FatherName = dr["FatherName"].ToString();
-            //TheStudent.MotherName = dr["MotherName"].ToString();
-            //TheStudent.Gender = dr["Gender"].ToString();
-            //TheStudent.Caste = dr["Caste"].ToString();
-            //TheStudent.PHStatus = dr["PHStatus"].ToString();
-            //TheStudent.Status = dr["Status"].ToString();
-            //TheStudent.TotalFeesPaid = dr["TotalFeesPaid"].ToString();
-            //TheStudent.DateOfBirth = dr["DateOfBirth"].ToString() == "" ? "" : DateTime.Parse(dr["DateOfBirth"].ToString()).ToString(MicroConstants.DateFormat);
-            //TheStudent.DateOfAdmission = dr["DateOfAdmission"].ToString() == "" ? "" : DateTime.Parse(dr["DateOfAdmission"].ToString()).ToString(MicroConstants.DateFormat);
-            //TheStudent.DateOfLeaving = dr["DateOfLeaving"].ToString() == "" ? "" : DateTime.Parse(dr["DateOfLeaving"].ToString()).ToString(MicroConstants.DateFormat);
-            //TheStudent.Address_Present_TownOrCity = dr["Address_Present_TownOrCity"].ToString();
-            //TheStudent.Address_Present_Landmark = dr["Address_Present_Landmark"].ToString();
-            //TheStudent.Address_Present_PinCode = dr["Address_Present_PinCode"].ToString();
-            //TheStudent.Address_Present_DistrictID = int.Parse(dr["Address_Present_DistrictID"].ToString());
-            //if (dr["Address_Present_DistrictID"].ToString() != "")
-            //{
-            //    TheStudent.Address_Present_DistrictID = int.Parse(dr["Address_Present_DistrictID"].ToString());
-            //    TheStudent.Address_Present_DistrictName = dr["Address_Present_DistrictName"].ToString();
-            //}
-            //TheStudent.Address_Present_StateName = dr["Address_Present_StateName"].ToString();
-            //TheStudent.Address_Present_CountryName = dr["Address_Present_CountryName"].ToString();
+            return student;
+        }
 
-            //TheStudent.Address_Permanent_TownOrCity = dr["Address_Permanent_TownOrCity"].ToString();
-            //TheStudent.Address_Permanent_Landmark = dr["Address_Permanent_Landmark"].ToString();
-            //TheStudent.Address_Permanent_PinCode = dr["Address_Permanent_PinCode"].ToString();
-            //TheStudent.Address_Permanent_DistrictID = int.Parse(dr["Address_Permanent_DistrictID"].ToString());
-            //if (dr["Address_Permanent_DistrictID"].ToString() != "")
-            //{
-            //    TheStudent.Address_Permanent_DistrictID = int.Parse(dr["Address_Permanent_DistrictID"].ToString());
-            //    TheStudent.Address_Permanent_DistrictName = dr["Address_Permanent_DistrictName"].ToString();
-            //}
-            //TheStudent.Address_Permanent_StateName = dr["Address_Permanent_StateName"].ToString();
-            //TheStudent.Address_Permanent_CountryName = dr["Address_Permanent_CountryName"].ToString();
+        public static dynamic GetCollegeSummary()
+        {
+            DataSet ds = StudentDataAccess.GetInstance.GetCollegeSummary();
+            if (ds == null) return null;
+            ds.Tables[0].TableName = "StudentsByStream";
+            ds.Tables[1].TableName = "StudentsByClass";
+            ds.Tables[2].TableName = "StudentsByClassAndSubject";
+            ds.Tables[3].TableName = "StudentsByCategory";
+            ds.Tables[4].TableName = "StudentsByAdmissionType";
+            ds.Tables[5].TableName = "StudentsByGender";
+            ds.Tables[6].TableName = "StudentsByGenderAndStream";
+            ds.Tables[7].TableName = "StudentsByGenderAndClass";
+            ds.Tables[8].TableName = "LibraryBooksTotal";
+            ds.Tables[9].TableName = "LibraryBooksByType";
+            ds.Tables[10].TableName = "LibraryBooksBySubject";
+            ds.Tables[11].TableName = "FeedbackSummary";
+            //ds.Tables[12].TableName = "StudentStrengthByYear";
 
-            //TheStudent.PhoneNumber = dr["LandPhoneNumber"].ToString();
-            //TheStudent.Mobile = dr["MobileNumber"].ToString();
-            //TheStudent.EMailID = dr["EmailID"].ToString();
-            //TheStudent.OfficeID = int.Parse(dr["OfficeID"].ToString());
+            return ds;
+        }
 
-            //TheStudent.AlumniFlag = dr["AlumniFlag"].ToString();
-            //TheStudent.RegistrationNumber = dr["RegistrationNumber"].ToString();
-            //TheStudent.AlumniPresentOccupation = dr["AlumniPresentOccupation"].ToString();
-            //TheStudent.AlumniYearOfPassing = dr["AlumniYearOfPassing"].ToString();
-
-            return TheStudent;
+        public static dynamic StudentStrengthByYear()
+        {
+            DataSet ds = StudentDataAccess.GetInstance.StudentStrengthByYear();
+            if (ds == null) return null;
+            ds.Tables[0].TableName = "StudentStrengthByYear";
+            return ds;
         }
 
         public static StudentListBySubject StDataRowToObject(DataRow dr)
