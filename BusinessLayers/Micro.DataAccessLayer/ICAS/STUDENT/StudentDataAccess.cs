@@ -212,6 +212,34 @@ namespace Micro.DataAccessLayer.ICAS.STUDENT
             return ReturnValueStudent;
         }
 
+        public int InsertUpdateStudent(Student2Save student)
+        {
+            int returnValue = 0;
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.BigInt, returnValue)).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add(GetParameter("@StudentId", SqlDbType.BigInt, student.StudentId));
+                    cmd.Parameters.Add(GetParameter("@Mobile", SqlDbType.VarChar, student.Mobile));
+                    cmd.Parameters.Add(GetParameter("@EmailId", SqlDbType.VarChar, student.EmailId));
+                    cmd.Parameters.Add(GetParameter("@PresentAddress", SqlDbType.VarChar, student.PresentAddress));
+                    cmd.Parameters.Add(GetParameter("@IsThisPermanentAddress", SqlDbType.Int, (student.IsThisPermanentAddress? 1: 0)));
+                    cmd.Parameters.Add(GetParameter("@SavedByUserId", SqlDbType.Int, student.SavedByUserId));
+
+                    cmd.CommandText = "pAPI_SAVE_STUDENT";
+                    ExecuteStoredProcedure(cmd);
+                    returnValue = int.Parse(cmd.Parameters[0].Value.ToString());
+                }
+            }
+            catch  
+            {
+                returnValue = -1;
+            }
+            return returnValue;
+        }
+
         public DataSet StudentStrengthByYear()
         {
             using (SqlCommand cmd = new SqlCommand())
@@ -500,12 +528,18 @@ namespace Micro.DataAccessLayer.ICAS.STUDENT
             {
                 SelectCommand.CommandType = CommandType.StoredProcedure;
 
-                SelectCommand.Parameters.Add(GetParameter("@studentId", SqlDbType.BigInt, payload.studentId));
-                SelectCommand.Parameters.Add(GetParameter("@pageNo", SqlDbType.Int, payload.pageNo));
-                SelectCommand.Parameters.Add(GetParameter("@pageSize", SqlDbType.Int, payload.pageSize));
-                SelectCommand.Parameters.Add(GetParameter("@searchText", SqlDbType.VarChar, payload.searchText));
+               
 
-                SelectCommand.CommandText = "[dbo].[pAPI_GET_STUDENTS_INFO]";
+                if(payload.pageNo == 0 && payload.pageSize == 0 && payload.studentId == 0 && payload.searchText == "")
+                    SelectCommand.CommandText = "[pAPI_GET_STUDENTS_INFO_ALL]";
+                else
+                {
+                    SelectCommand.Parameters.Add(GetParameter("@studentId", SqlDbType.BigInt, payload.studentId));
+                    SelectCommand.Parameters.Add(GetParameter("@pageNo", SqlDbType.Int, payload.pageNo));
+                    SelectCommand.Parameters.Add(GetParameter("@pageSize", SqlDbType.Int, payload.pageSize));
+                    SelectCommand.Parameters.Add(GetParameter("@searchText", SqlDbType.VarChar, payload.searchText));
+                    SelectCommand.CommandText = "[pAPI_GET_STUDENTS_INFO]";
+                }
 
                 return ExecuteGetDataTable(SelectCommand);
 

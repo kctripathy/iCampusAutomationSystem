@@ -393,6 +393,7 @@ namespace Micro.Objects.ICAS.STUDENT
 
     public class StudentViewModel
     {
+        public int SLNo { get; set; }
         public int SessionID { get; set; }
         public int StreamID { get; set; }
         public int ClassID { get; set; }
@@ -460,5 +461,15 @@ namespace Micro.Objects.ICAS.STUDENT
         public int pageNo { get; set; }
         public int pageSize { get; set; }
         public string searchText { get; set; }
+    }
+
+    public class Student2Save
+    {
+        public long StudentId { get; set; }
+        public string EmailId { get; set; }
+        public string Mobile { get; set; }
+        public string PresentAddress { get; set; }
+        public bool IsThisPermanentAddress { get; set; }
+        public int SavedByUserId { get; set; }
     }
 } 

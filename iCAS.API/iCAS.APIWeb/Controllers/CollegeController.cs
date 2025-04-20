@@ -306,7 +306,44 @@ namespace iCAS.APIWeb.Controllers
             };
         }
 
-        
+
+        [HttpPost]
+        [Route("api/College/Student/Save")]
+        public HttpResponseMessage SaveCollegeStudent([FromBody] Student2Save student)
+        {
+            Response response = new Response();
+            string token = GetRequestToken();
+            if (token.Length > 0 && UserManagement.GetInstance.ValidateToken(student.SavedByUserId, token))
+            {
+                int id = StudentManagement.GetInstance.InsertUpdateStudent(student);
+                if (id > 0)
+                {
+                    StudentSearchPayload payload = new StudentSearchPayload
+                    {
+                        studentId = id
+                    };
+                    var list = StudentManagement.GetInstance.GetStudents(payload);
+                    response.message = "Success";
+                    response.data = list;
+                }
+                else
+                {
+                    response.message = "Failure";
+                    response.data = id;
+                }
+            }
+            else
+            {
+                response.message = "Access denied";
+            }
+
+
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
         #endregion
 
         #region Establishments 

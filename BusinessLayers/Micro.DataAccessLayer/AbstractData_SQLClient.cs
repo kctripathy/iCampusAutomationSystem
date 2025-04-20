@@ -229,7 +229,10 @@ namespace Micro.DataAccessLayer
 						oCommand.CommandType = CommandType.StoredProcedure;
 						oAdapter.SelectCommand = oCommand;
 						oAdapter.Fill(DsResult);
-						dtableObject = DsResult.Tables[0];
+                        if (DsResult.Tables.Count > 0)
+                        {
+						    dtableObject = DsResult.Tables[0];
+                        }
 					}
 					catch(Exception e)
 					{
@@ -237,7 +240,7 @@ namespace Micro.DataAccessLayer
 						{
 							string ErrorAtProcName = this.GetType().FullName.ToString() + "~" + oCommand.CommandText;
 							Exception ex = new Exception(ErrorAtProcName, e);
-							//Log.Error(ex, true);
+							Log.Error(ex, true);
 						}
 						//else
 						//	Log.Error(e, true);

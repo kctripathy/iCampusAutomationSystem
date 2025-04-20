@@ -165,5 +165,10 @@ namespace Micro.BusinessLayer.ICAS.STUDENT
         {
             return StudentIntegration.GetCollegeSummary();
         }
+
+        public int InsertUpdateStudent(Student2Save student)
+        {
+            return StudentIntegration.InsertUpdateStudent(student);
+        }
     }
 }

@@ -128,6 +128,11 @@ namespace Micro.IntegrationLayer.ICAS.STUDENT
             return student;
         }
 
+        public static int InsertUpdateStudent(Student2Save student)
+        {
+            return StudentDataAccess.GetInstance.InsertUpdateStudent(student);
+        }
+
         public static dynamic GetCollegeSummary()
         {
             DataSet ds = StudentDataAccess.GetInstance.GetCollegeSummary();
@@ -245,13 +250,17 @@ namespace Micro.IntegrationLayer.ICAS.STUDENT
         {
             List<StudentViewModel> StudentList = new List<StudentViewModel>();
             DataTable StudentTable = StudentDataAccess.GetInstance.GetStudents(payload);
+            int slNo = 1;
             foreach (DataRow dr in StudentTable.Rows)
             {
                 StudentViewModel TheStudent = DataRowToStudentVidwModelObject(dr);
+                TheStudent.SLNo = ((payload.pageNo - 1) * payload.pageSize) + slNo;
                 StudentList.Add(TheStudent);
+                slNo++;
             }
             return StudentList;
         }
+
         #endregion
 
     }
