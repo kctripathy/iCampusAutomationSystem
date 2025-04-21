@@ -42,9 +42,9 @@ namespace Micro.BusinessLayer.ICAS.ADMIN
 
         #region Methods & Implementation For Question
 
-        public List<Feedback> GetFeedbackQuestions()
+        public List<Feedback> GetFeedbackQuestions(int feedbackid)
         {
-            return FeedbackMasterIntegration.GetFeedbackQuestions();
+            return FeedbackMasterIntegration.GetFeedbackQuestions(feedbackid);
         }
 
 
@@ -91,9 +91,9 @@ namespace Micro.BusinessLayer.ICAS.ADMIN
 
         #region Methods & Implementation For FeedBack
 
-        public List<Feedback> GetFeedbackMaster()
+        public List<Feedback> GetFeedbackMaster(int willFetchAll = 0)
         {
-            return FeedbackMasterIntegration.GetFeedbackMaster();
+            return FeedbackMasterIntegration.GetFeedbackMaster(willFetchAll);
         }
 
         public List<StudentWhoSubmittedFeedback> GetStudentWhoSubmittedFeedback(int feedbackId)
@@ -126,10 +126,17 @@ namespace Micro.BusinessLayer.ICAS.ADMIN
             return FeedbackMasterIntegration.InsertFeedBack(QuestionIDs,OptionValue);
         }
 
+        public int InsertFeedBackMaster(FeedbackMasterAddViewModel fm)
+        {
+            return FeedbackMasterIntegration.InsertFeedbackMaster(fm);
+        }
+
         public int UpdateFeedBack(FeedBackMasters theFeedBackMasters)
         {
             return FeedbackMasterIntegration.UpdateFeedBack(theFeedBackMasters);
         }
+
+
 
         public int DeleteFeedBack(FeedBackMasters theFeedBackMasters)
         {
@@ -144,6 +151,11 @@ namespace Micro.BusinessLayer.ICAS.ADMIN
         public int DeleteFeedbackQuestion(int questionId)
         {
             return FeedbackMasterIntegration.DeleteFeedbackQuestion(questionId);
+        }
+
+        public dynamic GetAllStudentsFeedbacksAnswers(int feedbackId)
+        {
+            return FeedbackMasterIntegration.GetAllStudentsFeedbacksAnswers(feedbackId);
         }
 
         #endregion

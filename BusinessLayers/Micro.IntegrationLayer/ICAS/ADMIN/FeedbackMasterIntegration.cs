@@ -58,10 +58,10 @@ namespace Micro.IntegrationLayer.ICAS.ADMIN
             return dtUniqRecords;
         }
 
-        public static List<Feedback> GetFeedbackMaster()
+        public static List<Feedback> GetFeedbackMaster(int willFetchAll = 0)
         {
             List<Feedback> feedbacksList = new List<Feedback>();
-            DataTable dt = FeedbackMasterDataAccess.GetInstance.GetFeedbacks();
+            DataTable dt = FeedbackMasterDataAccess.GetInstance.GetFeedbacks(willFetchAll);
 
 
             foreach (DataRow dRow in dt.Rows)
@@ -72,6 +72,7 @@ namespace Micro.IntegrationLayer.ICAS.ADMIN
                 f.FeedbackStartDate = DateTime.Parse(dRow["feedback_date_start"].ToString());
                 f.FeedbackEndDate = DateTime.Parse(dRow["feedback_date_end"].ToString());
                 f.IsActive = bool.Parse(dRow["is_active"].ToString());
+                f.IsOpen = int.Parse(dRow["isOpen"].ToString());
                 feedbacksList.Add(f);
             }
             return feedbacksList;
@@ -119,6 +120,12 @@ namespace Micro.IntegrationLayer.ICAS.ADMIN
             return list;
         }
 
+        public static dynamic GetAllStudentsFeedbacksAnswers(int feedbackId)
+        {
+            DataTable dt = FeedbackMasterDataAccess.GetInstance.GetAllStudentsFeedbacksAnswers(feedbackId);
+            return dt;
+        }
+
         public static int DeleteFeedbackQuestion(int questionId)
         {
             return FeedbackMasterDataAccess.GetInstance.DeleteFeedbackQuestion(questionId);
@@ -129,10 +136,15 @@ namespace Micro.IntegrationLayer.ICAS.ADMIN
             return FeedbackMasterDataAccess.GetInstance.InsertFeedbackQuestion(fq);
         }
 
-        public static List<Feedback> GetFeedbackQuestions()
+        public static int InsertFeedbackMaster(FeedbackMasterAddViewModel fm)
+        {
+            return FeedbackMasterDataAccess.GetInstance.InsertFeedbackMaster(fm);
+        }
+
+        public static List<Feedback> GetFeedbackQuestions(int feedbackId)
         {
             List<Feedback> feedbacksList = new List<Feedback>();
-            DataTable FeedbackQuestionTable = FeedbackMasterDataAccess.GetInstance.GetFeedbackQuestionsAndOptions();
+            DataTable FeedbackQuestionTable = FeedbackMasterDataAccess.GetInstance.GetFeedbackQuestionsAndOptions(feedbackId);
 
             string[] TobeDistinct = { "FeedbackId", "FeedbackDesc", "feedback_date_start", "feedback_date_end" };
             DataTable dtDistinct = GetDistinctRecords(FeedbackQuestionTable, TobeDistinct);

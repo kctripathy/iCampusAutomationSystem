@@ -77,6 +77,12 @@ namespace Micro.BusinessLayer.ICAS.STUDENT
             }
             
         }
+
+        public dynamic StudentStrengthByYear()
+        {
+            return StudentIntegration.StudentStrengthByYear();
+        }
+
         // overload function for alumni
         public List<Student> GetStudentList(bool allOffices = false, bool showDeleted = false, bool alumniFlag = false)
         {
@@ -155,5 +161,14 @@ namespace Micro.BusinessLayer.ICAS.STUDENT
             return StudentIntegration.GetStudents(payload);
         }
 
+        public dynamic GetCollegeSummary()
+        {
+            return StudentIntegration.GetCollegeSummary();
+        }
+
+        public int InsertUpdateStudent(Student2Save student)
+        {
+            return StudentIntegration.InsertUpdateStudent(student);
+        }
     }
 }

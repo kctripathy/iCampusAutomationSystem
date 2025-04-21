@@ -71,10 +71,10 @@ namespace iCAS.APIWeb.Controllers
 
 
         #region STUDENT FEEDBACK
-        [Route("api/Student/Feedback/Questions")]
-        public List<Feedback> GetFeedbackQuestion()
+        [Route("api/Student/Feedback/Questions/{feedbackId}")]
+        public List<Feedback> GetFeedbackQuestion(int feedbackId)
         {
-            List<Feedback> theList = FeedbackMasterManagement.GetInstance.GetFeedbackQuestions();
+            List<Feedback> theList = FeedbackMasterManagement.GetInstance.GetFeedbackQuestions(feedbackId);
             return theList;
         }
 
@@ -109,6 +109,27 @@ namespace iCAS.APIWeb.Controllers
             return theList;
         }
 
+        [Route("api/Student/FeedbackMasterRecords/{willFetchAll}")]
+        public List<Feedback> GetFeedbackMasterRecords(int willFetchAll)
+        {
+            List<Feedback> theList = FeedbackMasterManagement.GetInstance.GetFeedbackMaster(willFetchAll);
+            return theList;
+        }
+
+        [HttpPost]
+        [Route("api/Student/FeedbackMaster")]
+        public HttpResponseMessage InsertFeedbackMaster(FeedbackMasterAddViewModel fm)
+        {
+            int result = FeedbackMasterManagement.GetInstance.InsertFeedBackMaster(fm);
+            Response response = new Response();
+            response.message = "Success";
+            response.data = result;
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
         [Route("api/Student/Feedback/StudentsWhoSubmittedFeedback")]
         public List<StudentWhoSubmittedFeedback> GetStudentsWhoSubmittedFeedback(int feedbackId)
         {
@@ -125,6 +146,28 @@ namespace iCAS.APIWeb.Controllers
             if (token.Length > 0 && Micro.BusinessLayer.Administration.UserManagement.GetInstance.ValidateToken(staffId, token))
             {
                 List<StudentFeedbackAnswer> theList = FeedbackMasterManagement.GetInstance.GetStudentsFeedbacksAnswers(feedbackId, userId);
+                response.message = "Success";
+                response.data = theList;
+            }
+            else
+            {
+                response.message = "Access denied";
+            }
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+        [Route("api/Student/FeedbackAll/Answers/{staffId}")]
+        public HttpResponseMessage GetAllStudentFeedbackAnswers(int staffId, int feedbackId)
+        {
+
+            Response response = new Response();
+            string token = GetRequestToken();
+            if (token.Length > 0 && Micro.BusinessLayer.Administration.UserManagement.GetInstance.ValidateToken(staffId, token))
+            {
+                dynamic theList = FeedbackMasterManagement.GetInstance.GetAllStudentsFeedbacksAnswers(feedbackId);
                 response.message = "Success";
                 response.data = theList;
             }

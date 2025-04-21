@@ -393,22 +393,83 @@ namespace Micro.Objects.ICAS.STUDENT
 
     public class StudentViewModel
     {
-
+        public int SLNo { get; set; }
+        public int SessionID { get; set; }
+        public int StreamID { get; set; }
+        public int ClassID { get; set; }
+        public int QualID { get; set; }
         public long StudentID { get; set; }
         public string RollNo { get; set; }
+
+
+        public string StudentCode { get; set; }
+        public string MRINO { get; set; }
         public string Salutation { get; set; }
         public string StudentName { get; set; }
+        public string FatherName { get; set; }
+        public string MotherName { get; set; }
+
+
+        //public Address PresentAddress { get; set; }
+        //public Address PermanentAddress { get; set; }
+        public string PresentAddress_TownCity { get; set; }
+        public string PresentAddress_District { get; set; }
+        public string PresentAddress_State { get; set; }
+        public string PresentAddress_PIN { get; set; }
+
+
+        public string PermanentAddress_TownCity { get; set; }
+        public string PermanentAddress_District { get; set; }
+        public string PermanentAddress_State { get; set; }
+        public string PermanentAddress_PIN { get; set; }
+
+
+        public string Gender { get; set; }
+        public string Caste { get; set; }
+        public string Category { get; set; }
+        public string Religion { get; set; }
+        public string DateOfAdmission { get; set; }
+        public string DateOfBirth { get; set; }
+        public int Age { get; set; }
+        public string AadhaarNo { get; set; }
+        public string BarcodeNo { get; set; }
+        public string AdmissionType { get; set; }
         public string FullName { get { return this.Salutation + ' ' + this.StudentName; } }
         public string ClassName { get; set; }
         public string StreamName { get; set; }
+        public string QualName { get; set; }
         public string Mobile { get; set; }
+        public string EMail{ get; set; }
+        public string SLCNo { get; set; }
+        public string SLCDate { get; set; }
+        public string SubjectName { get; set; }
+        public bool isActive { get; set; }
+    }
 
+    public class Address
+    {
+        public string TownOrCity { get; set; }
+        public string DistrictName { get; set; }
+        public string StateName { get; set; } = "Odisha";
+        public string ContryName { get; set; } = "India";
+        public string PINCode { get; set; }
     }
 
     public class StudentSearchPayload
     {
+        public long studentId { get; set; } //0 to 4,294,967,295
         public int pageNo { get; set; }
         public int pageSize { get; set; }
         public string searchText { get; set; }
+    }
+
+    public class Student2Save
+    {
+        public long StudentId { get; set; }
+        public string EmailId { get; set; }
+        public string Mobile { get; set; }
+        public string PresentAddress { get; set; }
+        public bool IsThisPermanentAddress { get; set; }
+        public int SavedByUserId { get; set; }
     }
 } 
