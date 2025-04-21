@@ -560,28 +560,48 @@ namespace Micro.DataAccessLayer.ICAS.LIBRARY
 			{
 				Selectcommand.CommandType = CommandType.StoredProcedure;
 				
-				
-				if (userId != null)
-				{
-					Selectcommand.Parameters.Add(GetParameter("@USER_REF_ID", SqlDbType.Int, userId));
-					Selectcommand.CommandText = "pAPI_LIBRARY_TRANSACTION_GET_ISSUED_TO_USER";
-				}
-				else
+				switch(tranType)
                 {
-					if (fromDate != null)
-					{
-						Selectcommand.Parameters.Add(GetParameter("@FROM_DATE", SqlDbType.DateTime, fromDate));
-					}
-					if (toDate != null)
-					{
-						Selectcommand.Parameters.Add(GetParameter("@TO_DATE", SqlDbType.DateTime, toDate));
-					}
-					Selectcommand.Parameters.Add(GetParameter("@TRAN_TYPE", SqlDbType.VarChar, tranType));
-					Selectcommand.Parameters.Add(GetParameter("@PAGE_NO", SqlDbType.Int, pageNo));
-					Selectcommand.Parameters.Add(GetParameter("@PAGE_SIZE", SqlDbType.Int, pageSize));
-					Selectcommand.Parameters.Add(GetParameter("@USER_REF_ID", SqlDbType.Int, userId));
-					Selectcommand.CommandText = "pAPI_LIBRARY_TRANSACTION_GET_BOOKS_ISSUED";
+					case "I": // ISSUE
+						if (userId != null)
+						{
+							Selectcommand.Parameters.Add(GetParameter("@USER_REF_ID", SqlDbType.Int, userId));
+							Selectcommand.CommandText = "pAPI_LIBRARY_TRANSACTION_GET_ISSUED_TO_USER";
+						}
+						else
+						{
+							if (fromDate != null)
+							{
+								Selectcommand.Parameters.Add(GetParameter("@FROM_DATE", SqlDbType.DateTime, fromDate));
+							}
+							if (toDate != null)
+							{
+								Selectcommand.Parameters.Add(GetParameter("@TO_DATE", SqlDbType.DateTime, toDate));
+							}
+							Selectcommand.Parameters.Add(GetParameter("@TRAN_TYPE", SqlDbType.VarChar, tranType));
+							Selectcommand.Parameters.Add(GetParameter("@PAGE_NO", SqlDbType.Int, pageNo));
+							Selectcommand.Parameters.Add(GetParameter("@PAGE_SIZE", SqlDbType.Int, pageSize));
+							Selectcommand.Parameters.Add(GetParameter("@USER_REF_ID", SqlDbType.Int, userId));
+							Selectcommand.CommandText = "pAPI_LIBRARY_TRANSACTION_GET_BOOKS_ISSUED";
+						}
+						break;
+					case "R": // RECEIVE
+						if (fromDate != null)
+						{
+							Selectcommand.Parameters.Add(GetParameter("@FROM_DATE", SqlDbType.DateTime, fromDate));
+						}
+						if (toDate != null)
+						{
+							Selectcommand.Parameters.Add(GetParameter("@TO_DATE", SqlDbType.DateTime, toDate));
+						}
+						Selectcommand.Parameters.Add(GetParameter("@TRAN_TYPE", SqlDbType.VarChar, tranType));
+						Selectcommand.Parameters.Add(GetParameter("@PAGE_NO", SqlDbType.Int, pageNo));
+						Selectcommand.Parameters.Add(GetParameter("@PAGE_SIZE", SqlDbType.Int, pageSize));
+						Selectcommand.Parameters.Add(GetParameter("@USER_REF_ID", SqlDbType.Int, userId));
+						Selectcommand.CommandText = "pAPI_LIBRARY_TRANSACTION_GET_BOOKS_RECEIVED";
+						break;
 				}
+				
 				return ExecuteGetDataTable(Selectcommand);
 			}
 		}
