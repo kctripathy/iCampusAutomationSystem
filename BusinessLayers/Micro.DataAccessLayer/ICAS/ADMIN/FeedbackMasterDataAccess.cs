@@ -279,7 +279,8 @@ namespace Micro.DataAccessLayer.ICAS.ADMIN
             using (SqlCommand cmd = new SqlCommand())
             {
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.Add(GetParameter("@feedback_id", SqlDbType.Int, returnValue)).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(GetParameter("@id", SqlDbType.Int, returnValue)).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(GetParameter("@feedback_id", SqlDbType.Int, fm.FeedbackID));
                 cmd.Parameters.Add(GetParameter("@feedback_desc", SqlDbType.VarChar, fm.FeedbackDesc));
                 cmd.Parameters.Add(GetParameter("@startdate", SqlDbType.DateTime, fm.FeedbackStartDate));
                 cmd.Parameters.Add(GetParameter("@closedate", SqlDbType.DateTime, fm.FeedbackEndDate));

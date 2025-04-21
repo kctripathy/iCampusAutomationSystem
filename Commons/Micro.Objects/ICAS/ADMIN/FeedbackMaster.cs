@@ -55,6 +55,8 @@ namespace Micro.Objects.ICAS.ADMIN
 
     public class FeedbackMasterAddViewModel
     {
+        public int FeedbackID { get; set; }
+
         public string FeedbackDesc
         {
             get;
