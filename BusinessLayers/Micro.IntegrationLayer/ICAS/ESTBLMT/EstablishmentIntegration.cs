@@ -22,46 +22,43 @@ namespace Micro.IntegrationLayer.ICAS.ESTBLMT
         public static Establishment DataRowToObject(DataRow dr)
         {
 
-            Establishment theestablishment = new Establishment();
+            Establishment estb = new Establishment();
 
-                theestablishment.EstbID = int.Parse(dr["EstbID"].ToString());
-                theestablishment.EstbCode = dr["EstbCode"].ToString();
-                theestablishment.EstbTypeCode = dr["EstbTypeCode"].ToString();
-                theestablishment.EstbTitle = dr["EstbTitle"].ToString();
-                theestablishment.EstbDescription = dr["EstbDescription"].ToString();
-                theestablishment.EstbDescription1 = dr["EstbDescription1"].ToString();
-                theestablishment.EstbDescription2 = dr["EstbDescription2"].ToString();
-            theestablishment.EstbMessage = dr["EstbMessage"].ToString();
+                estb.EstbID = int.Parse(dr["EstbID"].ToString());
+                estb.EstbCode = dr["EstbCode"].ToString();
+                estb.EstbTypeCode = dr["EstbTypeCode"].ToString();
+                estb.EstbTitle = dr["EstbTitle"].ToString();
+                estb.EstbDescription = dr["EstbDescription"].ToString();
+                estb.EstbDescription1 = dr["EstbDescription1"].ToString();
+                estb.EstbDescription2 = dr["EstbDescription2"].ToString();
+                estb.EstbMessage = dr["EstbMessage"].ToString();
                 if (dr["EstbDate"] != null)
                 {
-                    theestablishment.EstbDate = DateTime.Parse(DateTime.Parse(dr["EstbDate"].ToString()).ToString(MicroConstants.DateFormat));
+                    estb.EstbDate = DateTime.Parse(DateTime.Parse(dr["EstbDate"].ToString()).ToString(MicroConstants.DateFormat));
                 }
-				//if (dr["EstbUploadFile"] != null)
-				//{
-				//    theestablishment.EstbUploadFile = ((byte[])(dr["EstbUploadFile"])); // dr["EstbUploadFile"].ToString();
-				//
+                estb.EstbViewStartDate = DateTime.Parse(dr["EstbViewStartDate"].ToString()); //.ToString(MicroConstants.DateFormat);
+                estb.EstbViewEndDate = DateTime.Parse(dr["EstbViewEndDate"].ToString()); //.ToString(MicroConstants.DateFormat);
+                estb.EstbStatusFlag = dr["ESTBSTATUSFLAG"].ToString();
+                estb.IsActive = bool.Parse(dr["IsActive"].ToString());
+                estb.IsDeleted = bool.Parse(dr["IsDeleted"].ToString());
+                estb.AddedBy = int.Parse(dr["AddedBy"].ToString());
+                estb.AddedByEmployeeID = int.Parse(dr["AddedBy"].ToString());
+            
+                estb.ModifiedBy =int.Parse(MicroGlobals.ReturnZeroIfNull(dr["ModifiedBy"].ToString()));
+                if (estb.DateAdded != null)
+                {
+                    estb.DateAdded = DateTime.Parse(dr["DateAdded"].ToString()).ToString(MicroConstants.DateFormat);
+                }
+                if (estb.DateModified != null)
+                {
+                    estb.DateModified = DateTime.Parse(dr["DateModified"].ToString()).ToString(MicroConstants.DateFormat);
+                }
+                estb.OfficeID =int.Parse( dr["OfficeID"].ToString());
+                estb.CompanyID =int.Parse(dr["CompanyID"].ToString());
+                estb.FileNameWithPath = dr["VC_FIELD2"].ToString();
+                estb.AuthorOrContributorName = dr["EmployeeName"].ToString();
 
-                theestablishment.EstbViewStartDate = DateTime.Parse(dr["EstbViewStartDate"].ToString()); //.ToString(MicroConstants.DateFormat);
-                theestablishment.EstbViewEndDate = DateTime.Parse(dr["EstbViewEndDate"].ToString()); //.ToString(MicroConstants.DateFormat);
-                theestablishment.EstbStatusFlag = dr["ESTBSTATUSFLAG"].ToString();
-                theestablishment.IsActive = bool.Parse(dr["IsActive"].ToString());
-                theestablishment.IsDeleted = bool.Parse(dr["IsDeleted"].ToString());
-                theestablishment.AddedBy = int.Parse(dr["AddedBy"].ToString());
-                theestablishment.ModifiedBy =int.Parse(MicroGlobals.ReturnZeroIfNull(dr["ModifiedBy"].ToString()));
-                //theestablishment. = DateTime.Parse(dr["DateAdded"].ToString()).ToString(MicroConstants.DateFormat);
-                if (theestablishment.DateAdded != null)
-                {
-                    theestablishment.DateAdded = DateTime.Parse(dr["DateAdded"].ToString()).ToString(MicroConstants.DateFormat);
-                }
-                if (theestablishment.DateModified != null)
-                {
-                    theestablishment.DateModified = DateTime.Parse(dr["DateModified"].ToString()).ToString(MicroConstants.DateFormat);
-                }
-                theestablishment.OfficeID =int.Parse( dr["OfficeID"].ToString());
-                theestablishment.CompanyID =int.Parse(dr["CompanyID"].ToString());
-                theestablishment.FileNameWithPath = dr["VC_FIELD2"].ToString();
-                theestablishment.AuthorOrContributorName = dr["EmployeeName"].ToString();
-          return theestablishment;
+          return estb;
         
         }
       
@@ -163,6 +160,17 @@ namespace Micro.IntegrationLayer.ICAS.ESTBLMT
         {
             return EstablishmentDataAccess.GetInstance.UpdateFileName(id, fileName);
         }
+
+        public static int InsertEmailSentLog(EmailRequest email, int loggedOnUserId)
+        {
+            return EstablishmentDataAccess.GetInstance.InsertEmailSentLog(email, loggedOnUserId);
+        }
+
+        public static dynamic GetEmailSentLog(EmailGet email)
+        {
+            return EstablishmentDataAccess.GetInstance.GetEmailSentLog(email);
+        }
+
         public static long UpdateStatusFlag(long id, string status)
         {
             return EstablishmentDataAccess.GetInstance.UpdateStatusFlag(id, status);

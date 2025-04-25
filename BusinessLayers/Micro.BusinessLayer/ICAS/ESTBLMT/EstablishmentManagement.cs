@@ -155,6 +155,17 @@ namespace Micro.BusinessLayer.ICAS.ESTBLMT
         {
             return EstablishmentIntegration.UpdateStatusFlag(id, status);
         }
+
+        public int InsertEmailSentLog(EmailRequest email, int loggedOnUserId)
+        {
+            return EstablishmentIntegration.InsertEmailSentLog(email, loggedOnUserId);
+        }
+
+        public dynamic GetEmailSentLog(EmailGet email)
+        {
+            return EstablishmentIntegration.GetEmailSentLog(email);
+        }
+
         #endregion
     }
 }

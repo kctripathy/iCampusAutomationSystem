@@ -227,7 +227,8 @@ namespace Micro.DataAccessLayer
 						oCommand.Connection = ConnectionFactory.GetInstance.GetConnection(_ConnectionKey);
 						oCommand.Connection.Open();
 						oCommand.CommandType = CommandType.StoredProcedure;
-						oAdapter.SelectCommand = oCommand;
+                        oCommand.CommandTimeout = 0;
+                        oAdapter.SelectCommand = oCommand;
 						oAdapter.Fill(DsResult);
                         if (DsResult.Tables.Count > 0)
                         {

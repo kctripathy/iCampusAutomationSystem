@@ -148,6 +148,8 @@ namespace Micro.DataAccessLayer.ICAS.ESTBLMT
         
         }
 
+        
+
         public int DeleteEstablishment(Establishment theestablishment)
         {
             int ReturnValue= 0;
@@ -265,6 +267,64 @@ namespace Micro.DataAccessLayer.ICAS.ESTBLMT
             catch (Exception)
             {
                 return -1;
+            }
+        }
+        #endregion
+
+        #region EMAIL
+        public int InsertEmailSentLog(EmailRequest email, int loggedOnUserId)
+        {
+            try
+            {
+                int ReturnValue = 0;
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(GetParameter("@returnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add(GetParameter("@email_sent_by_user_id", SqlDbType.Int, loggedOnUserId));
+                    cmd.Parameters.Add(GetParameter("@email_sent_to", SqlDbType.VarChar, email.ToEmails));
+                    cmd.Parameters.Add(GetParameter("@email_sent_cc", SqlDbType.VarChar, email.CCEmails));
+                    cmd.Parameters.Add(GetParameter("@email_sent_bcc", SqlDbType.VarChar, email.BCCEmails));
+                    cmd.Parameters.Add(GetParameter("@email_subject", SqlDbType.VarChar, email.Subject));
+                    cmd.Parameters.Add(GetParameter("@email_body", SqlDbType.VarChar, email.MessageBody));
+
+                    cmd.CommandText = "[pAPI_EMAIL_SENT_LOG_SAVE]";
+
+                    ExecuteStoredProcedure(cmd);
+
+                    ReturnValue = int.Parse(cmd.Parameters[0].Value.ToString());
+                }
+                return ReturnValue;
+            }
+            catch (Exception)
+            {
+                return -1;
+            }
+        }
+
+        public dynamic GetEmailSentLog(EmailGet email)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(GetParameter("@sentBy", SqlDbType.Int, email.EmailSentByEmployeeId));
+                    cmd.Parameters.Add(GetParameter("@fromDate", SqlDbType.DateTime, email.FromDate));
+                    cmd.Parameters.Add(GetParameter("@toDate", SqlDbType.DateTime, email.ToDate));
+
+                    cmd.CommandText = "[pAPI_EMAIL_SENT_LOG_GET]";
+
+                    dt = ExecuteGetDataTable(cmd);
+
+                }
+                return dt;
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
         #endregion

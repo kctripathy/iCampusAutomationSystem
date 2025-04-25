@@ -306,7 +306,11 @@ namespace Micro.Objects.ICAS.ESTBLMT
         {
             get;
             set;
-
+        }
+        public int AddedByEmployeeID
+        {
+            get;
+            set;
         }
 
         public int ModifiedBy
@@ -521,5 +525,23 @@ namespace Micro.Objects.ICAS.ESTBLMT
         
         return _typeCodeDesc;
     }
+    }
+
+
+    public class EmailRequest
+    {
+        public int EmailSentByEmployeeId { get; set; }
+        public string Subject { get; set; } = "";
+        public string MessageBody { get; set; } = "";
+        public string ToEmails { get; set; } = "";
+        public string CCEmails { get; set; } = "";
+        public string BCCEmails { get; set; } = "";
+    }
+
+    public class EmailGet
+    {
+        public int EmailSentByEmployeeId { get; set; }
+        public DateTime FromDate { get; set; }
+        public DateTime ToDate { get; set; }
     }
 }

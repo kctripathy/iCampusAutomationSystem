@@ -19,6 +19,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Mail;
 using System.Text;
 using System.Web;
 using System.Web.Http;
@@ -587,6 +588,211 @@ namespace iCAS.APIWeb.Controllers
             }
         }
         #endregion
+
+        #region SendEmail
+
+
+
+        [HttpPost]
+        [Route("api/College/SendEmail/{loggedOnUserId}")]
+        public HttpResponseMessage SendEmail([FromBody] EmailRequest email, int loggedOnUserId)
+        {
+
+            Response response = new Response();
+            string token = GetRequestToken();
+            if (token.Length > 0 && UserManagement.GetInstance.ValidateToken(loggedOnUserId, token))
+            {
+                try
+                {
+                    string sendEmailThrough = ConfigurationManager.AppSettings["sendEmailThrough"].ToString();
+                    bool sentResult = false;
+
+                    if (sendEmailThrough == "google")
+                        sentResult = SendEmailThroughGoogle(email);
+                    else if (sendEmailThrough == "godaddy")
+                        sentResult = SendEmailThroughGoDaddy(email);
+
+                    response.message = sentResult? "Success" : "Failure";
+
+                    if (response.message == "Success")
+                    {
+                        InsertEmailSentLog(email, loggedOnUserId);
+                    }
+
+                    //Console.WriteLine("Email sent successfully!");
+                }
+                catch (Exception ex)
+                {
+                    string message = ex.Message;
+                    if (ex.InnerException != null && ex.InnerException.Message.ToString().Length > 0)
+                    {
+                        message = message + Environment.NewLine +  ex.InnerException.Message.ToString();
+                    }
+                    response.message = message;
+                    //Console.WriteLine("Error sending email: " + ex.Message);
+                }
+
+                //response.data = id;
+            }
+            else
+            {
+                response.message = "Access denied";
+            }
+
+
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+        private bool SendEmailThroughGoogle(EmailRequest email)
+        {
+            try
+            {
+                string sendEmailFromName = ConfigurationManager.AppSettings["sendEmailFromName"].ToString();
+                string sendEmailFromEmail = ConfigurationManager.AppSettings["sendEmailFromEmail"].ToString();
+                string sendEmailToAddress = ConfigurationManager.AppSettings["sendEmailToAddress"].ToString();
+                string appPassword = ConfigurationManager.AppSettings["sendEmailAppPassword"].ToString();
+
+                MailMessage mail = new MailMessage();
+                MailAddress from = new MailAddress(sendEmailFromEmail, sendEmailFromName);
+                mail.From = from;
+                if (email.ToEmails.Length > 0)
+                {
+                    email.ToEmails = sendEmailToAddress + "," + email.ToEmails;
+                    mail.To.Add(email.ToEmails);
+                }
+                else
+                {
+                    mail.To.Add(sendEmailToAddress);
+                    email.ToEmails = sendEmailToAddress;
+                }
+                if (email.CCEmails.Length > 0) mail.CC.Add(email.CCEmails);
+                if (email.BCCEmails.Length > 0) mail.Bcc.Add(email.BCCEmails);
+
+                mail.Subject = email.Subject;
+                mail.IsBodyHtml = true;
+
+                email.MessageBody = GetEmailBodyMessage(email.MessageBody);
+
+                mail.Body = email.MessageBody;
+
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587); //587
+                smtp.Credentials = new NetworkCredential(sendEmailFromEmail, appPassword);
+                smtp.EnableSsl = true;
+
+                smtp.Send(mail);
+
+                return true;
+            }
+            catch 
+            {
+                throw;
+            }
+        }
+
+        private bool SendEmailThroughGoDaddy(EmailRequest email)
+        {
+            //
+            // FOR AUTHENTICATED
+            //
+            SmtpClient client = new SmtpClient("smtpout.secureserver.net", 587); //587 (TLS) or 465 (SSL)
+            client.EnableSsl = true;  // Use true for port 587 (TLS)
+            client.Credentials = new NetworkCredential("you@yourdomain.com", "yourEmailPassword");
+
+            //
+            // FOR NON AUTHENTICATED
+            //
+            //SmtpClient client = new SmtpClient("relay-hosting.secureserver.net", 25);
+            //client.EnableSsl = false;  // SSL should NOT be enabled for GoDaddy relay
+            //client.UseDefaultCredentials = true;
+
+            //MailMessage mail = new MailMessage();
+            //mail.From = new MailAddress("you@yourdomain.com");  // Must match your GoDaddy-hosted domain
+            //mail.To.Add("recipient@example.com");
+            //mail.Subject = "Test from GoDaddy SMTP";
+            //mail.Body = "Hello! This is a test email sent via GoDaddy SMTP server.";
+
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress("you@yourdomain.com");  // Must match your GoDaddy-hosted domain
+            if (email.ToEmails.Length > 0)  mail.To.Add(email.ToEmails);
+            if (email.CCEmails.Length > 0)  mail.CC.Add(email.CCEmails);
+            if (email.BCCEmails.Length > 0)  mail.Bcc.Add(email.BCCEmails);
+
+            mail.IsBodyHtml = true;
+
+            mail.Subject = email.Subject;
+            email.MessageBody = GetEmailBodyMessage(email.MessageBody);
+            mail.Body = email.MessageBody;
+
+
+            try
+            {
+                client.Send(mail);
+                return true;
+
+                //Console.WriteLine("Email sent successfully!");
+            }
+            catch 
+            {
+                //Console.WriteLine("Error sending email: " + ex.Message);
+                throw;
+            }
+        }
+
+        private void InsertEmailSentLog(EmailRequest email, int loggedOnUserId)
+        {
+            try
+            {
+               int result =  EstablishmentManagement.GetInstance.InsertEmailSentLog(email, loggedOnUserId);
+            }
+            catch 
+            {
+            }
+        }
+
+        [HttpPost]
+        [Route("api/College/EmailSentLog")]
+        public HttpResponseMessage GetCollegeEmailSentLog([FromBody] EmailGet email)
+        {
+            if (email.FromDate.Date.ToString("dd-MM-yy") == "01-01-01")
+            {
+                email.FromDate = email.FromDate.AddYears(2024);
+                email.ToDate = email.ToDate.AddYears(2027);
+            }
+
+            Response response = new Response();
+            dynamic summary = EstablishmentManagement.GetInstance.GetEmailSentLog(email);
+
+            response.message = "Success";
+            response.data = summary;
+            return new HttpResponseMessage(HttpStatusCode.OK)
+            {
+                Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+            };
+        }
+
+
+        private string GetEmailBodyMessage(string messageBody)
+        {
+
+            var path = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().GetName().CodeBase).Substring(6);
+
+            string templateFileName = Path.Combine(path, "emailTemplate.html");
+            string bodyMessage = "";
+            if (System.IO.File.Exists(templateFileName))
+            {
+                bodyMessage = System.IO.File.ReadAllText(templateFileName);
+                var body = messageBody.Replace("\n", "<br/>");
+                bodyMessage = bodyMessage.Replace("#BODY#", body);
+            }
+             
+            return bodyMessage;
+        }
+
+        #endregion
     }
+
 
 }
