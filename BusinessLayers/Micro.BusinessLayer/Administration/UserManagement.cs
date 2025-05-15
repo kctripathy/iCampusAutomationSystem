@@ -158,6 +158,11 @@ namespace Micro.BusinessLayer.Administration
             return token.ToUpper().Contains(userToken.ToUpper());
         }
 
+        public int UpdatePassword(UpdatePasswordModel payload)
+        {
+            return UserIntegration.UpdatePassword(payload);
+        }
+
         #endregion
     }
 }

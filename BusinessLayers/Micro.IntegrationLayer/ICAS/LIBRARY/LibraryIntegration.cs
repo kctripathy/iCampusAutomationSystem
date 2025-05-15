@@ -131,6 +131,11 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             return LibraryDataAccess.GetInstance.SaveSupplier(payload);
         }
 
+        public static long SaveBookAccNoTitle(LibraryBookAccNoTitle payload, int userId)
+        {
+            return LibraryDataAccess.GetInstance.SaveBookAccNoTitle(payload, userId);
+        }
+
         public static int DeleteSupplier(int id)
         {
             return LibraryDataAccess.GetInstance.DeleteSupplier(id);
@@ -144,25 +149,25 @@ namespace Micro.IntegrationLayer.ICAS.LIBRARY
             theBookObj.BookID = (dRow["BookID"] == null ? 0 : int.Parse(dRow["BookID"].ToString()));
             theBookObj.BookType = dRow["BookType"].ToString();
             theBookObj.AccessionNo = dRow["AccessionNo"].ToString();
-            theBookObj.AccessionDate = DateTime.Parse(dRow["AccessionDate"].ToString());
+            theBookObj.AccessionDate = dRow["AccessionDate"] is System.DBNull ? DateTime.Parse("1/1/1111") : DateTime.Parse(dRow["AccessionDate"].ToString());
             theBookObj.Title = dRow["Title"].ToString();
             theBookObj.BookStatus = dRow["BookStatus"].ToString();
-            theBookObj.BookPrice = float.Parse(dRow["BookPrice"].ToString());
+            theBookObj.BookPrice = dRow["BookPrice"] is System.DBNull? 0: float.Parse(dRow["BookPrice"].ToString());
 
-            theBookObj.AuthorID = int.Parse(dRow["AuthorID"].ToString());
+            theBookObj.AuthorID = dRow["AuthorID"] is System.DBNull? 0:  int.Parse(dRow["AuthorID"].ToString());
             theBookObj.Author = dRow["Author"].ToString();
 
-            theBookObj.PublisherID = int.Parse(dRow["PublisherID"].ToString());
+            theBookObj.PublisherID = dRow["PublisherID"] is System.DBNull ? 0 :  int.Parse(dRow["PublisherID"].ToString());
             theBookObj.Publisher = dRow["Publisher"].ToString();
 
-            theBookObj.SupplierID = int.Parse(dRow["SupplierID"].ToString());
+            theBookObj.SupplierID = dRow["SupplierID"] is System.DBNull ? 0 :  int.Parse(dRow["SupplierID"].ToString());
             theBookObj.Supplier = dRow["Supplier"].ToString();
 
-            theBookObj.CategoryID = int.Parse(dRow["CategoryID"].ToString());
+            theBookObj.CategoryID = dRow["CategoryID"] is System.DBNull ? 0 :  int.Parse(dRow["CategoryID"].ToString());
             theBookObj.CategoryCode = dRow["CategoryCode"].ToString();
             theBookObj.Category = dRow["CategoryName"].ToString();
 
-            theBookObj.SegmentID = int.Parse(dRow["SegmentID"].ToString());
+            theBookObj.SegmentID = dRow["SegmentID"] is System.DBNull? 0 : int.Parse(dRow["SegmentID"].ToString());
             theBookObj.Segment = dRow["SegmentName"].ToString();
 
             theBookObj.PDF = dRow["PDF"].ToString();

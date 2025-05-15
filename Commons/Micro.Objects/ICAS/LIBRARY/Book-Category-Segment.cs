@@ -44,7 +44,17 @@ namespace Micro.Objects.ICAS.LIBRARY
 
 	}
 
-	
+	public class LibraryBookAccNoTitle
+	{
+		public int AccessionNo { get; set; }
+		public string Title { get; set; }
+	}
+
+	public class LibraryBookAccNoTitleReturnResponse: LibraryBookAccNoTitle
+	{
+		public string UpdateFlag { get; set; } //A - ADD, U- UPDATE, F-FAILURE
+	}
+
 	public class LibraryBook
 	{
 		public Int64 BookID { get; set; }
@@ -100,31 +110,31 @@ namespace Micro.Objects.ICAS.LIBRARY
 		public Int64 BookID { get; set; }
 		public string BookType { get; set; }
 		public string AccessionNo { get; set; }
-		public DateTime AccessionDate { get; set; }
+		public DateTime? AccessionDate { get; set; }
 		public string Title { get; set; }
 		public string BookStatus { get; set; }
 		public float BookPrice { get; set; }
 
-		public int AuthorID { get; set; }
+		public int? AuthorID { get; set; }
 		public string Author { get; set; }
 
-		public int PublisherID { get; set; }
+		public int? PublisherID { get; set; }
 		public string Publisher { get; set; }
 
-		public int SupplierID { get; set; }
+		public int? SupplierID { get; set; }
 		public string Supplier { get; set; }
 
-		public int CategoryID { get; set; }
+		public int? CategoryID { get; set; }
 		public string CategoryCode { get; set; }
 		public string Category { get; set; }
 
-		public int SegmentID { get; set; }
+		public int? SegmentID { get; set; }
 		public string Segment { get; set; }
 
 		public string PDF { get; set; }
 		public string PHOTO { get; set; }
 
-		public int Issued2UserID { get; set; }
+		public int? Issued2UserID { get; set; }
 		public string Issued2UserName { get; set; }
 		public bool IsActive { get; set; }
 	}

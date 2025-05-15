@@ -182,7 +182,9 @@ namespace Micro.DataAccessLayer
 						oCommand.Connection = ConnectionFactory.GetInstance.GetConnection(_ConnectionKey);
 						oCommand.Connection.Open();
 						oCommand.CommandType = CommandType.StoredProcedure;
-						oAdapter.SelectCommand = oCommand;
+                        oCommand.CommandTimeout = 0;
+
+                        oAdapter.SelectCommand = oCommand;
 						oAdapter.Fill(DsResult);
 						if(DsResult.Tables.Count != 0 && DsResult.Tables[0].Rows.Count != 0)
 							drowObject = DsResult.Tables[0].Rows[0];

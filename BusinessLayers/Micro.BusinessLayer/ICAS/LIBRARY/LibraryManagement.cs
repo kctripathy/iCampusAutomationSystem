@@ -201,7 +201,39 @@ namespace Micro.BusinessLayer.ICAS.LIBRARY
 		{
 			return LibraryIntegration.InsertBookTransaction_RECEIVE(b);
 		}
-		public int InsertBookTransaction_MISSING(BookTransaction b)
+
+        public long SaveBookAccNoTitle(LibraryBookAccNoTitle payload, int userId = 0)
+        {
+            return LibraryIntegration.SaveBookAccNoTitle(payload, userId);
+        }
+
+        public List<LibraryBookAccNoTitleReturnResponse> SaveBookAccNoTitleList(List<LibraryBookAccNoTitle> payload, int userId)
+        {
+            List<LibraryBookAccNoTitleReturnResponse> payloadResponseList = new List<LibraryBookAccNoTitleReturnResponse>();
+
+            foreach (LibraryBookAccNoTitle item in payload)
+            {
+                long result = LibraryIntegration.SaveBookAccNoTitle(item, userId);
+                LibraryBookAccNoTitleReturnResponse returnResponse = new LibraryBookAccNoTitleReturnResponse();
+                returnResponse.AccessionNo = item.AccessionNo;
+                returnResponse.Title = item.Title;
+                returnResponse.UpdateFlag = GetUpdateFlag(result, item);
+                payloadResponseList.Add(returnResponse);
+            }
+            return payloadResponseList;
+        }
+
+        private string GetUpdateFlag(long result, LibraryBookAccNoTitle item)
+        {
+            string flag = "";
+            if (item.AccessionNo != result) flag = "A"; //ADD - INSERT
+            if (item.AccessionNo == result) flag = "U"; //UPDATE
+            if (result < 0)    flag = "F";              //FAIL
+
+            return flag;
+        }
+
+        public int InsertBookTransaction_MISSING(BookTransaction b)
 		{
 			return LibraryIntegration.InsertBookTransaction_MISSING(b);
 		}

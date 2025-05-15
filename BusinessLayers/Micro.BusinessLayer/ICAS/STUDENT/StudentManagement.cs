@@ -170,5 +170,20 @@ namespace Micro.BusinessLayer.ICAS.STUDENT
         {
             return StudentIntegration.InsertUpdateStudent(student);
         }
+
+        public int InsertUpdateStudent(Alumni a)
+        {
+            return StudentIntegration.InsertUpdateStudent(a);
+        }
+
+        public dynamic GetAlumniByUserId(int userId)
+        {
+            return StudentIntegration.GetAlumniByUserId(userId);
+        }
+
+        public dynamic GetAlumniList(AlumniSearchPayload payload)
+        {
+            return StudentIntegration.GetAlumniList(payload);
+        }
     }
 }

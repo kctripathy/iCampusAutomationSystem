@@ -472,4 +472,30 @@ namespace Micro.Objects.ICAS.STUDENT
         public bool IsThisPermanentAddress { get; set; }
         public int SavedByUserId { get; set; }
     }
+
+    public class AlumniSearchPayload
+    {
+        public long id { get; set; } //0 to 4,294,967,295
+        public int pageNo { get; set; }
+        public int pageSize { get; set; }
+        public string searchText { get; set; }
+    }
+
+    public class Alumni
+    {
+        public long id { get; set; }
+        public string name { get; set; }
+        public string dob { get; set; }
+        public string phone { get; set; }
+        public string password { get; set; }
+        public string email { get; set; }
+        public string batch { get; set; }
+        public string stream { get; set; }
+        public string father { get; set; }
+        public string address_perm { get; set; }
+        public string address_present { get; set; }
+        public string occupation { get; set; }
+        public string registrationNo { get; set; }
+        public string isInterested4LifeMember { get; set; } 
+    }
 } 

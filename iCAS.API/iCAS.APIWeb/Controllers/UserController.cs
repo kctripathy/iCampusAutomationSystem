@@ -139,7 +139,33 @@ namespace iCAS.APIWeb.Controllers
 			}
 		}
 
+		[HttpPost]
+		[Route("api/User/UpdatePassword/{loggedOnUserId}")]
+		public HttpResponseMessage UpdateUserPassword([FromBody] UpdatePasswordModel payload, int loggedOnUserId)
+		{
+			Response response = new Response();
+			string token = GetRequestToken();
 
+			if (token.Length > 0 && UserManagement.GetInstance.ValidateToken(loggedOnUserId, token))
+			{
+				long returnValue = UserManagement.GetInstance.UpdatePassword(payload);
+
+				response.message = "Success";
+				response.data = returnValue;
+				return new HttpResponseMessage(HttpStatusCode.OK)
+				{
+					Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+				};
+			}
+			else
+			{
+				response.message = "Unauthorized request";
+				return new HttpResponseMessage(HttpStatusCode.Unauthorized)
+				{
+					Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+				};
+			}
+		}
 
 		public string GetRequestToken()
 		{
