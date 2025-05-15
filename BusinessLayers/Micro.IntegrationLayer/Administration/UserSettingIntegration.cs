@@ -115,5 +115,10 @@ namespace Micro.IntegrationLayer.Administration
         {
 			return UserDataAccess.GetInstance.GetUserToken(userId);
 		}
+
+        public static int UpdatePassword(UpdatePasswordModel payload)
+        {
+			return UserDataAccess.GetInstance.UpdatePassword(payload);
+        }
     }
 }

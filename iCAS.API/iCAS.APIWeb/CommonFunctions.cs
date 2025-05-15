@@ -6,7 +6,7 @@ using System.Web.Http;
 
 namespace iCAS.APIWeb
 {
-    public class CommonFunctions: ApiController
+    public static class CommonFunctions
 	{
 		//public string GetRequestToken()
 		//{
@@ -21,5 +21,12 @@ namespace iCAS.APIWeb
 
 		//	return token;
 		//}
+		public static string getVersion()
+        {
+			System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+			System.Diagnostics.FileVersionInfo fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location);
+			string version = fvi.FileVersion;
+			return version;
+		}
 	}
 }

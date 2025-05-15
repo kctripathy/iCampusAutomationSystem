@@ -293,6 +293,13 @@ namespace Micro.Objects.Administration
         }
     }
 
+    //UpdatePasswordModel
+    public class UpdatePasswordModel
+    {
+        public string UserName { get; set; }
+        public string UserPassword { get; set; }
+    }
+
     public class UserChangePassword
     {
 

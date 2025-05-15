@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using Micro.Commons;
 using Micro.Objects.Administration;
+
 
 namespace Micro.DataAccessLayer.Administration
 {
@@ -99,6 +101,24 @@ namespace Micro.DataAccessLayer.Administration
             }
 
             ExecuteStoredProcedure(InsertCommand);
+        }
+
+        public int UpdatePassword(UpdatePasswordModel payload)
+        {
+            int ReturnValue = 0;
+            using (SqlCommand cmd = new SqlCommand())
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(GetParameter("@ReturnValue", SqlDbType.Int, ReturnValue)).Direction = ParameterDirection.Output;
+                cmd.Parameters.Add(GetParameter("@UserLoginName", SqlDbType.VarChar, payload.UserName));
+                cmd.Parameters.Add(GetParameter("@UserPassword", SqlDbType.VarChar, MicroSecurity.Encrypt(payload.UserPassword)));
+                cmd.CommandText = "pAPI_UPDATE_USER_PASSWORD";
+                ExecuteStoredProcedure(cmd);
+
+                ReturnValue = int.Parse(cmd.Parameters[0].Value.ToString());
+
+                return ReturnValue;
+            }
         }
 
         public string GetUserToken(int userId)

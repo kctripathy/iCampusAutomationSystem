@@ -128,9 +128,24 @@ namespace Micro.IntegrationLayer.ICAS.STUDENT
             return student;
         }
 
+        public static dynamic GetAlumniList(AlumniSearchPayload payload)
+        {
+            return StudentDataAccess.GetInstance.GetAlumniList(payload);
+        }
+
+        public static dynamic GetAlumniByUserId(int userId)
+        {
+            return StudentDataAccess.GetInstance.GetAlumniByUserId(userId);
+        }
+
         public static int InsertUpdateStudent(Student2Save student)
         {
             return StudentDataAccess.GetInstance.InsertUpdateStudent(student);
+        }
+
+        public static int InsertUpdateStudent(Alumni a)
+        {
+            return StudentDataAccess.GetInstance.InsertUpdateStudent(a);
         }
 
         public static dynamic GetCollegeSummary()

@@ -212,6 +212,45 @@ namespace Micro.DataAccessLayer.ICAS.STUDENT
             return ReturnValueStudent;
         }
 
+
+
+        public int InsertUpdateStudent(Alumni a)
+        {
+            int returnValue = 0;
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.Add(GetParameter("@return_value", SqlDbType.BigInt, returnValue)).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add(GetParameter("@id", SqlDbType.BigInt, a.id));
+                    cmd.Parameters.Add(GetParameter("@name", SqlDbType.VarChar, a.name)); 
+                    cmd.Parameters.Add(GetParameter("@password", SqlDbType.VarChar, MicroSecuritty.Encrypt(a.password))); 
+                    cmd.Parameters.Add(GetParameter("@dob", SqlDbType.VarChar, a.dob));
+                    cmd.Parameters.Add(GetParameter("@phone", SqlDbType.VarChar, a.phone));
+                    cmd.Parameters.Add(GetParameter("@email", SqlDbType.VarChar, a.email));
+                    cmd.Parameters.Add(GetParameter("@batch", SqlDbType.VarChar, a.batch));
+                    cmd.Parameters.Add(GetParameter("@stream", SqlDbType.VarChar, a.stream));
+                    cmd.Parameters.Add(GetParameter("@father", SqlDbType.VarChar, a.father));
+                    cmd.Parameters.Add(GetParameter("@address_perm", SqlDbType.VarChar, a.address_perm));
+                    cmd.Parameters.Add(GetParameter("@address_present", SqlDbType.VarChar, a.address_present));
+                    cmd.Parameters.Add(GetParameter("@occupation", SqlDbType.VarChar, a.occupation));
+                    cmd.Parameters.Add(GetParameter("@registrationNo", SqlDbType.VarChar, a.registrationNo));
+                    cmd.Parameters.Add(GetParameter("@isInterested4LifeMember", SqlDbType.VarChar, a.isInterested4LifeMember));
+
+
+                    cmd.CommandText = "dbo.pAPI_ALUMNI_SAVE";
+                    ExecuteStoredProcedure(cmd);
+                    returnValue = int.Parse(cmd.Parameters[0].Value.ToString());
+                }
+            }
+            catch
+            {
+                returnValue = -1;
+            }
+            return returnValue;
+        }
+
         public int InsertUpdateStudent(Student2Save student)
         {
             int returnValue = 0;
@@ -541,6 +580,47 @@ namespace Micro.DataAccessLayer.ICAS.STUDENT
                     SelectCommand.CommandText = "[pAPI_GET_STUDENTS_INFO]";
                 }
 
+                return ExecuteGetDataTable(SelectCommand);
+
+            }
+        }
+
+        //public dynamic GetAlumniList(AlumniSearchPayload payload)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        public DataTable GetAlumniList(AlumniSearchPayload payload)
+        {
+            using (SqlCommand SelectCommand = new SqlCommand())
+            {
+                SelectCommand.CommandType = CommandType.StoredProcedure;
+
+
+
+                if (payload.pageNo == 0 && payload.pageSize == 0 && payload.id == 0 && payload.searchText == "")
+                    SelectCommand.CommandText = "[pAPI_GET_ALUMNI_INFO_ALL]";
+                else
+                {
+                    SelectCommand.Parameters.Add(GetParameter("@id", SqlDbType.BigInt, payload.id));
+                    SelectCommand.Parameters.Add(GetParameter("@pageNo", SqlDbType.Int, payload.pageNo));
+                    SelectCommand.Parameters.Add(GetParameter("@pageSize", SqlDbType.Int, payload.pageSize));
+                    SelectCommand.Parameters.Add(GetParameter("@searchText", SqlDbType.VarChar, payload.searchText));
+                    SelectCommand.CommandText = "[pAPI_GET_ALUMNI_INFO_BY_PAGE]";
+                }
+
+                return ExecuteGetDataTable(SelectCommand);
+
+            }
+        }
+
+        public DataTable GetAlumniByUserId(int userid)
+        {
+            using (SqlCommand SelectCommand = new SqlCommand())
+            {
+                SelectCommand.CommandType = CommandType.StoredProcedure;
+                SelectCommand.Parameters.Add(GetParameter("@user_id", SqlDbType.BigInt, userid));
+                SelectCommand.CommandText = "[pAPI_GET_ALUMNI_INFO_BY_USER_ID]";
                 return ExecuteGetDataTable(SelectCommand);
 
             }

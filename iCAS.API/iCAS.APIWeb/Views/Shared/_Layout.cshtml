@@ -20,7 +20,15 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                    <li>
+                        @Html.ActionLink("API", "Index", "Help", new { area = "" }, null)
+                    </li>
+                    <li>
+                        <a href="swagger/ui/index">Swagger</a>
+                    </li>
+                    <li>
+                        <a href="#" disabled>v@{ @CommonFunctions.getVersion(); }</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -28,7 +36,6 @@
     <div class="container body-content">
         @RenderBody()
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

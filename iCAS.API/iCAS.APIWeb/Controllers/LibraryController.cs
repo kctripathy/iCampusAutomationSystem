@@ -140,6 +140,32 @@ namespace iCAS.APIWeb.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("api/Library/Admin/SaveBook/BulkUpload/{userId}")]
+        public HttpResponseMessage AdminSaveBookBulkUpload([FromBody] List<LibraryBookAccNoTitle> payload, int userId)
+        {
+            Response response = new Response();
+            if (ValidateToken(userId))
+            {
+                List<LibraryBookAccNoTitleReturnResponse> returnResponseList =  LibraryManagement.GetInstance.SaveBookAccNoTitleList(payload, userId); //get all segments
+                response.message = "Success";
+                response.data = returnResponseList;
+                return new HttpResponseMessage(HttpStatusCode.OK)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+            else
+            {
+                response.message = "Invalid request";
+                response.data = -4;
+                return new HttpResponseMessage(HttpStatusCode.Unauthorized)
+                {
+                    Content = new StringContent(JObject.FromObject(response).ToString(), Encoding.UTF8, "application/json")
+                };
+            }
+        }
+
 
         [HttpPost]
         [Route("api/Library/Admin/DeleteBook/{userId}")]
