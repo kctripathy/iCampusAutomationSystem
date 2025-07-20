@@ -1,0 +1,12 @@
+.gitignore
+BusinessLayers
+Commons
+Database
+dummy.txt
+dummy2.txt
+ExternalAssemblies
+iCampusAutomationSystem.sln
+iCAS.API
+packages
+PresentationLayer
+ReadExcelFileApp
