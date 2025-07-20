@@ -2,7 +2,7 @@ name: Build & Lint ASP.NET (.NET Framework)
 
 on:
   pull_request:
-    branches: [main]
+    branches: [master]
 
 jobs:
   build:
