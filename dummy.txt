@@ -1,0 +1,20 @@
+ Volume in drive P is PROJECTS
+ Volume Serial Number is 383E-2DDC
+
+ Directory of P:\tsdc\iCampusAutomationSystem
+
+20-07-2025  19:54    <DIR>          .
+20-07-2025  19:54    <DIR>          ..
+17-07-2024  21:26             6,658 .gitignore
+13-04-2022  13:15    <DIR>          BusinessLayers
+13-04-2022  13:15    <DIR>          Commons
+13-04-2022  13:15    <DIR>          Database
+20-07-2025  19:54                 0 dummy.txt
+13-06-2023  18:28    <DIR>          ExternalAssemblies
+18-04-2025  09:48            16,565 iCampusAutomationSystem.sln
+13-06-2023  09:55    <DIR>          iCAS.API
+08-07-2023  11:49    <DIR>          packages
+09-07-2023  19:39    <DIR>          PresentationLayer
+17-04-2025  14:09    <DIR>          ReadExcelFileApp
+               3 File(s)         23,223 bytes
+              10 Dir(s)  15,688,331,264 bytes free
