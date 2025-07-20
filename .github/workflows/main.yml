@@ -1,0 +1,33 @@
+name: Build & Lint ASP.NET (.NET Framework)
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup MSBuild
+        uses: microsoft/setup-msbuild@v1.3.1
+
+      - name: Restore NuGet packages
+        run: nuget restore YourSolution.sln
+
+      - name: Build solution
+        run: msbuild iCampusAutomationSystem.sln /p:Configuration=Release
+
+      - name: Install .NET code analysis tools (Roslyn Analyzers)
+        run: |
+          dotnet tool install -g dotnet-format
+          dotnet tool install -g dotnet-codeformatter
+        shell: powershell
+
+      - name: Run Code Formatter & Lint
+        run: |
+          dotnet-format iCampusAutomationSystem.sln --check
+        shell: powershell
